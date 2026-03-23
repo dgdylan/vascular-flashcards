@@ -1,0 +1,2380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>US Guided Procedures 7%</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06101d;
+      --bg-strong: #0b1628;
+      --card: rgba(17, 31, 52, 0.92);
+      --card-strong: rgba(20, 36, 60, 0.98);
+      --ink: #f4f8ff;
+      --muted: #b0bfd6;
+      --accent: #82ddd7;
+      --accent-strong: #b4f0eb;
+      --accent-soft: rgba(130, 221, 215, 0.16);
+      --border: rgba(149, 180, 221, 0.34);
+      --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
+      --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.28);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(130, 221, 215, 0.14), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(97, 130, 194, 0.18), transparent 24%),
+        linear-gradient(180deg, #071221 0%, var(--bg) 54%, #040b15 100%);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+    .wrap {
+      width: min(1080px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.5rem 0 4rem;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      padding: clamp(1.4rem, 2.5vw, 2rem);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94)),
+        linear-gradient(120deg, rgba(130, 221, 215, 0.08), rgba(97, 130, 194, 0.08));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      animation: rise-in 560ms ease-out both;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -35% auto;
+      width: 240px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
+      background: radial-gradient(circle, rgba(97, 130, 194, 0.4), transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4.8vw, 3.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 14ch;
+      text-wrap: balance;
+    }
+    .subhead {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .toolbar a, .toolbar button {
+      border: 1px solid var(--border);
+      background: var(--card-strong);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.78rem 1.05rem;
+      cursor: pointer;
+      text-decoration: none;
+      font: inherit;
+      font-weight: 700;
+      box-shadow: var(--shadow-soft);
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+    .toolbar a:hover, .toolbar button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(130, 221, 215, 0.42);
+      background: rgba(26, 45, 73, 1);
+    }
+    .cards {
+      display: grid;
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      animation: rise-in 520ms ease-out both;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+      border-color: rgba(130, 221, 215, 0.28);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(130, 221, 215, 0.09), rgba(97, 130, 194, 0.08)),
+        rgba(16, 30, 50, 0.88);
+    }
+    .card-number {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .pill {
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .card-body {
+      padding: 1.2rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .card-side {
+      display: grid;
+      gap: 0.75rem;
+    }
+    .label {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .content {
+      font-size: 1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .choices {
+      display: grid;
+      gap: 0.45rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(24, 41, 67, 0.98), rgba(17, 31, 52, 0.92));
+    }
+    .choice {
+      line-height: 1.5;
+    }
+    .choice-label {
+      font-weight: 700;
+      color: var(--accent);
+      margin-right: 0.3rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(8, 15, 27, 0.96);
+      display: block;
+      box-shadow: var(--shadow-soft);
+    }
+    details {
+      border-top: 1px dashed rgba(149, 180, 221, 0.34);
+      padding-top: 1rem;
+    }
+    summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 700;
+      list-style: none;
+      transition: color 180ms ease;
+    }
+    summary:hover { color: var(--accent-strong); }
+    summary::-webkit-details-marker { display: none; }
+    .answer-block {
+      margin-top: 0.9rem;
+      display: grid;
+      gap: 0.75rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(19, 35, 58, 0.98), rgba(13, 25, 43, 0.96));
+    }
+    .answer-title {
+      font-weight: 700;
+    }
+    @keyframes rise-in {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero, .card {
+        animation: none;
+      }
+      .toolbar a, .toolbar button, .card, summary {
+        transition: none;
+      }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 1rem, 1080px); padding-top: 1rem; }
+      .hero {
+        border-radius: 22px;
+        padding: 1.15rem;
+      }
+      .card-header, .card-body { padding: 1rem; }
+      .toolbar {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .toolbar a, .toolbar button {
+        width: 100%;
+        text-align: center;
+      }
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Review Deck</p>
+      <h1>US Guided Procedures 7%</h1>
+      <p class="subhead">56 flashcards extracted from this PDF. Open each back panel to review the correct answer and full feedback.</p>
+      <div class="toolbar">
+        <a href="../index.html">Back to index</a>
+        <button type="button" id="open-all">Open all backs</button>
+        <button type="button" id="close-all">Close all backs</button>
+      </div>
+    </section>
+    <section class="cards">
+      
+      <article class="card" id="q1" style="animation-delay: 0ms;">
+        <div class="card-header">
+          <div class="card-number">Question 1</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">At the start of an endovenous ablation procedure for the great saphenous vein, the catheter is inserted _____________________ and advanced to a position_____________________ before activating the device.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>into the distal GSV , 2cm distal to the saphenopopliteal junction</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>into the GSV at the groin, at the most distal point of reflux</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>into the distal GSV , 2cm distal to the saphenofemoral junction</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>into the GSV at the groin, 2cm below the knee</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. into the distal GSV , 2cm distal to the saphenofemoral junction</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>At the start of an endovenous ablation procedure for the GSV, the catheter is inserted into the distal vein and advanced to a
+position 2cm distal to the SFJ before the device is activated. Once activated, the catheter is slowly withdrawn down the leg and
+out through the puncture site. This should cause fibrosis of the vein in the treated area. The catheter tip must be 2cm or more
+from the SFJ to prevent damage to the common femoral vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q2" style="animation-delay: 35ms;">
+        <div class="card-header">
+          <div class="card-number">Question 2</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If the peak velocity in a transjugular intrahepatic portosystemic shunt at the portal vein anastomosis is 50cm/s and the mid graft velocity is 25cm/s, what is indicated?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The mid graft velocity is very low and indicates impending failure of the shunt.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The velocities indicate normal flow within the shunt.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>There is most likely an occlusion in the graft at the proximal end.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>There is approximately a 50% stenosis at the portal anastomosis.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. The mid graft velocity is very low and indicates impending failure of the shunt.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Flow velocity &lt;50cm/s in the intrahepatic shunt indicates impending failure.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q3" style="animation-delay: 70ms;">
+        <div class="card-header">
+          <div class="card-number">Question 3</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following techniques cannot be used to monitor distal flow in the leg while compression therapy for a pseudoaneurysm is performed?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>PPG sensor on the great toe</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Doppler evaluation of the PTA or DPA</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Pressure monitor on the great toe</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>PPG sensor on the ankle</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. PPG sensor on the ankle</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When PPG is used to evaluate arterial flow, the sensors are placed on the great toes. When PPG is used to evaluate venous
+reflux, the sensor is placed on the lower calf near the ankle. It is contraindicated to obtain an ankle pressure in a patient with an
+acute pseudoaneurysm. A toe monitor can be used because the inflation of the cuff has little to no effect on pressure in the
+femoral artery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q4" style="animation-delay: 105ms;">
+        <div class="card-header">
+          <div class="card-number">Question 4</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is the best Sonographic technique to use to evaluate the status of a pseudoaneurysm after 10 minutes of compression therapy is applied?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>PW Doppler</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Tissue Doppler</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>CW Doppler</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Color Doppler</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Color Doppler</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Color Doppler is the best for identifying the presence of the stalk within the tissues. PW and CW Doppler can be used to
+evaluate the stalk once it has been located with color but cannot reliably locate the stalk without color guidance.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q5" style="animation-delay: 140ms;">
+        <div class="card-header">
+          <div class="card-number">Question 5</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a treatment for a pseudoaneurysm?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Compression stockings</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Thrombin injection</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Coumadin</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>IV Heparin</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Thrombin injection</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A Thrombin injection is used to treat pseudoaneurysms with large stalks. Ultrasound guidance is used to make the injection that
+promotes thrombosis of the stalk and body of the pseudoaneurysm. Coumadin is a blood thinner that would decrease the
+ability of clot formation in the pseudoaneurysm. IV Heparin is used to treat DVT.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q6" style="animation-delay: 175ms;">
+        <div class="card-header">
+          <div class="card-number">Question 6</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient is referred to the vascular lab to evaluate the placement of a Greenfield filter. Where will you look for this?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>abdominal aorta</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>right or left groin</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>IVC</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>subclavian or internal jugular vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q6.png" alt="Question 6 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. IVC</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The filter is used to prevent pulmonary embolism from the lower extremities. The filter is placed into the IVC below the level of
+the renal veins.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q7" style="animation-delay: 210ms;">
+        <div class="card-header">
+          <div class="card-number">Question 7</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is an advantage of intraoperative vascular ultrasound compared to intraoperative angiography?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Technique does not require vessel puncture to obtain flow information</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Can assess flow in all branches of the intracerebral vessels</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Provides real time flow evaluation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Can be performed during the surgical procedure</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Technique does not require vessel puncture to obtain flow information</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Angiography is an invasive procedure that requires a vessel puncture to administer contrast. Intraoperative US is performed by
+placing the transducer on the artery, no puncture required to obtain flow information. Both ultrasound and angiography can
+provide real time blood flow information because the contrast flow is evaluated live with fluoroscopy on angiography.
+Ultrasound does not evaluate all branches of the intracerebral vessels while angiography can visualize all patent branches in the
+FOV. Both techniques can be performed during the surgery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q8" style="animation-delay: 245ms;">
+        <div class="card-header">
+          <div class="card-number">Question 8</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following statements best describes the Doppler tracing found in the stalk of a pseudoaneurysm?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>high resistance to and fro flow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>phasic forward flow</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>low resistance to and fro flow</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>continuous forward flow</div>
+              
+            </div>
+            
+            
+            <img src="media/q8.jpg" alt="Question 8 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. high resistance to and fro flow</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The body of the pseudo aneurysm will demonstrate a low resistance &#34;swirling&#34; of flow on the Doppler tracing. The neck/stalk of
+the pseudo aneurysm is normally very narrow and will demonstrate a high resistance, biphasic waveform.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q9" style="animation-delay: 280ms;">
+        <div class="card-header">
+          <div class="card-number">Question 9</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is the preferred patient position during catheter retraction in an endovenous laser ablation treatment?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>seated with legs dangling</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>reverse Trendelenburg</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Trendelenburg</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>standing</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Trendelenburg</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When the catheter is inserted at the start of the procedure, the semi-erect or reverse Trendelenburg position is helpful to better
+visualize the advancement of the catheter. Once the laser is activated and the catheter is retracted, the patient is placed in the
+Trendelenburg position to reduce the blood volume in the veins of the leg and facilitate the closure of the vein during the
+procedure. The laser essentially damages the walls of the veins causing a reduced lumen diameter and thrombus formation.
+The less blood that&#39;s in the vein, the easier it will be to successfully treat the vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q10" style="animation-delay: 315ms;">
+        <div class="card-header">
+          <div class="card-number">Question 10</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a contraindication for endovenous laser ablation of the great saphenous vein?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>valvular incompetence in the great saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>chronic obstruction of the peroneal veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>chronic obstruction of the femoral vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Baker cyst in the ipsilateral popliteal fossa</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. chronic obstruction of the femoral vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>IT IS VERY IMPORTANT to evaluate the venous outflow system of a patient prior to removal or closure of the saphenous vein. If
+the deep system is obstructed and the superficial system is the main outflow for the leg, the saphenous vein cannot be
+removed/closed.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q11" style="animation-delay: 350ms;">
+        <div class="card-header">
+          <div class="card-number">Question 11</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following requires the use of sterile technique?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Laser ablation for telangiectasia</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Vein mapping</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Radiofrequency venous ablation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Sclerotherapy</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Radiofrequency venous ablation</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Radiofrequency ablation requires the sterile technique because the procedure requires the puncture of the saphenous vein to
+insert a catheter into the length of the vein. The other choices do not require the sterile technique. Telangiectasia refers to
+dilated very small superficial veins that are treated with external application of laser treatment. Sclerotherapy refers to the
+injection of a solution into spider veins to cause them to atrophy and requires aseptic technique. Vein mapping is performed
+with ultrasound.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q12" style="animation-delay: 385ms;">
+        <div class="card-header">
+          <div class="card-number">Question 12</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is an absolute contraindication for sclerotherapy?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>polycythemia vera</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>vein location above the inguinal ligament</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>vein location immediately over a bony prominence</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>patient allergy to injectate</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. patient allergy to injectate</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Absolute contraindications are situations which make a particular treatment or procedure absolutely inadvisable. The risk of
+complications caused by the patient allergy to the injected substance (sclerosant) far exceed the benefits of the procedure. The
+patient will be treated using other methods.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q13" style="animation-delay: 420ms;">
+        <div class="card-header">
+          <div class="card-number">Question 13</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is true regarding the initial post-op examination of a transjugular intrahepatic portosystemic shunt placement?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>It should be performed within 30 days following the procedure.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>CTA is most commonly performed for the initial evaluation of a TIPS procedure.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Marked ascites is a common finding for the initial post op exam on a TIPS patient.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>It helps to establish baseline velocities for upcoming follow up exams.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. It helps to establish baseline velocities for upcoming follow up exams.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When performing serial evaluations of a transjugular intrahepatic portosystemic shunt, it is important to establish a baseline for
+the patient very soon after the shunt placement. The initial evaluation should be performed with Doppler ultrasound within
+24hrs of shunt placement.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q14" style="animation-delay: 455ms;">
+        <div class="card-header">
+          <div class="card-number">Question 14</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for ultrasound evaluation of a PICC line. The findings on the image are most suggestive of:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>normal catheter demonstrated in the right internal jugular vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>thrombus formation around the catheter in the right subclavian vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>thrombus formation around the catheter in the right internal jugular vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>thrombus formation around the catheter in the left internal jugular vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q14.jpg" alt="Question 14 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. thrombus formation around the catheter in the right internal jugular vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The image demonstrates the longitudinal view of the subclavian vein on the posterior image. The transverse view of the IJV
+demonstrates a hypoechoic mass surrounding the catheter. The CCA is medial to the IJV = right side.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q15" style="animation-delay: 490ms;">
+        <div class="card-header">
+          <div class="card-number">Question 15</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following indicates a balloon angioplasty of an 80% stenosis of the superficial femoral artery was a success?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>an increase in the ABI of at least 0.15</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>increased damping in the inflow artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>velocity ratio greater than 2.0</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>decrease in the pulsatility index distal to the treated segment</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. an increase in the ABI of at least 0.15</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Resolution of patient symptoms, an ABI increase &gt;0.15 and &lt;50% diameter stenosis on duplex ultrasound indicate a successful
+PTLA. Angioplasty failure = damped, low-velocity waveforms in the distal arterial tree, no change in the post-procedure ABI.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q16" style="animation-delay: 525ms;">
+        <div class="card-header">
+          <div class="card-number">Question 16</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is NOT a part of the information required on an informed consent form for an interventional vascular procedure?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>signature line to indicate patient consent</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>description of the procedure</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>percentage of patients that have experienced complications after the same procedure at the facility</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>possible complications that the patient may experience</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. percentage of patients that have experienced complications after the same procedure at the facility</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The informed consent must include a description of the procedure and list the possible complications that the patient may
+experience. The patient must be of sound mind when giving consent by signature.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q17" style="animation-delay: 560ms;">
+        <div class="card-header">
+          <div class="card-number">Question 17</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When Thrombin is injected in a pseudoaneurysm, the clotting should be begin:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>within 24 hours</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>after 1 minute of manual compression following the injection</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>within 5-10 seconds post- injection</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>within 5-10 minutes post- injection</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. within 5-10 seconds post- injection</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Thrombin administration is performed by injecting the clotting agent into a pseudoaneurysm to close the opening and clot the
+blood that has escaped. Clotting should occur immediately after injection (5-10 seconds). About 20 minutes after the procedure,
+a follow up exam should be performed to document the pseudoaneurysm is fully thrombosed.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q18" style="animation-delay: 595ms;">
+        <div class="card-header">
+          <div class="card-number">Question 18</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient is undergoing balloon angioplasty of the left common femoral artery. The physician just completed the first expansion of the balloon and asks you to check the flow with Doppler. Where is the preferred location to evaluate flow?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>popliteal artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>dorsalis pedis or posterior tibial artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>proximal superficial femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>distal superficial femoral artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. dorsalis pedis or posterior tibial artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The physician is trying to increase flow distal to the obstruction. It is most important to evaluate flow in the most distal areas to
+evaluate improvement in overall perfusion of the leg.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q19" style="animation-delay: 630ms;">
+        <div class="card-header">
+          <div class="card-number">Question 19</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is true regarding compression techniques used to treat a pseudoaneurysm of the femoral artery in the groin?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Compression should be performed in 30-second intervals with color Doppler evaluation in between compressions.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Pressure equivalent to 100mmHg should be performed in three ten-minute intervals and if this does not close the stalk, alternative treatment must be considered</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Blood pressure evaluation cannot be performed anywhere on the legs until the stalk to the pseudoaneurysm is closed.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Thrombin injection is more effective than compression techniques in pseudoaneurysms with large diameter stalks.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Thrombin injection is more effective than compression techniques in pseudoaneurysms with large diameter stalks.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Thrombin injection is more effective than compression techniques in pseudoaneurysms with large diameter stalks. Ankle
+pressure should be monitored during compression techniques to avoid changes in distal flow from extrinsic compression.
+Compression should be performed in 10 one-minute intervals with color Doppler evaluation in between compressions.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q20" style="animation-delay: 665ms;">
+        <div class="card-header">
+          <div class="card-number">Question 20</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">In most cases, a peripherally inserted central catheter (PICC) line is inserted in the basilic vein exam and advanced until the tip reaches:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>axillary vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>atriocaval junction</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>proximal subclavian vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>brachiocephalic vein</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. atriocaval junction</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The terminal tip of the venous catheter is positioned in a central vein, most commonly the distal 1/3 of the SVC (atriocaval
+junction). High blood flow volume in this location allows infusates to be rapidly distributed.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q21" style="animation-delay: 700ms;">
+        <div class="card-header">
+          <div class="card-number">Question 21</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Where is the most common site of stenosis in a transjugular intrahepatic portosystemic shunt?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>hepatic artery anastomosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>biliary anastomosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>hepatic vein anastomosis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>portal vein anastomosis</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. hepatic vein anastomosis</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The hepatic vein anastomosis is the most common site of stenosis in a transjugular intrahepatic portosystemic shunt.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q22" style="animation-delay: 735ms;">
+        <div class="card-header">
+          <div class="card-number">Question 22</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When evaluating the left arm for potential placement of a central venous catheter, you identify multiple small venous collaterals surrounding the subclavian vein, What should you do next?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>evaluate the venous system in the right arm</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>measure the largest collateral for potential pathway for the catheter</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>evaluate the extremity arteries instead for potential catheterization</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>tell the physician the patient is not a candidate for catheter placement</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. evaluate the venous system in the right arm</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If venous collaterals are identified on the pre-procedure scan for central venous catheter placement, there is a stenosis or
+occlusion of the adjacent major vein. The patency and size of the collaterals are insignificant when deciding not to use that
+extremity for the catheter. The mere presence of the collaterals indicates an issue with that venous pathway.
+Normal veins are preferred for catheter placement. These findings are usually going to change the access point or placement of
+the central venous catheter to another vein/arm, but the Sonographer does not advise the physician on that decision. The
+opposite arm should be evaluated for an alternate location for catheter placement. Arteries cannot be used for the same
+purpose as veins for catheter delivery of medications.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q23" style="animation-delay: 770ms;">
+        <div class="card-header">
+          <div class="card-number">Question 23</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are evaluating a patient that had a balloon angioplasty on the proximal superficial femoral artery 3 years ago. The acceleration time in the common femoral artery is 230ms. This finding is most suggestive of:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>normal arterial inflow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>recurrence of stenosis in the proximal superficial artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>obstruction in the distal superficial femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>iliac artery stenosis</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. iliac artery stenosis</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Increased AT = longer time to reach peak velocity = lower resistance = proximal obstruction
+Decreased AT = less time to reach peak velocity = higher resistance = distal obstruction
+Increased acceleration time indicates a proximal stenosis. There is probably an iliac artery stenosis and the arteries proximal to
+the CFA should be evaluated.
+If the AT in the CFA was shorter or decreased, this indicates a stenosis distally. In this scenario the femoral artery may have
+restenosis or the distal SFA could have stenosis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q24" style="animation-delay: 805ms;">
+        <div class="card-header">
+          <div class="card-number">Question 24</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a responsibility of a Sonographer when assisting with a radiofrequency ablation of the great saphenous vein?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>to send the ultrasound catheter for sterilization after the procedure</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>to advance the ultrasound catheter during the procedure</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>to perform initial puncture for the catheter prior to the vascular surgeon entering the room</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>to operate the ultrasound machine controls and/or the probe, as directed by the physician</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. to operate the ultrasound machine controls and/or the probe, as directed by the physician</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The ultrasound catheter cannot be sterilized, it is disposable. The procedure is performed by the physician while the
+Sonographer assists with the ultrasound machine.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q25" style="animation-delay: 840ms;">
+        <div class="card-header">
+          <div class="card-number">Question 25</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a follow up exam after radiofrequency ablation of the GSV. What is the purpose of the exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>To confirm the patency of the GSV and thrombosis of its branches</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>To evaluate thrombus formation in the GSV</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>To assess the valvular motion in the GSV</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>To confirm the contraction of the GSV and absence of thrombus in the deep system</div>
+              
+            </div>
+            
+            
+            <img src="media/q25.jpg" alt="Question 25 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. To confirm the contraction of the GSV and absence of thrombus in the deep system</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A follow up exam after radiofrequency ablation of the GSV should be performed 2 weeks after the procedure to confirm
+contraction/occlusion of the GSV and absence of thrombus in the deep system. Measuring the distance from the treated GSV
+segment to the SFJ is important to document. The fibrosis/thrombosis of the treated vein should not extend into the deep veins.
+Compression views of the treated veins and Doppler demonstration of the absence of flow should also be documented.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q26" style="animation-delay: 875ms;">
+        <div class="card-header">
+          <div class="card-number">Question 26</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When preparing the sterile tray for an invasive procedure, the cover on the tray should be opened:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>while wearing sterile gloves</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>by the radiologist</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>by pulling the far corner of the wrapper toward you</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>no more than 2 hours before the procedure begins</div>
+              
+            </div>
+            
+            
+            <img src="media/q26.jpg" alt="Question 26 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. by pulling the far corner of the wrapper toward you</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The Sonographer should prepare the supplies for an ultrasound guided procedure. The tray should not be opened until just
+before the procedure begins. The cover can be opened without wearing gloves but should be pulled toward you to expose the
+products facing away from you. This prevents your arm from hovering over the supplies to prevent any &#34;debris from your
+person from falling into the tray. Sterile gloves must be used to remove items for the tray to prepare them (lidocaine, needle
+and syringe).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q27" style="animation-delay: 910ms;">
+        <div class="card-header">
+          <div class="card-number">Question 27</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">In most patients with a central venous catheter the tip of the catheter is positioned in the:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>internal jugular vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>distal subclavian vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>distal 1/3 of the superior vena cava</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>proximal subclavian vein</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. distal 1/3 of the superior vena cava</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The terminal tip of the venous catheter is positioned in a central vein, most commonly the distal 1/3 of the SVC (atriocaval
+junction). High blood flow volume in this location allows infusates to be rapidly distributed.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q28" style="animation-delay: 945ms;">
+        <div class="card-header">
+          <div class="card-number">Question 28</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">At ____________________ post-injection, _______________________should be performed to determine the success of a Thrombin injection for pseudoaneurysm treatment.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>1 hour, CW Doppler evaluation</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>20 minutes, color Doppler and ABI evaluation</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>5 minutes, PPG and ABI evaluation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>24-48 hours, color Doppler and ABI evaluation</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. 20 minutes, color Doppler and ABI evaluation</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>At 20 minutes post-injection, color Doppler and ABI evaluation should be performed to determine the success of a Thrombin
+injection for pseudoaneurysm treatment. The PSA should be filled with echogenic thrombus and no color flow should be
+present within it. ABI assessment is performed before and after the procedure to confirm the arterial circulation was
+unaffected. There should be no change in the ABI from the baseline assessment.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q29" style="animation-delay: 980ms;">
+        <div class="card-header">
+          <div class="card-number">Question 29</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If the physician is having trouble visualizing the needle on the ultrasound screen during a thrombin injection, how can you help to improve the visualization of the needle?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>use electronic steering to reduce the incident angle between the US beam and the long axis needle to a value closer to 0 degrees</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>use a lower frequency probe</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>use electronic steering to increase the incident angle between the US beam and the long axis needle to a value closer to 90 degrees</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>increase the output power to the maximum setting</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. use electronic steering to increase the incident angle between the US beam and the long axis needle to a value closer to 90 degrees</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The more perpendicular the US beam is to the needle, the better the reflection properties and visibility on the screen.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q30" style="animation-delay: 1015ms;">
+        <div class="card-header">
+          <div class="card-number">Question 30</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes a difference between endovenous ablation of the great saphenous vein and of the small saphenous vein?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The SSV cannot be treated by endovenous ablation techniques</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the catheter is inserted at the groin for the treatment of the GSV and at the popliteal fossa for the treatment of the SSV</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the catheter is inserted at the groin for the treatment of the GSV and at the dorsum of the foot for the treatment of the SSV</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>at the start of the procedure, the patient is placed in the supine position for the GSV treatment and in the prone position for the SSV treatment</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. at the start of the procedure, the patient is placed in the supine position for the GSV treatment and in the prone position for the SSV treatment</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The patient is placed in the supine position for the GSV treatment and in the prone position for the SSV treatment. The catheter
+is inserted in the distal GSV and advanced to a position 2cm from the SFJ. The catheter is inserted in the distal SSV and advanced
+to a position distal to the SPJ. The table position will be adjusted to Trendelenburg position after the catheter is inserted to drain
+excess blood from the veins before device activation. Once activated the catheter is pulled down the vein and out the puncture
+site.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q31" style="animation-delay: 1050ms;">
+        <div class="card-header">
+          <div class="card-number">Question 31</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a contraindication for harvesting of the great saphenous vein?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>chronic obstruction of the femoral vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>chronic obstruction of the peroneal veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>valvular incompetence in the great saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Baker&#39;s cyst in the ipsilateral popliteal fossa</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. chronic obstruction of the femoral vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>IT IS VERY IMPORTANT to evaluate the venous outflow system of a patient prior to removal or closure of the saphenous vein. If
+the deep system is obstructed and the superficial system is the main outflow for the leg, the saphenous vein cannot be
+removed/closed.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q32" style="animation-delay: 1085ms;">
+        <div class="card-header">
+          <div class="card-number">Question 32</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is part of the Sonographer&#39;s responsibilities when assisting with an endovenous ablation?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>place the patient in the Trendelenburg position to prepare for catheter insertion</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>review patient records and ultrasound images to confirm the diagnosis and the leg that will be treated</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>performing the groin puncture and inserting the proximal end of the catheter into the vein that will be treated by the physician</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>inject the area around the saphenofemoral junction with anesthetic</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. review patient records and ultrasound images to confirm the diagnosis and the leg that will be treated</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Puncturing the vein and performing the catheter insertion fall outside the scope of practice of a Sonographer. The ablation
+procedure must be performed by the physician.
+Sonographer responsibilities include:
+review patient records and ultrasound exam to confirm the diagnosis and the leg that will be treated
+confirm patient understanding of procedure and the leg and vein to be treated
+explain the procedure to the patient
+provide the informed consent form to the patient to read (ultimately the patient should sign the form after the patient has had
+the chance to ask the physician any related questions about the form)
+place the patient in the reverse Trendelenburg position and perform any necessary preliminary images
+map the position of vein
+determine area of catheter access and mark
+set up the supplies for the procedure
+cover appropriate transducer with a sterile probe cover
+operate the ultrasound machine controls outside the sterile field, as directed by the physician
+apply dressing to the access point
+confirm that the patient understands the aftercare instructions given by the physician
+disinfect the room and the ultrasound equipment after the procedure
+discard all used needles and catheters into the biohazard container</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q33" style="animation-delay: 1120ms;">
+        <div class="card-header">
+          <div class="card-number">Question 33</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following procedures allows patients to continue their normal course of anticoagulant therapy before and after the procedure?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>carotid endarterectomy</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>compression therapy of pseudoaneurysm</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>ascending venography</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>percutaneous transluminal angioplasty</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. ascending venography</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Venography is performed using a venous puncture. Surgical procedures and invasive procedures that require an arterial
+puncture have an increased risk of hemorrhage when the blood is thinned by anticoagulants. Patients having these procedures
+must discontinue their anticoagulant therapy before the procedure. Thinned blood will also inhibit the clot formation in a
+pseudoaneurysm.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q34" style="animation-delay: 1155ms;">
+        <div class="card-header">
+          <div class="card-number">Question 34</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Endovenous heat-induced thrombosis is a complication of:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>sclerotherapy</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>chemical ablation</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>microphlebectomy</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>radiofrequency ablation</div>
+              
+            </div>
+            
+            
+            <img src="media/q34.jpg" alt="Question 34 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. radiofrequency ablation</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Endovenous heat-induced thrombosis (EHIT) is a complication of radiofrequency ablation. The thrombus that forms in the
+treated vein can extend into unintended vessels in the deep system. About 7 days after the procedure the patient should return
+to be evaluated for procedural success and complications like DVT or EHIT.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q35" style="animation-delay: 1190ms;">
+        <div class="card-header">
+          <div class="card-number">Question 35</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a pre-procedure scan for placement of a central venous catheter in the internal jugular vein. In order to avoid potential hematoma or AV fistula formation, the relationship of the vein to the _________________________ must be documented on today&#39;s exam.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>internal carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>common carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>sternocleidomastoid muscle</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>external jugular vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q35.jpg" alt="Question 35 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. common carotid artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A patient presents for a pre-procedure scan for placement of a central venous catheter in the internal jugular vein. In order to
+avoid potential hematoma or AV fistula formation, the relationship of the vein to the common carotid artery must be
+documented on today&#39;s exam. If the CCA is punctured, serious complications can occur.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q36" style="animation-delay: 1225ms;">
+        <div class="card-header">
+          <div class="card-number">Question 36</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A common complication of cardiac catheterization is the formation of:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Pseudoaneurysm</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>DVT</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Arterial dissection</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Fusiform aneurysm</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Pseudoaneurysm</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>During the catheterization the superficial femoral artery is punctured by the catheter as it enters the arterial system. Once the
+catheter is removed, there is a risk that blood will escape the artery into the surrounding tissues to form a pseudoaneurysm.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q37" style="animation-delay: 1260ms;">
+        <div class="card-header">
+          <div class="card-number">Question 37</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly describes a pre-procedure vein mapping?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The diameter of the vein is usually written on the arm/leg at the location it was taken</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Keep the transducer pressure constant at a medium level</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Veins should maintain a uniform elliptical shape during measurements</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Larger amounts of gel will aid in visualization of the superficial vessels</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. The diameter of the vein is usually written on the arm/leg at the location it was taken</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>To protect the transducer from staining from the marker, cover it with a nonsterile probe cover. Remember to use limited gel to
+allow for easier and more permanent skin marking. The marks need to remain until the procedure is performed.
+A permanent marker or carbol fuchsin stain (used in radiation therapy) is used to create the markings.
+Keep the transducer perpendicular to the skin surface and use very light transducer pressure. If the vein appears elliptical, then
+too much transducer pressure is being applied or the transducer is off axis.
+A small mark is placed in front of the ultrasound transducer along the narrow edge of the transducer. If a transverse approach
+is used, the vein should appear circular and centered on the ultrasound screen. A skin mark is then placed exactly at the center
+of the long face of the transducer.
+Once the initial skin mark is placed, the transducer is moved slightly distally toward the foot while keeping the rounded vein in
+the center of view. A new mark is placed on the skin every 2 to 3 cm.
+A straw could be used to make an indention in the skin and then these marks are connected by lines drawn with a permanent
+marker after the gel is removed. The diameter of the vein is usually written on the arm/leg at the location it was taken.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q38" style="animation-delay: 1295ms;">
+        <div class="card-header">
+          <div class="card-number">Question 38</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly describes sclerotherapy procedures?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Physicians may inject saline into the deep veins of the extremity in order to increase viscosity and promote the formation of thrombus, which in turn reduces varicosity size.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Physicians may inject saline into the superficial veins of the extremity in order to improve circulation by thinning the blood, which in turn reduces varicosity size.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Physicians may inject saline into the superficial veins of the extremity in order to cause increased viscosity and promote the formation of thrombus, which in turn reduces varicosity size.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Physicians may inject saline into the superficial veins of the extremity in order to cause the vessel to contract and cause fibrosis, which in turn reduces varicosity size.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Physicians may inject saline into the superficial veins of the extremity in order to cause the vessel to contract and cause fibrosis, which in turn reduces varicosity size.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Physicians may inject saline into the superficial veins of the extremity in order to cause the vessel to contract and cause fibrosis,
+which in turn reduces varicosity size.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q39" style="animation-delay: 1330ms;">
+        <div class="card-header">
+          <div class="card-number">Question 39</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following statements is correct regarding intraoperative duplex evaluation during a carotid endarterectomy?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>intraoperative duplex evaluation cannot be performed during a carotid endarterectomy.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Sterile gel is required because a sterile sheath is not used due to potential acoustic artifacts.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Due to the increased attenuation of sound caused by air in the extracranial vessels, the lowest probe frequency available is preferred for the exam.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The technique is used to assess the immediate flow changes within the vessel undergoing the endarterectomy.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. The technique is used to assess the immediate flow changes within the vessel undergoing the endarterectomy.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The technique is used to assess the immediate flow changes within the vessel undergoing the endarterectomy. The highest
+probe frequency available is preferred for intraoperative duplex evaluation. The probe is placed in direct contact on the vessel
+that is being evaluated, so the sterile technique is required, including sterile gel with a sterile sheath protecting the transducer.
+The vessel should not contain air because it would become a cerebral embolism.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q40" style="animation-delay: 1365ms;">
+        <div class="card-header">
+          <div class="card-number">Question 40</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for follow up after a mesenteric stent placement procedure for a 75% SMA stenosis. Which of the following describes the findings in the SMA that indicate a successful procedure?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Change from monophasic to peaked triphasic</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Change from peaked triphasic to monophasic</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Decreased resistance and increased diastolic flow</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Increased resistance and decreased diastolic flow</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Increased resistance and decreased diastolic flow</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Normal pre-prandial flow in the SMA is high resistance with low levels of diastolic flow (monophasic). 75% SMA stenosis would
+cause a low resistance waveform with increased systolic and diastolic velocities. The resistance would increase in the
+mesenteric vascular beds as normal flow levels resume after angioplasty. Diastolic flow levels would reduce because the
+mesentery is now receiving enough blood during systole. Peak systolic and end diastolic velocities are reduced.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q41" style="animation-delay: 1400ms;">
+        <div class="card-header">
+          <div class="card-number">Question 41</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following measurements should be obtained to evaluate the success of a percutaneous angioplasty performed on the left proximal superficial femoral artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>evaluate the ABI value for the expected decrease</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>acceleration time of the distal superficial femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>femoral artery diameters proximal to the treated area, the treated area and distal to the treated area</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>obtain waveforms at the PTLA site and measure the peak systolic velocity and pulsatility index</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. obtain waveforms at the PTLA site and measure the peak systolic velocity and pulsatility index</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Evaluating a patient post-angioplasty of the lower extremity:
+ABI assessment - greater than 0.9 and/or an increase of at least 0.15 in the ABI from pre-procedure levels
+Evaluate inflow artery for damping - measure acceleration time &lt;180ms is normal (AT is used to evaluate INFLOW)
+Evaluate the PTLA site for residual plaque or thrombus
+Record waveforms at the PTLA site and proximal to it - measure the velocity and pulsatility index
+Calculate the velocity ratio - less than 2 is normal</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q42" style="animation-delay: 1435ms;">
+        <div class="card-header">
+          <div class="card-number">Question 42</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What effect does a warm exam room have on a vein mapping procedure performed for coronary bypass surgery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>normal venous diameters will be documented</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>contracted veins with reduced diameters</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>reduced compressibility of the superficial veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>increase in tissue edema and reduced image resolution</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. normal venous diameters will be documented</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When performing a vein mapping, the exam room should be kept warm in order to limit vasoconstriction. During the exam,
+cover the rest of the patient and the foot/hand to keep warm. If the veins demonstrate thickened walls and reduced diameter,
+warm the leg or evaluate a different vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q43" style="animation-delay: 1470ms;">
+        <div class="card-header">
+          <div class="card-number">Question 43</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly describes proper behavior related to a sterile field?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Sterile individuals should only touch other sterile items</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Everyone in the procedure room should be in sterile PPE</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Sterile gloves must be used to open the procedure tray</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Sterile individuals should pass by each other while facing each other</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Sterile individuals should only touch other sterile items</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Everyone in the procedure room cannot be in sterile PPE. Opening non-sterile packaging for sterile items should be done by
+someone not dressed in sterile attire/gloves. Touching a non-sterile item with sterile gloves renders you &#34;contaminated&#34;. Sterile
+packages can be opened with non-sterile gloves, but if any items inside the tray will be touched, sterile gloves must be used.
+Sterile gloves must be used to remove items for the tray to prepare them (lidocaine, needle, syringe, biopsy instrument). Sterile
+individuals should pass back to back with other sterile individuals to prevent contamination.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q44" style="animation-delay: 1505ms;">
+        <div class="card-header">
+          <div class="card-number">Question 44</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a contraindication for US guided compression therapy for a pseudoaneurysm at the groin?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>A pseudoaneurysm that has been present for more than 72hrs</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Patient that stopped taking Coumadin 3 days ago</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>A pseudoaneurysm that measures 3.2cm in diameter</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Infection at the puncture site</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Infection at the puncture site</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Contraindications for US guided compression therapy for a pseudoaneurysm:
+Patient unable to tolerate the procedure due to pain
+Infection at the puncture site and surrounding tissues
+Diameter &gt;4cm
+Stalk diameter &gt;5mm
+Present for more than 1 month
+Patients on anticoagulant therapy (must be stopped before compression)</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q45" style="animation-delay: 1540ms;">
+        <div class="card-header">
+          <div class="card-number">Question 45</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Why is the distance from the most proximal point of the contracted GSV to the saphenofemoral junction measured in a post-ablation exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>to document the lack of thrombus propagation into the deep system</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>to assess the length of the segment that still requires treatment</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>to document that the procedure was unsuccessful</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>to assess the risk of future reflux in that area</div>
+              
+            </div>
+            
+            
+            <img src="media/q45.jpg" alt="Question 45 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. to document the lack of thrombus propagation into the deep system</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The distance between the SFJ and most proximal point of fibrosis/thrombosis of the GSV should be measured. If thrombus
+extends into the deep system, the GSV must be ligated because of the increased risk of embolization.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q46" style="animation-delay: 1575ms;">
+        <div class="card-header">
+          <div class="card-number">Question 46</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient is scheduled for a stab phlebectomy. What is being treated for this patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>varicose veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>pseudoaneurysm</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>carotid stenosis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>DVT removal</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. varicose veins</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Stab Phlebectomy
+This method removes superficial varicose veins that are not amendable to endovenous ablation. Under local anesthesia, tiny
+punctures, or microincisions are made. Through these small incisions, phlebectomy hooks extract the varicose veins. The
+incisions are so small that no stiches are required. Ultrasound guidance can be used to guide the procedure. This procedure is
+well tolerated by patients and produces excellent cosmetic results.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q47" style="animation-delay: 1610ms;">
+        <div class="card-header">
+          <div class="card-number">Question 47</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a follow up exam after a recent endarterectomy that was performed 3 days ago. The intraoperative report indicates a possible shelf lesion in the ICA. How will this be demonstrated on today&#39;s exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>&gt;3mm intimal flap that causes turbulence and increased velocity</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>&lt;3mm intimal flap demonstrates a false lumen with turbulent flow</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Hyperechoic plaque in the vessel lumen with an abrupt edge</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>&lt;3mm intimal flap that causes turbulence and increased velocity</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Hyperechoic plaque in the vessel lumen with an abrupt edge</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The carotid artery is lacerated and the atheroma formation is scraped for removal in an endarterectomy.
+Complications include:
+intimal flap
+dissection
+shelf lesion - residual hyperechoic plaque in the lumen that has an abrupt edge
+platelet aggregate - Hypoechoic/anechoic material adjacent to vessel wall that causes increased flow velocity</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q48" style="animation-delay: 1645ms;">
+        <div class="card-header">
+          <div class="card-number">Question 48</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly describes how to prepare for an intraoperative vascular ultrasound?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Gather extra packets of sterile gel to be used on the outside of the sterile sheath</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Cover a low frequency transducer with a sterile sheath that contains gel</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Use sterile gloves to open the packaging for supplies used in the procedure</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Cover a high frequency transducer with a sterile sheath that contains gel</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Cover a high frequency transducer with a sterile sheath that contains gel</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Intraoperative ultrasound procedures require a high frequency transducer because the transducer will usually be placed
+directly on the vessel being evaluated (no other tissue to penetrate). Sterile gel is placed inside the sheath, but not on the vessel
+or inside the body. Sterile gloves are used to touch any of the sterile instruments, but opening packaging does not require
+sterile gloves.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q49" style="animation-delay: 1680ms;">
+        <div class="card-header">
+          <div class="card-number">Question 49</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following statements correctly describes an endovenous laser ablation of the GSV?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The procedure is much more easily performed if the patient already has DVT</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The physician injects a halo of anesthesia medicine around the GSV</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>The procedure is considered a success if thrombus fills the GSV from the ankle to the SFJ</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Intravascular ultrasound is performed after the procedure to confirm success</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. The physician injects a halo of anesthesia medicine around the GSV</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Physician injects anesthesia around the vein being treated = tumescent anesthesia. A 1cm ring of anesthesia medicine should
+surround the vein for the appropriate level of patient comfort during the procedure. The catheter is inserted in the distal vein
+and advanced to the most proximal point that will be treated. The laser is turned on and the physician slowly retracts the
+catheter until it reaches the insertion point. A follow up ultrasound exam is performed in a week or two to evaluate the success
+of the procedure. The deep system should be evaluated for thrombus, the treated vein should be evaluated for diameter
+measurements and with color flow. The distance between the SFJ and most proximal point of closure of the GSV should be
+measured. If thrombus extends into the deep system, the GSV must be ligated. DVT is a contraindication for the procedure.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q50" style="animation-delay: 1715ms;">
+        <div class="card-header">
+          <div class="card-number">Question 50</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If the great saphenous vein is being used to create an in situ vein graft,</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the valves will remain in place and provide little resistance to arterial flow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>all perforator veins must be marked on the vein mapping so they can be closed</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>all perforator veins must be evaluated for patency because the graft will not function properly with obstructed perforator veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the graft diameter will be greatest at the distal end of the graft</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. all perforator veins must be marked on the vein mapping so they can be closed</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>You must mark all perforating veins if the GSV will be used as an in situ graft or an AV fistula will be created when the graft is
+arterialized. The valves must be removed with a valvulotome. The graft diameter will be greatest at the proximal end.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q51" style="animation-delay: 1750ms;">
+        <div class="card-header">
+          <div class="card-number">Question 51</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Prior to any invasive procedure, the patient should be educated about the procedure, expected outcomes and any possible complications. The patient will be required to sign a document stating their understanding of these topics in order to proceed with the procedure. This form is called:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>litigation waiver</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>patient acceptance form</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>health insurance waiver</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>informed consent form</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. informed consent form</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Prior to any invasive procedure, the patient should be educated about the procedure, expected outcomes and any possible
+complications. The patient will be required to sign a document stating their understanding of these topics in order to proceed
+with the procedure. This form is called an informed consent.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q52" style="animation-delay: 1785ms;">
+        <div class="card-header">
+          <div class="card-number">Question 52</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Why did the technologist steer the 2D image while scanning during the thrombin injection?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>to make the US beam more perpendicular to the long axis of the needle</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>to improve the color flow demonstration</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>to make the US beam more parallel to the long axis of the needle</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>to provide a better view of the posterior enhancement from the pseudoaneurysm</div>
+              
+            </div>
+            
+            
+            <img src="media/q52.jpg" alt="Question 52 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. to make the US beam more perpendicular to the long axis of the needle</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The more perpendicular the US beam is to the long axis of the needle, the easier it is to visualize due to increased reflection.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q53" style="animation-delay: 1820ms;">
+        <div class="card-header">
+          <div class="card-number">Question 53</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes the sonographic appearance of a transjugular intrahepatic portosystemic shunt?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>requires color Doppler evaluation to be able to visualize the graft within the liver</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>strongly reflective curved structure connecting the right portal vein and right hepatic vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>anechoic tube, without distinctive wall reflection, that connects the right hepatic vein to the right portal vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>shunts are not easily evaluated Sonographically and CTA is the preferred method for evaluation</div>
+              
+            </div>
+            
+            
+            <img src="media/q53.jpg" alt="Question 53 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. strongly reflective curved structure connecting the right portal vein and right hepatic vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The shunt is constructed of metallic substances with increased reflectivity in order to allow for better Sonographic visualization.
+The sonographic appearance of a transjugular intrahepatic portosystemic shunt is a strongly reflective curved structure
+connecting the right portal vein and right hepatic vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q54" style="animation-delay: 1855ms;">
+        <div class="card-header">
+          <div class="card-number">Question 54</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is an expected finding with an AV fistula caused by an interventional procedure?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>continuous venous outflow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>dilated venous collaterals adjacent to the fistula</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>high resistance arterial inflow</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>direct connection between a single artery and vein</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. direct connection between a single artery and vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>An AVM is a congenital malformation with multiple connections between the arterioles and venules without a capillary bed in
+between. Venous collaterals will develop and dilate over time.
+An AVF is a direct connection of an artery or vein caused by trauma or interventional procedure. Due to the acute formation of
+the connection, there are no collaterals present. The arterial inflow and venous outflow will demonstrate the same
+hemodynamic characteristics in an AVM and AVF, increased arterial flow volume, low resistance arterial inflow and pulsatile,
+turbulent venous outflow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q55" style="animation-delay: 1890ms;">
+        <div class="card-header">
+          <div class="card-number">Question 55</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is an absolute contraindication to an endovenous ablation?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>daily aspirin use</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>history of diabetes mellitus</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>uncooperative patient</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>current antibiotic use</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. uncooperative patient</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>An absolute contraindication is situation which makes a particular treatment or procedure absolutely inadvisable. These include
+a known allergy to the injected material (ablation, steroid injection) , lack of appropriate equipment or skill to complete the
+procedure, uncooperative patient (uncontrolled movement during the procedure can result in injury, laceration or hemorrhage )
+A relative contraindication is a condition which makes a particular treatment or procedure possibly inadvisable. Changes can be
+made to make the procedure safer or easier to perform. These include coagulopathy and the use of blood thinners, aspirin or
+antibiotics. If permitted by their physician, the patient can discontinue their blood thinner medication until their PT and INR
+values return to normal levels and then proceed with the invasive procedure. Warfarin, Coumadin, Jantoven, Xarelto, Pradaxa or
+Lovenox, Aspirin, Ibuprofen, NSAIDs should be stopped at least 7 days before a procedure and resumed 7 days after the
+procedure.
+Other relative contraindications include:
+Unsafe access route - must avoid large arteries and adjacent nerves
+Local infection, rash, or skin breakdown</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q56" style="animation-delay: 1925ms;">
+        <div class="card-header">
+          <div class="card-number">Question 56</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which upper extremity vein is most commonly evaluated for use as an arterial bypass graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>cephalic vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>brachial vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>radial vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>median cubital vein</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. cephalic vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The cephalic vein is most commonly harvested for use as a bypass.
+Powered by ExamBuilder. Copyright ©2026</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+    </section>
+  </main>
+  <script>
+    const detailsElements = Array.from(document.querySelectorAll("details"));
+    document.getElementById("open-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = true));
+    document.getElementById("close-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = false));
+  </script>
+</body>
+</html>

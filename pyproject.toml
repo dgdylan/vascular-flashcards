@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf-exam-flashcards"
+version = "0.1.0"
+description = "Convert exam-review PDFs into HTML and Anki flashcards."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "PyMuPDF>=1.24",
+  "Jinja2>=3.1",
+]
+
+[project.scripts]
+pdf-exam-flashcards = "flashcards_builder.cli:main"
+
+[tool.setuptools]
+packages = ["flashcards_builder"]

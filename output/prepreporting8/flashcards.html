@@ -1,0 +1,3564 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prep Reporting 8%</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06101d;
+      --bg-strong: #0b1628;
+      --card: rgba(17, 31, 52, 0.92);
+      --card-strong: rgba(20, 36, 60, 0.98);
+      --ink: #f4f8ff;
+      --muted: #b0bfd6;
+      --accent: #82ddd7;
+      --accent-strong: #b4f0eb;
+      --accent-soft: rgba(130, 221, 215, 0.16);
+      --border: rgba(149, 180, 221, 0.34);
+      --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
+      --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.28);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(130, 221, 215, 0.14), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(97, 130, 194, 0.18), transparent 24%),
+        linear-gradient(180deg, #071221 0%, var(--bg) 54%, #040b15 100%);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+    .wrap {
+      width: min(1080px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.5rem 0 4rem;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      padding: clamp(1.4rem, 2.5vw, 2rem);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94)),
+        linear-gradient(120deg, rgba(130, 221, 215, 0.08), rgba(97, 130, 194, 0.08));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      animation: rise-in 560ms ease-out both;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -35% auto;
+      width: 240px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
+      background: radial-gradient(circle, rgba(97, 130, 194, 0.4), transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4.8vw, 3.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 14ch;
+      text-wrap: balance;
+    }
+    .subhead {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .toolbar a, .toolbar button {
+      border: 1px solid var(--border);
+      background: var(--card-strong);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.78rem 1.05rem;
+      cursor: pointer;
+      text-decoration: none;
+      font: inherit;
+      font-weight: 700;
+      box-shadow: var(--shadow-soft);
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+    .toolbar a:hover, .toolbar button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(130, 221, 215, 0.42);
+      background: rgba(26, 45, 73, 1);
+    }
+    .cards {
+      display: grid;
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      animation: rise-in 520ms ease-out both;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+      border-color: rgba(130, 221, 215, 0.28);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(130, 221, 215, 0.09), rgba(97, 130, 194, 0.08)),
+        rgba(16, 30, 50, 0.88);
+    }
+    .card-number {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .pill {
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .card-body {
+      padding: 1.2rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .card-side {
+      display: grid;
+      gap: 0.75rem;
+    }
+    .label {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .content {
+      font-size: 1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .choices {
+      display: grid;
+      gap: 0.45rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(24, 41, 67, 0.98), rgba(17, 31, 52, 0.92));
+    }
+    .choice {
+      line-height: 1.5;
+    }
+    .choice-label {
+      font-weight: 700;
+      color: var(--accent);
+      margin-right: 0.3rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(8, 15, 27, 0.96);
+      display: block;
+      box-shadow: var(--shadow-soft);
+    }
+    details {
+      border-top: 1px dashed rgba(149, 180, 221, 0.34);
+      padding-top: 1rem;
+    }
+    summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 700;
+      list-style: none;
+      transition: color 180ms ease;
+    }
+    summary:hover { color: var(--accent-strong); }
+    summary::-webkit-details-marker { display: none; }
+    .answer-block {
+      margin-top: 0.9rem;
+      display: grid;
+      gap: 0.75rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(19, 35, 58, 0.98), rgba(13, 25, 43, 0.96));
+    }
+    .answer-title {
+      font-weight: 700;
+    }
+    @keyframes rise-in {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero, .card {
+        animation: none;
+      }
+      .toolbar a, .toolbar button, .card, summary {
+        transition: none;
+      }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 1rem, 1080px); padding-top: 1rem; }
+      .hero {
+        border-radius: 22px;
+        padding: 1.15rem;
+      }
+      .card-header, .card-body { padding: 1rem; }
+      .toolbar {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .toolbar a, .toolbar button {
+        width: 100%;
+        text-align: center;
+      }
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Review Deck</p>
+      <h1>Prep Reporting 8%</h1>
+      <p class="subhead">90 flashcards extracted from this PDF. Open each back panel to review the correct answer and full feedback.</p>
+      <div class="toolbar">
+        <a href="../index.html">Back to index</a>
+        <button type="button" id="open-all">Open all backs</button>
+        <button type="button" id="close-all">Close all backs</button>
+      </div>
+    </section>
+    <section class="cards">
+      
+      <article class="card" id="q1" style="animation-delay: 0ms;">
+        <div class="card-header">
+          <div class="card-number">Question 1</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are about to perform a lower extremity arterial duplex on a patient that recently had an MRA run-off exam. According to the attached image, what vessel will demonstrate reduced or absent flow in the right leg? view image</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior tibial artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>anterior tibial artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>common femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>superficial femoral artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. superficial femoral artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Note the limited display of contrast in the superficial femoral artery of the right leg and the anterior tibial artery of the left leg.
+You should expect that Doppler evaluation of these vessels will demonstrate little to no flow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q2" style="animation-delay: 35ms;">
+        <div class="card-header">
+          <div class="card-number">Question 2</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are performing a left upper extremity venous duplex exam. DVT is identified in the axillary and subclavian veins. Which of the following must also be included in the exam protocol for this patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>arterial flow pattern in the arteries associated with the thrombosed veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>bilateral brachial pressures</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>flow in the contralateral subclavian vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>pulse volume recording of the ipsilateral upper arm and forearm</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. flow in the contralateral subclavian vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>For all unilateral extremity venous exams, the flow in the contralateral extremity should be documented for comparison.
+Common femoral vein for the lower extremities and subclavian or internal jugular vein for the upper extremities.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q3" style="animation-delay: 70ms;">
+        <div class="card-header">
+          <div class="card-number">Question 3</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are performing a mesenteric duplex examination for suspected mesenteric ischemia. The findings are: SMA PSV 408cm/s, EDV 78cm/s, monophasic flow with turbulence Celiac PSV 300cm/s, EDV 55cm/s, monophasic flow with spectral window IMA PSV 180cm/s, EDV 25cm/s, monophasic flow with spectral window How will you report these findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>isolated stenosis of the celiac artery with compensatory flow in the SMA and IMA</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>isolated stenosis of the SMA with compensatory flow in the celiac artery and IMA</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>suspected mesenteric ischemia with abnormal flow velocities and waveforms in the SMA, IMA, and celiac artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>suspected mesenteric ischemia with abnormal flow velocities and waveforms in the SMA and celiac artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. isolated stenosis of the SMA with compensatory flow in the celiac artery and IMA</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If there is significant obstruction or occlusion of one mesenteric artery and the other two main arteries are normal, there can be
+associated changes in these normal vessels. If the SMA is occluded, the celiac artery may demonstrate flow with increased
+velocity and a normal spectral window (no post-stenotic turbulence). If the SMA is occluded, the IMA can increase in size and
+demonstrate increased flow velocity without post-stenotic turbulence. If the celiac artery is occluded, the SMA and/or IMA can
+demonstrate increased flow velocity without post-stenotic turbulence. Keep in mind that compensatory flow can mimic
+stenosis. It is very important to evaluate the waveform characteristics with elevated systolic velocities.
+Compensatory flow = increased velocity + spectral window
+Stenosis = increased velocity + post-stenotic turbulence</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q4" style="animation-delay: 105ms;">
+        <div class="card-header">
+          <div class="card-number">Question 4</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">All of the following should be included in the report from an exercise segmental pressure exam, except:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Duration of exercise</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Pressure recovery time in ankles</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Symptoms that occurred and when they started during the exercise</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Venous Refill Time (VRT)</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Venous Refill Time (VRT)</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Venous refill time is a part of a PPG report for insufficiency.
+The purpose of an exercise segmental pressure exam is to unmask PAD that is not displayed with the patient at rest. The
+duration of exercise and the time when symptoms started during exercise aids in quantification of the disease. The pressure
+recovery time after exercise has been stopped also aids in estimating PAD severity. Longer recovery times = more severe
+disease.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q5" style="animation-delay: 140ms;">
+        <div class="card-header">
+          <div class="card-number">Question 5</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are about to perform a lower extremity arterial duplex on a patient that recently had an MRA run-off exam. According to the attached image, what vessel will demonstrate reduced or absent flow in the left leg? view image</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior tibial artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>superficial femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>common femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>anterior tibial artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. anterior tibial artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Note the limited display of contrast in the superficial femoral artery of the right leg and the anterior tibial artery of the left leg.
+You should expect that Doppler evaluation of these vessels will demonstrate little to no flow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q6" style="animation-delay: 175ms;">
+        <div class="card-header">
+          <div class="card-number">Question 6</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What will be included in your preliminary report for this patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>There is a possible stenosis of the bilateral radial and/or ulnar arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>There is a possible stenosis of the right radial and/or ulnar artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>There is a possible stenosis of the left radial and/or ulnar artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>There is a possible stenosis of the bilateral mid brachial arteries</div>
+              
+            </div>
+            
+            
+            <img src="media/q6.png" alt="Question 6 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. There is a possible stenosis of the right radial and/or ulnar artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The significant drop in pressure occurs in the right arm between the forearm and the digit cuff. This indicates a possible
+stenosis of the distal radial or ulnar artery or a stenosis in the palmar arch arteries. A mid brachial artery stenosis will cause a
+drop in pressure between the upper arm and forearm cuffs. The finger-brachial index should be greater than 0.80. The DBI in
+the right arm is 70/156mmHg = 0.45. Although there is a drop in pressure between the left forearm and digit, the FBI is &gt;0.80.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q7" style="animation-delay: 210ms;">
+        <div class="card-header">
+          <div class="card-number">Question 7</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If the velocities in both carotid arteries are increased since last year&#39;s exam with no visible change in plaque formation, what should you review in the patient chart as a possible explanation?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>medical history for controlled HTN</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>lab values for decreased hematocrit levels</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>medical history for polycythemia vera</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>recent echocardiogram for signs of decreased cardiac output</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. lab values for decreased hematocrit levels</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Decreased hematocrit will lead to thinned blood with increased bilateral carotid velocities. Polycythemia vera leads to thickening
+of the blood which would decrease carotid velocities bilaterally. Increased output and uncontrolled HTN would cause increased
+bilateral carotid velocities.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q8" style="animation-delay: 245ms;">
+        <div class="card-header">
+          <div class="card-number">Question 8</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a segmental pressure exam. She states she has had DVT in her right leg three times over the last 2 years. Today she complains of right leg pain and mild swelling, but no color change. She states that the doctor could not find the pedal pulses on the right side. What should you review in the patient chart prior to starting the exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Lab values for lipid levels</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Surgical history for endoluminal graft placement</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Medical history for current Coumadin therapy</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Lab values for hematocrit levels</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Medical history for current Coumadin therapy</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The pressure cuffs can increase the risk for embolization to occur in the right leg. Current Coumadin therapy drastically reduces
+the ability of the embolism to make it to the lungs if it does form. Hematocrit levels can give you a clue to the blood thickness,
+but this does not assist you when considering the risk for embolism.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q9" style="animation-delay: 280ms;">
+        <div class="card-header">
+          <div class="card-number">Question 9</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A curvilinear transducer can be used to better evaluate:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>flow in the distal posterior tibial artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>deep veins in obese patients</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>varicosities covering a large area</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>flow in the anterior tibial artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. deep veins in obese patients</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Most DVT exams will be performed with a 5-7MHz linear transducer. A curvilinear transducer may be necessary to evaluate
+obese patients because of the lower frequency range and wider field of view in the near field compared to a sector array.
+Superficial structures are best evaluated with a high frequency linear transducer.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q10" style="animation-delay: 315ms;">
+        <div class="card-header">
+          <div class="card-number">Question 10</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You identify acute thrombosis of the left popliteal and femoral vein, and the proximal end of the clot has a free-floating tail. What should you do next?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Check the patient chart for a history of Coumadin therapy</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Call for a code blue due to the significant increased risk of embolism</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Check the great saphenous vein for thrombus propagation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Tell the patient to limit all movement because the DVT is unresolved and you need to consult the reading physician immediately</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Check the patient chart for a history of Coumadin therapy</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The free-floating tail can be a critical finding, The recent history of DVT could indicate that the patient is on anticoagulant
+therapy. If she is on Coumadin, this greatly reduces the risk of a pulmonary embolism from the tail. A preliminary report should
+be given to the nurse and the exam should be read by a physician immediately. A Sonographer should never give results or
+medical advice to a patient. Code blue is reserved for patients that are not breathing and in cardiac arrest.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q11" style="animation-delay: 350ms;">
+        <div class="card-header">
+          <div class="card-number">Question 11</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is the arrow pointing to on the abdominal angiography exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>fibromuscular dysplasia of the right renal artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>fibromuscular dysplasia of the left renal artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>normal tortuous splenic artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>normal right renal artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q11.jpg" alt="Question 11 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. fibromuscular dysplasia of the right renal artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>FMD demonstrates a bumpy lumen contour like a string of pearls.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q12" style="animation-delay: 385ms;">
+        <div class="card-header">
+          <div class="card-number">Question 12</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What technique is recommended for evaluation of the main portal vein in an obese patient with ascites and significant bowel gas?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>patient in the left lateral decubitus or oblique position with subcostal transducer position</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>patient in the supine position with subcostal transducer position</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>patient in the left lateral decubitus or oblique position with intercostal transducer position</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>patient in the right lateral decubitus or oblique position with intercostal transducer position</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. patient in the left lateral decubitus or oblique position with intercostal transducer position</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The preferred technique for evaluation of the main portal vein is to place the patient in the left lateral decubitus or oblique
+position with an intercostal transducer position . The intercostal approach from the right side uses the liver as an acoustic
+window. It also provides a shorter distance from the probe to the MPV than using a subcostal approach on an obese patient
+with a large abdominal girth. This approach also allows for the use of proper Doppler angles of 60 degrees or less. This is
+important when evaluating the velocity of flow in the MPV.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q13" style="animation-delay: 420ms;">
+        <div class="card-header">
+          <div class="card-number">Question 13</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You perform a carotid Doppler exam that demonstrates minimal atheroma formation bilaterally. You record waveforms that demonstrate laminar flow with the following velocities: Right Proximal CCA PSV 145cm/s, EDV 35cm/s Right Proximal ICA PSV 185cm/s, EDV 50cm/s Left Proximal CCA PSV 140cm/s, EDV 38cm/s Left Proximal ICA PSV 190cm/s, EDV 40cm/s What will you report on your worksheet?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Flow velocities are increased bilaterally, which is most likely related to increased cardiac output</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Flow velocities are normal bilaterally</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Flow velocities are increased bilaterally, which is most likely related to stenosis at the aortic valve</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Flow velocities are increased bilaterally, which is most likely related to soft plaque formation not visible on 2D and color evaluation</div>
+              
+            </div>
+            
+            
+            <img src="media/q13.jpg" alt="Question 13 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Flow velocities are increased bilaterally, which is most likely related to increased cardiac output</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Bilateral increased velocities in the CCA and ICA with no evidence of stenosis is usually related to increased cardiac output.
+Bilateral CCA velocities can be increased with aortic stenosis also, but the flow would not be laminar in the proximal CCA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q14" style="animation-delay: 455ms;">
+        <div class="card-header">
+          <div class="card-number">Question 14</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is an important part of Sonographer - Patient communication?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>explaining the exam and the results</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>verifying the patient&#39;s name and date of birth</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>offering advice on ways to alleviate symptoms until the doctor treats the problem</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>asking the patient if they are allergic to iodine</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. verifying the patient&#39;s name and date of birth</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Important parts of sonographer Communication include verifying the patient&#39;s name and date of birth, explaining the exam and
+when to expect the results and helping the patient locate their next exam or the exit.
+Sonographers should not offer treatment advice to the patient. Always refer them to their doctor when they have questions
+about their health status.
+Iodinated contrast is used radiology procedures. If the patient is having that type of procedure, the technologist performing the
+exam will assess their history.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q15" style="animation-delay: 490ms;">
+        <div class="card-header">
+          <div class="card-number">Question 15</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Why is an acute arterial occlusion in the lower extremity considered a critical finding?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>because it is not treatable</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the risk of stroke is significantly increased</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the risk of arterial rupture is significantly increased</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>collaterals have not had time to form to redistribute the blood</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. collaterals have not had time to form to redistribute the blood</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Without collaterals present to redistribute blood flow, the risk of tissue death and possible amputation is increased</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q16" style="animation-delay: 525ms;">
+        <div class="card-header">
+          <div class="card-number">Question 16</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When preparing for a patient with suspected thoracic outlet syndrome, what other information should you review for pertinent information?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Chest x-ray</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Lab results for hematocrit levels</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Aortogram</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>CT of the brain</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Chest x-ray</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A chest x-ray could demonstrate the cervical rib that is a common cause for TOS.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q17" style="animation-delay: 560ms;">
+        <div class="card-header">
+          <div class="card-number">Question 17</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are performing an upper extremity venous Doppler exam due to arm swelling and pain. The image displayed is from the left shoulder. Which of the following should be included on your preliminary report?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>There is acute thrombus formation around an intravenous catheter in the subclavian vein.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>There is chronic thrombus formation around an intravenous catheter in the subclavian vein.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>There are echogenic fibrous strands of retracted chronic thrombus present in the subclavian vein.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The subclavian vein is normal and completely patent with an intravenous catheter in the lumen.</div>
+              
+            </div>
+            
+            
+            <img src="media/q17.jpg" alt="Question 17 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. There is acute thrombus formation around an intravenous catheter in the subclavian vein.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The acute thrombus formation is very hypoechoic compared to the echogenic IV catheter present.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q18" style="animation-delay: 595ms;">
+        <div class="card-header">
+          <div class="card-number">Question 18</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents with an order for a lower extremity venous Doppler exam to rule out DVT. This patient should be evaluated in the _____________ position in order to _______________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>supine, reduce hydrostatic pressure</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>semi-erect, increase hydrostatic pressure</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>semi-erect, reduce hydrostatic pressure</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>supine, increase hydrostatic pressure</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. semi-erect, increase hydrostatic pressure</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The semi-erect position will also increase intraabdominal pressure which slows lower extremity venous return. This will fill the
+veins of the legs with blood making the US and Doppler evaluation much easier.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q19" style="animation-delay: 630ms;">
+        <div class="card-header">
+          <div class="card-number">Question 19</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Why are serial exams necessary on patients prescribed Streptokinase?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>to evaluate for the reduction of plaque formation in the arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>to evaluate for evidence of resolving arteritis due to Buerger disease</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>to evaluate for the presence of newly formed collateral arterial pathways</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>to evaluate for the recanalization of an acute arterial occlusion</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. to evaluate for the recanalization of an acute arterial occlusion</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Streptokinase is a lytic agent used to treat an acute arterial occlusion and significant, extensive acute DVT. Serial exams are
+necessary to evaluate recanalization and tailor the treatment accordingly.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q20" style="animation-delay: 665ms;">
+        <div class="card-header">
+          <div class="card-number">Question 20</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Patients are examined in the ______________ position for a lower extremity arterial Doppler exam in order to _______________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>supine, increase hydrostatic pressure</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>semi-erect, reduce hydrostatic pressure</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>semi-erect, increase hydrostatic pressure</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>supine, reduce hydrostatic pressure</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. supine, reduce hydrostatic pressure</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Patients are examined in the supine position for a lower extremity arterial Doppler exam in order to reduce hydrostatic
+pressure.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q21" style="animation-delay: 700ms;">
+        <div class="card-header">
+          <div class="card-number">Question 21</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is important information to record on the final report for a carotid Doppler exam on a patient with 50-69% ICA stenosis?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Mechanical index settings</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Recommendation for TCD exam for associated intracerebral disease</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Doppler angles used on the exam</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Transducer frequency used for the exam</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Doppler angles used on the exam</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A patient with 50-69% stenosis will be followed with serial ultrasound examinations annually or semiannually. The Doppler
+angles used in this exam should be duplicated on the serial exams for the most accurate assessment of changes in the level of
+stenosis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q22" style="animation-delay: 735ms;">
+        <div class="card-header">
+          <div class="card-number">Question 22</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents with dysphagia and hoarseness. The referring physician suspects Ortner syndrome. What type of exam will you be performing?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>transcranial Doppler imaging exam</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>upper extremity arterial duplex exam</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>bilateral carotid duplex exam</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>transcranial Doppler exam</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. upper extremity arterial duplex exam</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>In some patients the right subclavian artery can be a direct branch of the aorta distal to the left subclavian origin. It is called
+retroesophageal subclavian artery or aberrant right subclavian artery. The artery usually originates from a dilated segment of
+the proximal descending aorta called the Kommerell diverticulum. The abnormal course of the vessel can cause dysphagia due
+to compression of the esophagus or the laryngeal nerve. Ortner syndrome - palsy of the recurrent laryngeal nerve that causes
+changes in the voice, including hoarseness.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q23" style="animation-delay: 770ms;">
+        <div class="card-header">
+          <div class="card-number">Question 23</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What vessel(s) should be closely evaluated for a related cause for a new cerebellar infarct seen on a CT of the brain?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>vertebral and basilar arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>middle and posterior cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>anterior and middle cerebral arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>posterior cerebral artery and carotid siphon</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. vertebral and basilar arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The cerebellum is supplied by branches from the vertebral and basilar arteries. A cerebellar infarct would by related
+abnormalities of the vertebrobasilar circulation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q24" style="animation-delay: 805ms;">
+        <div class="card-header">
+          <div class="card-number">Question 24</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a critical finding that requires immediate attention?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>echogenic walls and posterior shadowing from a hepatoportal shunt that was inserted 2 days ago</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>recanalization of the great saphenous vein after chemical ablation</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>dilated hepatic veins in a liver transplant patient</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>acute occlusion of the external iliac artery in a renal transplant patient</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. acute occlusion of the external iliac artery in a renal transplant patient</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>An acute arterial occlusion of any artery is a critical finding but especially in renal transplant patients. Acute occlusion of the
+renal artery or supplying artery can cause significant damage or loss of the allograft. Most renal transplant arteries are
+connected to the external iliac artery. An acute occlusion of this artery not only puts the leg at risk of damage, but the renal
+allograft as well.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q25" style="animation-delay: 840ms;">
+        <div class="card-header">
+          <div class="card-number">Question 25</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When evaluating a suspected stenosis in the lower extremity arterial system, the peak systolic velocity is documented on the waveforms obtained. What other two factors should be reported to determine the severity of the stenosis?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>resistive index and velocity ratio</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>velocity ratio and diastolic flow direction</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>resistive index and diastolic flow direction</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>pulsatility index and reflux time</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. velocity ratio and diastolic flow direction</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The velocity ratio is used to compare the PSV proximal to the stenosis to the PSV at the stenosis. A ratio greater than 2 indicates
+stenosis. A triphasic pattern has two components of diastolic flow. Retrograde flow occurs immediately after systole ends
+followed by a small amount of antegrade flow. When the second component of diastolic flow is absent, the waveform is
+considered biphasic. Monophasic flow demonstrates antegrade flow in systole and diastole. Resistive and Pulsatility indices are
+not commonly used to report the severity of stenosis in the extremities. The RI is necessary when evaluating parenchymal
+perfusion in an organ like the kidney or liver.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q26" style="animation-delay: 875ms;">
+        <div class="card-header">
+          <div class="card-number">Question 26</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When reporting spectral Doppler information the Sonographer must:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>always record the highest velocity obtained from all signals</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>classify each waveform as triphasic, biphasic or monophasic</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>record the highest quality and highest velocity signals for the final measurements</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>document the frequency of the transducer used for the exam should be indicated in the report</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. record the highest quality and highest velocity signals for the final measurements</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Spectral Doppler measurements should be made at the modal (densest) margin of the flow signal. Multiple samples may be
+taken at the same site. Use the highest quality and highest velocity signals for final measurements. Do not report Doppler flow
+information from waveforms with poor definition or of marginal quality.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q27" style="animation-delay: 910ms;">
+        <div class="card-header">
+          <div class="card-number">Question 27</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which exam would be improved by the administration of Simethicone prior to the ultrasound evaluation?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>lower extremity segmental pressures</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>transcranial duplex</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>renal artery duplex</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>carotid duplex</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. renal artery duplex</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Simethicone is a medication that is used to reduce bowel gas. It may be beneficial when performing abdominal duplex exams.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q28" style="animation-delay: 945ms;">
+        <div class="card-header">
+          <div class="card-number">Question 28</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes an important reason to verify the US examination that is ordered is the exam that should really be performed?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Sonographers should not question the orders written by physicians and perform the exams as ordered.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>When the suspected abnormality is better visualized by another modality</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>When the suspected diagnosis is not able to be evaluated by the exam that is ordered</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>When the exam is ordered after hours and no reading physician is available</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. When the suspected diagnosis is not able to be evaluated by the exam that is ordered</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When the suspected diagnosis is not able to be evaluated by the exam that is ordered, this is an important reason to verify the
+US examination that is ordered is the exam that should really be performed.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q29" style="animation-delay: 980ms;">
+        <div class="card-header">
+          <div class="card-number">Question 29</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a dedicated transcranial Doppler exam to rule out an AV fistula . What should you do first?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Send the patient to the MRI department instead.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Start with the MCA on the affected side.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Start with the MCA on the opposite side from the suspected abnormality.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Consult the radiologist regarding the inability to visualize the abnormality on TCD.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Consult the radiologist regarding the inability to visualize the abnormality on TCD.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>TCD does not provide an image, only Doppler waveforms. This makes diagnosis of an AV fistula very difficult if not impossible.
+Anytime the procedure cannot evaluate the suspected disorder, you should clarify the order with the radiologist or referring
+physician before proceeding
+physician before proceeding.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q30" style="animation-delay: 1015ms;">
+        <div class="card-header">
+          <div class="card-number">Question 30</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which transducer should be selected for a renal artery Doppler examination for a patient that is 5&#39;5&#34; and 150lbs?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>2.5MHz curvilinear array</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>3.5MHz phased array</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>3.5MHz curvilinear array</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>3.5MHz linear array</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. 3.5MHz curvilinear array</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A curved transducer is necessary for abdominal vascular evaluations. 3.5MHz should be sufficient for an average sized patient.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q31" style="animation-delay: 1050ms;">
+        <div class="card-header">
+          <div class="card-number">Question 31</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient is referred for a Doppler ultrasound of the IVC and hepatic veins due to an abnormal echocardiogram. The report states that the hepatic veins appear to empty directly into the right atrium with limited visualization of the upper IVC. What are you looking for in the abdomen?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>portal HTN</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>azygous or hemiazygos IVC</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>situs inversus</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>duplicated IVC</div>
+              
+            </div>
+            
+            
+            <img src="media/q31.jpg" alt="Question 31 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. azygous or hemiazygos IVC</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Interrupted IVC - failure of the IVC to form correctly in the upper abdomen/liver; azygous and hemiazygos veins drain blood
+from the distal IVC segment; hepatic veins drain directly into the right atrium</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q32" style="animation-delay: 1085ms;">
+        <div class="card-header">
+          <div class="card-number">Question 32</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is not a patient demographic that would be used to track vascular disease occurrence?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Degree of stenosis found on the current exam</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Ethnicity</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Geographic location</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Gender</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Degree of stenosis found on the current exam</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Degree of stenosis on the exam is not a patient demographic.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q33" style="animation-delay: 1120ms;">
+        <div class="card-header">
+          <div class="card-number">Question 33</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents with localized swelling and redness of the left calf that started two days ago. The referring physician requested a segmental pressure exam. What should you do first?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Change the order to a venous Doppler after you speak to the patient regarding their symptoms.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Start with the brachial pressures and then perform the lower extremity pressures.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Start with the ankle pressures, then move up the leg and finish with the brachial pressures.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Discuss the order with the radiologist to confirm that the exam that is ordered should be performed.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Discuss the order with the radiologist to confirm that the exam that is ordered should be performed.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Anytime the procedure could be detrimental to the patient, you should clarify the order with the radiologist or referring
+physician. This patient demonstrates symptoms and signs of a possible acute DVT. Applying pressure cuffs to a vein with
+thrombus in it could cause emboli propagation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q34" style="animation-delay: 1155ms;">
+        <div class="card-header">
+          <div class="card-number">Question 34</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If a patient complains of a single 12hr episode of right arm paresthesia and paralysis, what will you report on your technologist worksheet?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>history of transient ischemic attack</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>history of cerebrovascular accident</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>history of amaurosis fugax</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>history of reversible ischemic neurological defect</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. history of transient ischemic attack</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Symptoms that last less than 24hrs = TIA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q35" style="animation-delay: 1190ms;">
+        <div class="card-header">
+          <div class="card-number">Question 35</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents with a 2-year history of a brachiocephalic hemodialysis fistula. She currently complains that her hand goes numb and turns white when she exercises. You are performing an upper extremity arterial exam and the attached images are from her exam. What will you include in your report?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Steal syndrome is present.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The exam is normal and does not explain the patient&#39;s symptoms.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>There is an obstruction in the palmar arch.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The proximal radial artery is occluded</div>
+              
+            </div>
+            
+            
+            <img src="media/q35.jpg" alt="Question 35 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Steal syndrome is present.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Steal syndrome can occur with a hemodialysis graft. Flow moves down the arm through the ulnar artery, through the palmar
+arch to the radial artery. Blood flow takes the path of least resistance. Because the pressure in the outflow vein is so low, flow
+reverses in the radial artery as the blood is sucked up the arm and into the cephalic vein. When the patient exercises, the
+demand for blood increases in the hand but the ulnar artery cannot supply enough by itself = symptoms.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q36" style="animation-delay: 1225ms;">
+        <div class="card-header">
+          <div class="card-number">Question 36</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If a patient has a history of 80% stenosis of the left internal carotid artery identified on a MRA exam. Which of the following Doppler velocities from the ICA will correlate well with the predicted level of stenosis?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>PSV 200cm/s, EDV 100cm/s</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>PSV 200cm/s, EDV 80cm/s</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>PSV 300cm/s, EDV 150cm/s</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>PSV 125cm/s, EDV 40cm/s</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. PSV 300cm/s, EDV 150cm/s</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Strandness Criteria: 80-99% stenosis = PSV &gt;125cm/s, EDV &gt;140cm/s
+SRU Criteria &gt;70% stenosis = PSV &gt;230cm/s, EDV &gt;100cm/s
+ICAVL Criteria &gt;70% stenosis = PSV &gt;230cm/s, EDV &gt;100cm/s</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q37" style="animation-delay: 1260ms;">
+        <div class="card-header">
+          <div class="card-number">Question 37</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is not a patient demographic that is collected to evaluate patient population statistics for those with vascular disease?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Age</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Ethnicity</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Employment history</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Gender</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Employment history</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Employment history is not considered a relevant patient demographic used to track the occurrence of vascular disease.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q38" style="animation-delay: 1295ms;">
+        <div class="card-header">
+          <div class="card-number">Question 38</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">According to the findings on this arteriogram, which vessel will demonstrate absent or abnormal flow pattern on a carotid Duplex exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>LCCA, L Vertebral, L Subclavian</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>R and L vertebral arteries and R Subclavian</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>R Subclavian and R CCA</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>R Vertebral and R Subclavian</div>
+              
+            </div>
+            
+            
+            <img src="media/q38.jpg" alt="Question 38 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. LCCA, L Vertebral, L Subclavian</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>There is a significant stenosis of the left CCA and an occlusion of the proximal left subclavian. The left CCA will demonstrate
+post-stenotic turbulence and elevated velocity in the proximal segment. There is no flow demonstrated in the left subclavian or
+vertebral artery. NO steal is present or these vessels would be identified on the image.
+**Image Credit Bronchiectasis and hoarseness of voice in takayasu arteritis: a rare presentation. Nd Perera G, C Jayasinghe A, D
+Dias L, Kulatunga A - BMC Res Notes (2012)</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q39" style="animation-delay: 1330ms;">
+        <div class="card-header">
+          <div class="card-number">Question 39</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is the best patient position for performing a transcranial Doppler exam to obtain a waveform from both of the middle cerebral arteries?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>seated on a stool, with their back to you and the machine</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>supine with chin in neutral position</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>seated on a stool, facing you and the machine</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>left lateral decubitus with left hand placed under the head for support</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. supine with chin in neutral position</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The transtemporal window is used to evaluate the MCA flow bilaterally. The transducer is placed on the lateral side of the head
+at the temple. Placing the patient in the supine position allows for evaluation of both sides.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q40" style="animation-delay: 1365ms;">
+        <div class="card-header">
+          <div class="card-number">Question 40</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If an arteriogram of the carotid arteries indicates a 60% stenosis of the left internal carotid artery, which of the following Doppler velocities from the ICA will correlate well with the predicted level of stenosis?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>PSV 125cm/s, EDV 40cm/s</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>PSV 300cm/s, EDV 150cm/s</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>PSV 200cm/s, EDV 160cm/s</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>PSV 200cm/s, EDV 80cm/s</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. PSV 200cm/s, EDV 80cm/s</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Strandness Criteria: 50-79% stenosis = PSV &gt;125cm/s, EDV &lt;140cm/s
+SRU Criteria 50-69% stenosis = PSV 125 - 230cm/s, EDV 40 - 100cm/s
+ICAVL Criteria 50-69% stenosis = PSV 180 - 230cm/s, EDV 40 - 100cm/s</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q41" style="animation-delay: 1400ms;">
+        <div class="card-header">
+          <div class="card-number">Question 41</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A 76yr old female with diabetes, HTN, and COPD is sent to the vascular lab for a six month follow up on a carotid stenosis. What is the best patient position to use for the exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Supine, neck slightly extended</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Seated upright on a stool beside the machine, facing you</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Trendelenburg position</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Semi erect with or without a pillow</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Semi erect with or without a pillow</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If the patient has COPD, they should not lie flat on their back. They should be scanned in the semi-erect position, usually
+without a pillow to maintain a straight neck position. If the patient is seated on a stool, it will be difficult for them to hold steady
+for the exam and the Sonographer position would be improper ergonomically.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q42" style="animation-delay: 1435ms;">
+        <div class="card-header">
+          <div class="card-number">Question 42</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When providing a preliminary report for a significant ICA stenosis, what should be included?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>end systolic velocities in the common and internal carotid arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>angles of insonation used to obtain Doppler signals</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>hemispheric index for both carotids</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>peak systolic and end diastolic velocities in the common and internal carotid arteries</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. peak systolic and end diastolic velocities in the common and internal carotid arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The peak systolic AND end diastolic velocities should be included in the report. The hemispheric index is used in TCD evaluation
+to compare MCA and ICA velocities. The Doppler angles do not need to be included in the preliminary report provided by the
+technologist, but should be included in the final report. Most ultrasound systems transfer this information on each image, along
+with in chart form at the end of the exam.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q43" style="animation-delay: 1470ms;">
+        <div class="card-header">
+          <div class="card-number">Question 43</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The images displayed are from an aortic Doppler evaluation on an ER trauma patient. What should you do upon completion of the exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Leave a preliminary report with the nurse describing the AV fistula and send the exam to the PACS system for a stat interpretation by the radiologist.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Leave a preliminary report with the nurse describing the dissection and send the exam to the PACS system for a stat interpretation by the radiologist.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Leave a preliminary report with the nurse describing the mild atherosclerosis in the distal aorta but an otherwise normal exam.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Provide a preliminary report describing normal flow in the aorta and IVC.</div>
+              
+            </div>
+            
+            
+            <img src="media/q43.jpg" alt="Question 43 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Leave a preliminary report with the nurse describing the dissection and send the exam to the PACS system for a stat interpretation by the radiologist.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Leave a preliminary report with the nurse describing the dissection and send the exam to the PACS system for a stat
+interpretation by the radiologist. A dissection is a critical finding that requires immediate attention.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q44" style="animation-delay: 1505ms;">
+        <div class="card-header">
+          <div class="card-number">Question 44</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You perform a bilateral venous Doppler due to unilateral swelling and pain in the right leg. Which of the following should be reported on your technologist worksheet?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Probable left common iliac vein thrombosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Probable right common iliac vein thrombosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Probable IVC thrombosis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Probable May-Thurner syndrome</div>
+              
+            </div>
+            
+            
+            <img src="media/q44.jpg" alt="Question 44 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Probable right common iliac vein thrombosis</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Continuous flow in the iliac vein indicates a proximal obstruction. The left EIV waveform is normal but the right EIV waveform is
+continuous. This indicates a right common iliac obstruction. IVC obstruction would cause bilateral continuous waveforms.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q45" style="animation-delay: 1540ms;">
+        <div class="card-header">
+          <div class="card-number">Question 45</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a critical finding?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>4cm aortic aneurysm</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Atherosclerotic occlusion of the superficial femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>AV fistula with a volume flow rate of 800 ml/min</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>DVT with a free-floating tail</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. DVT with a free-floating tail</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The free-floating tail can be a critical finding because it greatly increases the risk of a pulmonary embolism. Normal VFR for an
+AV fistula is 500 - 1200 ml/min. Atherosclerotic occlusion is a chronic process that often results in collateral formation. Total
+occlusion is typically accompanied by an increase in collateral flow. A 5.5cm AAA or larger is considered a critical finding.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q46" style="animation-delay: 1575ms;">
+        <div class="card-header">
+          <div class="card-number">Question 46</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a required part of the Sonographer&#39;s preliminary report for a lower extremity segmental pressure exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>patient position during the exam</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>systolic and diastolic pressure measurements</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>peak velocity of the flow in the arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>duration of cuff inflation during the exam</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. patient position during the exam</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If the patient is unable to be examined in the supine position, this must be documented on the preliminary report for the
+interpreting physician because the pressures obtained may be artifactually elevated. The systolic pressure measurements are
+obtained and reported, but no diastolic pressures are obtained in the legs. Flow velocity is not reported on a segmental
+pressure exam. It is an important part of an arterial duplex exam.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q47" style="animation-delay: 1610ms;">
+        <div class="card-header">
+          <div class="card-number">Question 47</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">According to the findings on this arteriogram, which vessel will demonstrate a post-stenotic flow pattern on a carotid Duplex exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>RCCA, R Vertebral, R Subclavian</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>L Vertebral and L Subclavian</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Proximal L CCA</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>R and L vertebral arteries and R Subclavian</div>
+              
+            </div>
+            
+            
+            <img src="media/q47.jpg" alt="Question 47 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Proximal L CCA</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>There is a significant stenosis of the left common carotid artery and an occlusion of the proximal left subclavian. No flow will be
+identified in the left subclavian and vertebral artery.
+***Image Credit Bronchiectasis and hoarseness of voice in takayasu arteritis: a rare presentation. Nd Perera G, C Jayasinghe A,
+D Dias L, Kulatunga A - BMC Res Notes (2012)</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q48" style="animation-delay: 1645ms;">
+        <div class="card-header">
+          <div class="card-number">Question 48</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What lab values may be elevated with renal artery stenosis?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>hematocrit</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>prothrombin time</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>blood pressure</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>serum BUN and creatinine</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. serum BUN and creatinine</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Renal artery stenosis will limit the blood flow through the kidney. This decrease in renal filtration of blood can be demonstrated
+in lab testing by increased serum levels of BUN and creatinine. Systemic BP will rise with significant RAS, but it is not a lab value.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q49" style="animation-delay: 1680ms;">
+        <div class="card-header">
+          <div class="card-number">Question 49</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following acronyms refers to the standard image file storage format used in medical facilities in the United States?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>JPEG</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>DICOM</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>MPEG</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>AVI</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. DICOM</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>DICOM - Digital Imaging &amp; COmmunications in Medicine provides a standard for handling, storing, and transmitting information
+in medical imaging.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q50" style="animation-delay: 1715ms;">
+        <div class="card-header">
+          <div class="card-number">Question 50</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The attached image is taken from a lower extremity venous Doppler exam. Which of the following should be included in your preliminary report?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The left PTV demonstrates normal flow and response to distal augmentation.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The left PTV demonstrates normal flow and response to proximal augmentation.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>The left PTV demonstrates abnormal absence of spontaneous flow but normal response to proximal augmentation.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The left PTV demonstrates abnormal absence of spontaneous flow but normal response to distal augmentation.</div>
+              
+            </div>
+            
+            
+            <img src="media/q50.jpg" alt="Question 50 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. The left PTV demonstrates normal flow and response to distal augmentation.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The deep calf veins and superficial veins do not normally exhibit spontaneous flow patterns. Augmentation is usually necessary
+to demonstrate patency of these veins.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q51" style="animation-delay: 1750ms;">
+        <div class="card-header">
+          <div class="card-number">Question 51</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a mesenteric Doppler to rule out stenosis. They have a history of diabetes, HTN, pain and nausea post-prandially. Which of the following appointment times would be best for this exam to be scheduled?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>1pm, after a good fatty meal</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>8am, NPO for 6-8hrs prior</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>10am, after light breakfast</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>230pm because the patient prefers this time</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. 8am, NPO for 6-8hrs prior</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Diabetic patients and those for studies that require an NPO status should be scheduled very early in the morning.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q52" style="animation-delay: 1785ms;">
+        <div class="card-header">
+          <div class="card-number">Question 52</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">According to the findings on this arteriogram, which of the following symptoms would be explained by the findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Isolated visual disturbances in the left eye</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Right arm paralysis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Left leg paresthesia</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Left arm paresthesia</div>
+              
+            </div>
+            
+            
+            <img src="media/q52.jpg" alt="Question 52 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Left arm paresthesia</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The carotid system appears patent. The left subclavian artery is absent from the image which indicates complete obstruction at
+the origin, The left vertebral artery normally originates from the proximal subclavian artery and is also absent from the image.
+Both of these vessels will demonstrate absence of flow on a Duplex exam. The only symptoms listed that would be related to
+these findings would be related to the left arm.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q53" style="animation-delay: 1820ms;">
+        <div class="card-header">
+          <div class="card-number">Question 53</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents with an order for a lower extremity venous Doppler exam to rule out venous insufficiency. This patient should be evaluated in the _____________ position in order to _______________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>standing, increase hydrostatic pressure</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>supine, reduce hydrostatic pressure</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>supine, increase hydrostatic pressure</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>standing, reduce hydrostatic pressure</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. standing, increase hydrostatic pressure</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The standing position will increase hydrostatic or gravitational pressure, which slows lower extremity venous return. This will fill
+the veins of the legs with blood making the US and Doppler evaluation much easier. It will also cause superficial varicosities to
+engorge with blood for better visualization.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q54" style="animation-delay: 1855ms;">
+        <div class="card-header">
+          <div class="card-number">Question 54</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a carotid ultrasound. The exam demonstrates significant calcification in the proximal ICA on the left side and the Doppler signal is not obtained. Antegrade flow in the mid ICA has a peak velocity of 30cm/s and end diastolic velocity of 10 cm/s. How will you report these findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Critical stenosis proximal left ICA.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Suspected critical stenosis in the proximal left ICA, but the exam was limited by shadowing from atheroma formation.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Normal exam with limited evaluation of the proximal ICA.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Normal exam.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Suspected critical stenosis in the proximal left ICA, but the exam was limited by shadowing from atheroma formation.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Any limitation in the exam that obscures your view of anatomy should be reported to the physician in the technologist findings.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q55" style="animation-delay: 1890ms;">
+        <div class="card-header">
+          <div class="card-number">Question 55</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a carotid ultrasound due to the presence of bilateral bruits in the proximal neck. What should be the next step in evaluating this patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Evaluate the cardiac history section of the patient chart to look for a history of aortic valve stenosis.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Evaluate the cardiac history section of the patient chart to look for a history of CHF.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Evaluate the medical history section of the patient chart to look for a history of polycythemia vera</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Evaluate the vascular history section of the patient chart to look for a history of a subclavian steal</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Evaluate the cardiac history section of the patient chart to look for a history of aortic valve stenosis.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Bilateral carotid bruits and changes in both carotid flow patterns can be related to aortic stenosis. If the aortic valve is stenotic
+causing increased flow velocity and turbulence, flow in both carotids will reflect this change and may demonstrate bilateral
+bruits.
+CHF would lead to decreased flow through both carotids but a bruit would most likely NOT be identified due to slow moving
+flow. Polycythemia vera causes the blood to thicken = slower velocities = reduced risk of bilateral bruit. A subclavian steal
+involves the rerouting of blood and would not be associated with a bilateral bruit.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q56" style="animation-delay: 1925ms;">
+        <div class="card-header">
+          <div class="card-number">Question 56</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Why should a venous insufficiency exam be performed with the patient in the standing position?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>To ensure the valve leaflets are closed during the exam</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>To increase the effects of the Valsalva maneuver</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>To evaluate the veins with the added effect of hydrostatic pressure</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>To engorge the veins to make them easier to identify with ultrasound</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. To evaluate the veins with the added effect of hydrostatic pressure</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A venous insufficiency exam should be performed with the patient in the standing position to evaluate the veins with the added
+effect of hydrostatic pressure. This will allow reflux to more easily be identified if it is present.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q57" style="animation-delay: 1960ms;">
+        <div class="card-header">
+          <div class="card-number">Question 57</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What will you include in your preliminary report for this patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>There is a possible obstruction of the right innominate artery or the subclavian artery.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>There is a possible obstruction of the left subclavian artery.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>There is a possible obstruction of the left innominate artery or the subclavian artery.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>There is a possible obstruction of the left innominate artery.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. There is a possible obstruction of the left subclavian artery.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Keep in mind, there is no left innominate artery. The left subclavian artery originates from the aortic arch. The pressures
+indicate a blockage in the left upper arm arteries (subclavian or axillary). The pressure difference between the arms is greater
+than 20mmHg. The arm with the lower pressure is the arm with the problem.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q58" style="animation-delay: 1995ms;">
+        <div class="card-header">
+          <div class="card-number">Question 58</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Venography is usually performed with the patient in what position?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Supine with table horizontal</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Lithotomy position</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Supine with table at 60-degree Trendelenburg</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Supine with table at 60-degree reverse Trendelenburg</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Supine with table at 60-degree reverse Trendelenburg</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Venography is performed with the patient in the semi-erect position to dilate the veins, making them more visible. When
+evaluating a patient for insufficiency, the semi-erect position helps to demonstrate the reflux that occurs when the patient is
+standing. When the patient lays on the table, the table can be adjusted to a 60-degree reverse Trendelenburg position to dilate
+the veins and increase hydrostatic pressure.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q59" style="animation-delay: 2030ms;">
+        <div class="card-header">
+          <div class="card-number">Question 59</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The 2D images displayed are from a normal renal Doppler evaluation in a patient with a history of 4.5cm distal AAA and acute onset of moderate HTN. What should you do to further evaluate or communicate the findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Review the chart to confirm the suspected abnormal renal function testing results.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Include notes in the renal artery Doppler report for the reading physician regarding the presence of free fluid around the kidney that is most likely due to chronic renal failure.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Include notes regarding the presence of ascites in the peritoneal cavity in the renal artery Doppler report for the reading physician.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Evaluate the AAA for change in size or wall continuity.</div>
+              
+            </div>
+            
+            
+            <img src="media/q59.jpg" alt="Question 59 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Evaluate the AAA for change in size or wall continuity.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The free fluid found in the perirenal space posterior to the kidney (not in peritoneal cavity) can indicate a rupture of the AAA
+which the number one complication of AAA. The acute change in blood pressure also indicates a leak because the kidneys are
+raising the BP due to ischemia. The kidney demonstrates normal size and echotexture with no sign of renal failure.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q60" style="animation-delay: 2065ms;">
+        <div class="card-header">
+          <div class="card-number">Question 60</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a venous insufficiency exam. The exam demonstrates normal bilateral saphenous veins that extend up to the distal thigh, but do not appear to connect to the deep system. What should you review in the patient chart to explain these findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>medical history for Klippel Trenaunay Webber syndrome</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>medical history for Paget Schroetter syndrome</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>surgical history for venous ligation of the bilateral GSVs</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>treatment history for RF ablation of the bilateral GSVs</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. surgical history for venous ligation of the bilateral GSVs</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Ligation of the proximal segment of the GSV could produce these findings. Prior to the introduction of endovenous treatment,
+ligation of the diseased segments was commonly performed to treat reflux. RF ablation would affect a larger segment of the
+GSV. Klippel Trenaunay Webber syndrome refers to the congenital absence of the deep venous system of the legs. Paget
+Schroetter syndrome refers to thrombosis of the subclavian vein due to excessive motion, usually related to TOS.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q61" style="animation-delay: 2100ms;">
+        <div class="card-header">
+          <div class="card-number">Question 61</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a TCD exam with a recent diagnosis of subdural hematoma. What is the physician looking for on the TCD exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>hematoma formation within the cranium</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>associated intracranial stenosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>associated distal carotid stenosis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>vasospasm</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. vasospasm</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>TCD does not provide an image and US is not effective for accurate diagnosis of hematoma formation in the cranium.
+Intracranial stenosis would most commonly lead to ischemia, not hemorrhage
+TCD for Vasospasm is used in patients with subarachnoid hemorrhage, usually caused by a slow bleed. Vasospasm usually
+occurs within 14 days of the start of the hemorrhage. Flow velocities increase in MCA, ACA and PCA with subarachnoid
+hemorrhage. Serial evaluations are performed to evaluate the PSV in the MCA. If hemorrhage is present, MCA peak velocity over
+80cm/s indicates flow changes due to hemorrhage; MCA peak velocity over 200cm/s indicates severe significant reduction in
+intracerebral flow. Hemispheric Index - divide MCA velocity by the distal/terminal ICA velocity; HI &gt; 3 ABNL</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q62" style="animation-delay: 2135ms;">
+        <div class="card-header">
+          <div class="card-number">Question 62</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are performing a left lower extremity venous duplex exam. DVT is identified in the popliteal and femoral veins. Which of the following must also be included in the exam protocol for this patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>flow in the contralateral common femoral vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>pulse volume recording of the calf and thigh of the contralateral leg</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>ankle brachial index</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>arterial flow pattern in the arteries associated with the thrombosed veins</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. flow in the contralateral common femoral vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>For all unilateral extremity venous exams, the flow in the contralateral extremity should be documented for comparison.
+Common femoral vein for the lower extremities and subclavian or internal jugular vein for the upper extremities.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q63" style="animation-delay: 2170ms;">
+        <div class="card-header">
+          <div class="card-number">Question 63</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Air in a patch used during a carotid endarterectomy can degrade the evaluation of the treated area in the immediate post-op setting. What is the recommended approach for evaluating these patients?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>use sterile gel and scan directly over the incision</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>use the most posterior approach possible</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>patients with a recent endarterectomy should not be evaluated with ultrasound within the first 14 days after the procedure</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>use the most anterior approach possible</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. use the most posterior approach possible</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If ultrasound performed soon after the procedure, artifacts produced by air in the patch or graft may inhibit the exam. To
+minimize artifact from air in the patch, use the most posterior approach possible to evaluate the bifurcation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q64" style="animation-delay: 2205ms;">
+        <div class="card-header">
+          <div class="card-number">Question 64</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a carotid ultrasound. The exam demonstrates significant atheroma formation and string flow in the proximal right ICA. Which of the following signs or symptoms listed in the patient chart would be related to the findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>left eye visual disturbances</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>left arm and leg paresthesia</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>right sided bruit</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>right sided hemiparesis</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. left arm and leg paresthesia</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A critical stenosis that produces only minimal flow at the stenosis will not demonstrate a bruit. The right side of the brain
+controls the left side of the body. Left side symptoms in the body will be associated with right ICA disease. Visual symptoms
+occur on the same side as the obstruction. Left eye symptoms will be associated with left ICA disease.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q65" style="animation-delay: 2240ms;">
+        <div class="card-header">
+          <div class="card-number">Question 65</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for an ABI exam due to bilateral calf pain. He is a dialysis patient with an occluded graft in the right arm and a patent graft in the left arm. What should you do first?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Skip the brachial pressures and just do the ankle pressures</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Call the referring physician to explain that the exam is not possible for this patient</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Take the pressure in the arm with the occluded graft</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Change the exam t o a lower extremity arterial exam and start scanning</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Call the referring physician to explain that the exam is not possible for this patient</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>NEVER take a blood pressure in an arm with a hemodialysis graft. The ABI exam requires accurate brachial pressure readings in
+order to calculate the ABI. Without the brachial pressures, the exam is non-diagnostic. You should contact the referring
+physician to alert them of the issue and ask if they would like to order a different exam to assist the patient. NEVER cancel or
+change a physician&#39;s order. They must submit a new order if something changes.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q66" style="animation-delay: 2275ms;">
+        <div class="card-header">
+          <div class="card-number">Question 66</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are performing a carotid Doppler exam due to the recent onset of right arm and face paresthesia. There is little plaque present in either carotid system. The right side has normal Doppler flow velocities and waveforms. The attached Doppler images are taken from the proximal left ICA and ECA. Which of the following should be included on your preliminary report?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>There is a probable obstruction of the origin of left carotid artery.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Congestive heart failure is most likely present.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>There is a probable obstruction of the proximal innominate artery.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The exam is within normal limits and does not explain the symptoms.</div>
+              
+            </div>
+            
+            
+            <img src="media/q66.jpg" alt="Question 66 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. There is a probable obstruction of the origin of left carotid artery.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The left CCA originates from the aortic arch. Unilaterally damped ECA and ICA waveforms indicates proximal obstruction.
+Bilaterally reduced resistance and velocity is associated with CHF.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q67" style="animation-delay: 2310ms;">
+        <div class="card-header">
+          <div class="card-number">Question 67</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">An upper extremity venous Doppler that is performed for suspected DVT should be performed with the patient in the ____________________ position.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>prone</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>standing</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>supine</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Trendelenburg</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. supine</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Patient should be evaluated in the supine position with the head turned slightly away from the affected side; the affected arm
+should be in the dependent position and externally rotated.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q68" style="animation-delay: 2345ms;">
+        <div class="card-header">
+          <div class="card-number">Question 68</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When evaluating flow in the superior mesenteric artery, what is the most important history question to ask the patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Do you have high blood pressure that cannot be treated with medication?</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Do you have diabetes?</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>When was your last meal?</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Do you have a pain in your abdomen that is associated with breathing motions?</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. When was your last meal?</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>In order to evaluate the SMA waveform, it is important to know the activity level in the digestive tract.
+Pre-prandial (NPO) = no digestion, high resistance flow with minimal diastolic flow.
+Post prandial - digestion increases inflow needs, low resistance flow with mild diastolic flow
+Untreatable HTN is associated with renal artery stenosis. Abdomen pain with expiration is associated with celiac artery
+compression.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q69" style="animation-delay: 2380ms;">
+        <div class="card-header">
+          <div class="card-number">Question 69</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following transducers would be preferred for a lower extremity saphenous mapping on an average sized patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>7-10MHz sector</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>5-7MHz curvilinear</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>7-10MHz linear</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>5-7MHz linear</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. 7-10MHz linear</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Linear arrays are preferred for vascular exams. 5-7MHz transducer are used for DVT evaluation in an average sized patient. 7-
+10MHz transducers are used for evaluation of the superficial system for insufficiency or vein mapping.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q70" style="animation-delay: 2415ms;">
+        <div class="card-header">
+          <div class="card-number">Question 70</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">An 80yr old female patient asks you to explain the purpose of a segmental pressure exam of the lower extremities. Which of the following is the best response?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Tell her that the pressure in your legs decreases with disease and the doctor wants to see how much her ankle pressures have dropped.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Tell her the exam uses blood pressure cuffs to take her blood pressure in her legs to see if she needs surgery.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Tell her you are going to squeeze her legs for a minute just relax.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Tell her the exam uses blood pressure cuffs to take her blood pressure in her legs to evaluate the circulation to her feet.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Tell her the exam uses blood pressure cuffs to take her blood pressure in her legs to evaluate the circulation to her feet.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Always tailor your explanation to your audience. Limit technical details that are not relevant for the patient. You should not
+suggest that surgery may be necessary or that her ankle pressures are decreased. As a Sonographer, you should always explain
+the exam and never be condescending or dismissive of a patient&#39;s request.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q71" style="animation-delay: 2450ms;">
+        <div class="card-header">
+          <div class="card-number">Question 71</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A 65yr old female presents chronic leg pain and swelling, but no brown discoloration is present in the distal calf and ankle area. Which of the following patient history questions would provide an explanation of the symptoms?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Do you have pain in the legs at night when in bed?</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Does your pain increase with quick dorsiflexion of the left foot?</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>If you elevate the leg, does the pain increase?</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Have you had coronary artery bypass surgery?</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Have you had coronary artery bypass surgery?</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The great saphenous is removed for most CABG procedures. The removal of this vessel can lead to swelling in the leg with the
+reduced outflow. Brown discoloration is not a common sign of GSV removal because the reduced outflow is in the deep veins
+and not related to insufficiency. Pain with quick dorsiflexion of the foot is a sign of DVT called Homan&#39;s sign. Pain increase with
+leg elevation or at night would indicate arterial disease, which does not correlate with swelling.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q72" style="animation-delay: 2485ms;">
+        <div class="card-header">
+          <div class="card-number">Question 72</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A lower extremity venous Doppler that is performed for suspected DVT should be performed with the patient in the ____________________ position.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Trendelenburg</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>prone</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>reverse Trendelenburg</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>standing</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. reverse Trendelenburg</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A venous Doppler that is performed for suspected DVT should be performed with the patient in the reverse Trendelenburg
+position. This semi-erect position increases intra-abdominal pressure and reduces outflow to engorge the veins with blood for
+easier visualization.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q73" style="animation-delay: 2520ms;">
+        <div class="card-header">
+          <div class="card-number">Question 73</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A recent CT scan demonstrates an acute infarct in the parietal lobe and a new blockage in the proximal left middle cerebral artery. Which of the following is the most likely source for the embolism?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Plaque broke away from the wall of the left anterior cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Plaque broke away from the wall of the proximal external cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Thrombus formation in the left jugular vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Plaque broke away from the sclerotic aortic valve</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Plaque broke away from the sclerotic aortic valve</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A sclerotic aortic valve can send an embolus through the aorta into one of the arch branches. If the embolus enters the left
+carotid system, it could lodge in the left MCA.
+Thrombus in the jugular vein would move into the right side of the heart/lungs.
+The ECA does not supply flow to the MCA, therefore there is no way for the embolism to enter the circle of Willis (without getting
+stuck in a smaller ECA branch first).
+Flow in the ACA normally moves away from the MCA. An embolus in the ACA will move into smaller branches toward the front of
+the brain and eye.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q74" style="animation-delay: 2555ms;">
+        <div class="card-header">
+          <div class="card-number">Question 74</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">According to the findings on this arteriogram, which abnormal findings will be identified on a carotid Duplex exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Absence of flow in the Left Subclavian and Left Vertebral arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Absence of flow in the Left Subclavian artery with flow reversal in the Left CCA</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Left Subclavian Steal</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Flow reversal in the Left Vertebral and Left Subclavian arteries</div>
+              
+            </div>
+            
+            
+            <img src="media/q74.jpg" alt="Question 74 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Absence of flow in the Left Subclavian and Left Vertebral arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The left subclavian is absent from the image which indicates complete obstruction at the origin, The left vertebral artery
+normally originates from the proximal subclavian artery and is also absent from the image. Both vessels will demonstrate
+absence of flow on a Duplex exam.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q75" style="animation-delay: 2590ms;">
+        <div class="card-header">
+          <div class="card-number">Question 75</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If a patient forgets to take their hypertension medication before a renal duplex exam, what effect can this have on the findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>overestimation of renal artery stenosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>underestimation of peak renal artery velocity</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>overestimation of renal parenchymal thickness</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>underestimation of renal artery stenosis</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. overestimation of renal artery stenosis</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Elevated systemic BP can cause increased velocity in the systemic arteries. If the pressure is high, velocity measurements will be
+overestimated and renal artery stenosis can be overestimated. The patient should be evaluated when the HTN is controlled,
+whenever possible.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q76" style="animation-delay: 2625ms;">
+        <div class="card-header">
+          <div class="card-number">Question 76</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When evaluating a pregnant patient for DVT, the patient should be placed in the ______________ position.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>supine</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>right oblique or decubitus</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Trendelenburg</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>left oblique or decubitus</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. left oblique or decubitus</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The uterus can compress the IVC causing flow changes that lead to false results in the extremities. Placing the patient in a left
+oblique or decubitus position will reduce uterine pressure on the IVC.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q77" style="animation-delay: 2660ms;">
+        <div class="card-header">
+          <div class="card-number">Question 77</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a venous Doppler evaluation of the lower extremities. The patient is contracted at the knees and hips and unable to extend the legs for the exam. All compression views are normal. Doppler evaluation demonstrates mildly reduced response to distal augmentation in the thigh and continuous flow in the popliteal veins. How will you report these findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Venous insufficiency is present in the upper thigh vessels bilaterally</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Normal exam with flow changes most likely caused by patient position</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Normal exam</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Probable DVT in the popliteal veins bilaterally</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Normal exam with flow changes most likely caused by patient position</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Absence of vein compressibility is the most reliable factor for diagnosing DVT. The patient has normal compression views which
+indicates the absence of DVT. The contracted position of the patient can cause a more continuous waveform and decrease in
+augmentation response.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q78" style="animation-delay: 2695ms;">
+        <div class="card-header">
+          <div class="card-number">Question 78</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A significant stenosis in which of the following arteries would be the most likely cause for an acute infarct of the right frontal lobe seen on a recent CT of the brain?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>left anterior cerebral artery or left middle cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>left posterior cerebral artery or left vertebral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>bilateral anterior cerebral arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>right anterior cerebral artery or right middle cerebral artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. right anterior cerebral artery or right middle cerebral artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The right frontal lobe is supplied with blood by the right ACA and MCA. Stenosis in either of the two vessels could cause
+ischemia in the frontal lobe.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q79" style="animation-delay: 2730ms;">
+        <div class="card-header">
+          <div class="card-number">Question 79</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following transducers would be preferred for a lower extremity DVT evaluation on an average sized patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>10-12MHz linear</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>7-10MHz sector</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>5-7MHz linear</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>5-7MHz curvilinear</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. 5-7MHz linear</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Linear arrays are preferred for vascular exams. 5-7MHz transducer are used for DVT evaluation in an average sized patient.
+Higher frequencies can be used for evaluation of the superficial system.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q80" style="animation-delay: 2765ms;">
+        <div class="card-header">
+          <div class="card-number">Question 80</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are performing a renal Doppler exam. What is the best patient position to visualize the full length of the left renal artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Right lateral decubitus</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Supine, ipsilateral arm above head</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Supine, contralateral arm above head</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Left lateral decubitus</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Right lateral decubitus</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A coronal view or an oblique transverse view will best demonstrate the full length of the renal arteries. These images are best
+obtained when the patient is in the right lateral decubitus position when evaluating the left kidney and artery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q81" style="animation-delay: 2800ms;">
+        <div class="card-header">
+          <div class="card-number">Question 81</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">According to the findings on this arteriogram, which of the following would NOT be an expected symptom related to the findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Left arm paresthesia</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Left leg paresthesia</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Visual disturbances of the left eye</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Right leg paralysis</div>
+              
+            </div>
+            
+            
+            <img src="media/q81.jpg" alt="Question 81 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Left leg paresthesia</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>There is a significant stenosis of the left CCA and an occlusion of the proximal left subclavian artery. The left CCA flow velocities
+will be elevated with diminished flow distally. The left vertebral artery is not demonstrated due to the proximal subclavian
+obstruction. NO steal is present or these vessels would be identified.
+Occlusion of the left subclavian = left arm paresthesia
+Diminished left CCA flow = right leg paralysis (left side of brain controls right side of body) and left eye symptoms
+There is no explanation for left leg paresthesia on this image. This symptom would require right CCA/ICA blockage if it was
+related to abnormal cerebrovascular circulation.
+***Image Credit Bronchiectasis and hoarseness of voice in takayasu arteritis: a rare presentation. Nd Perera G, C Jayasinghe A,
+D Dias L, Kulatunga A - BMC Res Notes (2012)</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q82" style="animation-delay: 2835ms;">
+        <div class="card-header">
+          <div class="card-number">Question 82</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">D-dimer levels are most accurate for predicting:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the absence of DVT</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the presence of DVT</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the risk of pulmonary embolism</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the risk of clot formation</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. the absence of DVT</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>D-dimer levels are most accurate for predicting the absence of DVT. D-dimer levels can be elevated for many reasons including
+DVT, cancer and other diseases. If DVT is suspected but the D-dimer levels are low, DVT is most likely not present.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q83" style="animation-delay: 2870ms;">
+        <div class="card-header">
+          <div class="card-number">Question 83</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What will be included in your preliminary report for this patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>There is a possible stenosis of the right and left distal brachial artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>There is a possible isolated stenosis of the left axillary artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>There is a possible stenosis in the right palmar arch arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>There is a possible stenosis of the right mid brachial artery.</div>
+              
+            </div>
+            
+            
+            <img src="media/q83.jpg" alt="Question 83 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. There is a possible stenosis in the right palmar arch arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The significant drop in pressure occurs in the right arm between the forearm and the digit cuff. This indicates a possible
+stenosis of the distal radial or ulnar artery or a stenosis in the palmar arch arteries. A mid brachial artery stenosis will cause a
+drop in pressure between the upper arm and forearm cuffs. The digit-brachial index should be greater than 0.60. The DBI in the
+right arm is 70/156mmHg = 0.45. Although there is a drop in pressure between the left forearm and digit, the DBI is &gt;0.60.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q84" style="animation-delay: 2905ms;">
+        <div class="card-header">
+          <div class="card-number">Question 84</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the questions listed below would provide pertinent history information for a lower extremity venous Doppler exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Do your legs/calves hurt more when walking, but the pain stops if you sit and rest?</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>If you on the edge of the bed with your feet on the floor, does this reduce the swelling?</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Does your job require you to stand for long periods of time?</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Do you have any ulcer formation on your toes?</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Does your job require you to stand for long periods of time?</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Standing for long periods of time can cause venous insufficiency and the related symptoms in this patient. Arterial disease can
+cause leg pain with exercise that is relieved by rest. The muscles require an increased blood supply with exercise. If there is
+arterial disease present, it may not allow the necessary increase in flow and ischemia/pain presents. Stopping the exercise will
+assist in the relief of the symptoms as the muscles decrease their need for blood flow. Arterial ulcers are found on the toes and
+heel of the foot. Venous ulcers are found on the distal calves.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q85" style="animation-delay: 2940ms;">
+        <div class="card-header">
+          <div class="card-number">Question 85</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes the table placement for performing an ultrasound exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The table should be placed in the reverse trendelenburg position to assist in moving blood flow into the cerebral vessels.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The table should be placed in the trendelenburg position to assist in moving blood flow into the cerebral vessels.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Table height should allow the Sonographer&#39;s arm to be slightly abducted with the wrist fully extended.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Table height should allow the Sonographer&#39;s arm to be slightly adducted with the wrist fully flexed toward the side being examined examined.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Table height should allow the Sonographer&#39;s arm to be slightly abducted with the wrist fully extended.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Table height should allow the Sonographer&#39;s arm to be slightly abducted with the wrist fully extended.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q86" style="animation-delay: 2975ms;">
+        <div class="card-header">
+          <div class="card-number">Question 86</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a venous Doppler evaluation of the left lower extremity. Thrombus is identified in the left leg. What should you include in the preliminary report?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Location, estimated age and extent of thrombus</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>What leg position causes the most pain</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Amount of exercise the patient performed before symptoms occurred</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The peak velocity of the augmentation response proximal and distal to the thrombus</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Location, estimated age and extent of thrombus</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When reporting on DVT, the location, estimated age (acute or chronic) and extent of thrombus should be provided. Exercise and
+augmentation will not be performed with patients with suspected DVT.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q87" style="animation-delay: 3010ms;">
+        <div class="card-header">
+          <div class="card-number">Question 87</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A 75yr old female presents for a transcranial doppler evaluation for suspected basilar artery stenosis. She suffers from emphysema and cannot lie down for the exam. Which of the following describes how you can evaluate the basilar artery in this patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>patient seated in chair, neck flexed and head supported by her arms/hands</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>patient seated in chair, lean forward to reach for their toes and flex the neck</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>patient in the left lateral decubitus position, hand supporting the head</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>patient seated in chair, neck hyperextended with a wedge behind the head for support</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. patient seated in chair, neck flexed and head supported by her arms/hands</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If a patient is unable to lie down in the supine or decubitus position for TCD evaluation of the basilar artery, they should be
+seated in a chair, neck flexed and head supported by her arms/hands. If the patient is able to lie supine, just not in the
+decubitus position, then ask them to turn their head away from the side of interest and place the transducer to the left or right
+side of the foramen magnum</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q88" style="animation-delay: 3045ms;">
+        <div class="card-header">
+          <div class="card-number">Question 88</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a venous insufficiency exam. The exam demonstrates normal bilateral great and small saphenous veins. The deep system is not identified well in either leg. Both calves have multiple areas of small, clustered veins superficially. What should you review in the patient chart to explain these findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>medical history for Paget Schroetter syndrome</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>medical history for Klippel Trenaunay Webber syndrome</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>surgical history for venous ligation of the bilateral GSVs</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>treatment history for RF ablation of the bilateral GSVs</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. medical history for Klippel Trenaunay Webber syndrome</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>RF ablation would affect a larger segment of the GSV. Klippel Trenaunay Webber syndrome refers to the congenital absence of
+the deep venous system of the legs. Paget Schroetter syndrome refers to thrombosis of the subclavian vein due to excessive
+motion, usually related to TOS.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q89" style="animation-delay: 3080ms;">
+        <div class="card-header">
+          <div class="card-number">Question 89</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If a patient has a history of 40% stenosis of the left internal carotid artery identified on a MRA exam. Which of the following Doppler velocities from the ICA will correlate well with the predicted level of stenosis?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>PSV 120cm/s, EDV 35cm/s</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>PSV 200cm/s, EDV 100cm/s</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>PSV 300cm/s, EDV 150cm/s</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>PSV 200cm/s, EDV 80cm/s</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. PSV 120cm/s, EDV 35cm/s</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Strandness Criteria: &lt;50% stenosis = PSV &lt;125cm/s
+SRU Criteria &lt;50% stenosis = PSV &lt;125cm/s, EDV &lt;40cm/s
+ICAVL Criteria &lt;50% stenosis = PSV &lt;180cm/s, EDV &lt;40cm/s</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q90" style="animation-delay: 3115ms;">
+        <div class="card-header">
+          <div class="card-number">Question 90</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You complete a segmental pressure evaluation of an aorta-bifemoral arterial bypass graft and are reviewing the prior report. The prior exam demonstrates: Left ABI of 0.95 and the Right ABI of 0.90. The current exam demonstrates: Left ABI of 0.88 and Right ABI of 0.95. How would you report these findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Abnormal change in the ABI values of both legs</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Normal exam today, no significant change in ABI values</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Normal left leg, abnormal right leg</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Normal right leg, abnormal left leg</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Normal exam today, no significant change in ABI values</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>An abnormal exam is indicated when the ABI values drop by more than 0.15.
+Powered by ExamBuilder. Copyright ©2026</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+    </section>
+  </main>
+  <script>
+    const detailsElements = Array.from(document.querySelectorAll("details"));
+    document.getElementById("open-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = true));
+    document.getElementById("close-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = false));
+  </script>
+</body>
+</html>

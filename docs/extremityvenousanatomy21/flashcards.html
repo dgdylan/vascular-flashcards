@@ -1,0 +1,4189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Extremity Venous Anatomy 21%</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06101d;
+      --bg-strong: #0b1628;
+      --card: rgba(17, 31, 52, 0.92);
+      --card-strong: rgba(20, 36, 60, 0.98);
+      --ink: #f4f8ff;
+      --muted: #b0bfd6;
+      --accent: #82ddd7;
+      --accent-strong: #b4f0eb;
+      --accent-soft: rgba(130, 221, 215, 0.16);
+      --border: rgba(149, 180, 221, 0.34);
+      --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
+      --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.28);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(130, 221, 215, 0.14), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(97, 130, 194, 0.18), transparent 24%),
+        linear-gradient(180deg, #071221 0%, var(--bg) 54%, #040b15 100%);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+    .wrap {
+      width: min(1080px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.5rem 0 4rem;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      padding: clamp(1.4rem, 2.5vw, 2rem);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94)),
+        linear-gradient(120deg, rgba(130, 221, 215, 0.08), rgba(97, 130, 194, 0.08));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      animation: rise-in 560ms ease-out both;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -35% auto;
+      width: 240px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
+      background: radial-gradient(circle, rgba(97, 130, 194, 0.4), transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4.8vw, 3.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 14ch;
+      text-wrap: balance;
+    }
+    .subhead {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .toolbar a, .toolbar button {
+      border: 1px solid var(--border);
+      background: var(--card-strong);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.78rem 1.05rem;
+      cursor: pointer;
+      text-decoration: none;
+      font: inherit;
+      font-weight: 700;
+      box-shadow: var(--shadow-soft);
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+    .toolbar a:hover, .toolbar button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(130, 221, 215, 0.42);
+      background: rgba(26, 45, 73, 1);
+    }
+    .cards {
+      display: grid;
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      animation: rise-in 520ms ease-out both;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+      border-color: rgba(130, 221, 215, 0.28);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(130, 221, 215, 0.09), rgba(97, 130, 194, 0.08)),
+        rgba(16, 30, 50, 0.88);
+    }
+    .card-number {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .pill {
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .card-body {
+      padding: 1.2rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .card-side {
+      display: grid;
+      gap: 0.75rem;
+    }
+    .label {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .content {
+      font-size: 1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .choices {
+      display: grid;
+      gap: 0.45rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(24, 41, 67, 0.98), rgba(17, 31, 52, 0.92));
+    }
+    .choice {
+      line-height: 1.5;
+    }
+    .choice-label {
+      font-weight: 700;
+      color: var(--accent);
+      margin-right: 0.3rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(8, 15, 27, 0.96);
+      display: block;
+      box-shadow: var(--shadow-soft);
+    }
+    details {
+      border-top: 1px dashed rgba(149, 180, 221, 0.34);
+      padding-top: 1rem;
+    }
+    summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 700;
+      list-style: none;
+      transition: color 180ms ease;
+    }
+    summary:hover { color: var(--accent-strong); }
+    summary::-webkit-details-marker { display: none; }
+    .answer-block {
+      margin-top: 0.9rem;
+      display: grid;
+      gap: 0.75rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(19, 35, 58, 0.98), rgba(13, 25, 43, 0.96));
+    }
+    .answer-title {
+      font-weight: 700;
+    }
+    @keyframes rise-in {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero, .card {
+        animation: none;
+      }
+      .toolbar a, .toolbar button, .card, summary {
+        transition: none;
+      }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 1rem, 1080px); padding-top: 1rem; }
+      .hero {
+        border-radius: 22px;
+        padding: 1.15rem;
+      }
+      .card-header, .card-body { padding: 1rem; }
+      .toolbar {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .toolbar a, .toolbar button {
+        width: 100%;
+        text-align: center;
+      }
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Review Deck</p>
+      <h1>Extremity Venous Anatomy 21%</h1>
+      <p class="subhead">109 flashcards extracted from this PDF. Open each back panel to review the correct answer and full feedback.</p>
+      <div class="toolbar">
+        <a href="../index.html">Back to index</a>
+        <button type="button" id="open-all">Open all backs</button>
+        <button type="button" id="close-all">Close all backs</button>
+      </div>
+    </section>
+    <section class="cards">
+      
+      <article class="card" id="q1" style="animation-delay: 0ms;">
+        <div class="card-header">
+          <div class="card-number">Question 1</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following veins has a direct connection to both superficial and deep veins?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>popliteal vein and inferior vena cava</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>brachial vein and small saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>femoral vein and axillary vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>subclavian and popliteal vein</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. subclavian and popliteal vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The subclavian vein receives blood from the cephalic vein and the axillary vein. The popliteal vein receives blood from the small
+saphenous and deep calf veins.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q2" style="animation-delay: 35ms;">
+        <div class="card-header">
+          <div class="card-number">Question 2</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The weight of the column of blood within the veins when standing is called?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Systemic Pressure</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Hydrostatic Pressure</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Pulmonary Pressure</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Transmural Pressure</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Hydrostatic Pressure</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The systemic blood pressure is related to the arterial pressures within the body. The pulmonary pressure is related to the
+pressure within the pulmonary arteries.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q3" style="animation-delay: 70ms;">
+        <div class="card-header">
+          <div class="card-number">Question 3</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">An effective calf pump causes ________________________ in the pressure in the deep veins of the calf.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>little change</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>an increase</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>a decrease</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>an increase in cardiac output and an increase</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. a decrease</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Effective calf pump reduces blood stasis/pooling, decreases venous volume and pressure in the calf veins. Ineffective calf pump
+leads to increased stasis, venous volume and pressure in the calf veins; reflux is a contributing factor</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q4" style="animation-delay: 105ms;">
+        <div class="card-header">
+          <div class="card-number">Question 4</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If the image displayed is a transverse view of the posterior right lower leg, Letter B correspond to:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>lateral gastrocnemius veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>peroneal veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>medial gastrocnemius veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>posterior tibial veins</div>
+              
+            </div>
+            
+            
+            <img src="media/q4.png" alt="Question 4 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. lateral gastrocnemius veins</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When imaging the posterior leg, the notch on the transducer should be placed toward the right side of the patient, just like
+imaging the anterior leg. The right side of the image is lateral and the left side of the image is medial in both imaging views.
+A. small saphenous vein
+B. lateral gastrocnemius veins
+C. medial gastrocnemius veins
+D. popliteal vein</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q5" style="animation-delay: 140ms;">
+        <div class="card-header">
+          <div class="card-number">Question 5</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Normal perforator valves allow blood flow in the perforator to move:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>from the femoral vein to the GSV</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>toward the heart</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>from the GSV to femoral vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>toward the ankle</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. from the GSV to femoral vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Normal perforator valves allow blood flow in the perforator to move from the superficial system to the deep system. Dilated
+perforators will allow bidirectional blood blow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q6" style="animation-delay: 175ms;">
+        <div class="card-header">
+          <div class="card-number">Question 6</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The innominate veins course ____________ to the innominate artery.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>anterior and lateral</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>posterior and lateral</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>posterior and medial</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>inferior and posterior</div>
+              
+            </div>
+            
+            
+            <img src="media/q6.jpg" alt="Question 6 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. anterior and lateral</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The innominate veins course anterior and lateral to the innominate artery. There is a right and a left innominate vein, but only 1
+innominate artery (aortic arch origin). The innominate vessels are also referred to as the brachiocephalic vessels.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q7" style="animation-delay: 210ms;">
+        <div class="card-header">
+          <div class="card-number">Question 7</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The left and right innominate veins merge to form the ____________________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>inferior vena cava (IVC)</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Right atrium</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>superior vena cava (SVC)</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Brachiocephalic vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q7.jpg" alt="Question 7 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. superior vena cava (SVC)</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The right and left innominate veins merge to form the SVC.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q8" style="animation-delay: 245ms;">
+        <div class="card-header">
+          <div class="card-number">Question 8</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which calf vessel&#39;s anatomic course has been referred to as a &#34;stocking seam&#34;?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior tibial vein (PTV)</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>small saphenous vein (SSV)</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>great saphenous vein (GSV)</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>superficial femoral vein (SFV)</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. small saphenous vein (SSV)</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The small saphenous vein originates very superficially in the distal posterior calf. It courses midline up the calf to reach the
+popliteal vein at or near the popliteal fossa. Its course has been said to resemble the seam of a type of pantyhose or stockings.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q9" style="animation-delay: 280ms;">
+        <div class="card-header">
+          <div class="card-number">Question 9</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">How can you differentiate the anterior accessory saphenous vein (AASV) from the great saphenous vein (GSV)?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the AASV courses through the lateral thigh and the GSV courses through the medial thigh</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the AASV travels in the saphenous compartment but the GSV does not</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the GSV travels in the saphenous compartment but the AASV does not</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>look for the alignment sign that is only associated with the AASV</div>
+              
+            </div>
+            
+            
+            <img src="media/q9.jpg" alt="Question 9 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. look for the alignment sign that is only associated with the AASV</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Alignment Sign - the AASV is aligned with the femoral artery and it courses anterior to the femoral artery within the saphenous
+compartment. This characteristic differentiates it from the GSV because the GSV is medial to the femoral artery/vein in the
+saphenous compartment.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q10" style="animation-delay: 315ms;">
+        <div class="card-header">
+          <div class="card-number">Question 10</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">During inspiration the flow in the veins of the upper extremities _____________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>increases</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>decreases</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>remains unchanged</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>reverses direction</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. increases</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>During inspiration the pressure within the chest cavity decreases allowing venous flow from the upper extremities to increase.
+During expiration, the pressure within the chest cavity increases causing the venous flow from the upper extremities to
+decrease. THE OPPOSITE IS TRUE WITH THE FLOW FROM THE LOWER EXTREMITIES.
+During inspiration the pressure within the abdominal cavity increases causing venous flow from the lower extremities to
+decrease. During expiration, the pressure within the abdominal cavity decreases allowing the venous flow from the lower
+extremities to increase.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q11" style="animation-delay: 350ms;">
+        <div class="card-header">
+          <div class="card-number">Question 11</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes a normal lower extremity response to the Valsalva maneuver?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>flow in the subclavian vein will be augmented toward the heart with slight reversal upon release</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the femoral vein will demonstrate cardiac pulsatility</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>flow in the iliac vein will reverse for at least 1 second before normalizing</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>flow in the femoral vein will stop at onset of the maneuver</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. flow in the femoral vein will stop at onset of the maneuver</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The Valsalva maneuver will significantly decrease or stop flow toward the heart in the deep veins of the legs. Upon release of
+the maneuver, flow will be briefly augmented toward the heart and then normalize.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q12" style="animation-delay: 385ms;">
+        <div class="card-header">
+          <div class="card-number">Question 12</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When transmural pressure in a vein is high:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the associated artery will flatten and flow velocity increases</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the vein becomes flattened and dumbbell shaped</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the vein becomes enlarged and rounded</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the associated artery will distend and flow velocity decreases</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. the vein becomes enlarged and rounded</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Transmural pressure is the pressure within the veins pushing outward and is normally low. It increases with increasing venous
+volume. When the pressure inside the vein is high compared to the surrounding pressure outside the vein, the vessel distends.
+When the pressure inside the vein is low compared to the surrounding pressure outside the vein, the vessel collapses to a
+dumbbell shape.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q13" style="animation-delay: 420ms;">
+        <div class="card-header">
+          <div class="card-number">Question 13</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The great saphenous vein is attached to the _______ aspect of the common femoral vein.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>medial</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>anterior</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>lateral</div>
+              
+            </div>
+            
+            
+            <img src="media/q13.jpg" alt="Question 13 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. medial</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The great saphenous vein is attached to the medial aspect of the common femoral vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q14" style="animation-delay: 455ms;">
+        <div class="card-header">
+          <div class="card-number">Question 14</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The transducer is placed in the longitudinal position slightly anterior to midline of the medial upper left calf. The beam is angled posterior until the image displayed appears. What vessel is indicated by letter B?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>peroneal vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>gastrocnemius vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>anterior tibial vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>posterior tibial vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q14.jpg" alt="Question 14 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. peroneal vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The image displays the confluence of the posterior tibial and peroneal veins. The peroneal veins are deeper on the image.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q15" style="animation-delay: 490ms;">
+        <div class="card-header">
+          <div class="card-number">Question 15</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The image is a transverse view of the right antecubital fossa. What vessel is indicated by letter B?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>basilic vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>cephalic vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>median cubital vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>brachial vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q15.jpg" alt="Question 15 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. basilic vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If the image is of the right arm, the left side of the image corresponds with the lateral right arm. The veins of the arm listed from
+lateral to medial: cephalic, brachial, basilic</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q16" style="animation-delay: 525ms;">
+        <div class="card-header">
+          <div class="card-number">Question 16</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The small saphenous vein:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>originates posterior to the medial malleolus and ascends along the midline aspect of posterior calf</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>originates immediately posterior to the Achilles&#39; tendon attachment at the heel and ascends along the midline aspect of posterior calf</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>originates anterior to the lateral malleolus and ascends along the midline aspect of posterior calf</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>originates posterior to the lateral malleolus and ascends along the midline aspect of posterior calf</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. originates posterior to the lateral malleolus and ascends along the midline aspect of posterior calf</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The small saphenous vein originates posterior to the lateral malleolus and ascends along the midline aspect of posterior calf.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q17" style="animation-delay: 560ms;">
+        <div class="card-header">
+          <div class="card-number">Question 17</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following veins originates at the medial wrist and courses up the medial arm to join the axillary vein?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Basilic vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Radial vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Cephalic vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Ulnar vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q17.jpg" alt="Question 17 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Basilic vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>CONSIDER THE ARM IS IN ANATOMIC POSITION FOR ALL ANATOMY QUESTIONS. The radial veins join the ulnar veins at the
+elbow to form the brachial vein(s). The cephalic vein originates near the base of the wrist and travels up the lateral side of the
+arm to empty into the subclavian vein. The basilic vein originates at the medial wrist and courses up the medial arm to join the
+axillary vein,</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q18" style="animation-delay: 595ms;">
+        <div class="card-header">
+          <div class="card-number">Question 18</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which vein is best evaluated for compressibility by asking the patient to perform a quick, deep sniff?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>axillary vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>subclavian vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>distal IVC</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>great saphenous vein</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. subclavian vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Manual compression of the subclavian vein is limited due to its position beneath the clavicle. If the patient performs a quick,
+deep sniff, the normal subclavian vein should demonstrate compression.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q19" style="animation-delay: 630ms;">
+        <div class="card-header">
+          <div class="card-number">Question 19</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">While performing a lower extremity venous exam, you identify a small pair of veins with an accompanying artery deep in the calf muscle, that connect to the popliteal vein. What veins are these?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>anterior tibial veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>sural veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>posterior arch veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>veins of Giacomini</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. sural veins</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Sural veins are also called the gastrocnemius veins. They are located deep in the calf muscle and course alongside their
+accompanying artery. The sural veins empty their blood into the popliteal vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q20" style="animation-delay: 665ms;">
+        <div class="card-header">
+          <div class="card-number">Question 20</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If the image displayed is a transverse view of the posterior right lower leg, Letter A correspond to:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior tibial vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>great saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>medial gastrocnemius vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>small saphenous vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q20.png" alt="Question 20 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. small saphenous vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When imaging the posterior leg, the notch on the transducer should be placed toward the right side of the patient, just like
+imaging the anterior leg. The right side of the image is lateral and the left side of the image is medial in both imaging views.
+A. small saphenous vein
+B. lateral gastrocnemius veins
+C. medial gastrocnemius veins
+D. popliteal vein</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q21" style="animation-delay: 700ms;">
+        <div class="card-header">
+          <div class="card-number">Question 21</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following can be found immediately posterior to the inguinal ligament?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>common femoral vein and artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>saphenopopliteal junction</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>profunda femoral vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>popliteal vein and artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. common femoral vein and artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The external iliac artery becomes the common femoral artery at the inguinal ligament. The CFA and CFV course posterior to the
+inguinal ligament. The GSV joins the CFV near the ligament. The FV and PFV join to form the CFV just distal to the ligament. The
+saphenopopliteal junction is located in the upper calf or popliteal fossa in most patients</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q22" style="animation-delay: 735ms;">
+        <div class="card-header">
+          <div class="card-number">Question 22</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Respiration and ____________________ are responsible for venous blood flow.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>vessel recoil</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Valsalva maneuvers</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the calf muscle pump</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the tunica media layer of the wall</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. the calf muscle pump</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Respiration and the calf muscle pump are responsible for moving venous blood through the body.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q23" style="animation-delay: 770ms;">
+        <div class="card-header">
+          <div class="card-number">Question 23</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly describes the venous system of the upper extremity?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Effort thrombosis refers to clot in the veins of the hand caused by repetitive wrist motion</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Patients with May Thurner syndrome have an increased risk of developing upper extremity thrombosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>The veins of the upper extremity have nearly twice the number of valves compared to the lower extremity</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The superficial venous system of the arm is the primary drainage system of the extremity</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. The superficial venous system of the arm is the primary drainage system of the extremity</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The superficial venous system of the arm is the primary drainage system of the extremity. The deep system is the primary
+drainage system in the legs. The veins of the upper extremity have far fewer valves than the lower extremity. They do not need
+as many because the arm is closer to the heart and experiences lower hydrostatic pressures. May Thurner syndrome affects the
+left common iliac vein. Effort thrombosis refers to thrombus formation at the shoulder caused by repetitive shoulder movement
+that compresses the vein in the thoracic outlet.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q24" style="animation-delay: 805ms;">
+        <div class="card-header">
+          <div class="card-number">Question 24</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following veins is located deep to the muscular fascia in the proximal arm and superficial to the fascia in the forearm?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>basilic</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>brachial</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>cephalic</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>median cubital</div>
+              
+            </div>
+            
+            
+            <img src="media/q24.jpg" alt="Question 24 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. basilic</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The basilic vein originates at the wrist and courses above to the muscular fascia. It penetrates the muscular fascia just above the
+elbow and courses cephalad, beneath the fascia, to join the axillary vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q25" style="animation-delay: 840ms;">
+        <div class="card-header">
+          <div class="card-number">Question 25</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The attached image is taken from a lower extremity venous Doppler exam. This flow pattern would be abnormal for which of the following veins?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior tibial veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>anterior tibial veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>popliteal vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>great saphenous vein</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. popliteal vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The deep calf veins and superficial veins do not normally exhibit spontaneous flow patterns. Augmentation is usually necessary
+to demonstrate patency of these veins. Lack of spontaneous flow in the popliteal vein is abnormal and a sign of flow stasis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q26" style="animation-delay: 875ms;">
+        <div class="card-header">
+          <div class="card-number">Question 26</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When performing a lower extremity venous exam for insufficiency, you locate an incompetent vein that extends from the ankle to connect to the GSV near the popliteal fossa. Incompetent perforators are also identified in the mid-calf that allow flow between this vein and the GSV. Identify the incompetent vein.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Paratibial perforator</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Posterior arch vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Vein of Giacomini</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Small saphenous vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q26.jpg" alt="Question 26 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Posterior arch vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The posterior arch vein (AKA posterior accessory saphenous vein) originates at the ankle and extends to connect to the GSV
+near the popliteal fossa. It is connected to the GSV in the mid to upper calf by the posterior tibial perforators (Cockett&#39;s
+perforators). This vein usually plays a major role in disease caused by venous stasis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q27" style="animation-delay: 910ms;">
+        <div class="card-header">
+          <div class="card-number">Question 27</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Venous perforators connect the deep and superficial systems of the leg at many locations including:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>groin only</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>groin and knee only</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>groin and ankle only</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>groin, knee, ankle</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. groin, knee, ankle</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Venous perforators connect the deep and superficial systems of the leg at many locations including the groin, thigh, knee, calf,
+and ankle.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q28" style="animation-delay: 945ms;">
+        <div class="card-header">
+          <div class="card-number">Question 28</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Venous valve leaflets:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>are composed of muscle cells.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>are extensions of the vessel&#39;s intimal layer.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>are small flaps of connective tissue within the veins.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>are muscular flaps that control backflow within the venous lumen</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. are extensions of the vessel&#39;s intimal layer.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Venous valve leaflets are extensions of the vessel&#39;s intimal layer.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q29" style="animation-delay: 980ms;">
+        <div class="card-header">
+          <div class="card-number">Question 29</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">_______________ reflux will be normally seen in the lower extremity superficial system.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>No (0s)</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Less than 0.5s</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Less than 1.5s</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Less than 3s</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Less than 0.5s</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A small of amount of reflux (Less than 0.5s) may be seen in normal vessels with flow normalization following augmentation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q30" style="animation-delay: 1015ms;">
+        <div class="card-header">
+          <div class="card-number">Question 30</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Paired veins that accompany an artery of the same name are called:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior arch veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Klippel Trenauney Weber syndrome</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>venae comitantes</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>duplicated veins</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. venae comitantes</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Concomitant veins or venae comitantes refers to a vein that is usually paired, with a vein lying on either side of a single artery of
+the same name. Radial, ulnar, PTV, ATV, peroneal and gastrocnemius veins are example of concomitant veins</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q31" style="animation-delay: 1050ms;">
+        <div class="card-header">
+          <div class="card-number">Question 31</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The image demonstrates a venous perforator connected to the greater saphenous vein. Which of the following is true regarding the image and venous perforators?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Flow within the perforator system is normally bidirectional.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Perforators are normally identified in most venous exams.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Compression techniques are non-diagnostic for thrombus formation in the perforator system because it is not possible thrombus to form within them due to their small size.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The flow within the perforator is moving in the normal direction.</div>
+              
+            </div>
+            
+            
+            <img src="media/q31.jpg" alt="Question 31 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. The flow within the perforator is moving in the normal direction.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The flow demonstrated is moving away from the probe, according to the color map. This indicates normal flow direction from
+the superficial to the deep system.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q32" style="animation-delay: 1085ms;">
+        <div class="card-header">
+          <div class="card-number">Question 32</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">There are normally _______________ perforator veins in each leg.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>about 25-30</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>about 100</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>about 300</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>over 500</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. about 100</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>There are normally about 100 perforator veins in each leg.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q33" style="animation-delay: 1120ms;">
+        <div class="card-header">
+          <div class="card-number">Question 33</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The paratibial perforators connect:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the small saphenous vein and posterior tibial veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the great saphenous vein and the anterior tibial veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the great saphenous vein and posterior tibial veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the small saphenous vein and popliteal vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q33.jpg" alt="Question 33 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. the great saphenous vein and posterior tibial veins</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The paratibial perforators connect the GSV and the PTVs.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q34" style="animation-delay: 1155ms;">
+        <div class="card-header">
+          <div class="card-number">Question 34</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following occurs during calf muscle relaxation?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The gastrocnemius veins fill with blood from the popliteal vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>blood flows through the perforators from the superficial to the deep veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>blood flows through the perforators from the deep to the superficial veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the superficial veins fill with blood</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. blood flows through the perforators from the superficial to the deep veins</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When the muscle contracts, flow moves from the deep calf veins into the popliteal and femoral vein. As the muscle relaxes,
+blood is essentially sucked through the perforators from the superficial system into the deep system to play a part in refilling
+the deep vessels.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q35" style="animation-delay: 1190ms;">
+        <div class="card-header">
+          <div class="card-number">Question 35</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">_________________________ carry(s) the blood from the GSV in the distal thigh into the distal femoral vein.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Paratibial perforators</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Lateral perforators</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Thigh perforators</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Posterior venous arch</div>
+              
+            </div>
+            
+            
+            <img src="media/q35.jpg" alt="Question 35 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Thigh perforators</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The distal thigh perforators, formerly known as Dodd&#39;s perforators, drain blood from the GSV in the distal thigh into the distal
+femoral vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q36" style="animation-delay: 1225ms;">
+        <div class="card-header">
+          <div class="card-number">Question 36</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The image is a transverse view of right shoulder. What vessel is indicated by letter A?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>superior vena cava</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>axillary vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>innominate vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>subclavian vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q36.jpg" alt="Question 36 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. axillary vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br></div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q37" style="animation-delay: 1260ms;">
+        <div class="card-header">
+          <div class="card-number">Question 37</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which vein below is usually the longest vein in the body?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>small saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>great saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>femoral vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>inferior vena cava</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. great saphenous vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The great saphenous vein originates at the ankle and courses cephalad to join the common femoral vein in the groin.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q38" style="animation-delay: 1295ms;">
+        <div class="card-header">
+          <div class="card-number">Question 38</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following veins courses anterior to the tibial bone in the calf?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>peroneal vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>great saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>great saphenous vein and anterior tibial vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>anterior tibial vein</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. anterior tibial vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The anterior tibial veins course anterior to the tibial bone in the calf.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q39" style="animation-delay: 1330ms;">
+        <div class="card-header">
+          <div class="card-number">Question 39</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When evaluating the GSV for use as a bypass graft, what is the preferred diameter for the vein?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>&gt;3mm</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>&gt;5mm</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>&gt;7mm</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>&gt;10mm</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. &gt;3mm</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When evaluating a vein for use as a bypass graft, a 3mm diameter or greater is preferred.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q40" style="animation-delay: 1365ms;">
+        <div class="card-header">
+          <div class="card-number">Question 40</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following statements regarding venous perforators is correct?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Flow in the perforators normally moves from the deep to the superficial system.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Perforator flow is normally unidirectional, but becomes bidirectional with exercise.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>They each contain a single valve.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Thrombosis rarely occurs within the perforators and it cannot to be easily demonstrated on ultrasound evaluation.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. They each contain a single valve.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Venous valves are designed to allow unidirectional flow. If the valves are damaged or the vein is dilated to prevent proper valve
+movement, flow reversal may occur. Flow in the perforators normally moves from the superficial to the deep system. They each
+contain a single valve. Thrombosis can occur within the perforators, which can lead to the formation of varicosities.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q41" style="animation-delay: 1400ms;">
+        <div class="card-header">
+          <div class="card-number">Question 41</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Flow through venous perforators is:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>normally unidirectional from the superficial to the deep venous system</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>normally unidirectional from the deep venous to the superficial system</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>normally bidirectional to help equalize pressures in the deep and superficial systems</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>normally absent unless the deep system becomes overloaded and forces the excess blood into the superficial system</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. normally unidirectional from the superficial to the deep venous system</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Flow through venous perforators is normally unidirectional from the superficial to the deep venous system.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q42" style="animation-delay: 1435ms;">
+        <div class="card-header">
+          <div class="card-number">Question 42</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following veins does not normally contain any functioning valves?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>small saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>deep femoral vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>inferior vena cava</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>common femoral vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q42.jpg" alt="Question 42 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. inferior vena cava</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Lower extremity veins that do NOT contain valves = IVC, iliac veins and soleal sinuses; Upper extremity veins that do NOT
+contain valves = SVC and innominate veins. It is important to note that the Eustachian valve may be identified in the IVC at the
+junction with the right atrium. It is a remnant of fetal circulation and does not function as a valve in an adult.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q43" style="animation-delay: 1470ms;">
+        <div class="card-header">
+          <div class="card-number">Question 43</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What venous valves are closed in the lower extremity during calf muscle relaxation?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>All of the valves in the deep and superficial system</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Proximal thigh veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Calf veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>All of the valves in the deep system</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Proximal thigh veins</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>During muscle contraction, the large blood volume residing in the deep calf veins and soleal sinuses is squeezed up and out of
+the calf. The proximal valves of the deep veins are forced open. The distal valves close to prevent caudal flow. The perforator
+valves close to prevent flow into the superficial venous system. During calf muscle relaxation, the proximal valves close due to
+the hydrostatic pressure forcing blood back down the veins to the level of the valve. During relaxation, the distal and perforator
+valves open, and blood flows into the calf deep veins.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q44" style="animation-delay: 1505ms;">
+        <div class="card-header">
+          <div class="card-number">Question 44</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following locations has a direct connection between the deep and superficial veins of the leg?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>adductor canal</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>groin</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>hunter canal</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>ankle</div>
+              
+            </div>
+            
+            
+            <img src="media/q44.jpg" alt="Question 44 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. groin</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The greater saphenous vein connects directly to the common femoral vein in the groin area, adjacent to the inguinal ligament.
+The superficial system connects to the deep system through perforator veins located throughout the leg.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q45" style="animation-delay: 1540ms;">
+        <div class="card-header">
+          <div class="card-number">Question 45</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If the image displayed is a transverse view of the posterior right lower leg, Letter C correspond to:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>peroneal veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>lateral gastrocnemius veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>medial gastrocnemius veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>posterior tibial veins</div>
+              
+            </div>
+            
+            
+            <img src="media/q45.png" alt="Question 45 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. medial gastrocnemius veins</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When imaging the posterior leg, the notch on the transducer should be placed toward the right side of the patient, just like
+imaging the anterior leg. The right side of the image is lateral and the left side of the image is medial in both imaging views.
+A. small saphenous vein
+B. lateral gastrocnemius veins
+C. medial gastrocnemius veins
+D. popliteal vein</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q46" style="animation-delay: 1575ms;">
+        <div class="card-header">
+          <div class="card-number">Question 46</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following statements regarding a Duplex exam of the upper extremity veins is correct?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The cephalic vein is easily compressed with light probe pressure, which can be an exam limitation.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The subclavian and innominate veins normally demonstrate continuous flow.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Inspiration will cause a decrease in flow within the larger upper extremity veins.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The internal jugular vein cannot be evaluated by ultrasound due to its course through bony structures of the neck.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. The cephalic vein is easily compressed with light probe pressure, which can be an exam limitation.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The cephalic vein is easily compressed with light probe pressure, which can be an exam limitation. The basilic vein is also easily
+compressible due to its location.
+Proper compression of the subclavian vein is normally inhibited by the clavicle. The subclavian and innominate veins usually
+demonstrate pulsatile, phasic flow due to their proximity to the heart/lungs. The IJV should be evaluated on all upper extremity
+venous duplex exams. It courses through the soft tissue/muscle of the neck, adjacent to the carotid artery. Inspiration will cause
+a decrease in flow within the larger upper extremity veins.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q47" style="animation-delay: 1610ms;">
+        <div class="card-header">
+          <div class="card-number">Question 47</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When a patient performs the Valsalva strain, the intra-abdominal pressure ___________________ and the intrathoracic pressure _____________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>increases, increases</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>decreases. increases</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>increases, decreases</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>does not change, increases</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. increases, increases</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When a patient performs the Valsalva strain, the intra-abdominal pressure increases and the intrathoracic pressure increases.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q48" style="animation-delay: 1645ms;">
+        <div class="card-header">
+          <div class="card-number">Question 48</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Increased pressure in the venous system results in:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>an increased risk of stroke</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>decreased arterial pressure</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Baker cyst formation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>edema</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. edema</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Increased pressure in the venous system results in edema as fluid is forced outward into surrounding tissues.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q49" style="animation-delay: 1680ms;">
+        <div class="card-header">
+          <div class="card-number">Question 49</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Where are the venous sinusoids in the lower extremity?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>within the quadriceps muscle</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>popliteal fossa</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>within the adductor canal</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>between the soleal and gastrocnemius muscle</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. between the soleal and gastrocnemius muscle</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The venous sinusoids serve as blood reservoirs in the calf and are an important part of the calf pump mechanism. They are
+located between the soleal and gastrocnemius muscle.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q50" style="animation-delay: 1715ms;">
+        <div class="card-header">
+          <div class="card-number">Question 50</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">_________________________ receives the blood from the posterior tibial perforators and plays a major role in venous stasis of the lower extremity.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The lateral perforator</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The vein of Giacomini</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>The anterior accessory saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The posterior venous arch</div>
+              
+            </div>
+            
+            
+            <img src="media/q50.jpg" alt="Question 50 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. The posterior venous arch</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Posterior arch vein (AKA posterior accessory saphenous vein) extends superior from the ankle to the GSV in the mid-calf; plays a
+major role in venous stasis; connected to 3 ankle perforators called posterior tibial perforators (formerly Cockett&#39;s Perforators.)</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q51" style="animation-delay: 1750ms;">
+        <div class="card-header">
+          <div class="card-number">Question 51</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What vein contains blood with a very high oxygen content?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>IVC</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>hepatic veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>pulmonary veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>portal veins</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. pulmonary veins</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The pulmonary veins are the only veins in the body that carry highly oxygenated blood. These veins drain the blood from the
+lungs into the left atrium for distribution to the body through the left ventricle/aorta. All other veins carry blood that have
+depleted levels of oxygen because the organs that they are draining require the oxygen to function.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q52" style="animation-delay: 1785ms;">
+        <div class="card-header">
+          <div class="card-number">Question 52</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The transducer is placed over the mid femoral vein while calf compression is performed. The Doppler waveform demonstrates spontaneous flow with an increase in forward flow with the calf compression. Which of the following describes the findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The popliteal and distal femoral veins have incompetent valves.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The popliteal vein has incompetent valves.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Heart disease is most likely present which causes the abnormal flow response.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The flow response is normal for the femoral vein.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. The flow response is normal for the femoral vein.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A normal response to distal augmentation is an increase in forward flow with the calf compression and NO flow reversal after
+the increase in flow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q53" style="animation-delay: 1820ms;">
+        <div class="card-header">
+          <div class="card-number">Question 53</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The femoral vein ______________________ the femoral artery.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>is usually much longer than</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>is harder to compress than</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>courses anterior to</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>courses posterior to</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. courses posterior to</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The femoral vein courses posterior to the femoral artery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q54" style="animation-delay: 1855ms;">
+        <div class="card-header">
+          <div class="card-number">Question 54</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which superficial vein listed forms a connection at the elbow between the two main upper extremity superficial veins?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>cephalic vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>basilic vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>radial vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>median cubital vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q54.jpg" alt="Question 54 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. median cubital vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The antecubital vein (AKA median cubital vein) forms a connection at the elbow between the basilic and cephalic veins.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q55" style="animation-delay: 1890ms;">
+        <div class="card-header">
+          <div class="card-number">Question 55</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following veins are part of the superficial venous system in the lower extremity?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>small saphenous vein and peroneal veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>posterior tibial vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>great saphenous vein and femoral vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>great and small saphenous veins</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. great and small saphenous veins</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The great and small saphenous veins make up the superficial venous drainage system of the lower extremity.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q56" style="animation-delay: 1925ms;">
+        <div class="card-header">
+          <div class="card-number">Question 56</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The Achilles tendon is a landmark for which deep calf vein?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>peroneal vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>posterior tibial vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>anterior tibial vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>small saphenous vein</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. posterior tibial vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The posterior tibial veins are identified at the area of the medial malleolus. The posterior tibial veins drain blood from the
+plantar arches and then course cephalad laying anterior to the tendon and posterior to the medial malleolus/tibial bone. The
+SSV is located posterior to the tendon, but it is a superficial vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q57" style="animation-delay: 1960ms;">
+        <div class="card-header">
+          <div class="card-number">Question 57</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The gastrocnemius plexus is usually connected to the:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>great saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>profunda vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>superficial femoral vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>popliteal vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q57.jpg" alt="Question 57 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. popliteal vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The gastrocnemius plexus is located in the calf muscle and drains into the popliteal veins. It acts as a reservoir for blood when
+sitting and standing etc.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q58" style="animation-delay: 1995ms;">
+        <div class="card-header">
+          <div class="card-number">Question 58</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Assuming proper transducer orientation, which of the following normal vessels could be displayed on the image?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>left common femoral vein and greater saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>right axillary vein and cephalic vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>left subclavian vein and cephalic vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>superior vena cava and right innominate vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q58.jpg" alt="Question 58 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. right axillary vein and cephalic vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The flow in the blue vessel is moving into the red vessel. The flow in the red vessel is moving toward the right side of the image.
+This is a transverse image of the right shoulder. The left side of the image is the lateral arm. The right side of the image is the
+medial arm. The vessels would be reversed on the image of this was a left shoulder image. If this were a longitudinal view of the
+groin it would demonstrate the greater saphenous vein extending upward on the left side of the image.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q59" style="animation-delay: 2030ms;">
+        <div class="card-header">
+          <div class="card-number">Question 59</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If the image displayed is a transverse view of the posterior right lower leg, Letter D correspond to:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>lateral gastrocnemius veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>posterior tibial veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>medial gastrocnemius veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>popliteal vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q59.png" alt="Question 59 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. popliteal vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When imaging the posterior leg, the notch on the transducer should be placed toward the right side of the patient, just like
+imaging the anterior leg. The right side of the image is lateral and the left side of the image is medial in both imaging views.
+A. small saphenous vein
+B. lateral gastrocnemius veins
+C. medial gastrocnemius veins
+D. popliteal vein</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q60" style="animation-delay: 2065ms;">
+        <div class="card-header">
+          <div class="card-number">Question 60</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Use your mouse to move the cursor over the great saphenous vein and click to mark the vessel.</div>
+            
+            
+            <img src="media/q60.png" alt="Question 60 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The saphenous veins course within the saphenous compartment that is formed by the two layers of fascia. The fascia appears
+as a linear echogenic reflection separating the layers of tissue. Tributary veins are found superficial to the superficial fascia.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q61" style="animation-delay: 2100ms;">
+        <div class="card-header">
+          <div class="card-number">Question 61</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is unaffected by vasoconstriction and vasodilation in the arterioles?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>peripheral resistance</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the number of phases of flow in the arterial waveform</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>hydrostatic pressure</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the amount of diastolic flow in an artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. hydrostatic pressure</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Hydrostatic pressure is the weight of the column of blood in the vessels when standing. Vasoconstriction will increase
+peripheral resistance and increase resistance in the feeding arteries. Higher resistance flow will have less antegrade flow in
+diastole. Vasodilation will decrease peripheral resistance and decrease resistance in the feeding arteries. Lower resistance flow
+will have more antegrade flow in diastole. A biphasic waveform can become monophasic.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q62" style="animation-delay: 2135ms;">
+        <div class="card-header">
+          <div class="card-number">Question 62</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is true regarding the superficial veins of the lower extremity?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>They are located 1-2cm below skin surface</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>They are more difficult to compress than the deep system</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>They do not contain valves</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The superficial veins course cephalad to meet the profunda vein to form the common femoral vein</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. They are located 1-2cm below skin surface</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The superficial system of the legs contains numerous valves and the veins are very easy to compress because they are located
+1-2cm below the skin surface.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q63" style="animation-delay: 2170ms;">
+        <div class="card-header">
+          <div class="card-number">Question 63</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If letter A is the basilic vein, what extremity is being evaluated?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>right forearm</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>left forearm</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>left distal upper arm</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>right distal upper arm</div>
+              
+            </div>
+            
+            
+            <img src="media/q63.jpg" alt="Question 63 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. left distal upper arm</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If the image is of the left arm, the left side of the image corresponds with the medial arm. The basilic vein is the medial vein in
+the left arm. There is only one set of deep veins and an artery located centrally on the image. This would indicate the brachial
+vessels. The image is of the upper arm.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q64" style="animation-delay: 2205ms;">
+        <div class="card-header">
+          <div class="card-number">Question 64</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">2D transverse views of the lower extremity veins are preferred for:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>evaluating compressibility</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>demonstrating the extent of thrombus</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>PW Doppler evaluation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>color Doppler evaluation</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. evaluating compressibility</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Sagittal views are preferred for evaluating the extent of thrombus formation, demonstrating color and PW Doppler exams.
+Transverse views are used to obtain 2D images or clips of vein compression.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q65" style="animation-delay: 2240ms;">
+        <div class="card-header">
+          <div class="card-number">Question 65</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which vein(s) originates at the ankle and courses along the medial border of the fibula to join the posterior tibial veins just distal to the popliteal fossa?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>deep femoral veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>great saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>peroneal veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>small saphenous vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q65.jpg" alt="Question 65 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. peroneal veins</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The peroneal vein originates at the ankle and courses along the medial border of the fibula to join the PTV just distal to the
+popliteal fossa.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q66" style="animation-delay: 2275ms;">
+        <div class="card-header">
+          <div class="card-number">Question 66</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Increased transducer pressure during a venous evaluation can have what negative effect on the exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>demonstrate compression of a vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>non-visualization of normal veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>increased beam intensity</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>increase beam penetration</div>
+              
+            </div>
+            
+            
+            <img src="media/q66.jpg" alt="Question 66 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. non-visualization of normal veins</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If transducer pressure is too great, normal superficial veins could be compressed causing non-visualization. Beam intensity does
+not change with transducer pressure. Transducer compression should be performed to assess vein compression (not a negative
+effect).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q67" style="animation-delay: 2310ms;">
+        <div class="card-header">
+          <div class="card-number">Question 67</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The image attached demonstrates which of the following?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Venous dissection</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Chronic DVT</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Venous valve</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Venous sclerosis</div>
+              
+            </div>
+            
+            
+            <img src="media/q67.jpg" alt="Question 67 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Venous valve</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br></div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q68" style="animation-delay: 2345ms;">
+        <div class="card-header">
+          <div class="card-number">Question 68</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The innominate vein is formed by the junction of:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>subclavian vein and internal jugular vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>superior vena cava and inferior vena cava</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>internal jugular vein and superior vena cava</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>subclavian vein and cephalic vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q68.jpg" alt="Question 68 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. subclavian vein and internal jugular vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The innominate vein is formed by the junction of subclavian vein and internal jugular vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q69" style="animation-delay: 2380ms;">
+        <div class="card-header">
+          <div class="card-number">Question 69</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">During a color evaluation of the common femoral vein, the patient is asked to perform the Valsalva maneuver. The cephalic flow indicated by the blue color in the CFV immediately disappears until the patient releases their muscles. The blue color returns and completely fills the vessel. What do these color Doppler findings indicate?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The response described is a normal result for the CFV.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Superficial venous insufficiency is present.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>There is most likely an occlusive DVT in the superficial femoral vein causing the venous turbulence proximally.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>A significant level of insufficiency is present and should be further evaluated with PW or CW Doppler techniques.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. The response described is a normal result for the CFV.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When the Valsalva maneuver is applied, flow within the lower extremities should decrease significantly and/or stop completely.
+The loss of color flow during the Valsalva maneuver is a normal response of cessation of flow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q70" style="animation-delay: 2415ms;">
+        <div class="card-header">
+          <div class="card-number">Question 70</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What patient position should be used when mapping the great saphenous vein for harvest?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>left lateral decubitus</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>reverse Trendelenburg</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>supine</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Trendelenburg</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. reverse Trendelenburg</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Place the extremity in a dependent position.
+Leg: reverse Trendelenburg for the GSV and decubitus for the SSV
+Arms: supine with arms extended at side at a level lower than the heart or seated position with hand on lap; tourniquets can be
+applied in cases where the veins are very small</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q71" style="animation-delay: 2450ms;">
+        <div class="card-header">
+          <div class="card-number">Question 71</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is the arrow pointing to on the image of the right groin?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>common femoral vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>superficial femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>great saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>femoral vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q71.jpg" alt="Question 71 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. great saphenous vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Note the thrombus in the most anterior vessel. This vessel courses anterior to the deep fascia. Note the linear echogenicity that
+courses posterior to the thrombosed vein. The image demonstrates the femoral vein and the profunda femoral vein merging to
+form the common femoral vein. The great saphenous vein joins the common femoral vein at the groin. The GSV demonstrates
+thrombosis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q72" style="animation-delay: 2485ms;">
+        <div class="card-header">
+          <div class="card-number">Question 72</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The image displayed is from the right groin in a patient with suspected venous insufficiency. Use your mouse to position the cursor over the superficial epigastric vein and click to select it.</div>
+            
+            
+            <img src="media/q72.png" alt="Question 72 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The superficial epigastric vein is a tributary of the great saphenous vein. It drains the skin of the lower abdomen and can cause
+superficial varicosities in the lower abdomen if the valves are incompetent.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q73" style="animation-delay: 2520ms;">
+        <div class="card-header">
+          <div class="card-number">Question 73</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a limitation of the 2D evaluation of the extremity veins?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>increased amount of fibrous tissues and ligaments in the adductor canal</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>patient cannot lay flat for exam</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>location of the brachial vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>inability to visualize the vessels immediately posterior to the inguinal ligament</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. increased amount of fibrous tissues and ligaments in the adductor canal</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Limitations of venous duplex evaluations:
+Non-visualization of veins due to excessive transducer pressure
+Location of the subclavian vein beneath the clavicle
+increased amount of fibrous tissues and ligaments in the adductor canal
+Patient that cannot be semi-erect or standing for exam
+The inguinal ligament is not normally visible on ultrasound evaluation and it does not cause non-visualization of adjacent
+anatomy.
+The adductor canal contains several ligaments and connective tissues that limit compression of the distal femoral vein.
+Increased transducer pressure can cause non-visualization of normal veins.
+The subclavian vein courses posterior to the clavicle, which limits manual compression.
+The superficial venous systems of the upper and lower extremities can be easily compressed causing non-visualization
+Patients for DVT exams should be scanned in the semierect position to dilate the veins for easier visualization. A supine patient
+can cause the veins to be difficult to identify.
+Insufficiency exams should be performed with the patient standing, to engorge the veins with blood and encourage the display
+of reflux. A supine patient could cause false negative results for reflux.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q74" style="animation-delay: 2555ms;">
+        <div class="card-header">
+          <div class="card-number">Question 74</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following are typically characterized as concomitant veins?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior tibial veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>soleal veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>popliteal vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>subclavian vein</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. posterior tibial veins</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Concomitant veins - refers to a pair of veins that are coursing on both sides of a single artery. Radial, ulnar, PTV, ATV, peroneal
+and gastrocnemius veins are examples of concomitant veins. The soleal veins/sinuses have no accompanying artery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q75" style="animation-delay: 2590ms;">
+        <div class="card-header">
+          <div class="card-number">Question 75</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Use your mouse to position the cursor over the anterior accessory saphenous vein and click to set the cursor.</div>
+            
+            
+            <img src="media/q75.png" alt="Question 75 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The anterior accessory saphenous vein travels anterior to the femoral artery to join the great saphenous vein near its junction
+with the common femoral vein at the groin. When visualized on an exam in a patient with symptoms of venous insufficiency, it
+should be evaluated with color and PW Doppler for signs of reflux.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q76" style="animation-delay: 2625ms;">
+        <div class="card-header">
+          <div class="card-number">Question 76</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which vein courses from the lateral aspect of the wrist extending up the lateral arm to the shoulder to join the axillary vein?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>cephalic</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>brachial</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>basilic</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>axillary</div>
+              
+            </div>
+            
+            
+            <img src="media/q76.jpg" alt="Question 76 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. cephalic</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The cephalic vein courses from the lateral aspect of the wrist extending up the lateral arm to the shoulder to join the axillary
+vein to form the subclavian vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q77" style="animation-delay: 2660ms;">
+        <div class="card-header">
+          <div class="card-number">Question 77</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following normal vessels will collapse when you ask the patient to sniff quickly with moderate exertion?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>common femoral vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>basilic vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>subclavian vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>cephalic vein</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. subclavian vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The quick change in intrathoracic pressure with a sniff should cause the normal subclavian vein to collapse quickly due to the
+increased outflow into the innominate vein. The cephalic vein is a superficial vein that courses outside the musculature of the
+arm to enter the subclavian vein at the shoulder. A quick sniff would not affect the flow in a superficial vein. The common
+femoral vein is outside the chest/abdomen cavity. The change in pressure in these two areas with a quick sniff would not affect
+a vessel in the extremity.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q78" style="animation-delay: 2695ms;">
+        <div class="card-header">
+          <div class="card-number">Question 78</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">An ineffective calf muscle pump causes:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the pressure in the superficial veins to drop</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the pressure in the deep calf veins to increase</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>flow to move through the perforators into the deep system</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the pressure in the deep calf veins to drop</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. the pressure in the deep calf veins to increase</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Effective calf pump reduces blood stasis/pooling, decreases venous pressure. Ineffective calf pump leads to increased stasis,
+venous volume and pressure; reflux is a contributing factor</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q79" style="animation-delay: 2730ms;">
+        <div class="card-header">
+          <div class="card-number">Question 79</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Pressure in the venules does not normally exceed ________________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>50mmHg</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>20mmHg</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>0mmHg</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>80mmHg</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. 20mmHg</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Pressure in the venules does not normally exceed 20mmHg.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q80" style="animation-delay: 2765ms;">
+        <div class="card-header">
+          <div class="card-number">Question 80</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The radial and ulnar veins merge to form the _______________________ at the ________________________ fossa.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>axillary vein, axillary</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>brachial vein, popliteal</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>axillary vein, antecubital</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>brachial vein, antecubital</div>
+              
+            </div>
+            
+            
+            <img src="media/q80.jpg" alt="Question 80 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. brachial vein, antecubital</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The radial and ulnar veins merge to form the brachial vein at the antecubital fossa.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q81" style="animation-delay: 2800ms;">
+        <div class="card-header">
+          <div class="card-number">Question 81</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is part of the superficial venous system of the lower extremity?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>peroneal veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>vein of Giacomini</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>gastrocnemius veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>sural sinuses</div>
+              
+            </div>
+            
+            
+            <img src="media/q81.jpg" alt="Question 81 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. vein of Giacomini</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The vein of Giacomini is a superficial communicator vein connecting the GSV and SSV. The gastrocnemius veins and sural sinus
+are located deep in the calf muscle. The peroneal veins are deep veins of the calf.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q82" style="animation-delay: 2835ms;">
+        <div class="card-header">
+          <div class="card-number">Question 82</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is correct regarding the brachiocephalic veins?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Cardiac pulsatility is an abnormal Doppler finding in the brachiocephalic veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Formed by the junction of the external jugular and subclavian veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Right and left brachiocephalic veins course anterior and medial to the right and left brachiocephalic arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Right and left brachiocephalic veins merge to form the superior vena cava</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Right and left brachiocephalic veins merge to form the superior vena cava</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The brachiocephalic veins are formed by the junction of the internal jugular and subclavian veins. Right and left brachiocephalic
+veins merge to form the superior vena cava. There is no brachiocephalic artery on the left side. Cardiac pulsatility is a normal
+Doppler finding in the brachiocephalic veins due to their proximity to the heart.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q83" style="animation-delay: 2870ms;">
+        <div class="card-header">
+          <div class="card-number">Question 83</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Use your mouse to position the cursor over the great saphenous vein and click to set the cursor.</div>
+            
+            
+            <img src="media/q83.png" alt="Question 83 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The great saphenous vein travels medial to the femoral vein to join the common femoral vein near the groin. When visualized
+on an exam in a patient with symptoms of venous insufficiency, it should be evaluated with color and PW Doppler for signs of
+reflux.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q84" style="animation-delay: 2905ms;">
+        <div class="card-header">
+          <div class="card-number">Question 84</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is part of the deep venous system of the forearm?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>radial vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>median cubital vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>basilic vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>cephalic vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q84.jpg" alt="Question 84 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. radial vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The basilic, cephalic and median cubital veins are superficial veins of the arm. The radial, ulnar, brachial and axillary veins are
+deep veins of the arm.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q85" style="animation-delay: 2940ms;">
+        <div class="card-header">
+          <div class="card-number">Question 85</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Once the pressure in the deep venous system consistently exceeds the pressure in the superficial system,</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>perforators will constrict forcing flow reversal into the superficial system</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>perforators will dilate and allow flow to only move into the deep system</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>perforators will exhibit stasis of flow and thrombus formation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>perforators will dilate leading to bi-directional flow</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. perforators will dilate leading to bi-directional flow</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Once the pressure in the deep venous system consistently exceeds the pressure in the superficial system, perforators will dilate
+leading to bi-directional flow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q86" style="animation-delay: 2975ms;">
+        <div class="card-header">
+          <div class="card-number">Question 86</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The transducer is placed in the longitudinal position slightly anterior to midline of the medial upper left calf. The beam is angled posterior until the image displayed appears. What vessel is indicated by letter A?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior tibial vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>peroneal vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>anterior tibial vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>gastrocnemius vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q86.jpg" alt="Question 86 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. posterior tibial vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The image displays the confluence of the posterior tibial and peroneal veins. The peroneal veins are deeper on the image.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q87" style="animation-delay: 3010ms;">
+        <div class="card-header">
+          <div class="card-number">Question 87</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Hydrostatic venous pressure ___________ when a patient goes from standing to the supine position.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>will show little change</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>shows a quick decrease before returning to 100mmHg</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>increases</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>decreases</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. decreases</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Hydrostatic pressure refers to the weight of the column of blood within the veins when a patient is standing. The pressure is
+0mmHg at the level of the heart and increases more distally to a level of 100mmHg at the ankles. When a patient lies down, the
+pressure in the &#34;column&#34; is dispersed.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q88" style="animation-delay: 3045ms;">
+        <div class="card-header">
+          <div class="card-number">Question 88</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following explains the increased incidence of DVT in the left leg when compared to the right leg?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The anatomic course of the left iliac vein leads to increased risk of extrinsic compression.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The left iliac vein is usually smaller than the right.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Left iliac vein is a common location for DVT formation with pregnancy</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>There are more valves present in the left iliac vein which can lead to increased venous stasis.</div>
+              
+            </div>
+            
+            
+            <img src="media/q88.jpg" alt="Question 88 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. The anatomic course of the left iliac vein leads to increased risk of extrinsic compression.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Left iliac vein courses beneath the right iliac artery at the aortic bifurcation. Extrinsic compression has been linked to increased
+incidence of left leg DVT. This condition is called May Thurner syndrome.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q89" style="animation-delay: 3080ms;">
+        <div class="card-header">
+          <div class="card-number">Question 89</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The image is a transverse view of the right antecubital fossa. What vessel is indicated by letter A?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>cephalic vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>median cubital vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>brachial vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>basilic vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q89.jpg" alt="Question 89 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. cephalic vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If the image is of the right arm, the left side of the image corresponds with the lateral right arm. The veins of the arm listed from
+lateral to medial: cephalic, brachial, basilic</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q90" style="animation-delay: 3115ms;">
+        <div class="card-header">
+          <div class="card-number">Question 90</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The ______________ course(s) between the tibial and fibular head to empty blood into the popliteal vein.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>small saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>posterior tibial veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>peroneal veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>anterior tibial veins</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. anterior tibial veins</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>ATVs course anterolaterally to the tibial bone across the interosseous membrane of the calf and through a space between the
+tibial and fibular head to empty into the popliteal vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q91" style="animation-delay: 3150ms;">
+        <div class="card-header">
+          <div class="card-number">Question 91</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The great saphenous vein originates _____________________</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>at the dorsum of the foot and courses anterior to the medial malleolus.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>at the dorsum of the foot and courses anterior to the lateral malleolus.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>at the great toe and courses along the ventral aspect of the foot to reach the lateral ankle and extend up the leg.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>at the great toe and courses along the ventral aspect of the foot to reach the medial ankle and extend up the leg.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. at the dorsum of the foot and courses anterior to the medial malleolus.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The great saphenous vein originates at the dorsum of the foot and courses anterior to the medial malleolus.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q92" style="animation-delay: 3185ms;">
+        <div class="card-header">
+          <div class="card-number">Question 92</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Use your mouse to move the cursor over the saphenous tributary vein and click to mark the vessel.</div>
+            
+            
+            <img src="media/q92.png" alt="Question 92 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The saphenous veins course within the saphenous compartment that is formed by the two layers of fascia. Tributary veins are
+found superficial to the superficial fascia.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q93" style="animation-delay: 3220ms;">
+        <div class="card-header">
+          <div class="card-number">Question 93</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">During inspiration the flow in the veins of the lower extremities _____________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>increases</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>decreases</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>remains unchanged</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>reverses direction</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. decreases</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>During inspiration the pressure within the chest cavity decreases allowing venous flow from the upper extremities to increase.
+During expiration, the pressure within the chest cavity increases causing the venous flow from the upper extremities to
+decrease. THE OPPOSITE IS TRUE WITH THE FLOW FROM THE LOWER EXTREMITIES.
+During inspiration the pressure within the abdominal cavity increases causing venous flow from the lower extremities to
+decrease. During expiration, the pressure within the abdominal cavity decreases allowing the venous flow from the lower
+extremities to increase.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q94" style="animation-delay: 3255ms;">
+        <div class="card-header">
+          <div class="card-number">Question 94</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">_________________________ drain(s) blood from the GSV in the proximal thigh into the proximal and mid femoral vein.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Posterior tibial perforators</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Posterior venous arch</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Thigh perforators</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Paratibial perforators</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Thigh perforators</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The Hunterian perforators drain blood from the GSV in the proximal/mid-thigh into the femoral vein. They are also referred to
+as proximal thigh perforators.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q95" style="animation-delay: 3290ms;">
+        <div class="card-header">
+          <div class="card-number">Question 95</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The superficial venous system of the lower extremities contains vessels that are located</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>on the lateral aspect of each leg</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>within the connective tissue between the muscle tissue</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>superficial to the deep muscular fascia</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>adjacent to an artery with the same name</div>
+              
+            </div>
+            
+            
+            <img src="media/q95.jpg" alt="Question 95 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. superficial to the deep muscular fascia</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The saphenous veins and their tributaries course within the subcutaneous tissue, between the fascial layers.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q96" style="animation-delay: 3325ms;">
+        <div class="card-header">
+          <div class="card-number">Question 96</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The image is a transverse view of the right antecubital fossa. What vessel is indicated by letter C?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>brachial vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>cephalic vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>basilic vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>brachial artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q96.jpg" alt="Question 96 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. brachial artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If the image is of the right arm, the left side of the image corresponds with the lateral right arm. The veins of the arm listed from
+lateral to medial: cephalic, brachial, basilic. The red color in the vessel labeled C indicates flow in the opposite direction of the
+other vessels on the screen. Letter C is the brachial artery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q97" style="animation-delay: 3360ms;">
+        <div class="card-header">
+          <div class="card-number">Question 97</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The image is a transverse view of right shoulder. What vessel is indicated by letter B?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>axillary vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>cephalic vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>basilic vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>subclavian vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q97.jpg" alt="Question 97 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. cephalic vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The cephalic vein joins the axillary vein to form the subclavian vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q98" style="animation-delay: 3395ms;">
+        <div class="card-header">
+          <div class="card-number">Question 98</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Blood within the pulmonary veins:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>contains a high oxygen content and flows into the right atrium</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>contains a low oxygen content and flows into the left atrium</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>contains high oxygen content and flows into the left atrium</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>is normally high resistance</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. contains high oxygen content and flows into the left atrium</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Blood within the pulmonary veins contains high oxygen content and flows into the left atrium.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q99" style="animation-delay: 3430ms;">
+        <div class="card-header">
+          <div class="card-number">Question 99</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The transducer is placed in the longitudinal position slightly anterior to midline of the medial upper left calf. The beam is angled posterior until the image displayed appears. What vessel is indicated by letter C?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>anterior tibial vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>peroneal vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>posterior tibial vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>gastrocnemius vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q99.jpg" alt="Question 99 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. peroneal vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The image displays the confluence of the posterior tibial and peroneal veins. The peroneal veins are deeper on the image.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q100" style="animation-delay: 3465ms;">
+        <div class="card-header">
+          <div class="card-number">Question 100</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following veins normally do not demonstrate spontaneous flow on Doppler evaluation?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior tibial and popliteal veins</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>peroneal and femoral veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>posterior tibial, peroneal and great saphenous vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>All lower extremity veins should normally demonstrate spontaneous flow on Doppler evaluation. Loss of spontaneity indicates flow stasis.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. posterior tibial, peroneal and great saphenous vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Calf veins and superficial veins do not normally demonstrate flow without augmentation. (Lack spontaneity) Normally the flow is
+very low velocity and not easily detected without augmentation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q101" style="animation-delay: 3500ms;">
+        <div class="card-header">
+          <div class="card-number">Question 101</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following veins does not normally contain any functioning valves?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Innominate vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Axillary vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Peroneal veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Small saphenous</div>
+              
+            </div>
+            
+            
+            <img src="media/q101.jpg" alt="Question 101 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Innominate vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Lower extremity veins that do NOT contain valves = IVC, iliac veins and soleal sinuses; Upper extremity veins that do NOT
+contain valves = SVC and innominate veins.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q102" style="animation-delay: 3535ms;">
+        <div class="card-header">
+          <div class="card-number">Question 102</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a limitation of a CW Doppler evaluation of the lower extremity veins?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Augmentation cannot be demonstrated on a CW Doppler tracing</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Cannot be certain which vein you are evaluating</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Can only be performed on patients in the supine position</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Flow velocities in veins are too low for detection and display on CW Doppler evaluation</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Cannot be certain which vein you are evaluating</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>It is difficult to differentiate deep veins from superficial veins and superficial veins from perforators due to lack of range
+resolution with CW Doppler. The Sonographer cannot be certain which vein they are evaluating because the CW Doppler
+samples everything in its path. This would make the evaluation of systems with duplicated veins even more difficult.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q103" style="animation-delay: 3570ms;">
+        <div class="card-header">
+          <div class="card-number">Question 103</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Use your mouse to place your cursor over the normal lymph node and click to mark the structure.</div>
+            
+            
+            <img src="media/q103.png" alt="Question 103 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A normal lymph node is oval in shape and demonstrates a thin hypoechoic rim of tissue around an echogenic hilum. Abnormal
+lymph nodes demonstrate a more rounded shape, thickened cortex that can appear anechoic. and there is loss of
+differentiation of the hilum.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q104" style="animation-delay: 3605ms;">
+        <div class="card-header">
+          <div class="card-number">Question 104</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Bank tellers, teachers, cashiers and assembly line workers have an increased risk of all of the following, except:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>venous hypertension</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>varicose veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>thrombus formation in the soleal sinuses</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>jugular vein thrombosis</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. jugular vein thrombosis</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Bank tellers, teachers, cashiers and assembly line workers are on their feet, standing still for several hours of the day. This will
+cause venous blood to pool in the legs and increase pressure in the veins (venous hypertension). Stasis of venous flow can lead
+to thrombus formation. Flow in the jugular veins would flow easily into the vena cava with no stasis or increased risk of
+thrombus formation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q105" style="animation-delay: 3640ms;">
+        <div class="card-header">
+          <div class="card-number">Question 105</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following terms would be used to describe abnormal venous flow in the deep veins of the thigh?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>spontaneous</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>phasic</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>cardiac pulsatility</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>low velocity</div>
+              
+            </div>
+            
+            
+            <img src="media/q105.jpg" alt="Question 105 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. cardiac pulsatility</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The term pulsatility refers to repetitive flow changes demonstrated on the Doppler tracing. Veins closest to the heart will
+demonstrate cardiac pulsatility due to the changes in right atrial pressure. It can be equated to a &#34;ripple effect&#34;, like a stone
+being thrown into a pool of water. The variations in flow are demonstrated in vessels further from the heart as they become
+engorged with blood. If venous flow is pulsatile in the lower extremities, cardiac complications like CHF or severe tricuspid
+regurgitation should be suspected.
+Normal venous flow varies with respiration and has very low velocity. Spontaneous flow should also be present in most veins in
+the body (without any augmentation maneuvers applied).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q106" style="animation-delay: 3675ms;">
+        <div class="card-header">
+          <div class="card-number">Question 106</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The soleal plexus is located:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>In the calf</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>In the Circle of Willis of the brain</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>In the neck</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>In the forearm</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. In the calf</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The soleal plexus is the venous drainage system/reservoir of the soleal muscle of the calf.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q107" style="animation-delay: 3710ms;">
+        <div class="card-header">
+          <div class="card-number">Question 107</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Where is the eustachian valve found?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>thoracic outlet</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>near the junction of the IVC with the right atrium</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>antecubital fossa</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>popliteal fossa</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. near the junction of the IVC with the right atrium</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A Eustachian valve is a single flap of tissue at the junction of the IVC with the right atrium that is necessary for fetal circulation.
+The Eustachian valve may persist in some adults, but it has no effect on circulation. It is not a TRUE venous valve in an adult and
+the IVC is described as having no valves.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q108" style="animation-delay: 3745ms;">
+        <div class="card-header">
+          <div class="card-number">Question 108</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">How can the gastrocnemius veins and the posterior tibial veins be differentiated on an ultrasound exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Follow them distally to locate their point of origination</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Document the direction of flow relative to the foot</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Document the presence of a corresponding artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Document the direction of flow relative to the knee</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Follow them distally to locate their point of origination</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Gastrocnemius veins originate deep within the calf muscle and extend to the popliteal fossa to join the popliteal vein. The
+posterior tibial veins originate at the ankle and extend to join the tibioperoneal trunk near the popliteal fossa. If you are
+progressing down the leg for a venous evaluation, when you reach the popliteal fossa and begin noting the calf vessels, pick a
+set to follow. If they dive deep into the calf = gastrocnemius veins, if they extend to the ankle = PTVs.
+Both sets of veins have a corresponding artery and flow moving toward the heart. These characteristics would not differentiate
+them from each other.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q109" style="animation-delay: 3780ms;">
+        <div class="card-header">
+          <div class="card-number">Question 109</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Proximal augmentation during an extremity Doppler evaluation is used to assess:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>arterial insufficiency</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>for the presence of CHF</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>venous insufficiency</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>vein compressibility</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. venous insufficiency</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Proximal augmentation and distal augmentation techniques are used to assess for venous insufficiency. Distal augmentation is
+also used in DVT evaluation.
+Powered by ExamBuilder. Copyright ©2026</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+    </section>
+  </main>
+  <script>
+    const detailsElements = Array.from(document.querySelectorAll("details"));
+    document.getElementById("open-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = true));
+    document.getElementById("close-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = false));
+  </script>
+</body>
+</html>

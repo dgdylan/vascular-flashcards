@@ -1,0 +1,2782 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cerebro Vascular Anatomy 12%</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06101d;
+      --bg-strong: #0b1628;
+      --card: rgba(17, 31, 52, 0.92);
+      --card-strong: rgba(20, 36, 60, 0.98);
+      --ink: #f4f8ff;
+      --muted: #b0bfd6;
+      --accent: #82ddd7;
+      --accent-strong: #b4f0eb;
+      --accent-soft: rgba(130, 221, 215, 0.16);
+      --border: rgba(149, 180, 221, 0.34);
+      --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
+      --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.28);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(130, 221, 215, 0.14), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(97, 130, 194, 0.18), transparent 24%),
+        linear-gradient(180deg, #071221 0%, var(--bg) 54%, #040b15 100%);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+    .wrap {
+      width: min(1080px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.5rem 0 4rem;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      padding: clamp(1.4rem, 2.5vw, 2rem);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94)),
+        linear-gradient(120deg, rgba(130, 221, 215, 0.08), rgba(97, 130, 194, 0.08));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      animation: rise-in 560ms ease-out both;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -35% auto;
+      width: 240px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
+      background: radial-gradient(circle, rgba(97, 130, 194, 0.4), transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4.8vw, 3.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 14ch;
+      text-wrap: balance;
+    }
+    .subhead {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .toolbar a, .toolbar button {
+      border: 1px solid var(--border);
+      background: var(--card-strong);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.78rem 1.05rem;
+      cursor: pointer;
+      text-decoration: none;
+      font: inherit;
+      font-weight: 700;
+      box-shadow: var(--shadow-soft);
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+    .toolbar a:hover, .toolbar button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(130, 221, 215, 0.42);
+      background: rgba(26, 45, 73, 1);
+    }
+    .cards {
+      display: grid;
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      animation: rise-in 520ms ease-out both;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+      border-color: rgba(130, 221, 215, 0.28);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(130, 221, 215, 0.09), rgba(97, 130, 194, 0.08)),
+        rgba(16, 30, 50, 0.88);
+    }
+    .card-number {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .pill {
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .card-body {
+      padding: 1.2rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .card-side {
+      display: grid;
+      gap: 0.75rem;
+    }
+    .label {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .content {
+      font-size: 1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .choices {
+      display: grid;
+      gap: 0.45rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(24, 41, 67, 0.98), rgba(17, 31, 52, 0.92));
+    }
+    .choice {
+      line-height: 1.5;
+    }
+    .choice-label {
+      font-weight: 700;
+      color: var(--accent);
+      margin-right: 0.3rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(8, 15, 27, 0.96);
+      display: block;
+      box-shadow: var(--shadow-soft);
+    }
+    details {
+      border-top: 1px dashed rgba(149, 180, 221, 0.34);
+      padding-top: 1rem;
+    }
+    summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 700;
+      list-style: none;
+      transition: color 180ms ease;
+    }
+    summary:hover { color: var(--accent-strong); }
+    summary::-webkit-details-marker { display: none; }
+    .answer-block {
+      margin-top: 0.9rem;
+      display: grid;
+      gap: 0.75rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(19, 35, 58, 0.98), rgba(13, 25, 43, 0.96));
+    }
+    .answer-title {
+      font-weight: 700;
+    }
+    @keyframes rise-in {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero, .card {
+        animation: none;
+      }
+      .toolbar a, .toolbar button, .card, summary {
+        transition: none;
+      }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 1rem, 1080px); padding-top: 1rem; }
+      .hero {
+        border-radius: 22px;
+        padding: 1.15rem;
+      }
+      .card-header, .card-body { padding: 1rem; }
+      .toolbar {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .toolbar a, .toolbar button {
+        width: 100%;
+        text-align: center;
+      }
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Review Deck</p>
+      <h1>Cerebro Vascular Anatomy 12%</h1>
+      <p class="subhead">69 flashcards extracted from this PDF. Open each back panel to review the correct answer and full feedback.</p>
+      <div class="toolbar">
+        <a href="../index.html">Back to index</a>
+        <button type="button" id="open-all">Open all backs</button>
+        <button type="button" id="close-all">Close all backs</button>
+      </div>
+    </section>
+    <section class="cards">
+      
+      <article class="card" id="q1" style="animation-delay: 0ms;">
+        <div class="card-header">
+          <div class="card-number">Question 1</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following anatomic variants of ICA anatomy is most often associated with symptoms of cerebral ischemia?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>tortuosity</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>duplication</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>kinking</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>coiling</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. kinking</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Kinking - vessel takes a sharp turn of 90 degrees or less, mimics stenosis and is related to plaque/stenosis formation. It is the
+anatomic variant most commonly associated with symptoms of ischemia
+Coiling - vessel forms a circle during its course
+Tortuosity - vessel forms an S-shaped curve</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q2" style="animation-delay: 35ms;">
+        <div class="card-header">
+          <div class="card-number">Question 2</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is not normally a branch of the ophthalmic artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>frontal artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>supraorbital artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>nasal artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>posterior auricular artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. posterior auricular artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The posterior auricular artery branches from the ECA and supplies the ear with oxygenated blood.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q3" style="animation-delay: 70ms;">
+        <div class="card-header">
+          <div class="card-number">Question 3</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What are the standard windows used for a complete transcranial Doppler exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>suboccipital, transtemporal, transorbital, and submandibular windows</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>suboccipital, transtemporal, and periorbital windows</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>suboccipital, transtemporal windows</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>transtemporal window only, other views performed if abnormalities identified</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. suboccipital, transtemporal, transorbital, and submandibular windows</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The four standard windows used for a TCD exam are the suboccipital, transtemporal, transorbital/ophthalmic, and
+submandibular windows. The periorbital window is a supplemental view used to assess the frontal artery (branch of the
+ophthalmic artery).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q4" style="animation-delay: 105ms;">
+        <div class="card-header">
+          <div class="card-number">Question 4</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The highest velocity in the normal common carotid artery is usually identified:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>&lt;1cm from the bulb</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>&lt; 3cm from the bulb</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>in the first 3cm of the vessel</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>mid CCA</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. in the first 3cm of the vessel</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The highest ICA velocity is usually identified in the first 3cm of the vessel. The highest CCA velocity is also usually identified in the
+proximal artery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q5" style="animation-delay: 140ms;">
+        <div class="card-header">
+          <div class="card-number">Question 5</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The image provided was taken during a routine carotid examination. Which of the following statements is true regarding the images?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>This is a normal vertebral artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>This is a mildly stenosed ICA</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>This is a normal ICA</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>This is a normal ECA</div>
+              
+            </div>
+            
+            
+            <img src="media/q5.png" alt="Question 5 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. This is a normal ECA</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Note the branch originating from the proximal vessel. The ICA has no branches identified extracranially. The vertebral arteries
+course through the pedicles of the vertebra and this vessel is demonstrated anterior to the spine.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q6" style="animation-delay: 175ms;">
+        <div class="card-header">
+          <div class="card-number">Question 6</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Using the transtemporal window, the normal middle cerebral artery ______________________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>will demonstrate flow toward the probe</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>will demonstrate flow away from the probe</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>will demonstrate biphasic flow</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>will demonstrate a clear spectral window</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. will demonstrate flow toward the probe</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Using the transtemporal window, the normal MCA will demonstrate monophasic flow toward the probe. Because the
+intracranial vessels are so small, no spectral window is demonstrated on the waveform.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q7" style="animation-delay: 210ms;">
+        <div class="card-header">
+          <div class="card-number">Question 7</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following structures is supplied by branches of the internal carotid artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>lateral nose only</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>parietal lobe only</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>eyes and lateral nose, but not the parietal lobe</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>eyes, lateral nose and parietal lobe</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. eyes, lateral nose and parietal lobe</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Branches of the internal carotid artery supply the eyes, lateral nose and parietal lobe.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q8" style="animation-delay: 245ms;">
+        <div class="card-header">
+          <div class="card-number">Question 8</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When scanning the internal carotid, which way would you angle your probe to locate the external carotid artery in most patients?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>40 degrees medially</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>superior and/or lateral</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>medial and/or anterior</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>lateral and/or anterior</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. medial and/or anterior</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When scanning the internal carotid artery, you angle your probe medial and anterior to locate the external carotid artery in
+most patients</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q9" style="animation-delay: 280ms;">
+        <div class="card-header">
+          <div class="card-number">Question 9</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is demonstrated on the image?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>normal internal jugular vein flow with reversed vertebral artery flow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>normal carotid artery flow with vertebral artery flow reversal</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>normal carotid artery and vertebral artery flow</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>normal internal jugular vein flow with normal vertebral artery flow</div>
+              
+            </div>
+            
+            
+            <img src="media/q9.jpg" alt="Question 9 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. normal carotid artery and vertebral artery flow</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The carotid and vertebral arteries should normally demonstrate flow moving in the same direction. Because of the angle of the
+color box, the blue color is demonstrating flow moving away from the transducer. In standard practice, the color box should be
+angled the opposing direction or the heel toe technique used to demonstrate the vessels and flow moving toward the
+transducer. Red color is most commonly used to demonstrate antegrade flow and blue is used for retrograde flow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q10" style="animation-delay: 315ms;">
+        <div class="card-header">
+          <div class="card-number">Question 10</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which artery supplies the brainstem with arterial blood?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>anterior cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>basilar artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>posterior cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>posterior communicating artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. basilar artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Branches from the vertebral and basilar arteries feed the cerebellum and portions of the brain stem.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q11" style="animation-delay: 350ms;">
+        <div class="card-header">
+          <div class="card-number">Question 11</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">In the Circle of Willis there is/are:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>2 anterior communicator arteries and 1 middle communicator artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>1 anterior communicator artery and 2 middle communicator arteries</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>1 anterior communicator artery and 2 posterior communicator arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>2 anterior communicator arteries and 1 posterior communicator artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q11.jpg" alt="Question 11 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. 1 anterior communicator artery and 2 posterior communicator arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>In the Circle of Willis there is 1 anterior communicator artery and 2 posterior communicator arteries.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q12" style="animation-delay: 385ms;">
+        <div class="card-header">
+          <div class="card-number">Question 12</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes the probe placement for a Doppler evaluation of the frontal artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>near the inner canthus of the eye</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>approximately 2cm above the zygomatic arch</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>just above the mid-point of the eyebrow</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>near the outer canthus of the eye</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. near the inner canthus of the eye</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Periorbital Doppler is a CW Doppler evaluation of the frontal artery (branch of the ophthalmic artery). An 8-10MHz pencil probe
+is placed near the inner canthus of the eye. Normal flow direction will be toward the probe.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q13" style="animation-delay: 420ms;">
+        <div class="card-header">
+          <div class="card-number">Question 13</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Letter B indicates which of the following structures?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Superficial temporal artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Thyrocervical trunk</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Vertebral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Internal thoracic artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q13.jpg" alt="Question 13 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Vertebral artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A. Internal thoracic artery
+B. Vertebral artery
+C. Thyrocervical trunk
+D. Right CCA</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q14" style="animation-delay: 455ms;">
+        <div class="card-header">
+          <div class="card-number">Question 14</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following statements is true regarding the vertebral arteries?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The right vertebral artery is normally smaller than the left.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The right vertebral artery is the first branch of the aortic arch.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Vertebral artery flow is normally biphasic due to turbulence at their junction with the basilar artery.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The right and left vertebral arteries empty their blood into the right and left basilar arteries.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. The right vertebral artery is normally smaller than the left.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The right vertebral artery is normally smaller than the left vertebral artery. It originates from the right subclavian artery. The
+right and left vertebral arteries merge distally to form a single basilar artery. Normal Doppler evaluation demonstrates a low
+resistance, monophasic waveform.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q15" style="animation-delay: 490ms;">
+        <div class="card-header">
+          <div class="card-number">Question 15</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Letter C indicates which of the following structures?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Thyrocervical trunk</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Superficial temporal artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Internal thoracic artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Vertebral artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q15.jpg" alt="Question 15 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Thyrocervical trunk</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A. Internal thoracic artery
+B. Vertebral artery
+C. Thyrocervical trunk
+D. Right CCA</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q16" style="animation-delay: 525ms;">
+        <div class="card-header">
+          <div class="card-number">Question 16</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following Doppler imaging characteristics will not assist when trying to identify a vessel on a TCD exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Velocity of flow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Sample size</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Sample location/depth</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Direction of flow</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Sample size</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>TCD exams rely on range resolution to determine the vessels interrogated on the exam. The depth of the sample, flow velocity
+and direction of flow detected are used to determine the vessel being interrogated by PW Doppler. The sample size will only
+affect the amount of flow sampled and is not useful for determining the vessel being evaluated.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q17" style="animation-delay: 560ms;">
+        <div class="card-header">
+          <div class="card-number">Question 17</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following arteries will be compressed when evaluating frontal artery flow for a periorbital Doppler exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>internal carotid artery and vertebral artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>external carotid artery and vertebral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>superficial temporal artery and infraorbital artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>ophthalmic artery and contralateral common carotid artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. superficial temporal artery and infraorbital artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A periorbital Doppler exam involves using CW Doppler to evaluate flow in the frontal artery (branch of the ophthalmic artery).
+Normal flow direction will be toward the probe. Flow moving away from the probe indicates a significant obstruction in the
+ipsilateral ICA. Compression of the infraorbital, facial and superficial temporal arteries is performed on both sides of the head,
+while monitoring the frontal artery flow. If compression of one of these arteries causes decreased or reversed flow in the frontal
+artery, the compressed vessel is being used as a collateral to fill the frontal artery (not the ICA).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q18" style="animation-delay: 595ms;">
+        <div class="card-header">
+          <div class="card-number">Question 18</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following arteries is supplied with blood from the ECA?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>maxillary artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>posterior communicator artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>ophthalmic artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>anterior choroidal artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. maxillary artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The maxillary artery is a branch of the ECA. The other choices are fed by the ICA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q19" style="animation-delay: 630ms;">
+        <div class="card-header">
+          <div class="card-number">Question 19</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When evaluating the carotid siphon from the submandibular window, the sample depth should be set to value between:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>30-50mm</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>40-60mm</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>60-80mm</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>80-110mm</div>
+              
+            </div>
+            
+            
+            <img src="media/q19.jpg" alt="Question 19 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. 60-80mm</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The carotid siphon is evaluated when the sample depth is placed at an approximate depth of 70mm (between 60 and 80mm).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q20" style="animation-delay: 665ms;">
+        <div class="card-header">
+          <div class="card-number">Question 20</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Branches of the ___________________ connect to branches of the vertebral arteries to allow collateral flow from the anterior circulation to the posterior circulation.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>basilar artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>ophthalmic artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>subclavian artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>occipital artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q20.jpg" alt="Question 20 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. occipital artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The occipital artery is a branch of the ECA. Branches of the occipital artery meet branches of the vertebral artery. This is a
+possible collateral pathway for obstruction in the vertebral system or the ICA system on the same side.
+If vertebral branches meet basilar branches, this would be posterior circulation connected to posterior circulation.
+The ophthalmic artery is in the anterior aspect of the brain. Branching would not meet those of the posterior brain.
+The subclavian artery is in the upper chest.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q21" style="animation-delay: 700ms;">
+        <div class="card-header">
+          <div class="card-number">Question 21</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes a cardiovascular application of the Bernoulli Principle?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>explains the relationship of vessel radius and flow volume</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>explains the reason for aliasing of the Doppler signal at high velocities</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>explains the turbulence and layers of flow separation within the carotid bulb</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>explains the reason for increased resistance to flow at an area of focal stenosis</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. explains the turbulence and layers of flow separation within the carotid bulb</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Bernoulli Principle explains the turbulence and layers of flow separation within the carotid bulb.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q22" style="animation-delay: 735ms;">
+        <div class="card-header">
+          <div class="card-number">Question 22</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The blue arrow indicates which of the following structures?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Ophthalmic</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Thyrocervical trunk</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Internal thoracic artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Superior thyroidal artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q22.jpg" alt="Question 22 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Superior thyroidal artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The superior thyroidal artery is the first branch of the ECA. Compare the size of the two vessels imaged and their anatomic
+location. The smaller, more medial vessel demonstrates the branch coursing inferiorly into the neck to the thyroid.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q23" style="animation-delay: 770ms;">
+        <div class="card-header">
+          <div class="card-number">Question 23</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a potential collateral pathway for extracranial to intracranial blood flow?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Superficial temporal artery branches connect to small branches of the ascending pharyngeal artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Ascending pharyngeal branches connect to small branches of the superior thyroidal artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Ascending pharyngeal branches connect to small branches of the lingual artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Facial and maxillary artery branches connect to small branches of the orbital artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Facial and maxillary artery branches connect to small branches of the orbital artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>ECA branches provide collateral pathways when stenosis is present in the intracranial system. The superficial temporal artery
+branches (ECA) connect to small branches of the ophthalmic artery (ICA). Facial and maxillary artery branches (ECA) connect to
+small branches of the orbital artery (ICA). Ascending pharyngeal branches (ECA) connect to small branches of the vertebral
+artery (posterior circulation). The other answer choices given describe connection of two vessels in the extracranial system,
+which would not provide flow to intracranial vessels.
+Tip for collateralization questions: Know your branches! For this question, the key is selecting branches from two different
+supply lines. ECA and posterior circulation branches that are connected to the intracranial branches will supply flow to a Circle
+of Willis that is obstructed in an area.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q24" style="animation-delay: 805ms;">
+        <div class="card-header">
+          <div class="card-number">Question 24</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes the proper technique for evaluating the MCA through the temporal window using TCD?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Midline probe placement, slight anterior angulation with 70mm depth</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Sharp anterior angulation with 65mm depth</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Midline probe placement, slight anterior angulation with 50mm depth</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Sharp anterior probe angulation, 50mm depth</div>
+              
+            </div>
+            
+            
+            <img src="media/q24.jpg" alt="Question 24 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Midline probe placement, slight anterior angulation with 50mm depth</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The MCA is best evaluated through the temporal window. The probe is placed midline on the side of the cranium. The MCA
+should be identified at an average depth of 50mm. Slight anterior angulation may be required.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q25" style="animation-delay: 840ms;">
+        <div class="card-header">
+          <div class="card-number">Question 25</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">During a TCD exam the depth is set to 100mm while using the suboccipital window. What vessel will be interrogated and what direction will the flow be moving?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>basilar, toward the transducer</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>carotid siphon, varies with portion of the siphon evaluated</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>vertebral, toward the transducer</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>basilar, away from the transducer</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. basilar, away from the transducer</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>60 - 90mm suboccipital window = vertebral
+80 - 120mm suboccipital window = basilar
+Both vessels will normally exhibit flow moving away from the transducer and toward the brain</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q26" style="animation-delay: 875ms;">
+        <div class="card-header">
+          <div class="card-number">Question 26</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which statement below is true regarding the normal CCA Doppler tracing?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The waveform is a combination of external and internal carotid characteristics with high resistance peaks and increased diastolic flow.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The waveform exhibits a sharp upstroke and minimal diastolic flow velocities.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>The waveform exhibits a triphasic pattern of flow.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The waveform exhibits a delayed upstroke and sharp diastolic downslope.</div>
+              
+            </div>
+            
+            
+            <img src="media/q26.jpg" alt="Question 26 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. The waveform is a combination of external and internal carotid characteristics with high resistance peaks and increased diastolic flow.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The waveform is a combination of external and internal carotid characteristics with high resistance peaks and increased
+diastolic flow. The waveform demonstrates a steep upslope which is indicative of a higher resistance waveform. The gradual
+downslope that never touches the baseline indicates lower resistance in diastole. The waveform is monophasic with one peak
+above the baseline.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q27" style="animation-delay: 910ms;">
+        <div class="card-header">
+          <div class="card-number">Question 27</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The most common normal variant in the external/internal carotid artery anatomy is:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the ECA is absent and the ICA has branches that feed the extracranial structures</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the ECA branches directly from the ICA at the level of the angle of the mandible</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the ECA lies posterior and medial to the ICA</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the ECA lies posterior and lateral to the ICA</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. the ECA lies posterior and lateral to the ICA</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>In most patients the ECA is the anterior medial branch of CCA . There are several normal variants in ECA/ICA position, with the
+most common being the ECA lies posterior and lateral to the ICA</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q28" style="animation-delay: 945ms;">
+        <div class="card-header">
+          <div class="card-number">Question 28</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The Doppler tracing is most consistent with a tracing obtained from which normal extracranial vessel?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>internal carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>common carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>external carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>middle cerebral artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. internal carotid artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The ICA is normally low resistance, monophasic flow with good amounts of antegrade diastolic flow. The flow in the MCA would
+be similar to this waveform but it is an intracranial vessel and does not demonstrate a spectral window due to the small caliber
+of the vessel. The ECA and CCA waveforms are higher resistance with a sharper upstroke and peak.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q29" style="animation-delay: 980ms;">
+        <div class="card-header">
+          <div class="card-number">Question 29</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following vessels is evaluated using the submandibular TCD window?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>distal internal carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>middle cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>anterior cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>vertebral arteries</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. distal internal carotid artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The distal ICA can be evaluated using the submandibular approach.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q30" style="animation-delay: 1015ms;">
+        <div class="card-header">
+          <div class="card-number">Question 30</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following normally demonstrates a higher resistance Doppler flow profile?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>external carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>post-prandial superior mesenteric artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>renal artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>hepatic artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. external carotid artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>&#34;Organ flow&#34; will typically be low resistance and constant flow is needed for the organs to function. The post prandial SMA will
+be lower resistance with increased diastolic flow due to increased digestive system function. The renal and hepatic arteries will
+also have low resistance flow with increased diastolic flow because they constantly function. &#34;Extremity flow&#34; is typically high
+resistance as muscles/tissue need much less inflow, especially at rest. The external carotid artery and its branches feed mainly
+muscles and tissue, therefore the flow demonstrates a higher resistance waveform.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q31" style="animation-delay: 1050ms;">
+        <div class="card-header">
+          <div class="card-number">Question 31</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The most common congenital anomaly of the Circle of Willis is:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the absence of one or more communicating arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the duplication of one or more communicating arteries</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the duplication of one or both of the middle cerebral arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the absence of one or both of the middle cerebral arteries</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. the absence of one or more communicating arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The most common congenital anomaly of the Circle of Willis is the absence of one or more communicating arteries.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q32" style="animation-delay: 1085ms;">
+        <div class="card-header">
+          <div class="card-number">Question 32</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following vessels is most commonly assessed for the presence of a bruit?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>common carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>dorsalis pedis artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>common femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>subclavian artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. common carotid artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The CCA is the artery that is most commonly assessed for a bruit. A bruit is an abnormal sound of turbulence that can indicate
+stenosis. Tortuosity, vessel kinking and elevated blood pressure can be normal causes of a bruit.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q33" style="animation-delay: 1120ms;">
+        <div class="card-header">
+          <div class="card-number">Question 33</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The posterior communicating artery connects the:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>right and left sides of the circle of willis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>ECA to the ICA</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>right and left vertebral arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>anterior and posterior cerebral vessels</div>
+              
+            </div>
+            
+            
+            <img src="media/q33.jpg" alt="Question 33 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. anterior and posterior cerebral vessels</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The posterior communicators connect the posterior cerebral circulation to the anterior cerebral circulation (PCA and the MCA).
+The ACA and MCA are part of the anterior circulation. The PCA and basilar/vertebral arteries are part of the posterior circulation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q34" style="animation-delay: 1155ms;">
+        <div class="card-header">
+          <div class="card-number">Question 34</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The supraorbital artery originates from the ophthalmic artery and joins what branch of the ECA?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>superficial temporal artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>posterior auricular artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>lingual artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>vertebral artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q34.jpg" alt="Question 34 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. superficial temporal artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The supraorbital artery originates from the ophthalmic artery and joins the superficial temporal artery(branch of the ECA). This
+arrangement allows for collateral flow to occur on the same side of the body if the ICA is obstructed.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q35" style="animation-delay: 1190ms;">
+        <div class="card-header">
+          <div class="card-number">Question 35</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following originates first from the ascending aorta?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>subclavian artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>left carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>coronary arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>innominate artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q35.jpg" alt="Question 35 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. coronary arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Keep in mind that the question asks for the first branch of the ascending aorta, not the arch. The coronary arteries originate just
+above the aortic valve in the heart.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q36" style="animation-delay: 1225ms;">
+        <div class="card-header">
+          <div class="card-number">Question 36</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What artery courses cephalad on the anterior right side of the trachea to bifurcate at the level of the sternoclavicular joint?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>subclavian artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>innominate artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>vertebral artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. innominate artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>There is only one innominate (brachiocephalic) artery on the right side of the body. It originates from the aortic arch and travels
+cephalad in a position that is to the right and anterior to the trachea. It bifurcates into the right subclavian and vertebral
+arteries.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q37" style="animation-delay: 1260ms;">
+        <div class="card-header">
+          <div class="card-number">Question 37</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The ECA is normally ______________ to the ICA.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Superior</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Lateral</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Medial</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Inferior</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Medial</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The ECA usually courses anteriorly and medially in the neck to feed structures including the face, tongue and scalp. The ICA
+usually courses posteriorly and laterally to enter the skull and feed the cerebral tissues.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q38" style="animation-delay: 1295ms;">
+        <div class="card-header">
+          <div class="card-number">Question 38</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is the best patient position for performing a transcranial Doppler exam to obtain a waveform from the basilar artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>supine with chin in neutral position</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>seated on a stool, with their back to the Sonographer and the machine</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>left lateral decubitus with left hand placed under the head for support</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>seated on a stool, facing the Sonographer and the machine</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. left lateral decubitus with left hand placed under the head for support</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The patient needs to be able to hold their head steady for the exam. Lying down with the head supported will provide the best
+position for the exam. Placing the hand under the head will also help to raise it from the stretcher to maintain a straight neck.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q39" style="animation-delay: 1330ms;">
+        <div class="card-header">
+          <div class="card-number">Question 39</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which transcranial window is most commonly used to evaluate the carotid siphon and the ophthalmic artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>temporal</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>submandibular</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>occipital</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>orbital</div>
+              
+            </div>
+            
+            
+            <img src="media/q39.jpg" alt="Question 39 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. orbital</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The orbital or ophthalmic window is used to evaluate the carotid siphon and the ophthalmic artery. If the siphon cannot be
+evaluated on this view, the supplemental submandibular approach may be used.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q40" style="animation-delay: 1365ms;">
+        <div class="card-header">
+          <div class="card-number">Question 40</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The _______________________ is described as the segment of the vessel located between the distal ICA and the origin of the anterior communicating artery.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>A2 segment of the ACA</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>M3 segment of the MCA</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>A1 segment of the ACA</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>M1 segment of the MCA</div>
+              
+            </div>
+            
+            
+            <img src="media/q40.jpg" alt="Question 40 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. A1 segment of the ACA</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The A1 segment is located between the distal ICA and the origin of the anterior communicator artery. The A2 segment is located
+distal to the origin of the anterior communicator artery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q41" style="animation-delay: 1400ms;">
+        <div class="card-header">
+          <div class="card-number">Question 41</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is an expected characteristic of a normal ICA?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Carries less than half of the blood to cerebrum</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Has a low resistance waveform</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Is often a rare site for plaque formation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Has 2 extracranial branches on each side</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Has a low resistance waveform</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The ICA has no extracranial branches and does deliver the majority of the blood flow to the brain. The ICA also has an increased
+prevalence for atherosclerotic changes, when compared to the CCA and ECA. The brain requires constant blood flow throughout
+the cardiac cycle. The cerebral structures normally offer very little resistance to the incoming flow of blood. The ICA should
+normally demonstrate a low resistance waveform, while the ECA demonstrates a higher resistance waveform.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q42" style="animation-delay: 1435ms;">
+        <div class="card-header">
+          <div class="card-number">Question 42</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes the proper technique for evaluating the ACA through the temporal window?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Anterior angulation, 50mm depth</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Anterior angulation with 65mm depth</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Midline placement with 50mm depth</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Posterior angulation with 65mm depth</div>
+              
+            </div>
+            
+            
+            <img src="media/q42.jpg" alt="Question 42 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Anterior angulation with 65mm depth</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When using the temporal window, the ACA is evaluated with anterior probe angulation set at a 65mm depth.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q43" style="animation-delay: 1470ms;">
+        <div class="card-header">
+          <div class="card-number">Question 43</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is occurring on the Doppler tracing where the arrows are pointing?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Patient is swallowing</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Patient is snoring</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Temporal tap</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Atrial fibrillation</div>
+              
+            </div>
+            
+            
+            <img src="media/q43.jpg" alt="Question 43 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Temporal tap</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The temporal tap is performed by lightly tapping the temporal artery located at the soft spot on the anterior aspect of the
+temporal bone. The temporal artery is a branch of the ECA and the vibrations from the tapping will be seen within the ECA
+waveform. The ICA does not communicate with the temporal artery and no response will be identified from the tapping
+maneuver. This technique is used to differentiate the ECA from the ICA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q44" style="animation-delay: 1505ms;">
+        <div class="card-header">
+          <div class="card-number">Question 44</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The carotid siphon:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>usually produces a waveform with a clear spectral window</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>is an area of flow separation due to the increase in vessel diameter at the bulb</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>supplies blood to the ophthalmic artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>causes an area of decreased resistance to flow in the distal ICA</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. supplies blood to the ophthalmic artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>ICA Siphon - distal ICA segment that courses anteriorly then medially, then posteriorly forming an &#34;S&#34;. The tortuous path leads
+to reduced flow, increased resistance, and causes turbulence. There will be no spectral window visible due to the tortuous
+course of the vessel. The siphon has increased risk for flow reducing lesions, such as atheroma and thrombus. The ophthalmic
+artery branches from the carotid siphon.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q45" style="animation-delay: 1540ms;">
+        <div class="card-header">
+          <div class="card-number">Question 45</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">At what level in the neck does the common carotid artery normally bifurcate?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>At the upper border of the thyroid cartilage</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>At the lower border of the larynx</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>At the upper level of the thyrocervical trunk</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>At the angle of the mandible</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. At the upper border of the thyroid cartilage</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The common carotid artery normally bifurcates at the level of the upper border of the thyroid cartilage.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q46" style="animation-delay: 1575ms;">
+        <div class="card-header">
+          <div class="card-number">Question 46</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The internal carotid artery terminates into which two branches of the Circle of Willis?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>middle and anterior cerebral arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Anterior and posterior cerebral arteries</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>middle cerebral and posterior communicator arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Vertebral and basilar arteries</div>
+              
+            </div>
+            
+            
+            <img src="media/q46.jpg" alt="Question 46 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. middle and anterior cerebral arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Bilateral ICAs course superiorly to join the Circle of Willis on the lateral aspect of each side of the brain. In most patients, they
+terminate at the origination of the MCA and ACA. The PCA is a branch of the basilar artery. The PCoA is branch of the distal ICA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q47" style="animation-delay: 1610ms;">
+        <div class="card-header">
+          <div class="card-number">Question 47</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is supplied with arterial blood through branches of the ECA?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>thyroid gland</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>eyes</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>cerebellum</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>brain stem</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. thyroid gland</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The superior thyroidal artery is the first branch of the ECA. The eyes are supplied with blood through intracranial branches of
+the ICA. The cerebellum and brain stem are supplied by the posterior circulation (vertebral &gt; basilar &gt; cerebellar).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q48" style="animation-delay: 1645ms;">
+        <div class="card-header">
+          <div class="card-number">Question 48</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a direct branch of the aortic arch?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>right vertebral</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>left vertebral</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>right carotid</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>left carotid</div>
+              
+            </div>
+            
+            
+            <img src="media/q48.jpg" alt="Question 48 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. left carotid</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The three main branches of the aortic arch are the innominate artery, left common carotid artery and left subclavian artery</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q49" style="animation-delay: 1680ms;">
+        <div class="card-header">
+          <div class="card-number">Question 49</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which branch of the Circle of Willis supplies the corpus callosum and the cavum septum pellucidum with arterial blood?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>anterior cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>posterior cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>middle cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>basilar artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. anterior cerebral artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The corpus callosum and the cavum septum pellucidum are located along the midline in the anterior brain. Both structures are
+fed by the anterior cerebral artery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q50" style="animation-delay: 1715ms;">
+        <div class="card-header">
+          <div class="card-number">Question 50</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following are branches of the distal ICA?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>middle cerebral artery and anterior communicating artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>middle, anterior and posterior cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>middle cerebral artery, anterior cerebral artery and posterior communicating artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>supraorbital artery and posterior cerebral artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. middle cerebral artery, anterior cerebral artery and posterior communicating artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Ophthalmic artery is the first branch from siphon area inside the cranium and branches into nasal, frontal &amp; supraorbital
+arteries. The anterior choroidal artery and posterior communicating artery are the other two main intracranial branches of the
+distal ICA before it terminates at the bifurcation into the ACA and MCA once it reaches the circle of willis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q51" style="animation-delay: 1750ms;">
+        <div class="card-header">
+          <div class="card-number">Question 51</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The _______________________ is described as the segment of the vessel located between the distal basilar artery and the origin of the posterior communicator artery.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>P2 segment of the PCA</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>M3 segment of the MCA</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>M1 segment of the MCA</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>P1 segment of the PCA</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. P1 segment of the PCA</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The P1 segment is located between the distal basilar artery and the origin of the posterior communicator artery. The P2
+segment is located distal to the origin of the posterior communicator artery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q52" style="animation-delay: 1785ms;">
+        <div class="card-header">
+          <div class="card-number">Question 52</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is considered an abnormality that causes turbulence in a vessel?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>bifurcation</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>tortuosity</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>eccentric change in vessel course</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>myointimal hyperplasia</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. myointimal hyperplasia</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Abnormal causes of turbulence are acquired. Myointimal hyperplasia occurs with stent or bypass graft placement.
+Atherosclerosis formation or bypass grafts are acquired causes of turbulent flow in a vessel. The other choices offered are
+normal anatomic variants that can cause turbulence.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q53" style="animation-delay: 1820ms;">
+        <div class="card-header">
+          <div class="card-number">Question 53</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The angular artery is the terminal branch of the</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Ophthalmic artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Facial artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Anterior cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Nasal artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Facial artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The angular artery is a terminal branch of the facial artery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q54" style="animation-delay: 1855ms;">
+        <div class="card-header">
+          <div class="card-number">Question 54</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">In most patients, the first branch of the ECA is:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the internal thoracic artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the superior thyroidal artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the ophthalmic artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the superficial temporal artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. the superior thyroidal artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>In most patients, the first branch of the ECA is the superior thyroidal artery. The internal thoracic artery is a branch of the
+subclavian artery. The superficial temporal artery is a branch of the ECA but more distally. The ophthalmic artery is a branch of
+the ICA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q55" style="animation-delay: 1890ms;">
+        <div class="card-header">
+          <div class="card-number">Question 55</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following vessels supply the majority of blood to the cerebellum?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>ICA and ECA</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>ICA and Vertebral</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>ECA and Basilar</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Vertebral and Basilar</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Vertebral and Basilar</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The cerebellum is located in the posterior fossa of the skull. The vertebral arteries course between the vertebral pedicles to
+converge into the basilar artery. Branches from the vertebral and basilar arteries feed the cerebellum and portions of the brain
+stem.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q56" style="animation-delay: 1925ms;">
+        <div class="card-header">
+          <div class="card-number">Question 56</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The supraorbital artery is a branch of the ___________________________. Branches of the supraorbital artery connect with branches of the _________________________, which is a branch of the ECA. This is a common collateral pathway from the ECA to the ICA.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>ICA, ophthalmic artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>ophthalmic artery, superficial temporal artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>ophthalmic artery, maxillary artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>ICA, facial artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. ophthalmic artery, superficial temporal artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The supraorbital artery is a branch of the ophthalmic artery. Branches for the supraorbital artery connect with branches of the
+superficial temporal artery, which is a branch of the ECA. This is a common collateral pathway from the ECA to the ICA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q57" style="animation-delay: 1960ms;">
+        <div class="card-header">
+          <div class="card-number">Question 57</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes the normal appearance of a waveform obtained in the middle cerebral artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>low resistance, laminar flow with clear spectral window</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>low resistance flow that varies with patient respiration</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>low resistance with spectral broadening</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>low resistance, low velocity with small flow reversal component in diastole</div>
+              
+            </div>
+            
+            
+            <img src="media/q57.jpg" alt="Question 57 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. low resistance with spectral broadening</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The intracranial arteries normally demonstrate low resistance flow due to the low resistance of the brain tissues. Spectral
+broadening is normal in these arteries due to the small size of the vessels. A spectral window would not normally be expected.
+Diastolic flow reversal would indicate an abnormality causing increased resistance to flow distally.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q58" style="animation-delay: 1995ms;">
+        <div class="card-header">
+          <div class="card-number">Question 58</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The suboccipital window is used in TCD exams to evaluate which of the following arteries?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>ICA siphon, vertebral and basilar</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>vertebral and basilar</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>ICA siphon</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>MCA and ICA siphon</div>
+              
+            </div>
+            
+            
+            <img src="media/q58.jpg" alt="Question 58 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. vertebral and basilar</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The suboccipital window is used to evaluate the vertebral and basilar arteries.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q59" style="animation-delay: 2030ms;">
+        <div class="card-header">
+          <div class="card-number">Question 59</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What blood vessel is used to cause the variations in diastolic flow on the ECA tracing?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>common carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>supraorbital artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>superficial temporal artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>superficial thyroidal artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q59_1.jpg" alt="Question 59 image">
+            
+            <img src="media/q59_2.jpg" alt="Question 59 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. superficial temporal artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The temporal tap is performed by lightly tapping the temporal artery located at the soft spot on the anterior aspect of the
+temporal bone. The temporal artery is a branch of the ECA and the vibrations from the tapping will be seen within the ECA
+waveform. The ICA does not communicate with the temporal artery and no response will be identified from the tapping
+maneuver. This technique is used to differentiate the ECA from the ICA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q60" style="animation-delay: 2065ms;">
+        <div class="card-header">
+          <div class="card-number">Question 60</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following arteries is normally only an intracranial vessel?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>superficial temporal artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>internal carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>vertebral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>basilar artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. basilar artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The basilar artery is formed by the convergence of the left and right vertebral arteries inside the posterior aspect of the base of
+the skull.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q61" style="animation-delay: 2100ms;">
+        <div class="card-header">
+          <div class="card-number">Question 61</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Using the suboccipital window, the normal basilar and vertebral arteries ______________________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>cannot be evaluated using this transcranial window</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>will demonstrate flow away from the probe</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>will demonstrate flow toward the probe</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>will demonstrate bidirectional flow</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. will demonstrate flow away from the probe</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The suboccipital window is performed by placing the transducer at the base of the skull and angling cephalad into the cranium.
+The normal basilar and vertebral arteries will demonstrate flow away from the probe, toward the brain.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q62" style="animation-delay: 2135ms;">
+        <div class="card-header">
+          <div class="card-number">Question 62</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The anterior cerebral artery and its branches feed which of the following lobes of the brain?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>occipital and frontal</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>occipital and parietal</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>frontal only</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>parietal and frontal</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. parietal and frontal</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The ACA and its branches feed the parietal and frontal lobes. The middle cerebral artery supplies large portions of the lateral
+surfaces of frontal, parietal, and temporal lobes. The vertebral and basilar arteries supply the brain stem, cerebellum, posterior
+cerebral cortex. The posterior cerebral arteries originate from the basilar artery to supply the medial temporal and occipital
+lobes.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q63" style="animation-delay: 2170ms;">
+        <div class="card-header">
+          <div class="card-number">Question 63</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which intracranial artery courses within the sylvian fissure?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>basilar artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>anterior cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>middle cerebral artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. middle cerebral artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The M2 segment courses within the sylvian fissure toward the lateral aspect of the cranium.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q64" style="animation-delay: 2205ms;">
+        <div class="card-header">
+          <div class="card-number">Question 64</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">In most patients the right common carotid artery:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>originates directly from the aortic arch</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>bifurcates at a lower level in the neck than the left CCA</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>bifurcates at the level if the clavicle</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>is nearly twice the diameter of the left CCA</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. bifurcates at a lower level in the neck than the left CCA</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Right CCA originates from the innominate artery. Left CCA originates from the aortic arch (second branch from arch). In most
+patients the right CCA bifurcates at a lower level than the left CCA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q65" style="animation-delay: 2240ms;">
+        <div class="card-header">
+          <div class="card-number">Question 65</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Normal brachial pressures should not differ more than ____________ mmHg between arms.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>5</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>10</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>30</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>20</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. 20</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If the brachial pressures differ by more than 20mmHg, a subclavian steal should be suspected.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q66" style="animation-delay: 2275ms;">
+        <div class="card-header">
+          <div class="card-number">Question 66</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The posterior communicating arteries connect the:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior cerebral artery and middle cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>anterior cerebral artery and posterior cerebral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>basilar and posterior cerebral arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>vertebral and basilar arteries</div>
+              
+            </div>
+            
+            
+            <img src="media/q66.jpg" alt="Question 66 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. posterior cerebral artery and middle cerebral artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The posterior communicating arteries connect the ipsilateral PCA and MCA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q67" style="animation-delay: 2310ms;">
+        <div class="card-header">
+          <div class="card-number">Question 67</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">During a TCD exam the depth is set to 55mm with a slight anterior angulation while using the temporal window. What vessel will be interrogated and what direction will the flow be moving?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>middle cerebral artery, toward the transducer</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>anterior cerebral artery, away from the transducer</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>posterior cerebral artery, away from the transducer</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>middle cerebral artery, away from the transducer</div>
+              
+            </div>
+            
+            
+            <img src="media/q67.jpg" alt="Question 67 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. middle cerebral artery, toward the transducer</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>MCA = 30-60mm depth at temporal window; normally demonstrates flow moving toward the transducer</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q68" style="animation-delay: 2345ms;">
+        <div class="card-header">
+          <div class="card-number">Question 68</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Transcranial Doppler most commonly uses which Doppler measurement to evaluate flow in the cerebral vessels?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>peak systolic velocity</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>time average maximum velocity</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>resistive index</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>end diastolic velocity</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. time average maximum velocity</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Time average maximum velocity or mean flow velocity is used to assess flow in the cerebral arteries.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q69" style="animation-delay: 2380ms;">
+        <div class="card-header">
+          <div class="card-number">Question 69</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a branch of the ICA?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Ophthalmic</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Temporal</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Lingual</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Superior thyroidal</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Ophthalmic</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The ophthalmic artery feeds the eye and surrounding structures. This is the only branch of the ICA before it enters the Circle of
+Willis. The ECA is responsible for feeding extracranial structures including the face, portions of the throat and neck, tongue and
+scalp.
+Powered by ExamBuilder. Copyright ©2026</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+    </section>
+  </main>
+  <script>
+    const detailsElements = Array.from(document.querySelectorAll("details"));
+    document.getElementById("open-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = true));
+    document.getElementById("close-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = false));
+  </script>
+</body>
+</html>

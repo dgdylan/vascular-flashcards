@@ -1,0 +1,3215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Extremity Arterlial Anatomy 21%</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06101d;
+      --bg-strong: #0b1628;
+      --card: rgba(17, 31, 52, 0.92);
+      --card-strong: rgba(20, 36, 60, 0.98);
+      --ink: #f4f8ff;
+      --muted: #b0bfd6;
+      --accent: #82ddd7;
+      --accent-strong: #b4f0eb;
+      --accent-soft: rgba(130, 221, 215, 0.16);
+      --border: rgba(149, 180, 221, 0.34);
+      --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
+      --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.28);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(130, 221, 215, 0.14), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(97, 130, 194, 0.18), transparent 24%),
+        linear-gradient(180deg, #071221 0%, var(--bg) 54%, #040b15 100%);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+    .wrap {
+      width: min(1080px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.5rem 0 4rem;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      padding: clamp(1.4rem, 2.5vw, 2rem);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94)),
+        linear-gradient(120deg, rgba(130, 221, 215, 0.08), rgba(97, 130, 194, 0.08));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      animation: rise-in 560ms ease-out both;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -35% auto;
+      width: 240px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
+      background: radial-gradient(circle, rgba(97, 130, 194, 0.4), transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4.8vw, 3.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 14ch;
+      text-wrap: balance;
+    }
+    .subhead {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .toolbar a, .toolbar button {
+      border: 1px solid var(--border);
+      background: var(--card-strong);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.78rem 1.05rem;
+      cursor: pointer;
+      text-decoration: none;
+      font: inherit;
+      font-weight: 700;
+      box-shadow: var(--shadow-soft);
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+    .toolbar a:hover, .toolbar button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(130, 221, 215, 0.42);
+      background: rgba(26, 45, 73, 1);
+    }
+    .cards {
+      display: grid;
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      animation: rise-in 520ms ease-out both;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+      border-color: rgba(130, 221, 215, 0.28);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(130, 221, 215, 0.09), rgba(97, 130, 194, 0.08)),
+        rgba(16, 30, 50, 0.88);
+    }
+    .card-number {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .pill {
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .card-body {
+      padding: 1.2rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .card-side {
+      display: grid;
+      gap: 0.75rem;
+    }
+    .label {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .content {
+      font-size: 1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .choices {
+      display: grid;
+      gap: 0.45rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(24, 41, 67, 0.98), rgba(17, 31, 52, 0.92));
+    }
+    .choice {
+      line-height: 1.5;
+    }
+    .choice-label {
+      font-weight: 700;
+      color: var(--accent);
+      margin-right: 0.3rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(8, 15, 27, 0.96);
+      display: block;
+      box-shadow: var(--shadow-soft);
+    }
+    details {
+      border-top: 1px dashed rgba(149, 180, 221, 0.34);
+      padding-top: 1rem;
+    }
+    summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 700;
+      list-style: none;
+      transition: color 180ms ease;
+    }
+    summary:hover { color: var(--accent-strong); }
+    summary::-webkit-details-marker { display: none; }
+    .answer-block {
+      margin-top: 0.9rem;
+      display: grid;
+      gap: 0.75rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(19, 35, 58, 0.98), rgba(13, 25, 43, 0.96));
+    }
+    .answer-title {
+      font-weight: 700;
+    }
+    @keyframes rise-in {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero, .card {
+        animation: none;
+      }
+      .toolbar a, .toolbar button, .card, summary {
+        transition: none;
+      }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 1rem, 1080px); padding-top: 1rem; }
+      .hero {
+        border-radius: 22px;
+        padding: 1.15rem;
+      }
+      .card-header, .card-body { padding: 1rem; }
+      .toolbar {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .toolbar a, .toolbar button {
+        width: 100%;
+        text-align: center;
+      }
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Review Deck</p>
+      <h1>Extremity Arterlial Anatomy 21%</h1>
+      <p class="subhead">80 flashcards extracted from this PDF. Open each back panel to review the correct answer and full feedback.</p>
+      <div class="toolbar">
+        <a href="../index.html">Back to index</a>
+        <button type="button" id="open-all">Open all backs</button>
+        <button type="button" id="close-all">Close all backs</button>
+      </div>
+    </section>
+    <section class="cards">
+      
+      <article class="card" id="q1" style="animation-delay: 0ms;">
+        <div class="card-header">
+          <div class="card-number">Question 1</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">According to the attached color map, what color will laminar flow be demonstrated that is moving at 40cm/s away from the probe?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>blue</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>red</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>green</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>yellow</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. blue</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The color on the bottom of the color bar indicates flow moving away from the transducer. The variance map allows for
+evaluation of turbulent flow. If a green color appears, the flow is moving away from the probe and is turbulent. Flow velocities
+greater than 0.45 m/s will alias causing display of yellow (turbulent) or red.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q2" style="animation-delay: 35ms;">
+        <div class="card-header">
+          <div class="card-number">Question 2</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The profunda artery:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>supplies blood to the prostate and pelvic organs in a male patient</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>courses posterior and medial to the femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>courses posterior and lateral to the femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>demonstrates low resistance flow compared to the femoral artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q2.png" alt="Question 2 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. courses posterior and lateral to the femoral artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The profunda artery courses posterior and lateral to the femoral artery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q3" style="animation-delay: 70ms;">
+        <div class="card-header">
+          <div class="card-number">Question 3</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The Doppler tracing most likely came from which normal lower extremity artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Dorsalis pedis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Popliteal</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Peroneal</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>none of the above</div>
+              
+            </div>
+            
+            
+            <img src="media/q3.png" alt="Question 3 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. none of the above</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The image demonstrates a low resistance, monophasic waveform which is most consistent with &#34;organ flow&#34;. Flow in the legs
+normally demonstrates a high resistance, triphasic waveform.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q4" style="animation-delay: 105ms;">
+        <div class="card-header">
+          <div class="card-number">Question 4</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The external iliac artery:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>begins at the level of the inguinal ligament</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>courses medially through adductor hiatus</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>courses along the medial side of the psoas muscle</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>supplies the pelvic organs</div>
+              
+            </div>
+            
+            
+            <img src="media/q4.png" alt="Question 4 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. courses along the medial side of the psoas muscle</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The external iliac artery travels laterally to the inguinal ligament and becomes the common femoral artery as it crosses under
+the ligament. It also courses along the medial side of the psoas muscle to supply the lower extremities with blood</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q5" style="animation-delay: 140ms;">
+        <div class="card-header">
+          <div class="card-number">Question 5</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The posterior tibial artery courses along:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the medial aspect of the thigh.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the medial aspect of the calf.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the lateral aspect of the calf.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the posterior aspect of the knee</div>
+              
+            </div>
+            
+            
+            <img src="media/q5.jpg" alt="Question 5 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. the medial aspect of the calf.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The posterior tibial artery courses along the medial aspect of the calf.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q6" style="animation-delay: 175ms;">
+        <div class="card-header">
+          <div class="card-number">Question 6</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Vasoconstriction will cause ________________ , while vasodilation will cause ______________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>increased heart rate, increased blood pressure</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>increased flow volume, decreased flow volume</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>increased resistance to flow, decreased resistance to flow</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>increased flow rate, decreased flow rate</div>
+              
+            </div>
+            
+            
+            <img src="media/q6.jpg" alt="Question 6 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. increased resistance to flow, decreased resistance to flow</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Vasoconstriction in the arterioles will cause increased resistance to flow in the feeding vessels, while vasodilation will cause
+reduced resistance.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q7" style="animation-delay: 210ms;">
+        <div class="card-header">
+          <div class="card-number">Question 7</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following arteries is not commonly evaluated in an arterial assessment of the lower extremity?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>internal iliac artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>superficial femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>common femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>anterior tibial artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. internal iliac artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The internal iliac artery supplies the pelvic organs and is much smaller in caliber than the external iliac artery that supplies the
+leg.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q8" style="animation-delay: 245ms;">
+        <div class="card-header">
+          <div class="card-number">Question 8</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Exercise causes ________________ which leads to _________________ in the lower extremities.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>vasodilation, increased resistance</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>vasoconstriction, increased resistance</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>vasodilation, decreased resistance</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>vasoconstriction, decreased resistance</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. vasodilation, decreased resistance</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Vasodilation occurs and resistance to flow drops to encourage more flow volume distally, as the muscles require more oxygen
+with exercise. The resistance to flow decreases and pressure increases with exercise to increase the flow volume to the
+functioning muscles. If enough blood does not reach the muscles, symptoms like claudication can occur.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q9" style="animation-delay: 280ms;">
+        <div class="card-header">
+          <div class="card-number">Question 9</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following arteries does not usually have a pair of veins of the same name?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>gastrocnemius artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>peroneal artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>ulnar artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>femoral artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. femoral artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Femoral veins can be duplicated but this not a common finding and is considered a variant. The forearm and calf arteries have
+paired veins of the same name.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q10" style="animation-delay: 315ms;">
+        <div class="card-header">
+          <div class="card-number">Question 10</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What blood vessels are located at letter A?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>1 PTA and 2 PTV</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>1 ATA and 2 ATV</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>2 PTA and 1 PTV</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>2 ATA and 1 ATV</div>
+              
+            </div>
+            
+            
+            <img src="media/q10.jpg" alt="Question 10 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. 1 ATA and 2 ATV</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br></div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q11" style="animation-delay: 350ms;">
+        <div class="card-header">
+          <div class="card-number">Question 11</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes the recommended protocol for an accurate evaluation of the lower extremity arteries?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Flex the foot and rotate the ankle when performing Doppler evaluation of the distal posterior tibial and dorsalis pedis arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Place the patient in the Trendelenburg position</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Patients with hip pain can be placed in an oblique or prone position to obtain the Doppler samples from the popliteal artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Rotate the leg internally and bend the knee slightly</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Patients with hip pain can be placed in an oblique or prone position to obtain the Doppler samples from the popliteal artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Patients should be placed in the supine position for a routine examination. Rotate the leg externally and bend the knee slightly
+for Doppler evaluation. The foot and ankle should always be in the neutral position when performing a Doppler evaluation of
+the distal PTA and DPA. Patients with hip pain can be placed in an oblique or prone position to obtain the Doppler samples from
+the popliteal artery</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q12" style="animation-delay: 385ms;">
+        <div class="card-header">
+          <div class="card-number">Question 12</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which arteries supply the forearm and hand with blood?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>2 Radial and 2 Ulnar Arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>1 Radial Artery and 1 Ulnar Artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>1 Cephalic Artery and 1 Basilic Artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>2 Radial and 1 Ulnar arteries</div>
+              
+            </div>
+            
+            
+            <img src="media/q12.jpg" alt="Question 12 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. 1 Radial Artery and 1 Ulnar Artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br></div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q13" style="animation-delay: 420ms;">
+        <div class="card-header">
+          <div class="card-number">Question 13</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What are the direct branches of the popliteal artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior tibial artery and anterior tibial artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Anterior tibial artery and tibioperoneal trunk</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Posterior tibial artery and tibioperoneal trunk</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Peroneal and posterior tibial artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q13.jpg" alt="Question 13 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Anterior tibial artery and tibioperoneal trunk</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The ATA branches off the popliteal artery first, leaving the tibioperoneal trunk that then splits into the peroneal and PTA slightly
+more distally in the calf.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q14" style="animation-delay: 455ms;">
+        <div class="card-header">
+          <div class="card-number">Question 14</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The profunda femoral artery supplies blood to which of the following structures?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Quadriceps muscle</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Bicep muscle</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Pelvic organs</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Psoas muscle</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Quadriceps muscle</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The profunda artery branches from the common femoral artery and mainly supplies blood to the muscles/structures of the
+thigh and hip.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q15" style="animation-delay: 490ms;">
+        <div class="card-header">
+          <div class="card-number">Question 15</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A normal penile brachial index is:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>&gt;0.8</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>&gt;0.5</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>&gt;0.75</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>&gt;0.6</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. &gt;0.75</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The PBI is considered normal if it is greater than 0.75. Vasculogenic impotence is diagnosed when the PBI falls below 0.65. A PBI
+between 0.65 and 0.75 is considered suspicious for vasculogenic impotence but further evaluation is necessary.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q16" style="animation-delay: 525ms;">
+        <div class="card-header">
+          <div class="card-number">Question 16</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which vessel wall layer is thicker in arteries than in veins?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>vasa vasorum</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>tunica externa</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>tunica media</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>tunica intima</div>
+              
+            </div>
+            
+            
+            <img src="media/q16.jpg" alt="Question 16 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. tunica media</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The muscular layer is thicker in arteries to help maintain their shape and to handle the higher pressure blood flow within.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q17" style="animation-delay: 560ms;">
+        <div class="card-header">
+          <div class="card-number">Question 17</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The normal brachial artery waveform should resemble the flow in the normal ______________artery</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>superior mesenteric artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>peroneal artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>vertebral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>hepatic artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. peroneal artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The normal brachial artery waveform will normally resemble the flow in the normal peroneal artery. Extremity flow will
+demonstrate a high resistance, triphasic waveform.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q18" style="animation-delay: 595ms;">
+        <div class="card-header">
+          <div class="card-number">Question 18</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which artery courses anteriorly along the calf and laterally through the interosseous membrane of the leg?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>anterior tibial artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>peroneal artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>distal superficial femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>posterior tibial artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q18.jpg" alt="Question 18 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. anterior tibial artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The interosseous membrane connects the medial tibia and anterior fibula and separates the muscles of the calf. The ATA and
+ATV course just anterior to the membrane.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q19" style="animation-delay: 630ms;">
+        <div class="card-header">
+          <div class="card-number">Question 19</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What causes the 3rd phase of flow in a normal extremity arterial waveform?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>cardiac systole</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>arterial wall compliance</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>relaxation of the extremity musculature</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>relaxation of the left ventricle</div>
+              
+            </div>
+            
+            
+            <img src="media/q19_1.jpg" alt="Question 19 image">
+            
+            <img src="media/q19_2.jpg" alt="Question 19 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. arterial wall compliance</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br></div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q20" style="animation-delay: 665ms;">
+        <div class="card-header">
+          <div class="card-number">Question 20</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The lateral plantar arch artery originates at the _____________________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>popliteal artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>posterior tibial artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>anterior tibial artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>peroneal artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. posterior tibial artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The lateral plantar arch originates at the PTA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q21" style="animation-delay: 700ms;">
+        <div class="card-header">
+          <div class="card-number">Question 21</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is the name of the tiny network of vessels that supply/drain blood to/from the vessel wall?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>venules</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>capillaries</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>arterioles</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>vasa vasorum</div>
+              
+            </div>
+            
+            
+            <img src="media/q21.jpg" alt="Question 21 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. vasa vasorum</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The tiny network of vessels that supply/drain blood to/from the vessel wall is called the vasa vasorum. The tiny vessels wrap
+around the larger vessel within the tunica externa. The arteries and veins penetrate the tunica media to deliver and drain blood
+from the wall.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q22" style="animation-delay: 735ms;">
+        <div class="card-header">
+          <div class="card-number">Question 22</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Where will you place the transducer to evaluate flow in the posterior tibial artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior to the lateral malleolus</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>posterior to the medial malleolus</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>anterior to the medial malleolus</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>on the foot, between the 1st and 2nd digit</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. posterior to the medial malleolus</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>To evaluate flow in the PTA, the transducer is placed posterior to the medial malleolus. The PTA courses between the medial
+malleolus and the Achilles tendon.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q23" style="animation-delay: 770ms;">
+        <div class="card-header">
+          <div class="card-number">Question 23</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The popliteal artery ___________ the popliteal vein.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>courses anterior to</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>is larger than</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>is more tortuous than</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>courses posterior to</div>
+              
+            </div>
+            
+            
+            <img src="media/q23.jpg" alt="Question 23 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. courses anterior to</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The popliteal artery courses anterior to the popliteal vein.
+When answering questions regarding anatomic relationships and considering US images, always start by considering the
+transducer placement on the body. The popliteal vein is imaged by placing the transducer in the posterior popliteal fossa. The
+anterior aspect of this image is the posterior aspect of the patient.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q24" style="animation-delay: 805ms;">
+        <div class="card-header">
+          <div class="card-number">Question 24</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What blood vessels are located at letter B?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>2 peroneal arteries and 1 peroneal vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>1 PTA and 2 PTV</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>2 peroneal veins and 1 peroneal artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>1 ATA and 2 ATV</div>
+              
+            </div>
+            
+            
+            <img src="media/q24.jpg" alt="Question 24 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. 2 peroneal veins and 1 peroneal artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br></div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q25" style="animation-delay: 840ms;">
+        <div class="card-header">
+          <div class="card-number">Question 25</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Letter A indicates which of the following structures?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Vertebral artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Thyrocervical trunk</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Superficial temporal artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Internal thoracic artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q25_1.jpg" alt="Question 25 image">
+            
+            <img src="media/q25_2.jpg" alt="Question 25 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Internal thoracic artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A. Internal thoracic artery
+B. Vertebral artery
+C. Thyrocervical trunk
+D. Right CCA</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q26" style="animation-delay: 875ms;">
+        <div class="card-header">
+          <div class="card-number">Question 26</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What two vessels are palpated to assess the pulse when peripheral arterial disease is suspected?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior tibial and dorsalis pedis arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>posterior tibial and peroneal arteries</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>dorsalis pedis and peroneal arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>anterior tibial and peroneal arteries</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. posterior tibial and dorsalis pedis arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If peripheral arterial disease is suspected, the physician will palpate the PTA and DPA to assess the strength of the pulse. The
+PTA is palpated between the posterior border of the medial malleolus and the Achilles tendon. The DPA is palpated at the dorsal
+most prominence of the navicular bone. The peroneal artery is not usually able to be palpated due to its anatomic course.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q27" style="animation-delay: 910ms;">
+        <div class="card-header">
+          <div class="card-number">Question 27</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes how to correctly measure the width of the iliac artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>longitudinal view, outer wall to inner wall</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>longitudinal view, outer wall to outer wall</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>transverse view, outer wall to inner wall</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>transverse view, outer wall to outer wall</div>
+              
+            </div>
+            
+            
+            <img src="media/q27.jpg" alt="Question 27 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. transverse view, outer wall to outer wall</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When evaluating the diameter of the aorta and iliac arteries, AP Dimensions are obtained in longitudinal plane just like the
+aorta, from outer wall to outer wall of the vessel. Width Dimensions are obtained in the transverse plane, from outer wall to
+outer wall of the vessel. Many vascular labs repeat the AP dimension in the transverse plane to correlate with the preferred AP
+dimension.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q28" style="animation-delay: 945ms;">
+        <div class="card-header">
+          <div class="card-number">Question 28</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What effect will increased hematocrit levels have on an arterial duplex exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>decreased blood flow velocities</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>decreased blood viscosity</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>hematocrit levels do not affect a Doppler evaluation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>increased color flow display</div>
+              
+            </div>
+            
+            
+            <img src="media/q28.jpg" alt="Question 28 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. decreased blood flow velocities</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Increased hematocrit levels = Increased viscosity = Decreased flow velocities. Honey, syrup, and oil are examples of liquids with
+elevated viscosity compared to blood/water. Consider a spoonful of water and a spoonful of honey. Which one takes longer to
+flow off the spoon into a cup? The honey takes significantly longer to drain off the spoon than water. Higher viscosity = slower
+flow</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q29" style="animation-delay: 980ms;">
+        <div class="card-header">
+          <div class="card-number">Question 29</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The inguinal ligament:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>connects the greater tuberosity to the superior edge of the iliac crest</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>connects the greater and lesser tuberosities of the femur</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>connects the ischial tuberosity to the anterior pubic bone</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>connects the superior edge of the iliac crest with the anterior pubic bone</div>
+              
+            </div>
+            
+            
+            <img src="media/q29.png" alt="Question 29 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. connects the superior edge of the iliac crest with the anterior pubic bone</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The inguinal ligament connects the superior edge of the iliac crest to the anterior pubic bone.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q30" style="animation-delay: 1015ms;">
+        <div class="card-header">
+          <div class="card-number">Question 30</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following principles produces an equation that relates pressure gradient to flow and resistance within the circulatory system?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Poiseuille&#39;s Law</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Bernoulli Principle</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Doppler Principle</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Raynaud&#39;s Phenomenon</div>
+              
+            </div>
+            
+            
+            <img src="media/q30.jpg" alt="Question 30 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Poiseuille&#39;s Law</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Poiseuille&#39;s Law states the pressure gradient in a vessel is equal to the flow volume multiplied by the resistance. Bernoulli&#39;s
+equation uses flow velocity to determine the pressure gradient at a specific location within the circulatory system.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q31" style="animation-delay: 1050ms;">
+        <div class="card-header">
+          <div class="card-number">Question 31</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A weak pulse on the posterior tibial artery will be described as ___________, while a bounding pulse in the anterior tibial artery will be described as _____________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>0, 2+</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>4+, 0</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>1+, 4+</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>2+, 6+</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. 1+, 4+</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Pulses are described as 0 none, 1+ weak, 2+ good, 3+ strong, 4+ bounding</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q32" style="animation-delay: 1085ms;">
+        <div class="card-header">
+          <div class="card-number">Question 32</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which waveform demonstrates the lowest resistance?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>D</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>A</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>C</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>B</div>
+              
+            </div>
+            
+            
+            <img src="media/q32_1.jpg" alt="Question 32 image">
+            
+            <img src="media/q32_2.jpg" alt="Question 32 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. D</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A. monophasic, higher resistance
+B. biphasic
+C. Triphasic
+D. monophasic, lower resistance</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q33" style="animation-delay: 1120ms;">
+        <div class="card-header">
+          <div class="card-number">Question 33</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The _______________ artery terminates at the external calcaneal artery.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>peroneal</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>anterior tibial</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>posterior tibial</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>medial gastrocnemius</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. peroneal</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The peroneal artery terminates at the external calcaneal artery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q34" style="animation-delay: 1155ms;">
+        <div class="card-header">
+          <div class="card-number">Question 34</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What blood vessels are demonstrated on the cross section of the penis?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>cavernosal arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>urethral arteries</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>helicine arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>dorsal arteries</div>
+              
+            </div>
+            
+            
+            <img src="media/q34.jpg" alt="Question 34 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. cavernosal arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The image demonstrates a cross section of the penis. The two corpus cavernosum and the corpus spongiosum are identified.
+The cavernosal artery courses through the corpus cavernosum.
+Penile Vasculature: Internal iliac arteries give rise to the internal pudendal arteries, bulbourethral artery, and penile arteries.
+The penile artery branches into the dorsal and cavernosal arteries. The right and left cavernosal arteries enter the right and left
+CC, respectively. The helicine arteries are multiple tiny branches that penetrate the tissue. Superficial dorsal vein and deep
+dorsal vein provide the primary venous outflow routes</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q35" style="animation-delay: 1190ms;">
+        <div class="card-header">
+          <div class="card-number">Question 35</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are evaluating the subclavian artery and its branches. How can you differentiate the vertebral artery from the thyrocervical and costocervical trunks?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the vertebral artery demonstrates flow moving toward the transducer and the trunk arteries demonstrate flow moving away from the transducer</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the vertebral artery demonstrates flow moving away from the transducer and the trunk arteries demonstrate flow toward the transducer</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the trunk arteries have many branches and lower end diastolic flow velocities</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the vertebral artery has many branches and lower end diastolic flow velocities</div>
+              
+            </div>
+            
+            
+            <img src="media/q35.jpg" alt="Question 35 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. the trunk arteries have many branches and lower end diastolic flow velocities</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Thyrocervical and Costocervical Trunk arteries can be differentiated from the vertebral arteries by their many branches and
+lower end-diastolic flow velocities. Flow direction should not be used to identify these vessels because of the many variables in
+evaluation technique and potential flow abnormalities (like a subclavian steal).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q36" style="animation-delay: 1225ms;">
+        <div class="card-header">
+          <div class="card-number">Question 36</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The inner most layer of an arterial wall is called ____________________, while the outermost layer of an arterial wall is called _______________________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>vasa vasorum, tunica adventitia</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>tunica intima, tunica adventitia</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>tunica intima, vasa vasorum</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>tunica adventitia, tunica intima</div>
+              
+            </div>
+            
+            
+            <img src="media/q36.jpg" alt="Question 36 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. tunica intima, tunica adventitia</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The inner most layer of an arterial wall is called tunica intima, while the outermost layer of an arterial wall is called tunica
+adventitia.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q37" style="animation-delay: 1260ms;">
+        <div class="card-header">
+          <div class="card-number">Question 37</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the waveforms demonstrates antegrade flow in diastole?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>A, C, D</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>A, B, D</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>B only</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>C only</div>
+              
+            </div>
+            
+            
+            <img src="media/q37_1.jpg" alt="Question 37 image">
+            
+            <img src="media/q37_2.jpg" alt="Question 37 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. A, C, D</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A. monophasic, high resistance
+B. biphasic
+C. Triphasic
+D. monophasic, low resistance
+Monophasic arterial flow indicates forward flow throughout the cardiac cycle. Biphasic arterial flow has two components of flow,
+antegrade flow in systole and retrograde flow in diastole. Triphasic arterial flow has three components of flow, antegrade flow in
+systole, retrograde flow in diastole, and a small segment of antegrade flow at the end of diastole.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q38" style="animation-delay: 1295ms;">
+        <div class="card-header">
+          <div class="card-number">Question 38</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A normal peak velocity in the cavernosa arteries after a papaverine injection would be _____________</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>at least 50 cm/s</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>&gt; 30 cm/s</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>&lt;40 cm/s</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>&lt;20 cm/s</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. &gt; 30 cm/s</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A normal peak velocity in the cavernosa arteries after a papaverine injection would be &gt;30cm/s. Reduced velocity indicates
+vasculogenic impotence.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q39" style="animation-delay: 1330ms;">
+        <div class="card-header">
+          <div class="card-number">Question 39</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">How do you test the capillary blush response on the upper extremity?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Apply a blood pressure cuff to the upper arm and inflate above the systolic pressure for 90 seconds then release the cuff to time the return of normal coloring in the arm.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Compress the radial and ulnar artery simultaneously for 60 seconds to create pallor in the hand and then release to time the return of normal coloring in the hand</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Raise the arm above the head for 60 seconds to produce pallor and then place the arm in neutral position to time the return of normal coloring in the arm.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Press your finger into the fleshy part of the arm to create pallor, then release to time the return of normal skin coloring.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Press your finger into the fleshy part of the arm to create pallor, then release to time the return of normal skin coloring.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Press your finger into the fleshy part of the arm to create pallor, then release to time the return of normal skin coloring. Longer
+times indicate the presence of arterial disease or obstruction.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q40" style="animation-delay: 1365ms;">
+        <div class="card-header">
+          <div class="card-number">Question 40</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Vasodilation:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>usually occurs in response to cold stimuli</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>can cause a monophasic waveform to become triphasic</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>can cause a triphasic waveform to become biphasic</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>usually occurs with stress or anxiety</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. can cause a triphasic waveform to become biphasic</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Vasodilation causes reduced resistance to flow to meet the tissue demands. Exercise will cause vasodilation and a triphasic
+waveform can become biphasic with the reduced resistance to flow in the lower extremities. The resistance to flow decreases
+and pressure increases with exercise to increase the flow volume to the functioning muscles. If enough blood does not reach
+the muscles, symptoms like claudication can occur.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q41" style="animation-delay: 1400ms;">
+        <div class="card-header">
+          <div class="card-number">Question 41</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The distal femoral artery becomes the popliteal artery:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>at the level of the medial quadricep tendon</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>in the popliteal fossa</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>at the end of the adductor canal</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>at the level of the heads of the gastrocnemius muscles</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. at the end of the adductor canal</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The distal femoral artery becomes the popliteal artery at the end of the adductor canal (Hunter&#39;s canal).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q42" style="animation-delay: 1435ms;">
+        <div class="card-header">
+          <div class="card-number">Question 42</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following statements is true regarding the tunica intima?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>An intimal dissection requires generation of a preliminary report and a stat review by a physician.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The intimal layer of the artery will become less prominent with age and more difficult to visualize sonographically.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>The vasa vasorum forms within the intimal layer.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The tunica intima is responsible for holding the vessel shape and allowing for wall flexibility.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. An intimal dissection requires generation of a preliminary report and a stat review by a physician.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>An intimal dissection requires generation of a preliminary report and a stat review by a physician. It is considered a critical
+finding. The vasa vasorum surrounds the outer wall of the vessel to supply the walls with blood. The tunica media is responsible
+for holding the vessel shape and allowing for wall flexibility. The intimal layer of the artery will become more prominent with age
+and more easily visualized sonographically.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q43" style="animation-delay: 1470ms;">
+        <div class="card-header">
+          <div class="card-number">Question 43</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If the systemic blood pressure rises but flow remains constant, what happens to the resistance in the vascular beds?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>increases</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>unable to determine without knowing the flow velocity</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>decreases</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>no change</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. increases</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If Flow Volume (Q) remains the same, if pressure (P) changes, resistance (R) must also change to keep the same flow volume.
+Resistance and pressure are directly related. If pressure goes up, resistance must go up to maintain a consistent amount of flow
+volume.
+Simplified Mathematic Example: Flow Volume (Q) 6 = (P) 12 / (R) 2
+Pressure goes up to 24, Resistance must increase to 4 to calculate the same flow volume of 6. (24 / 4 = 6)</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q44" style="animation-delay: 1505ms;">
+        <div class="card-header">
+          <div class="card-number">Question 44</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is the primary factor that determines the resistance characteristics of the arterial signal displayed by PW Doppler?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Part it is supplying</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Branch number</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Vessel course and location</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Origin of blood</div>
+              
+            </div>
+            
+            
+            <img src="media/q44.jpg" alt="Question 44 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Part it is supplying</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>EX: Renal artery is low resistance for a normal kidney. Organs need constant flow throughout the cardiac cycle. The femoral
+artery is high resistance for a normal leg. Extremities do not need constant flow throughout the cardiac cycle.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q45" style="animation-delay: 1540ms;">
+        <div class="card-header">
+          <div class="card-number">Question 45</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is NOT normally a part of a test for vasculogenic impotence?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Obtain blood pressures in the arms and ankles</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Measure the length of the cavernous arteries</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Obtain Doppler samples of the cavernous arteries and veins in the penis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Obtain Doppler samples of the CFA, PTA and DPA</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Measure the length of the cavernous arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When performing a penile Doppler exam, obtain Doppler samples of the CFA, cavernous arteries and veins in the penis. Doppler
+sample will also be taken in the PTA and DPA while performing ankle pressures. The ABI should be evaluated to determine if
+PAD can be causing the erectile dysfunction. The diameter of the cavernous arteries should be measured.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q46" style="animation-delay: 1575ms;">
+        <div class="card-header">
+          <div class="card-number">Question 46</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which vessel(s) supplies the majority of the blood to the hand?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>ulnar artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>radial artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>metatarsal arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>digital veins</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. ulnar artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The ulnar artery supplies the majority of the blood to the hand.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q47" style="animation-delay: 1610ms;">
+        <div class="card-header">
+          <div class="card-number">Question 47</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What Sonographic landmark is used to identify the distal end of the common iliac artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the inguinal ligament</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>head of the quadricep muscle</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the bifurcation into the external and internal iliac artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the saphenofemoral junction</div>
+              
+            </div>
+            
+            
+            <img src="media/q47.png" alt="Question 47 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. the bifurcation into the external and internal iliac artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The common iliac artery ends at the bifurcation into the external and internal iliac arteries. When the external iliac artery passes
+beneath the inguinal ligament, it becomes the common femoral artery. The inguinal ligament is an anatomic landmark for the
+external iliac artery, but it cannot normally be visualized when evaluating the extremity arteries.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q48" style="animation-delay: 1645ms;">
+        <div class="card-header">
+          <div class="card-number">Question 48</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which statement is true regarding the internal thoracic artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The Allen test must be performed to assess breast perfusion prior to harvesting the internal mammary artery.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>It is a branch of the thoracic aorta.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>It can be used as a coronary bypass graft.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>It can be a source of collateral flow for the vertebrobasilar system.</div>
+              
+            </div>
+            
+            
+            <img src="media/q48.jpg" alt="Question 48 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. It can be used as a coronary bypass graft.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The internal thoracic artery (AKA internal mammary artery) originates from the subclavian artery. It can be used as a coronary
+bypass graft in cases where the GSV is unavailable. The Allen test is used to evaluate the palmar arch when removing the radial
+artery.
+https://creativecommons.org/licenses/by/3.0/deed.en</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q49" style="animation-delay: 1680ms;">
+        <div class="card-header">
+          <div class="card-number">Question 49</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which calf vessel can be identified between the medial malleolus and the distal portion of the Achilles tendon?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>posterior venous arch</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>anterior tibial artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>peroneal artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>posterior tibial artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. posterior tibial artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The PTA and PTVs can be identified between the medial malleolus and the distal portion of the Achilles tendon.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q50" style="animation-delay: 1715ms;">
+        <div class="card-header">
+          <div class="card-number">Question 50</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You receive an order for a pre-op arterial mapping to evaluate the internal mammary artery. What vessel should you evaluate to locate the origin of the internal mammary artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>innominate artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>descending aorta</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>aortic arch</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>subclavian artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q50.jpg" alt="Question 50 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. subclavian artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The internal mammary artery (AKA internal thoracic artery) originates from the subclavian artery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q51" style="animation-delay: 1750ms;">
+        <div class="card-header">
+          <div class="card-number">Question 51</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Diastolic flow reversal is normal in which of the following vessels?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>celiac artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>internal carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>renal arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>common iliac artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q51.jpg" alt="Question 51 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. common iliac artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The lower extremities are normally a high resistance vascular bed. This leads to diastolic flow reversal and a triphasic or
+biphasic waveform. Any low resistance vessel with a monophasic waveform has no flow reversal during diastole.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q52" style="animation-delay: 1785ms;">
+        <div class="card-header">
+          <div class="card-number">Question 52</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The internal iliac artery:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>demonstrates lower resistance flow than the external iliac artery.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>branches into the superficial and deep femoral arteries</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>supplies the bladder, prostate and testicles in a male patient.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>courses lateral to the external iliac artery to reach the pelvis.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. demonstrates lower resistance flow than the external iliac artery.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Flow in the internal iliac artery is less resistant that the external branch because it supplies the pelvic organs with blood. The
+internal iliac artery courses medial to the external iliac artery to reach the pelvis. The gonadal arteries originate from the aorta,
+not the internal iliac artery. The common femoral artery bifurcates into the deep and superficial femoral arteries.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q53" style="animation-delay: 1820ms;">
+        <div class="card-header">
+          <div class="card-number">Question 53</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following statements refers to the internal pudendal artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Branch of the external iliac artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Most common location for stenosis causing vasculogenic impotence</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Is the injection site for papaverine</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Supplies the penis with blood through the penile artery and its branches.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Supplies the penis with blood through the penile artery and its branches.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The internal pudendal artery is a branch of the internal iliac artery and supplies the penis with blood through the penile artery
+and its branches. Papaverine is injected into the tissues at the lateral side of the base of the penis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q54" style="animation-delay: 1855ms;">
+        <div class="card-header">
+          <div class="card-number">Question 54</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Ohm&#39;s Law of electrical current is also used to describe:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>venous capacitance</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the appearance of flow vortices distal to a stenosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>arterial phasicity related to vessel recoil</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>arterial blood flow volumes</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. arterial blood flow volumes</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Ohm&#39;s Law of electrical current is also used to describe arterial blood flow volumes. current = voltage / resistance which equates
+to flow volume = pressure / resistance. Ohm&#39;s Law equates to Poiseuille&#39;s Law</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q55" style="animation-delay: 1890ms;">
+        <div class="card-header">
+          <div class="card-number">Question 55</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Normal extremity arterial flow should demonstrate a _________________acceleration time.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>blunted</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>prolonged</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>rapid</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>variable</div>
+              
+            </div>
+            
+            
+            <img src="media/q55.jpg" alt="Question 55 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. rapid</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Normal extremity arterial flow should demonstrate a rapid acceleration time.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q56" style="animation-delay: 1925ms;">
+        <div class="card-header">
+          <div class="card-number">Question 56</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly describes a normal Doppler waveform of an artery from the lower extremity?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The triphasic waveform never demonstrates a retrograde flow component during the cardiac cycle.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The triphasic waveform will have two components of antegrade flow during the cardiac cycle.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>There will be a low resistance, monophasic waveform with a small amount of flow reversal in diastole.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The triphasic waveform will have two components of normal retrograde flow during the cardiac cycle.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. The triphasic waveform will have two components of antegrade flow during the cardiac cycle.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The resistance in the peripheral vascular beds is very high compared to the abdominal organs. Blood flows into the extremities
+during systole with flow reversal during diastole. The resistance in the vascular beds is greater than the resistance in the feeding
+vessels during mid/end diastole causing flow reversal to occur in the vessel. This produces a waveform with at least two
+separate phases of flow (biphasic) If the pressure gradient between the vascular bed and the feeding vessel continues to
+equalize, a small amount of flow may move toward the vascular bed at the very end of diastole. This produces a waveform with
+three separate phases of flow (triphasic), 2 antegrade and 1 retrograde component. Biphasic and triphasic flow is generally
+considered normal in the extremities.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q57" style="animation-delay: 1960ms;">
+        <div class="card-header">
+          <div class="card-number">Question 57</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What blood vessels are located at letter C?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>1 ATA and 2 ATV</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>2 peroneal arteries and 1 peroneal vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>2 peroneal veins and 1 peroneal artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>1 PTA and 2 PTV</div>
+              
+            </div>
+            
+            
+            <img src="media/q57.jpg" alt="Question 57 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. 1 PTA and 2 PTV</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br></div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q58" style="animation-delay: 1995ms;">
+        <div class="card-header">
+          <div class="card-number">Question 58</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following lists the most common anatomic variation in aortic arch anatomy?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Two branches originate from the arch: a shared innominate/left CCA trunk and the left subclavian artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The coronary arteries originate from the innominate artery or the right CCA</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Pulmonary sling</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Double aortic arch</div>
+              
+            </div>
+            
+            
+            <img src="media/q58.jpg" alt="Question 58 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Two branches originate from the arch: a shared innominate/left CCA trunk and the left subclavian artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The most common anatomic variant of the arch branches is only two direct branches of the arch:
+1. The innominate and left CCA originate as one short segment and then split
+2. Left subclavian artery</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q59" style="animation-delay: 2030ms;">
+        <div class="card-header">
+          <div class="card-number">Question 59</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes the normal response to a Doppler evaluation for erectile dysfunction?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Normally the velocity of the cavernosal arteries will not change post injection but the dorsal venous flow will become pulsatile.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Normally the PSV and EDV of the cavernosal arteries will increase post injection, but dorsal venous flow will remain unchanged.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Normally the PSV and EDV of the arteries will increase post injection and dorsal venous flow will become pulsatile.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Normally the PSV and EDV of the cavernosal arteries will decrease post injection but dorsal venous flow will remain unchanged.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Normally the PSV and EDV of the cavernosal arteries will increase post injection, but dorsal venous flow will remain unchanged.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Normally the PSV and EDV of the cavernosal arteries will increase post injection, but dorsal venous flow will remain unchanged.
+Abnormal inflow will cause the velocity in the cavernosal arteries to be less than 30cm/s. Increased venous outflow can also be
+responsible for impotence.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q60" style="animation-delay: 2065ms;">
+        <div class="card-header">
+          <div class="card-number">Question 60</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The vessel wall layer that is composed of fibrous connective tissue is called:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>tunica intima</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>vasa vasorum</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>tunica media</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>tunica externa</div>
+              
+            </div>
+            
+            
+            <img src="media/q60.jpg" alt="Question 60 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. tunica externa</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The external layer is composed of connective tissue and adheres to the surrounding structures. The tunica media refers to the
+muscle layer of the vessel wall. The inner layer is the tunica intima which is composed of epithelial cells and covered by the
+basement membrane.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q61" style="animation-delay: 2100ms;">
+        <div class="card-header">
+          <div class="card-number">Question 61</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes how to correctly measure the AP diameter of iliac artery ?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>transverse view, outer wall to outer wall</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>transverse view, outer wall to inner wall</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>longitudinal view, outer wall to inner wall</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>longitudinal view, outer wall to outer wall</div>
+              
+            </div>
+            
+            
+            <img src="media/q61.jpg" alt="Question 61 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. longitudinal view, outer wall to outer wall</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When evaluating the diameter of the aorta and iliac arteries, AP Dimensions are obtained in longitudinal plane, from outer wall
+to outer wall of the vessel. Width Dimensions are obtained in the transverse plane, from outer wall to outer wall of the vessel.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q62" style="animation-delay: 2135ms;">
+        <div class="card-header">
+          <div class="card-number">Question 62</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The pulsatility index (PI) in a normal aorta should be ______________ the PI in the normal popliteal artery.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>lower than</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>very similar to</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>at least 3 times greater than</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>higher than</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. lower than</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The pulsatility index (PI) in a normal aorta should be lower than the PI in the normal popliteal artery. The aorta flow is lower
+resistance than the popliteal artery, therefore there is a greater amount of pulsatility in the popliteal artery. The PI increases
+from the central arteries to the peripheral extremity arteries. A PI &lt;5.0 in a lower extremity artery indicates proximal
+obstruction.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q63" style="animation-delay: 2170ms;">
+        <div class="card-header">
+          <div class="card-number">Question 63</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A branch of which artery joins the terminal ulnar artery to form the superficial palmar arch?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Antecubital</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Radial</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Ulnar</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Brachial</div>
+              
+            </div>
+            
+            
+            <img src="media/q63.jpg" alt="Question 63 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Radial</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A branch of the radial artery joins the terminal ulnar artery to form the superficial palmar arch. A branch of the ulnar artery
+joins the terminal radial artery to form the deep palmar arch.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q64" style="animation-delay: 2205ms;">
+        <div class="card-header">
+          <div class="card-number">Question 64</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The dorsalis pedis artery is a branch of:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the anterior tibial artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the peroneal artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the gastrocnemius artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the posterior tibial artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. the anterior tibial artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The DPA is a distal branch of the ATA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q65" style="animation-delay: 2240ms;">
+        <div class="card-header">
+          <div class="card-number">Question 65</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which waveform can be described as biphasic?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>D</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>A</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>B</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>C</div>
+              
+            </div>
+            
+            
+            <img src="media/q65_1.jpg" alt="Question 65 image">
+            
+            <img src="media/q65_2.jpg" alt="Question 65 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. B</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A. monophasic, high resistance
+B. biphasic
+C. Triphasic
+D. monophasic, low resistance</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q66" style="animation-delay: 2275ms;">
+        <div class="card-header">
+          <div class="card-number">Question 66</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The term for the most common anatomic variant of the aortic arch anatomy is the:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Bifurcating arch</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Talbot arch</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Bovine arch</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Simpson arch</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Bovine arch</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A Bovine arch indicates that there are two branches originating from the aortic arch, instead of 3. The innominate artery and left
+CCA origin are combined and the left subclavian artery is the second branch. Although &#34;bovine&#34; indicates a cow, this arch
+formation is NOT related to the arch formation in cattle.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q67" style="animation-delay: 2310ms;">
+        <div class="card-header">
+          <div class="card-number">Question 67</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">While performing an arterial Duplex exam, the patient complains that she is cold. What effect could this have on your exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>monophasic flow may be demonstrated in normal arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>decreased ankle pressures</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>increased pulsatility in the vessels evaluated</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>decreased ankle pressures and monophasic flow may be demonstrated in normal arteries</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. increased pulsatility in the vessels evaluated</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Cold temperatures cause vasoconstriction in the medium to small arteries of the body. This will lead to increased flow
+resistance and pulsatility of the flow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q68" style="animation-delay: 2345ms;">
+        <div class="card-header">
+          <div class="card-number">Question 68</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which vessels allow for the exchange of nutrients and waste products between blood and tissue?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>segmental arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>plantar and palmar arches</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>distal arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>capillaries</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. capillaries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Capillaries are the smallest vessels in the circulatory system and they allow for the exchange of nutrients and waste products
+between blood and tissue.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q69" style="animation-delay: 2380ms;">
+        <div class="card-header">
+          <div class="card-number">Question 69</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following normal arteries is not palpable on physical exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>common femoral</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>peroneal</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>dorsalis pedis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>posterior tibial</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. peroneal</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Because the location in the calf, the peroneal artery is not normally palpable.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q70" style="animation-delay: 2415ms;">
+        <div class="card-header">
+          <div class="card-number">Question 70</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is the preferred patient position for performing an upper extremity arterial duplex exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>arm abducted 45 degrees and externally rotated</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>arm adducted 45 degrees and internally rotated</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>arm abducted 90 degrees and externally rotated</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>arm raised above head with patient in supine position</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. arm abducted 45 degrees and externally rotated</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The preferred patient position for performing an upper extremity arterial duplex exam is to abduct the arm 45 degrees with
+external rotation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q71" style="animation-delay: 2450ms;">
+        <div class="card-header">
+          <div class="card-number">Question 71</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The subclavian artery becomes the axillary artery:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>at the level of the first rib</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>at the level of the fourth rib</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>when it crosses anterior to the clavicle</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>when it crosses over the deltoid muscle</div>
+              
+            </div>
+            
+            
+            <img src="media/q71.jpg" alt="Question 71 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. at the level of the first rib</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The subclavian artery extends from the innominate artery to the axillary artery. It courses posterior to the anterior scalene
+muscle and clavicle. It becomes the axillary artery at the level of the first rib.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q72" style="animation-delay: 2485ms;">
+        <div class="card-header">
+          <div class="card-number">Question 72</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Where do the plantar arteries originate?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>from the posterior tibial artery posterior to the medial malleolus</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>from the peroneal artery just past the Achilles tendon attachment at the heel</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>from the anterior tibial artery posterior to the medial malleolus</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>from the anterior tibial artery anterior to the medial malleolus</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. from the posterior tibial artery posterior to the medial malleolus</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The plantar arteries originate from the PTA posterior to the medial malleolus.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q73" style="animation-delay: 2520ms;">
+        <div class="card-header">
+          <div class="card-number">Question 73</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which vessel courses posterior to the anterior scalene muscle?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>aorta</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>subclavian artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>brachial artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>axillary artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q73.jpg" alt="Question 73 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. subclavian artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The subclavian artery courses posterior to the anterior scalene muscle.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q74" style="animation-delay: 2555ms;">
+        <div class="card-header">
+          <div class="card-number">Question 74</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following can be used to describe a normal waveform obtained from a CW Doppler evaluation of the femoral artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>low amplitude</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>delayed deceleration</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>rapid upstroke</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>no diastolic flow reversal</div>
+              
+            </div>
+            
+            
+            <img src="media/q74.jpg" alt="Question 74 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. rapid upstroke</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Normal waveforms are triphasic with rapid upslope, sharp peak, rapid downslope, a small peak below the baseline representing
+diastolic flow reversal, followed by a small peak of flow above the baseline</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q75" style="animation-delay: 2590ms;">
+        <div class="card-header">
+          <div class="card-number">Question 75</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is an expected change in flow in the brachial artery that occurs when the patient clenches their fist during the Doppler exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>increased diastolic flow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>decreased resistive index</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>increased pulsatility index</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>triphasic to monophasic waveform change</div>
+              
+            </div>
+            
+            
+            <img src="media/q75.jpg" alt="Question 75 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. increased pulsatility index</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Clenching the fist causes an increase in distal resistance. The brachial artery will show increased pulsatility and resistance with
+decreased diastolic flow. Isometric flexing of the foot/toes has the same effect on the Doppler evaluation of the lower extremity
+arteries. Note the increased resistance to flow with the loss of the antegrade flow in diastole. Higher resistance waveforms
+exhibit greater pulsatility index.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q76" style="animation-delay: 2625ms;">
+        <div class="card-header">
+          <div class="card-number">Question 76</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Put the following terms in order from largest to smallest in size. capillary, aorta, femoral artery, arteriole, tibial artery</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>capillary, arteriole, tibial artery, femoral artery, aorta</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>capillary, aorta, femoral artery, tibial artery, arteriole</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>aorta, capillary, femoral artery, tibial artery, arteriole</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>aorta, femoral artery, tibial artery, arteriole, capillary</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. aorta, femoral artery, tibial artery, arteriole, capillary</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>From largest to smallest: aorta, femoral artery, tibial artery, arteriole, capillary. Capillaries are the smallest blood vessels in the
+body.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q77" style="animation-delay: 2660ms;">
+        <div class="card-header">
+          <div class="card-number">Question 77</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A pulsatility index of &gt; 5.0 in the extremities indicates:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>normal resistance</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>mildly decreased resistance</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>moderately decreased resistance</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>severely decreased resistance</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. normal resistance</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The pulsatility index describes the resistance of the blood flow. The higher the PI, the greater the resistance. Normal PI in the
+extremities is &gt;5.0 and in most organs normal values are &lt;1.5</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q78" style="animation-delay: 2695ms;">
+        <div class="card-header">
+          <div class="card-number">Question 78</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is not a branch of the subclavian artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>costocervical trunk</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>posterior auricular artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>thyrocervical trunk</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>internal thoracic artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q78.jpg" alt="Question 78 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. posterior auricular artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Branches from subclavian artery: Vertebral artery, Internal mammary artery (AKA internal thoracic artery), Thyrocervical trunk,
+Costocervical trunk</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q79" style="animation-delay: 2730ms;">
+        <div class="card-header">
+          <div class="card-number">Question 79</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What term refers to the capability of the vascular beds to alter the resistance to flow to maintain the levels of flow needed for normal function?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>laminar flow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>vasoconstriction</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>autoregulation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>vasodilation</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. autoregulation</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Autoregulation refers to the capability of the vascular beds to alter the resistance to flow to maintain the levels of flow needed
+for normal function. Vasoconstriction and vasodilation are ways the vascular beds autoregulate the flow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q80" style="animation-delay: 2765ms;">
+        <div class="card-header">
+          <div class="card-number">Question 80</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If the acceleration time in the common femoral artery is 110ms:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>there is an AV malformation</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the inflow vessels are normal</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>there is a distal stenosis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>there is a proximal stenosis</div>
+              
+            </div>
+            
+            
+            <img src="media/q80.jpg" alt="Question 80 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. the inflow vessels are normal</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If the AT in the common femoral artery is &gt;140ms, iliac disease is suspected. If the AT in both if the common femoral arteries is
+&gt;140ms, aortic disease is suspected. 110ms is a normal finding.
+Powered by ExamBuilder. Copyright ©2026</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+    </section>
+  </main>
+  <script>
+    const detailsElements = Array.from(document.querySelectorAll("details"));
+    document.getElementById("open-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = true));
+    document.getElementById("close-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = false));
+  </script>
+</body>
+</html>

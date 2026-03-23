@@ -1,0 +1,2510 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abdomen General Anatomy 21%</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06101d;
+      --bg-strong: #0b1628;
+      --card: rgba(17, 31, 52, 0.92);
+      --card-strong: rgba(20, 36, 60, 0.98);
+      --ink: #f4f8ff;
+      --muted: #b0bfd6;
+      --accent: #82ddd7;
+      --accent-strong: #b4f0eb;
+      --accent-soft: rgba(130, 221, 215, 0.16);
+      --border: rgba(149, 180, 221, 0.34);
+      --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
+      --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.28);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(130, 221, 215, 0.14), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(97, 130, 194, 0.18), transparent 24%),
+        linear-gradient(180deg, #071221 0%, var(--bg) 54%, #040b15 100%);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+    .wrap {
+      width: min(1080px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.5rem 0 4rem;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      padding: clamp(1.4rem, 2.5vw, 2rem);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94)),
+        linear-gradient(120deg, rgba(130, 221, 215, 0.08), rgba(97, 130, 194, 0.08));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      animation: rise-in 560ms ease-out both;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -35% auto;
+      width: 240px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
+      background: radial-gradient(circle, rgba(97, 130, 194, 0.4), transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4.8vw, 3.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 14ch;
+      text-wrap: balance;
+    }
+    .subhead {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .toolbar a, .toolbar button {
+      border: 1px solid var(--border);
+      background: var(--card-strong);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.78rem 1.05rem;
+      cursor: pointer;
+      text-decoration: none;
+      font: inherit;
+      font-weight: 700;
+      box-shadow: var(--shadow-soft);
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+    .toolbar a:hover, .toolbar button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(130, 221, 215, 0.42);
+      background: rgba(26, 45, 73, 1);
+    }
+    .cards {
+      display: grid;
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      animation: rise-in 520ms ease-out both;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+      border-color: rgba(130, 221, 215, 0.28);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(130, 221, 215, 0.09), rgba(97, 130, 194, 0.08)),
+        rgba(16, 30, 50, 0.88);
+    }
+    .card-number {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .pill {
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .card-body {
+      padding: 1.2rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .card-side {
+      display: grid;
+      gap: 0.75rem;
+    }
+    .label {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .content {
+      font-size: 1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .choices {
+      display: grid;
+      gap: 0.45rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(24, 41, 67, 0.98), rgba(17, 31, 52, 0.92));
+    }
+    .choice {
+      line-height: 1.5;
+    }
+    .choice-label {
+      font-weight: 700;
+      color: var(--accent);
+      margin-right: 0.3rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(8, 15, 27, 0.96);
+      display: block;
+      box-shadow: var(--shadow-soft);
+    }
+    details {
+      border-top: 1px dashed rgba(149, 180, 221, 0.34);
+      padding-top: 1rem;
+    }
+    summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 700;
+      list-style: none;
+      transition: color 180ms ease;
+    }
+    summary:hover { color: var(--accent-strong); }
+    summary::-webkit-details-marker { display: none; }
+    .answer-block {
+      margin-top: 0.9rem;
+      display: grid;
+      gap: 0.75rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(19, 35, 58, 0.98), rgba(13, 25, 43, 0.96));
+    }
+    .answer-title {
+      font-weight: 700;
+    }
+    @keyframes rise-in {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero, .card {
+        animation: none;
+      }
+      .toolbar a, .toolbar button, .card, summary {
+        transition: none;
+      }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 1rem, 1080px); padding-top: 1rem; }
+      .hero {
+        border-radius: 22px;
+        padding: 1.15rem;
+      }
+      .card-header, .card-body { padding: 1rem; }
+      .toolbar {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .toolbar a, .toolbar button {
+        width: 100%;
+        text-align: center;
+      }
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Review Deck</p>
+      <h1>Abdomen General Anatomy 21%</h1>
+      <p class="subhead">63 flashcards extracted from this PDF. Open each back panel to review the correct answer and full feedback.</p>
+      <div class="toolbar">
+        <a href="../index.html">Back to index</a>
+        <button type="button" id="open-all">Open all backs</button>
+        <button type="button" id="close-all">Close all backs</button>
+      </div>
+    </section>
+    <section class="cards">
+      
+      <article class="card" id="q1" style="animation-delay: 0ms;">
+        <div class="card-header">
+          <div class="card-number">Question 1</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The waveform from an abdominal vessel displays what two characteristics?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>flow reversal during diastole</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>mild phasicity and pulsatility</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>triphasic flow and no respiratory variation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>flow reversal during augmentation</div>
+              
+            </div>
+            
+            
+            <img src="media/q1.png" alt="Question 1 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. mild phasicity and pulsatility</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The waveform displays mild respiratory variation (phasicity) and pulsatility in a normal renal vein. Please note that the definition
+of pulsatility indicates regular variations in flow. Not all pulsatility in venous flow is a result of the ripple effects of cardiac
+contraction. These findings are considered normal in renal vessels. If venous congestion occurs, the flow will become
+increasingly pulsatile and flow reversal can develop during atrial contraction.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q2" style="animation-delay: 35ms;">
+        <div class="card-header">
+          <div class="card-number">Question 2</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The normal flow profile within the aorta is termed:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Phasic flow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Plug flow</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Recoil flow</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Continuous flow</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Plug flow</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The layers of blood flow in the aorta move at relatively the same speed and this is called plug flow. Laminar flow patterns occur
+in smaller vessels. The velocity of the layers of blood flow in these vessels vary slightly by decreasing as they near the vessel
+wall.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q3" style="animation-delay: 70ms;">
+        <div class="card-header">
+          <div class="card-number">Question 3</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The most cephalic branch of the abdominal aorta is:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>SMA</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>celiac axis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Splenic artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Common hepatic artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q3.png" alt="Question 3 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. celiac axis</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The celiac axis is the first abdominal branch of the aorta followed by the origin of the SMA approximately 2cm more distal on
+the aorta. The renal arteries are the next distal branch followed by the IMA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q4" style="animation-delay: 105ms;">
+        <div class="card-header">
+          <div class="card-number">Question 4</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following factors are related to potential hemodynamic changes within a vessel?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>vessel length and blood viscosity, but not vessel radius</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>blood viscosity and vessel radius, but not vessel length</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>vessel length and vessel radius, but not blood viscosity</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>vessel length, vessel radius and blood viscosity</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. vessel length, vessel radius and blood viscosity</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Changes in vessel length, vessel radius and blood viscosity are related to potential hemodynamic changes within a vessel. Know
+Poiseuille&#39;s Law!</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q5" style="animation-delay: 140ms;">
+        <div class="card-header">
+          <div class="card-number">Question 5</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">According to the attached color map, what color will the blood be demonstrated that is moving toward the probe at an average velocity of 100cm/s?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>red</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>blue</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>white/light blue</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>yellow</div>
+              
+            </div>
+            
+            
+            <img src="media/q5.png" alt="Question 5 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. white/light blue</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The speed of the blood exceeds the scale displayed therefore aliasing of the color display will occur. Normally flow toward the
+probe would be red, IF the average velocity is less than 0.43 m/s. Flow moving at 1.0 m/s (100cm/s) exceeds the top limit of 0.43
+m/s which will cause aliasing. The white or light blue color of the blue color bar will be seen and is related to the &#34;wrap around&#34;
+of the color display.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q6" style="animation-delay: 175ms;">
+        <div class="card-header">
+          <div class="card-number">Question 6</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which imaging plane can produce a longitudinal image of the IVC and the aorta on the same image?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>mid sagittal</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>coronal</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>coronal and transverse</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>transverse</div>
+              
+            </div>
+            
+            
+            <img src="media/q6.png" alt="Question 6 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. coronal</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Placing the patient in the decubitus position and placing the probe on the lateral aspect of the abdomen will demonstrate a
+longitudinal view of the aorta and IVC side by side on the image. A transverse view can also demonstrate both great vessels on
+the same image but will not provide a longitudinal view.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q7" style="animation-delay: 210ms;">
+        <div class="card-header">
+          <div class="card-number">Question 7</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following terms can be used to describe the normal Doppler waveform in the proximal renal vein?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>continuous flow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>respiratory phasicity and mild pulsatility</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>mild pulsatility with no respiratory changes</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>respiratory phasicity with no pulsatility</div>
+              
+            </div>
+            
+            
+            <img src="media/q7_1.jpg" alt="Question 7 image">
+            
+            <img src="media/q7_2.jpg" alt="Question 7 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. respiratory phasicity and mild pulsatility</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Venous flow in the IVC, hepatic and proximal renal veins normally demonstrate respiratory phasicity and mild cardiac pulsatility.
+At the renal hilum, the flow is more continuous with minimal respiratory phasicity.
+Image Credit: D&#39;Andrea A, Del Giudice C, Fabiani D, Caputo A, Sabatella F, Cante L, Palermi S, Desiderio A, Tagliamonte E,
+Liccardo B, et al. The Incremental Role of Multiorgan Point-of-Care Ultrasounds in the Emergency Setting. International Journal of
+Environmental Research and Public Health. 2023; 20(3):2088. https://doi.org/10.3390/ijerph20032088</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q8" style="animation-delay: 245ms;">
+        <div class="card-header">
+          <div class="card-number">Question 8</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Letter T indicates which of the following structures?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>superior mesenteric artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>IVC</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>left renal artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>right renal artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q8.jpg" alt="Question 8 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. right renal artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br></div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q9" style="animation-delay: 280ms;">
+        <div class="card-header">
+          <div class="card-number">Question 9</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Poiseuille&#39;s Law states that the ___________________ has the most significant effect on the blood flow in a vessel.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>vessel length</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>fluid viscosity</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>vessel radius</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>pressure gradient</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. vessel radius</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Poiseuille&#39;s Law demonstrates the relationship between pressure, flow volume and resistance. A small change in vessel radius
+causes a dramatic change in the blood flow within. Note the equation lists the radius of the blood vessel and it is raised to the
+4th power. This is a significant numerical increase (or decrease) with changes to the radius measurement.
+Tip for these types of questions: Know your equations! memorizing the Bernoulli, Poiseuille&#39;s Law, and Doppler equation will be
+very helpful in answering relationship questions. Characteristics on the top of the division equation are directly related to the
+outcome number. Characteristics on the bottom of a division equation are indirectly related to the outcome number.
+For example: Flow volume = Pressure divided by Resistance. Q= P/R
+As pressure increases, flow volume increases (direct relationship).
+As resistance increases, flow volume decreases (indirect or inverse relationship).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q10" style="animation-delay: 315ms;">
+        <div class="card-header">
+          <div class="card-number">Question 10</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following statements about the IVC is correct?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The IVC empties blood into the left atrium.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The IVC is the most posterior vessel in the abdomen.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Congestive heart failure and pulmonary HTN can cause IVC dilatation.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The IVC should normally maintain a relatively constant diameter with respiration.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Congestive heart failure and pulmonary HTN can cause IVC dilatation.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The IVC courses anterior to the level of the aorta and empties blood into the right atrium. The IVC should normally change
+diameter with respiration. The aorta maintains a constant diameter with respiration. Congestive heart failure , significant
+tricuspid regurgitation and pulmonary HTN can cause IVC dilatation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q11" style="animation-delay: 350ms;">
+        <div class="card-header">
+          <div class="card-number">Question 11</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A mesenteric to aortic ratio is considered normal when it is ________________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>&gt;1.0</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>1.0 or less</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>&gt;3.0</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>&lt;3.0</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. 1.0 or less</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The mesenteric velocity should be similar to the aortic velocity, which would yield a ratio of around 1.0. As the stenosis in the
+SMA increases, the velocity increases and the ratio increases. SMA/aorta ratio &gt;3.0 indicates significant stenosis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q12" style="animation-delay: 385ms;">
+        <div class="card-header">
+          <div class="card-number">Question 12</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Letter K indicates which of the following vessels?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>middle hepatic vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>left portal vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>left hepatic vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>right portal vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q12.jpg" alt="Question 12 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. left hepatic vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>I. right hepatic vein
+J. middle hepatic vein
+K. left hepatic vein</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q13" style="animation-delay: 420ms;">
+        <div class="card-header">
+          <div class="card-number">Question 13</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The hepatic artery carries _______ of the blood entering the liver.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>20-30%</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>50-60%</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>80-90%</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>100%</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. 20-30%</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The portal vein carries 70-80% of the blood entering the liver, but it is lower in oxygen saturation at 85%. The hepatic artery
+carries 20-30% of the blood into the liver and it has a 95% oxygen saturation. The portal venous system supplies just over half of
+the oxygen to the liver tissue because of the high volume of flow. The hepatic artery supplies just under half of the oxygen to
+the liver tissues.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q14" style="animation-delay: 455ms;">
+        <div class="card-header">
+          <div class="card-number">Question 14</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is the most common normal variant in renal artery anatomy?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>right renal artery courses anterior to the IVC</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>absence of the right renal artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>absence of the left renal artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>duplicated renal arteries</div>
+              
+            </div>
+            
+            
+            <img src="media/q14.jpg" alt="Question 14 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. duplicated renal arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>1/3 patients have duplicated renal artery (most common anatomic variant).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q15" style="animation-delay: 490ms;">
+        <div class="card-header">
+          <div class="card-number">Question 15</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes the best technique used to visualize and locate the inferior mesenteric artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>transverse approach, locate renal arteries and slide inferiorly</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>sagittal approach to the right of midline near umbilicus</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>coronal approach on the left side mid flank</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>sagittal approach to the left of midline near umbilicus</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. transverse approach, locate renal arteries and slide inferiorly</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The best technique used to visualize and locate the inferior mesenteric artery is to use a transverse approach to evaluate the
+aorta. After locating the renal artery origins, slide inferiorly to look for the IMA. The IMA originates from the anterior aorta just
+distal to the renal artery origins.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q16" style="animation-delay: 525ms;">
+        <div class="card-header">
+          <div class="card-number">Question 16</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">As pressure increases, resistance must ______________________ to maintain constant flow volume.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>stay constant</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>resistance does not vary related to pressure and flow volume</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>decrease</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>increase</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. increase</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>As pressure increases, flow will increase if there is no change in resistance. In order to maintain a constant flow, when pressure
+increases, resistance must increase.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q17" style="animation-delay: 560ms;">
+        <div class="card-header">
+          <div class="card-number">Question 17</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following terms can be used to describe the normal Doppler waveform in the portal vein?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>blunted with respiratory variation</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>moderately pulsatile flow due to the vessel proximity to the heart</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>prominent respiratory variation and mild pulsatility</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>mild pulsatility with respiratory variation</div>
+              
+            </div>
+            
+            
+            <img src="media/q17.jpg" alt="Question 17 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. mild pulsatility with respiratory variation</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Venous flow in the portal system normally demonstrates mild respiratory variation and pulsatility. The increased thickness of
+the vessel walls and location in the abdomen prevent significant cardiac effects on the flow pattern. Mildly pulsatile flow is
+considered normal with a pulsatility index less than 30%. The pulsatility is not considered &#34;cardiac pulsatility&#34; as the variation is
+due to the normal flow reversal from the hepatic veins into the venous sinusoids that slows portal inflow. As hepatic vein flow
+reversal increases with congestion, the pulsatility of the portal vein will increase to abnormal levels.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q18" style="animation-delay: 595ms;">
+        <div class="card-header">
+          <div class="card-number">Question 18</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Use your mouse to place your cursor over the hepatic artery and click to mark the vessel. If the vessel is not demonstrated on the image, mark the purple box that says &#34;Not demonstrated on the image&#34;.</div>
+            
+            
+            <img src="media/q18.png" alt="Question 18 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>This image demonstrates the aorta, SMA and the left renal vein. The celiac axis and its branches are cephalad to the level of this
+image. The SMA is visible anterior to the aorta, therefore the hepatic artery would not be visualized in this plane.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q19" style="animation-delay: 630ms;">
+        <div class="card-header">
+          <div class="card-number">Question 19</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The _________________ is formed by the junction of the splenic vein and the superior mesenteric vein.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>main portal vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>inferior mesenteric vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>left hepatic vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>right hepatic vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q19.png" alt="Question 19 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. main portal vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The MPV is formed by the junction of the splenic vein and the superior mesenteric vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q20" style="animation-delay: 665ms;">
+        <div class="card-header">
+          <div class="card-number">Question 20</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following vessels does not drain into the IVC?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>right gonadal vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>right renal vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>left hepatic vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>splenic vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q20.png" alt="Question 20 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. splenic vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The left gonadal vein empties into the left renal vein while the right gonadal vein empties directly into the IVC. The splenic vein is
+part of the portal system.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q21" style="animation-delay: 700ms;">
+        <div class="card-header">
+          <div class="card-number">Question 21</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Blood within the pulmonary veins:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>contains a high oxygen content and flows into the right atrium</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>contains a low oxygen content and flows into the left atrium</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>contains high oxygen content and flows into the left atrium</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>is normally high resistance</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. contains high oxygen content and flows into the left atrium</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Blood within the pulmonary veins contains high oxygen content and flows into the left atrium. These veins are the only veins in
+the body with a high oxygen content as they carry blood from the lungs to the heart. Abdominal and extremity veins are
+typically lower in oxygen content than the arterial circulatory system.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q22" style="animation-delay: 735ms;">
+        <div class="card-header">
+          <div class="card-number">Question 22</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which two cursors would be used to measure the acceleration time for the flow in this renal artery tracing?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>red and blue</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>blue and green</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>green and red</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>green and yellow</div>
+              
+            </div>
+            
+            
+            <img src="media/q22.jpg" alt="Question 22 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. green and red</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The AT is measured by placing a cursor at the start of the systolic upstroke and at the early systolic peak (if present). The
+velocities used to calculate the RI are measured by placing the cursor at the true peak systolic velocity and the end diastolic
+velocity.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q23" style="animation-delay: 770ms;">
+        <div class="card-header">
+          <div class="card-number">Question 23</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The primary mechanisms that control arterial flow volume changes during the cardiac cycle are:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>viscosity, vessel radius</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>vessel length, peripheral resistance</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>cardiac output, viscosity</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>cardiac output, peripheral resistance</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. cardiac output, peripheral resistance</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The primary mechanisms that control arterial flow volume changes during the cardiac cycle are cardiac output and peripheral
+resistance.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q24" style="animation-delay: 805ms;">
+        <div class="card-header">
+          <div class="card-number">Question 24</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Use your mouse to place your cursor over the superior mesenteric artery and click to mark the vessel. If the vessel is not demonstrated on the image, mark the purple box that says &#34;Not demonstrated on the image&#34;.</div>
+            
+            
+            <img src="media/q24.png" alt="Question 24 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The SMA is identified anterior to the aorta and posterior to the body of the pancreas. The left renal vein courses between the
+aorta and the SMA to join the IVC.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q25" style="animation-delay: 840ms;">
+        <div class="card-header">
+          <div class="card-number">Question 25</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Use your mouse to place your cursor over the splenic artery and click to mark the vessel. If the vessel is not demonstrated on the image, mark the purple box that says &#34;Not demonstrated on the image&#34;.</div>
+            
+            
+            <img src="media/q25.png" alt="Question 25 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The splenic artery is not visible in this imaging plane. The splenic vein is demonstrated posterior to the body of the pancreas.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q26" style="animation-delay: 875ms;">
+        <div class="card-header">
+          <div class="card-number">Question 26</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Letter I indicates which of the following vessels?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>right hepatic vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>left hepatic vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>right portal vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>left portal vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q26.jpg" alt="Question 26 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. right hepatic vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>I. right hepatic vein
+J. middle hepatic vein
+K. left hepatic vein</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q27" style="animation-delay: 910ms;">
+        <div class="card-header">
+          <div class="card-number">Question 27</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Use your mouse to place your cursor over the left renal artery and click to mark the vessel.</div>
+            
+            
+            <img src="media/q27.png" alt="Question 27 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The image is called the banana peel view. The aorta is the banana and the renal arteries are &#34;peeling&#34; off the sides of the aorta.
+The image is obtained with an oblique or coronal view of the abdomen. The anterior image is the right side of the abdomen with
+the liver and IVC demonstrated closest to the transducer. The right renal artery is the branch of the aorta coursing toward the
+right side and the transducer (red). The left renal artery is the branch of the aorta coursing away from the right side and the
+transducer (blue).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q28" style="animation-delay: 945ms;">
+        <div class="card-header">
+          <div class="card-number">Question 28</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Use your mouse to place your cursor over the inferior vena cava and click to mark the vessel. If the vessel is not demonstrated on the image, mark the purple box that says &#34;Not demonstrated on the image&#34;.</div>
+            
+            
+            <img src="media/q28.png" alt="Question 28 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The IVC courses posterior to the head of the pancreas.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q29" style="animation-delay: 980ms;">
+        <div class="card-header">
+          <div class="card-number">Question 29</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The _____________________ supplies arterial blood to the small intestine and proximal colon, while the __________________ supplies blood to the distal colon.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>left gastric artery, inferior mesenteric arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>celiac axis, superior mesenteric arteries</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>gastroduodenal artery, superior mesenteric arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>superior and inferior mesenteric arteries</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. superior and inferior mesenteric arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The proximal colon and small intestine are supplied by the SMA. The distal colon is supplied by the IMA.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q30" style="animation-delay: 1015ms;">
+        <div class="card-header">
+          <div class="card-number">Question 30</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which gonadal vein empties directly into the IVC?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Right gonadal vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Left gonadal vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Right and left gonadal veins</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Neither gonadal vein empties directly into the IVC</div>
+              
+            </div>
+            
+            
+            <img src="media/q30.png" alt="Question 30 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Right gonadal vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The right gonadal vein empties into the IVC, while the left gonadal vein empties into the left renal vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q31" style="animation-delay: 1050ms;">
+        <div class="card-header">
+          <div class="card-number">Question 31</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The diameter of a normal portal vein should not exceed:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>10mm</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>11mm</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>12mm</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>13mm</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. 13mm</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The diameter of the portal vein should not exceed 13mm.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q32" style="animation-delay: 1085ms;">
+        <div class="card-header">
+          <div class="card-number">Question 32</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes a cardiovascular application of the Bernoulli Principle?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>explains the relationship between pressure, resistance and flow volume</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>explains the relationship of vessel radius and flow volume</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>explains the turbulence and layers of flow separation within the carotid bulb</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>explains the reason for aliasing of the Doppler signal at high velocities</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. explains the turbulence and layers of flow separation within the carotid bulb</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Bernoulli Principle explains the turbulence and layers of flow separation within the carotid bulb. When there is high velocity
+flow, there is low pressure and vice versa. The Bernoulli equation describes relationship between area, velocity, and pressure at
+a stenosis or widening of a vessel.
+Poiseuille&#39;s Law explains the changes in resistance and pressure that are related to flow volume. It also describes the effects of
+vessel radius and length on flow volume</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q33" style="animation-delay: 1120ms;">
+        <div class="card-header">
+          <div class="card-number">Question 33</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Normally, what changes occur in the waveform of the SMA postprandially?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>resistance decreases</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>resistance increases</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>diastolic flow decreases</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>resistance and diastolic flow decreases</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. resistance decreases</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When digestion starts, the digestive organs require an increase in blood flow. The resistance in the SMA blood flow will decrease
+and diastolic flow will increase. When distal resistance to flow decreases, more blood flow occurs in diastole. If stenosis is
+present, there will be an increase in systolic velocity (&gt;2.75m/s)with no change in the resistance to the flow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q34" style="animation-delay: 1155ms;">
+        <div class="card-header">
+          <div class="card-number">Question 34</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Use your mouse to place your cursor over the right renal vein and click to mark the vessel. If the vessel is not demonstrated on the image, mark the purple box that says &#34;Not demonstrated on the image&#34;.</div>
+            
+            
+            <img src="media/q34.png" alt="Question 34 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The SMA is identified anterior to the aorta and posterior to the body of the pancreas. The left renal vein courses between the
+aorta and the SMA to join the IVC. The right renal vein is much shorter than the left and joins the right lateral aspect of the IVC.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q35" style="animation-delay: 1190ms;">
+        <div class="card-header">
+          <div class="card-number">Question 35</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A common anatomic variant of the mesenteric arterial anatomy is:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The SMA and IMA share a common trunk</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the celiac artery is absent and the liver, stomach and spleen are supplied with blood from the inferior mesenteric artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the celiac artery and SMA originate from the posterior aorta</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the celiac axis and SMA share a common trunk</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. the celiac axis and SMA share a common trunk</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A common anatomic variant of the mesenteric arterial anatomy is the celiac axis and SMA share a common trunk. Other known
+variants include the hepatic artery originates from the SMA or the hepatic artery originates directly from the aorta.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q36" style="animation-delay: 1225ms;">
+        <div class="card-header">
+          <div class="card-number">Question 36</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Use your mouse to place your cursor over the IVC and click to mark the structure.</div>
+            
+            
+            <img src="media/q36.png" alt="Question 36 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The IVC is posterior to the caudate lobe of the liver.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q37" style="animation-delay: 1260ms;">
+        <div class="card-header">
+          <div class="card-number">Question 37</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Bradycardia is defined as a heart rate less than ________bpm.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>45</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>50</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>60</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>65</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. 60</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Bradycardia is defined as a heart rate less than 60 bpm. Tachycardia is defined as a heart rate more than 100 bpm.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q38" style="animation-delay: 1295ms;">
+        <div class="card-header">
+          <div class="card-number">Question 38</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is the best anatomic landmark used to locate the left renal artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>origin of the celiac axis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>left renal vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>iliac bifurcation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>portal confluence</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. left renal vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The left renal vein courses anterior to the aorta and posterior to the SMA to reach the IVC. The LRA can normally be identified
+immediately posterior to the left renal vein in the transverse view of the abdomen.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q39" style="animation-delay: 1330ms;">
+        <div class="card-header">
+          <div class="card-number">Question 39</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which abdominal vessel arises from the anterior surface of the aorta approximately 2 cm distal to the celiac axis?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>inferior mesenteric artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>superior mesenteric artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>common hepatic artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>gastroduodenal artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q39.png" alt="Question 39 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. superior mesenteric artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The SMA arises from the anterior surface of the aorta approximately 2 cm distal to the celiac axis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q40" style="animation-delay: 1365ms;">
+        <div class="card-header">
+          <div class="card-number">Question 40</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly describes this image?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The image is incorrectly labelled and the diameter measurement is performed incorrectly.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The image is incorrectly labelled but the diameter measurement is performed correctly.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>The image is correctly labelled and the diameter measurement is performed correctly.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The image is correctly labelled but the diameter measurement is performed incorrectly.</div>
+              
+            </div>
+            
+            
+            <img src="media/q40_1.jpg" alt="Question 40 image">
+            
+            <img src="media/q40_2.jpg" alt="Question 40 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. The image is incorrectly labelled and the diameter measurement is performed incorrectly.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The image is incorrectly labelled and the diameter measurement is performed incorrectly. The measurement is being obtained
+above the celiac and SMA origin. This indicates the proximal aorta segment. The aorta should be measured from outer wall to
+outer wall for an accurate diameter. This image demonstrates the outer wall to inner wall diameter.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q41" style="animation-delay: 1400ms;">
+        <div class="card-header">
+          <div class="card-number">Question 41</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Normal hepatic venous flow will demonstrate:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>two large antegrade diastolic and systolic waves followed by a small retrograde component that corresponds with the atrial contraction</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>two large retrograde diastolic and systolic waves followed by a small antegrade component that corresponds with the atrial contraction</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>two large retrograde diastolic and systolic waves followed by a small retrograde component that corresponds with the atrial contraction</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>two large antegrade diastolic and systolic waves followed by a small antegrade component that corresponds with the atrial contraction</div>
+              
+            </div>
+            
+            
+            <img src="media/q41.jpg" alt="Question 41 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. two large antegrade diastolic and systolic waves followed by a small retrograde component that corresponds with the atrial contraction</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Normal HV flow is considered triphasic. The tracing normally demonstrates respiratory phasicity and cardiac pulsatility. The
+majority of flow moves forward into the right atrium until the atrial &#34;kick&#34; occurs, The Doppler tracing will demonstrate two large
+antegrade systolic (S wave) and diastolic (D wave) waves followed by a small retrograde component (A wave) that corresponds
+with the atrial contraction.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q42" style="animation-delay: 1435ms;">
+        <div class="card-header">
+          <div class="card-number">Question 42</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is directly related to the calculated peak Doppler velocity in an artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>sine of the cursor angle</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>vessel radius</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>flow volume</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Doppler shift frequency</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Doppler shift frequency</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The Doppler shift frequency is directly related to the calculated Doppler velocity.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q43" style="animation-delay: 1470ms;">
+        <div class="card-header">
+          <div class="card-number">Question 43</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The preferred imaging plane to measure the AP dimension of the aorta is:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>coronal</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>transverse</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>sagittal</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>radial</div>
+              
+            </div>
+            
+            
+            <img src="media/q43.jpg" alt="Question 43 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. sagittal</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The sagittal plane is the preferred imaging plane to measure the AP dimension of the aorta.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q44" style="animation-delay: 1505ms;">
+        <div class="card-header">
+          <div class="card-number">Question 44</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following statements can be used to describe a normal renal artery waveform?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>low resistance with increased diastolic flow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>increased diastolic flow reversal</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>biphasic with mild diastolic flow reversal</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>pulsus alternans</div>
+              
+            </div>
+            
+            
+            <img src="media/q44.jpg" alt="Question 44 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. low resistance with increased diastolic flow</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Blood flow into organs is normally continuous throughout the cardiac cycle. The flow is described as low resistance or
+monophasic and demonstrates increased antegrade flow in diastole. Pulsus alternans is the methodical variation in peak
+systolic velocity on every other beat.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q45" style="animation-delay: 1540ms;">
+        <div class="card-header">
+          <div class="card-number">Question 45</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following flow characteristics is/are seen in a normal hepatic vein Doppler tracing?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>cardiac pulsatility only</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>respiratory phasicity only</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>monophasic flow and respiratory phasicity</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>cardiac pulsatility and respiratory phasicity</div>
+              
+            </div>
+            
+            
+            <img src="media/q45.jpg" alt="Question 45 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. cardiac pulsatility and respiratory phasicity</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Cardiac pulsatility is normal seen in the hepatic veins and the upper abdominal portion IVC. The motion of the heart causes
+vibrations within the chest that are carried throughout the adjacent structures. The flexibility of the IVC and hepatic veins allow
+the vibrations to affect the flow inside causing pulsatility.
+As the diaphragm moves up and down with respiration, the intra-abdominal pressure is affected. Inspiration causes the
+diaphragm to move down which increases the intra-abdominal pressure. This causes flow in the abdomen and lower
+extremities to decrease or cease movement. The diaphragm moves upward with expiration and the intra-abdominal pressure
+decreases allowing flow to move toward the heart again.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q46" style="animation-delay: 1575ms;">
+        <div class="card-header">
+          <div class="card-number">Question 46</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Use your mouse to place your cursor over the left renal vein and click to mark the vessel. If the vessel is not demonstrated on the image, mark the purple box that says &#34;Not demonstrated on the image&#34;.</div>
+            
+            
+            <img src="media/q46.png" alt="Question 46 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>This image demonstrates the aorta, SMA and the left renal vein. Be careful not to mistake the distal renal vein with the renal
+artery. Note the red color indicates flow toward the transducer, which would be normal for the left renal vein in this view. The
+renal artery would demonstrate flow moving in the opposite direction (blue)</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q47" style="animation-delay: 1610ms;">
+        <div class="card-header">
+          <div class="card-number">Question 47</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">In cases of interrupted IVC, how does the blood from the distal IVC and lower extremities reach the right atrium?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>an AV malformation of the pelvis must be present for the patient to survive after birth</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>iliac veins empty directly into the renal veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>umbilical vein serves as a collateral pathway and empties into the portal system</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>azygos vein serves as a collateral pathway and empties into the SVC</div>
+              
+            </div>
+            
+            
+            <img src="media/q47.jpg" alt="Question 47 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. azygos vein serves as a collateral pathway and empties into the SVC</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Interrupted IVC: the intrahepatic segment of the IVC does not develop; the azygos vein drains the flow from the pelvis and lower
+extremities into the SVC; hepatic veins empty directly into the right atrium</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q48" style="animation-delay: 1645ms;">
+        <div class="card-header">
+          <div class="card-number">Question 48</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following will increase spectral broadening on the image?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>increased sample volume size</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>increased PRF</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>more laminar flow</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>increased wall filter</div>
+              
+            </div>
+            
+            
+            <img src="media/q48.jpg" alt="Question 48 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. increased sample volume size</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Increasing sample volume size on PW Doppler will allow for sampling of more blood cells moving at different velocities. The
+increase in the number of velocities displayed will cause fill in of the spectral window.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q49" style="animation-delay: 1680ms;">
+        <div class="card-header">
+          <div class="card-number">Question 49</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Normal flow in the splenic artery:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>is laminar.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>is hepatopetal.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>demonstrates Reynold&#39;s number &gt;2000.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>is high resistant.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. demonstrates Reynold&#39;s number &gt;2000.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The splenic artery is the most tortuous artery in the body and carries very turbulent flow. A Reynolds number over 2000
+indicates the point where turbulence is identified on color Doppler.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q50" style="animation-delay: 1715ms;">
+        <div class="card-header">
+          <div class="card-number">Question 50</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is the proper patient position and respiration for assessing the portal vein diameter?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>supine with quiet respiration</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>left lateral decubitus position with deep inspiration</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>supine with inspiration and the Valsalva strain</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>right lateral decubitus position with deep inspiration</div>
+              
+            </div>
+            
+            
+            <img src="media/q50.jpg" alt="Question 50 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. supine with quiet respiration</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The portal vein should be assessed with the patient supine and with quiet respiration. The measurement should be obtained at
+the point the portal vein crosses the IVC.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q51" style="animation-delay: 1750ms;">
+        <div class="card-header">
+          <div class="card-number">Question 51</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Resistance to flow ______________ as blood travels distally through the abdominal aorta.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>decreases by 50%</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>decreases slightly</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>remains constant</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>increases</div>
+              
+            </div>
+            
+            
+            <img src="media/q51.jpg" alt="Question 51 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. increases</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The proximal portion of the aorta demonstrates lower resistance, when compared with the distal portion. The branches of the
+upper and mid aorta feed low resistance capillary beds in the organs which affects the aortic flow causing it to be biphasic. The
+distal aorta branches into vessels that supply muscles and supporting structures of the legs. These tissues provide a much
+higher resistance to flow than the abdominal organs, causing triphasic flow in the distal aorta.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q52" style="animation-delay: 1785ms;">
+        <div class="card-header">
+          <div class="card-number">Question 52</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Where is the arc of Riolan found?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>within the mesentery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>within the brain</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>at the popliteal fossa</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>within the kidney</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. within the mesentery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The arc of Riolan and the marginal artery of Drummond connect the SMA and IMA through the mesentery. They offer potential
+for collateral flow if a mesenteric obstruction occurs.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q53" style="animation-delay: 1820ms;">
+        <div class="card-header">
+          <div class="card-number">Question 53</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Where is the marginal artery of Drummond located?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>connects the SMA and IMA through the mesentery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>at the splenic hilum</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>connect the dorsalis pedis artery to the posterior tibial artery in the foot</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>part of the cerebrovascular circulatory system</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. connects the SMA and IMA through the mesentery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The marginal artery of Drummond connects the SMA and IMA through the mesentery and is a possible pathway for collateral
+flow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q54" style="animation-delay: 1855ms;">
+        <div class="card-header">
+          <div class="card-number">Question 54</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The release of norepinephrine into the blood steam has what effect on the arterioles?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>vasoconstriction</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>stenosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>vasodilation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>decreased flow resistance</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. vasoconstriction</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Norepinephrine causes vasoconstriction and adrenaline causes vasodilation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q55" style="animation-delay: 1890ms;">
+        <div class="card-header">
+          <div class="card-number">Question 55</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The seagull sign refers to which of the following vessels?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>celiac axis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>three hepatic veins</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>common femoral bifurcation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>bilateral renal origins</div>
+              
+            </div>
+            
+            
+            <img src="media/q55.jpg" alt="Question 55 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. celiac axis</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The celiac axis and the two branches visible on US form the seagull sign. The CHA and Splenic artery form the wings of the bird.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q56" style="animation-delay: 1925ms;">
+        <div class="card-header">
+          <div class="card-number">Question 56</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which imaging plane can demonstrate the IVC and the aorta on the same image in a normal patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>coronal only</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>coronal and transverse</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>mid sagittal only</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>transverse only</div>
+              
+            </div>
+            
+            
+            <img src="media/q56.jpg" alt="Question 56 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. coronal and transverse</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br></div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q57" style="animation-delay: 1960ms;">
+        <div class="card-header">
+          <div class="card-number">Question 57</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly describes normal flow in the hepatic vessels?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the hepatic artery demonstrates hepatopetal flow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the hepatic artery demonstrates hepatofugal flow</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>the portal veins demonstrate hepatofugal flow</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the hepatic veins demonstrate hepatopetal flow</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. the hepatic artery demonstrates hepatopetal flow</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Hepatofugal flow is flow that is moving out of the liver. Hepatopetal flow is flow that is moving toward/into the liver. The normal
+HA and PV demonstrate hepatopetal flow. The hepatic veins demonstrate hepatofugal flow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q58" style="animation-delay: 1995ms;">
+        <div class="card-header">
+          <div class="card-number">Question 58</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Where should the Doppler sample be placed to obtain the highest velocity when evaluating laminar flow?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>adjacent to the anterior wall</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>varies with the type of vessel evaluated</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>in the center of the vessel</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>adjacent to the posterior wall</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. in the center of the vessel</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The Doppler sample should be placed in the center of the vessel to obtain the highest velocity when evaluating laminar flow.
+The red blood cells (RBCs) in the center of the vessel are moving at relatively the same speed with laminar flow. This results in a
+waveform with a prominent spectral window. The closer the cursor gets to the wall of the vessel, the greater the friction effect
+of the RBCs against the wall. This friction causes variation in velocity and increased spectral broadening.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q59" style="animation-delay: 2030ms;">
+        <div class="card-header">
+          <div class="card-number">Question 59</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which blood vessel courses anterior to the aorta and posterior to the SMA?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>inferior mesenteric vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>right renal vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>left renal vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>superior mesenteric vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q59.png" alt="Question 59 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. left renal vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The left renal vein courses from the left kidney across the abdomen between the aorta and SMA to reach the IVC.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q60" style="animation-delay: 2065ms;">
+        <div class="card-header">
+          <div class="card-number">Question 60</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is the proper caliper placement for assessing the portal vein diameter?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>outer wall to outer wall at the junction of the splenic vein and portal vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>outer wall to outer wall at the point the portal vein crosses the IVC</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>inner wall to inner wall at the point the portal vein crosses the IVC</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>inner wall to inner wall at the junction of the splenic vein and portal vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q60.jpg" alt="Question 60 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. inner wall to inner wall at the point the portal vein crosses the IVC</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The portal vein should be assessed with the patient supine and with quiet respiration. The measurement should be obtained at
+the point the portal vein crosses the IVC.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q61" style="animation-delay: 2100ms;">
+        <div class="card-header">
+          <div class="card-number">Question 61</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following normally demonstrates a low resistance Doppler flow profile?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>external carotid artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>hepatic artery and renal artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>renal artery and internal iliac artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>external carotid artery, renal and hepatic arteries</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. hepatic artery and renal artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>All vessels that feed organs will have low resistance vascular beds which lead to a low resistance waveform. &#34;Organ flow&#34; will
+typically be low resistance and constant flow is needed for the organs to function. The renal and hepatic arteries will have low
+resistance flow with increased diastolic flow because they constantly function. &#34;Extremity flow&#34; is typically high resistance as
+muscles/tissue need much less inflow, especially at rest. The external carotid artery and its branches feed mainly muscles and
+tissue, therefore the flow demonstrates a higher resistance waveform.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q62" style="animation-delay: 2135ms;">
+        <div class="card-header">
+          <div class="card-number">Question 62</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The attached image is taken from the celiac axis on an abdominal Doppler exam. Which of the following is the most likely finding in this patient when the vessel is re-evaluated after eating?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>no change in flow pattern</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>decreased resistance and increased peak velocity</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>increased resistance and increased peak velocity</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>decreased resistance with no change in peak velocity</div>
+              
+            </div>
+            
+            
+            <img src="media/q62.jpg" alt="Question 62 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. no change in flow pattern</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The celiac artery waveform is usually unchanged after eating in the normal patient. The CA mainly supplies the liver and spleen
+with blood and these organs are low resistance vascular beds. The fasting waveform and peak velocity on this patient are well
+within normal limits which indicates a normal celiac axis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q63" style="animation-delay: 2170ms;">
+        <div class="card-header">
+          <div class="card-number">Question 63</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The term used to describe the thickness of blood is:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>impedance</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>vasoconstriction</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>viscosity</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>resistance</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. viscosity</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The higher the viscosity the thicker the fluid. Oil and honey have a higher viscosity than water.
+Powered by ExamBuilder. Copyright ©2026</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+    </section>
+  </main>
+  <script>
+    const detailsElements = Array.from(document.querySelectorAll("details"));
+    document.getElementById("open-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = true));
+    document.getElementById("close-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = false));
+  </script>
+</body>
+</html>

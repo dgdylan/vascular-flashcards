@@ -1,0 +1,3911 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vascular Surgery 6%</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06101d;
+      --bg-strong: #0b1628;
+      --card: rgba(17, 31, 52, 0.92);
+      --card-strong: rgba(20, 36, 60, 0.98);
+      --ink: #f4f8ff;
+      --muted: #b0bfd6;
+      --accent: #82ddd7;
+      --accent-strong: #b4f0eb;
+      --accent-soft: rgba(130, 221, 215, 0.16);
+      --border: rgba(149, 180, 221, 0.34);
+      --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
+      --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.28);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(130, 221, 215, 0.14), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(97, 130, 194, 0.18), transparent 24%),
+        linear-gradient(180deg, #071221 0%, var(--bg) 54%, #040b15 100%);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+    .wrap {
+      width: min(1080px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.5rem 0 4rem;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      padding: clamp(1.4rem, 2.5vw, 2rem);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94)),
+        linear-gradient(120deg, rgba(130, 221, 215, 0.08), rgba(97, 130, 194, 0.08));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      animation: rise-in 560ms ease-out both;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -35% auto;
+      width: 240px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
+      background: radial-gradient(circle, rgba(97, 130, 194, 0.4), transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4.8vw, 3.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 14ch;
+      text-wrap: balance;
+    }
+    .subhead {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .toolbar a, .toolbar button {
+      border: 1px solid var(--border);
+      background: var(--card-strong);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.78rem 1.05rem;
+      cursor: pointer;
+      text-decoration: none;
+      font: inherit;
+      font-weight: 700;
+      box-shadow: var(--shadow-soft);
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+    .toolbar a:hover, .toolbar button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(130, 221, 215, 0.42);
+      background: rgba(26, 45, 73, 1);
+    }
+    .cards {
+      display: grid;
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      animation: rise-in 520ms ease-out both;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+      border-color: rgba(130, 221, 215, 0.28);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(130, 221, 215, 0.09), rgba(97, 130, 194, 0.08)),
+        rgba(16, 30, 50, 0.88);
+    }
+    .card-number {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .pill {
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .card-body {
+      padding: 1.2rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .card-side {
+      display: grid;
+      gap: 0.75rem;
+    }
+    .label {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .content {
+      font-size: 1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+    .choices {
+      display: grid;
+      gap: 0.45rem;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(24, 41, 67, 0.98), rgba(17, 31, 52, 0.92));
+    }
+    .choice {
+      line-height: 1.5;
+    }
+    .choice-label {
+      font-weight: 700;
+      color: var(--accent);
+      margin-right: 0.3rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(8, 15, 27, 0.96);
+      display: block;
+      box-shadow: var(--shadow-soft);
+    }
+    details {
+      border-top: 1px dashed rgba(149, 180, 221, 0.34);
+      padding-top: 1rem;
+    }
+    summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 700;
+      list-style: none;
+      transition: color 180ms ease;
+    }
+    summary:hover { color: var(--accent-strong); }
+    summary::-webkit-details-marker { display: none; }
+    .answer-block {
+      margin-top: 0.9rem;
+      display: grid;
+      gap: 0.75rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(19, 35, 58, 0.98), rgba(13, 25, 43, 0.96));
+    }
+    .answer-title {
+      font-weight: 700;
+    }
+    @keyframes rise-in {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero, .card {
+        animation: none;
+      }
+      .toolbar a, .toolbar button, .card, summary {
+        transition: none;
+      }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 1rem, 1080px); padding-top: 1rem; }
+      .hero {
+        border-radius: 22px;
+        padding: 1.15rem;
+      }
+      .card-header, .card-body { padding: 1rem; }
+      .toolbar {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .toolbar a, .toolbar button {
+        width: 100%;
+        text-align: center;
+      }
+      h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Review Deck</p>
+      <h1>Vascular Surgery 6%</h1>
+      <p class="subhead">100 flashcards extracted from this PDF. Open each back panel to review the correct answer and full feedback.</p>
+      <div class="toolbar">
+        <a href="../index.html">Back to index</a>
+        <button type="button" id="open-all">Open all backs</button>
+        <button type="button" id="close-all">Close all backs</button>
+      </div>
+    </section>
+    <section class="cards">
+      
+      <article class="card" id="q1" style="animation-delay: 0ms;">
+        <div class="card-header">
+          <div class="card-number">Question 1</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Before performing a liver transplant evaluation, the Sonographer must review the surgical history to determine:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the location of all sites of vascular anastomosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>if the transplant was full or partial</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>if the transplant has a piggyback or interposition anastomosis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>more than one of the above</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. more than one of the above</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Before beginning the exam, the surgical notes should be reviewed to determine if the patient has a full or partial transplant, a
+piggyback or interposition anastomosis and note the anastomosis sites for all vasculature.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q2" style="animation-delay: 35ms;">
+        <div class="card-header">
+          <div class="card-number">Question 2</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The most common cause of hemodialysis graft failure is ________________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>acute rejection</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>arterial stenosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>anastomosis rupture</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>thrombus formation</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. thrombus formation</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The most common cause of hemodialysis graft failure is thrombus formation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q3" style="animation-delay: 70ms;">
+        <div class="card-header">
+          <div class="card-number">Question 3</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Velocities in a reversed vein graft are usually _________ at the ________ anastomosis because it is the smaller end of the vein.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>lower, proximal</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>higher, distal</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>higher, proximal</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>lower, distal</div>
+              
+            </div>
+            
+            
+            <img src="media/q3.png" alt="Question 3 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. higher, proximal</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Velocities in a reversed vein graft are usually higher at the proximal anastomosis because it is the smaller end of the vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q4" style="animation-delay: 105ms;">
+        <div class="card-header">
+          <div class="card-number">Question 4</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following symptoms would be associated with steal syndrome of a hemodialysis graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>hand pain that is reduced or eliminated during dialysis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>shoulder swelling</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>hand pain that increases with exercise</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>spontaneous bruising of the neck, arm and hand</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. hand pain that increases with exercise</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Steal Syndrome most commonly occurs in a radiocephalic graft. The ulnar artery flow will be antegrade and the radial artery
+flow will be retrograde. Blood travels from the ulnar artery into the hand and moves through the palmar arch to exit the hand in
+the radial artery. Symptoms include pain, polar sensation, paresthesia, Finger/Brachial Index &lt;0.8, cyanotic fingertips, and
+diminished radial pulse on palpation. Symptoms can increase with use of the arm (exercise) and during dialysis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q5" style="animation-delay: 140ms;">
+        <div class="card-header">
+          <div class="card-number">Question 5</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The most common site for hepatic artery stenosis in a transplant is _______________________________________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>at the origin of the native hepatic artery from the celiac axis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>at the origin of the right and left hepatic arteries</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>at the common hepatic artery bifurcation located just inside the liver near the portal bifurcation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>at the native hepatic artery anastomosis site located just outside the hilum of the liver</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. at the native hepatic artery anastomosis site located just outside the hilum of the liver</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The donor hepatic artery is connected to the native hepatic artery just outside the hilum of the donor liver. The most common
+site for arterial stenosis is at the anastomosis site. Myointimal hyperplasia can lead to stenosis at the anastomosis site due to
+&#34;over-healing&#34; of the connection.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q6" style="animation-delay: 175ms;">
+        <div class="card-header">
+          <div class="card-number">Question 6</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which statement is true regarding the image?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>There is calcification of the vessels in the vasa vasorum in the arterial wall</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>This patient has fibromuscular dysplasia and demonstrates the string of pearls sign on the image.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>This is a normal CCA image</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>There is a stent in the CCA</div>
+              
+            </div>
+            
+            
+            <img src="media/q6.png" alt="Question 6 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. There is a stent in the CCA</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A stent can be identified by the repetitive echogenic foci lining the vessel wall. Carotid stents are commonly made of a
+substance called nitinol which is a highly reflective metal alloy. The dense strands of nitinol are woven together to form a
+&#34;tunnel&#34;.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q7" style="animation-delay: 210ms;">
+        <div class="card-header">
+          <div class="card-number">Question 7</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Patient presents 9 months after endarterectomy with an approximate 40% recurrent stenosis. What is the most likely cause?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Lack of Warfarin treatment post op</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Polycythemia vera</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Fibromuscular dysplasia</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Neointimal hyperplasia</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Neointimal hyperplasia</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Neointimal hyperplasia is the most common cause of re-stenosis of a vessel that has a history of the endarterectomy
+procedure. It can be described as thickening of the vessel wall or over-healing after the procedure. Atherosclerosis can also
+cause re-stenosis but takes a much longer time to reoccur in the vessel.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q8" style="animation-delay: 245ms;">
+        <div class="card-header">
+          <div class="card-number">Question 8</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If both common iliac arteries demonstrate significant stenosis, what type of treatment will most likely be used?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>fem-fem bypass graft</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>right axillary - femoral bypass graft</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>kissing stents</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>left axillary - femoral bypass graft</div>
+              
+            </div>
+            
+            
+            <img src="media/q8.png" alt="Question 8 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. kissing stents</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Kissing stents used for stenosis at the origin of the common iliac arteries. Two stents are deployed, one is placed into each iliac
+artery. Both stents are inflated with the catheter balloon. The proximal end of the stents are touching in the distal aorta
+(kissing).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q9" style="animation-delay: 280ms;">
+        <div class="card-header">
+          <div class="card-number">Question 9</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A &#34;snuffbox&#34; fistula connects what two vessels?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>radial artery connects to the cephalic vein in the radial fossa</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>brachial artery connects to the basilic vein at the elbow</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>brachial artery connects to the basilic vein in the upper arm</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>radial artery connects to the basilic vein in the forearm</div>
+              
+            </div>
+            
+            
+            <img src="media/q9.jpg" alt="Question 9 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. radial artery connects to the cephalic vein in the radial fossa</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The anatomical snuffbox is also called the radial fossa. It is a triangular depression on the lateral aspect of the dorsum of the
+hand. The radial artery, a branch of the radial nerve, and the cephalic vein are found in the snuffbox. Radial artery is connected
+to the cephalic vein at distal wrist. Because the artery courses directly over the vein in this location, little vessel movement is
+required during surgery.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q10" style="animation-delay: 315ms;">
+        <div class="card-header">
+          <div class="card-number">Question 10</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following will decrease with acute renal allograft rejection?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>echogenicity of the renal cortex</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>diastolic flow in the segmental arteries</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>resistive index from the arcuate arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>kidney size</div>
+              
+            </div>
+            
+            
+            <img src="media/q10.jpg" alt="Question 10 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. diastolic flow in the segmental arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Acute renal rejection will result in an enlarged kidney with increased echogenicity of the renal cortex. Doppler evaluation will
+demonstrate increased resistance in the parenchymal arteries and increased resistive index. This will decrease the amount of
+diastolic flow in the cortical arteries.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q11" style="animation-delay: 350ms;">
+        <div class="card-header">
+          <div class="card-number">Question 11</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Velocity ratio, volume flow, and peak systolic velocity are measurements that must be reported when evaluating a/an:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>arteriovenous dialysis graft</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>pseudoaneurysm</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>subclavian steal with vertebral occlusion</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>lower extremity after venous ablation</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. arteriovenous dialysis graft</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The velocity ratio compares the velocity at a suspected stenosis to the velocity proximal to the stenosis. The volume flow
+measurement uses a wide Doppler sample volume to assess the amount of flow moving through the graft. The volume flow
+measurement is specific to hemodialysis grafts. Peak and end diastolic flow velocities are also used to assess the graft.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q12" style="animation-delay: 385ms;">
+        <div class="card-header">
+          <div class="card-number">Question 12</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">This patient has a brachiocephalic fistula. Use your mouse to position the cursor and click to select the portion of the cephalic vein that is filled with color.</div>
+            
+            
+            <img src="media/q12.png" alt="Question 12 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A brachiocephalic fistula connects the cephalic vein to the brachial artery at the antecubital fossa. The most anterior vessel on
+the image with turbulent flow is the cephalic vein. The vessel demonstrating flow toward the wrist (blue) is the brachial artery.
+The radial artery is demonstrated with flow moving toward the antecubital fossa (red), which is abnormal. This patient has steal
+syndrome.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q13" style="animation-delay: 420ms;">
+        <div class="card-header">
+          <div class="card-number">Question 13</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents with a radiocephalic hemodialysis fistula in the left arm. Doppler evaluation of which of the following vessels will be used to rule out steal syndrome?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Distal inflow artery, within 2cm below the fistula</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Proximal inflow artery, within 2cm above the fistula</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Cephalic vein at the shoulder</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Cephalic vein at the wrist</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Distal inflow artery, within 2cm below the fistula</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Doppler evaluation of the inflow artery &lt; 2cm distal to the fistula is used to diagnose steal syndrome. If flow is moving
+retrograde in the distal radial (inflow) artery, then flow is moving toward the hand in the ulnar artery , through the palmar arch
+and then toward the upper arm in the radial artery . Normal flow in the radial and ulnar arteries should move toward the hand
+and into the palmar arch.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q14" style="animation-delay: 455ms;">
+        <div class="card-header">
+          <div class="card-number">Question 14</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If a patient had surgery to correct an occlusion of the right external iliac artery, what type of graft could be used?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>left femoral artery to the left popliteal artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>right femoral artery to the right popliteal artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>left femoral artery to the right femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>right femoral artery to the left femoral artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q14.jpg" alt="Question 14 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. left femoral artery to the right femoral artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Arterial flow is shunted from the left femoral artery to the right femoral artery (distal to the obstruction).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q15" style="animation-delay: 490ms;">
+        <div class="card-header">
+          <div class="card-number">Question 15</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">An in-situ vein graft exam must include the evaluation of any patent branches because:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>of increased risk for the formation of an AV malformation</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>of the potential for AV fistula formation</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>of the increased risk of stenosis in the branch</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>they are necessary for proper graft function</div>
+              
+            </div>
+            
+            
+            <img src="media/q15.jpg" alt="Question 15 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. of the potential for AV fistula formation</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>In-situ and reversed vein grafts should have all branches ligated before being placed as a bypass conduit. This process is more
+effectively performed on the reversed vein graft because it is removed from the leg before it is placed as a graft. An AV fistula is
+the most common complication of an in-situ vein graft because the venous branches can still be visibly patent. The arterial flow
+entering the venous branches can cause an AV fistula. An AV malformation is a congenital connection between an artery and
+vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q16" style="animation-delay: 525ms;">
+        <div class="card-header">
+          <div class="card-number">Question 16</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a sonographic characteristic of a normal renal transplant?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>decreased parenchymal resistance, RI &lt; 0.70</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>decreased differentiation between renal parenchyma and sinus</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>increased parenchymal resistance, RI &gt;0.70</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>prominent renal pyramids</div>
+              
+            </div>
+            
+            
+            <img src="media/q16.jpg" alt="Question 16 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. decreased parenchymal resistance, RI &lt; 0.70</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If the allograft is in rejection, function is significantly decreased. The parenchyma resists the incoming flow due to its inability to
+filter the blood. This causes increased parenchymal resistance with RI &gt;0.70. 2D findings of renal allograft rejection include
+prominent renal pyramids and decreased differentiation between renal parenchyma and sinus.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q17" style="animation-delay: 560ms;">
+        <div class="card-header">
+          <div class="card-number">Question 17</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If a patient had surgery to correct an occlusion of the right external iliac vein, which of the following pathways could be used?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>redirect flow from the right femoral vein to the left femoral vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>redirect flow from the right femoral vein to the left popliteal vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>redirect flow from the left femoral vein to the right femoral vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>redirect flow from the right common iliac vein to the right femoral vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q17.jpg" alt="Question 17 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. redirect flow from the right femoral vein to the left femoral vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Blood is moving cephalad in the venous system. If the right EIV is blocked, flow can be bypassed from the right femoral vein to
+the left femoral vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q18" style="animation-delay: 595ms;">
+        <div class="card-header">
+          <div class="card-number">Question 18</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are performing an annual carotid duplex on a patient that had a carotid endarterectomy 6 years ago. There is a new layer of homogeneous material lining the ICA and bulb. The Doppler evaluation demonstrates turbulence and elevated velocities. Which of the following is the most likely cause for these findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>neointimal hyperplasia</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>progression of atherosclerotic disease</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>intimal flap and dissection</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>residual blockage from suboptimal surgical techniques</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. progression of atherosclerotic disease</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Within the first month post-op, restenosis is attributed to suboptimal surgical techniques. Narrowing over the first 24 months
+after CEA is attributed to neointimal hyperplasia. After 2 years, stenosis occurs due to progression of atherosclerotic disease.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q19" style="animation-delay: 630ms;">
+        <div class="card-header">
+          <div class="card-number">Question 19</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Color Doppler evaluation of an aortic endograft:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>is the most accurate method for diagnosis of an endoleak</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>should be performed with increased wall filter and velocity scale settings with reduced color priority</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>cannot be performed on patients who are less than 3 months post-op due to the risk of cavitation and graft migration</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>can be limited by twinkle artifact and color flash artifact</div>
+              
+            </div>
+            
+            
+            <img src="media/q19.jpg" alt="Question 19 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. can be limited by twinkle artifact and color flash artifact</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Calcification in the aortic wall can cause twinkle artifact on color Doppler evaluation. Because color velocity and filter settings
+are set to lower levels to detect the lower velocity flow in the aorta, color flash artifact is common with patient movement and
+respiration. PW Doppler is necessary to confirm the diagnosis of a suspected endoleak seen on color Doppler. Follow up exams
+for an aortic endograft are usually performed at 1-month post-op, then at 3, 6, 9, 12 and 18 months, followed by annual
+assessment after the first year.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q20" style="animation-delay: 665ms;">
+        <div class="card-header">
+          <div class="card-number">Question 20</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following statements describes the findings on the image of the cephalic vein in a patient with a brachiocephalic graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>There is a stenosis proximal to the graft</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The patient probably has CHF</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>The measurement indicates normal volume flow rate.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>There is a stenosis distal to the graft</div>
+              
+            </div>
+            
+            
+            <img src="media/q20.jpg" alt="Question 20 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. The patient probably has CHF</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A volume flow rate over 1200ml/min indicates possible CHF. A high flow rate can indicate volume overload in the venous
+system.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q21" style="animation-delay: 700ms;">
+        <div class="card-header">
+          <div class="card-number">Question 21</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following would be considered abnormal in the Doppler evaluation of a renal transplant?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Diastolic flow reversal within the parenchymal arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>A resistive index of 0.65 for the arcuate arteries</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Mildly turbulent flow at the arterial anastomosis site</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Phasic flow in the renal vein</div>
+              
+            </div>
+            
+            
+            <img src="media/q21.jpg" alt="Question 21 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Diastolic flow reversal within the parenchymal arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Phasic flow in the renal vein, mildly turbulent flow at the arterial anastomosis site and a resistive index of 0.65 for the arcuate
+arteries are normal findings in a renal allograft. Loss of diastolic flow or diastolic flow reversal indicates a significant increase in
+the resistance of the renal vascular beds which is consistent with rejection.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q22" style="animation-delay: 735ms;">
+        <div class="card-header">
+          <div class="card-number">Question 22</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for pre-operative arterial mapping for the TRAM flap breast reconstruction procedure. What vessel(s) should be evaluated?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>epigastric arteries and radial artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>radial artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>epigastric and internal mammary arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>internal mammary artery and radial artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. epigastric and internal mammary arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Internal Mammary Artery: AKA internal thoracic artery originates from subclavian artery; Used in breast reconstruction and as
+coronary graft for left anterior descending (LAD) artery
+Epigastric Arteries: Superior EA originates from internal mammary artery and shares anastomoses with the inferior EA; Inferior
+EA originates from the external iliac artery; Both vessels supply the rectus abdominis muscle used in TRAM Flap procedure for
+breast reconstruction; Evaluated to locate the section of muscle with the best perfusion for surgery</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q23" style="animation-delay: 770ms;">
+        <div class="card-header">
+          <div class="card-number">Question 23</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When evaluating a patient for placement of an AV fistula for dialysis, what is the minimum acceptable diameter for the native vein where the graft will be connected?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>3.5mm</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>2.5mm</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>4.5mm</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>5mm</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. 2.5mm</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Hemodialysis requires a native vein &gt;2.5mm for AVF; native artery &gt;2mm. A native vein &gt;4mm is required for a synthetic graft.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q24" style="animation-delay: 805ms;">
+        <div class="card-header">
+          <div class="card-number">Question 24</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are performing a carotid duplex on a patient that had a carotid endarterectomy 2 weeks ago. There is homogeneous material lining the ICA and bulb and Doppler demonstrates turbulence and elevated velocities. Which of the following is the most likely cause for these findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>intimal flap and dissection</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>residual blockage from suboptimal surgical techniques</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>progression of atherosclerotic disease</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>neointimal hyperplasia</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. residual blockage from suboptimal surgical techniques</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Within the first month post-op, restenosis is attributed to suboptimal surgical techniques. Narrowing over the first 24 months
+after CEA is attributed to neointimal hyperplasia. After 2 years, stenosis occurs due to progression of atherosclerotic disease.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q25" style="animation-delay: 840ms;">
+        <div class="card-header">
+          <div class="card-number">Question 25</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a follow up of stent placement in the SMA due to stenosis. How will you determine if the procedure was a success?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>peak velocities should be reduced compared to pre-procedure levels, but will still appear elevated when compared to normal velocities of non-stenotic arterial flow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>at least a 70% reduction in velocity compared to pre-stented velocities</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>peak velocities should have returned to normal levels related to non-stenotic arterial flow</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>at least a 50% reduction in velocity compared to pre-stented velocities</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. peak velocities should be reduced compared to pre-procedure levels, but will still appear elevated when compared to normal velocities of non-stenotic arterial flow</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When a stent is used to treat an arterial obstruction it helps to maintain a patent lumen, but will result in elevated velocities
+compared to expected normal non-stenotic velocities. Follow up exams should demonstrate reasonable velocity reduction
+compared to pre-stented levels, but normal velocities should not be expected.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q26" style="animation-delay: 875ms;">
+        <div class="card-header">
+          <div class="card-number">Question 26</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is not an expected complication in a 3-week post-op liver transplant patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>biloma</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>portal vein thrombosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>hepatic vein thrombosis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>hepatic artery atherosclerosis</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. hepatic artery atherosclerosis</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Atherosclerosis formation is a chronic process. Thrombosis and biloma formation are acute complications that can be seen with
+a recent liver transplant.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q27" style="animation-delay: 910ms;">
+        <div class="card-header">
+          <div class="card-number">Question 27</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly describes steal syndrome in a patient with a Brescia-Cimino graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>it is caused by stenosis in the outflow vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>a water hammer pulse will be detected</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>pain and pallor in the hand that increases with exercise</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>triphasic flow will be identified in the inflow artery</div>
+              
+            </div>
+            
+            
+            <img src="media/q27.jpg" alt="Question 27 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. pain and pallor in the hand that increases with exercise</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Steal syndrome with an AVF causes blood to travel from the ulnar artery into the hand and move through the palmar arch to
+exit the hand in the radial artery. It is caused by high volume flow in most cases, but can also occur with inflow stenosis. Both
+cause pressure changes that lead to blood flow reversal in the radial artery. The arterial flow is diverted from the fingers and
+back to the outflow vein. Symptoms include pain, pallor, polar sensation, paresthesia, Finger/Brachial Index &lt;0.7, cyanotic
+fingertips and diminished radial pulse on palpation. Arm exercise can exacerbate the symptoms.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q28" style="animation-delay: 945ms;">
+        <div class="card-header">
+          <div class="card-number">Question 28</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for Doppler evaluation after revascularization of the SMA 1 week ago. The study prior to treatment demonstrated a peak systolic velocity of 4.2m/s in the SMA. On today&#39;s exam, the velocity in the proximal SMA has reduced to 3.3m/s. How will you report these findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The SMA demonstrates normal velocities after the procedure.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Unable to summarize the results until pre-prandial and post-prandial evaluations are performed.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Unable to summarize the results with the end diastolic velocity.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The SMA flow velocity has decreased, but has not returned to normal levels.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. The SMA flow velocity has decreased, but has not returned to normal levels.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The normal velocity in the SMA is &lt;2.75m/s. The SMA flow velocity has decreased, but has not returned to normal levels.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q29" style="animation-delay: 980ms;">
+        <div class="card-header">
+          <div class="card-number">Question 29</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly explains why a surgeon would perform an intravascular ultrasound immediately after stent placement in small artery?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>To assess the velocity of flow in the artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>To evaluate the stent position</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>To assess the velocity of flow in the stent</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>To confirm that all plaque was removed from the artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. To evaluate the stent position</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Intravascular ultrasound uses a 10-30MHz transducer. IVUS allows for 360-degree imaging of the artery lumen. It is used to
+locate the narrowest segment that would benefit from stent placement, used after angiography to evaluate proper stent
+placement, used to evaluate coronary artery disease from within the coronary arteries. The transducers allow 2D imaging only,
+NO Doppler capabilities</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q30" style="animation-delay: 1015ms;">
+        <div class="card-header">
+          <div class="card-number">Question 30</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Where is the most common location for the surgeon to place a renal allograft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>right iliac fossa</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>2-4cm below the umbilicus</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>left iliac fossa</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>2-4cm above the urinary bladder</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. right iliac fossa</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The right iliac fossa is the most common site for placement of a renal allograft.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q31" style="animation-delay: 1050ms;">
+        <div class="card-header">
+          <div class="card-number">Question 31</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is the most common complication of an in-situ vein graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>infection</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>thrombosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>AV fistula</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>rupture</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. AV fistula</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>An AV fistula is the most common complication of an in-situ vein graft. Because the vein is left in its normal position and
+attached to the arterial system at each end, some side tributaries persist as residual arteriovenous fistulae. When the vein is
+connected to the arterial system, flow moves through the vein and can enter the smaller tributary veins causing an AV fistula.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q32" style="animation-delay: 1085ms;">
+        <div class="card-header">
+          <div class="card-number">Question 32</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When continuous TCD monitoring is used to assist with a carotid endarterectomy, when is the TCD device first activated to begin monitoring the patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>immediately after the endarterectomy was performed but before the wound closure is performed</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>just before the surgery starts</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>within 1-2 hours after the endarterectomy was performed</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>within 24hrs after the endarterectomy was performed</div>
+              
+            </div>
+            
+            
+            <img src="media/q32.png" alt="Question 32 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. just before the surgery starts</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The patient&#39;s intracranial blood flow is monitored closely to identify and count any embolic signatures that may occur during the
+endarterectomy, and closing phase of the surgery, as well as in the recovery room.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q33" style="animation-delay: 1120ms;">
+        <div class="card-header">
+          <div class="card-number">Question 33</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for evaluation of their hemodialysis graft. The proximal anastomosis demonstrates a velocity of 130cm/s. The mid graft velocity is 275cm/s and the distal anastomosis velocity is 50cm/s. What is your conclusion about the findings on the exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>There is stenosis of the proximal anastomosis and the mid graft segment.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The Doppler evaluation is normal.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>The venous outflow is most likely thrombosed.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>There is stenosis of the mid graft segment.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. There is stenosis of the mid graft segment.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Flow velocities that double between segments indicate graft stenosis. The velocity increases by more than 2X at the mid
+segment. The velocity at the proximal anastomosis is normal as flow within the grafts is usually high velocity. The distal graft
+velocity drops significantly distal to the stenosis. This also indicates a significant stenosis is present in the graft.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q34" style="animation-delay: 1155ms;">
+        <div class="card-header">
+          <div class="card-number">Question 34</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following statements regarding the radial artery is true?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>It supplies the majority of blood to the hand.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Requires normal results from Tinel test prior to harvesting.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>It can be an alternative coronary bypass graft when the great saphenous vein is not an option.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>It is the upper extremity artery most commonly affected by atherosclerosis.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. It can be an alternative coronary bypass graft when the great saphenous vein is not an option.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The radial artery is commonly used for CABG surgery. The ulnar artery supplies the majority of blood to the hand. The Tinel test
+evaluates suspected carpal tunnel syndrome.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q35" style="animation-delay: 1190ms;">
+        <div class="card-header">
+          <div class="card-number">Question 35</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Auscultation and palpation should be performed by the Sonographer as part of what type of vascular ultrasound exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>lower extremity segmental pressure examination</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>upper extremity duplex for thoracic outlet syndrome</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>lower extremity duplex for popliteal entrapment</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>hemodialysis graft evaluation</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. hemodialysis graft evaluation</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Auscultation of a hemodialysis graft is performed to assess patency. Normally turbulent flow will be detected if the graft is
+patent. A thumping sound can be heard with occlusion. The graft is palpated to assess for the expected thrill over a patent graft.
+The distal forearm arteries are assessed to confirm blood is reaching the distal arm/hand. NEVER take the blood pressure in an
+arm with a hemodialysis graft because compressing the graft can cause damage.
+Auscultation is not typically part of an ultrasound evaluation in other areas. Palpation may assist the Sonographer in locating a
+vessel for the other exams listed, but the US system is typically better at locating vessels than palpation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q36" style="animation-delay: 1225ms;">
+        <div class="card-header">
+          <div class="card-number">Question 36</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The distal anastomosis of a fem- fem graft is demonstrated. Which of the following statements correctly describe the findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the native CFA demonstrates retrograde flow which indicates graft failure</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>there is a stenosis of the profunda femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>there is significant turbulence noted at the anastomosis site</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the native CFA demonstrates retrograde flow which is a normal finding</div>
+              
+            </div>
+            
+            
+            <img src="media/q36_1.jpg" alt="Question 36 image">
+            
+            <img src="media/q36_2.jpg" alt="Question 36 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. the native CFA demonstrates retrograde flow which is a normal finding</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The distal graft is connected to the native artery below the obstruction. As blood flows through the graft to the native artery,
+most of the blood will proceed more distally in the leg. Some blood will flow back up the native artery to the level of the
+obstruction because the pressure distal to the obstruction is very low. There is a stenosis of the femoral artery present on the
+image. There is no significant turbulence present at the anastomosis. Note the very low color scale and aliasing is only present
+at the femoral artery stenosis,</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q37" style="animation-delay: 1260ms;">
+        <div class="card-header">
+          <div class="card-number">Question 37</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly describes myointimal hyperplasia in an arterial bypass graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Not identified on ultrasound until greater than 3 years post-op</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Caused by the healing process at the anastomosis sites</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Easily differentiated from atheroma formation</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Most commonly occurs in an in-situ vein graft at sites of valve removal</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Caused by the healing process at the anastomosis sites</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Myointimal hyperplasia is a common cause of stenosis at the anastomosis sites of a graft. Native tissues proliferate during the
+healing process after graft placement. It can be identified anytime from 1 month to 2 years post-op. Difficult to differentiate
+from soft atheroma formation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q38" style="animation-delay: 1295ms;">
+        <div class="card-header">
+          <div class="card-number">Question 38</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly describes the Doppler tracing obtained from a hemodialysis graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>There is significant stenosis present at the venous anastomosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Stenosis at the proximal anastomosis of the graft is suspected</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>There is reduced volume of flow associated with graft failure</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The flow pattern is normal</div>
+              
+            </div>
+            
+            
+            <img src="media/q38.jpg" alt="Question 38 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. The flow pattern is normal</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Turbulent flow in the fistula is an expected finding. Velocities below 400 cm/s are considered normal. The arterial inflow is
+normally low resistance and very turbulent. The outflow vein will demonstrate increased pulsatility and turbulence.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q39" style="animation-delay: 1330ms;">
+        <div class="card-header">
+          <div class="card-number">Question 39</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for an evaluation of a lower extremity synthetic bypass graft for suspected stenosis. What area of the graft should be evaluated first because it is the most common location of graft stenosis?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>in the proximal graft</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>at the anastomosis sites</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>in the distal graft</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>native artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. at the anastomosis sites</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Thrombosis is the most common cause of acute stenosis or occlusion of a graft. Myointimal hyperplasia is the most common
+cause of chronic stenosis/occlusion of a graft which most commonly occurs due to over-healing of the tissue at the anastomosis
+sites. The rough surface of the connection and the confluence of the vessel/graft cause increased turbulence of the blood flow.
+These factors cause an increased incidence of stenosis/thrombosis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q40" style="animation-delay: 1365ms;">
+        <div class="card-header">
+          <div class="card-number">Question 40</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following patients would benefit from intraoperative TCD monitoring of the left MCA?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>left IJV thrombosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>right ICA stent placement</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>right carotid endarterectomy</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>left carotid endarterectomy</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. left carotid endarterectomy</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Flow from the left ICA enters the left MCA. If a piece of plaque breaks off during the endarterectomy and escapes into the ICA, it
+can cause stroke symptoms. Monitoring is used to detect emboli.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q41" style="animation-delay: 1400ms;">
+        <div class="card-header">
+          <div class="card-number">Question 41</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a common occurrence after an endarterectomy?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Neointimal hyperplasia</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Congestive heart failure</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Intimal dissection</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Intracranial hemorrhage</div>
+              
+            </div>
+            
+            
+            <img src="media/q41.jpg" alt="Question 41 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Neointimal hyperplasia</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Neointimal hyperplasia refers to the overgrowth of normal tissue in response to the endarterectomy. This is a common cause of
+re-stenosis of a vessel that previously underwent endarterectomy.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q42" style="animation-delay: 1435ms;">
+        <div class="card-header">
+          <div class="card-number">Question 42</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A fem - fem graft is used to treat:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>bilateral popliteal stenosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>bilateral iliac stenosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>unilateral iliac stenosis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>unilateral femoral stenosis</div>
+              
+            </div>
+            
+            
+            <img src="media/q42.jpg" alt="Question 42 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. unilateral iliac stenosis</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A fem - fem graft can be used to correct unilateral iliac stenosis. Blood is passed from the patent femoral artery through the
+graft to the contralateral femoral artery at a point distal to the stenosis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q43" style="animation-delay: 1470ms;">
+        <div class="card-header">
+          <div class="card-number">Question 43</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is an abnormal finding for a hemodialysis graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>volume flow rate 500 - 1000ml/min</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>turbulent flow at the anastomosis site</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>high velocity, pulsatile flow in the outflow vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>inflow artery demonstrates a triphasic waveform</div>
+              
+            </div>
+            
+            
+            <img src="media/q43.jpg" alt="Question 43 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. inflow artery demonstrates a triphasic waveform</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Normal flow velocity within the graft should be &gt;100cm/s. Graft stenosis suspected with velocities greater than 400cm/s.
+Abnormal flow volume &lt;500ml/min. If the flow velocity doubles (or more) between two points in the graft, significant stenosis is
+suspected. If the inflow artery demonstrates a triphasic waveform, graft occlusion is suspected. Turbulent flow is normal at the
+anastomosis site and the venous outflow will also be turbulent and pulsatile.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q44" style="animation-delay: 1505ms;">
+        <div class="card-header">
+          <div class="card-number">Question 44</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A fem - tib graft is used to treat:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>bilateral iliac stenosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>bilateral popliteal stenosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>unilateral distal femoral stenosis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>unilateral iliac stenosis</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. unilateral distal femoral stenosis</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A fem - tib graft can be used to correct unilateral distal femoral or popliteal stenosis. The femoral artery is connected by a graft
+to the anterior tibial artery or tibioperoneal trunk distal to the obstruction.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q45" style="animation-delay: 1540ms;">
+        <div class="card-header">
+          <div class="card-number">Question 45</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following requires a 2D and Doppler evaluation for a complete exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Renal or liver transplant</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Thoracic outlet syndrome</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Raynaud syndrome</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Popliteal entrapment</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Renal or liver transplant</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A renal transplant requires a 2D evaluation to assess renal size and cortical echogenicity related to the renal sinus. Doppler is
+used to evaluate arterial and venous flow. A liver transplant requires a 2D evaluation to assess liver echogenicity and
+echotexture. The other abnormalities listed would easily be evaluated with PPG or digit pressures and imaging would not
+necessarily be required.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q46" style="animation-delay: 1575ms;">
+        <div class="card-header">
+          <div class="card-number">Question 46</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are performing an ultrasound on a fem-pop PTFE graft in a lower extremity and you suspect a stenosis at the distal anastomosis. How will you calculate the velocity ratio in this patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Divide the velocity in the native popliteal artery by the velocity in the distal graft.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Divide the velocity at the distal anastomosis by the velocity in the proximal anastomosis.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Divide the velocity in the native popliteal artery by the velocity in the native femoral artery.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Divide the velocity at the distal anastomosis by the velocity in the distal graft.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Divide the velocity at the distal anastomosis by the velocity in the distal graft.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The velocity ratio is calculated by dividing the velocity at the stenosis by the velocity just proximal to the stenosis (in this case it
+is the distal graft that is just proximal to the stenosis).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q47" style="animation-delay: 1610ms;">
+        <div class="card-header">
+          <div class="card-number">Question 47</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">An aorto-bifemoral graft is used to treat:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>unilateral femoral stenosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>unilateral iliac stenosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>bilateral iliac stenosis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>bilateral popliteal stenosis</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. bilateral iliac stenosis</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>An aorto-bifemoral graft can be used to correct distal aortic stenosis or bilateral iliac stenosis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q48" style="animation-delay: 1645ms;">
+        <div class="card-header">
+          <div class="card-number">Question 48</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is part of the standard protocol for evaluating a patient with an aortic endograft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Document the location of the proximal attachment site and compare to prior exam to rule out graft migration</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Obtain waveforms in the mesenteric arteries to document flow is unaffected by the graft</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Obtain waveforms in the renal arteries and veins to document flow is unaffected by the graft</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Measure the thickness of the mural thrombus surrounding the graft and compare to the prior exam to rule out increased thrombus formation</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Document the location of the proximal attachment site and compare to prior exam to rule out graft migration</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Graft migration can be a complication of an endograft. On each evaluation, the location of the proximal attachment site should
+be identified and the level of the attachment in the aorta should be documented. Distal migration can cause kinking, tortuosity
+or luminal narrowing of the graft.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q49" style="animation-delay: 1680ms;">
+        <div class="card-header">
+          <div class="card-number">Question 49</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">After an endarterectomy or carotid stent placement, the first follow up exam should be performed:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>immediately following the procedure</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>within one month after the procedure</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>on the 1-year anniversary date of the procedure</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>within 5 days of the procedure</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. within one month after the procedure</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A patient that has had an endarterectomy or carotid stent placement is usually evaluated within first month following the
+procedure. If performed too soon after the endarterectomy or other open surgical procedure, artifacts produced by air in the
+patch or graft may inhibit the exam.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q50" style="animation-delay: 1715ms;">
+        <div class="card-header">
+          <div class="card-number">Question 50</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are evaluating a cephalic vein for bypass graft potential. The vessel diameter is &lt;2mm for its entire length. What should you do next?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>apply a tourniquet to the forearm and remeasure the cephalic vein segments proximal to the tourniquet</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>apply a tourniquet to the upper arm and remeasure the cephalic vein segments distal to the tourniquet</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>report the vein as acceptable for harvest with a maximum diameter of 2mm</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>report the vein as unusable with a diameter at 2mm and select another upper extremity vein to evaluate for a potential graft</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. apply a tourniquet to the upper arm and remeasure the cephalic vein segments distal to the tourniquet</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>&gt;3mm veins are preferred for graft procedures. The basilic and cephalic veins can be acceptable conduits. When performing the
+exam, the patient is supine with arm extended at side at a level lower than the heart or in a seated position with hand on lap.
+Tourniquets can be applied to the proximal extremity in cases where the veins are very small. The veins distal to the tourniquet
+should dilate to provide an accurate maximum diameter.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q51" style="animation-delay: 1750ms;">
+        <div class="card-header">
+          <div class="card-number">Question 51</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes the expected changes in the extremity flow patterns if balloon angioplasty of a 75% stenosis in the common femoral artery was a success?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>monophasic flow in the femoral artery is now triphasic</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>triphasic flow in the femoral artery is now biphasic</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>increased diastolic flow in the femoral artery and all arteries distally</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>triphasic flow in the femoral artery is now monophasic</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. monophasic flow in the femoral artery is now triphasic</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Abnormal flow in the lower extremity is demonstrated as a monophasic waveform with increased diastolic flow. After
+treatment, the flow pattern in the distal arteries should increase in resistance to become biphasic or triphasic.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q52" style="animation-delay: 1785ms;">
+        <div class="card-header">
+          <div class="card-number">Question 52</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">________________ is the most common endoleak and usually does not require intervention, while _____________ is most dangerous and requires surgical intervention.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Type I, Type II</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Type III, Type IV</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Type II, Type I</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Type IV, Type I</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Type II, Type I</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Type II is the most common endoleak and usually does not require intervention, while Type I is most dangerous and requires
+surgical intervention.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q53" style="animation-delay: 1820ms;">
+        <div class="card-header">
+          <div class="card-number">Question 53</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which statement best describes the Doppler tracing from a bypass graft in the lower extremity?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>There is increased velocity and post stenotic turbulence present which indicates significant stenosis is present.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The waveform is normal velocity and appearance for the lower extremity graft segment being evaluated.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>There is normal velocity flow with mild spectral broadening present which indicates no significant disease is present.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>There is increased velocity and spectral broadening present which indicates significant stenosis is present.</div>
+              
+            </div>
+            
+            
+            <img src="media/q53.jpg" alt="Question 53 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. There is increased velocity and spectral broadening present which indicates significant stenosis is present.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The velocity appears to be approximately 300cm/s which is abnormal. The absence of the spectral window indicates spectral
+broadening.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q54" style="animation-delay: 1855ms;">
+        <div class="card-header">
+          <div class="card-number">Question 54</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What native artery is commonly used for the arterial anastomosis in a renal transplant when the external iliac artery is not available?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>external iliac vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>internal iliac artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>common iliac artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>aorta</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. internal iliac artery</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The external iliac artery is most commonly used as the arterial anastomosis for the allograft artery. The internal iliac artery is
+commonly used for the arterial anastomosis when the external iliac artery is not available.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q55" style="animation-delay: 1890ms;">
+        <div class="card-header">
+          <div class="card-number">Question 55</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">How does the imaging protocol differ when evaluating a hemodialysis graft versus a hemodialysis fistula?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>A graft has one anastomotic site and the fistula has two</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The outflow vein must be evaluated with a fistula but is not required for graft evaluation</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>A graft has two anastomotic sites and the fistula only has one</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The outflow vein must be evaluated with a graft but is not required for fistula evaluation</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. A graft has two anastomotic sites and the fistula only has one</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A hemodialysis graft involves a synthetic graft attached to an artery at one end and a vein at the other end. Both anastomotic
+sites must be evaluated in a complete exam. The hemodialysis fistula connects a native artery and vein at a single anastomotic
+site. The standard protocol includes evaluation of the native artery proximal to the anastomosis, the anastomotic site(s) and the
+outflow vein just distal to the anastomosis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q56" style="animation-delay: 1925ms;">
+        <div class="card-header">
+          <div class="card-number">Question 56</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If a liver transplant patient has a piggyback anastomosis, how does this affect your evaluation?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>there will be a single anastomosis site in the IVC that must be evaluated</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>there will be two anastomosis sites in the main portal vein that must be evaluated</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>each hepatic vein is connected to the native IVC separately, so there will be three anastomosis sites in the IVC that must be evaluated</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the hepatic artery anastomosis will not be able to be visualized because it is located deep within the liver tissue</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. there will be a single anastomosis site in the IVC that must be evaluated</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Before beginning the exam, the surgical notes should be reviewed to determine if the patient has a full or partial transplant, a
+piggyback or interposition anastomosis and note the anastomosis sites for all vasculature.
+Piggyback - hepatic confluence of transplant liver attached to native IVC; single anastomosis site
+Interposition - donor IVC segment replaces a segment of the native IVC; two anastomosis sites</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q57" style="animation-delay: 1960ms;">
+        <div class="card-header">
+          <div class="card-number">Question 57</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a 3-month follow-up on his aortic endograft. The aortic sac has increased in size by 0.8cm since the last ultrasound evaluation performed 2 months ago. No endoleak was detected on ultrasound or CT evaluation. What is the most likely cause for the diameter change?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Reactive hyperemia</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Endotension</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Graft migration</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>May Thurner syndrome</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Endotension</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Endotension- no leak present but there is continued expansion of the aneurysm sac greater than 5 mm; sometimes referred to
+as Type V Endoleak</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q58" style="animation-delay: 1995ms;">
+        <div class="card-header">
+          <div class="card-number">Question 58</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are evaluating a liver transplant in a patient that received the organ yesterday. The resistive index (RI) for the hepatic artery is 0.9. Which of the following best describes the findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>The resistive index is abnormally increased and any value greater than 0.6 indicates irreversible rejection</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>The resistive index is abnormally increased, but this can be a normal finding in immediate post-op patients</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>The resistive index indicates normal resistance to flow in the liver parenchyma</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The resistive index is abnormally increased and should be reported as a critical finding of suspected rejection</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. The resistive index is abnormally increased, but this can be a normal finding in immediate post-op patients</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>In the immediate post-op patient, there can be increased hepatic pressure usually secondary to edema. This can cause the RI
+values to be elevated. Serial exams should be performed to monitor the expected increase in diastolic flow and decline in RI
+values. Resistive Index (RI) 0.5-0.8 Normal</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q59" style="animation-delay: 2030ms;">
+        <div class="card-header">
+          <div class="card-number">Question 59</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Venous flow proximal to an AV fistula becomes ________________ due to the inflow of arterial flow distally</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>phasic</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>high resistance</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>continuous</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>pulsatile</div>
+              
+            </div>
+            
+            
+            <img src="media/q59.jpg" alt="Question 59 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. pulsatile</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Venous flow proximal to an AV fistula becomes pulsatile due to the inflow of arterial flow distally. The image below
+demonstrates the venous outflow of a fistula (proximal to the fistula). The flow in the cephalic vein is turbulent and pulsatile.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q60" style="animation-delay: 2065ms;">
+        <div class="card-header">
+          <div class="card-number">Question 60</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a stat lower extremity arterial Doppler evaluation following the recent placement of a fem-tib graft in the right leg. The patient complains of significant pain and weakness in the calf muscle with areas of numbness on the anterior aspect of the lower leg. What is the most likely finding on the exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>anterior compartment syndrome</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>DVT</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>phlegmasia alba dolens</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>graft stenosis</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. anterior compartment syndrome</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Reperfusion of the leg via bypass graft can lead to anterior compartment syndrome. Symptoms include paresthesia, pain in the
+calf muscle with foot dorsiflexion, drop foot and calf muscle weakness.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q61" style="animation-delay: 2100ms;">
+        <div class="card-header">
+          <div class="card-number">Question 61</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">This patient has a brachiocephalic fistula. Use your mouse to position the cursor and click to select the portion of the brachial artery that is filled with color.</div>
+            
+            
+            <img src="media/q61.png" alt="Question 61 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> Unavailable</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A brachiocephalic fistula connects the cephalic vein to the brachial artery at the antecubital fossa. The most anterior vessel on
+the image with turbulent flow is the cephalic vein. The vessel demonstrating flow toward the wrist (blue) is the brachial artery.
+The radial artery is demonstrated with flow moving toward the antecubital fossa (red), which is abnormal. This patient has steal
+syndrome.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q62" style="animation-delay: 2135ms;">
+        <div class="card-header">
+          <div class="card-number">Question 62</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following vessels are a common source for a Type II endoleak?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>inferior mesenteric artery and lumbar arteries</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>celiac axis and superior mesenteric artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>common iliac artery and gonadal arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>left gastric artery and right hepatic artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. inferior mesenteric artery and lumbar arteries</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Type II endoleak : leak at the branch vessels; will see retrograde flow into the aneurysm sac and increase in AAA diameter;
+inferior mesenteric artery, internal iliac, lumbar arteries and accessory renal arteries are potential sources for the leak</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q63" style="animation-delay: 2170ms;">
+        <div class="card-header">
+          <div class="card-number">Question 63</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When performing serial exams on an in situ venous bypass graft, _________________ indicates significant graft failure.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>conversion of the waveform from triphasic to biphasic</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>a decrease in peak systolic velocity of 30cm/s from the last exam</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>a decrease in ABI of 0.10 from the last exam</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>an increase in end diastolic velocity greater than 30cm/s from the last exam</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. a decrease in peak systolic velocity of 30cm/s from the last exam</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Serial exams that demonstrate a decrease in the PSV or 30cm/s or more and/or a decrease in the ABI of 0.15 or more indicate
+poor performance of the graft on the current exam.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q64" style="animation-delay: 2205ms;">
+        <div class="card-header">
+          <div class="card-number">Question 64</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Retained valve cusps are a complication of:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>reversed cephalic graft</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>in-situ saphenous graft</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Brescia-Cimino graft</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>reversed saphenous graft</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. in-situ saphenous graft</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>An in-situ saphenous vein graft is performed by disconnecting the proximal GSV from the common femoral vein to connect to
+the arterial system proximal to an obstruction. The GSV is then ligated distal to the obstruction and the distal end of the in situ
+graft if attached to the artery just distal to the obstruction. The valves must be removed from the graft or they will prevent
+arterial blood flow from moving down the leg. Retained cusps can lead to stenosis or thrombosis in the graft.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q65" style="animation-delay: 2240ms;">
+        <div class="card-header">
+          <div class="card-number">Question 65</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">In a patient with a patent brachiobasilic AV graft, the axillary vein will:</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>demonstrate high velocity pulsatile flow</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>demonstrate low velocity continuous flow</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>demonstrate biphasic flow with the majority of antegrade flow occurring during diastole</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>demonstrate a loss of spontaneous and phasic flow and will require distal augmentation to assess patency</div>
+              
+            </div>
+            
+            
+            <img src="media/q65.jpg" alt="Question 65 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. demonstrate high velocity pulsatile flow</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The basilic vein connects to the axillary vein in the upper arm/axilla. The arterial inflow into the basilic vein from the AVG will
+transmit a pulsatile waveform with high velocities into the axillary vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q66" style="animation-delay: 2275ms;">
+        <div class="card-header">
+          <div class="card-number">Question 66</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient is undergoing AAA repair in the distal aorta. The physician places an endovascular graft within the aorta. If the graft placement was successful, how should the ankle pressures change post- procedure?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>no change should be seen</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>varies with type of graft used</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>mild increase</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>mild decrease</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. mild increase</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The AAA would have caused a reduction in flow moving to the legs. The lower extremities would exhibit decreased resistance in
+the vascular beds to maintain flow. This would indicate a mild reduction in ankle pressure. When the graft is placed in the aorta,
+flow to the legs increases and pressure and resistance would both increase at the ankles.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q67" style="animation-delay: 2310ms;">
+        <div class="card-header">
+          <div class="card-number">Question 67</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The saphenous vein has already been harvested from both legs for CABG surgery. What other vein could be harvested for an additional bypass graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>internal mammary artery or subclavian vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>subclavian vein or cephalic vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>cephalic vein or internal mammary vein</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>cephalic or basilic vein</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. cephalic or basilic vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Cephalic and basilic veins can be harvested for use in coronary artery bypass graft surgery. The internal mammary artery can
+also be used as a bypass graft but the question asks for veins.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q68" style="animation-delay: 2345ms;">
+        <div class="card-header">
+          <div class="card-number">Question 68</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes the 2D appearance of acute renal allograft rejection on ultrasound?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Decreased echogenicity and size</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Resistive index over 0.8</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Increased echogenicity and decreased size</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Increased echogenicity and size</div>
+              
+            </div>
+            
+            
+            <img src="media/q68.jpg" alt="Question 68 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Increased echogenicity and size</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>2D findings of acute allograft failure include increased echogenicity of the gland, increased size and loss of corticomedullary
+definition. The RI value will be over 0.8 but this is a Doppler value not a 2D characteristic.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q69" style="animation-delay: 2380ms;">
+        <div class="card-header">
+          <div class="card-number">Question 69</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which intracerebral vessel is evaluated on a TCD evaluation performed during a left carotid endarterectomy?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>contralateral MCA</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>ipsilateral MCA</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>ipsilateral ACA</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>contralateral PCA</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. ipsilateral MCA</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The ipsilateral middle cerebral artery is monitored during carotid endarterectomy for the presence of cerebral emboli and to
+help determine if a shunt is necessary during the procedure.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q70" style="animation-delay: 2415ms;">
+        <div class="card-header">
+          <div class="card-number">Question 70</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly describes hemodialysis?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Contraindications include abdominal wall scarring, hernia, inflammatory bowel disease or diverticulitis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>A cleansing fluid flows is injected through an intraperitoneal catheter</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>An arteriovenous fistula is created by connecting an artery and a vein, usually in the arm</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Can be performed by the patient at home</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. An arteriovenous fistula is created by connecting an artery and a vein, usually in the arm</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Hemodialysis requires an arteriovenous fistula. The AVF is created by connecting an artery and a vein, usually in the arm. The
+dialysis machine is connected to the patient using two separate needles. Blood is removed from the body, sent through the
+machine, and returned to the body through the AVF. The treatment requires regular visits to a dialysis center.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q71" style="animation-delay: 2450ms;">
+        <div class="card-header">
+          <div class="card-number">Question 71</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is the primary reason why dialysis grafts are commonly placed at the antecubital fossa or wrist, and not the shoulder?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>there is an increased risk of graft rupture with the wide range of motion for the normal shoulder</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>there is an increased risk of graft thrombosis with the wide range of motion for the normal shoulder</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>to make it less visible to help with patient privacy related to their dialysis treatment</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>the closer the AV fistula to the heart, the greater the risk of developing heart failure</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. the closer the AV fistula to the heart, the greater the risk of developing heart failure</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The AV fistula is created in the arm at the furthest point possible where the vessels still meet the minimum size requirements
+for the procedure. The closer the AVF to the heart, the greater the risk of developing heart failure from reprocessing of the
+arterial blood that is emptied directly into the venous system.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q72" style="animation-delay: 2485ms;">
+        <div class="card-header">
+          <div class="card-number">Question 72</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When evaluating a patient for placement of a hemodialysis graft, what is the minimum acceptable diameter for the native artery where the graft will be connected?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>2mm</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>3mm</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>4mm</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>5mm</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. 2mm</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Hemodialysis requires native vein &gt;2.5mm for AVF; native artery &gt;2mm; native vein &gt;4mm for synthetic graft</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q73" style="animation-delay: 2520ms;">
+        <div class="card-header">
+          <div class="card-number">Question 73</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following describes the importance of TCD monitoring during a carotid endarterectomy?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>to evaluate the potential complication of vasospasm caused by the development of a subarachnoid hemorrhage during the procedure</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>to evaluate the presence of embolic events during the surgery to predict the risk of postoperative stroke</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>to evaluate the presence of associated atherosclerotic intracranial disease</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>to evaluate the potential complication of the development of a subarachnoid hemorrhage during the procedure</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. to evaluate the presence of embolic events during the surgery to predict the risk of postoperative stroke</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The exam performed to evaluate the presence of associated atherosclerotic intracranial disease should be done before the
+surgery is scheduled. TCD monitoring provides monitoring for emboli and can be used to evaluate collateral formation.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q74" style="animation-delay: 2555ms;">
+        <div class="card-header">
+          <div class="card-number">Question 74</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The type of dialysis graft where the cephalic vein is anastomosed to the radial artery is called?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Brescia-Cimino graft</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>straight graft</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>synthetic loop graft</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>TIPS graft</div>
+              
+            </div>
+            
+            
+            <img src="media/q74.jpg" alt="Question 74 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Brescia-Cimino graft</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The cephalic vein is anastomosed to the radial artery in a Brescia-Cimino graft. Straight Synthetic graft connects from the radial
+artery at wrist to the median cubital vein. Looped Synthetic graft connects from the brachial artery to the medical cubital vein.
+TIPS is a type of shunt used to bypass the liver.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q75" style="animation-delay: 2590ms;">
+        <div class="card-header">
+          <div class="card-number">Question 75</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">You are performing a follow up exam on a synthetic fem-pop graft that is 2 weeks post-op. The native arteries and graft appear normal on the 2D and color Doppler evaluation. These same segments are evaluated using PW Doppler and monophasic waveforms with mild diastolic flow throughout the cardiac cycle are demonstrated. Which of the following is the most likely reason for the discrepancy in findings?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>stenosis distal to the graft</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>mid graft thrombosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>reactive hyperemia</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>collateral formation</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. reactive hyperemia</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Reactive hyperemia is the transient increase in blood flow that occurs after a period of ischemia. It commonly occurs following
+the removal of a tourniquet, unclamping an artery during surgery, bypass graft placement or after vessel recanalization caused
+by a device or medication. Monophasic flow with increased diastolic flow may still be identified in the first 1-2 months after the
+procedure due to reactive hyperemia. The body needs time to adjust to the new flow pattern. The waveform should return to a
+triphasic pattern after 2 months post-op.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q76" style="animation-delay: 2625ms;">
+        <div class="card-header">
+          <div class="card-number">Question 76</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a sign of a functioning hemodialysis graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>pain or pallor in the hand</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>absence of a palpable thrill over the graft</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>palpable thrill over the graft</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>presence of a water hammer pulse</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. palpable thrill over the graft</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>An AVG should demonstrate a palpable thrill as blood flow moves through it. Absence of the thrill or a water hammer pulse is
+indicative of an occluded graft. If the graft becomes stenosed or occluded, the distal forearm and hand could become ischemic.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q77" style="animation-delay: 2660ms;">
+        <div class="card-header">
+          <div class="card-number">Question 77</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Where is the most common location of stenosis in a hemodialysis graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Venous anastomosis and outflow vein</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Inflow artery</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>mid graft, especially if it is a looped graft</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Arterial anastomosis and proximal graft</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Venous anastomosis and outflow vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The venous outflow is the most common location of stenosis in an AVG for dialysis. Because the vein wall is thinner and receives
+pulsatile arterial flow, the wall is easily damaged. This can lead to repetitive healing and scar tissue formation that causes
+blockage at the anastomosis.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q78" style="animation-delay: 2695ms;">
+        <div class="card-header">
+          <div class="card-number">Question 78</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">If a liver transplant patient has an interposition anastomosis, how does this affect your evaluation?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>the hepatic artery anastomosis will not be able to be visualized because it is located deep within the liver tissue</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>each hepatic vein is connected to the native IVC separately, so there will be three anastomosis sites in the IVC that must be evaluated</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>there will be two anastomosis sites in the main portal vein that must be evaluated</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>there will be two anastomosis sites in the IVC that must be evaluated</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. there will be two anastomosis sites in the IVC that must be evaluated</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Before beginning the exam, the surgical notes should be reviewed to determine if the patient has a full or partial transplant, a
+piggyback or interposition anastomosis and note the anastomosis sites for all vasculature.
+Piggyback - hepatic confluence of transplant liver attached to native IVC; single anastomosis site
+Interposition - donor IVC segment replaces a segment of the native IVC; two anastomosis sites</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q79" style="animation-delay: 2730ms;">
+        <div class="card-header">
+          <div class="card-number">Question 79</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">__________________ refers to when the carotid artery is lacerated and the atheroma formation is scraped for removal.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>A valvulotomy procedure</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>An atherectomy procedure</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>An endarterectomy procedure</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>An angioplasty procedure</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. An endarterectomy procedure</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Atherectomy uses a catheter with a rotating head and suction capabilities to break up the plaque and remove it from the artery.
+Angioplasty uses a balloon tipped catheter to compress the atheroma and expand the vessel lumen. An endarterectomy refers
+to when the carotid artery is lacerated, and the atheroma formation is scraped for removal. A valvulotomy procedure is used to
+remove valves from inside a vein.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q80" style="animation-delay: 2765ms;">
+        <div class="card-header">
+          <div class="card-number">Question 80</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A venous thrombectomy procedure is usually reserved for which type of patient?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>patients with phlegmasia alba dolens and phlegmasia cerulean dolens</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>patients with an AV malformation</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>patients with superficial thrombophlebitis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>patients with extensive venous reflux</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. patients with phlegmasia alba dolens and phlegmasia cerulean dolens</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A venous thrombectomy procedure is usually reserved for patients with phlegmasia alba dolens and phlegmasia cerulean.
+dolens.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q81" style="animation-delay: 2800ms;">
+        <div class="card-header">
+          <div class="card-number">Question 81</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What is the name of the vascular device that is placed into the IVC using a catheter?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Wall filter</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Greenfield filter</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Pacemaker</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Stent</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Greenfield filter</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A Greenfield filter is placed into the IVC to prevent emboli from the legs from reaching the heart and lungs.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q82" style="animation-delay: 2835ms;">
+        <div class="card-header">
+          <div class="card-number">Question 82</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">What type of venous graft is demonstrated in the diagram?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>In vivo</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>In situ</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Reversed</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Greenfield</div>
+              
+            </div>
+            
+            
+            <img src="media/q82.jpg" alt="Question 82 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. Reversed</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The proximal GSV is connected to the distal SFA and the distal GSV is connected to the proximal SFA. This information in
+addition to the long scar on the medial thigh indicates a reversed saphenous graft.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q83" style="animation-delay: 2870ms;">
+        <div class="card-header">
+          <div class="card-number">Question 83</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Volume flow calculations are used to assess hemodialysis graft performance. How is volume flow measured?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Doppler US cannot provide the volume flow information and the dialysis machine must be used to assess the volume flow through the graft.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Obtain 3-4 Doppler tracings of the inflow artery and trace the waveforms to obtain the volume flow measurements, then average these numbers.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Obtain 3-4 Doppler tracings and average the peak velocity, then use the Bernoulli equation to calculate the volume flow.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Open the sample volume from wall to wall within a normal segment of the graft and trace the waveform.</div>
+              
+            </div>
+            
+            
+            <img src="media/q83.jpg" alt="Question 83 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Open the sample volume from wall to wall within a normal segment of the graft and trace the waveform.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Volume flow calculations are used to assess hemodialysis graft performance. Open the sample volume from wall to wall within a
+normal segment of the graft and trace the waveform.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q84" style="animation-delay: 2905ms;">
+        <div class="card-header">
+          <div class="card-number">Question 84</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following lists the correct cuff placement for a segmental pressure exam performed due to suspected Dialysis Access Steal Syndrome?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Bilateral upper arm and wrist cuffs, and 2 digit cuffs per hand</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Upper arm cuff on the unaffected arm, bilateral wrist cuffs</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Upper arm, wrist and thumb cuff only on the affected arm</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Upper arm cuff on the unaffected arm, bilateral wrist cuffs, and 2 digit cuffs per hand</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. Upper arm cuff on the unaffected arm, bilateral wrist cuffs, and 2 digit cuffs per hand</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>When a patient has a hemodialysis fistula, extreme care must be taken when considering assessing the blood pressure within
+the vessels of the arm. A BP cuff should never be placed over the outflow vein at any position on the arm. If the AVF is
+positioned at the antecubital fossa (or more proximal), then the wrist pressure can be obtained on the affected arm. Digital
+pressures can also be obtained. The WBI and DBI values can be calculated using the brachial pressure of the unaffected arm.
+The image below demonstrates cuff positioning for an exam eligible patient.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q85" style="animation-delay: 2940ms;">
+        <div class="card-header">
+          <div class="card-number">Question 85</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following conditions would benefit from intravascular ultrasound with repair?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>renal artery stenosis only</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>cerebral artery aneurysm only</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>AAA and renal artery stenosis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>AAA only</div>
+              
+            </div>
+            
+            
+            <img src="media/q85.jpg" alt="Question 85 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. AAA and renal artery stenosis</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Intravascular ultrasound can be used in the repair of aortic aneurysms or renal stenosis</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q86" style="animation-delay: 2975ms;">
+        <div class="card-header">
+          <div class="card-number">Question 86</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is considered a normal finding in a patient with a brachiobasilic hemodialysis graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Increased resistance and velocity with a loss of flow in diastole in the brachial artery proximal and distal to the graft</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Dilated brachial artery proximal to the graft with low resistance monophasic flow</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Triphasic flow in the brachial artery proximal to the graft and monophasic flow in the brachial artery distal to the graft</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Continuous flow in the basilic vein proximal and distal to the graft anastomosis</div>
+              
+            </div>
+            
+            
+            <img src="media/q86.jpg" alt="Question 86 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Dilated brachial artery proximal to the graft with low resistance monophasic flow</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The connection between the artery and the vein will cause the resistance in the brachial artery to decrease and become
+monophasic. The basilic vein will exhibit pulsatile, high velocity venous flow in the area of the graft due to the arterial inflow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q87" style="animation-delay: 3010ms;">
+        <div class="card-header">
+          <div class="card-number">Question 87</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is a normal finding when evaluating a hemodialysis graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Thrombosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Arteriovenous fistula</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Pseudoaneurysm</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Aneurysm</div>
+              
+            </div>
+            
+            
+            <img src="media/q87.jpg" alt="Question 87 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Arteriovenous fistula</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A hemodialysis graft is the surgical creation of an AV fistula (connection of an artery and vein). Complications of a hemodialysis
+graft include thrombosis of the graft, stenosis/occlusion, aneurysm of the graft, pseudoaneurysm caused by needle puncture
+for dialysis, CHF due to increased flow in venous return to heart, and distal ischemia.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q88" style="animation-delay: 3045ms;">
+        <div class="card-header">
+          <div class="card-number">Question 88</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following correctly describes a reversed vein graft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>commonly used to correct bilateral iliac stenosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>the patient must wait at least 48 hrs after the valvulotomy procedure is performed to complete the connection of the graft connection</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>stenosis at the proximal anastomosis is a common complication</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>there is less scarring with a reversed vein graft procedure than an in-situ graft procedure</div>
+              
+            </div>
+            
+            
+            <img src="media/q88.png" alt="Question 88 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. stenosis at the proximal anastomosis is a common complication</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The GSV is removed from the leg and replaced in a reversed position. The smaller distal end of the GSV is attached proximal to
+the obstruction in the femoral or popliteal vein. For this reason, stenosis of the proximal anastomosis is more common than
+other complications. The larger proximal end of the GSV is connected distal to the obstruction. Because the GSV is completely
+removed from the leg, there is more scarring than with an in-situ graft where the GSV remains in its natural position. The
+reversed vein graft is turned upside down, so the valves stay open due to gravity (no valvulotomy).</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q89" style="animation-delay: 3080ms;">
+        <div class="card-header">
+          <div class="card-number">Question 89</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for a renal transplant evaluation. Which of the following native vessels will be evaluated during the exam?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>segmental artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>external iliac artery and vein</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>arcuate arteries</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>distal renal artery</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. external iliac artery and vein</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The question asks for native vessels, the external iliac artery and vein are the only native vessels normally evaluated on the
+exam. The other vessels listed are allograft vessels.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q90" style="animation-delay: 3115ms;">
+        <div class="card-header">
+          <div class="card-number">Question 90</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Image A is_____________________________. Image B is ____________________________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>in situ vein graft, reversed vein graft</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>venous graft, PTFE graft</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>PTFE graft, venous graft</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>reversed vein graft, in situ vein graft</div>
+              
+            </div>
+            
+            
+            <img src="media/q90.jpg" alt="Question 90 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. venous graft, PTFE graft</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Image A is a venous graft. Note the mild thickening walls of the vein graft and nonuniform diameter. The PTFE graft
+demonstrates the double linear reflections of the anterior and posterior walls of the graft that represent the double walled
+structure of the graft. Uniform graft diameter is also a sign of a normal PTFE.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q91" style="animation-delay: 3150ms;">
+        <div class="card-header">
+          <div class="card-number">Question 91</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Arterial flow proximal to an AV fistula will be ________________.</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>phasic</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>low resistance</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>laminar</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>high resistance</div>
+              
+            </div>
+            
+            
+            <img src="media/q91.jpg" alt="Question 91 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. low resistance</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Arterial flow proximal to an AV fistula will be low resistance.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q92" style="animation-delay: 3185ms;">
+        <div class="card-header">
+          <div class="card-number">Question 92</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Saphenous vein mapping is used to assess the vein for a potential bypass conduit. Which of the following characteristics would still allow the surgeon to use the vein?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>thrombosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>lumen &lt;2mm</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>valvular damage</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>chronic obstruction of the ipsilateral deep system</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. valvular damage</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Damaged valves are not a contraindication for venous harvesting. Thrombosis and a small lumen &lt;2mm are contraindications
+for the use of the vein as a graft. If there is chronic obstruction of the deep veins, the saphenous becomes an integral part of the
+venous drainage system of the leg and cannot be removed for bypass.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q93" style="animation-delay: 3220ms;">
+        <div class="card-header">
+          <div class="card-number">Question 93</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">The TIPS procedure is performed to correct what condition?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Atherosclerosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Portal HTN</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Pulmonary embolism</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>AAA</div>
+              
+            </div>
+            
+            
+            <img src="media/q93.jpg" alt="Question 93 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. Portal HTN</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A transjugular intrahepatic porto-systemic shunt is used to bypass the liver and relieve portal HTN. The portal system is directly
+connected to the IJV or Hepatic veins.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q94" style="animation-delay: 3255ms;">
+        <div class="card-header">
+          <div class="card-number">Question 94</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">A patient presents for evaluation of a hemodialysis graft that was inserted 1 week ago. Which of the following is an expected finding on the exam if the graft has failed?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>graft thrombosis</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>arterial stenosis</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>graft stenosis</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>myointimal hyperplasia</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. graft thrombosis</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>If the graft was just placed in the arm a week ago, you are looking for an acute cause of failure. The other three choices listed
+are chronic causes of graft failure.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q95" style="animation-delay: 3290ms;">
+        <div class="card-header">
+          <div class="card-number">Question 95</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following techniques is used to monitor flow during a fem-pop bypass procedure?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>B mode ultrasound</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>pulse volume recording</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>duplex ultrasound</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>segmental pressures</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> C. duplex ultrasound</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Segmental pressures and PVR exams require the use of pressure cuffs that cannot be used during the surgery, AFTER the
+surgery would be fine. Intraoperative duplex ultrasound can be used during the procedure to assess flow.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q96" style="animation-delay: 3325ms;">
+        <div class="card-header">
+          <div class="card-number">Question 96</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following vascular complications is treated with a fasciotomy?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>popliteal entrapment</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>pseudoaneurysm</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>dissection</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>anterior compartment syndrome</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. anterior compartment syndrome</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Blood leaks into the muscle compartment of the calf causing increased pressure. If the fasciotomy is not performed to relieve
+the pressure, damage to the nerves and tissues can occur.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q97" style="animation-delay: 3360ms;">
+        <div class="card-header">
+          <div class="card-number">Question 97</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which statement is true regarding the image?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>There is calcification of the vessels in the vasa vasorum in the arterial wall and the patient should have a TCD exam to evaluate the extent of the disease.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>This patient should have an angiogram to confirm the suspected diagnosis of fibromuscular dysplasia.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>There is calcification of the vessels in the vasa vasorum in the arterial wall and the patient should have balloon angioplasty.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>The patient should be evaluated for neointimal hyperplasia.</div>
+              
+            </div>
+            
+            
+            <img src="media/q97.png" alt="Question 97 image">
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. The patient should be evaluated for neointimal hyperplasia.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>The image shows a stent in the carotid artery. Neointimal hyperplasia refers to the overgrowth of normal tissue in response to
+the endarterectomy and stent/graft placement. This is a common cause of re-stenosis of a vessel that previously underwent
+interventional treatment.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q98" style="animation-delay: 3395ms;">
+        <div class="card-header">
+          <div class="card-number">Question 98</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following statements is true regarding Doppler flow evaluation of a rejected renal allograft?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>Rejected allograft waveforms will demonstrate high resistance flow.</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>Rejected allograft waveforms will demonstrate low resistance flow.</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>Rejected allograft waveforms will demonstrate low RI and PI values.</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>Renal allograft waveforms normally demonstrate arterial flow that varies with respiration.</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> A. Rejected allograft waveforms will demonstrate high resistance flow.</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>Doppler waveforms from arteries in a rejected allograft will demonstrate high resistance flow. The RI values for the
+parenchymal vessels will be elevated above 0.70.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q99" style="animation-delay: 3430ms;">
+        <div class="card-header">
+          <div class="card-number">Question 99</div>
+          <div class="pill">Missed</div>
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">When evaluating a patient with an aortic endograft, what is the minimum increase in aortic sac size that indicates a possible endoleak?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>0.2cm</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>0.9cm</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>1.5cm</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>0.5cm</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> D. 0.5cm</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>An increase in aortic sac diameter of 0.5cm or greater indicates a possible endoleak.</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+      <article class="card" id="q100" style="animation-delay: 3465ms;">
+        <div class="card-header">
+          <div class="card-number">Question 100</div>
+          
+        </div>
+        <div class="card-body">
+          <section class="card-side">
+            <div class="label">Front</div>
+            <div class="content">Which of the following is not a common type of lower extremity graft placement?</div>
+            
+            <div class="choices">
+              
+              <div class="choice"><span class="choice-label">A:</span>femoral artery to the femoral artery</div>
+              
+              <div class="choice"><span class="choice-label">B:</span>popliteal artery to the DPA</div>
+              
+              <div class="choice"><span class="choice-label">C:</span>femoral artery to the popliteal artery</div>
+              
+              <div class="choice"><span class="choice-label">D:</span>femoral artery to the PTA</div>
+              
+            </div>
+            
+            
+          </section>
+          <details>
+            <summary>Show answer and feedback</summary>
+            <div class="answer-block">
+              <div><span class="answer-title">Answer:</span> B. popliteal artery to the DPA</div>
+              <div class="content"><span class="answer-title">Feedback:</span><br>A Fem-Fem bypass graft indicates connection between two segments of the same femoral artery or between the right and left
+femoral artery. A Fem-Pop bypass graft connects the femoral artery and popliteal artery in the same leg. A Fem-Tib graft
+connects the femoral artery and most commonly the tibial artery. A bypass graft could not be connected to the dorsalis pedis
+artery because of its size and location.
+Powered by ExamBuilder. Copyright ©2026</div>
+            </div>
+          </details>
+        </div>
+      </article>
+      
+    </section>
+  </main>
+  <script>
+    const detailsElements = Array.from(document.querySelectorAll("details"));
+    document.getElementById("open-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = true));
+    document.getElementById("close-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = false));
+  </script>
+</body>
+</html>
