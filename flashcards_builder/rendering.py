@@ -21,29 +21,25 @@ FLASHCARDS_TEMPLATE = """
     :root {
       color-scheme: light;
       --bg: #ffffff;
-      --bg-soft: #f7f8fb;
+      --hero-a: #2f72a6;
+      --hero-b: #5b9ace;
       --card: #ffffff;
-      --card-soft: #fbfbfc;
-      --ink: #2D3142;
-      --muted: #667085;
-      --accent: #EF8354;
-      --accent-strong: #4F5D75;
-      --heading: #2D3142;
-      --subheading: #4F5D75;
+      --card-soft: #f7fbfe;
+      --ink: #234f7f;
+      --muted: #6f88a4;
+      --accent: #56d6e3;
+      --accent-dark: #2e6ea3;
+      --border: rgba(46, 110, 163, 0.14);
       --success: #2f9e61;
       --danger: #d94841;
-      --warning: #EF8354;
-      --border: rgba(45, 49, 66, 0.12);
-      --shadow: 0 18px 40px rgba(45, 49, 66, 0.10);
-      --shadow-soft: 0 8px 20px rgba(45, 49, 66, 0.06);
+      --shadow: 0 18px 40px rgba(35, 79, 127, 0.10);
+      --shadow-soft: 0 8px 20px rgba(35, 79, 127, 0.06);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(239, 131, 84, 0.08), transparent 20%),
-        linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+      background: #ffffff;
       color: var(--ink);
       min-height: 100vh;
     }
@@ -55,31 +51,29 @@ FLASHCARDS_TEMPLATE = """
     .hero {
       position: relative;
       overflow: hidden;
-      margin-bottom: 1.15rem;
-      padding: clamp(1.35rem, 2.2vw, 1.9rem);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 22px;
-      background:
-        radial-gradient(circle at top right, rgba(239, 131, 84, 0.18), transparent 22%),
-        linear-gradient(135deg, #2D3142, #4F5D75);
-      box-shadow: var(--shadow);
-      animation: rise-in 480ms ease-out both;
+      margin-bottom: 1.25rem;
+      padding: clamp(1.4rem, 2.4vw, 2rem);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--hero-a), var(--hero-b));
+      box-shadow: 0 22px 46px rgba(239, 227, 179, 0.35);
+      animation: rise-in 520ms ease-out both;
     }
     .hero::after {
       content: "";
       position: absolute;
-      right: -5%;
+      right: -6%;
       bottom: -22%;
       width: 260px;
       aspect-ratio: 1;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(239, 131, 84, 0.18), transparent 70%);
+      background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 70%);
       pointer-events: none;
     }
     .eyebrow {
-      margin: 0 0 0.7rem;
+      margin: 0 0 0.8rem;
       color: rgba(255,255,255,0.84);
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -88,16 +82,16 @@ FLASHCARDS_TEMPLATE = """
       margin: 0;
       max-width: 11ch;
       color: #ffffff;
-      font-size: clamp(2.1rem, 4.8vw, 4rem);
+      font-size: clamp(2.2rem, 5vw, 4.1rem);
       line-height: 0.96;
       letter-spacing: -0.05em;
       text-wrap: balance;
     }
     .subhead {
-      margin: 0.85rem 0 0;
-      max-width: 48ch;
-      color: rgba(255,255,255,0.84);
-      font-size: clamp(1rem, 1.3vw, 1.08rem);
+      margin: 0.9rem 0 0;
+      max-width: 50ch;
+      color: rgba(255,255,255,0.86);
+      font-size: clamp(1rem, 1.35vw, 1.1rem);
       line-height: 1.6;
     }
     .hero-row {
@@ -111,14 +105,14 @@ FLASHCARDS_TEMPLATE = """
     .hero-stats {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.7rem;
+      gap: 0.75rem;
     }
     .hero-stat {
       min-width: 118px;
-      padding: 0.7rem 0.9rem;
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 14px;
-      background: rgba(255,255,255,0.08);
+      padding: 0.72rem 0.95rem;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.10);
       color: #ffffff;
     }
     .hero-stat strong {
@@ -128,7 +122,7 @@ FLASHCARDS_TEMPLATE = """
     .hero-stat span {
       display: block;
       margin-top: 0.18rem;
-      color: rgba(255,255,255,0.70);
+      color: rgba(255,255,255,0.74);
       font-size: 0.82rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -140,20 +134,19 @@ FLASHCARDS_TEMPLATE = """
     }
     .toolbar a, .toolbar button {
       border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.08);
-      color: #ffffff;
+      background: #ffffff;
+      color: var(--accent-dark);
       border-radius: 999px;
-      padding: 0.8rem 1rem;
+      padding: 0.82rem 1.05rem;
       cursor: pointer;
       text-decoration: none;
       font: inherit;
-      font-weight: 700;
-      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+      font-weight: 800;
+      transition: transform 180ms ease, box-shadow 180ms ease;
     }
     .toolbar a:hover, .toolbar button:hover {
       transform: translateY(-1px);
-      border-color: rgba(255,255,255,0.28);
-      background: rgba(255,255,255,0.14);
+      box-shadow: var(--shadow-soft);
     }
     .cards {
       display: grid;
@@ -161,31 +154,29 @@ FLASHCARDS_TEMPLATE = """
     }
     .card {
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(86, 214, 227, 0.16);
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(239, 227, 179, 0.28);
       overflow: hidden;
       animation: rise-in 460ms ease-out both;
       transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
     }
     .card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 38px rgba(45, 49, 66, 0.10);
-      border-color: rgba(239, 131, 84, 0.22);
+      border-color: rgba(86, 214, 227, 0.24);
+      box-shadow: 0 20px 44px rgba(239, 227, 179, 0.32);
     }
     .card-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding: 0.95rem 1.15rem;
-      border-bottom: 1px solid var(--border);
-      background:
-        linear-gradient(135deg, rgba(239, 131, 84, 0.08), rgba(79, 93, 117, 0.03)),
-        #fbfbfc;
+      padding: 1rem 1.15rem;
+      border-bottom: 1px solid rgba(86, 214, 227, 0.14);
+      background: linear-gradient(180deg, #eef9fd, #f7fcfe);
     }
     .card-number {
-      color: var(--accent-strong);
+      color: var(--accent);
       font-size: 0.9rem;
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -194,8 +185,8 @@ FLASHCARDS_TEMPLATE = """
     .pill {
       padding: 0.3rem 0.65rem;
       border-radius: 999px;
-      background: rgba(239, 131, 84, 0.12);
-      color: var(--accent);
+      background: rgba(86, 214, 227, 0.14);
+      color: var(--accent-dark);
       font-size: 0.84rem;
       font-weight: 700;
     }
@@ -206,11 +197,11 @@ FLASHCARDS_TEMPLATE = """
     }
     .card-side {
       display: grid;
-      gap: 0.75rem;
+      gap: 0.8rem;
     }
     .label {
-      color: var(--subheading);
-      font-size: 0.77rem;
+      color: var(--accent-dark);
+      font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -221,16 +212,16 @@ FLASHCARDS_TEMPLATE = """
       white-space: pre-wrap;
     }
     .question-text {
-      color: var(--heading);
-      font-size: clamp(1.02rem, 1.35vw, 1.15rem);
-      font-weight: 700;
+      color: var(--accent-dark);
+      font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+      font-weight: 750;
       letter-spacing: -0.01em;
     }
     .study-note {
-      min-height: 1.15rem;
+      min-height: 1.2rem;
       padding: 0 0.2rem;
-      color: var(--muted);
       font-size: 0.92rem;
+      color: var(--muted);
     }
     .study-note.correct {
       color: var(--success);
@@ -240,30 +231,30 @@ FLASHCARDS_TEMPLATE = """
     }
     .choices {
       display: grid;
-      gap: 0.65rem;
-      padding: 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: var(--bg-soft);
+      gap: 0.9rem;
+      padding: 0.8rem;
+      border: 1px solid rgba(86, 214, 227, 0.14);
+      border-radius: 18px;
+      background: var(--card-soft);
     }
     .choice {
       appearance: none;
       width: 100%;
-      border: 1px solid rgba(45, 49, 66, 0.10);
-      border-radius: 12px;
+      border: 1px solid rgba(46, 110, 163, 0.10);
+      border-radius: 14px;
       background: #ffffff;
-      color: var(--ink);
+      color: var(--accent-dark);
       cursor: pointer;
       font: inherit;
       line-height: 1.55;
-      padding: 0.95rem 1rem;
+      padding: 1rem 1.05rem;
       text-align: left;
       transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
     }
     .choice:hover {
       transform: translateY(-1px);
-      border-color: rgba(239, 131, 84, 0.28);
-      background: #fff8f5;
+      border-color: rgba(86, 214, 227, 0.28);
+      background: #fcfeff;
     }
     .choice-label {
       color: var(--accent);
@@ -279,20 +270,20 @@ FLASHCARDS_TEMPLATE = """
       background: rgba(217, 72, 65, 0.10);
     }
     .choice.revealed-correct {
-      border-color: rgba(47, 158, 97, 0.28);
-      box-shadow: inset 0 0 0 1px rgba(47, 158, 97, 0.16);
+      border-color: rgba(47, 158, 97, 0.26);
+      box-shadow: inset 0 0 0 1px rgba(47, 158, 97, 0.14);
     }
     img {
       display: block;
       max-width: 100%;
       height: auto;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(86, 214, 227, 0.14);
       border-radius: 16px;
       background: #ffffff;
       box-shadow: var(--shadow-soft);
     }
     .answer-shell {
-      border-top: 1px dashed rgba(45, 49, 66, 0.14);
+      border-top: 1px dashed rgba(46, 110, 163, 0.12);
       padding-top: 1rem;
     }
     .answer-toggle {
@@ -304,10 +295,10 @@ FLASHCARDS_TEMPLATE = """
       width: 100%;
       min-height: 60px;
       padding: 0.95rem 1.05rem;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(86, 214, 227, 0.14);
       border-radius: 16px;
-      background: linear-gradient(180deg, #ffffff, #fbfbfc);
-      color: var(--heading);
+      background: linear-gradient(180deg, #ffffff, #fbfeff);
+      color: var(--accent-dark);
       cursor: pointer;
       font: inherit;
       font-size: 1rem;
@@ -317,14 +308,14 @@ FLASHCARDS_TEMPLATE = """
     }
     .answer-toggle:hover {
       transform: translateY(-1px);
-      border-color: rgba(239, 131, 84, 0.24);
-      background: linear-gradient(180deg, #ffffff, #fff8f5);
+      border-color: rgba(86, 214, 227, 0.22);
+      background: linear-gradient(180deg, #ffffff, #f8fdff);
     }
     .answer-toggle:focus-visible,
     .choice:focus-visible,
     .toolbar a:focus-visible,
     .toolbar button:focus-visible {
-      outline: 2px solid rgba(239, 131, 84, 0.45);
+      outline: 2px solid rgba(86, 214, 227, 0.32);
       outline-offset: 2px;
     }
     .answer-chevron {
@@ -352,7 +343,7 @@ FLASHCARDS_TEMPLATE = """
       display: grid;
       gap: 0.75rem;
       padding: 1rem;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(86, 214, 227, 0.14);
       border-radius: 16px;
       background: var(--card-soft);
     }
@@ -411,12 +402,12 @@ FLASHCARDS_TEMPLATE = """
     <section class="hero">
       <p class="eyebrow">Review Deck</p>
       <h1>{{ title }}</h1>
-      <p class="subhead">{{ flashcards|length }} flashcards extracted from this PDF. Pick an answer to track what you know, then open the back when you want the explanation.</p>
+      <p class="subhead">{{ flashcards|length }} flashcards extracted from this PDF. Open each back panel to review the correct answer and full feedback.</p>
       <div class="hero-row">
         <div class="hero-stats">
           <div class="hero-stat"><strong>{{ flashcards|length }}</strong><span>Total Cards</span></div>
-          <div class="hero-stat"><strong id="mastered-count">0</strong><span>Correct</span></div>
-          <div class="hero-stat"><strong id="needs-review-count">0</strong><span>Incorrect</span></div>
+          <div class="hero-stat"><strong id="mastered-count">0</strong><span>Mastered</span></div>
+          <div class="hero-stat"><strong id="needs-review-count">0</strong><span>Needs Review</span></div>
         </div>
         <div class="toolbar">
           <a href="../index.html">Back to index</a>
@@ -430,7 +421,7 @@ FLASHCARDS_TEMPLATE = """
       <article class="card" id="q{{ flashcard.number }}" style="animation-delay: {{ loop.index0 * 30 }}ms;">
         <div class="card-header">
           <div class="card-number">Question {{ flashcard.number }}</div>
-          {% if flashcard.is_missed %}<div class="pill">Missed on source exam</div>{% endif %}
+          {% if flashcard.is_missed %}<div class="pill">Missed</div>{% endif %}
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -556,16 +547,15 @@ FLASHCARDS_TEMPLATE = """
     function applyStudyState(state) {
       document.querySelectorAll("[data-study-note]").forEach((node) => {
         const cardId = node.getAttribute("data-study-note");
-        const note = node;
         const current = state[cardId] || { status: null, selectedChoice: null };
         if (current.selectedChoice && current.status === "correct") {
-          note.textContent = "Correct.";
+          node.textContent = "Correct.";
         } else if (current.selectedChoice && current.status === "incorrect") {
-          note.textContent = "Incorrect. The correct option is highlighted.";
+          node.textContent = "Incorrect. The correct option is highlighted.";
         } else {
-          note.textContent = "";
+          node.textContent = "";
         }
-        note.className = "study-note" + (current.status ? " " + current.status : "");
+        node.className = "study-note" + (current.status ? " " + current.status : "");
         renderChoiceState(cardId, current);
       });
       updateCounts(state);
@@ -604,21 +594,21 @@ INDEX_TEMPLATE = """
   <style>
     :root {
       --bg: #ffffff;
-      --ink: #2D3142;
-      --muted: #667085;
-      --accent: #EF8354;
-      --accent-strong: #4F5D75;
-      --border: rgba(45, 49, 66, 0.12);
-      --shadow: 0 18px 40px rgba(45, 49, 66, 0.10);
-      --shadow-soft: 0 8px 20px rgba(45, 49, 66, 0.06);
+      --hero-a: #2f72a6;
+      --hero-b: #5b9ace;
+      --ink: #234f7f;
+      --muted: #6f88a4;
+      --accent: #56d6e3;
+      --accent-dark: #2e6ea3;
+      --border: rgba(46, 110, 163, 0.14);
+      --shadow: 0 18px 40px rgba(35, 79, 127, 0.10);
+      --shadow-soft: 0 8px 20px rgba(35, 79, 127, 0.06);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(239, 131, 84, 0.08), transparent 20%),
-        linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+      background: #ffffff;
       color: var(--ink);
     }
     .wrap {
@@ -628,19 +618,17 @@ INDEX_TEMPLATE = """
     }
     .hero {
       margin-bottom: 1.4rem;
-      padding: clamp(1.35rem, 2.2vw, 1.9rem);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 22px;
-      background:
-        radial-gradient(circle at top right, rgba(239, 131, 84, 0.18), transparent 22%),
-        linear-gradient(135deg, #2D3142, #4F5D75);
-      box-shadow: var(--shadow);
-      animation: rise-in 480ms ease-out both;
+      padding: clamp(1.4rem, 2.4vw, 2rem);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--hero-a), var(--hero-b));
+      box-shadow: 0 22px 46px rgba(239, 227, 179, 0.35);
+      animation: rise-in 520ms ease-out both;
     }
     .eyebrow {
-      margin: 0 0 0.75rem;
+      margin: 0 0 0.8rem;
       color: rgba(255,255,255,0.84);
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -649,24 +637,24 @@ INDEX_TEMPLATE = """
       margin: 0;
       max-width: 9ch;
       color: #ffffff;
-      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
       line-height: 0.96;
       letter-spacing: -0.05em;
       text-wrap: balance;
     }
     p {
-      max-width: 44ch;
+      max-width: 46ch;
       color: rgba(255,255,255,0.84);
       line-height: 1.65;
     }
     .group {
-      margin-top: 1.75rem;
-      padding-inline: 0.35rem;
+      margin-top: 1.8rem;
+      padding-inline: 0.2rem;
     }
     .group h2 {
       margin-bottom: 0.75rem;
-      color: var(--heading, #2D3142);
-      font-size: 1.25rem;
+      color: var(--accent-dark);
+      font-size: 1.3rem;
       letter-spacing: -0.02em;
     }
     .grid {
@@ -676,26 +664,23 @@ INDEX_TEMPLATE = """
     }
     .item {
       background: #ffffff;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(86, 214, 227, 0.16);
       border-radius: 18px;
       padding: 1rem;
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 18px 40px rgba(239, 227, 179, 0.28);
       animation: rise-in 460ms ease-out both;
       transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
     }
     .item:hover {
       transform: translateY(-2px);
-      box-shadow: var(--shadow);
-      border-color: rgba(239, 131, 84, 0.22);
+      border-color: rgba(86, 214, 227, 0.24);
+      box-shadow: 0 20px 44px rgba(239, 227, 179, 0.32);
     }
     .item a {
-      color: var(--accent-strong);
+      color: var(--accent);
       text-decoration: none;
       font-size: 1.05rem;
       font-weight: 800;
-    }
-    .item a:hover {
-      color: var(--accent);
     }
     .meta {
       margin-top: 0.45rem;
@@ -735,9 +720,6 @@ INDEX_TEMPLATE = """
       .grid {
         grid-template-columns: 1fr;
       }
-      .group {
-        padding-inline: 0.15rem;
-      }
     }
   </style>
 </head>
@@ -746,7 +728,7 @@ INDEX_TEMPLATE = """
     <section class="hero">
       <p class="eyebrow">Flashcard Library</p>
       <h1>Flashcard Index</h1>
-      <p>Open any deck to review questions, answer them inline, and keep lightweight progress saved in your browser.</p>
+      <p>Each entry links to a per-PDF flashcard page and companion TSV export. The layout is designed for quick browsing on desktop and mobile.</p>
     </section>
     {% for group_name, items in groups %}
     <section class="group">

@@ -7,21 +7,21 @@
   <style>
     :root {
       --bg: #ffffff;
-      --ink: #2D3142;
-      --muted: #667085;
-      --accent: #EF8354;
-      --accent-strong: #4F5D75;
-      --border: rgba(45, 49, 66, 0.12);
-      --shadow: 0 18px 40px rgba(45, 49, 66, 0.10);
-      --shadow-soft: 0 8px 20px rgba(45, 49, 66, 0.06);
+      --hero-a: #2f72a6;
+      --hero-b: #5b9ace;
+      --ink: #234f7f;
+      --muted: #6f88a4;
+      --accent: #56d6e3;
+      --accent-dark: #2e6ea3;
+      --border: rgba(46, 110, 163, 0.14);
+      --shadow: 0 18px 40px rgba(35, 79, 127, 0.10);
+      --shadow-soft: 0 8px 20px rgba(35, 79, 127, 0.06);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(239, 131, 84, 0.08), transparent 20%),
-        linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+      background: #ffffff;
       color: var(--ink);
     }
     .wrap {
@@ -31,19 +31,17 @@
     }
     .hero {
       margin-bottom: 1.4rem;
-      padding: clamp(1.35rem, 2.2vw, 1.9rem);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 22px;
-      background:
-        radial-gradient(circle at top right, rgba(239, 131, 84, 0.18), transparent 22%),
-        linear-gradient(135deg, #2D3142, #4F5D75);
-      box-shadow: var(--shadow);
-      animation: rise-in 480ms ease-out both;
+      padding: clamp(1.4rem, 2.4vw, 2rem);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--hero-a), var(--hero-b));
+      box-shadow: 0 22px 46px rgba(239, 227, 179, 0.35);
+      animation: rise-in 520ms ease-out both;
     }
     .eyebrow {
-      margin: 0 0 0.75rem;
+      margin: 0 0 0.8rem;
       color: rgba(255,255,255,0.84);
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -52,24 +50,24 @@
       margin: 0;
       max-width: 9ch;
       color: #ffffff;
-      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
       line-height: 0.96;
       letter-spacing: -0.05em;
       text-wrap: balance;
     }
     p {
-      max-width: 44ch;
+      max-width: 46ch;
       color: rgba(255,255,255,0.84);
       line-height: 1.65;
     }
     .group {
-      margin-top: 1.75rem;
-      padding-inline: 0.35rem;
+      margin-top: 1.8rem;
+      padding-inline: 0.2rem;
     }
     .group h2 {
       margin-bottom: 0.75rem;
-      color: var(--heading, #2D3142);
-      font-size: 1.25rem;
+      color: var(--accent-dark);
+      font-size: 1.3rem;
       letter-spacing: -0.02em;
     }
     .grid {
@@ -79,26 +77,23 @@
     }
     .item {
       background: #ffffff;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(86, 214, 227, 0.16);
       border-radius: 18px;
       padding: 1rem;
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 18px 40px rgba(239, 227, 179, 0.28);
       animation: rise-in 460ms ease-out both;
       transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
     }
     .item:hover {
       transform: translateY(-2px);
-      box-shadow: var(--shadow);
-      border-color: rgba(239, 131, 84, 0.22);
+      border-color: rgba(86, 214, 227, 0.24);
+      box-shadow: 0 20px 44px rgba(239, 227, 179, 0.32);
     }
     .item a {
-      color: var(--accent-strong);
+      color: var(--accent);
       text-decoration: none;
       font-size: 1.05rem;
       font-weight: 800;
-    }
-    .item a:hover {
-      color: var(--accent);
     }
     .meta {
       margin-top: 0.45rem;
@@ -138,9 +133,6 @@
       .grid {
         grid-template-columns: 1fr;
       }
-      .group {
-        padding-inline: 0.15rem;
-      }
     }
   </style>
 </head>
@@ -149,7 +141,7 @@
     <section class="hero">
       <p class="eyebrow">Flashcard Library</p>
       <h1>Flashcard Index</h1>
-      <p>Open any deck to review questions, answer them inline, and keep lightweight progress saved in your browser.</p>
+      <p>Each entry links to a per-PDF flashcard page and companion TSV export. The layout is designed for quick browsing on desktop and mobile.</p>
     </section>
     
     <section class="group">
