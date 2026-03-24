@@ -7,21 +7,21 @@
   <style>
     :root {
       color-scheme: dark;
-      --bg: #06101d;
-      --bg-strong: #0b1628;
-      --card: rgba(17, 31, 52, 0.92);
-      --card-strong: rgba(20, 36, 60, 0.98);
-      --ink: #f4f8ff;
-      --muted: #b0bfd6;
-      --accent: #82ddd7;
-      --accent-strong: #b4f0eb;
-      --heading: #ffffff;
-      --subheading: #d7e4f8;
-      --success: #78e6a7;
-      --danger: #ff8f97;
-      --warning: #f8cf7a;
-      --accent-soft: rgba(130, 221, 215, 0.16);
-      --border: rgba(149, 180, 221, 0.34);
+      --bg: #32435c;
+      --bg-strong: #29384d;
+      --card: rgba(44, 58, 81, 0.94);
+      --card-strong: rgba(48, 63, 88, 0.98);
+      --ink: #fff7e8;
+      --muted: #d8d9e6;
+      --accent: #45e3ff;
+      --accent-strong: #6f88fc;
+      --heading: #fffaf0;
+      --subheading: #f5efe0;
+      --success: #45e3ff;
+      --danger: #a163f7;
+      --warning: #fff582;
+      --accent-soft: rgba(69, 227, 255, 0.16);
+      --border: rgba(255, 245, 130, 0.2);
       --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
       --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.28);
     }
@@ -30,9 +30,9 @@
       margin: 0;
       font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(130, 221, 215, 0.14), transparent 28%),
-        radial-gradient(circle at 90% 10%, rgba(97, 130, 194, 0.18), transparent 24%),
-        linear-gradient(180deg, #071221 0%, var(--bg) 54%, #040b15 100%);
+        radial-gradient(circle at top left, rgba(161, 99, 247, 0.16), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(69, 227, 255, 0.12), transparent 24%),
+        linear-gradient(180deg, #31415a 0%, var(--bg) 54%, #29384d 100%);
       color: var(--ink);
       min-height: 100vh;
     }
@@ -49,8 +49,8 @@
       border: 1px solid var(--border);
       border-radius: 28px;
       background:
-        linear-gradient(135deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94)),
-        linear-gradient(120deg, rgba(130, 221, 215, 0.08), rgba(97, 130, 194, 0.08));
+        linear-gradient(135deg, rgba(61, 78, 108, 0.98), rgba(44, 58, 81, 0.94)),
+        linear-gradient(120deg, rgba(161, 99, 247, 0.1), rgba(69, 227, 255, 0.08));
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
       animation: rise-in 560ms ease-out both;
@@ -63,12 +63,12 @@
       aspect-ratio: 1;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
-      background: radial-gradient(circle, rgba(97, 130, 194, 0.4), transparent 70%);
+      background: radial-gradient(circle, rgba(111, 136, 252, 0.34), transparent 70%);
       pointer-events: none;
     }
     .eyebrow {
       margin: 0 0 0.75rem;
-      color: var(--accent);
+      color: var(--warning);
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.18em;
@@ -99,7 +99,7 @@
     .hero-stat {
       padding: 0.72rem 0.95rem;
       border-radius: 16px;
-      background: rgba(7, 16, 28, 0.34);
+      background: rgba(39, 52, 73, 0.52);
       border: 1px solid var(--border);
       color: var(--ink);
       min-width: 120px;
@@ -138,8 +138,8 @@
     }
     .toolbar a:hover, .toolbar button:hover {
       transform: translateY(-1px);
-      border-color: rgba(130, 221, 215, 0.42);
-      background: rgba(26, 45, 73, 1);
+      border-color: rgba(69, 227, 255, 0.38);
+      background: rgba(62, 81, 113, 1);
     }
     .cards {
       display: grid;
@@ -158,7 +158,7 @@
     .card:hover {
       transform: translateY(-3px);
       box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
-      border-color: rgba(130, 221, 215, 0.28);
+      border-color: rgba(69, 227, 255, 0.26);
     }
     .card-header {
       display: flex;
@@ -168,21 +168,21 @@
       padding: 1rem 1.2rem;
       border-bottom: 1px solid var(--border);
       background:
-        linear-gradient(135deg, rgba(130, 221, 215, 0.09), rgba(97, 130, 194, 0.08)),
-        rgba(16, 30, 50, 0.88);
+        linear-gradient(135deg, rgba(161, 99, 247, 0.12), rgba(69, 227, 255, 0.08)),
+        rgba(51, 67, 92, 0.88);
     }
     .card-number {
       font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--accent-strong);
+      color: var(--warning);
       font-weight: 700;
     }
     .pill {
       padding: 0.3rem 0.65rem;
       border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-strong);
+      background: rgba(161, 99, 247, 0.16);
+      color: #f3ddff;
       font-size: 0.85rem;
       font-weight: 700;
     }
@@ -199,7 +199,7 @@
       font-size: 0.78rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #d9dcf5;
       font-weight: 700;
     }
     .content {
@@ -219,7 +219,7 @@
       padding: 0.95rem 1rem;
       border: 1px solid var(--border);
       border-radius: 14px;
-      background: linear-gradient(180deg, rgba(24, 41, 67, 0.98), rgba(17, 31, 52, 0.92));
+      background: linear-gradient(180deg, rgba(53, 70, 98, 0.98), rgba(43, 57, 79, 0.92));
     }
     .choice {
       appearance: none;
@@ -230,98 +230,32 @@
       line-height: 1.55;
       padding: 0.75rem 0.9rem;
       border-radius: 12px;
-      border: 1px solid rgba(149, 180, 221, 0.18);
-      background: rgba(8, 15, 27, 0.34);
+      border: 1px solid rgba(255, 245, 130, 0.08);
+      background: rgba(39, 52, 73, 0.6);
       cursor: pointer;
       transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
     }
     .choice:hover {
       transform: translateY(-1px);
-      border-color: rgba(130, 221, 215, 0.34);
-      background: rgba(11, 21, 37, 0.62);
+      border-color: rgba(69, 227, 255, 0.34);
+      background: rgba(57, 75, 104, 0.82);
     }
     .choice-label {
       font-weight: 700;
-      color: var(--accent);
+      color: var(--warning);
       margin-right: 0.3rem;
     }
     .choice.correct {
-      border-color: rgba(120, 230, 167, 0.45);
-      background: rgba(26, 70, 48, 0.35);
+      border-color: rgba(69, 227, 255, 0.55);
+      background: rgba(69, 227, 255, 0.16);
     }
     .choice.incorrect {
-      border-color: rgba(255, 143, 151, 0.45);
-      background: rgba(95, 34, 47, 0.35);
+      border-color: rgba(161, 99, 247, 0.55);
+      background: rgba(161, 99, 247, 0.16);
     }
     .choice.revealed-correct {
-      border-color: rgba(120, 230, 167, 0.36);
-      box-shadow: inset 0 0 0 1px rgba(120, 230, 167, 0.18);
-    }
-    .study-panel {
-      display: grid;
-      gap: 0.8rem;
-      padding: 1rem;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: linear-gradient(180deg, rgba(14, 28, 47, 0.96), rgba(10, 22, 39, 0.9));
-    }
-    .study-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .study-title {
-      font-size: 0.88rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--subheading);
-    }
-    .study-status {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-    .study-actions {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-      gap: 0.7rem;
-    }
-    .study-button {
-      appearance: none;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: rgba(7, 16, 28, 0.44);
-      color: var(--ink);
-      padding: 0.95rem 1rem;
-      text-align: left;
-      font: inherit;
-      cursor: pointer;
-      min-height: 64px;
-      transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
-    }
-    .study-button:hover {
-      transform: translateY(-1px);
-      border-color: rgba(130, 221, 215, 0.38);
-      background: rgba(12, 24, 42, 0.82);
-    }
-    .study-button strong {
-      display: block;
-      color: var(--heading);
-      font-size: 0.98rem;
-    }
-    .study-button span {
-      display: block;
-      margin-top: 0.18rem;
-      color: var(--muted);
-      font-size: 0.83rem;
-    }
-    .study-button[data-result="correct"] {
-      border-color: rgba(120, 230, 167, 0.45);
-    }
-    .study-button[data-result="incorrect"] {
-      border-color: rgba(255, 143, 151, 0.45);
+      border-color: rgba(255, 245, 130, 0.38);
+      box-shadow: inset 0 0 0 1px rgba(255, 245, 130, 0.12);
     }
     .study-note {
       min-height: 1.2rem;
@@ -339,7 +273,7 @@
       height: auto;
       border-radius: 18px;
       border: 1px solid var(--border);
-      background: rgba(8, 15, 27, 0.96);
+      background: rgba(35, 47, 66, 0.96);
       display: block;
       box-shadow: var(--shadow-soft);
     }
@@ -352,7 +286,7 @@
       appearance: none;
       border: 1px solid var(--border);
       border-radius: 16px;
-      background: linear-gradient(180deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94));
+      background: linear-gradient(180deg, rgba(89, 110, 151, 0.98), rgba(65, 84, 117, 0.94));
       color: var(--heading);
       font: inherit;
       font-weight: 750;
@@ -369,15 +303,14 @@
     }
     .answer-toggle:hover {
       transform: translateY(-1px);
-      border-color: rgba(130, 221, 215, 0.4);
-      background: linear-gradient(180deg, rgba(28, 48, 78, 1), rgba(17, 31, 52, 0.98));
+      border-color: rgba(69, 227, 255, 0.4);
+      background: linear-gradient(180deg, rgba(111, 136, 252, 1), rgba(77, 98, 136, 0.98));
     }
     .answer-toggle:focus-visible,
-    .study-button:focus-visible,
     .choice:focus-visible,
     .toolbar a:focus-visible,
     .toolbar button:focus-visible {
-      outline: 2px solid rgba(130, 221, 215, 0.7);
+      outline: 2px solid rgba(69, 227, 255, 0.7);
       outline-offset: 2px;
     }
     .answer-chevron {
@@ -407,7 +340,7 @@
       padding: 1rem;
       border: 1px solid var(--border);
       border-radius: 16px;
-      background: linear-gradient(180deg, rgba(19, 35, 58, 0.98), rgba(13, 25, 43, 0.96));
+      background: linear-gradient(180deg, rgba(55, 72, 100, 0.98), rgba(41, 54, 76, 0.96));
     }
     .answer-title {
       font-weight: 700;
@@ -426,7 +359,7 @@
       .hero, .card {
         animation: none;
       }
-      .toolbar a, .toolbar button, .card, .answer-toggle, .answer-panel, .answer-chevron, .study-button, .choice {
+      .toolbar a, .toolbar button, .card, .answer-toggle, .answer-panel, .answer-chevron, .choice {
         transition: none;
       }
     }
@@ -444,9 +377,6 @@
       .toolbar a, .toolbar button {
         width: 100%;
         text-align: center;
-      }
-      .study-actions {
-        grid-template-columns: 1fr;
       }
       h1 {
         max-width: none;
@@ -483,27 +413,7 @@
             <div class="label">Front</div>
             <div class="content question-text">Which of the following anatomic variants of ICA anatomy is most often associated with symptoms of cerebral ischemia?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q1">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q1" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q1" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q1" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q1"></div>
-            </div>
+            <div class="study-note" data-study-note="q1"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 1">
               
               <button class="choice" type="button" role="listitem" data-card-id="q1" data-choice="A" data-correct="C">
@@ -556,27 +466,7 @@ Tortuosity - vessel forms an S-shaped curve</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is not normally a branch of the ophthalmic artery?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q2">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q2" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q2" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q2" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q2"></div>
-            </div>
+            <div class="study-note" data-study-note="q2"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 2">
               
               <button class="choice" type="button" role="listitem" data-card-id="q2" data-choice="A" data-correct="D">
@@ -626,27 +516,7 @@ Tortuosity - vessel forms an S-shaped curve</div>
             <div class="label">Front</div>
             <div class="content question-text">What are the standard windows used for a complete transcranial Doppler exam?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q3">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q3" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q3" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q3" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q3"></div>
-            </div>
+            <div class="study-note" data-study-note="q3"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 3">
               
               <button class="choice" type="button" role="listitem" data-card-id="q3" data-choice="A" data-correct="A">
@@ -698,27 +568,7 @@ ophthalmic artery).</div>
             <div class="label">Front</div>
             <div class="content question-text">The highest velocity in the normal common carotid artery is usually identified:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q4">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q4" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q4" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q4" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q4"></div>
-            </div>
+            <div class="study-note" data-study-note="q4"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 4">
               
               <button class="choice" type="button" role="listitem" data-card-id="q4" data-choice="A" data-correct="C">
@@ -769,27 +619,7 @@ proximal artery.</div>
             <div class="label">Front</div>
             <div class="content question-text">The image provided was taken during a routine carotid examination. Which of the following statements is true regarding the images?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q5">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q5" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q5" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q5" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q5"></div>
-            </div>
+            <div class="study-note" data-study-note="q5"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 5">
               
               <button class="choice" type="button" role="listitem" data-card-id="q5" data-choice="A" data-correct="D">
@@ -842,27 +672,7 @@ course through the pedicles of the vertebra and this vessel is demonstrated ante
             <div class="label">Front</div>
             <div class="content question-text">Using the transtemporal window, the normal middle cerebral artery ______________________.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q6">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q6" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q6" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q6" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q6"></div>
-            </div>
+            <div class="study-note" data-study-note="q6"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 6">
               
               <button class="choice" type="button" role="listitem" data-card-id="q6" data-choice="A" data-correct="A">
@@ -913,27 +723,7 @@ intracranial vessels are so small, no spectral window is demonstrated on the wav
             <div class="label">Front</div>
             <div class="content question-text">Which of the following structures is supplied by branches of the internal carotid artery?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q7">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q7" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q7" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q7" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q7"></div>
-            </div>
+            <div class="study-note" data-study-note="q7"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 7">
               
               <button class="choice" type="button" role="listitem" data-card-id="q7" data-choice="A" data-correct="D">
@@ -983,27 +773,7 @@ intracranial vessels are so small, no spectral window is demonstrated on the wav
             <div class="label">Front</div>
             <div class="content question-text">When scanning the internal carotid, which way would you angle your probe to locate the external carotid artery in most patients?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q8">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q8" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q8" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q8" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q8"></div>
-            </div>
+            <div class="study-note" data-study-note="q8"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 8">
               
               <button class="choice" type="button" role="listitem" data-card-id="q8" data-choice="A" data-correct="C">
@@ -1054,27 +824,7 @@ most patients</div>
             <div class="label">Front</div>
             <div class="content question-text">What is demonstrated on the image?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q9">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q9" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q9" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q9" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q9"></div>
-            </div>
+            <div class="study-note" data-study-note="q9"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 9">
               
               <button class="choice" type="button" role="listitem" data-card-id="q9" data-choice="A" data-correct="C">
@@ -1129,27 +879,7 @@ transducer. Red color is most commonly used to demonstrate antegrade flow and bl
             <div class="label">Front</div>
             <div class="content question-text">Which artery supplies the brainstem with arterial blood?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q10">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q10" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q10" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q10" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q10"></div>
-            </div>
+            <div class="study-note" data-study-note="q10"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 10">
               
               <button class="choice" type="button" role="listitem" data-card-id="q10" data-choice="A" data-correct="B">
@@ -1199,27 +929,7 @@ transducer. Red color is most commonly used to demonstrate antegrade flow and bl
             <div class="label">Front</div>
             <div class="content question-text">In the Circle of Willis there is/are:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q11">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q11" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q11" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q11" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q11"></div>
-            </div>
+            <div class="study-note" data-study-note="q11"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 11">
               
               <button class="choice" type="button" role="listitem" data-card-id="q11" data-choice="A" data-correct="C">
@@ -1271,27 +981,7 @@ transducer. Red color is most commonly used to demonstrate antegrade flow and bl
             <div class="label">Front</div>
             <div class="content question-text">Which of the following describes the probe placement for a Doppler evaluation of the frontal artery?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q12">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q12" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q12" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q12" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q12"></div>
-            </div>
+            <div class="study-note" data-study-note="q12"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 12">
               
               <button class="choice" type="button" role="listitem" data-card-id="q12" data-choice="A" data-correct="A">
@@ -1342,27 +1032,7 @@ is placed near the inner canthus of the eye. Normal flow direction will be towar
             <div class="label">Front</div>
             <div class="content question-text">Letter B indicates which of the following structures?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q13">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q13" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q13" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q13" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q13"></div>
-            </div>
+            <div class="study-note" data-study-note="q13"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 13">
               
               <button class="choice" type="button" role="listitem" data-card-id="q13" data-choice="A" data-correct="C">
@@ -1417,27 +1087,7 @@ D. Right CCA</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following statements is true regarding the vertebral arteries?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q14">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q14" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q14" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q14" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q14"></div>
-            </div>
+            <div class="study-note" data-study-note="q14"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 14">
               
               <button class="choice" type="button" role="listitem" data-card-id="q14" data-choice="A" data-correct="A">
@@ -1489,27 +1139,7 @@ resistance, monophasic waveform.</div>
             <div class="label">Front</div>
             <div class="content question-text">Letter C indicates which of the following structures?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q15">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q15" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q15" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q15" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q15"></div>
-            </div>
+            <div class="study-note" data-study-note="q15"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 15">
               
               <button class="choice" type="button" role="listitem" data-card-id="q15" data-choice="A" data-correct="A">
@@ -1564,27 +1194,7 @@ D. Right CCA</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following Doppler imaging characteristics will not assist when trying to identify a vessel on a TCD exam?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q16">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q16" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q16" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q16" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q16"></div>
-            </div>
+            <div class="study-note" data-study-note="q16"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 16">
               
               <button class="choice" type="button" role="listitem" data-card-id="q16" data-choice="A" data-correct="B">
@@ -1636,27 +1246,7 @@ affect the amount of flow sampled and is not useful for determining the vessel b
             <div class="label">Front</div>
             <div class="content question-text">Which of the following arteries will be compressed when evaluating frontal artery flow for a periorbital Doppler exam?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q17">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q17" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q17" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q17" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q17"></div>
-            </div>
+            <div class="study-note" data-study-note="q17"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 17">
               
               <button class="choice" type="button" role="listitem" data-card-id="q17" data-choice="A" data-correct="C">
@@ -1710,27 +1300,7 @@ artery, the compressed vessel is being used as a collateral to fill the frontal 
             <div class="label">Front</div>
             <div class="content question-text">Which of the following arteries is supplied with blood from the ECA?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q18">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q18" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q18" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q18" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q18"></div>
-            </div>
+            <div class="study-note" data-study-note="q18"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 18">
               
               <button class="choice" type="button" role="listitem" data-card-id="q18" data-choice="A" data-correct="A">
@@ -1780,27 +1350,7 @@ artery, the compressed vessel is being used as a collateral to fill the frontal 
             <div class="label">Front</div>
             <div class="content question-text">When evaluating the carotid siphon from the submandibular window, the sample depth should be set to value between:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q19">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q19" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q19" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q19" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q19"></div>
-            </div>
+            <div class="study-note" data-study-note="q19"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 19">
               
               <button class="choice" type="button" role="listitem" data-card-id="q19" data-choice="A" data-correct="C">
@@ -1852,27 +1402,7 @@ artery, the compressed vessel is being used as a collateral to fill the frontal 
             <div class="label">Front</div>
             <div class="content question-text">Branches of the ___________________ connect to branches of the vertebral arteries to allow collateral flow from the anterior circulation to the posterior circulation.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q20">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q20" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q20" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q20" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q20"></div>
-            </div>
+            <div class="study-note" data-study-note="q20"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 20">
               
               <button class="choice" type="button" role="listitem" data-card-id="q20" data-choice="A" data-correct="D">
@@ -1928,27 +1458,7 @@ The subclavian artery is in the upper chest.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following describes a cardiovascular application of the Bernoulli Principle?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q21">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q21" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q21" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q21" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q21"></div>
-            </div>
+            <div class="study-note" data-study-note="q21"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 21">
               
               <button class="choice" type="button" role="listitem" data-card-id="q21" data-choice="A" data-correct="C">
@@ -1998,27 +1508,7 @@ The subclavian artery is in the upper chest.</div>
             <div class="label">Front</div>
             <div class="content question-text">The blue arrow indicates which of the following structures?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q22">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q22" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q22" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q22" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q22"></div>
-            </div>
+            <div class="study-note" data-study-note="q22"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 22">
               
               <button class="choice" type="button" role="listitem" data-card-id="q22" data-choice="A" data-correct="D">
@@ -2071,27 +1561,7 @@ location. The smaller, more medial vessel demonstrates the branch coursing infer
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is a potential collateral pathway for extracranial to intracranial blood flow?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q23">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q23" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q23" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q23" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q23"></div>
-            </div>
+            <div class="study-note" data-study-note="q23"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 23">
               
               <button class="choice" type="button" role="listitem" data-card-id="q23" data-choice="A" data-correct="D">
@@ -2148,27 +1618,7 @@ of Willis that is obstructed in an area.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following describes the proper technique for evaluating the MCA through the temporal window using TCD?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q24">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q24" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q24" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q24" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q24"></div>
-            </div>
+            <div class="study-note" data-study-note="q24"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 24">
               
               <button class="choice" type="button" role="listitem" data-card-id="q24" data-choice="A" data-correct="C">
@@ -2221,27 +1671,7 @@ should be identified at an average depth of 50mm. Slight anterior angulation may
             <div class="label">Front</div>
             <div class="content question-text">During a TCD exam the depth is set to 100mm while using the suboccipital window. What vessel will be interrogated and what direction will the flow be moving?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q25">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q25" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q25" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q25" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q25"></div>
-            </div>
+            <div class="study-note" data-study-note="q25"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 25">
               
               <button class="choice" type="button" role="listitem" data-card-id="q25" data-choice="A" data-correct="D">
@@ -2293,27 +1723,7 @@ Both vessels will normally exhibit flow moving away from the transducer and towa
             <div class="label">Front</div>
             <div class="content question-text">Which statement below is true regarding the normal CCA Doppler tracing?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q26">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q26" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q26" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q26" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q26"></div>
-            </div>
+            <div class="study-note" data-study-note="q26"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 26">
               
               <button class="choice" type="button" role="listitem" data-card-id="q26" data-choice="A" data-correct="A">
@@ -2368,27 +1778,7 @@ above the baseline.</div>
             <div class="label">Front</div>
             <div class="content question-text">The most common normal variant in the external/internal carotid artery anatomy is:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q27">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q27" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q27" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q27" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q27"></div>
-            </div>
+            <div class="study-note" data-study-note="q27"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 27">
               
               <button class="choice" type="button" role="listitem" data-card-id="q27" data-choice="A" data-correct="D">
@@ -2439,27 +1829,7 @@ most common being the ECA lies posterior and lateral to the ICA</div>
             <div class="label">Front</div>
             <div class="content question-text">The Doppler tracing is most consistent with a tracing obtained from which normal extracranial vessel?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q28">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q28" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q28" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q28" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q28"></div>
-            </div>
+            <div class="study-note" data-study-note="q28"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 28">
               
               <button class="choice" type="button" role="listitem" data-card-id="q28" data-choice="A" data-correct="A">
@@ -2511,27 +1881,7 @@ of the vessel. The ECA and CCA waveforms are higher resistance with a sharper up
             <div class="label">Front</div>
             <div class="content question-text">Which of the following vessels is evaluated using the submandibular TCD window?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q29">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q29" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q29" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q29" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q29"></div>
-            </div>
+            <div class="study-note" data-study-note="q29"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 29">
               
               <button class="choice" type="button" role="listitem" data-card-id="q29" data-choice="A" data-correct="A">
@@ -2581,27 +1931,7 @@ of the vessel. The ECA and CCA waveforms are higher resistance with a sharper up
             <div class="label">Front</div>
             <div class="content question-text">Which of the following normally demonstrates a higher resistance Doppler flow profile?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q30">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q30" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q30" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q30" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q30"></div>
-            </div>
+            <div class="study-note" data-study-note="q30"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 30">
               
               <button class="choice" type="button" role="listitem" data-card-id="q30" data-choice="A" data-correct="A">
@@ -2655,27 +1985,7 @@ muscles and tissue, therefore the flow demonstrates a higher resistance waveform
             <div class="label">Front</div>
             <div class="content question-text">The most common congenital anomaly of the Circle of Willis is:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q31">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q31" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q31" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q31" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q31"></div>
-            </div>
+            <div class="study-note" data-study-note="q31"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 31">
               
               <button class="choice" type="button" role="listitem" data-card-id="q31" data-choice="A" data-correct="A">
@@ -2725,27 +2035,7 @@ muscles and tissue, therefore the flow demonstrates a higher resistance waveform
             <div class="label">Front</div>
             <div class="content question-text">Which of the following vessels is most commonly assessed for the presence of a bruit?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q32">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q32" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q32" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q32" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q32"></div>
-            </div>
+            <div class="study-note" data-study-note="q32"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 32">
               
               <button class="choice" type="button" role="listitem" data-card-id="q32" data-choice="A" data-correct="A">
@@ -2796,27 +2086,7 @@ stenosis. Tortuosity, vessel kinking and elevated blood pressure can be normal c
             <div class="label">Front</div>
             <div class="content question-text">The posterior communicating artery connects the:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q33">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q33" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q33" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q33" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q33"></div>
-            </div>
+            <div class="study-note" data-study-note="q33"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 33">
               
               <button class="choice" type="button" role="listitem" data-card-id="q33" data-choice="A" data-correct="D">
@@ -2869,27 +2139,7 @@ The ACA and MCA are part of the anterior circulation. The PCA and basilar/verteb
             <div class="label">Front</div>
             <div class="content question-text">The supraorbital artery originates from the ophthalmic artery and joins what branch of the ECA?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q34">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q34" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q34" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q34" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q34"></div>
-            </div>
+            <div class="study-note" data-study-note="q34"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 34">
               
               <button class="choice" type="button" role="listitem" data-card-id="q34" data-choice="A" data-correct="A">
@@ -2942,27 +2192,7 @@ arrangement allows for collateral flow to occur on the same side of the body if 
             <div class="label">Front</div>
             <div class="content question-text">Which of the following originates first from the ascending aorta?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q35">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q35" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q35" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q35" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q35"></div>
-            </div>
+            <div class="study-note" data-study-note="q35"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 35">
               
               <button class="choice" type="button" role="listitem" data-card-id="q35" data-choice="A" data-correct="C">
@@ -3015,27 +2245,7 @@ above the aortic valve in the heart.</div>
             <div class="label">Front</div>
             <div class="content question-text">What artery courses cephalad on the anterior right side of the trachea to bifurcate at the level of the sternoclavicular joint?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q36">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q36" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q36" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q36" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q36"></div>
-            </div>
+            <div class="study-note" data-study-note="q36"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 36">
               
               <button class="choice" type="button" role="listitem" data-card-id="q36" data-choice="A" data-correct="C">
@@ -3087,27 +2297,7 @@ arteries.</div>
             <div class="label">Front</div>
             <div class="content question-text">The ECA is normally ______________ to the ICA.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q37">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q37" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q37" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q37" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q37"></div>
-            </div>
+            <div class="study-note" data-study-note="q37"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 37">
               
               <button class="choice" type="button" role="listitem" data-card-id="q37" data-choice="A" data-correct="C">
@@ -3158,27 +2348,7 @@ usually courses posteriorly and laterally to enter the skull and feed the cerebr
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is the best patient position for performing a transcranial Doppler exam to obtain a waveform from the basilar artery?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q38">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q38" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q38" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q38" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q38"></div>
-            </div>
+            <div class="study-note" data-study-note="q38"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 38">
               
               <button class="choice" type="button" role="listitem" data-card-id="q38" data-choice="A" data-correct="C">
@@ -3229,27 +2399,7 @@ position for the exam. Placing the hand under the head will also help to raise i
             <div class="label">Front</div>
             <div class="content question-text">Which transcranial window is most commonly used to evaluate the carotid siphon and the ophthalmic artery?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q39">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q39" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q39" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q39" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q39"></div>
-            </div>
+            <div class="study-note" data-study-note="q39"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 39">
               
               <button class="choice" type="button" role="listitem" data-card-id="q39" data-choice="A" data-correct="D">
@@ -3302,27 +2452,7 @@ evaluated on this view, the supplemental submandibular approach may be used.</di
             <div class="label">Front</div>
             <div class="content question-text">The _______________________ is described as the segment of the vessel located between the distal ICA and the origin of the anterior communicating artery.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q40">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q40" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q40" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q40" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q40"></div>
-            </div>
+            <div class="study-note" data-study-note="q40"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 40">
               
               <button class="choice" type="button" role="listitem" data-card-id="q40" data-choice="A" data-correct="C">
@@ -3375,27 +2505,7 @@ distal to the origin of the anterior communicator artery.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is an expected characteristic of a normal ICA?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q41">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q41" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q41" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q41" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q41"></div>
-            </div>
+            <div class="study-note" data-study-note="q41"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 41">
               
               <button class="choice" type="button" role="listitem" data-card-id="q41" data-choice="A" data-correct="B">
@@ -3448,27 +2558,7 @@ normally demonstrate a low resistance waveform, while the ECA demonstrates a hig
             <div class="label">Front</div>
             <div class="content question-text">Which of the following describes the proper technique for evaluating the ACA through the temporal window?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q42">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q42" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q42" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q42" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q42"></div>
-            </div>
+            <div class="study-note" data-study-note="q42"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 42">
               
               <button class="choice" type="button" role="listitem" data-card-id="q42" data-choice="A" data-correct="B">
@@ -3520,27 +2610,7 @@ normally demonstrate a low resistance waveform, while the ECA demonstrates a hig
             <div class="label">Front</div>
             <div class="content question-text">What is occurring on the Doppler tracing where the arrows are pointing?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q43">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q43" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q43" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q43" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q43"></div>
-            </div>
+            <div class="study-note" data-study-note="q43"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 43">
               
               <button class="choice" type="button" role="listitem" data-card-id="q43" data-choice="A" data-correct="C">
@@ -3595,27 +2665,7 @@ maneuver. This technique is used to differentiate the ECA from the ICA.</div>
             <div class="label">Front</div>
             <div class="content question-text">The carotid siphon:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q44">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q44" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q44" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q44" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q44"></div>
-            </div>
+            <div class="study-note" data-study-note="q44"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 44">
               
               <button class="choice" type="button" role="listitem" data-card-id="q44" data-choice="A" data-correct="C">
@@ -3668,27 +2718,7 @@ artery branches from the carotid siphon.</div>
             <div class="label">Front</div>
             <div class="content question-text">At what level in the neck does the common carotid artery normally bifurcate?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q45">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q45" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q45" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q45" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q45"></div>
-            </div>
+            <div class="study-note" data-study-note="q45"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 45">
               
               <button class="choice" type="button" role="listitem" data-card-id="q45" data-choice="A" data-correct="A">
@@ -3738,27 +2768,7 @@ artery branches from the carotid siphon.</div>
             <div class="label">Front</div>
             <div class="content question-text">The internal carotid artery terminates into which two branches of the Circle of Willis?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q46">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q46" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q46" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q46" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q46"></div>
-            </div>
+            <div class="study-note" data-study-note="q46"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 46">
               
               <button class="choice" type="button" role="listitem" data-card-id="q46" data-choice="A" data-correct="A">
@@ -3811,27 +2821,7 @@ terminate at the origination of the MCA and ACA. The PCA is a branch of the basi
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is supplied with arterial blood through branches of the ECA?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q47">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q47" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q47" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q47" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q47"></div>
-            </div>
+            <div class="study-note" data-study-note="q47"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 47">
               
               <button class="choice" type="button" role="listitem" data-card-id="q47" data-choice="A" data-correct="A">
@@ -3882,27 +2872,7 @@ the ICA. The cerebellum and brain stem are supplied by the posterior circulation
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is a direct branch of the aortic arch?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q48">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q48" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q48" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q48" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q48"></div>
-            </div>
+            <div class="study-note" data-study-note="q48"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 48">
               
               <button class="choice" type="button" role="listitem" data-card-id="q48" data-choice="A" data-correct="D">
@@ -3954,27 +2924,7 @@ the ICA. The cerebellum and brain stem are supplied by the posterior circulation
             <div class="label">Front</div>
             <div class="content question-text">Which branch of the Circle of Willis supplies the corpus callosum and the cavum septum pellucidum with arterial blood?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q49">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q49" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q49" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q49" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q49"></div>
-            </div>
+            <div class="study-note" data-study-note="q49"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 49">
               
               <button class="choice" type="button" role="listitem" data-card-id="q49" data-choice="A" data-correct="A">
@@ -4025,27 +2975,7 @@ fed by the anterior cerebral artery.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following are branches of the distal ICA?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q50">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q50" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q50" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q50" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q50"></div>
-            </div>
+            <div class="study-note" data-study-note="q50"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 50">
               
               <button class="choice" type="button" role="listitem" data-card-id="q50" data-choice="A" data-correct="C">
@@ -4097,27 +3027,7 @@ distal ICA before it terminates at the bifurcation into the ACA and MCA once it 
             <div class="label">Front</div>
             <div class="content question-text">The _______________________ is described as the segment of the vessel located between the distal basilar artery and the origin of the posterior communicator artery.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q51">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q51" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q51" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q51" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q51"></div>
-            </div>
+            <div class="study-note" data-study-note="q51"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 51">
               
               <button class="choice" type="button" role="listitem" data-card-id="q51" data-choice="A" data-correct="D">
@@ -4168,27 +3078,7 @@ segment is located distal to the origin of the posterior communicator artery.</d
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is considered an abnormality that causes turbulence in a vessel?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q52">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q52" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q52" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q52" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q52"></div>
-            </div>
+            <div class="study-note" data-study-note="q52"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 52">
               
               <button class="choice" type="button" role="listitem" data-card-id="q52" data-choice="A" data-correct="D">
@@ -4240,27 +3130,7 @@ normal anatomic variants that can cause turbulence.</div>
             <div class="label">Front</div>
             <div class="content question-text">The angular artery is the terminal branch of the</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q53">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q53" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q53" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q53" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q53"></div>
-            </div>
+            <div class="study-note" data-study-note="q53"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 53">
               
               <button class="choice" type="button" role="listitem" data-card-id="q53" data-choice="A" data-correct="B">
@@ -4310,27 +3180,7 @@ normal anatomic variants that can cause turbulence.</div>
             <div class="label">Front</div>
             <div class="content question-text">In most patients, the first branch of the ECA is:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q54">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q54" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q54" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q54" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q54"></div>
-            </div>
+            <div class="study-note" data-study-note="q54"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 54">
               
               <button class="choice" type="button" role="listitem" data-card-id="q54" data-choice="A" data-correct="B">
@@ -4382,27 +3232,7 @@ the ICA.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following vessels supply the majority of blood to the cerebellum?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q55">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q55" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q55" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q55" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q55"></div>
-            </div>
+            <div class="study-note" data-study-note="q55"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 55">
               
               <button class="choice" type="button" role="listitem" data-card-id="q55" data-choice="A" data-correct="D">
@@ -4454,27 +3284,7 @@ stem.</div>
             <div class="label">Front</div>
             <div class="content question-text">The supraorbital artery is a branch of the ___________________________. Branches of the supraorbital artery connect with branches of the _________________________, which is a branch of the ECA. This is a common collateral pathway from the ECA to the ICA.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q56">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q56" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q56" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q56" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q56"></div>
-            </div>
+            <div class="study-note" data-study-note="q56"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 56">
               
               <button class="choice" type="button" role="listitem" data-card-id="q56" data-choice="A" data-correct="B">
@@ -4525,27 +3335,7 @@ superficial temporal artery, which is a branch of the ECA. This is a common coll
             <div class="label">Front</div>
             <div class="content question-text">Which of the following describes the normal appearance of a waveform obtained in the middle cerebral artery?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q57">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q57" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q57" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q57" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q57"></div>
-            </div>
+            <div class="study-note" data-study-note="q57"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 57">
               
               <button class="choice" type="button" role="listitem" data-card-id="q57" data-choice="A" data-correct="C">
@@ -4599,27 +3389,7 @@ Diastolic flow reversal would indicate an abnormality causing increased resistan
             <div class="label">Front</div>
             <div class="content question-text">The suboccipital window is used in TCD exams to evaluate which of the following arteries?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q58">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q58" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q58" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q58" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q58"></div>
-            </div>
+            <div class="study-note" data-study-note="q58"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 58">
               
               <button class="choice" type="button" role="listitem" data-card-id="q58" data-choice="A" data-correct="B">
@@ -4671,27 +3441,7 @@ Diastolic flow reversal would indicate an abnormality causing increased resistan
             <div class="label">Front</div>
             <div class="content question-text">What blood vessel is used to cause the variations in diastolic flow on the ECA tracing?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q59">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q59" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q59" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q59" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q59"></div>
-            </div>
+            <div class="study-note" data-study-note="q59"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 59">
               
               <button class="choice" type="button" role="listitem" data-card-id="q59" data-choice="A" data-correct="C">
@@ -4748,27 +3498,7 @@ maneuver. This technique is used to differentiate the ECA from the ICA.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following arteries is normally only an intracranial vessel?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q60">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q60" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q60" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q60" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q60"></div>
-            </div>
+            <div class="study-note" data-study-note="q60"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 60">
               
               <button class="choice" type="button" role="listitem" data-card-id="q60" data-choice="A" data-correct="D">
@@ -4819,27 +3549,7 @@ the skull.</div>
             <div class="label">Front</div>
             <div class="content question-text">Using the suboccipital window, the normal basilar and vertebral arteries ______________________.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q61">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q61" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q61" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q61" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q61"></div>
-            </div>
+            <div class="study-note" data-study-note="q61"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 61">
               
               <button class="choice" type="button" role="listitem" data-card-id="q61" data-choice="A" data-correct="B">
@@ -4890,27 +3600,7 @@ The normal basilar and vertebral arteries will demonstrate flow away from the pr
             <div class="label">Front</div>
             <div class="content question-text">The anterior cerebral artery and its branches feed which of the following lobes of the brain?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q62">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q62" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q62" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q62" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q62"></div>
-            </div>
+            <div class="study-note" data-study-note="q62"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 62">
               
               <button class="choice" type="button" role="listitem" data-card-id="q62" data-choice="A" data-correct="D">
@@ -4963,27 +3653,7 @@ lobes.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which intracranial artery courses within the sylvian fissure?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q63">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q63" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q63" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q63" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q63"></div>
-            </div>
+            <div class="study-note" data-study-note="q63"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 63">
               
               <button class="choice" type="button" role="listitem" data-card-id="q63" data-choice="A" data-correct="D">
@@ -5033,27 +3703,7 @@ lobes.</div>
             <div class="label">Front</div>
             <div class="content question-text">In most patients the right common carotid artery:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q64">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q64" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q64" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q64" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q64"></div>
-            </div>
+            <div class="study-note" data-study-note="q64"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 64">
               
               <button class="choice" type="button" role="listitem" data-card-id="q64" data-choice="A" data-correct="B">
@@ -5104,27 +3754,7 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
             <div class="label">Front</div>
             <div class="content question-text">Normal brachial pressures should not differ more than ____________ mmHg between arms.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q65">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q65" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q65" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q65" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q65"></div>
-            </div>
+            <div class="study-note" data-study-note="q65"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 65">
               
               <button class="choice" type="button" role="listitem" data-card-id="q65" data-choice="A" data-correct="D">
@@ -5174,27 +3804,7 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
             <div class="label">Front</div>
             <div class="content question-text">The posterior communicating arteries connect the:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q66">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q66" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q66" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q66" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q66"></div>
-            </div>
+            <div class="study-note" data-study-note="q66"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 66">
               
               <button class="choice" type="button" role="listitem" data-card-id="q66" data-choice="A" data-correct="A">
@@ -5246,27 +3856,7 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
             <div class="label">Front</div>
             <div class="content question-text">During a TCD exam the depth is set to 55mm with a slight anterior angulation while using the temporal window. What vessel will be interrogated and what direction will the flow be moving?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q67">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q67" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q67" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q67" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q67"></div>
-            </div>
+            <div class="study-note" data-study-note="q67"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 67">
               
               <button class="choice" type="button" role="listitem" data-card-id="q67" data-choice="A" data-correct="A">
@@ -5318,27 +3908,7 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
             <div class="label">Front</div>
             <div class="content question-text">Transcranial Doppler most commonly uses which Doppler measurement to evaluate flow in the cerebral vessels?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q68">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q68" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q68" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q68" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q68"></div>
-            </div>
+            <div class="study-note" data-study-note="q68"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 68">
               
               <button class="choice" type="button" role="listitem" data-card-id="q68" data-choice="A" data-correct="B">
@@ -5388,27 +3958,7 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is a branch of the ICA?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q69">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q69" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q69" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q69" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q69"></div>
-            </div>
+            <div class="study-note" data-study-note="q69"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 69">
               
               <button class="choice" type="button" role="listitem" data-card-id="q69" data-choice="A" data-correct="A">
@@ -5543,22 +4093,17 @@ Powered by ExamBuilder. Copyright ©2026</div>
     }
 
     function applyStudyState(state) {
-      document.querySelectorAll("[data-study-status]").forEach((node) => {
-        const cardId = node.getAttribute("data-study-status");
+      document.querySelectorAll("[data-study-note]").forEach((node) => {
+        const cardId = node.getAttribute("data-study-note");
         const note = document.querySelector('[data-study-note="' + cardId + '"]');
         const current = state[cardId] || { status: null, selectedChoice: null };
-        node.textContent = current.status === "correct" ? "Marked understood" : current.status === "incorrect" ? "Marked for review" : "Not answered yet";
         if (note) {
           if (current.selectedChoice && current.status === "correct") {
-            note.textContent = "You selected the correct answer. Saved on this device.";
+            note.textContent = "Correct. Saved on this device.";
           } else if (current.selectedChoice && current.status === "incorrect") {
-            note.textContent = "You selected the wrong answer. The correct option is highlighted.";
-          } else if (current.status === "correct") {
-            note.textContent = "Saved as understood on this device.";
-          } else if (current.status === "incorrect") {
-            note.textContent = "Saved as needs review on this device.";
+            note.textContent = "Incorrect. The correct option is highlighted.";
           } else {
-            note.textContent = "";
+            note.textContent = "Choose an answer to track your progress.";
           }
           note.className = "study-note" + (current.status ? " " + current.status : "");
         }
@@ -5569,23 +4114,6 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     const studyState = loadStudyState();
     applyStudyState(studyState);
-
-    document.querySelectorAll(".study-button").forEach((button) => {
-      button.addEventListener("click", () => {
-        const cardId = button.getAttribute("data-card-id");
-        const result = button.getAttribute("data-result");
-        if (!studyState[cardId]) {
-          studyState[cardId] = { status: null, selectedChoice: null };
-        }
-        if (result === "reset") {
-          delete studyState[cardId];
-        } else {
-          studyState[cardId].status = result;
-        }
-        saveStudyState(studyState);
-        applyStudyState(studyState);
-      });
-    });
 
     document.querySelectorAll(".choice").forEach((button) => {
       button.addEventListener("click", () => {

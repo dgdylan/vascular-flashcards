@@ -20,21 +20,21 @@ FLASHCARDS_TEMPLATE = """
   <style>
     :root {
       color-scheme: dark;
-      --bg: #06101d;
-      --bg-strong: #0b1628;
-      --card: rgba(17, 31, 52, 0.92);
-      --card-strong: rgba(20, 36, 60, 0.98);
-      --ink: #f4f8ff;
-      --muted: #b0bfd6;
-      --accent: #82ddd7;
-      --accent-strong: #b4f0eb;
-      --heading: #ffffff;
-      --subheading: #d7e4f8;
-      --success: #78e6a7;
-      --danger: #ff8f97;
-      --warning: #f8cf7a;
-      --accent-soft: rgba(130, 221, 215, 0.16);
-      --border: rgba(149, 180, 221, 0.34);
+      --bg: #32435c;
+      --bg-strong: #29384d;
+      --card: rgba(44, 58, 81, 0.94);
+      --card-strong: rgba(48, 63, 88, 0.98);
+      --ink: #fff7e8;
+      --muted: #d8d9e6;
+      --accent: #45e3ff;
+      --accent-strong: #6f88fc;
+      --heading: #fffaf0;
+      --subheading: #f5efe0;
+      --success: #45e3ff;
+      --danger: #a163f7;
+      --warning: #fff582;
+      --accent-soft: rgba(69, 227, 255, 0.16);
+      --border: rgba(255, 245, 130, 0.2);
       --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
       --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.28);
     }
@@ -43,9 +43,9 @@ FLASHCARDS_TEMPLATE = """
       margin: 0;
       font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(130, 221, 215, 0.14), transparent 28%),
-        radial-gradient(circle at 90% 10%, rgba(97, 130, 194, 0.18), transparent 24%),
-        linear-gradient(180deg, #071221 0%, var(--bg) 54%, #040b15 100%);
+        radial-gradient(circle at top left, rgba(161, 99, 247, 0.16), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(69, 227, 255, 0.12), transparent 24%),
+        linear-gradient(180deg, #31415a 0%, var(--bg) 54%, #29384d 100%);
       color: var(--ink);
       min-height: 100vh;
     }
@@ -62,8 +62,8 @@ FLASHCARDS_TEMPLATE = """
       border: 1px solid var(--border);
       border-radius: 28px;
       background:
-        linear-gradient(135deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94)),
-        linear-gradient(120deg, rgba(130, 221, 215, 0.08), rgba(97, 130, 194, 0.08));
+        linear-gradient(135deg, rgba(61, 78, 108, 0.98), rgba(44, 58, 81, 0.94)),
+        linear-gradient(120deg, rgba(161, 99, 247, 0.1), rgba(69, 227, 255, 0.08));
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
       animation: rise-in 560ms ease-out both;
@@ -76,12 +76,12 @@ FLASHCARDS_TEMPLATE = """
       aspect-ratio: 1;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
-      background: radial-gradient(circle, rgba(97, 130, 194, 0.4), transparent 70%);
+      background: radial-gradient(circle, rgba(111, 136, 252, 0.34), transparent 70%);
       pointer-events: none;
     }
     .eyebrow {
       margin: 0 0 0.75rem;
-      color: var(--accent);
+      color: var(--warning);
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.18em;
@@ -112,7 +112,7 @@ FLASHCARDS_TEMPLATE = """
     .hero-stat {
       padding: 0.72rem 0.95rem;
       border-radius: 16px;
-      background: rgba(7, 16, 28, 0.34);
+      background: rgba(39, 52, 73, 0.52);
       border: 1px solid var(--border);
       color: var(--ink);
       min-width: 120px;
@@ -151,8 +151,8 @@ FLASHCARDS_TEMPLATE = """
     }
     .toolbar a:hover, .toolbar button:hover {
       transform: translateY(-1px);
-      border-color: rgba(130, 221, 215, 0.42);
-      background: rgba(26, 45, 73, 1);
+      border-color: rgba(69, 227, 255, 0.38);
+      background: rgba(62, 81, 113, 1);
     }
     .cards {
       display: grid;
@@ -171,7 +171,7 @@ FLASHCARDS_TEMPLATE = """
     .card:hover {
       transform: translateY(-3px);
       box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
-      border-color: rgba(130, 221, 215, 0.28);
+      border-color: rgba(69, 227, 255, 0.26);
     }
     .card-header {
       display: flex;
@@ -181,21 +181,21 @@ FLASHCARDS_TEMPLATE = """
       padding: 1rem 1.2rem;
       border-bottom: 1px solid var(--border);
       background:
-        linear-gradient(135deg, rgba(130, 221, 215, 0.09), rgba(97, 130, 194, 0.08)),
-        rgba(16, 30, 50, 0.88);
+        linear-gradient(135deg, rgba(161, 99, 247, 0.12), rgba(69, 227, 255, 0.08)),
+        rgba(51, 67, 92, 0.88);
     }
     .card-number {
       font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--accent-strong);
+      color: var(--warning);
       font-weight: 700;
     }
     .pill {
       padding: 0.3rem 0.65rem;
       border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-strong);
+      background: rgba(161, 99, 247, 0.16);
+      color: #f3ddff;
       font-size: 0.85rem;
       font-weight: 700;
     }
@@ -212,7 +212,7 @@ FLASHCARDS_TEMPLATE = """
       font-size: 0.78rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #d9dcf5;
       font-weight: 700;
     }
     .content {
@@ -232,7 +232,7 @@ FLASHCARDS_TEMPLATE = """
       padding: 0.95rem 1rem;
       border: 1px solid var(--border);
       border-radius: 14px;
-      background: linear-gradient(180deg, rgba(24, 41, 67, 0.98), rgba(17, 31, 52, 0.92));
+      background: linear-gradient(180deg, rgba(53, 70, 98, 0.98), rgba(43, 57, 79, 0.92));
     }
     .choice {
       appearance: none;
@@ -243,98 +243,32 @@ FLASHCARDS_TEMPLATE = """
       line-height: 1.55;
       padding: 0.75rem 0.9rem;
       border-radius: 12px;
-      border: 1px solid rgba(149, 180, 221, 0.18);
-      background: rgba(8, 15, 27, 0.34);
+      border: 1px solid rgba(255, 245, 130, 0.08);
+      background: rgba(39, 52, 73, 0.6);
       cursor: pointer;
       transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
     }
     .choice:hover {
       transform: translateY(-1px);
-      border-color: rgba(130, 221, 215, 0.34);
-      background: rgba(11, 21, 37, 0.62);
+      border-color: rgba(69, 227, 255, 0.34);
+      background: rgba(57, 75, 104, 0.82);
     }
     .choice-label {
       font-weight: 700;
-      color: var(--accent);
+      color: var(--warning);
       margin-right: 0.3rem;
     }
     .choice.correct {
-      border-color: rgba(120, 230, 167, 0.45);
-      background: rgba(26, 70, 48, 0.35);
+      border-color: rgba(69, 227, 255, 0.55);
+      background: rgba(69, 227, 255, 0.16);
     }
     .choice.incorrect {
-      border-color: rgba(255, 143, 151, 0.45);
-      background: rgba(95, 34, 47, 0.35);
+      border-color: rgba(161, 99, 247, 0.55);
+      background: rgba(161, 99, 247, 0.16);
     }
     .choice.revealed-correct {
-      border-color: rgba(120, 230, 167, 0.36);
-      box-shadow: inset 0 0 0 1px rgba(120, 230, 167, 0.18);
-    }
-    .study-panel {
-      display: grid;
-      gap: 0.8rem;
-      padding: 1rem;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: linear-gradient(180deg, rgba(14, 28, 47, 0.96), rgba(10, 22, 39, 0.9));
-    }
-    .study-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .study-title {
-      font-size: 0.88rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--subheading);
-    }
-    .study-status {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-    .study-actions {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-      gap: 0.7rem;
-    }
-    .study-button {
-      appearance: none;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: rgba(7, 16, 28, 0.44);
-      color: var(--ink);
-      padding: 0.95rem 1rem;
-      text-align: left;
-      font: inherit;
-      cursor: pointer;
-      min-height: 64px;
-      transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
-    }
-    .study-button:hover {
-      transform: translateY(-1px);
-      border-color: rgba(130, 221, 215, 0.38);
-      background: rgba(12, 24, 42, 0.82);
-    }
-    .study-button strong {
-      display: block;
-      color: var(--heading);
-      font-size: 0.98rem;
-    }
-    .study-button span {
-      display: block;
-      margin-top: 0.18rem;
-      color: var(--muted);
-      font-size: 0.83rem;
-    }
-    .study-button[data-result="correct"] {
-      border-color: rgba(120, 230, 167, 0.45);
-    }
-    .study-button[data-result="incorrect"] {
-      border-color: rgba(255, 143, 151, 0.45);
+      border-color: rgba(255, 245, 130, 0.38);
+      box-shadow: inset 0 0 0 1px rgba(255, 245, 130, 0.12);
     }
     .study-note {
       min-height: 1.2rem;
@@ -352,7 +286,7 @@ FLASHCARDS_TEMPLATE = """
       height: auto;
       border-radius: 18px;
       border: 1px solid var(--border);
-      background: rgba(8, 15, 27, 0.96);
+      background: rgba(35, 47, 66, 0.96);
       display: block;
       box-shadow: var(--shadow-soft);
     }
@@ -365,7 +299,7 @@ FLASHCARDS_TEMPLATE = """
       appearance: none;
       border: 1px solid var(--border);
       border-radius: 16px;
-      background: linear-gradient(180deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94));
+      background: linear-gradient(180deg, rgba(89, 110, 151, 0.98), rgba(65, 84, 117, 0.94));
       color: var(--heading);
       font: inherit;
       font-weight: 750;
@@ -382,15 +316,14 @@ FLASHCARDS_TEMPLATE = """
     }
     .answer-toggle:hover {
       transform: translateY(-1px);
-      border-color: rgba(130, 221, 215, 0.4);
-      background: linear-gradient(180deg, rgba(28, 48, 78, 1), rgba(17, 31, 52, 0.98));
+      border-color: rgba(69, 227, 255, 0.4);
+      background: linear-gradient(180deg, rgba(111, 136, 252, 1), rgba(77, 98, 136, 0.98));
     }
     .answer-toggle:focus-visible,
-    .study-button:focus-visible,
     .choice:focus-visible,
     .toolbar a:focus-visible,
     .toolbar button:focus-visible {
-      outline: 2px solid rgba(130, 221, 215, 0.7);
+      outline: 2px solid rgba(69, 227, 255, 0.7);
       outline-offset: 2px;
     }
     .answer-chevron {
@@ -420,7 +353,7 @@ FLASHCARDS_TEMPLATE = """
       padding: 1rem;
       border: 1px solid var(--border);
       border-radius: 16px;
-      background: linear-gradient(180deg, rgba(19, 35, 58, 0.98), rgba(13, 25, 43, 0.96));
+      background: linear-gradient(180deg, rgba(55, 72, 100, 0.98), rgba(41, 54, 76, 0.96));
     }
     .answer-title {
       font-weight: 700;
@@ -439,7 +372,7 @@ FLASHCARDS_TEMPLATE = """
       .hero, .card {
         animation: none;
       }
-      .toolbar a, .toolbar button, .card, .answer-toggle, .answer-panel, .answer-chevron, .study-button, .choice {
+      .toolbar a, .toolbar button, .card, .answer-toggle, .answer-panel, .answer-chevron, .choice {
         transition: none;
       }
     }
@@ -457,9 +390,6 @@ FLASHCARDS_TEMPLATE = """
       .toolbar a, .toolbar button {
         width: 100%;
         text-align: center;
-      }
-      .study-actions {
-        grid-template-columns: 1fr;
       }
       h1 {
         max-width: none;
@@ -496,27 +426,7 @@ FLASHCARDS_TEMPLATE = """
             <div class="label">Front</div>
             <div class="content question-text">{{ flashcard.question }}</div>
             {% if flashcard.choices %}
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q{{ flashcard.number }}">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q{{ flashcard.number }}" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q{{ flashcard.number }}" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q{{ flashcard.number }}" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q{{ flashcard.number }}"></div>
-            </div>
+            <div class="study-note" data-study-note="q{{ flashcard.number }}"></div>
             <div class="choices" role="list" aria-label="Answer choices for question {{ flashcard.number }}">
               {% for label, text in flashcard.choices.items() %}
               <button class="choice" type="button" role="listitem" data-card-id="q{{ flashcard.number }}" data-choice="{{ label }}" data-correct="{{ flashcard.correct_answer_label or '' }}">
@@ -638,22 +548,17 @@ FLASHCARDS_TEMPLATE = """
     }
 
     function applyStudyState(state) {
-      document.querySelectorAll("[data-study-status]").forEach((node) => {
-        const cardId = node.getAttribute("data-study-status");
+      document.querySelectorAll("[data-study-note]").forEach((node) => {
+        const cardId = node.getAttribute("data-study-note");
         const note = document.querySelector('[data-study-note="' + cardId + '"]');
         const current = state[cardId] || { status: null, selectedChoice: null };
-        node.textContent = current.status === "correct" ? "Marked understood" : current.status === "incorrect" ? "Marked for review" : "Not answered yet";
         if (note) {
           if (current.selectedChoice && current.status === "correct") {
-            note.textContent = "You selected the correct answer. Saved on this device.";
+            note.textContent = "Correct. Saved on this device.";
           } else if (current.selectedChoice && current.status === "incorrect") {
-            note.textContent = "You selected the wrong answer. The correct option is highlighted.";
-          } else if (current.status === "correct") {
-            note.textContent = "Saved as understood on this device.";
-          } else if (current.status === "incorrect") {
-            note.textContent = "Saved as needs review on this device.";
+            note.textContent = "Incorrect. The correct option is highlighted.";
           } else {
-            note.textContent = "";
+            note.textContent = "Choose an answer to track your progress.";
           }
           note.className = "study-note" + (current.status ? " " + current.status : "");
         }
@@ -664,23 +569,6 @@ FLASHCARDS_TEMPLATE = """
 
     const studyState = loadStudyState();
     applyStudyState(studyState);
-
-    document.querySelectorAll(".study-button").forEach((button) => {
-      button.addEventListener("click", () => {
-        const cardId = button.getAttribute("data-card-id");
-        const result = button.getAttribute("data-result");
-        if (!studyState[cardId]) {
-          studyState[cardId] = { status: null, selectedChoice: null };
-        }
-        if (result === "reset") {
-          delete studyState[cardId];
-        } else {
-          studyState[cardId].status = result;
-        }
-        saveStudyState(studyState);
-        applyStudyState(studyState);
-      });
-    });
 
     document.querySelectorAll(".choice").forEach((button) => {
       button.addEventListener("click", () => {

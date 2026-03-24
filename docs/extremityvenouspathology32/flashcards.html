@@ -7,21 +7,21 @@
   <style>
     :root {
       color-scheme: dark;
-      --bg: #06101d;
-      --bg-strong: #0b1628;
-      --card: rgba(17, 31, 52, 0.92);
-      --card-strong: rgba(20, 36, 60, 0.98);
-      --ink: #f4f8ff;
-      --muted: #b0bfd6;
-      --accent: #82ddd7;
-      --accent-strong: #b4f0eb;
-      --heading: #ffffff;
-      --subheading: #d7e4f8;
-      --success: #78e6a7;
-      --danger: #ff8f97;
-      --warning: #f8cf7a;
-      --accent-soft: rgba(130, 221, 215, 0.16);
-      --border: rgba(149, 180, 221, 0.34);
+      --bg: #32435c;
+      --bg-strong: #29384d;
+      --card: rgba(44, 58, 81, 0.94);
+      --card-strong: rgba(48, 63, 88, 0.98);
+      --ink: #fff7e8;
+      --muted: #d8d9e6;
+      --accent: #45e3ff;
+      --accent-strong: #6f88fc;
+      --heading: #fffaf0;
+      --subheading: #f5efe0;
+      --success: #45e3ff;
+      --danger: #a163f7;
+      --warning: #fff582;
+      --accent-soft: rgba(69, 227, 255, 0.16);
+      --border: rgba(255, 245, 130, 0.2);
       --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
       --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.28);
     }
@@ -30,9 +30,9 @@
       margin: 0;
       font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(130, 221, 215, 0.14), transparent 28%),
-        radial-gradient(circle at 90% 10%, rgba(97, 130, 194, 0.18), transparent 24%),
-        linear-gradient(180deg, #071221 0%, var(--bg) 54%, #040b15 100%);
+        radial-gradient(circle at top left, rgba(161, 99, 247, 0.16), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(69, 227, 255, 0.12), transparent 24%),
+        linear-gradient(180deg, #31415a 0%, var(--bg) 54%, #29384d 100%);
       color: var(--ink);
       min-height: 100vh;
     }
@@ -49,8 +49,8 @@
       border: 1px solid var(--border);
       border-radius: 28px;
       background:
-        linear-gradient(135deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94)),
-        linear-gradient(120deg, rgba(130, 221, 215, 0.08), rgba(97, 130, 194, 0.08));
+        linear-gradient(135deg, rgba(61, 78, 108, 0.98), rgba(44, 58, 81, 0.94)),
+        linear-gradient(120deg, rgba(161, 99, 247, 0.1), rgba(69, 227, 255, 0.08));
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
       animation: rise-in 560ms ease-out both;
@@ -63,12 +63,12 @@
       aspect-ratio: 1;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
-      background: radial-gradient(circle, rgba(97, 130, 194, 0.4), transparent 70%);
+      background: radial-gradient(circle, rgba(111, 136, 252, 0.34), transparent 70%);
       pointer-events: none;
     }
     .eyebrow {
       margin: 0 0 0.75rem;
-      color: var(--accent);
+      color: var(--warning);
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.18em;
@@ -99,7 +99,7 @@
     .hero-stat {
       padding: 0.72rem 0.95rem;
       border-radius: 16px;
-      background: rgba(7, 16, 28, 0.34);
+      background: rgba(39, 52, 73, 0.52);
       border: 1px solid var(--border);
       color: var(--ink);
       min-width: 120px;
@@ -138,8 +138,8 @@
     }
     .toolbar a:hover, .toolbar button:hover {
       transform: translateY(-1px);
-      border-color: rgba(130, 221, 215, 0.42);
-      background: rgba(26, 45, 73, 1);
+      border-color: rgba(69, 227, 255, 0.38);
+      background: rgba(62, 81, 113, 1);
     }
     .cards {
       display: grid;
@@ -158,7 +158,7 @@
     .card:hover {
       transform: translateY(-3px);
       box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
-      border-color: rgba(130, 221, 215, 0.28);
+      border-color: rgba(69, 227, 255, 0.26);
     }
     .card-header {
       display: flex;
@@ -168,21 +168,21 @@
       padding: 1rem 1.2rem;
       border-bottom: 1px solid var(--border);
       background:
-        linear-gradient(135deg, rgba(130, 221, 215, 0.09), rgba(97, 130, 194, 0.08)),
-        rgba(16, 30, 50, 0.88);
+        linear-gradient(135deg, rgba(161, 99, 247, 0.12), rgba(69, 227, 255, 0.08)),
+        rgba(51, 67, 92, 0.88);
     }
     .card-number {
       font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--accent-strong);
+      color: var(--warning);
       font-weight: 700;
     }
     .pill {
       padding: 0.3rem 0.65rem;
       border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-strong);
+      background: rgba(161, 99, 247, 0.16);
+      color: #f3ddff;
       font-size: 0.85rem;
       font-weight: 700;
     }
@@ -199,7 +199,7 @@
       font-size: 0.78rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #d9dcf5;
       font-weight: 700;
     }
     .content {
@@ -219,7 +219,7 @@
       padding: 0.95rem 1rem;
       border: 1px solid var(--border);
       border-radius: 14px;
-      background: linear-gradient(180deg, rgba(24, 41, 67, 0.98), rgba(17, 31, 52, 0.92));
+      background: linear-gradient(180deg, rgba(53, 70, 98, 0.98), rgba(43, 57, 79, 0.92));
     }
     .choice {
       appearance: none;
@@ -230,98 +230,32 @@
       line-height: 1.55;
       padding: 0.75rem 0.9rem;
       border-radius: 12px;
-      border: 1px solid rgba(149, 180, 221, 0.18);
-      background: rgba(8, 15, 27, 0.34);
+      border: 1px solid rgba(255, 245, 130, 0.08);
+      background: rgba(39, 52, 73, 0.6);
       cursor: pointer;
       transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
     }
     .choice:hover {
       transform: translateY(-1px);
-      border-color: rgba(130, 221, 215, 0.34);
-      background: rgba(11, 21, 37, 0.62);
+      border-color: rgba(69, 227, 255, 0.34);
+      background: rgba(57, 75, 104, 0.82);
     }
     .choice-label {
       font-weight: 700;
-      color: var(--accent);
+      color: var(--warning);
       margin-right: 0.3rem;
     }
     .choice.correct {
-      border-color: rgba(120, 230, 167, 0.45);
-      background: rgba(26, 70, 48, 0.35);
+      border-color: rgba(69, 227, 255, 0.55);
+      background: rgba(69, 227, 255, 0.16);
     }
     .choice.incorrect {
-      border-color: rgba(255, 143, 151, 0.45);
-      background: rgba(95, 34, 47, 0.35);
+      border-color: rgba(161, 99, 247, 0.55);
+      background: rgba(161, 99, 247, 0.16);
     }
     .choice.revealed-correct {
-      border-color: rgba(120, 230, 167, 0.36);
-      box-shadow: inset 0 0 0 1px rgba(120, 230, 167, 0.18);
-    }
-    .study-panel {
-      display: grid;
-      gap: 0.8rem;
-      padding: 1rem;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: linear-gradient(180deg, rgba(14, 28, 47, 0.96), rgba(10, 22, 39, 0.9));
-    }
-    .study-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .study-title {
-      font-size: 0.88rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--subheading);
-    }
-    .study-status {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-    .study-actions {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-      gap: 0.7rem;
-    }
-    .study-button {
-      appearance: none;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: rgba(7, 16, 28, 0.44);
-      color: var(--ink);
-      padding: 0.95rem 1rem;
-      text-align: left;
-      font: inherit;
-      cursor: pointer;
-      min-height: 64px;
-      transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
-    }
-    .study-button:hover {
-      transform: translateY(-1px);
-      border-color: rgba(130, 221, 215, 0.38);
-      background: rgba(12, 24, 42, 0.82);
-    }
-    .study-button strong {
-      display: block;
-      color: var(--heading);
-      font-size: 0.98rem;
-    }
-    .study-button span {
-      display: block;
-      margin-top: 0.18rem;
-      color: var(--muted);
-      font-size: 0.83rem;
-    }
-    .study-button[data-result="correct"] {
-      border-color: rgba(120, 230, 167, 0.45);
-    }
-    .study-button[data-result="incorrect"] {
-      border-color: rgba(255, 143, 151, 0.45);
+      border-color: rgba(255, 245, 130, 0.38);
+      box-shadow: inset 0 0 0 1px rgba(255, 245, 130, 0.12);
     }
     .study-note {
       min-height: 1.2rem;
@@ -339,7 +273,7 @@
       height: auto;
       border-radius: 18px;
       border: 1px solid var(--border);
-      background: rgba(8, 15, 27, 0.96);
+      background: rgba(35, 47, 66, 0.96);
       display: block;
       box-shadow: var(--shadow-soft);
     }
@@ -352,7 +286,7 @@
       appearance: none;
       border: 1px solid var(--border);
       border-radius: 16px;
-      background: linear-gradient(180deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94));
+      background: linear-gradient(180deg, rgba(89, 110, 151, 0.98), rgba(65, 84, 117, 0.94));
       color: var(--heading);
       font: inherit;
       font-weight: 750;
@@ -369,15 +303,14 @@
     }
     .answer-toggle:hover {
       transform: translateY(-1px);
-      border-color: rgba(130, 221, 215, 0.4);
-      background: linear-gradient(180deg, rgba(28, 48, 78, 1), rgba(17, 31, 52, 0.98));
+      border-color: rgba(69, 227, 255, 0.4);
+      background: linear-gradient(180deg, rgba(111, 136, 252, 1), rgba(77, 98, 136, 0.98));
     }
     .answer-toggle:focus-visible,
-    .study-button:focus-visible,
     .choice:focus-visible,
     .toolbar a:focus-visible,
     .toolbar button:focus-visible {
-      outline: 2px solid rgba(130, 221, 215, 0.7);
+      outline: 2px solid rgba(69, 227, 255, 0.7);
       outline-offset: 2px;
     }
     .answer-chevron {
@@ -407,7 +340,7 @@
       padding: 1rem;
       border: 1px solid var(--border);
       border-radius: 16px;
-      background: linear-gradient(180deg, rgba(19, 35, 58, 0.98), rgba(13, 25, 43, 0.96));
+      background: linear-gradient(180deg, rgba(55, 72, 100, 0.98), rgba(41, 54, 76, 0.96));
     }
     .answer-title {
       font-weight: 700;
@@ -426,7 +359,7 @@
       .hero, .card {
         animation: none;
       }
-      .toolbar a, .toolbar button, .card, .answer-toggle, .answer-panel, .answer-chevron, .study-button, .choice {
+      .toolbar a, .toolbar button, .card, .answer-toggle, .answer-panel, .answer-chevron, .choice {
         transition: none;
       }
     }
@@ -444,9 +377,6 @@
       .toolbar a, .toolbar button {
         width: 100%;
         text-align: center;
-      }
-      .study-actions {
-        grid-template-columns: 1fr;
       }
       h1 {
         max-width: none;
@@ -483,27 +413,7 @@
             <div class="label">Front</div>
             <div class="content question-text">The image attached demonstrates which of the following?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q1">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q1" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q1" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q1" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q1"></div>
-            </div>
+            <div class="study-note" data-study-note="q1"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 1">
               
               <button class="choice" type="button" role="listitem" data-card-id="q1" data-choice="A" data-correct="B">
@@ -556,27 +466,7 @@ thrombus free areas which allow some flow through the vessel.</div>
             <div class="label">Front</div>
             <div class="content question-text">____________________ cause primary varicose veins, while ___________________ cause secondary varicose veins.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q2">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q2" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q2" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q2" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q2"></div>
-            </div>
+            <div class="study-note" data-study-note="q2"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 2">
               
               <button class="choice" type="button" role="listitem" data-card-id="q2" data-choice="A" data-correct="B">
@@ -627,27 +517,7 @@ or abnormal valves) cause secondary varicose veins. Primary varicose veins are m
             <div class="label">Front</div>
             <div class="content question-text">The most common complication of lower extremity DVT is:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q3">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q3" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q3" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q3" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q3"></div>
-            </div>
+            <div class="study-note" data-study-note="q3"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 3">
               
               <button class="choice" type="button" role="listitem" data-card-id="q3" data-choice="A" data-correct="C">
@@ -703,27 +573,7 @@ of an extremity. It presents as painful &#34;blue&#34; swollen leg. Milk leg bec
             <div class="label">Front</div>
             <div class="content question-text">What is demonstrated by the images from a lower extremity venous Doppler exam?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q4">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q4" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q4" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q4" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q4"></div>
-            </div>
+            <div class="study-note" data-study-note="q4"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 4">
               
               <button class="choice" type="button" role="listitem" data-card-id="q4" data-choice="A" data-correct="B">
@@ -776,27 +626,7 @@ mosaic color pattern indicates turbulence at the connection with the artery.</di
             <div class="label">Front</div>
             <div class="content question-text">The image is a transverse view of the distal popliteal fossa. Which of the following would not be a recommended treatment?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q5">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q5" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q5" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q5" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q5"></div>
-            </div>
+            <div class="study-note" data-study-note="q5"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 5">
               
               <button class="choice" type="button" role="listitem" data-card-id="q5" data-choice="A" data-correct="C">
@@ -850,27 +680,7 @@ compress and an aspirin would usually be sufficient treatment.</div>
             <div class="label">Front</div>
             <div class="content question-text">A patient presents for an upper extremity venous Doppler evaluation due to bilateral arm and face swelling. There are also varicosities visible on the upper chest wall. These symptoms are most consistent with:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q6">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q6" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q6" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q6" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q6"></div>
-            </div>
+            <div class="study-note" data-study-note="q6"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 6">
               
               <button class="choice" type="button" role="listitem" data-card-id="q6" data-choice="A" data-correct="B">
@@ -921,27 +731,7 @@ swelling but the arm would not be affected. CHF usually causes swelling in the l
             <div class="label">Front</div>
             <div class="content question-text">A patient presents with a swollen left leg from hip to ankle and the right leg is normal. An lower extremity venous duplex exam shows compressible vessels bilaterally. Doppler demonstrates normal flow in the right leg, but there is loss of phasicity of flow and decreased augmentation of the left common femoral vein and proximal femoral vein. These findings are most suggestive of:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q7">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q7" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q7" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q7" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q7"></div>
-            </div>
+            <div class="study-note" data-study-note="q7"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 7">
               
               <button class="choice" type="button" role="listitem" data-card-id="q7" data-choice="A" data-correct="A">
@@ -993,27 +783,7 @@ extremities. Internal iliac thrombosis will not affect the venous outflow of the
             <div class="label">Front</div>
             <div class="content question-text">A patient presents with a wet ulcer located on the medial calf just above the ankle. What vessel should be evaluated first as the most likely primary cause of the ulcer?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q8">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q8" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q8" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q8" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q8"></div>
-            </div>
+            <div class="study-note" data-study-note="q8"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 8">
               
               <button class="choice" type="button" role="listitem" data-card-id="q8" data-choice="A" data-correct="B">
@@ -1065,27 +835,7 @@ up the back of the calf, not near the ankle. A wet, oozing ulcer near the medial
             <div class="label">Front</div>
             <div class="content question-text">Which of the following risk factors has the highest incidence of lower extremity thrombus formation?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q9">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q9" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q9" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q9" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q9"></div>
-            </div>
+            <div class="study-note" data-study-note="q9"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 9">
               
               <button class="choice" type="button" role="listitem" data-card-id="q9" data-choice="A" data-correct="A">
@@ -1138,27 +888,7 @@ of the surgery and could lead to hemorrhage.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following would be contraindicated in this patient?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q10">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q10" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q10" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q10" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q10"></div>
-            </div>
+            <div class="study-note" data-study-note="q10"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 10">
               
               <button class="choice" type="button" role="listitem" data-card-id="q10" data-choice="A" data-correct="B">
@@ -1212,27 +942,7 @@ causing further dilatation of the damaged veins.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following patients has the lowest risk of upper extremity venous thrombosis?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q11">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q11" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q11" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q11" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q11"></div>
-            </div>
+            <div class="study-note" data-study-note="q11"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 11">
               
               <button class="choice" type="button" role="listitem" data-card-id="q11" data-choice="A" data-correct="B">
@@ -1284,27 +994,7 @@ Hemophilia refers to a condition causing abnormally thin blood and would be a co
             <div class="label">Front</div>
             <div class="content question-text">The most common location of a Baker cyst is:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q12">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q12" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q12" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q12" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q12"></div>
-            </div>
+            <div class="study-note" data-study-note="q12"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 12">
               
               <button class="choice" type="button" role="listitem" data-card-id="q12" data-choice="A" data-correct="C">
@@ -1355,27 +1045,7 @@ exam.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is an expected complication caused by a Baker cyst?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q13">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q13" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q13" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q13" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q13"></div>
-            </div>
+            <div class="study-note" data-study-note="q13"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 13">
               
               <button class="choice" type="button" role="listitem" data-card-id="q13" data-choice="A" data-correct="B">
@@ -1427,27 +1097,7 @@ extrinsic compression on the popliteal artery.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is a common infection that causes skin discoloration in patients with venous insufficiency?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q14">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q14" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q14" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q14" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q14"></div>
-            </div>
+            <div class="study-note" data-study-note="q14"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 14">
               
               <button class="choice" type="button" role="listitem" data-card-id="q14" data-choice="A" data-correct="B">
@@ -1498,27 +1148,7 @@ insufficiency with venous hypertension and causes discoloration of the ankle and
             <div class="label">Front</div>
             <div class="content question-text">If a patient is diagnosed with a pulmonary embolism, what should be the next step in their patient care?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q15">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q15" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q15" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q15" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q15"></div>
-            </div>
+            <div class="study-note" data-study-note="q15"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 15">
               
               <button class="choice" type="button" role="listitem" data-card-id="q15" data-choice="A" data-correct="B">
@@ -1569,27 +1199,7 @@ Immediate IV Heparin therapy should be administered.</div>
             <div class="label">Front</div>
             <div class="content question-text">Unilateral swelling of the lower extremity would be an expected clinical finding with:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q16">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q16" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q16" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q16" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q16"></div>
-            </div>
+            <div class="study-note" data-study-note="q16"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 16">
               
               <button class="choice" type="button" role="listitem" data-card-id="q16" data-choice="A" data-correct="D">
@@ -1640,27 +1250,7 @@ the left leg.</div>
             <div class="label">Front</div>
             <div class="content question-text">A patient presents for an exam due to a history of Lemierre Syndrome. What vessels should be evaluated for associated findings?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q17">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q17" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q17" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q17" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q17"></div>
-            </div>
+            <div class="study-note" data-study-note="q17"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 17">
               
               <button class="choice" type="button" role="listitem" data-card-id="q17" data-choice="A" data-correct="D">
@@ -1711,27 +1301,7 @@ Duplex evaluation can demonstrate thrombus within the jugular vein or other neck
             <div class="label">Front</div>
             <div class="content question-text">Which of the following describes abnormal lower extremity venous flow response to distal augmentation in a superficial vein?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q18">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q18" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q18" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q18" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q18"></div>
-            </div>
+            <div class="study-note" data-study-note="q18"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 18">
               
               <button class="choice" type="button" role="listitem" data-card-id="q18" data-choice="A" data-correct="A">
@@ -1785,27 +1355,7 @@ toward heart followed by flow reversal &gt;0.5sec toward the feet.</div>
             <div class="label">Front</div>
             <div class="content question-text">A 56yr old female presents with mild calf pain that is caused by dorsiflexion of the foot. The symptoms began after she returned from vacation in France. Yesterday she noticed a sudden red color change and edema, localized to the lower leg. These clinical findings are most suggestive of:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q19">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q19" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q19" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q19" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q19"></div>
-            </div>
+            <div class="study-note" data-study-note="q19"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 19">
               
               <button class="choice" type="button" role="listitem" data-card-id="q19" data-choice="A" data-correct="D">
@@ -1856,27 +1406,7 @@ symptoms indicates propagation of a clot in the calf.</div>
             <div class="label">Front</div>
             <div class="content question-text">Bilateral leg and foot edema are present. What is the most common cause for this?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q20">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q20" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q20" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q20" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q20"></div>
-            </div>
+            <div class="study-note" data-study-note="q20"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 20">
               
               <button class="choice" type="button" role="listitem" data-card-id="q20" data-choice="A" data-correct="A">
@@ -1928,27 +1458,7 @@ cause swelling of the feet and is most commonly unilateral.</div>
             <div class="label">Front</div>
             <div class="content question-text">What is the most common cause of upper extremity DVT in the normal ambulatory patient population?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q21">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q21" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q21" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q21" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q21"></div>
-            </div>
+            <div class="study-note" data-study-note="q21"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 21">
               
               <button class="choice" type="button" role="listitem" data-card-id="q21" data-choice="A" data-correct="A">
@@ -2003,27 +1513,7 @@ medication/treatment.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following conditions is usually related to cardiac pulsatility in the leg veins?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q22">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q22" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q22" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q22" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q22"></div>
-            </div>
+            <div class="study-note" data-study-note="q22"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 22">
               
               <button class="choice" type="button" role="listitem" data-card-id="q22" data-choice="A" data-correct="D">
@@ -2078,27 +1568,7 @@ cardiac pulsatility will extend further into the lower extremities due to the in
             <div class="label">Front</div>
             <div class="content question-text">_______________ is the &#34;gold standard&#34; exam technique for diagnosis of venous disease in the lower extremities.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q23">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q23" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q23" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q23" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q23"></div>
-            </div>
+            <div class="study-note" data-study-note="q23"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 23">
               
               <button class="choice" type="button" role="listitem" data-card-id="q23" data-choice="A" data-correct="C">
@@ -2148,27 +1618,7 @@ cardiac pulsatility will extend further into the lower extremities due to the in
             <div class="label">Front</div>
             <div class="content question-text">What is demonstrated on the longitudinal image taken from the mid- thigh?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q24">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q24" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q24" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q24" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q24"></div>
-            </div>
+            <div class="study-note" data-study-note="q24"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 24">
               
               <button class="choice" type="button" role="listitem" data-card-id="q24" data-choice="A" data-correct="A">
@@ -2222,27 +1672,7 @@ on the image.</div>
             <div class="label">Front</div>
             <div class="content question-text">Patients with lower extremity venous insufficiency may describe pain</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q25">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q25" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q25" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q25" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q25"></div>
-            </div>
+            <div class="study-note" data-study-note="q25"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 25">
               
               <button class="choice" type="button" role="listitem" data-card-id="q25" data-choice="A" data-correct="D">
@@ -2294,27 +1724,7 @@ into an already inefficient venous system. This can lead to increased pooling in
             <div class="label">Front</div>
             <div class="content question-text">Which of the following Doppler findings would indicate significant venous hypertension?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q26">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q26" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q26" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q26" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q26"></div>
-            </div>
+            <div class="study-note" data-study-note="q26"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 26">
               
               <button class="choice" type="button" role="listitem" data-card-id="q26" data-choice="A" data-correct="D">
@@ -2369,27 +1779,7 @@ chronic obstruction proximally.</div>
             <div class="label">Front</div>
             <div class="content question-text">A patient has a prior history of popliteal DVT and currently complains of the increasing appearance of small varicosities on the calf. Which statement below best describes his condition?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q27">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q27" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q27" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q27" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q27"></div>
-            </div>
+            <div class="study-note" data-study-note="q27"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 27">
               
               <button class="choice" type="button" role="listitem" data-card-id="q27" data-choice="A" data-correct="A">
@@ -2440,27 +1830,7 @@ Secondary varicosities form if there is an associated problem in the deep system
             <div class="label">Front</div>
             <div class="content question-text">The images of the neck demonstrate which of the following?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q28">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q28" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q28" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q28" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q28"></div>
-            </div>
+            <div class="study-note" data-study-note="q28"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 28">
               
               <button class="choice" type="button" role="listitem" data-card-id="q28" data-choice="A" data-correct="C">
@@ -2517,27 +1887,7 @@ NORMAL IJV - FLATTENED, FLEXIBLE</div>
             <div class="label">Front</div>
             <div class="content question-text">A patient presents for a lower extremity venous Doppler due to leg pain in the groin and upper thigh after a recent car accident. After viewing these findings in the common femoral vein, what should you do next on this patient&#39;s exam?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q29">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q29" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q29" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q29" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q29"></div>
-            </div>
+            <div class="study-note" data-study-note="q29"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 29">
               
               <button class="choice" type="button" role="listitem" data-card-id="q29" data-choice="A" data-correct="B">
@@ -2590,27 +1940,7 @@ mosaic color pattern indicates turbulence at the connection with the artery.</di
             <div class="label">Front</div>
             <div class="content question-text">What vessel is demonstrated as thrombosed on the image?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q30">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q30" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q30" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q30" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q30"></div>
-            </div>
+            <div class="study-note" data-study-note="q30"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 30">
               
               <button class="choice" type="button" role="listitem" data-card-id="q30" data-choice="A" data-correct="D">
@@ -2663,27 +1993,7 @@ to the muscular fascia. The lack of a corresponding artery also indicates a supe
             <div class="label">Front</div>
             <div class="content question-text">Sclerotherapy:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q31">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q31" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q31" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q31" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q31"></div>
-            </div>
+            <div class="study-note" data-study-note="q31"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 31">
               
               <button class="choice" type="button" role="listitem" data-card-id="q31" data-choice="A" data-correct="D">
@@ -2735,27 +2045,7 @@ vessels leading to overall atrophy of the vessels.</div>
             <div class="label">Front</div>
             <div class="content question-text">Virchow&#39;s triad of symptoms includes blood stasis, recent trauma and:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q32">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q32" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q32" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q32" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q32"></div>
-            </div>
+            <div class="study-note" data-study-note="q32"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 32">
               
               <button class="choice" type="button" role="listitem" data-card-id="q32" data-choice="A" data-correct="D">
@@ -2810,27 +2100,7 @@ of thrombus formation.</div>
             <div class="label">Front</div>
             <div class="content question-text">A patient presents for a venous insufficiency exam, but is unable to stand for the exam. How will this affect your exam?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q33">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q33" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q33" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q33" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q33"></div>
-            </div>
+            <div class="study-note" data-study-note="q33"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 33">
               
               <button class="choice" type="button" role="listitem" data-card-id="q33" data-choice="A" data-correct="A">
@@ -2882,27 +2152,7 @@ bent knees and hip joints which can inhibit/reduce the flow response to augmenta
             <div class="label">Front</div>
             <div class="content question-text">Which of the following are common risk factors for varicose vein formation?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q34">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q34" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q34" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q34" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q34"></div>
-            </div>
+            <div class="study-note" data-study-note="q34"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 34">
               
               <button class="choice" type="button" role="listitem" data-card-id="q34" data-choice="A" data-correct="D">
@@ -2953,27 +2203,7 @@ standing for long periods of time.</div>
             <div class="label">Front</div>
             <div class="content question-text">This image demonstrates which of the following?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q35">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q35" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q35" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q35" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q35"></div>
-            </div>
+            <div class="study-note" data-study-note="q35"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 35">
               
               <button class="choice" type="button" role="listitem" data-card-id="q35" data-choice="A" data-correct="C">
@@ -3026,27 +2256,7 @@ thrombus.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following causes of thrombosis is associated with anatomic variations of the thoracic outlet?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q36">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q36" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q36" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q36" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q36"></div>
-            </div>
+            <div class="study-note" data-study-note="q36"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 36">
               
               <button class="choice" type="button" role="listitem" data-card-id="q36" data-choice="A" data-correct="D">
@@ -3101,27 +2311,7 @@ medication/treatment</div>
             <div class="label">Front</div>
             <div class="content question-text">A patient presents for a lower extremity venous Doppler to rule out venous insufficiency. Which vessels should be completely evaluated for the exam?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q37">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q37" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q37" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q37" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q37"></div>
-            </div>
+            <div class="study-note" data-study-note="q37"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 37">
               
               <button class="choice" type="button" role="listitem" data-card-id="q37" data-choice="A" data-correct="D">
@@ -3172,27 +2362,7 @@ evaluated for reflux along with the superficial veins.</div>
             <div class="label">Front</div>
             <div class="content question-text">A patient presents with a script for a &#34;vascular ultrasound&#34; due to a history of Paget Schroetter syndrome. What type of exam should be performed for this patient?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q38">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q38" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q38" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q38" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q38"></div>
-            </div>
+            <div class="study-note" data-study-note="q38"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 38">
               
               <button class="choice" type="button" role="listitem" data-card-id="q38" data-choice="A" data-correct="D">
@@ -3243,27 +2413,7 @@ thoracic outlet syndrome.</div>
             <div class="label">Front</div>
             <div class="content question-text">A Greenfield filter is used to prevent which of the following?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q39">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q39" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q39" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q39" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q39"></div>
-            </div>
+            <div class="study-note" data-study-note="q39"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 39">
               
               <button class="choice" type="button" role="listitem" data-card-id="q39" data-choice="A" data-correct="D">
@@ -3317,27 +2467,7 @@ complications related to embolism from a DVT.</div>
             <div class="label">Front</div>
             <div class="content question-text">You perform a bilateral venous Doppler due to bilateral swelling and pain in the legs. If both external iliac veins look like the tracing on the image, which of the following should be reported on your technologist worksheet?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q40">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q40" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q40" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q40" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q40"></div>
-            </div>
+            <div class="study-note" data-study-note="q40"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 40">
               
               <button class="choice" type="button" role="listitem" data-card-id="q40" data-choice="A" data-correct="D">
@@ -3391,27 +2521,7 @@ thrombosis of the left common iliac vein. Only the left leg would demonstrate co
             <div class="label">Front</div>
             <div class="content question-text">The complication demonstrated on the image are most suggestive of what vascular abnormality?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q41">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q41" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q41" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q41" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q41"></div>
-            </div>
+            <div class="study-note" data-study-note="q41"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 41">
               
               <button class="choice" type="button" role="listitem" data-card-id="q41" data-choice="A" data-correct="C">
@@ -3466,27 +2576,7 @@ occluded, mild edema may develop. Peripheral arterial disease causes dry skin an
             <div class="label">Front</div>
             <div class="content question-text">Significant valvular disease in the right heart usually leads to:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q42">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q42" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q42" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q42" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q42"></div>
-            </div>
+            <div class="study-note" data-study-note="q42"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 42">
               
               <button class="choice" type="button" role="listitem" data-card-id="q42" data-choice="A" data-correct="B">
@@ -3541,27 +2631,7 @@ Aortic Regurgitation - pulsus bisferiens</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following will be administered to a patient with extensive DVT to cause lysis of the clot?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q43">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q43" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q43" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q43" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q43"></div>
-            </div>
+            <div class="study-note" data-study-note="q43"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 43">
               
               <button class="choice" type="button" role="listitem" data-card-id="q43" data-choice="A" data-correct="D">
@@ -3613,27 +2683,7 @@ thrombosis of the venous system.</div>
             <div class="label">Front</div>
             <div class="content question-text">While scanning the popliteal artery, you notice a thrombus in the popliteal vein. Which vein(s) should be evaluated next for ascending propagation of the clot?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q44">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q44" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q44" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q44" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q44"></div>
-            </div>
+            <div class="study-note" data-study-note="q44"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 44">
               
               <button class="choice" type="button" role="listitem" data-card-id="q44" data-choice="A" data-correct="B">
@@ -3683,27 +2733,7 @@ thrombosis of the venous system.</div>
             <div class="label">Front</div>
             <div class="content question-text">A patient presents with gangrene of the foot and toes. The most likely cause of these symptoms is:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q45">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q45" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q45" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q45" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q45"></div>
-            </div>
+            <div class="study-note" data-study-note="q45"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 45">
               
               <button class="choice" type="button" role="listitem" data-card-id="q45" data-choice="A" data-correct="A">
@@ -3753,27 +2783,7 @@ thrombosis of the venous system.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is related to the appearance of Rouleaux formation on the image?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q46">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q46" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q46" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q46" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q46"></div>
-            </div>
+            <div class="study-note" data-study-note="q46"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 46">
               
               <button class="choice" type="button" role="listitem" data-card-id="q46" data-choice="A" data-correct="D">
@@ -3824,27 +2834,7 @@ coin rolls from your bank which is called the Rouleaux Formation</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following describes symptoms of a patient with lymphedema?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q47">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q47" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q47" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q47" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q47"></div>
-            </div>
+            <div class="study-note" data-study-note="q47"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 47">
               
               <button class="choice" type="button" role="listitem" data-card-id="q47" data-choice="A" data-correct="B">
@@ -3898,27 +2888,7 @@ reduce swelling associated with DVT. Lymphedema is typically unilateral. DVT for
             <div class="label">Front</div>
             <div class="content question-text">Lower extremity ulcers are most commonly caused by __________________.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q48">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q48" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q48" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q48" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q48"></div>
-            </div>
+            <div class="study-note" data-study-note="q48"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 48">
               
               <button class="choice" type="button" role="listitem" data-card-id="q48" data-choice="A" data-correct="A">
@@ -3968,27 +2938,7 @@ reduce swelling associated with DVT. Lymphedema is typically unilateral. DVT for
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is a sonographic finding of acute DVT?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q49">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q49" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q49" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q49" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q49"></div>
-            </div>
+            <div class="study-note" data-study-note="q49"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 49">
               
               <button class="choice" type="button" role="listitem" data-card-id="q49" data-choice="A" data-correct="C">
@@ -4045,27 +2995,7 @@ THROMBOSED IJV - Engorged, non-compressible</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following correctly describes the effects of walking on the deep venous pressure in the lower extremity in a patient with post phlebitic syndrome? Walking causes a gradual decrease in pressure during the first 1-2 minutes of exercise that quickly returns to pre-exercise</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q50">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q50" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q50" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q50" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q50"></div>
-            </div>
+            <div class="study-note" data-study-note="q50"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 50">
               
               <button class="choice" type="button" role="listitem" data-card-id="q50" data-choice="A" data-correct="D">
@@ -4121,27 +3051,7 @@ retrograde flow in the veins.</div>
             <div class="label">Front</div>
             <div class="content question-text">Most lower extremity thrombosis begins in the ___________________________.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q51">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q51" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q51" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q51" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q51"></div>
-            </div>
+            <div class="study-note" data-study-note="q51"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 51">
               
               <button class="choice" type="button" role="listitem" data-card-id="q51" data-choice="A" data-correct="C">
@@ -4191,27 +3101,7 @@ retrograde flow in the veins.</div>
             <div class="label">Front</div>
             <div class="content question-text">A patient presents for a lower extremity venous Doppler exam due to a history of May-Thurner Syndrome. What vessel should you closely evaluate for related findings?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q52">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q52" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q52" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q52" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q52"></div>
-            </div>
+            <div class="study-note" data-study-note="q52"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 52">
               
               <button class="choice" type="button" role="listitem" data-card-id="q52" data-choice="A" data-correct="D">
@@ -4261,27 +3151,7 @@ retrograde flow in the veins.</div>
             <div class="label">Front</div>
             <div class="content question-text">When performing an upper extremity venous Doppler evaluation for thrombosis, which of the following veins should be evaluated on the exam?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q53">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q53" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q53" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q53" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q53"></div>
-            </div>
+            <div class="study-note" data-study-note="q53"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 53">
               
               <button class="choice" type="button" role="listitem" data-card-id="q53" data-choice="A" data-correct="B">
@@ -4333,27 +3203,7 @@ calf veins on a lower extremity exam.</div>
             <div class="label">Front</div>
             <div class="content question-text">The most common location of valvular insufficiency is:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q54">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q54" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q54" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q54" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q54"></div>
-            </div>
+            <div class="study-note" data-study-note="q54"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 54">
               
               <button class="choice" type="button" role="listitem" data-card-id="q54" data-choice="A" data-correct="A">
@@ -4404,27 +3254,7 @@ junction).</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is an expected clinical finding in a patient with a venous stasis ulcer?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q55">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q55" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q55" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q55" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q55"></div>
-            </div>
+            <div class="study-note" data-study-note="q55"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 55">
               
               <button class="choice" type="button" role="listitem" data-card-id="q55" data-choice="A" data-correct="B">
@@ -4477,27 +3307,7 @@ Arterial ulcers are usually severely painful, dry and crusty, deep ulcers locate
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is a sign or symptom of chronic DVT?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q56">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q56" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q56" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q56" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q56"></div>
-            </div>
+            <div class="study-note" data-study-note="q56"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 56">
               
               <button class="choice" type="button" role="listitem" data-card-id="q56" data-choice="A" data-correct="D">
@@ -4552,27 +3362,7 @@ redness are all related to venous stasis in the vessels below the area of DVT.</
             <div class="label">Front</div>
             <div class="content question-text">A patient presents for a lower extremity venous Doppler exam due to a history of Klippel - Trenaunay - Weber Syndrome. What are the expected findings on the exam?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q57">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q57" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q57" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q57" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q57"></div>
-            </div>
+            <div class="study-note" data-study-note="q57"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 57">
               
               <button class="choice" type="button" role="listitem" data-card-id="q57" data-choice="A" data-correct="B">
@@ -4623,27 +3413,7 @@ superficial varicosities.</div>
             <div class="label">Front</div>
             <div class="content question-text">The most significant complication seen with DVT is _______________________.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q58">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q58" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q58" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q58" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q58"></div>
-            </div>
+            <div class="study-note" data-study-note="q58"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 58">
               
               <button class="choice" type="button" role="listitem" data-card-id="q58" data-choice="A" data-correct="D">
@@ -4697,27 +3467,7 @@ artery and leads to the inability of the lungs to replace the oxygen in the bloo
             <div class="label">Front</div>
             <div class="content question-text">You perform a bilateral venous Doppler due to bilateral swelling and pain in the legs. Both common femoral vein waveforms look like the tracing on the image. These findings are most consistent with:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q59">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q59" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q59" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q59" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q59"></div>
-            </div>
+            <div class="study-note" data-study-note="q59"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 59">
               
               <button class="choice" type="button" role="listitem" data-card-id="q59" data-choice="A" data-correct="B">
@@ -4771,27 +3521,7 @@ obstruction would cause continuous flow in the lower extremities.</div>
             <div class="label">Front</div>
             <div class="content question-text">During a color evaluation of the common femoral vein, the patient is asked to perform the Valsalva maneuver. The blue color in the CFV changes to red for approximately 3 seconds before returning to blue. What do these color Doppler findings indicate?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q60">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q60" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q60" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q60" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q60"></div>
-            </div>
+            <div class="study-note" data-study-note="q60"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 60">
               
               <button class="choice" type="button" role="listitem" data-card-id="q60" data-choice="A" data-correct="D">
@@ -4842,27 +3572,7 @@ normal in the deep veins. 3 seconds or greater of flow reversal indicates signif
             <div class="label">Front</div>
             <div class="content question-text">Which of the following are common symptoms of chronic venous disease?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q61">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q61" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q61" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q61" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q61"></div>
-            </div>
+            <div class="study-note" data-study-note="q61"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 61">
               
               <button class="choice" type="button" role="listitem" data-card-id="q61" data-choice="A" data-correct="D">
@@ -4913,27 +3623,7 @@ signs of chronic venous disease.</div>
             <div class="label">Front</div>
             <div class="content question-text">The image attached demonstrates which of the following?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q62">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q62" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q62" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q62" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q62"></div>
-            </div>
+            <div class="study-note" data-study-note="q62"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 62">
               
               <button class="choice" type="button" role="listitem" data-card-id="q62" data-choice="A" data-correct="A">
@@ -4986,27 +3676,7 @@ system with &gt;3 sec of reflux indicates severe insufficiency.</div>
             <div class="label">Front</div>
             <div class="content question-text">A 65yr old female presents with left leg swelling for over one year. Mild hyperpigmentation is present in the distal calf and ankle area. These clinical findings are most suggestive of:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q63">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q63" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q63" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q63" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q63"></div>
-            </div>
+            <div class="study-note" data-study-note="q63"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 63">
               
               <button class="choice" type="button" role="listitem" data-card-id="q63" data-choice="A" data-correct="A">
@@ -5057,27 +3727,7 @@ insufficiency. Acute DVT would result in acute swelling with a red discoloration
             <div class="label">Front</div>
             <div class="content question-text">Venous perforators with a diameter of _______________ or greater will usually demonstrate reflux.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q64">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q64" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q64" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q64" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q64"></div>
-            </div>
+            <div class="study-note" data-study-note="q64"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 64">
               
               <button class="choice" type="button" role="listitem" data-card-id="q64" data-choice="A" data-correct="D">
@@ -5127,27 +3777,7 @@ insufficiency. Acute DVT would result in acute swelling with a red discoloration
             <div class="label">Front</div>
             <div class="content question-text">Venous gangrene usually involves ____________________________, while arterial gangrene usually involves________________________.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q65">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q65" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q65" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q65" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q65"></div>
-            </div>
+            <div class="study-note" data-study-note="q65"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 65">
               
               <button class="choice" type="button" role="listitem" data-card-id="q65" data-choice="A" data-correct="B">
@@ -5199,27 +3829,7 @@ insufficiency. Acute DVT would result in acute swelling with a red discoloration
             <div class="label">Front</div>
             <div class="content question-text">Warfarin is administered to a patient:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q66">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q66" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q66" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q66" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q66"></div>
-            </div>
+            <div class="study-note" data-study-note="q66"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 66">
               
               <button class="choice" type="button" role="listitem" data-card-id="q66" data-choice="A" data-correct="B">
@@ -5270,27 +3880,7 @@ for clot lysis in phlegmasia patients. Increased platelet aggregation would caus
             <div class="label">Front</div>
             <div class="content question-text">How is Heparin administered to a patient with DVT?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q67">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q67" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q67" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q67" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q67"></div>
-            </div>
+            <div class="study-note" data-study-note="q67"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 67">
               
               <button class="choice" type="button" role="listitem" data-card-id="q67" data-choice="A" data-correct="C">
@@ -5341,27 +3931,7 @@ thrombus.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following causes flow reversal in venous perforators?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q68">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q68" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q68" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q68" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q68"></div>
-            </div>
+            <div class="study-note" data-study-note="q68"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 68">
               
               <button class="choice" type="button" role="listitem" data-card-id="q68" data-choice="A" data-correct="B">
@@ -5412,27 +3982,7 @@ through the perforators to try to &#34;escape&#34; into the patent superficial s
             <div class="label">Front</div>
             <div class="content question-text">________________________ is a nonspecific sign of DVT. It is defined as pain experienced upon quick dorsiflexion of the foot.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q69">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q69" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q69" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q69" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q69"></div>
-            </div>
+            <div class="study-note" data-study-note="q69"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 69">
               
               <button class="choice" type="button" role="listitem" data-card-id="q69" data-choice="A" data-correct="B">
@@ -5484,27 +4034,7 @@ determine ulnar artery patency related to graft availability for removing the ra
             <div class="label">Front</div>
             <div class="content question-text">An acute, occlusive thrombus is identified in the femoral vein in the adductor canal. Which of the following veins will demonstrate related blood stasis?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q70">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q70" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q70" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q70" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q70"></div>
-            </div>
+            <div class="study-note" data-study-note="q70"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 70">
               
               <button class="choice" type="button" role="listitem" data-card-id="q70" data-choice="A" data-correct="B">
@@ -5558,27 +4088,7 @@ perforators in the thigh filling the vein with blood from the superficial system
             <div class="label">Front</div>
             <div class="content question-text">A varicose vein is usually:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q71">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q71" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q71" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q71" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q71"></div>
-            </div>
+            <div class="study-note" data-study-note="q71"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 71">
               
               <button class="choice" type="button" role="listitem" data-card-id="q71" data-choice="A" data-correct="D">
@@ -5628,27 +4138,7 @@ perforators in the thigh filling the vein with blood from the superficial system
             <div class="label">Front</div>
             <div class="content question-text">A patient in the ER has just been diagnosed with acute DVT of the popliteal vein. What would be the physician&#39;s preferred treatment plan?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q72">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q72" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q72" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q72" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q72"></div>
-            </div>
+            <div class="study-note" data-study-note="q72"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 72">
               
               <button class="choice" type="button" role="listitem" data-card-id="q72" data-choice="A" data-correct="D">
@@ -5699,27 +4189,7 @@ is out of the hospital.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following lower extremity vessels would most likely be occluded in a patient with Phlegmasia Alba Dolens?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q73">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q73" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q73" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q73" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q73"></div>
-            </div>
+            <div class="study-note" data-study-note="q73"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 73">
               
               <button class="choice" type="button" role="listitem" data-card-id="q73" data-choice="A" data-correct="D">
@@ -5771,27 +4241,7 @@ and markedly reducing arterial inflow. Leads to ischemia in entire extremity wit
             <div class="label">Front</div>
             <div class="content question-text">The attached picture is most suggestive of what acute vascular disorder?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q74">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q74" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q74" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q74" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q74"></div>
-            </div>
+            <div class="study-note" data-study-note="q74"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 74">
               
               <button class="choice" type="button" role="listitem" data-card-id="q74" data-choice="A" data-correct="B">
@@ -5844,27 +4294,7 @@ disease is a chronic disorder. CHF or bilateral DVT would cause bilateral swelli
             <div class="label">Front</div>
             <div class="content question-text">A patient presents 3 days after left hip surgery for a DVT evaluation. There is severe edema from the hip to the ankle and the leg has a mild cyanotic appearance. You identify acute thrombus from the common femoral vein through the calf veins. The great saphenous vein is also occluded by thrombus. What is the diagnosis for this condition?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q75">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q75" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q75" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q75" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q75"></div>
-            </div>
+            <div class="study-note" data-study-note="q75"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 75">
               
               <button class="choice" type="button" role="listitem" data-card-id="q75" data-choice="A" data-correct="A">
@@ -5917,27 +4347,7 @@ results in pallor.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following describes chronic lower extremity DVT?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q76">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q76" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q76" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q76" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q76"></div>
-            </div>
+            <div class="study-note" data-study-note="q76"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 76">
               
               <button class="choice" type="button" role="listitem" data-card-id="q76" data-choice="A" data-correct="A">
@@ -5989,27 +4399,7 @@ respiratory phasicity).</div>
             <div class="label">Front</div>
             <div class="content question-text">If greater saphenous venous flow velocity is approximately 20cm/s and appears continuous, which other vessel should be evaluated for a cause for the flow abnormality?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q77">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q77" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q77" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q77" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q77"></div>
-            </div>
+            <div class="study-note" data-study-note="q77"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 77">
               
               <button class="choice" type="button" role="listitem" data-card-id="q77" data-choice="A" data-correct="D">
@@ -6063,27 +4453,7 @@ femoral vein. The increased flow will increase the velocity in the GSV and cause
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is a cause for deep venous HTN?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q78">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q78" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q78" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q78" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q78"></div>
-            </div>
+            <div class="study-note" data-study-note="q78"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 78">
               
               <button class="choice" type="button" role="listitem" data-card-id="q78" data-choice="A" data-correct="B">
@@ -6134,27 +4504,7 @@ to thrombus formation, venous insufficiency, CHF, pregnancy</div>
             <div class="label">Front</div>
             <div class="content question-text">What is the most common lower extremity venous disorder?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q79">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q79" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q79" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q79" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q79"></div>
-            </div>
+            <div class="study-note" data-study-note="q79"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 79">
               
               <button class="choice" type="button" role="listitem" data-card-id="q79" data-choice="A" data-correct="B">
@@ -6204,27 +4554,7 @@ to thrombus formation, venous insufficiency, CHF, pregnancy</div>
             <div class="label">Front</div>
             <div class="content question-text">Proximal to a DVT in the femoral vein, the flow appears very slow and visible on 2D imaging. The red blood cells appear lined up or stacked in rolls. What is this phenomenon called?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q80">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q80" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q80" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q80" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q80"></div>
-            </div>
+            <div class="study-note" data-study-note="q80"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 80">
               
               <button class="choice" type="button" role="listitem" data-card-id="q80" data-choice="A" data-correct="D">
@@ -6277,27 +4607,7 @@ appear lined up or stacked in rolls. This phenomenon is called Rouleaux formatio
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is the most common cause of venous stasis ulcer formation on the distal medial calf?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q81">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q81" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q81" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q81" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q81"></div>
-            </div>
+            <div class="study-note" data-study-note="q81"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 81">
               
               <button class="choice" type="button" role="listitem" data-card-id="q81" data-choice="A" data-correct="A">
@@ -6348,27 +4658,7 @@ formation on the distal medial calf.</div>
             <div class="label">Front</div>
             <div class="content question-text">A thrombus is identified in the soleal veins of the calf. The thrombus will propagate into what calf veins first?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q82">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q82" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q82" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q82" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q82"></div>
-            </div>
+            <div class="study-note" data-study-note="q82"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 82">
               
               <button class="choice" type="button" role="listitem" data-card-id="q82" data-choice="A" data-correct="A">
@@ -6421,27 +4711,7 @@ posterior tibial and peroneal veins.</div>
             <div class="label">Front</div>
             <div class="content question-text">It is not possible to evaluate and document valvular insufficiency with only:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q83">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q83" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q83" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q83" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q83"></div>
-            </div>
+            <div class="study-note" data-study-note="q83"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 83">
               
               <button class="choice" type="button" role="listitem" data-card-id="q83" data-choice="A" data-correct="D">
@@ -6492,27 +4762,7 @@ assessed in 2D but this does not help quantify valvular incompetence.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following changes in flow can be seen with a Baker cyst?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q84">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q84" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q84" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q84" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q84"></div>
-            </div>
+            <div class="study-note" data-study-note="q84"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 84">
               
               <button class="choice" type="button" role="listitem" data-card-id="q84" data-choice="A" data-correct="A">
@@ -6564,27 +4814,7 @@ extrinsic compression on the popliteal artery.</div>
             <div class="label">Front</div>
             <div class="content question-text">Lymphedema is commonly related to:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q85">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q85" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q85" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q85" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q85"></div>
-            </div>
+            <div class="study-note" data-study-note="q85"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 85">
               
               <button class="choice" type="button" role="listitem" data-card-id="q85" data-choice="A" data-correct="B">
@@ -6636,27 +4866,7 @@ cancer can also cause lymphedema.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following cardiac abnormalities will have no effect on venous flow characteristics in the lower extremities?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q86">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q86" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q86" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q86" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q86"></div>
-            </div>
+            <div class="study-note" data-study-note="q86"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 86">
               
               <button class="choice" type="button" role="listitem" data-card-id="q86" data-choice="A" data-correct="C">
@@ -6709,27 +4919,7 @@ is transmitted further away from the heart due to the ripple effect.</div>
             <div class="label">Front</div>
             <div class="content question-text">A venous insufficiency exam is performed for a patient with multiple varicosities. The deep system is found to be competent, but there is insufficiency present in the great saphenous vein. Which of the following statements regarding the findings is true?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q87">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q87" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q87" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q87" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q87"></div>
-            </div>
+            <div class="study-note" data-study-note="q87"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 87">
               
               <button class="choice" type="button" role="listitem" data-card-id="q87" data-choice="A" data-correct="B">
@@ -6780,27 +4970,7 @@ Varicosities with incompetent valves causing superficial venous insufficiency an
             <div class="label">Front</div>
             <div class="content question-text">What is the most accurate sonographic indicator for the presence of DVT?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q88">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q88" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q88" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q88" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q88"></div>
-            </div>
+            <div class="study-note" data-study-note="q88"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 88">
               
               <button class="choice" type="button" role="listitem" data-card-id="q88" data-choice="A" data-correct="B">
@@ -6850,27 +5020,7 @@ Varicosities with incompetent valves causing superficial venous insufficiency an
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is related to chronic DVT?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q89">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q89" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q89" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q89" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q89"></div>
-            </div>
+            <div class="study-note" data-study-note="q89"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 89">
               
               <button class="choice" type="button" role="listitem" data-card-id="q89" data-choice="A" data-correct="C">
@@ -6921,27 +5071,7 @@ more painful and dry.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following carries an increased risk of pulmonary embolism?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q90">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q90" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q90" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q90" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q90"></div>
-            </div>
+            <div class="study-note" data-study-note="q90"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 90">
               
               <button class="choice" type="button" role="listitem" data-card-id="q90" data-choice="A" data-correct="C">
@@ -6993,27 +5123,7 @@ An embolus in the arterial system will only travel until it becomes lodged in a 
             <div class="label">Front</div>
             <div class="content question-text">Which of the following statements is true regarding a partial venous obstruction?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q91">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q91" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q91" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q91" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q91"></div>
-            </div>
+            <div class="study-note" data-study-note="q91"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 91">
               
               <button class="choice" type="button" role="listitem" data-card-id="q91" data-choice="A" data-correct="A">
@@ -7067,27 +5177,7 @@ partial DVT.</div>
             <div class="label">Front</div>
             <div class="content question-text">A patient presents with intermittent left lower leg swelling for several months. The popliteal vein demonstrates a collapsed appearance with echogenic, thickened walls. These findings are most consistent with:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q92">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q92" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q92" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q92" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q92"></div>
-            </div>
+            <div class="study-note" data-study-note="q92"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 92">
               
               <button class="choice" type="button" role="listitem" data-card-id="q92" data-choice="A" data-correct="B">
@@ -7138,27 +5228,7 @@ pliability of the walls leading to a semi-collapsed appearance. Acute femoral DV
             <div class="label">Front</div>
             <div class="content question-text">A patient presents with bilateral distention of the internal jugular veins and arm swelling. The lower extremities are normal on physical examination. These findings are most suggestive of:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q93">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q93" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q93" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q93" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q93"></div>
-            </div>
+            <div class="study-note" data-study-note="q93"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 93">
               
               <button class="choice" type="button" role="listitem" data-card-id="q93" data-choice="A" data-correct="B">
@@ -7210,27 +5280,7 @@ and cardiac pulsatility will be lost in the bilateral IJVs due to the SVC obstru
             <div class="label">Front</div>
             <div class="content question-text">The red arrows on the image indicate which of the following:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q94">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q94" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q94" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q94" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q94"></div>
-            </div>
+            <div class="study-note" data-study-note="q94"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 94">
               
               <button class="choice" type="button" role="listitem" data-card-id="q94" data-choice="A" data-correct="B">
@@ -7283,27 +5333,7 @@ venous insufficiency.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following portions of the leg would be swollen with chronic insufficiency?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q95">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q95" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q95" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q95" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q95"></div>
-            </div>
+            <div class="study-note" data-study-note="q95"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 95">
               
               <button class="choice" type="button" role="listitem" data-card-id="q95" data-choice="A" data-correct="B">
@@ -7353,27 +5383,7 @@ venous insufficiency.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following carries an increased risk of developing varicose veins?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q96">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q96" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q96" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q96" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q96"></div>
-            </div>
+            <div class="study-note" data-study-note="q96"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 96">
               
               <button class="choice" type="button" role="listitem" data-card-id="q96" data-choice="A" data-correct="A">
@@ -7424,27 +5434,7 @@ the risk. The other three choices would reduce the risk of developing varicose v
             <div class="label">Front</div>
             <div class="content question-text">A clot in the gastrocnemius veins will first propagate into what vessel(s)?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q97">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q97" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q97" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q97" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q97"></div>
-            </div>
+            <div class="study-note" data-study-note="q97"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 97">
               
               <button class="choice" type="button" role="listitem" data-card-id="q97" data-choice="A" data-correct="A">
@@ -7497,27 +5487,7 @@ into popliteal vein.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is not an expected finding related to the abnormality displayed on the image?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q98">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q98" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q98" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q98" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q98"></div>
-            </div>
+            <div class="study-note" data-study-note="q98"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 98">
               
               <button class="choice" type="button" role="listitem" data-card-id="q98" data-choice="A" data-correct="B">
@@ -7573,27 +5543,7 @@ augmentation.</div>
             <div class="label">Front</div>
             <div class="content question-text">The mid left femoral vein appears to be occluded by hypoechoic, non- compressible thrombus. The popliteal vein is completely compressible. Which of the following Doppler waveform characteristics is expected from the popliteal vein?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q99">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q99" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q99" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q99" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q99"></div>
-            </div>
+            <div class="study-note" data-study-note="q99"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 99">
               
               <button class="choice" type="button" role="listitem" data-card-id="q99" data-choice="A" data-correct="D">
@@ -7645,27 +5595,7 @@ obstruction.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following describes an abnormal response to proximal augmentation?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q100">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q100" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q100" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q100" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q100"></div>
-            </div>
+            <div class="study-note" data-study-note="q100"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 100">
               
               <button class="choice" type="button" role="listitem" data-card-id="q100" data-choice="A" data-correct="D">
@@ -7718,27 +5648,7 @@ Valsalva maneuver can also be used for proximal augmentation. Flow reversal begi
             <div class="label">Front</div>
             <div class="content question-text">Localized redness and warmth of the distal calf is most commonly associated with:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q101">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q101" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q101" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q101" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q101"></div>
-            </div>
+            <div class="study-note" data-study-note="q101"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 101">
               
               <button class="choice" type="button" role="listitem" data-card-id="q101" data-choice="A" data-correct="C">
@@ -7788,27 +5698,7 @@ Valsalva maneuver can also be used for proximal augmentation. Flow reversal begi
             <div class="label">Front</div>
             <div class="content question-text">Post-phlebitic Syndrome:</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q102">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q102" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q102" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q102" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q102"></div>
-            </div>
+            <div class="study-note" data-study-note="q102"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 102">
               
               <button class="choice" type="button" role="listitem" data-card-id="q102" data-choice="A" data-correct="B">
@@ -7859,27 +5749,7 @@ present.</div>
             <div class="label">Front</div>
             <div class="content question-text">A patient presents with persistent calf pain after a recent biking accident and spending a few days on bed rest. After visual inspection of the right leg, what type of vascular exam should be performed?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q103">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q103" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q103" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q103" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q103"></div>
-            </div>
+            <div class="study-note" data-study-note="q103"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 103">
               
               <button class="choice" type="button" role="listitem" data-card-id="q103" data-choice="A" data-correct="D">
@@ -7932,27 +5802,7 @@ while on bed rest most likely caused a DVT to form in the leg.</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following is a long term treatment for DVT?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q104">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q104" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q104" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q104" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q104"></div>
-            </div>
+            <div class="study-note" data-study-note="q104"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 104">
               
               <button class="choice" type="button" role="listitem" data-card-id="q104" data-choice="A" data-correct="D">
@@ -8008,27 +5858,7 @@ Recurrent DVT – Warfarin prescribed for 6+ months</div>
             <div class="label">Front</div>
             <div class="content question-text">Which of the following correctly describes DVT in the lower extremity?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q105">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q105" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q105" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q105" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q105"></div>
-            </div>
+            <div class="study-note" data-study-note="q105"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 105">
               
               <button class="choice" type="button" role="listitem" data-card-id="q105" data-choice="A" data-correct="A">
@@ -8080,27 +5910,7 @@ somewhat pliable upon compression. Chronic thrombus will be non-pliable upon com
             <div class="label">Front</div>
             <div class="content question-text">The Valsalva maneuver is most useful when trying to assess which of the following?</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q106">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q106" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q106" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q106" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q106"></div>
-            </div>
+            <div class="study-note" data-study-note="q106"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 106">
               
               <button class="choice" type="button" role="listitem" data-card-id="q106" data-choice="A" data-correct="D">
@@ -8151,27 +5961,7 @@ heart. If the venous valves are incompetent, flow reversal will be seen while th
             <div class="label">Front</div>
             <div class="content question-text">Venous ulcers are normally located on the _______________, while arterial ulcers are normally found on the ____________.</div>
             
-            <div class="study-panel">
-              <div class="study-head">
-                <div class="study-title">Study Mode</div>
-                <div class="study-status" data-study-status="q107">Not answered yet</div>
-              </div>
-              <div class="study-actions">
-                <button class="study-button" type="button" data-card-id="q107" data-result="correct">
-                  <strong>I got it right</strong>
-                  <span>Mark this as understood</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q107" data-result="incorrect">
-                  <strong>I missed it</strong>
-                  <span>Keep this in review</span>
-                </button>
-                <button class="study-button" type="button" data-card-id="q107" data-result="reset">
-                  <strong>Clear status</strong>
-                  <span>Remove your saved result</span>
-                </button>
-              </div>
-              <div class="study-note" data-study-note="q107"></div>
-            </div>
+            <div class="study-note" data-study-note="q107"></div>
             <div class="choices" role="list" aria-label="Answer choices for question 107">
               
               <button class="choice" type="button" role="listitem" data-card-id="q107" data-choice="A" data-correct="C">
@@ -8307,22 +6097,17 @@ Powered by ExamBuilder. Copyright ©2026</div>
     }
 
     function applyStudyState(state) {
-      document.querySelectorAll("[data-study-status]").forEach((node) => {
-        const cardId = node.getAttribute("data-study-status");
+      document.querySelectorAll("[data-study-note]").forEach((node) => {
+        const cardId = node.getAttribute("data-study-note");
         const note = document.querySelector('[data-study-note="' + cardId + '"]');
         const current = state[cardId] || { status: null, selectedChoice: null };
-        node.textContent = current.status === "correct" ? "Marked understood" : current.status === "incorrect" ? "Marked for review" : "Not answered yet";
         if (note) {
           if (current.selectedChoice && current.status === "correct") {
-            note.textContent = "You selected the correct answer. Saved on this device.";
+            note.textContent = "Correct. Saved on this device.";
           } else if (current.selectedChoice && current.status === "incorrect") {
-            note.textContent = "You selected the wrong answer. The correct option is highlighted.";
-          } else if (current.status === "correct") {
-            note.textContent = "Saved as understood on this device.";
-          } else if (current.status === "incorrect") {
-            note.textContent = "Saved as needs review on this device.";
+            note.textContent = "Incorrect. The correct option is highlighted.";
           } else {
-            note.textContent = "";
+            note.textContent = "Choose an answer to track your progress.";
           }
           note.className = "study-note" + (current.status ? " " + current.status : "");
         }
@@ -8333,23 +6118,6 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     const studyState = loadStudyState();
     applyStudyState(studyState);
-
-    document.querySelectorAll(".study-button").forEach((button) => {
-      button.addEventListener("click", () => {
-        const cardId = button.getAttribute("data-card-id");
-        const result = button.getAttribute("data-result");
-        if (!studyState[cardId]) {
-          studyState[cardId] = { status: null, selectedChoice: null };
-        }
-        if (result === "reset") {
-          delete studyState[cardId];
-        } else {
-          studyState[cardId].status = result;
-        }
-        saveStudyState(studyState);
-        applyStudyState(studyState);
-      });
-    });
 
     document.querySelectorAll(".choice").forEach((button) => {
       button.addEventListener("click", () => {
