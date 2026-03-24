@@ -21,62 +21,64 @@ FLASHCARDS_TEMPLATE = """
     :root {
       color-scheme: light;
       --bg: #ffffff;
-      --bg-soft: #f7fcfd;
+      --bg-soft: #f7f8fb;
       --card: #ffffff;
-      --card-soft: #fbfeff;
-      --ink: #26648e;
-      --muted: #6a879e;
-      --accent: #53d2dc;
-      --accent-strong: #4f8fc0;
-      --heading: #26648e;
-      --subheading: #4d7692;
-      --success: #53d2dc;
-      --danger: #4f8fc0;
-      --warning: #ffe3b3;
-      --border: rgba(38, 100, 142, 0.14);
-      --shadow: 0 18px 42px rgba(38, 100, 142, 0.10);
-      --shadow-soft: 0 8px 20px rgba(38, 100, 142, 0.06);
+      --card-soft: #fbfbfc;
+      --ink: #2D3142;
+      --muted: #667085;
+      --accent: #EF8354;
+      --accent-strong: #4F5D75;
+      --heading: #2D3142;
+      --subheading: #4F5D75;
+      --success: #2f9e61;
+      --danger: #d94841;
+      --warning: #EF8354;
+      --border: rgba(45, 49, 66, 0.12);
+      --shadow: 0 18px 40px rgba(45, 49, 66, 0.10);
+      --shadow-soft: 0 8px 20px rgba(45, 49, 66, 0.06);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(83, 210, 220, 0.10), transparent 24%),
-        radial-gradient(circle at 100% 0%, rgba(255, 227, 179, 0.45), transparent 18%),
-        linear-gradient(180deg, #ffffff 0%, #f9fdfe 100%);
+        radial-gradient(circle at top left, rgba(239, 131, 84, 0.08), transparent 20%),
+        linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
       color: var(--ink);
       min-height: 100vh;
     }
     .wrap {
-      width: min(1120px, calc(100% - 2.5rem));
+      width: min(1120px, calc(100% - 2.25rem));
       margin: 0 auto;
-      padding: 1.25rem 0 4rem;
+      padding: 1rem 0 3.5rem;
     }
     .hero {
       position: relative;
       overflow: hidden;
-      margin-bottom: 1.5rem;
-      padding: clamp(1.5rem, 2.5vw, 2.2rem);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: linear-gradient(135deg, #26648e, #4f8fc0);
+      margin-bottom: 1.15rem;
+      padding: clamp(1.35rem, 2.2vw, 1.9rem);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at top right, rgba(239, 131, 84, 0.18), transparent 22%),
+        linear-gradient(135deg, #2D3142, #4F5D75);
       box-shadow: var(--shadow);
-      animation: rise-in 560ms ease-out both;
+      animation: rise-in 480ms ease-out both;
     }
     .hero::after {
       content: "";
       position: absolute;
-      inset: auto -8% -35% auto;
-      width: 240px;
+      right: -5%;
+      bottom: -22%;
+      width: 260px;
       aspect-ratio: 1;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 227, 179, 0.26), transparent 70%);
+      background: radial-gradient(circle, rgba(239, 131, 84, 0.18), transparent 70%);
       pointer-events: none;
     }
     .eyebrow {
-      margin: 0 0 0.75rem;
-      color: #d5fbff;
+      margin: 0 0 0.7rem;
+      color: rgba(255,255,255,0.84);
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.18em;
@@ -84,130 +86,134 @@ FLASHCARDS_TEMPLATE = """
     }
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 4.8vw, 3.8rem);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
-      max-width: 14ch;
-      text-wrap: balance;
+      max-width: 11ch;
       color: #ffffff;
+      font-size: clamp(2.1rem, 4.8vw, 4rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      text-wrap: balance;
     }
     .subhead {
-      margin: 1rem 0 0;
-      color: rgba(255,255,255,0.88);
-      font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+      margin: 0.85rem 0 0;
+      max-width: 48ch;
+      color: rgba(255,255,255,0.84);
+      font-size: clamp(1rem, 1.3vw, 1.08rem);
       line-height: 1.6;
-      max-width: 60ch;
+    }
+    .hero-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1rem;
     }
     .hero-stats {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 1rem;
+      gap: 0.7rem;
     }
     .hero-stat {
-      padding: 0.72rem 0.95rem;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.18);
+      min-width: 118px;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.08);
       color: #ffffff;
-      min-width: 120px;
     }
     .hero-stat strong {
       display: block;
       font-size: 1rem;
-      color: #ffffff;
     }
     .hero-stat span {
       display: block;
       margin-top: 0.18rem;
+      color: rgba(255,255,255,0.70);
       font-size: 0.82rem;
-      color: rgba(255,255,255,0.76);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
     .toolbar {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
+      gap: 0.7rem;
     }
     .toolbar a, .toolbar button {
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.98);
-      color: var(--ink);
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+      color: #ffffff;
       border-radius: 999px;
-      padding: 0.78rem 1.05rem;
+      padding: 0.8rem 1rem;
       cursor: pointer;
       text-decoration: none;
       font: inherit;
       font-weight: 700;
-      box-shadow: var(--shadow-soft);
       transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
     }
     .toolbar a:hover, .toolbar button:hover {
       transform: translateY(-1px);
-      border-color: rgba(83, 210, 220, 0.40);
-      background: #f2fbfc;
+      border-color: rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.14);
     }
     .cards {
       display: grid;
-      gap: 1.1rem;
+      gap: 1rem;
     }
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 20px;
+      border-radius: 18px;
       box-shadow: var(--shadow);
       overflow: hidden;
-      animation: rise-in 520ms ease-out both;
-      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      animation: rise-in 460ms ease-out both;
+      transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
     }
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 22px 52px rgba(38, 100, 142, 0.12);
-      border-color: rgba(83, 210, 220, 0.28);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(45, 49, 66, 0.10);
+      border-color: rgba(239, 131, 84, 0.22);
     }
     .card-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding: 1rem 1.2rem;
+      padding: 0.95rem 1.15rem;
       border-bottom: 1px solid var(--border);
       background:
-        linear-gradient(135deg, rgba(83, 210, 220, 0.12), rgba(79, 143, 192, 0.08)),
-        #f8fdfe;
+        linear-gradient(135deg, rgba(239, 131, 84, 0.08), rgba(79, 93, 117, 0.03)),
+        #fbfbfc;
     }
     .card-number {
+      color: var(--accent-strong);
       font-size: 0.9rem;
-      text-transform: uppercase;
+      font-weight: 800;
       letter-spacing: 0.08em;
-      color: var(--accent);
-      font-weight: 700;
+      text-transform: uppercase;
     }
     .pill {
       padding: 0.3rem 0.65rem;
       border-radius: 999px;
-      background: rgba(79, 143, 192, 0.12);
-      color: var(--accent-strong);
-      font-size: 0.85rem;
+      background: rgba(239, 131, 84, 0.12);
+      color: var(--accent);
+      font-size: 0.84rem;
       font-weight: 700;
     }
     .card-body {
-      padding: 1.2rem;
       display: grid;
       gap: 1rem;
+      padding: 1.15rem;
     }
     .card-side {
       display: grid;
       gap: 0.75rem;
     }
     .label {
-      font-size: 0.78rem;
+      color: var(--subheading);
+      font-size: 0.77rem;
+      font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent-strong);
-      font-weight: 700;
     }
     .content {
       font-size: 1rem;
@@ -215,10 +221,22 @@ FLASHCARDS_TEMPLATE = """
       white-space: pre-wrap;
     }
     .question-text {
-      font-size: clamp(1.02rem, 1.45vw, 1.16rem);
       color: var(--heading);
-      font-weight: 650;
+      font-size: clamp(1.02rem, 1.35vw, 1.15rem);
+      font-weight: 700;
       letter-spacing: -0.01em;
+    }
+    .study-note {
+      min-height: 1.15rem;
+      padding: 0 0.2rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .study-note.correct {
+      color: var(--success);
+    }
+    .study-note.incorrect {
+      color: var(--danger);
     }
     .choices {
       display: grid;
@@ -231,113 +249,101 @@ FLASHCARDS_TEMPLATE = """
     .choice {
       appearance: none;
       width: 100%;
-      text-align: left;
-      font: inherit;
+      border: 1px solid rgba(45, 49, 66, 0.10);
+      border-radius: 12px;
+      background: #ffffff;
       color: var(--ink);
+      cursor: pointer;
+      font: inherit;
       line-height: 1.55;
       padding: 0.95rem 1rem;
-      border-radius: 12px;
-      border: 1px solid rgba(38, 100, 142, 0.10);
-      background: #ffffff;
-      cursor: pointer;
+      text-align: left;
       transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
     }
     .choice:hover {
       transform: translateY(-1px);
-      border-color: rgba(83, 210, 220, 0.32);
-      background: #f4fcfd;
+      border-color: rgba(239, 131, 84, 0.28);
+      background: #fff8f5;
     }
     .choice-label {
-      font-weight: 700;
       color: var(--accent);
+      font-weight: 800;
       margin-right: 0.3rem;
     }
     .choice.correct {
-      border-color: rgba(83, 210, 220, 0.55);
-      background: rgba(83, 210, 220, 0.12);
+      border-color: rgba(47, 158, 97, 0.42);
+      background: rgba(47, 158, 97, 0.10);
     }
     .choice.incorrect {
-      border-color: rgba(79, 143, 192, 0.46);
-      background: rgba(79, 143, 192, 0.12);
+      border-color: rgba(217, 72, 65, 0.40);
+      background: rgba(217, 72, 65, 0.10);
     }
     .choice.revealed-correct {
-      border-color: rgba(255, 227, 179, 0.84);
-      box-shadow: inset 0 0 0 1px rgba(255, 227, 179, 0.34);
-    }
-    .study-note {
-      min-height: 1.2rem;
-      color: var(--muted);
-      font-size: 0.92rem;
-      padding: 0 0.2rem;
-    }
-    .study-note.correct {
-      color: var(--success);
-    }
-    .study-note.incorrect {
-      color: var(--danger);
+      border-color: rgba(47, 158, 97, 0.28);
+      box-shadow: inset 0 0 0 1px rgba(47, 158, 97, 0.16);
     }
     img {
+      display: block;
       max-width: 100%;
       height: auto;
-      border-radius: 18px;
       border: 1px solid var(--border);
+      border-radius: 16px;
       background: #ffffff;
-      display: block;
       box-shadow: var(--shadow-soft);
     }
     .answer-shell {
-      border-top: 1px dashed rgba(38, 100, 142, 0.18);
+      border-top: 1px dashed rgba(45, 49, 66, 0.14);
       padding-top: 1rem;
     }
     .answer-toggle {
-      width: 100%;
       appearance: none;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: linear-gradient(180deg, #ffffff, #f5fbfd);
-      color: var(--heading);
-      font: inherit;
-      font-weight: 750;
-      font-size: 1rem;
-      text-align: left;
-      padding: 1rem 1.1rem;
-      cursor: pointer;
-      min-height: 62px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
+      width: 100%;
+      min-height: 60px;
+      padding: 0.95rem 1.05rem;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, #ffffff, #fbfbfc);
+      color: var(--heading);
+      cursor: pointer;
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 750;
+      text-align: left;
       transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
     }
     .answer-toggle:hover {
       transform: translateY(-1px);
-      border-color: rgba(83, 210, 220, 0.38);
-      background: linear-gradient(180deg, #fbfeff, #eef9fc);
+      border-color: rgba(239, 131, 84, 0.24);
+      background: linear-gradient(180deg, #ffffff, #fff8f5);
     }
     .answer-toggle:focus-visible,
     .choice:focus-visible,
     .toolbar a:focus-visible,
     .toolbar button:focus-visible {
-      outline: 2px solid rgba(83, 210, 220, 0.72);
+      outline: 2px solid rgba(239, 131, 84, 0.45);
       outline-offset: 2px;
     }
     .answer-chevron {
+      color: var(--accent);
       flex: 0 0 auto;
       font-size: 1.15rem;
-      color: var(--accent-strong);
       transition: transform 240ms ease;
     }
     .answer-panel {
       display: grid;
       grid-template-rows: 0fr;
-      transition: grid-template-rows 320ms ease, opacity 220ms ease, margin-top 220ms ease;
       opacity: 0;
       margin-top: 0;
+      transition: grid-template-rows 320ms ease, opacity 220ms ease, margin-top 220ms ease;
     }
     .answer-panel.open {
       grid-template-rows: 1fr;
       opacity: 1;
-      margin-top: 0.9rem;
+      margin-top: 0.85rem;
     }
     .answer-panel-inner {
       overflow: hidden;
@@ -356,7 +362,7 @@ FLASHCARDS_TEMPLATE = """
     @keyframes rise-in {
       from {
         opacity: 0;
-        transform: translateY(16px);
+        transform: translateY(14px);
       }
       to {
         opacity: 1;
@@ -371,23 +377,31 @@ FLASHCARDS_TEMPLATE = """
         transition: none;
       }
     }
-    @media (max-width: 640px) {
-      .wrap { width: min(100% - 1rem, 1120px); padding-top: 1rem; }
-      .hero {
-        border-radius: 22px;
-        padding: 1.15rem;
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(100% - 1rem, 1120px);
+        padding-top: 0.85rem;
       }
-      .card-header, .card-body { padding: 1rem; }
+      .hero {
+        padding: 1.1rem;
+        border-radius: 18px;
+      }
+      .hero-row {
+        align-items: stretch;
+      }
       .toolbar {
-        display: grid;
-        grid-template-columns: 1fr;
+        width: 100%;
       }
       .toolbar a, .toolbar button {
         width: 100%;
+        justify-content: center;
         text-align: center;
       }
       h1 {
         max-width: none;
+      }
+      .card-header, .card-body {
+        padding: 1rem;
       }
     }
   </style>
@@ -397,24 +411,26 @@ FLASHCARDS_TEMPLATE = """
     <section class="hero">
       <p class="eyebrow">Review Deck</p>
       <h1>{{ title }}</h1>
-      <p class="subhead">{{ flashcards|length }} flashcards extracted from this PDF. Open each back panel to review the correct answer and full feedback.</p>
-      <div class="hero-stats">
-        <div class="hero-stat"><strong>{{ flashcards|length }}</strong><span>Total Cards</span></div>
-        <div class="hero-stat"><strong id="mastered-count">0</strong><span>Mastered</span></div>
-        <div class="hero-stat"><strong id="needs-review-count">0</strong><span>Needs Review</span></div>
-      </div>
-      <div class="toolbar">
-        <a href="../index.html">Back to index</a>
-        <button type="button" id="open-all">Open all backs</button>
-        <button type="button" id="close-all">Close all backs</button>
+      <p class="subhead">{{ flashcards|length }} flashcards extracted from this PDF. Pick an answer to track what you know, then open the back when you want the explanation.</p>
+      <div class="hero-row">
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>{{ flashcards|length }}</strong><span>Total Cards</span></div>
+          <div class="hero-stat"><strong id="mastered-count">0</strong><span>Correct</span></div>
+          <div class="hero-stat"><strong id="needs-review-count">0</strong><span>Incorrect</span></div>
+        </div>
+        <div class="toolbar">
+          <a href="../index.html">Back to index</a>
+          <button type="button" id="open-all">Open all backs</button>
+          <button type="button" id="close-all">Close all backs</button>
+        </div>
       </div>
     </section>
     <section class="cards">
       {% for flashcard in flashcards %}
-      <article class="card" id="q{{ flashcard.number }}" style="animation-delay: {{ loop.index0 * 35 }}ms;">
+      <article class="card" id="q{{ flashcard.number }}" style="animation-delay: {{ loop.index0 * 30 }}ms;">
         <div class="card-header">
           <div class="card-number">Question {{ flashcard.number }}</div>
-          {% if flashcard.is_missed %}<div class="pill">Missed</div>{% endif %}
+          {% if flashcard.is_missed %}<div class="pill">Missed on source exam</div>{% endif %}
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -455,7 +471,6 @@ FLASHCARDS_TEMPLATE = """
   </main>
   <script>
     const answerToggles = Array.from(document.querySelectorAll(".answer-toggle"));
-    const answerPanels = Array.from(document.querySelectorAll(".answer-panel"));
     const storageKey = "flashcard-study-state:" + window.location.pathname;
     const masteredCount = document.getElementById("mastered-count");
     const needsReviewCount = document.getElementById("needs-review-count");
@@ -522,17 +537,13 @@ FLASHCARDS_TEMPLATE = """
 
     function renderChoiceState(cardId, state) {
       const group = document.querySelectorAll('.choice[data-card-id="' + cardId + '"]');
-      if (!group.length) {
-        return;
-      }
+      if (!group.length) return;
       const selectedChoice = state && state.selectedChoice ? state.selectedChoice : null;
       const correctChoice = group[0].getAttribute("data-correct");
       group.forEach((item) => {
         item.classList.remove("correct", "incorrect", "revealed-correct");
         const itemChoice = item.getAttribute("data-choice");
-        if (!selectedChoice) {
-          return;
-        }
+        if (!selectedChoice) return;
         if (itemChoice === selectedChoice) {
           item.classList.add(selectedChoice === correctChoice ? "correct" : "incorrect");
         }
@@ -545,18 +556,16 @@ FLASHCARDS_TEMPLATE = """
     function applyStudyState(state) {
       document.querySelectorAll("[data-study-note]").forEach((node) => {
         const cardId = node.getAttribute("data-study-note");
-        const note = document.querySelector('[data-study-note="' + cardId + '"]');
+        const note = node;
         const current = state[cardId] || { status: null, selectedChoice: null };
-        if (note) {
-          if (current.selectedChoice && current.status === "correct") {
-            note.textContent = "Correct. Saved on this device.";
-          } else if (current.selectedChoice && current.status === "incorrect") {
-            note.textContent = "Incorrect. The correct option is highlighted.";
-          } else {
-            note.textContent = "";
-          }
-          note.className = "study-note" + (current.status ? " " + current.status : "");
+        if (current.selectedChoice && current.status === "correct") {
+          note.textContent = "Correct.";
+        } else if (current.selectedChoice && current.status === "incorrect") {
+          note.textContent = "Incorrect. The correct option is highlighted.";
+        } else {
+          note.textContent = "";
         }
+        note.className = "study-note" + (current.status ? " " + current.status : "");
         renderChoiceState(cardId, current);
       });
       updateCounts(state);
@@ -570,9 +579,7 @@ FLASHCARDS_TEMPLATE = """
         const cardId = button.getAttribute("data-card-id");
         const correct = button.getAttribute("data-correct");
         const choice = button.getAttribute("data-choice");
-        if (!correct) {
-          return;
-        }
+        if (!correct) return;
         studyState[cardId] = {
           status: choice === correct ? "correct" : "incorrect",
           selectedChoice: choice,
@@ -597,41 +604,42 @@ INDEX_TEMPLATE = """
   <style>
     :root {
       --bg: #ffffff;
-      --ink: #26648e;
-      --muted: #6a879e;
-      --accent: #53d2dc;
-      --accent-strong: #4f8fc0;
-      --border: rgba(38, 100, 142, 0.14);
-      --shadow: 0 18px 42px rgba(38, 100, 142, 0.10);
-      --shadow-soft: 0 8px 20px rgba(38, 100, 142, 0.06);
+      --ink: #2D3142;
+      --muted: #667085;
+      --accent: #EF8354;
+      --accent-strong: #4F5D75;
+      --border: rgba(45, 49, 66, 0.12);
+      --shadow: 0 18px 40px rgba(45, 49, 66, 0.10);
+      --shadow-soft: 0 8px 20px rgba(45, 49, 66, 0.06);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(83, 210, 220, 0.10), transparent 24%),
-        radial-gradient(circle at 100% 0%, rgba(255, 227, 179, 0.45), transparent 18%),
-        linear-gradient(180deg, #ffffff 0%, #f9fdfe 100%);
+        radial-gradient(circle at top left, rgba(239, 131, 84, 0.08), transparent 20%),
+        linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
       color: var(--ink);
     }
     .wrap {
-      width: min(1120px, calc(100% - 2.5rem));
+      width: min(1120px, calc(100% - 2.25rem));
       margin: 0 auto;
-      padding: 1.25rem 0 4rem;
+      padding: 1rem 0 3.5rem;
     }
     .hero {
-      margin-bottom: 1.75rem;
-      padding: clamp(1.5rem, 2.5vw, 2.2rem);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: linear-gradient(135deg, #26648e, #4f8fc0);
+      margin-bottom: 1.4rem;
+      padding: clamp(1.35rem, 2.2vw, 1.9rem);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at top right, rgba(239, 131, 84, 0.18), transparent 22%),
+        linear-gradient(135deg, #2D3142, #4F5D75);
       box-shadow: var(--shadow);
-      animation: rise-in 560ms ease-out both;
+      animation: rise-in 480ms ease-out both;
     }
     .eyebrow {
       margin: 0 0 0.75rem;
-      color: #d5fbff;
+      color: rgba(255,255,255,0.84);
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.18em;
@@ -639,27 +647,27 @@ INDEX_TEMPLATE = """
     }
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 4.8vw, 3.8rem);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
-      max-width: 12ch;
-      text-wrap: balance;
+      max-width: 9ch;
       color: #ffffff;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      text-wrap: balance;
     }
     p {
-      color: rgba(255,255,255,0.86);
-      max-width: 48rem;
+      max-width: 44ch;
+      color: rgba(255,255,255,0.84);
       line-height: 1.65;
     }
     .group {
-      margin-top: 2rem;
-      padding-inline: 0.75rem;
+      margin-top: 1.75rem;
+      padding-inline: 0.35rem;
     }
     .group h2 {
-      margin-bottom: 0.7rem;
-      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      color: var(--heading, #2D3142);
+      font-size: 1.25rem;
       letter-spacing: -0.02em;
-      color: var(--ink);
     }
     .grid {
       display: grid;
@@ -669,25 +677,25 @@ INDEX_TEMPLATE = """
     .item {
       background: #ffffff;
       border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 1.1rem;
+      border-radius: 18px;
+      padding: 1rem;
       box-shadow: var(--shadow-soft);
-      animation: rise-in 520ms ease-out both;
-      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      animation: rise-in 460ms ease-out both;
+      transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
     }
     .item:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       box-shadow: var(--shadow);
-      border-color: rgba(83, 210, 220, 0.28);
+      border-color: rgba(239, 131, 84, 0.22);
     }
     .item a {
-      color: var(--accent);
+      color: var(--accent-strong);
       text-decoration: none;
-      font-weight: 700;
       font-size: 1.05rem;
+      font-weight: 800;
     }
     .item a:hover {
-      color: var(--accent-strong);
+      color: var(--accent);
     }
     .meta {
       margin-top: 0.45rem;
@@ -697,7 +705,7 @@ INDEX_TEMPLATE = """
     @keyframes rise-in {
       from {
         opacity: 0;
-        transform: translateY(16px);
+        transform: translateY(14px);
       }
       to {
         opacity: 1;
@@ -712,14 +720,14 @@ INDEX_TEMPLATE = """
         transition: none;
       }
     }
-    @media (max-width: 640px) {
+    @media (max-width: 720px) {
       .wrap {
         width: min(100% - 1rem, 1120px);
-        padding-top: 1rem;
+        padding-top: 0.85rem;
       }
       .hero {
-        border-radius: 22px;
-        padding: 1.15rem;
+        padding: 1.1rem;
+        border-radius: 18px;
       }
       h1 {
         max-width: none;
@@ -728,7 +736,7 @@ INDEX_TEMPLATE = """
         grid-template-columns: 1fr;
       }
       .group {
-        padding-inline: 0.2rem;
+        padding-inline: 0.15rem;
       }
     }
   </style>
@@ -738,14 +746,14 @@ INDEX_TEMPLATE = """
     <section class="hero">
       <p class="eyebrow">Flashcard Library</p>
       <h1>Flashcard Index</h1>
-      <p>Each entry links to a per-PDF flashcard page and companion TSV export. The layout is designed for quick browsing on desktop and mobile.</p>
+      <p>Open any deck to review questions, answer them inline, and keep lightweight progress saved in your browser.</p>
     </section>
     {% for group_name, items in groups %}
     <section class="group">
       <h2>{{ group_name }}</h2>
       <div class="grid">
         {% for entry in items %}
-        <article class="item" style="animation-delay: {{ loop.index0 * 35 }}ms;">
+        <article class="item" style="animation-delay: {{ loop.index0 * 30 }}ms;">
           <a href="{{ entry.href }}">{{ entry.title }}</a>
           <div class="meta">{{ entry.count }} cards</div>
           <div class="meta"><a href="{{ entry.tsv_href }}">TSV export</a>{% if entry.json_href %} · <a href="{{ entry.json_href }}">JSON export</a>{% endif %}</div>

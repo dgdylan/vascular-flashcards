@@ -8,62 +8,64 @@
     :root {
       color-scheme: light;
       --bg: #ffffff;
-      --bg-soft: #f7fcfd;
+      --bg-soft: #f7f8fb;
       --card: #ffffff;
-      --card-soft: #fbfeff;
-      --ink: #26648e;
-      --muted: #6a879e;
-      --accent: #53d2dc;
-      --accent-strong: #4f8fc0;
-      --heading: #26648e;
-      --subheading: #4d7692;
-      --success: #53d2dc;
-      --danger: #4f8fc0;
-      --warning: #ffe3b3;
-      --border: rgba(38, 100, 142, 0.14);
-      --shadow: 0 18px 42px rgba(38, 100, 142, 0.10);
-      --shadow-soft: 0 8px 20px rgba(38, 100, 142, 0.06);
+      --card-soft: #fbfbfc;
+      --ink: #2D3142;
+      --muted: #667085;
+      --accent: #EF8354;
+      --accent-strong: #4F5D75;
+      --heading: #2D3142;
+      --subheading: #4F5D75;
+      --success: #2f9e61;
+      --danger: #d94841;
+      --warning: #EF8354;
+      --border: rgba(45, 49, 66, 0.12);
+      --shadow: 0 18px 40px rgba(45, 49, 66, 0.10);
+      --shadow-soft: 0 8px 20px rgba(45, 49, 66, 0.06);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(83, 210, 220, 0.10), transparent 24%),
-        radial-gradient(circle at 100% 0%, rgba(255, 227, 179, 0.45), transparent 18%),
-        linear-gradient(180deg, #ffffff 0%, #f9fdfe 100%);
+        radial-gradient(circle at top left, rgba(239, 131, 84, 0.08), transparent 20%),
+        linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
       color: var(--ink);
       min-height: 100vh;
     }
     .wrap {
-      width: min(1120px, calc(100% - 2.5rem));
+      width: min(1120px, calc(100% - 2.25rem));
       margin: 0 auto;
-      padding: 1.25rem 0 4rem;
+      padding: 1rem 0 3.5rem;
     }
     .hero {
       position: relative;
       overflow: hidden;
-      margin-bottom: 1.5rem;
-      padding: clamp(1.5rem, 2.5vw, 2.2rem);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: linear-gradient(135deg, #26648e, #4f8fc0);
+      margin-bottom: 1.15rem;
+      padding: clamp(1.35rem, 2.2vw, 1.9rem);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at top right, rgba(239, 131, 84, 0.18), transparent 22%),
+        linear-gradient(135deg, #2D3142, #4F5D75);
       box-shadow: var(--shadow);
-      animation: rise-in 560ms ease-out both;
+      animation: rise-in 480ms ease-out both;
     }
     .hero::after {
       content: "";
       position: absolute;
-      inset: auto -8% -35% auto;
-      width: 240px;
+      right: -5%;
+      bottom: -22%;
+      width: 260px;
       aspect-ratio: 1;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 227, 179, 0.26), transparent 70%);
+      background: radial-gradient(circle, rgba(239, 131, 84, 0.18), transparent 70%);
       pointer-events: none;
     }
     .eyebrow {
-      margin: 0 0 0.75rem;
-      color: #d5fbff;
+      margin: 0 0 0.7rem;
+      color: rgba(255,255,255,0.84);
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.18em;
@@ -71,130 +73,134 @@
     }
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 4.8vw, 3.8rem);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
-      max-width: 14ch;
-      text-wrap: balance;
+      max-width: 11ch;
       color: #ffffff;
+      font-size: clamp(2.1rem, 4.8vw, 4rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      text-wrap: balance;
     }
     .subhead {
-      margin: 1rem 0 0;
-      color: rgba(255,255,255,0.88);
-      font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+      margin: 0.85rem 0 0;
+      max-width: 48ch;
+      color: rgba(255,255,255,0.84);
+      font-size: clamp(1rem, 1.3vw, 1.08rem);
       line-height: 1.6;
-      max-width: 60ch;
+    }
+    .hero-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1rem;
     }
     .hero-stats {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 1rem;
+      gap: 0.7rem;
     }
     .hero-stat {
-      padding: 0.72rem 0.95rem;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.18);
+      min-width: 118px;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.08);
       color: #ffffff;
-      min-width: 120px;
     }
     .hero-stat strong {
       display: block;
       font-size: 1rem;
-      color: #ffffff;
     }
     .hero-stat span {
       display: block;
       margin-top: 0.18rem;
+      color: rgba(255,255,255,0.70);
       font-size: 0.82rem;
-      color: rgba(255,255,255,0.76);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
     .toolbar {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
+      gap: 0.7rem;
     }
     .toolbar a, .toolbar button {
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.98);
-      color: var(--ink);
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+      color: #ffffff;
       border-radius: 999px;
-      padding: 0.78rem 1.05rem;
+      padding: 0.8rem 1rem;
       cursor: pointer;
       text-decoration: none;
       font: inherit;
       font-weight: 700;
-      box-shadow: var(--shadow-soft);
       transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
     }
     .toolbar a:hover, .toolbar button:hover {
       transform: translateY(-1px);
-      border-color: rgba(83, 210, 220, 0.40);
-      background: #f2fbfc;
+      border-color: rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.14);
     }
     .cards {
       display: grid;
-      gap: 1.1rem;
+      gap: 1rem;
     }
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 20px;
+      border-radius: 18px;
       box-shadow: var(--shadow);
       overflow: hidden;
-      animation: rise-in 520ms ease-out both;
-      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      animation: rise-in 460ms ease-out both;
+      transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
     }
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 22px 52px rgba(38, 100, 142, 0.12);
-      border-color: rgba(83, 210, 220, 0.28);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(45, 49, 66, 0.10);
+      border-color: rgba(239, 131, 84, 0.22);
     }
     .card-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding: 1rem 1.2rem;
+      padding: 0.95rem 1.15rem;
       border-bottom: 1px solid var(--border);
       background:
-        linear-gradient(135deg, rgba(83, 210, 220, 0.12), rgba(79, 143, 192, 0.08)),
-        #f8fdfe;
+        linear-gradient(135deg, rgba(239, 131, 84, 0.08), rgba(79, 93, 117, 0.03)),
+        #fbfbfc;
     }
     .card-number {
+      color: var(--accent-strong);
       font-size: 0.9rem;
-      text-transform: uppercase;
+      font-weight: 800;
       letter-spacing: 0.08em;
-      color: var(--accent);
-      font-weight: 700;
+      text-transform: uppercase;
     }
     .pill {
       padding: 0.3rem 0.65rem;
       border-radius: 999px;
-      background: rgba(79, 143, 192, 0.12);
-      color: var(--accent-strong);
-      font-size: 0.85rem;
+      background: rgba(239, 131, 84, 0.12);
+      color: var(--accent);
+      font-size: 0.84rem;
       font-weight: 700;
     }
     .card-body {
-      padding: 1.2rem;
       display: grid;
       gap: 1rem;
+      padding: 1.15rem;
     }
     .card-side {
       display: grid;
       gap: 0.75rem;
     }
     .label {
-      font-size: 0.78rem;
+      color: var(--subheading);
+      font-size: 0.77rem;
+      font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent-strong);
-      font-weight: 700;
     }
     .content {
       font-size: 1rem;
@@ -202,10 +208,22 @@
       white-space: pre-wrap;
     }
     .question-text {
-      font-size: clamp(1.02rem, 1.45vw, 1.16rem);
       color: var(--heading);
-      font-weight: 650;
+      font-size: clamp(1.02rem, 1.35vw, 1.15rem);
+      font-weight: 700;
       letter-spacing: -0.01em;
+    }
+    .study-note {
+      min-height: 1.15rem;
+      padding: 0 0.2rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .study-note.correct {
+      color: var(--success);
+    }
+    .study-note.incorrect {
+      color: var(--danger);
     }
     .choices {
       display: grid;
@@ -218,113 +236,101 @@
     .choice {
       appearance: none;
       width: 100%;
-      text-align: left;
-      font: inherit;
+      border: 1px solid rgba(45, 49, 66, 0.10);
+      border-radius: 12px;
+      background: #ffffff;
       color: var(--ink);
+      cursor: pointer;
+      font: inherit;
       line-height: 1.55;
       padding: 0.95rem 1rem;
-      border-radius: 12px;
-      border: 1px solid rgba(38, 100, 142, 0.10);
-      background: #ffffff;
-      cursor: pointer;
+      text-align: left;
       transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
     }
     .choice:hover {
       transform: translateY(-1px);
-      border-color: rgba(83, 210, 220, 0.32);
-      background: #f4fcfd;
+      border-color: rgba(239, 131, 84, 0.28);
+      background: #fff8f5;
     }
     .choice-label {
-      font-weight: 700;
       color: var(--accent);
+      font-weight: 800;
       margin-right: 0.3rem;
     }
     .choice.correct {
-      border-color: rgba(83, 210, 220, 0.55);
-      background: rgba(83, 210, 220, 0.12);
+      border-color: rgba(47, 158, 97, 0.42);
+      background: rgba(47, 158, 97, 0.10);
     }
     .choice.incorrect {
-      border-color: rgba(79, 143, 192, 0.46);
-      background: rgba(79, 143, 192, 0.12);
+      border-color: rgba(217, 72, 65, 0.40);
+      background: rgba(217, 72, 65, 0.10);
     }
     .choice.revealed-correct {
-      border-color: rgba(255, 227, 179, 0.84);
-      box-shadow: inset 0 0 0 1px rgba(255, 227, 179, 0.34);
-    }
-    .study-note {
-      min-height: 1.2rem;
-      color: var(--muted);
-      font-size: 0.92rem;
-      padding: 0 0.2rem;
-    }
-    .study-note.correct {
-      color: var(--success);
-    }
-    .study-note.incorrect {
-      color: var(--danger);
+      border-color: rgba(47, 158, 97, 0.28);
+      box-shadow: inset 0 0 0 1px rgba(47, 158, 97, 0.16);
     }
     img {
+      display: block;
       max-width: 100%;
       height: auto;
-      border-radius: 18px;
       border: 1px solid var(--border);
+      border-radius: 16px;
       background: #ffffff;
-      display: block;
       box-shadow: var(--shadow-soft);
     }
     .answer-shell {
-      border-top: 1px dashed rgba(38, 100, 142, 0.18);
+      border-top: 1px dashed rgba(45, 49, 66, 0.14);
       padding-top: 1rem;
     }
     .answer-toggle {
-      width: 100%;
       appearance: none;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: linear-gradient(180deg, #ffffff, #f5fbfd);
-      color: var(--heading);
-      font: inherit;
-      font-weight: 750;
-      font-size: 1rem;
-      text-align: left;
-      padding: 1rem 1.1rem;
-      cursor: pointer;
-      min-height: 62px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
+      width: 100%;
+      min-height: 60px;
+      padding: 0.95rem 1.05rem;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, #ffffff, #fbfbfc);
+      color: var(--heading);
+      cursor: pointer;
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 750;
+      text-align: left;
       transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
     }
     .answer-toggle:hover {
       transform: translateY(-1px);
-      border-color: rgba(83, 210, 220, 0.38);
-      background: linear-gradient(180deg, #fbfeff, #eef9fc);
+      border-color: rgba(239, 131, 84, 0.24);
+      background: linear-gradient(180deg, #ffffff, #fff8f5);
     }
     .answer-toggle:focus-visible,
     .choice:focus-visible,
     .toolbar a:focus-visible,
     .toolbar button:focus-visible {
-      outline: 2px solid rgba(83, 210, 220, 0.72);
+      outline: 2px solid rgba(239, 131, 84, 0.45);
       outline-offset: 2px;
     }
     .answer-chevron {
+      color: var(--accent);
       flex: 0 0 auto;
       font-size: 1.15rem;
-      color: var(--accent-strong);
       transition: transform 240ms ease;
     }
     .answer-panel {
       display: grid;
       grid-template-rows: 0fr;
-      transition: grid-template-rows 320ms ease, opacity 220ms ease, margin-top 220ms ease;
       opacity: 0;
       margin-top: 0;
+      transition: grid-template-rows 320ms ease, opacity 220ms ease, margin-top 220ms ease;
     }
     .answer-panel.open {
       grid-template-rows: 1fr;
       opacity: 1;
-      margin-top: 0.9rem;
+      margin-top: 0.85rem;
     }
     .answer-panel-inner {
       overflow: hidden;
@@ -343,7 +349,7 @@
     @keyframes rise-in {
       from {
         opacity: 0;
-        transform: translateY(16px);
+        transform: translateY(14px);
       }
       to {
         opacity: 1;
@@ -358,23 +364,31 @@
         transition: none;
       }
     }
-    @media (max-width: 640px) {
-      .wrap { width: min(100% - 1rem, 1120px); padding-top: 1rem; }
-      .hero {
-        border-radius: 22px;
-        padding: 1.15rem;
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(100% - 1rem, 1120px);
+        padding-top: 0.85rem;
       }
-      .card-header, .card-body { padding: 1rem; }
+      .hero {
+        padding: 1.1rem;
+        border-radius: 18px;
+      }
+      .hero-row {
+        align-items: stretch;
+      }
       .toolbar {
-        display: grid;
-        grid-template-columns: 1fr;
+        width: 100%;
       }
       .toolbar a, .toolbar button {
         width: 100%;
+        justify-content: center;
         text-align: center;
       }
       h1 {
         max-width: none;
+      }
+      .card-header, .card-body {
+        padding: 1rem;
       }
     }
   </style>
@@ -384,16 +398,18 @@
     <section class="hero">
       <p class="eyebrow">Review Deck</p>
       <h1>Abdomen General Pathology 32%</h1>
-      <p class="subhead">96 flashcards extracted from this PDF. Open each back panel to review the correct answer and full feedback.</p>
-      <div class="hero-stats">
-        <div class="hero-stat"><strong>96</strong><span>Total Cards</span></div>
-        <div class="hero-stat"><strong id="mastered-count">0</strong><span>Mastered</span></div>
-        <div class="hero-stat"><strong id="needs-review-count">0</strong><span>Needs Review</span></div>
-      </div>
-      <div class="toolbar">
-        <a href="../index.html">Back to index</a>
-        <button type="button" id="open-all">Open all backs</button>
-        <button type="button" id="close-all">Close all backs</button>
+      <p class="subhead">96 flashcards extracted from this PDF. Pick an answer to track what you know, then open the back when you want the explanation.</p>
+      <div class="hero-row">
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>96</strong><span>Total Cards</span></div>
+          <div class="hero-stat"><strong id="mastered-count">0</strong><span>Correct</span></div>
+          <div class="hero-stat"><strong id="needs-review-count">0</strong><span>Incorrect</span></div>
+        </div>
+        <div class="toolbar">
+          <a href="../index.html">Back to index</a>
+          <button type="button" id="open-all">Open all backs</button>
+          <button type="button" id="close-all">Close all backs</button>
+        </div>
       </div>
     </section>
     <section class="cards">
@@ -401,7 +417,7 @@
       <article class="card" id="q1" style="animation-delay: 0ms;">
         <div class="card-header">
           <div class="card-number">Question 1</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -449,10 +465,10 @@ commonly fusiform.</div>
         </div>
       </article>
       
-      <article class="card" id="q2" style="animation-delay: 35ms;">
+      <article class="card" id="q2" style="animation-delay: 30ms;">
         <div class="card-header">
           <div class="card-number">Question 2</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -502,10 +518,10 @@ extent.</div>
         </div>
       </article>
       
-      <article class="card" id="q3" style="animation-delay: 70ms;">
+      <article class="card" id="q3" style="animation-delay: 60ms;">
         <div class="card-header">
           <div class="card-number">Question 3</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -552,7 +568,7 @@ extent.</div>
         </div>
       </article>
       
-      <article class="card" id="q4" style="animation-delay: 105ms;">
+      <article class="card" id="q4" style="animation-delay: 90ms;">
         <div class="card-header">
           <div class="card-number">Question 4</div>
           
@@ -602,10 +618,10 @@ extent.</div>
         </div>
       </article>
       
-      <article class="card" id="q5" style="animation-delay: 140ms;">
+      <article class="card" id="q5" style="animation-delay: 120ms;">
         <div class="card-header">
           <div class="card-number">Question 5</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -655,10 +671,10 @@ inferior mesenteric artery, internal iliac, lumbar arteries and accessory renal 
         </div>
       </article>
       
-      <article class="card" id="q6" style="animation-delay: 175ms;">
+      <article class="card" id="q6" style="animation-delay: 150ms;">
         <div class="card-header">
           <div class="card-number">Question 6</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -709,7 +725,7 @@ not evaluated, the portal vein velocity is measured to assess a liver transplant
         </div>
       </article>
       
-      <article class="card" id="q7" style="animation-delay: 210ms;">
+      <article class="card" id="q7" style="animation-delay: 180ms;">
         <div class="card-header">
           <div class="card-number">Question 7</div>
           
@@ -762,10 +778,10 @@ congestion and thrombosis.</div>
         </div>
       </article>
       
-      <article class="card" id="q8" style="animation-delay: 245ms;">
+      <article class="card" id="q8" style="animation-delay: 210ms;">
         <div class="card-header">
           <div class="card-number">Question 8</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -817,7 +833,7 @@ reversal in the portal vein which is a common sign of portal HTN.</div>
         </div>
       </article>
       
-      <article class="card" id="q9" style="animation-delay: 280ms;">
+      <article class="card" id="q9" style="animation-delay: 240ms;">
         <div class="card-header">
           <div class="card-number">Question 9</div>
           
@@ -868,10 +884,10 @@ compression of the vessels.</div>
         </div>
       </article>
       
-      <article class="card" id="q10" style="animation-delay: 315ms;">
+      <article class="card" id="q10" style="animation-delay: 270ms;">
         <div class="card-header">
           <div class="card-number">Question 10</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -922,10 +938,10 @@ reversal in systole can occur.</div>
         </div>
       </article>
       
-      <article class="card" id="q11" style="animation-delay: 350ms;">
+      <article class="card" id="q11" style="animation-delay: 300ms;">
         <div class="card-header">
           <div class="card-number">Question 11</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -975,7 +991,7 @@ causes formation of plaque within the intimal layer of the vessel wall. Both dis
         </div>
       </article>
       
-      <article class="card" id="q12" style="animation-delay: 385ms;">
+      <article class="card" id="q12" style="animation-delay: 330ms;">
         <div class="card-header">
           <div class="card-number">Question 12</div>
           
@@ -1027,7 +1043,7 @@ and tortuous. Splenomegaly is another sign of portal HTN and a backlog in the bl
         </div>
       </article>
       
-      <article class="card" id="q13" style="animation-delay: 420ms;">
+      <article class="card" id="q13" style="animation-delay: 360ms;">
         <div class="card-header">
           <div class="card-number">Question 13</div>
           
@@ -1080,7 +1096,7 @@ will be multiphasic in the normal patient. Normal portal venous flow demonstrate
         </div>
       </article>
       
-      <article class="card" id="q14" style="animation-delay: 455ms;">
+      <article class="card" id="q14" style="animation-delay: 390ms;">
         <div class="card-header">
           <div class="card-number">Question 14</div>
           
@@ -1132,10 +1148,10 @@ EXAMPLE OF TARDUS PARVUS WAVEFORM IN RENAL STENOSIS</div>
         </div>
       </article>
       
-      <article class="card" id="q15" style="animation-delay: 490ms;">
+      <article class="card" id="q15" style="animation-delay: 420ms;">
         <div class="card-header">
           <div class="card-number">Question 15</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -1185,10 +1201,10 @@ less rigid arteries and increased risk of aneurysm formation.</div>
         </div>
       </article>
       
-      <article class="card" id="q16" style="animation-delay: 525ms;">
+      <article class="card" id="q16" style="animation-delay: 450ms;">
         <div class="card-header">
           <div class="card-number">Question 16</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -1236,7 +1252,7 @@ artery stenosis.</div>
         </div>
       </article>
       
-      <article class="card" id="q17" style="animation-delay: 560ms;">
+      <article class="card" id="q17" style="animation-delay: 480ms;">
         <div class="card-header">
           <div class="card-number">Question 17</div>
           
@@ -1287,10 +1303,10 @@ renal artery stenosis.</div>
         </div>
       </article>
       
-      <article class="card" id="q18" style="animation-delay: 595ms;">
+      <article class="card" id="q18" style="animation-delay: 510ms;">
         <div class="card-header">
           <div class="card-number">Question 18</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -1345,10 +1361,10 @@ Type III: dissections that involve the descending aorta only, starting after the
         </div>
       </article>
       
-      <article class="card" id="q19" style="animation-delay: 630ms;">
+      <article class="card" id="q19" style="animation-delay: 540ms;">
         <div class="card-header">
           <div class="card-number">Question 19</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -1398,10 +1414,10 @@ artery by looking at the flow in the organ distally.</div>
         </div>
       </article>
       
-      <article class="card" id="q20" style="animation-delay: 665ms;">
+      <article class="card" id="q20" style="animation-delay: 570ms;">
         <div class="card-header">
           <div class="card-number">Question 20</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -1452,7 +1468,7 @@ Image adapted from P. Karmin, MD. https://www.imagingrealm.com/vascular.html</di
         </div>
       </article>
       
-      <article class="card" id="q21" style="animation-delay: 700ms;">
+      <article class="card" id="q21" style="animation-delay: 600ms;">
         <div class="card-header">
           <div class="card-number">Question 21</div>
           
@@ -1506,7 +1522,7 @@ sac to pulse more with cardiac contractions.</div>
         </div>
       </article>
       
-      <article class="card" id="q22" style="animation-delay: 735ms;">
+      <article class="card" id="q22" style="animation-delay: 630ms;">
         <div class="card-header">
           <div class="card-number">Question 22</div>
           
@@ -1557,10 +1573,10 @@ Other signs include elevated BUN and creatinine levels, hematuria and new onset 
         </div>
       </article>
       
-      <article class="card" id="q23" style="animation-delay: 770ms;">
+      <article class="card" id="q23" style="animation-delay: 660ms;">
         <div class="card-header">
           <div class="card-number">Question 23</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -1609,7 +1625,7 @@ Other signs include elevated BUN and creatinine levels, hematuria and new onset 
         </div>
       </article>
       
-      <article class="card" id="q24" style="animation-delay: 805ms;">
+      <article class="card" id="q24" style="animation-delay: 690ms;">
         <div class="card-header">
           <div class="card-number">Question 24</div>
           
@@ -1659,10 +1675,10 @@ Other signs include elevated BUN and creatinine levels, hematuria and new onset 
         </div>
       </article>
       
-      <article class="card" id="q25" style="animation-delay: 840ms;">
+      <article class="card" id="q25" style="animation-delay: 720ms;">
         <div class="card-header">
           <div class="card-number">Question 25</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -1711,7 +1727,7 @@ sample placement can cause you to miss the area of highest velocity and therefor
         </div>
       </article>
       
-      <article class="card" id="q26" style="animation-delay: 875ms;">
+      <article class="card" id="q26" style="animation-delay: 750ms;">
         <div class="card-header">
           <div class="card-number">Question 26</div>
           
@@ -1764,7 +1780,7 @@ assessing a possible AAA.</div>
         </div>
       </article>
       
-      <article class="card" id="q27" style="animation-delay: 910ms;">
+      <article class="card" id="q27" style="animation-delay: 780ms;">
         <div class="card-header">
           <div class="card-number">Question 27</div>
           
@@ -1816,10 +1832,10 @@ assessing a possible AAA.</div>
         </div>
       </article>
       
-      <article class="card" id="q28" style="animation-delay: 945ms;">
+      <article class="card" id="q28" style="animation-delay: 810ms;">
         <div class="card-header">
           <div class="card-number">Question 28</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -1868,7 +1884,7 @@ aneurysm also have a AAA.</div>
         </div>
       </article>
       
-      <article class="card" id="q29" style="animation-delay: 980ms;">
+      <article class="card" id="q29" style="animation-delay: 840ms;">
         <div class="card-header">
           <div class="card-number">Question 29</div>
           
@@ -1919,7 +1935,7 @@ occur in a liver transplant.</div>
         </div>
       </article>
       
-      <article class="card" id="q30" style="animation-delay: 1015ms;">
+      <article class="card" id="q30" style="animation-delay: 870ms;">
         <div class="card-header">
           <div class="card-number">Question 30</div>
           
@@ -1970,7 +1986,7 @@ extremity symptoms.</div>
         </div>
       </article>
       
-      <article class="card" id="q31" style="animation-delay: 1050ms;">
+      <article class="card" id="q31" style="animation-delay: 900ms;">
         <div class="card-header">
           <div class="card-number">Question 31</div>
           
@@ -2020,10 +2036,10 @@ extremity symptoms.</div>
         </div>
       </article>
       
-      <article class="card" id="q32" style="animation-delay: 1085ms;">
+      <article class="card" id="q32" style="animation-delay: 930ms;">
         <div class="card-header">
           <div class="card-number">Question 32</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -2070,10 +2086,10 @@ extremity symptoms.</div>
         </div>
       </article>
       
-      <article class="card" id="q33" style="animation-delay: 1120ms;">
+      <article class="card" id="q33" style="animation-delay: 960ms;">
         <div class="card-header">
           <div class="card-number">Question 33</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -2121,7 +2137,7 @@ beneath the subcutaneous tissue, similar to varicosities in the legs</div>
         </div>
       </article>
       
-      <article class="card" id="q34" style="animation-delay: 1155ms;">
+      <article class="card" id="q34" style="animation-delay: 990ms;">
         <div class="card-header">
           <div class="card-number">Question 34</div>
           
@@ -2172,10 +2188,10 @@ and/or aneurysm of the aorta, which can lead to intimal dissection.</div>
         </div>
       </article>
       
-      <article class="card" id="q35" style="animation-delay: 1190ms;">
+      <article class="card" id="q35" style="animation-delay: 1020ms;">
         <div class="card-header">
           <div class="card-number">Question 35</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -2233,10 +2249,10 @@ flow with slow acceleration and deceleration (tardus parvus).</div>
         </div>
       </article>
       
-      <article class="card" id="q36" style="animation-delay: 1225ms;">
+      <article class="card" id="q36" style="animation-delay: 1050ms;">
         <div class="card-header">
           <div class="card-number">Question 36</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -2284,10 +2300,10 @@ plaque have become increasingly fibrous and more easily adheres to the vessel wa
         </div>
       </article>
       
-      <article class="card" id="q37" style="animation-delay: 1260ms;">
+      <article class="card" id="q37" style="animation-delay: 1080ms;">
         <div class="card-header">
           <div class="card-number">Question 37</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -2338,7 +2354,7 @@ stenosis is considered significant and treatment is required. There are no other
         </div>
       </article>
       
-      <article class="card" id="q38" style="animation-delay: 1295ms;">
+      <article class="card" id="q38" style="animation-delay: 1110ms;">
         <div class="card-header">
           <div class="card-number">Question 38</div>
           
@@ -2390,10 +2406,10 @@ aorta. Higher ratios mean higher renal artery velocities = stenosis.</div>
         </div>
       </article>
       
-      <article class="card" id="q39" style="animation-delay: 1330ms;">
+      <article class="card" id="q39" style="animation-delay: 1140ms;">
         <div class="card-header">
           <div class="card-number">Question 39</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -2444,10 +2460,10 @@ will demonstrate bidirectional flow.</div>
         </div>
       </article>
       
-      <article class="card" id="q40" style="animation-delay: 1365ms;">
+      <article class="card" id="q40" style="animation-delay: 1170ms;">
         <div class="card-header">
           <div class="card-number">Question 40</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -2497,10 +2513,10 @@ artery by looking at the flow in the organ distally. The aorta is not a &#34;ren
         </div>
       </article>
       
-      <article class="card" id="q41" style="animation-delay: 1400ms;">
+      <article class="card" id="q41" style="animation-delay: 1200ms;">
         <div class="card-header">
           <div class="card-number">Question 41</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -2553,10 +2569,10 @@ This will then lead to dilatation of the venous drainage at the left testicle ca
         </div>
       </article>
       
-      <article class="card" id="q42" style="animation-delay: 1435ms;">
+      <article class="card" id="q42" style="animation-delay: 1230ms;">
         <div class="card-header">
           <div class="card-number">Question 42</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -2606,7 +2622,7 @@ common type of tumor with IVC/renal vein invasion.</div>
         </div>
       </article>
       
-      <article class="card" id="q43" style="animation-delay: 1470ms;">
+      <article class="card" id="q43" style="animation-delay: 1260ms;">
         <div class="card-header">
           <div class="card-number">Question 43</div>
           
@@ -2659,10 +2675,10 @@ Fibromuscular dysplasia is also associated with stenosis of the renal arteries.<
         </div>
       </article>
       
-      <article class="card" id="q44" style="animation-delay: 1505ms;">
+      <article class="card" id="q44" style="animation-delay: 1290ms;">
         <div class="card-header">
           <div class="card-number">Question 44</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -2715,10 +2731,10 @@ will be emphasized upon expiration.</div>
         </div>
       </article>
       
-      <article class="card" id="q45" style="animation-delay: 1540ms;">
+      <article class="card" id="q45" style="animation-delay: 1320ms;">
         <div class="card-header">
           <div class="card-number">Question 45</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -2749,10 +2765,10 @@ through the lumen.</div>
         </div>
       </article>
       
-      <article class="card" id="q46" style="animation-delay: 1575ms;">
+      <article class="card" id="q46" style="animation-delay: 1350ms;">
         <div class="card-header">
           <div class="card-number">Question 46</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -2799,7 +2815,7 @@ through the lumen.</div>
         </div>
       </article>
       
-      <article class="card" id="q47" style="animation-delay: 1610ms;">
+      <article class="card" id="q47" style="animation-delay: 1380ms;">
         <div class="card-header">
           <div class="card-number">Question 47</div>
           
@@ -2856,10 +2872,10 @@ little effect on the right heart circulation/venous flow pattern.</div>
         </div>
       </article>
       
-      <article class="card" id="q48" style="animation-delay: 1645ms;">
+      <article class="card" id="q48" style="animation-delay: 1410ms;">
         <div class="card-header">
           <div class="card-number">Question 48</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -2910,7 +2926,7 @@ accepts less blood volume for filtration. The parenchymal resistance to flow inc
         </div>
       </article>
       
-      <article class="card" id="q49" style="animation-delay: 1680ms;">
+      <article class="card" id="q49" style="animation-delay: 1440ms;">
         <div class="card-header">
           <div class="card-number">Question 49</div>
           
@@ -2965,7 +2981,7 @@ information will produce inaccurate information on flow velocity.</div>
         </div>
       </article>
       
-      <article class="card" id="q50" style="animation-delay: 1715ms;">
+      <article class="card" id="q50" style="animation-delay: 1470ms;">
         <div class="card-header">
           <div class="card-number">Question 50</div>
           
@@ -3015,10 +3031,10 @@ information will produce inaccurate information on flow velocity.</div>
         </div>
       </article>
       
-      <article class="card" id="q51" style="animation-delay: 1750ms;">
+      <article class="card" id="q51" style="animation-delay: 1500ms;">
         <div class="card-header">
           <div class="card-number">Question 51</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -3069,10 +3085,10 @@ evaluated with Doppler in the longitudinal view of the aorta. They also would no
         </div>
       </article>
       
-      <article class="card" id="q52" style="animation-delay: 1785ms;">
+      <article class="card" id="q52" style="animation-delay: 1530ms;">
         <div class="card-header">
           <div class="card-number">Question 52</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -3120,7 +3136,7 @@ RAR.</div>
         </div>
       </article>
       
-      <article class="card" id="q53" style="animation-delay: 1820ms;">
+      <article class="card" id="q53" style="animation-delay: 1560ms;">
         <div class="card-header">
           <div class="card-number">Question 53</div>
           
@@ -3173,10 +3189,10 @@ stenosis is present. The other velocities are normal for the IMA and celiac.</di
         </div>
       </article>
       
-      <article class="card" id="q54" style="animation-delay: 1855ms;">
+      <article class="card" id="q54" style="animation-delay: 1590ms;">
         <div class="card-header">
           <div class="card-number">Question 54</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -3228,10 +3244,10 @@ is necessary.</div>
         </div>
       </article>
       
-      <article class="card" id="q55" style="animation-delay: 1890ms;">
+      <article class="card" id="q55" style="animation-delay: 1620ms;">
         <div class="card-header">
           <div class="card-number">Question 55</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -3278,10 +3294,10 @@ is necessary.</div>
         </div>
       </article>
       
-      <article class="card" id="q56" style="animation-delay: 1925ms;">
+      <article class="card" id="q56" style="animation-delay: 1650ms;">
         <div class="card-header">
           <div class="card-number">Question 56</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -3328,7 +3344,7 @@ is necessary.</div>
         </div>
       </article>
       
-      <article class="card" id="q57" style="animation-delay: 1960ms;">
+      <article class="card" id="q57" style="animation-delay: 1680ms;">
         <div class="card-header">
           <div class="card-number">Question 57</div>
           
@@ -3379,7 +3395,7 @@ broadening.</div>
         </div>
       </article>
       
-      <article class="card" id="q58" style="animation-delay: 1995ms;">
+      <article class="card" id="q58" style="animation-delay: 1710ms;">
         <div class="card-header">
           <div class="card-number">Question 58</div>
           
@@ -3429,10 +3445,10 @@ broadening.</div>
         </div>
       </article>
       
-      <article class="card" id="q59" style="animation-delay: 2030ms;">
+      <article class="card" id="q59" style="animation-delay: 1740ms;">
         <div class="card-header">
           <div class="card-number">Question 59</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -3482,10 +3498,10 @@ significant stenosis is present. SMA disease causes pain after eating due to ina
         </div>
       </article>
       
-      <article class="card" id="q60" style="animation-delay: 2065ms;">
+      <article class="card" id="q60" style="animation-delay: 1770ms;">
         <div class="card-header">
           <div class="card-number">Question 60</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -3533,10 +3549,10 @@ freely through a narrowed vessel.</div>
         </div>
       </article>
       
-      <article class="card" id="q61" style="animation-delay: 2100ms;">
+      <article class="card" id="q61" style="animation-delay: 1800ms;">
         <div class="card-header">
           <div class="card-number">Question 61</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -3585,10 +3601,10 @@ refers to mass characterization.</div>
         </div>
       </article>
       
-      <article class="card" id="q62" style="animation-delay: 2135ms;">
+      <article class="card" id="q62" style="animation-delay: 1830ms;">
         <div class="card-header">
           <div class="card-number">Question 62</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -3642,7 +3658,7 @@ trapped in a distal smaller vessel. Embolisms are very rarely seen travelling in
         </div>
       </article>
       
-      <article class="card" id="q63" style="animation-delay: 2170ms;">
+      <article class="card" id="q63" style="animation-delay: 1860ms;">
         <div class="card-header">
           <div class="card-number">Question 63</div>
           
@@ -3693,7 +3709,7 @@ pinched and abdominal symptoms occur. When the patient inhales, the diaphragm mo
         </div>
       </article>
       
-      <article class="card" id="q64" style="animation-delay: 2205ms;">
+      <article class="card" id="q64" style="animation-delay: 1890ms;">
         <div class="card-header">
           <div class="card-number">Question 64</div>
           
@@ -3746,7 +3762,7 @@ parenchymal RI will be &gt;0.7.</div>
         </div>
       </article>
       
-      <article class="card" id="q65" style="animation-delay: 2240ms;">
+      <article class="card" id="q65" style="animation-delay: 1920ms;">
         <div class="card-header">
           <div class="card-number">Question 65</div>
           
@@ -3802,10 +3818,10 @@ cause mesenteric angina from the steal phenomenon .</div>
         </div>
       </article>
       
-      <article class="card" id="q66" style="animation-delay: 2275ms;">
+      <article class="card" id="q66" style="animation-delay: 1950ms;">
         <div class="card-header">
           <div class="card-number">Question 66</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -3856,10 +3872,10 @@ Continuous flow in an extremity vein typically indicates a proximal obstruction 
         </div>
       </article>
       
-      <article class="card" id="q67" style="animation-delay: 2310ms;">
+      <article class="card" id="q67" style="animation-delay: 1980ms;">
         <div class="card-header">
           <div class="card-number">Question 67</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -3909,7 +3925,7 @@ demonstrate increased pulsatility with CHF. The decreased cardiac output can red
         </div>
       </article>
       
-      <article class="card" id="q68" style="animation-delay: 2345ms;">
+      <article class="card" id="q68" style="animation-delay: 2010ms;">
         <div class="card-header">
           <div class="card-number">Question 68</div>
           
@@ -3960,7 +3976,7 @@ left subclavian artery is the second most common site for dissection.</div>
         </div>
       </article>
       
-      <article class="card" id="q69" style="animation-delay: 2380ms;">
+      <article class="card" id="q69" style="animation-delay: 2040ms;">
         <div class="card-header">
           <div class="card-number">Question 69</div>
           
@@ -4014,10 +4030,10 @@ thrombus within the hepatic veins and no flow is detected by color Doppler.</div
         </div>
       </article>
       
-      <article class="card" id="q70" style="animation-delay: 2415ms;">
+      <article class="card" id="q70" style="animation-delay: 2070ms;">
         <div class="card-header">
           <div class="card-number">Question 70</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4068,10 +4084,10 @@ area of the vessel. This thrombus poses a risk of emboli formation and distal is
         </div>
       </article>
       
-      <article class="card" id="q71" style="animation-delay: 2450ms;">
+      <article class="card" id="q71" style="animation-delay: 2100ms;">
         <div class="card-header">
           <div class="card-number">Question 71</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4118,10 +4134,10 @@ area of the vessel. This thrombus poses a risk of emboli formation and distal is
         </div>
       </article>
       
-      <article class="card" id="q72" style="animation-delay: 2485ms;">
+      <article class="card" id="q72" style="animation-delay: 2130ms;">
         <div class="card-header">
           <div class="card-number">Question 72</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4169,10 +4185,10 @@ outflow. The kidney will enlarge but this is a 2D finding.</div>
         </div>
       </article>
       
-      <article class="card" id="q73" style="animation-delay: 2520ms;">
+      <article class="card" id="q73" style="animation-delay: 2160ms;">
         <div class="card-header">
           <div class="card-number">Question 73</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4222,7 +4238,7 @@ outflow. The kidney will enlarge but this is a 2D finding.</div>
         </div>
       </article>
       
-      <article class="card" id="q74" style="animation-delay: 2555ms;">
+      <article class="card" id="q74" style="animation-delay: 2190ms;">
         <div class="card-header">
           <div class="card-number">Question 74</div>
           
@@ -4275,10 +4291,10 @@ flow causing eddy currents within the vessel. Turbulence is displayed as spectra
         </div>
       </article>
       
-      <article class="card" id="q75" style="animation-delay: 2590ms;">
+      <article class="card" id="q75" style="animation-delay: 2220ms;">
         <div class="card-header">
           <div class="card-number">Question 75</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4326,7 +4342,7 @@ site. This increased gradient leads to increased velocity of flow across the ste
         </div>
       </article>
       
-      <article class="card" id="q76" style="animation-delay: 2625ms;">
+      <article class="card" id="q76" style="animation-delay: 2250ms;">
         <div class="card-header">
           <div class="card-number">Question 76</div>
           
@@ -4377,10 +4393,10 @@ diameter of the popliteal artery exceeds 1cm.</div>
         </div>
       </article>
       
-      <article class="card" id="q77" style="animation-delay: 2660ms;">
+      <article class="card" id="q77" style="animation-delay: 2280ms;">
         <div class="card-header">
           <div class="card-number">Question 77</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4428,10 +4444,10 @@ broadening and irregular waveform contour(post stenotic turbulence).</div>
         </div>
       </article>
       
-      <article class="card" id="q78" style="animation-delay: 2695ms;">
+      <article class="card" id="q78" style="animation-delay: 2310ms;">
         <div class="card-header">
           <div class="card-number">Question 78</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4479,7 +4495,7 @@ gradient between the two sites. The higher the pressure gradient, the higher the
         </div>
       </article>
       
-      <article class="card" id="q79" style="animation-delay: 2730ms;">
+      <article class="card" id="q79" style="animation-delay: 2340ms;">
         <div class="card-header">
           <div class="card-number">Question 79</div>
           
@@ -4534,10 +4550,10 @@ resistance flow and reduced flow volume reaching the ankles.</div>
         </div>
       </article>
       
-      <article class="card" id="q80" style="animation-delay: 2765ms;">
+      <article class="card" id="q80" style="animation-delay: 2370ms;">
         <div class="card-header">
           <div class="card-number">Question 80</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4589,10 +4605,10 @@ resistance flow and reduced flow volume reaching the ankles.</div>
         </div>
       </article>
       
-      <article class="card" id="q81" style="animation-delay: 2800ms;">
+      <article class="card" id="q81" style="animation-delay: 2400ms;">
         <div class="card-header">
           <div class="card-number">Question 81</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4642,7 +4658,7 @@ retrograde filling to occur within the vessel.</div>
         </div>
       </article>
       
-      <article class="card" id="q82" style="animation-delay: 2835ms;">
+      <article class="card" id="q82" style="animation-delay: 2430ms;">
         <div class="card-header">
           <div class="card-number">Question 82</div>
           
@@ -4692,10 +4708,10 @@ retrograde filling to occur within the vessel.</div>
         </div>
       </article>
       
-      <article class="card" id="q83" style="animation-delay: 2870ms;">
+      <article class="card" id="q83" style="animation-delay: 2460ms;">
         <div class="card-header">
           <div class="card-number">Question 83</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4725,10 +4741,10 @@ first caliper is placed at the true peak systolic velocity and the second calipe
         </div>
       </article>
       
-      <article class="card" id="q84" style="animation-delay: 2905ms;">
+      <article class="card" id="q84" style="animation-delay: 2490ms;">
         <div class="card-header">
           <div class="card-number">Question 84</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4775,10 +4791,10 @@ first caliper is placed at the true peak systolic velocity and the second calipe
         </div>
       </article>
       
-      <article class="card" id="q85" style="animation-delay: 2940ms;">
+      <article class="card" id="q85" style="animation-delay: 2520ms;">
         <div class="card-header">
           <div class="card-number">Question 85</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4807,10 +4823,10 @@ measured from outer wall to outer wall.</div>
         </div>
       </article>
       
-      <article class="card" id="q86" style="animation-delay: 2975ms;">
+      <article class="card" id="q86" style="animation-delay: 2550ms;">
         <div class="card-header">
           <div class="card-number">Question 86</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4859,10 +4875,10 @@ different velocities and is considered non-laminar.</div>
         </div>
       </article>
       
-      <article class="card" id="q87" style="animation-delay: 3010ms;">
+      <article class="card" id="q87" style="animation-delay: 2580ms;">
         <div class="card-header">
           <div class="card-number">Question 87</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4912,10 +4928,10 @@ reservoir for portal blood with nowhere to go.</div>
         </div>
       </article>
       
-      <article class="card" id="q88" style="animation-delay: 3045ms;">
+      <article class="card" id="q88" style="animation-delay: 2610ms;">
         <div class="card-header">
           <div class="card-number">Question 88</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -4965,10 +4981,10 @@ normally hepatopetal. The image displays ABNORMAL flow direction in the portal v
         </div>
       </article>
       
-      <article class="card" id="q89" style="animation-delay: 3080ms;">
+      <article class="card" id="q89" style="animation-delay: 2640ms;">
         <div class="card-header">
           <div class="card-number">Question 89</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -5016,7 +5032,7 @@ blocking flow to both legs = aorta.</div>
         </div>
       </article>
       
-      <article class="card" id="q90" style="animation-delay: 3115ms;">
+      <article class="card" id="q90" style="animation-delay: 2670ms;">
         <div class="card-header">
           <div class="card-number">Question 90</div>
           
@@ -5066,10 +5082,10 @@ blocking flow to both legs = aorta.</div>
         </div>
       </article>
       
-      <article class="card" id="q91" style="animation-delay: 3150ms;">
+      <article class="card" id="q91" style="animation-delay: 2700ms;">
         <div class="card-header">
           <div class="card-number">Question 91</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -5099,10 +5115,10 @@ first caliper is placed at the true peak systolic velocity and the second calipe
         </div>
       </article>
       
-      <article class="card" id="q92" style="animation-delay: 3185ms;">
+      <article class="card" id="q92" style="animation-delay: 2730ms;">
         <div class="card-header">
           <div class="card-number">Question 92</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -5152,10 +5168,10 @@ Infrarenal AAAs normally do not affect the arterial flow to the kidneys.</div>
         </div>
       </article>
       
-      <article class="card" id="q93" style="animation-delay: 3220ms;">
+      <article class="card" id="q93" style="animation-delay: 2760ms;">
         <div class="card-header">
           <div class="card-number">Question 93</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -5206,7 +5222,7 @@ increasing the BP but would not cause the increase in velocity in the arteries.<
         </div>
       </article>
       
-      <article class="card" id="q94" style="animation-delay: 3255ms;">
+      <article class="card" id="q94" style="animation-delay: 2790ms;">
         <div class="card-header">
           <div class="card-number">Question 94</div>
           
@@ -5259,10 +5275,10 @@ parvus waveform. The deceleration is delayed not shortened.</div>
         </div>
       </article>
       
-      <article class="card" id="q95" style="animation-delay: 3290ms;">
+      <article class="card" id="q95" style="animation-delay: 2820ms;">
         <div class="card-header">
           <div class="card-number">Question 95</div>
-          <div class="pill">Missed</div>
+          <div class="pill">Missed on source exam</div>
         </div>
         <div class="card-body">
           <section class="card-side">
@@ -5312,7 +5328,7 @@ resistance to arterial inflow. Normal renal artery flow is low resistance with a
         </div>
       </article>
       
-      <article class="card" id="q96" style="animation-delay: 3325ms;">
+      <article class="card" id="q96" style="animation-delay: 2850ms;">
         <div class="card-header">
           <div class="card-number">Question 96</div>
           
@@ -5370,7 +5386,6 @@ Powered by ExamBuilder. Copyright ©2026</div>
   </main>
   <script>
     const answerToggles = Array.from(document.querySelectorAll(".answer-toggle"));
-    const answerPanels = Array.from(document.querySelectorAll(".answer-panel"));
     const storageKey = "flashcard-study-state:" + window.location.pathname;
     const masteredCount = document.getElementById("mastered-count");
     const needsReviewCount = document.getElementById("needs-review-count");
@@ -5437,17 +5452,13 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     function renderChoiceState(cardId, state) {
       const group = document.querySelectorAll('.choice[data-card-id="' + cardId + '"]');
-      if (!group.length) {
-        return;
-      }
+      if (!group.length) return;
       const selectedChoice = state && state.selectedChoice ? state.selectedChoice : null;
       const correctChoice = group[0].getAttribute("data-correct");
       group.forEach((item) => {
         item.classList.remove("correct", "incorrect", "revealed-correct");
         const itemChoice = item.getAttribute("data-choice");
-        if (!selectedChoice) {
-          return;
-        }
+        if (!selectedChoice) return;
         if (itemChoice === selectedChoice) {
           item.classList.add(selectedChoice === correctChoice ? "correct" : "incorrect");
         }
@@ -5460,18 +5471,16 @@ Powered by ExamBuilder. Copyright ©2026</div>
     function applyStudyState(state) {
       document.querySelectorAll("[data-study-note]").forEach((node) => {
         const cardId = node.getAttribute("data-study-note");
-        const note = document.querySelector('[data-study-note="' + cardId + '"]');
+        const note = node;
         const current = state[cardId] || { status: null, selectedChoice: null };
-        if (note) {
-          if (current.selectedChoice && current.status === "correct") {
-            note.textContent = "Correct. Saved on this device.";
-          } else if (current.selectedChoice && current.status === "incorrect") {
-            note.textContent = "Incorrect. The correct option is highlighted.";
-          } else {
-            note.textContent = "";
-          }
-          note.className = "study-note" + (current.status ? " " + current.status : "");
+        if (current.selectedChoice && current.status === "correct") {
+          note.textContent = "Correct.";
+        } else if (current.selectedChoice && current.status === "incorrect") {
+          note.textContent = "Incorrect. The correct option is highlighted.";
+        } else {
+          note.textContent = "";
         }
+        note.className = "study-note" + (current.status ? " " + current.status : "");
         renderChoiceState(cardId, current);
       });
       updateCounts(state);
@@ -5485,9 +5494,7 @@ Powered by ExamBuilder. Copyright ©2026</div>
         const cardId = button.getAttribute("data-card-id");
         const correct = button.getAttribute("data-correct");
         const choice = button.getAttribute("data-choice");
-        if (!correct) {
-          return;
-        }
+        if (!correct) return;
         studyState[cardId] = {
           status: choice === correct ? "correct" : "incorrect",
           selectedChoice: choice,

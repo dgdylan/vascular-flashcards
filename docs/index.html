@@ -7,41 +7,42 @@
   <style>
     :root {
       --bg: #ffffff;
-      --ink: #26648e;
-      --muted: #6a879e;
-      --accent: #53d2dc;
-      --accent-strong: #4f8fc0;
-      --border: rgba(38, 100, 142, 0.14);
-      --shadow: 0 18px 42px rgba(38, 100, 142, 0.10);
-      --shadow-soft: 0 8px 20px rgba(38, 100, 142, 0.06);
+      --ink: #2D3142;
+      --muted: #667085;
+      --accent: #EF8354;
+      --accent-strong: #4F5D75;
+      --border: rgba(45, 49, 66, 0.12);
+      --shadow: 0 18px 40px rgba(45, 49, 66, 0.10);
+      --shadow-soft: 0 8px 20px rgba(45, 49, 66, 0.06);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(83, 210, 220, 0.10), transparent 24%),
-        radial-gradient(circle at 100% 0%, rgba(255, 227, 179, 0.45), transparent 18%),
-        linear-gradient(180deg, #ffffff 0%, #f9fdfe 100%);
+        radial-gradient(circle at top left, rgba(239, 131, 84, 0.08), transparent 20%),
+        linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
       color: var(--ink);
     }
     .wrap {
-      width: min(1120px, calc(100% - 2.5rem));
+      width: min(1120px, calc(100% - 2.25rem));
       margin: 0 auto;
-      padding: 1.25rem 0 4rem;
+      padding: 1rem 0 3.5rem;
     }
     .hero {
-      margin-bottom: 1.75rem;
-      padding: clamp(1.5rem, 2.5vw, 2.2rem);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: linear-gradient(135deg, #26648e, #4f8fc0);
+      margin-bottom: 1.4rem;
+      padding: clamp(1.35rem, 2.2vw, 1.9rem);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at top right, rgba(239, 131, 84, 0.18), transparent 22%),
+        linear-gradient(135deg, #2D3142, #4F5D75);
       box-shadow: var(--shadow);
-      animation: rise-in 560ms ease-out both;
+      animation: rise-in 480ms ease-out both;
     }
     .eyebrow {
       margin: 0 0 0.75rem;
-      color: #d5fbff;
+      color: rgba(255,255,255,0.84);
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.18em;
@@ -49,27 +50,27 @@
     }
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 4.8vw, 3.8rem);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
-      max-width: 12ch;
-      text-wrap: balance;
+      max-width: 9ch;
       color: #ffffff;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      text-wrap: balance;
     }
     p {
-      color: rgba(255,255,255,0.86);
-      max-width: 48rem;
+      max-width: 44ch;
+      color: rgba(255,255,255,0.84);
       line-height: 1.65;
     }
     .group {
-      margin-top: 2rem;
-      padding-inline: 0.75rem;
+      margin-top: 1.75rem;
+      padding-inline: 0.35rem;
     }
     .group h2 {
-      margin-bottom: 0.7rem;
-      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      color: var(--heading, #2D3142);
+      font-size: 1.25rem;
       letter-spacing: -0.02em;
-      color: var(--ink);
     }
     .grid {
       display: grid;
@@ -79,25 +80,25 @@
     .item {
       background: #ffffff;
       border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 1.1rem;
+      border-radius: 18px;
+      padding: 1rem;
       box-shadow: var(--shadow-soft);
-      animation: rise-in 520ms ease-out both;
-      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      animation: rise-in 460ms ease-out both;
+      transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
     }
     .item:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       box-shadow: var(--shadow);
-      border-color: rgba(83, 210, 220, 0.28);
+      border-color: rgba(239, 131, 84, 0.22);
     }
     .item a {
-      color: var(--accent);
+      color: var(--accent-strong);
       text-decoration: none;
-      font-weight: 700;
       font-size: 1.05rem;
+      font-weight: 800;
     }
     .item a:hover {
-      color: var(--accent-strong);
+      color: var(--accent);
     }
     .meta {
       margin-top: 0.45rem;
@@ -107,7 +108,7 @@
     @keyframes rise-in {
       from {
         opacity: 0;
-        transform: translateY(16px);
+        transform: translateY(14px);
       }
       to {
         opacity: 1;
@@ -122,14 +123,14 @@
         transition: none;
       }
     }
-    @media (max-width: 640px) {
+    @media (max-width: 720px) {
       .wrap {
         width: min(100% - 1rem, 1120px);
-        padding-top: 1rem;
+        padding-top: 0.85rem;
       }
       .hero {
-        border-radius: 22px;
-        padding: 1.15rem;
+        padding: 1.1rem;
+        border-radius: 18px;
       }
       h1 {
         max-width: none;
@@ -138,7 +139,7 @@
         grid-template-columns: 1fr;
       }
       .group {
-        padding-inline: 0.2rem;
+        padding-inline: 0.15rem;
       }
     }
   </style>
@@ -148,7 +149,7 @@
     <section class="hero">
       <p class="eyebrow">Flashcard Library</p>
       <h1>Flashcard Index</h1>
-      <p>Each entry links to a per-PDF flashcard page and companion TSV export. The layout is designed for quick browsing on desktop and mobile.</p>
+      <p>Open any deck to review questions, answer them inline, and keep lightweight progress saved in your browser.</p>
     </section>
     
     <section class="group">
@@ -161,73 +162,73 @@
           <div class="meta"><a href="abdomengeneralanatomy21/flashcards.tsv">TSV export</a></div>
         </article>
         
-        <article class="item" style="animation-delay: 35ms;">
+        <article class="item" style="animation-delay: 30ms;">
           <a href="abdomengeneralpathology32/flashcards.html">Abdomen General Pathology 32%</a>
           <div class="meta">96 cards</div>
           <div class="meta"><a href="abdomengeneralpathology32/flashcards.tsv">TSV export</a></div>
         </article>
         
-        <article class="item" style="animation-delay: 70ms;">
+        <article class="item" style="animation-delay: 60ms;">
           <a href="cerebrovascularanatomy12/flashcards.html">Cerebro Vascular Anatomy 12%</a>
           <div class="meta">69 cards</div>
           <div class="meta"><a href="cerebrovascularanatomy12/flashcards.tsv">TSV export</a></div>
         </article>
         
-        <article class="item" style="animation-delay: 105ms;">
+        <article class="item" style="animation-delay: 90ms;">
           <a href="cerebrovascularpathology21/flashcards.html">Cerebrovascular Pathology 21%</a>
           <div class="meta">142 cards</div>
           <div class="meta"><a href="cerebrovascularpathology21/flashcards.tsv">TSV export</a></div>
         </article>
         
-        <article class="item" style="animation-delay: 140ms;">
+        <article class="item" style="animation-delay: 120ms;">
           <a href="extremityarterlialanatomy21/flashcards.html">Extremity Arterlial Anatomy 21%</a>
           <div class="meta">80 cards</div>
           <div class="meta"><a href="extremityarterlialanatomy21/flashcards.tsv">TSV export</a></div>
         </article>
         
-        <article class="item" style="animation-delay: 175ms;">
+        <article class="item" style="animation-delay: 150ms;">
           <a href="extremityarterypathology32/flashcards.html">Extremity Artery Pathology 32%</a>
           <div class="meta">108 cards</div>
           <div class="meta"><a href="extremityarterypathology32/flashcards.tsv">TSV export</a></div>
         </article>
         
-        <article class="item" style="animation-delay: 210ms;">
+        <article class="item" style="animation-delay: 180ms;">
           <a href="extremityvenousanatomy21/flashcards.html">Extremity Venous Anatomy 21%</a>
           <div class="meta">109 cards</div>
           <div class="meta"><a href="extremityvenousanatomy21/flashcards.tsv">TSV export</a></div>
         </article>
         
-        <article class="item" style="animation-delay: 245ms;">
+        <article class="item" style="animation-delay: 210ms;">
           <a href="extremityvenouspathology32/flashcards.html">Extremity Venous Pathology 32%</a>
           <div class="meta">107 cards</div>
           <div class="meta"><a href="extremityvenouspathology32/flashcards.tsv">TSV export</a></div>
         </article>
         
-        <article class="item" style="animation-delay: 280ms;">
+        <article class="item" style="animation-delay: 240ms;">
           <a href="physiologicexams12/flashcards.html">Physiologic Exams 12%</a>
           <div class="meta">133 cards</div>
           <div class="meta"><a href="physiologicexams12/flashcards.tsv">TSV export</a></div>
         </article>
         
-        <article class="item" style="animation-delay: 315ms;">
+        <article class="item" style="animation-delay: 270ms;">
           <a href="prepreporting8/flashcards.html">Prep Reporting 8%</a>
           <div class="meta">90 cards</div>
           <div class="meta"><a href="prepreporting8/flashcards.tsv">TSV export</a></div>
         </article>
         
-        <article class="item" style="animation-delay: 350ms;">
+        <article class="item" style="animation-delay: 300ms;">
           <a href="qasafetyspi14/flashcards.html">QA Safety SPI 14%</a>
           <div class="meta">126 cards</div>
           <div class="meta"><a href="qasafetyspi14/flashcards.tsv">TSV export</a></div>
         </article>
         
-        <article class="item" style="animation-delay: 385ms;">
+        <article class="item" style="animation-delay: 330ms;">
           <a href="usguidedprocedures7/flashcards.html">US Guided Procedures 7%</a>
           <div class="meta">56 cards</div>
           <div class="meta"><a href="usguidedprocedures7/flashcards.tsv">TSV export</a></div>
         </article>
         
-        <article class="item" style="animation-delay: 420ms;">
+        <article class="item" style="animation-delay: 360ms;">
           <a href="vascularsurgery6/flashcards.html">Vascular Surgery 6%</a>
           <div class="meta">100 cards</div>
           <div class="meta"><a href="vascularsurgery6/flashcards.tsv">TSV export</a></div>
