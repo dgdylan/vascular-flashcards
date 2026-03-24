@@ -6,140 +6,134 @@
   <title>Cerebro Vascular Anatomy 12%</title>
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #32435c;
-      --bg-strong: #29384d;
-      --card: rgba(44, 58, 81, 0.94);
-      --card-strong: rgba(48, 63, 88, 0.98);
-      --ink: #fff7e8;
-      --muted: #d8d9e6;
-      --accent: #45e3ff;
-      --accent-strong: #6f88fc;
-      --heading: #fffaf0;
-      --subheading: #f5efe0;
-      --success: #45e3ff;
-      --danger: #a163f7;
-      --warning: #fff582;
-      --accent-soft: rgba(69, 227, 255, 0.16);
-      --border: rgba(255, 245, 130, 0.2);
-      --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
-      --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.28);
+      color-scheme: light;
+      --bg: #ffffff;
+      --hero-a: #2f72a6;
+      --hero-b: #5b9ace;
+      --card: #ffffff;
+      --card-soft: #f7fbfe;
+      --ink: #234f7f;
+      --muted: #6f88a4;
+      --accent: #56d6e3;
+      --accent-dark: #2e6ea3;
+      --border: rgba(46, 110, 163, 0.14);
+      --success: #2f9e61;
+      --danger: #d94841;
+      --shadow: 0 18px 40px rgba(35, 79, 127, 0.10);
+      --shadow-soft: 0 8px 20px rgba(35, 79, 127, 0.06);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(161, 99, 247, 0.16), transparent 28%),
-        radial-gradient(circle at 90% 10%, rgba(69, 227, 255, 0.12), transparent 24%),
-        linear-gradient(180deg, #31415a 0%, var(--bg) 54%, #29384d 100%);
+      background: #ffffff;
       color: var(--ink);
       min-height: 100vh;
     }
     .wrap {
-      width: min(1080px, calc(100% - 2rem));
+      width: min(1120px, calc(100% - 2.25rem));
       margin: 0 auto;
-      padding: 1.5rem 0 4rem;
+      padding: 1rem 0 3.5rem;
     }
     .hero {
       position: relative;
       overflow: hidden;
-      margin-bottom: 1.5rem;
-      padding: clamp(1.4rem, 2.5vw, 2rem);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      background:
-        linear-gradient(135deg, rgba(61, 78, 108, 0.98), rgba(44, 58, 81, 0.94)),
-        linear-gradient(120deg, rgba(161, 99, 247, 0.1), rgba(69, 227, 255, 0.08));
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      animation: rise-in 560ms ease-out both;
+      margin-bottom: 1.25rem;
+      padding: clamp(1.4rem, 2.4vw, 2rem);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--hero-a), var(--hero-b));
+      box-shadow: 0 22px 46px rgba(239, 227, 179, 0.35);
+      animation: rise-in 520ms ease-out both;
     }
     .hero::after {
       content: "";
       position: absolute;
-      inset: auto -8% -35% auto;
-      width: 240px;
+      right: -6%;
+      bottom: -22%;
+      width: 260px;
       aspect-ratio: 1;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
-      background: radial-gradient(circle, rgba(111, 136, 252, 0.34), transparent 70%);
+      background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 70%);
       pointer-events: none;
     }
     .eyebrow {
-      margin: 0 0 0.75rem;
-      color: var(--warning);
-      font-size: 0.78rem;
+      margin: 0 0 0.8rem;
+      color: rgba(255,255,255,0.84);
+      font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 4.8vw, 3.8rem);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
-      max-width: 14ch;
+      max-width: 11ch;
+      color: #ffffff;
+      font-size: clamp(2.2rem, 5vw, 4.1rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
       text-wrap: balance;
-      color: var(--heading);
     }
     .subhead {
-      margin: 1rem 0 0;
-      color: var(--subheading);
-      font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+      margin: 0.9rem 0 0;
+      max-width: 50ch;
+      color: rgba(255,255,255,0.86);
+      font-size: clamp(1rem, 1.35vw, 1.1rem);
       line-height: 1.6;
-      max-width: 60ch;
+    }
+    .hero-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1rem;
     }
     .hero-stats {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 1rem;
+      gap: 0.75rem;
     }
     .hero-stat {
+      min-width: 118px;
       padding: 0.72rem 0.95rem;
+      border: 1px solid rgba(255,255,255,0.16);
       border-radius: 16px;
-      background: rgba(39, 52, 73, 0.52);
-      border: 1px solid var(--border);
-      color: var(--ink);
-      min-width: 120px;
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
     }
     .hero-stat strong {
       display: block;
       font-size: 1rem;
-      color: var(--heading);
     }
     .hero-stat span {
       display: block;
       margin-top: 0.18rem;
+      color: rgba(255,255,255,0.74);
       font-size: 0.82rem;
-      color: var(--muted);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
     .toolbar {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
+      gap: 0.7rem;
     }
     .toolbar a, .toolbar button {
-      border: 1px solid var(--border);
-      background: var(--card-strong);
-      color: var(--ink);
+      border: 1px solid rgba(255,255,255,0.16);
+      background: #ffffff;
+      color: var(--accent-dark);
       border-radius: 999px;
-      padding: 0.78rem 1.05rem;
+      padding: 0.82rem 1.05rem;
       cursor: pointer;
       text-decoration: none;
       font: inherit;
-      font-weight: 700;
-      box-shadow: var(--shadow-soft);
-      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+      font-weight: 800;
+      transition: transform 180ms ease, box-shadow 180ms ease;
     }
     .toolbar a:hover, .toolbar button:hover {
       transform: translateY(-1px);
-      border-color: rgba(69, 227, 255, 0.38);
-      background: rgba(62, 81, 113, 1);
+      box-shadow: var(--shadow-soft);
     }
     .cards {
       display: grid;
@@ -147,60 +141,57 @@
     }
     .card {
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(86, 214, 227, 0.16);
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(239, 227, 179, 0.28);
       overflow: hidden;
-      backdrop-filter: blur(16px);
-      animation: rise-in 520ms ease-out both;
-      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      animation: rise-in 460ms ease-out both;
+      transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
     }
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
-      border-color: rgba(69, 227, 255, 0.26);
+      transform: translateY(-2px);
+      border-color: rgba(86, 214, 227, 0.24);
+      box-shadow: 0 20px 44px rgba(239, 227, 179, 0.32);
     }
     .card-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding: 1rem 1.2rem;
-      border-bottom: 1px solid var(--border);
-      background:
-        linear-gradient(135deg, rgba(161, 99, 247, 0.12), rgba(69, 227, 255, 0.08)),
-        rgba(51, 67, 92, 0.88);
+      padding: 1rem 1.15rem;
+      border-bottom: 1px solid rgba(86, 214, 227, 0.14);
+      background: linear-gradient(180deg, #eef9fd, #f7fcfe);
     }
     .card-number {
+      color: var(--accent);
       font-size: 0.9rem;
-      text-transform: uppercase;
+      font-weight: 800;
       letter-spacing: 0.08em;
-      color: var(--warning);
-      font-weight: 700;
+      text-transform: uppercase;
     }
     .pill {
       padding: 0.3rem 0.65rem;
       border-radius: 999px;
-      background: rgba(161, 99, 247, 0.16);
-      color: #f3ddff;
-      font-size: 0.85rem;
+      background: rgba(86, 214, 227, 0.14);
+      color: var(--accent-dark);
+      font-size: 0.84rem;
       font-weight: 700;
     }
     .card-body {
-      padding: 1.2rem;
       display: grid;
       gap: 1rem;
+      padding: 1.15rem;
     }
     .card-side {
       display: grid;
-      gap: 0.75rem;
+      gap: 0.8rem;
     }
     .label {
+      color: var(--accent-dark);
       font-size: 0.78rem;
+      font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #d9dcf5;
-      font-weight: 700;
     }
     .content {
       font-size: 1rem;
@@ -208,59 +199,16 @@
       white-space: pre-wrap;
     }
     .question-text {
-      font-size: clamp(1.02rem, 1.45vw, 1.16rem);
-      color: var(--heading);
-      font-weight: 650;
+      color: var(--accent-dark);
+      font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+      font-weight: 750;
       letter-spacing: -0.01em;
-    }
-    .choices {
-      display: grid;
-      gap: 0.65rem;
-      padding: 0.95rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: linear-gradient(180deg, rgba(53, 70, 98, 0.98), rgba(43, 57, 79, 0.92));
-    }
-    .choice {
-      appearance: none;
-      width: 100%;
-      text-align: left;
-      font: inherit;
-      color: var(--ink);
-      line-height: 1.55;
-      padding: 0.75rem 0.9rem;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 245, 130, 0.08);
-      background: rgba(39, 52, 73, 0.6);
-      cursor: pointer;
-      transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
-    }
-    .choice:hover {
-      transform: translateY(-1px);
-      border-color: rgba(69, 227, 255, 0.34);
-      background: rgba(57, 75, 104, 0.82);
-    }
-    .choice-label {
-      font-weight: 700;
-      color: var(--warning);
-      margin-right: 0.3rem;
-    }
-    .choice.correct {
-      border-color: rgba(69, 227, 255, 0.55);
-      background: rgba(69, 227, 255, 0.16);
-    }
-    .choice.incorrect {
-      border-color: rgba(161, 99, 247, 0.55);
-      background: rgba(161, 99, 247, 0.16);
-    }
-    .choice.revealed-correct {
-      border-color: rgba(255, 245, 130, 0.38);
-      box-shadow: inset 0 0 0 1px rgba(255, 245, 130, 0.12);
     }
     .study-note {
       min-height: 1.2rem;
-      color: var(--muted);
+      padding: 0 0.2rem;
       font-size: 0.92rem;
+      color: var(--muted);
     }
     .study-note.correct {
       color: var(--success);
@@ -268,68 +216,112 @@
     .study-note.incorrect {
       color: var(--danger);
     }
+    .choices {
+      display: grid;
+      gap: 0.9rem;
+      padding: 0.8rem;
+      border: 1px solid rgba(86, 214, 227, 0.14);
+      border-radius: 18px;
+      background: var(--card-soft);
+    }
+    .choice {
+      appearance: none;
+      width: 100%;
+      border: 1px solid rgba(46, 110, 163, 0.10);
+      border-radius: 14px;
+      background: #ffffff;
+      color: var(--accent-dark);
+      cursor: pointer;
+      font: inherit;
+      line-height: 1.55;
+      padding: 1rem 1.05rem;
+      text-align: left;
+      transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
+    }
+    .choice:hover {
+      transform: translateY(-1px);
+      border-color: rgba(86, 214, 227, 0.28);
+      background: #fcfeff;
+    }
+    .choice-label {
+      color: var(--accent);
+      font-weight: 800;
+      margin-right: 0.3rem;
+    }
+    .choice.correct {
+      border-color: rgba(47, 158, 97, 0.42);
+      background: rgba(47, 158, 97, 0.10);
+    }
+    .choice.incorrect {
+      border-color: rgba(217, 72, 65, 0.40);
+      background: rgba(217, 72, 65, 0.10);
+    }
+    .choice.revealed-correct {
+      border-color: rgba(47, 158, 97, 0.26);
+      box-shadow: inset 0 0 0 1px rgba(47, 158, 97, 0.14);
+    }
     img {
+      display: block;
       max-width: 100%;
       height: auto;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: rgba(35, 47, 66, 0.96);
-      display: block;
+      border: 1px solid rgba(86, 214, 227, 0.14);
+      border-radius: 16px;
+      background: #ffffff;
       box-shadow: var(--shadow-soft);
     }
     .answer-shell {
-      border-top: 1px dashed rgba(149, 180, 221, 0.34);
+      border-top: 1px dashed rgba(46, 110, 163, 0.12);
       padding-top: 1rem;
     }
     .answer-toggle {
-      width: 100%;
       appearance: none;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: linear-gradient(180deg, rgba(89, 110, 151, 0.98), rgba(65, 84, 117, 0.94));
-      color: var(--heading);
-      font: inherit;
-      font-weight: 750;
-      font-size: 1rem;
-      text-align: left;
-      padding: 1rem 1.1rem;
-      cursor: pointer;
-      min-height: 62px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
+      width: 100%;
+      min-height: 60px;
+      padding: 0.95rem 1.05rem;
+      border: 1px solid rgba(86, 214, 227, 0.14);
+      border-radius: 16px;
+      background: linear-gradient(180deg, #ffffff, #fbfeff);
+      color: var(--accent-dark);
+      cursor: pointer;
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 750;
+      text-align: left;
       transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
     }
     .answer-toggle:hover {
       transform: translateY(-1px);
-      border-color: rgba(69, 227, 255, 0.4);
-      background: linear-gradient(180deg, rgba(111, 136, 252, 1), rgba(77, 98, 136, 0.98));
+      border-color: rgba(86, 214, 227, 0.22);
+      background: linear-gradient(180deg, #ffffff, #f8fdff);
     }
     .answer-toggle:focus-visible,
     .choice:focus-visible,
     .toolbar a:focus-visible,
     .toolbar button:focus-visible {
-      outline: 2px solid rgba(69, 227, 255, 0.7);
+      outline: 2px solid rgba(86, 214, 227, 0.32);
       outline-offset: 2px;
     }
     .answer-chevron {
+      color: var(--accent);
       flex: 0 0 auto;
       font-size: 1.15rem;
-      color: var(--accent-strong);
       transition: transform 240ms ease;
     }
     .answer-panel {
       display: grid;
       grid-template-rows: 0fr;
-      transition: grid-template-rows 320ms ease, opacity 220ms ease, margin-top 220ms ease;
       opacity: 0;
       margin-top: 0;
+      transition: grid-template-rows 320ms ease, opacity 220ms ease, margin-top 220ms ease;
     }
     .answer-panel.open {
       grid-template-rows: 1fr;
       opacity: 1;
-      margin-top: 0.9rem;
+      margin-top: 0.85rem;
     }
     .answer-panel-inner {
       overflow: hidden;
@@ -338,9 +330,9 @@
       display: grid;
       gap: 0.75rem;
       padding: 1rem;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(86, 214, 227, 0.14);
       border-radius: 16px;
-      background: linear-gradient(180deg, rgba(55, 72, 100, 0.98), rgba(41, 54, 76, 0.96));
+      background: var(--card-soft);
     }
     .answer-title {
       font-weight: 700;
@@ -348,7 +340,7 @@
     @keyframes rise-in {
       from {
         opacity: 0;
-        transform: translateY(16px);
+        transform: translateY(14px);
       }
       to {
         opacity: 1;
@@ -363,23 +355,31 @@
         transition: none;
       }
     }
-    @media (max-width: 640px) {
-      .wrap { width: min(100% - 1rem, 1080px); padding-top: 1rem; }
-      .hero {
-        border-radius: 22px;
-        padding: 1.15rem;
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(100% - 1rem, 1120px);
+        padding-top: 0.85rem;
       }
-      .card-header, .card-body { padding: 1rem; }
+      .hero {
+        padding: 1.1rem;
+        border-radius: 18px;
+      }
+      .hero-row {
+        align-items: stretch;
+      }
       .toolbar {
-        display: grid;
-        grid-template-columns: 1fr;
+        width: 100%;
       }
       .toolbar a, .toolbar button {
         width: 100%;
+        justify-content: center;
         text-align: center;
       }
       h1 {
         max-width: none;
+      }
+      .card-header, .card-body {
+        padding: 1rem;
       }
     }
   </style>
@@ -390,15 +390,17 @@
       <p class="eyebrow">Review Deck</p>
       <h1>Cerebro Vascular Anatomy 12%</h1>
       <p class="subhead">69 flashcards extracted from this PDF. Open each back panel to review the correct answer and full feedback.</p>
-      <div class="hero-stats">
-        <div class="hero-stat"><strong>69</strong><span>Total Cards</span></div>
-        <div class="hero-stat"><strong id="mastered-count">0</strong><span>Mastered</span></div>
-        <div class="hero-stat"><strong id="needs-review-count">0</strong><span>Needs Review</span></div>
-      </div>
-      <div class="toolbar">
-        <a href="../index.html">Back to index</a>
-        <button type="button" id="open-all">Open all backs</button>
-        <button type="button" id="close-all">Close all backs</button>
+      <div class="hero-row">
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>69</strong><span>Total Cards</span></div>
+          <div class="hero-stat"><strong id="mastered-count">0</strong><span>Mastered</span></div>
+          <div class="hero-stat"><strong id="needs-review-count">0</strong><span>Needs Review</span></div>
+        </div>
+        <div class="toolbar">
+          <a href="../index.html">Back to index</a>
+          <button type="button" id="open-all">Open all backs</button>
+          <button type="button" id="close-all">Close all backs</button>
+        </div>
       </div>
     </section>
     <section class="cards">
@@ -456,7 +458,7 @@ Tortuosity - vessel forms an S-shaped curve</div>
         </div>
       </article>
       
-      <article class="card" id="q2" style="animation-delay: 35ms;">
+      <article class="card" id="q2" style="animation-delay: 30ms;">
         <div class="card-header">
           <div class="card-number">Question 2</div>
           
@@ -506,7 +508,7 @@ Tortuosity - vessel forms an S-shaped curve</div>
         </div>
       </article>
       
-      <article class="card" id="q3" style="animation-delay: 70ms;">
+      <article class="card" id="q3" style="animation-delay: 60ms;">
         <div class="card-header">
           <div class="card-number">Question 3</div>
           
@@ -558,7 +560,7 @@ ophthalmic artery).</div>
         </div>
       </article>
       
-      <article class="card" id="q4" style="animation-delay: 105ms;">
+      <article class="card" id="q4" style="animation-delay: 90ms;">
         <div class="card-header">
           <div class="card-number">Question 4</div>
           <div class="pill">Missed</div>
@@ -609,7 +611,7 @@ proximal artery.</div>
         </div>
       </article>
       
-      <article class="card" id="q5" style="animation-delay: 140ms;">
+      <article class="card" id="q5" style="animation-delay: 120ms;">
         <div class="card-header">
           <div class="card-number">Question 5</div>
           
@@ -662,7 +664,7 @@ course through the pedicles of the vertebra and this vessel is demonstrated ante
         </div>
       </article>
       
-      <article class="card" id="q6" style="animation-delay: 175ms;">
+      <article class="card" id="q6" style="animation-delay: 150ms;">
         <div class="card-header">
           <div class="card-number">Question 6</div>
           
@@ -713,7 +715,7 @@ intracranial vessels are so small, no spectral window is demonstrated on the wav
         </div>
       </article>
       
-      <article class="card" id="q7" style="animation-delay: 210ms;">
+      <article class="card" id="q7" style="animation-delay: 180ms;">
         <div class="card-header">
           <div class="card-number">Question 7</div>
           
@@ -763,7 +765,7 @@ intracranial vessels are so small, no spectral window is demonstrated on the wav
         </div>
       </article>
       
-      <article class="card" id="q8" style="animation-delay: 245ms;">
+      <article class="card" id="q8" style="animation-delay: 210ms;">
         <div class="card-header">
           <div class="card-number">Question 8</div>
           <div class="pill">Missed</div>
@@ -814,7 +816,7 @@ most patients</div>
         </div>
       </article>
       
-      <article class="card" id="q9" style="animation-delay: 280ms;">
+      <article class="card" id="q9" style="animation-delay: 240ms;">
         <div class="card-header">
           <div class="card-number">Question 9</div>
           <div class="pill">Missed</div>
@@ -869,7 +871,7 @@ transducer. Red color is most commonly used to demonstrate antegrade flow and bl
         </div>
       </article>
       
-      <article class="card" id="q10" style="animation-delay: 315ms;">
+      <article class="card" id="q10" style="animation-delay: 270ms;">
         <div class="card-header">
           <div class="card-number">Question 10</div>
           
@@ -919,7 +921,7 @@ transducer. Red color is most commonly used to demonstrate antegrade flow and bl
         </div>
       </article>
       
-      <article class="card" id="q11" style="animation-delay: 350ms;">
+      <article class="card" id="q11" style="animation-delay: 300ms;">
         <div class="card-header">
           <div class="card-number">Question 11</div>
           <div class="pill">Missed</div>
@@ -971,7 +973,7 @@ transducer. Red color is most commonly used to demonstrate antegrade flow and bl
         </div>
       </article>
       
-      <article class="card" id="q12" style="animation-delay: 385ms;">
+      <article class="card" id="q12" style="animation-delay: 330ms;">
         <div class="card-header">
           <div class="card-number">Question 12</div>
           
@@ -1022,7 +1024,7 @@ is placed near the inner canthus of the eye. Normal flow direction will be towar
         </div>
       </article>
       
-      <article class="card" id="q13" style="animation-delay: 420ms;">
+      <article class="card" id="q13" style="animation-delay: 360ms;">
         <div class="card-header">
           <div class="card-number">Question 13</div>
           <div class="pill">Missed</div>
@@ -1077,7 +1079,7 @@ D. Right CCA</div>
         </div>
       </article>
       
-      <article class="card" id="q14" style="animation-delay: 455ms;">
+      <article class="card" id="q14" style="animation-delay: 390ms;">
         <div class="card-header">
           <div class="card-number">Question 14</div>
           <div class="pill">Missed</div>
@@ -1129,7 +1131,7 @@ resistance, monophasic waveform.</div>
         </div>
       </article>
       
-      <article class="card" id="q15" style="animation-delay: 490ms;">
+      <article class="card" id="q15" style="animation-delay: 420ms;">
         <div class="card-header">
           <div class="card-number">Question 15</div>
           
@@ -1184,7 +1186,7 @@ D. Right CCA</div>
         </div>
       </article>
       
-      <article class="card" id="q16" style="animation-delay: 525ms;">
+      <article class="card" id="q16" style="animation-delay: 450ms;">
         <div class="card-header">
           <div class="card-number">Question 16</div>
           <div class="pill">Missed</div>
@@ -1236,7 +1238,7 @@ affect the amount of flow sampled and is not useful for determining the vessel b
         </div>
       </article>
       
-      <article class="card" id="q17" style="animation-delay: 560ms;">
+      <article class="card" id="q17" style="animation-delay: 480ms;">
         <div class="card-header">
           <div class="card-number">Question 17</div>
           <div class="pill">Missed</div>
@@ -1290,7 +1292,7 @@ artery, the compressed vessel is being used as a collateral to fill the frontal 
         </div>
       </article>
       
-      <article class="card" id="q18" style="animation-delay: 595ms;">
+      <article class="card" id="q18" style="animation-delay: 510ms;">
         <div class="card-header">
           <div class="card-number">Question 18</div>
           
@@ -1340,7 +1342,7 @@ artery, the compressed vessel is being used as a collateral to fill the frontal 
         </div>
       </article>
       
-      <article class="card" id="q19" style="animation-delay: 630ms;">
+      <article class="card" id="q19" style="animation-delay: 540ms;">
         <div class="card-header">
           <div class="card-number">Question 19</div>
           <div class="pill">Missed</div>
@@ -1392,7 +1394,7 @@ artery, the compressed vessel is being used as a collateral to fill the frontal 
         </div>
       </article>
       
-      <article class="card" id="q20" style="animation-delay: 665ms;">
+      <article class="card" id="q20" style="animation-delay: 570ms;">
         <div class="card-header">
           <div class="card-number">Question 20</div>
           <div class="pill">Missed</div>
@@ -1448,7 +1450,7 @@ The subclavian artery is in the upper chest.</div>
         </div>
       </article>
       
-      <article class="card" id="q21" style="animation-delay: 700ms;">
+      <article class="card" id="q21" style="animation-delay: 600ms;">
         <div class="card-header">
           <div class="card-number">Question 21</div>
           
@@ -1498,7 +1500,7 @@ The subclavian artery is in the upper chest.</div>
         </div>
       </article>
       
-      <article class="card" id="q22" style="animation-delay: 735ms;">
+      <article class="card" id="q22" style="animation-delay: 630ms;">
         <div class="card-header">
           <div class="card-number">Question 22</div>
           
@@ -1551,7 +1553,7 @@ location. The smaller, more medial vessel demonstrates the branch coursing infer
         </div>
       </article>
       
-      <article class="card" id="q23" style="animation-delay: 770ms;">
+      <article class="card" id="q23" style="animation-delay: 660ms;">
         <div class="card-header">
           <div class="card-number">Question 23</div>
           <div class="pill">Missed</div>
@@ -1608,7 +1610,7 @@ of Willis that is obstructed in an area.</div>
         </div>
       </article>
       
-      <article class="card" id="q24" style="animation-delay: 805ms;">
+      <article class="card" id="q24" style="animation-delay: 690ms;">
         <div class="card-header">
           <div class="card-number">Question 24</div>
           
@@ -1661,7 +1663,7 @@ should be identified at an average depth of 50mm. Slight anterior angulation may
         </div>
       </article>
       
-      <article class="card" id="q25" style="animation-delay: 840ms;">
+      <article class="card" id="q25" style="animation-delay: 720ms;">
         <div class="card-header">
           <div class="card-number">Question 25</div>
           <div class="pill">Missed</div>
@@ -1713,7 +1715,7 @@ Both vessels will normally exhibit flow moving away from the transducer and towa
         </div>
       </article>
       
-      <article class="card" id="q26" style="animation-delay: 875ms;">
+      <article class="card" id="q26" style="animation-delay: 750ms;">
         <div class="card-header">
           <div class="card-number">Question 26</div>
           
@@ -1768,7 +1770,7 @@ above the baseline.</div>
         </div>
       </article>
       
-      <article class="card" id="q27" style="animation-delay: 910ms;">
+      <article class="card" id="q27" style="animation-delay: 780ms;">
         <div class="card-header">
           <div class="card-number">Question 27</div>
           <div class="pill">Missed</div>
@@ -1819,7 +1821,7 @@ most common being the ECA lies posterior and lateral to the ICA</div>
         </div>
       </article>
       
-      <article class="card" id="q28" style="animation-delay: 945ms;">
+      <article class="card" id="q28" style="animation-delay: 810ms;">
         <div class="card-header">
           <div class="card-number">Question 28</div>
           
@@ -1871,7 +1873,7 @@ of the vessel. The ECA and CCA waveforms are higher resistance with a sharper up
         </div>
       </article>
       
-      <article class="card" id="q29" style="animation-delay: 980ms;">
+      <article class="card" id="q29" style="animation-delay: 840ms;">
         <div class="card-header">
           <div class="card-number">Question 29</div>
           <div class="pill">Missed</div>
@@ -1921,7 +1923,7 @@ of the vessel. The ECA and CCA waveforms are higher resistance with a sharper up
         </div>
       </article>
       
-      <article class="card" id="q30" style="animation-delay: 1015ms;">
+      <article class="card" id="q30" style="animation-delay: 870ms;">
         <div class="card-header">
           <div class="card-number">Question 30</div>
           
@@ -1975,7 +1977,7 @@ muscles and tissue, therefore the flow demonstrates a higher resistance waveform
         </div>
       </article>
       
-      <article class="card" id="q31" style="animation-delay: 1050ms;">
+      <article class="card" id="q31" style="animation-delay: 900ms;">
         <div class="card-header">
           <div class="card-number">Question 31</div>
           <div class="pill">Missed</div>
@@ -2025,7 +2027,7 @@ muscles and tissue, therefore the flow demonstrates a higher resistance waveform
         </div>
       </article>
       
-      <article class="card" id="q32" style="animation-delay: 1085ms;">
+      <article class="card" id="q32" style="animation-delay: 930ms;">
         <div class="card-header">
           <div class="card-number">Question 32</div>
           
@@ -2076,7 +2078,7 @@ stenosis. Tortuosity, vessel kinking and elevated blood pressure can be normal c
         </div>
       </article>
       
-      <article class="card" id="q33" style="animation-delay: 1120ms;">
+      <article class="card" id="q33" style="animation-delay: 960ms;">
         <div class="card-header">
           <div class="card-number">Question 33</div>
           <div class="pill">Missed</div>
@@ -2129,7 +2131,7 @@ The ACA and MCA are part of the anterior circulation. The PCA and basilar/verteb
         </div>
       </article>
       
-      <article class="card" id="q34" style="animation-delay: 1155ms;">
+      <article class="card" id="q34" style="animation-delay: 990ms;">
         <div class="card-header">
           <div class="card-number">Question 34</div>
           
@@ -2182,7 +2184,7 @@ arrangement allows for collateral flow to occur on the same side of the body if 
         </div>
       </article>
       
-      <article class="card" id="q35" style="animation-delay: 1190ms;">
+      <article class="card" id="q35" style="animation-delay: 1020ms;">
         <div class="card-header">
           <div class="card-number">Question 35</div>
           <div class="pill">Missed</div>
@@ -2235,7 +2237,7 @@ above the aortic valve in the heart.</div>
         </div>
       </article>
       
-      <article class="card" id="q36" style="animation-delay: 1225ms;">
+      <article class="card" id="q36" style="animation-delay: 1050ms;">
         <div class="card-header">
           <div class="card-number">Question 36</div>
           
@@ -2287,7 +2289,7 @@ arteries.</div>
         </div>
       </article>
       
-      <article class="card" id="q37" style="animation-delay: 1260ms;">
+      <article class="card" id="q37" style="animation-delay: 1080ms;">
         <div class="card-header">
           <div class="card-number">Question 37</div>
           
@@ -2338,7 +2340,7 @@ usually courses posteriorly and laterally to enter the skull and feed the cerebr
         </div>
       </article>
       
-      <article class="card" id="q38" style="animation-delay: 1295ms;">
+      <article class="card" id="q38" style="animation-delay: 1110ms;">
         <div class="card-header">
           <div class="card-number">Question 38</div>
           <div class="pill">Missed</div>
@@ -2389,7 +2391,7 @@ position for the exam. Placing the hand under the head will also help to raise i
         </div>
       </article>
       
-      <article class="card" id="q39" style="animation-delay: 1330ms;">
+      <article class="card" id="q39" style="animation-delay: 1140ms;">
         <div class="card-header">
           <div class="card-number">Question 39</div>
           <div class="pill">Missed</div>
@@ -2442,7 +2444,7 @@ evaluated on this view, the supplemental submandibular approach may be used.</di
         </div>
       </article>
       
-      <article class="card" id="q40" style="animation-delay: 1365ms;">
+      <article class="card" id="q40" style="animation-delay: 1170ms;">
         <div class="card-header">
           <div class="card-number">Question 40</div>
           <div class="pill">Missed</div>
@@ -2495,7 +2497,7 @@ distal to the origin of the anterior communicator artery.</div>
         </div>
       </article>
       
-      <article class="card" id="q41" style="animation-delay: 1400ms;">
+      <article class="card" id="q41" style="animation-delay: 1200ms;">
         <div class="card-header">
           <div class="card-number">Question 41</div>
           
@@ -2548,7 +2550,7 @@ normally demonstrate a low resistance waveform, while the ECA demonstrates a hig
         </div>
       </article>
       
-      <article class="card" id="q42" style="animation-delay: 1435ms;">
+      <article class="card" id="q42" style="animation-delay: 1230ms;">
         <div class="card-header">
           <div class="card-number">Question 42</div>
           <div class="pill">Missed</div>
@@ -2600,7 +2602,7 @@ normally demonstrate a low resistance waveform, while the ECA demonstrates a hig
         </div>
       </article>
       
-      <article class="card" id="q43" style="animation-delay: 1470ms;">
+      <article class="card" id="q43" style="animation-delay: 1260ms;">
         <div class="card-header">
           <div class="card-number">Question 43</div>
           
@@ -2655,7 +2657,7 @@ maneuver. This technique is used to differentiate the ECA from the ICA.</div>
         </div>
       </article>
       
-      <article class="card" id="q44" style="animation-delay: 1505ms;">
+      <article class="card" id="q44" style="animation-delay: 1290ms;">
         <div class="card-header">
           <div class="card-number">Question 44</div>
           <div class="pill">Missed</div>
@@ -2708,7 +2710,7 @@ artery branches from the carotid siphon.</div>
         </div>
       </article>
       
-      <article class="card" id="q45" style="animation-delay: 1540ms;">
+      <article class="card" id="q45" style="animation-delay: 1320ms;">
         <div class="card-header">
           <div class="card-number">Question 45</div>
           <div class="pill">Missed</div>
@@ -2758,7 +2760,7 @@ artery branches from the carotid siphon.</div>
         </div>
       </article>
       
-      <article class="card" id="q46" style="animation-delay: 1575ms;">
+      <article class="card" id="q46" style="animation-delay: 1350ms;">
         <div class="card-header">
           <div class="card-number">Question 46</div>
           
@@ -2811,7 +2813,7 @@ terminate at the origination of the MCA and ACA. The PCA is a branch of the basi
         </div>
       </article>
       
-      <article class="card" id="q47" style="animation-delay: 1610ms;">
+      <article class="card" id="q47" style="animation-delay: 1380ms;">
         <div class="card-header">
           <div class="card-number">Question 47</div>
           
@@ -2862,7 +2864,7 @@ the ICA. The cerebellum and brain stem are supplied by the posterior circulation
         </div>
       </article>
       
-      <article class="card" id="q48" style="animation-delay: 1645ms;">
+      <article class="card" id="q48" style="animation-delay: 1410ms;">
         <div class="card-header">
           <div class="card-number">Question 48</div>
           
@@ -2914,7 +2916,7 @@ the ICA. The cerebellum and brain stem are supplied by the posterior circulation
         </div>
       </article>
       
-      <article class="card" id="q49" style="animation-delay: 1680ms;">
+      <article class="card" id="q49" style="animation-delay: 1440ms;">
         <div class="card-header">
           <div class="card-number">Question 49</div>
           
@@ -2965,7 +2967,7 @@ fed by the anterior cerebral artery.</div>
         </div>
       </article>
       
-      <article class="card" id="q50" style="animation-delay: 1715ms;">
+      <article class="card" id="q50" style="animation-delay: 1470ms;">
         <div class="card-header">
           <div class="card-number">Question 50</div>
           <div class="pill">Missed</div>
@@ -3017,7 +3019,7 @@ distal ICA before it terminates at the bifurcation into the ACA and MCA once it 
         </div>
       </article>
       
-      <article class="card" id="q51" style="animation-delay: 1750ms;">
+      <article class="card" id="q51" style="animation-delay: 1500ms;">
         <div class="card-header">
           <div class="card-number">Question 51</div>
           
@@ -3068,7 +3070,7 @@ segment is located distal to the origin of the posterior communicator artery.</d
         </div>
       </article>
       
-      <article class="card" id="q52" style="animation-delay: 1785ms;">
+      <article class="card" id="q52" style="animation-delay: 1530ms;">
         <div class="card-header">
           <div class="card-number">Question 52</div>
           <div class="pill">Missed</div>
@@ -3120,7 +3122,7 @@ normal anatomic variants that can cause turbulence.</div>
         </div>
       </article>
       
-      <article class="card" id="q53" style="animation-delay: 1820ms;">
+      <article class="card" id="q53" style="animation-delay: 1560ms;">
         <div class="card-header">
           <div class="card-number">Question 53</div>
           <div class="pill">Missed</div>
@@ -3170,7 +3172,7 @@ normal anatomic variants that can cause turbulence.</div>
         </div>
       </article>
       
-      <article class="card" id="q54" style="animation-delay: 1855ms;">
+      <article class="card" id="q54" style="animation-delay: 1590ms;">
         <div class="card-header">
           <div class="card-number">Question 54</div>
           <div class="pill">Missed</div>
@@ -3222,7 +3224,7 @@ the ICA.</div>
         </div>
       </article>
       
-      <article class="card" id="q55" style="animation-delay: 1890ms;">
+      <article class="card" id="q55" style="animation-delay: 1620ms;">
         <div class="card-header">
           <div class="card-number">Question 55</div>
           <div class="pill">Missed</div>
@@ -3274,7 +3276,7 @@ stem.</div>
         </div>
       </article>
       
-      <article class="card" id="q56" style="animation-delay: 1925ms;">
+      <article class="card" id="q56" style="animation-delay: 1650ms;">
         <div class="card-header">
           <div class="card-number">Question 56</div>
           <div class="pill">Missed</div>
@@ -3325,7 +3327,7 @@ superficial temporal artery, which is a branch of the ECA. This is a common coll
         </div>
       </article>
       
-      <article class="card" id="q57" style="animation-delay: 1960ms;">
+      <article class="card" id="q57" style="animation-delay: 1680ms;">
         <div class="card-header">
           <div class="card-number">Question 57</div>
           <div class="pill">Missed</div>
@@ -3379,7 +3381,7 @@ Diastolic flow reversal would indicate an abnormality causing increased resistan
         </div>
       </article>
       
-      <article class="card" id="q58" style="animation-delay: 1995ms;">
+      <article class="card" id="q58" style="animation-delay: 1710ms;">
         <div class="card-header">
           <div class="card-number">Question 58</div>
           
@@ -3431,7 +3433,7 @@ Diastolic flow reversal would indicate an abnormality causing increased resistan
         </div>
       </article>
       
-      <article class="card" id="q59" style="animation-delay: 2030ms;">
+      <article class="card" id="q59" style="animation-delay: 1740ms;">
         <div class="card-header">
           <div class="card-number">Question 59</div>
           
@@ -3488,7 +3490,7 @@ maneuver. This technique is used to differentiate the ECA from the ICA.</div>
         </div>
       </article>
       
-      <article class="card" id="q60" style="animation-delay: 2065ms;">
+      <article class="card" id="q60" style="animation-delay: 1770ms;">
         <div class="card-header">
           <div class="card-number">Question 60</div>
           
@@ -3539,7 +3541,7 @@ the skull.</div>
         </div>
       </article>
       
-      <article class="card" id="q61" style="animation-delay: 2100ms;">
+      <article class="card" id="q61" style="animation-delay: 1800ms;">
         <div class="card-header">
           <div class="card-number">Question 61</div>
           
@@ -3590,7 +3592,7 @@ The normal basilar and vertebral arteries will demonstrate flow away from the pr
         </div>
       </article>
       
-      <article class="card" id="q62" style="animation-delay: 2135ms;">
+      <article class="card" id="q62" style="animation-delay: 1830ms;">
         <div class="card-header">
           <div class="card-number">Question 62</div>
           
@@ -3643,7 +3645,7 @@ lobes.</div>
         </div>
       </article>
       
-      <article class="card" id="q63" style="animation-delay: 2170ms;">
+      <article class="card" id="q63" style="animation-delay: 1860ms;">
         <div class="card-header">
           <div class="card-number">Question 63</div>
           <div class="pill">Missed</div>
@@ -3693,7 +3695,7 @@ lobes.</div>
         </div>
       </article>
       
-      <article class="card" id="q64" style="animation-delay: 2205ms;">
+      <article class="card" id="q64" style="animation-delay: 1890ms;">
         <div class="card-header">
           <div class="card-number">Question 64</div>
           <div class="pill">Missed</div>
@@ -3744,7 +3746,7 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
         </div>
       </article>
       
-      <article class="card" id="q65" style="animation-delay: 2240ms;">
+      <article class="card" id="q65" style="animation-delay: 1920ms;">
         <div class="card-header">
           <div class="card-number">Question 65</div>
           <div class="pill">Missed</div>
@@ -3794,7 +3796,7 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
         </div>
       </article>
       
-      <article class="card" id="q66" style="animation-delay: 2275ms;">
+      <article class="card" id="q66" style="animation-delay: 1950ms;">
         <div class="card-header">
           <div class="card-number">Question 66</div>
           <div class="pill">Missed</div>
@@ -3846,7 +3848,7 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
         </div>
       </article>
       
-      <article class="card" id="q67" style="animation-delay: 2310ms;">
+      <article class="card" id="q67" style="animation-delay: 1980ms;">
         <div class="card-header">
           <div class="card-number">Question 67</div>
           <div class="pill">Missed</div>
@@ -3898,7 +3900,7 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
         </div>
       </article>
       
-      <article class="card" id="q68" style="animation-delay: 2345ms;">
+      <article class="card" id="q68" style="animation-delay: 2010ms;">
         <div class="card-header">
           <div class="card-number">Question 68</div>
           
@@ -3948,7 +3950,7 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
         </div>
       </article>
       
-      <article class="card" id="q69" style="animation-delay: 2380ms;">
+      <article class="card" id="q69" style="animation-delay: 2040ms;">
         <div class="card-header">
           <div class="card-number">Question 69</div>
           
@@ -4005,7 +4007,6 @@ Powered by ExamBuilder. Copyright ©2026</div>
   </main>
   <script>
     const answerToggles = Array.from(document.querySelectorAll(".answer-toggle"));
-    const answerPanels = Array.from(document.querySelectorAll(".answer-panel"));
     const storageKey = "flashcard-study-state:" + window.location.pathname;
     const masteredCount = document.getElementById("mastered-count");
     const needsReviewCount = document.getElementById("needs-review-count");
@@ -4072,17 +4073,13 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     function renderChoiceState(cardId, state) {
       const group = document.querySelectorAll('.choice[data-card-id="' + cardId + '"]');
-      if (!group.length) {
-        return;
-      }
+      if (!group.length) return;
       const selectedChoice = state && state.selectedChoice ? state.selectedChoice : null;
       const correctChoice = group[0].getAttribute("data-correct");
       group.forEach((item) => {
         item.classList.remove("correct", "incorrect", "revealed-correct");
         const itemChoice = item.getAttribute("data-choice");
-        if (!selectedChoice) {
-          return;
-        }
+        if (!selectedChoice) return;
         if (itemChoice === selectedChoice) {
           item.classList.add(selectedChoice === correctChoice ? "correct" : "incorrect");
         }
@@ -4095,18 +4092,15 @@ Powered by ExamBuilder. Copyright ©2026</div>
     function applyStudyState(state) {
       document.querySelectorAll("[data-study-note]").forEach((node) => {
         const cardId = node.getAttribute("data-study-note");
-        const note = document.querySelector('[data-study-note="' + cardId + '"]');
         const current = state[cardId] || { status: null, selectedChoice: null };
-        if (note) {
-          if (current.selectedChoice && current.status === "correct") {
-            note.textContent = "Correct. Saved on this device.";
-          } else if (current.selectedChoice && current.status === "incorrect") {
-            note.textContent = "Incorrect. The correct option is highlighted.";
-          } else {
-            note.textContent = "Choose an answer to track your progress.";
-          }
-          note.className = "study-note" + (current.status ? " " + current.status : "");
+        if (current.selectedChoice && current.status === "correct") {
+          node.textContent = "Correct.";
+        } else if (current.selectedChoice && current.status === "incorrect") {
+          node.textContent = "Incorrect. The correct option is highlighted.";
+        } else {
+          node.textContent = "";
         }
+        node.className = "study-note" + (current.status ? " " + current.status : "");
         renderChoiceState(cardId, current);
       });
       updateCounts(state);
@@ -4120,9 +4114,7 @@ Powered by ExamBuilder. Copyright ©2026</div>
         const cardId = button.getAttribute("data-card-id");
         const correct = button.getAttribute("data-correct");
         const choice = button.getAttribute("data-choice");
-        if (!correct) {
-          return;
-        }
+        if (!correct) return;
         studyState[cardId] = {
           status: choice === correct ? "correct" : "incorrect",
           selectedChoice: choice,
