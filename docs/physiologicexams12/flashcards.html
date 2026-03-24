@@ -222,6 +222,11 @@
       background: linear-gradient(180deg, rgba(24, 41, 67, 0.98), rgba(17, 31, 52, 0.92));
     }
     .choice {
+      appearance: none;
+      width: 100%;
+      text-align: left;
+      font: inherit;
+      color: var(--ink);
       line-height: 1.55;
       padding: 0.75rem 0.9rem;
       border-radius: 12px;
@@ -247,6 +252,10 @@
     .choice.incorrect {
       border-color: rgba(255, 143, 151, 0.45);
       background: rgba(95, 34, 47, 0.35);
+    }
+    .choice.revealed-correct {
+      border-color: rgba(120, 230, 167, 0.36);
+      box-shadow: inset 0 0 0 1px rgba(120, 230, 167, 0.18);
     }
     .study-panel {
       display: grid;
@@ -10091,9 +10100,25 @@ Powered by ExamBuilder. Copyright ©2026</div>
       answerToggles.forEach((toggle) => setPanelState(toggle, false));
     });
 
+    function normalizeState(rawState) {
+      const nextState = {};
+      Object.keys(rawState || {}).forEach((key) => {
+        const value = rawState[key];
+        if (typeof value === "string") {
+          nextState[key] = { status: value, selectedChoice: null };
+        } else if (value && typeof value === "object") {
+          nextState[key] = {
+            status: value.status || null,
+            selectedChoice: value.selectedChoice || null,
+          };
+        }
+      });
+      return nextState;
+    }
+
     function loadStudyState() {
       try {
-        return JSON.parse(localStorage.getItem(storageKey) || "{}");
+        return normalizeState(JSON.parse(localStorage.getItem(storageKey) || "{}"));
       } catch (error) {
         return {};
       }
@@ -10105,22 +10130,55 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     function updateCounts(state) {
       const values = Object.values(state);
-      const mastered = values.filter((value) => value === "correct").length;
-      const review = values.filter((value) => value === "incorrect").length;
+      const mastered = values.filter((value) => value && value.status === "correct").length;
+      const review = values.filter((value) => value && value.status === "incorrect").length;
       masteredCount.textContent = String(mastered);
       needsReviewCount.textContent = String(review);
+    }
+
+    function renderChoiceState(cardId, state) {
+      const group = document.querySelectorAll('.choice[data-card-id="' + cardId + '"]');
+      if (!group.length) {
+        return;
+      }
+      const selectedChoice = state && state.selectedChoice ? state.selectedChoice : null;
+      const correctChoice = group[0].getAttribute("data-correct");
+      group.forEach((item) => {
+        item.classList.remove("correct", "incorrect", "revealed-correct");
+        const itemChoice = item.getAttribute("data-choice");
+        if (!selectedChoice) {
+          return;
+        }
+        if (itemChoice === selectedChoice) {
+          item.classList.add(selectedChoice === correctChoice ? "correct" : "incorrect");
+        }
+        if (selectedChoice !== correctChoice && itemChoice === correctChoice) {
+          item.classList.add("revealed-correct");
+        }
+      });
     }
 
     function applyStudyState(state) {
       document.querySelectorAll("[data-study-status]").forEach((node) => {
         const cardId = node.getAttribute("data-study-status");
         const note = document.querySelector('[data-study-note="' + cardId + '"]');
-        const current = state[cardId];
-        node.textContent = current === "correct" ? "Marked understood" : current === "incorrect" ? "Marked for review" : "Not answered yet";
+        const current = state[cardId] || { status: null, selectedChoice: null };
+        node.textContent = current.status === "correct" ? "Marked understood" : current.status === "incorrect" ? "Marked for review" : "Not answered yet";
         if (note) {
-          note.textContent = current === "correct" ? "Saved as understood on this device." : current === "incorrect" ? "Saved as needs review on this device." : "";
-          note.className = "study-note" + (current ? " " + current : "");
+          if (current.selectedChoice && current.status === "correct") {
+            note.textContent = "You selected the correct answer. Saved on this device.";
+          } else if (current.selectedChoice && current.status === "incorrect") {
+            note.textContent = "You selected the wrong answer. The correct option is highlighted.";
+          } else if (current.status === "correct") {
+            note.textContent = "Saved as understood on this device.";
+          } else if (current.status === "incorrect") {
+            note.textContent = "Saved as needs review on this device.";
+          } else {
+            note.textContent = "";
+          }
+          note.className = "study-note" + (current.status ? " " + current.status : "");
         }
+        renderChoiceState(cardId, current);
       });
       updateCounts(state);
     }
@@ -10132,10 +10190,13 @@ Powered by ExamBuilder. Copyright ©2026</div>
       button.addEventListener("click", () => {
         const cardId = button.getAttribute("data-card-id");
         const result = button.getAttribute("data-result");
+        if (!studyState[cardId]) {
+          studyState[cardId] = { status: null, selectedChoice: null };
+        }
         if (result === "reset") {
           delete studyState[cardId];
         } else {
-          studyState[cardId] = result;
+          studyState[cardId].status = result;
         }
         saveStudyState(studyState);
         applyStudyState(studyState);
@@ -10147,16 +10208,15 @@ Powered by ExamBuilder. Copyright ©2026</div>
         const cardId = button.getAttribute("data-card-id");
         const correct = button.getAttribute("data-correct");
         const choice = button.getAttribute("data-choice");
-        const group = document.querySelectorAll('.choice[data-card-id="' + cardId + '"]');
-        group.forEach((item) => item.classList.remove("correct", "incorrect"));
         if (!correct) {
           return;
         }
-        button.classList.add(choice === correct ? "correct" : "incorrect");
-        const correctNode = document.querySelector('.choice[data-card-id="' + cardId + '"][data-choice="' + correct + '"]');
-        if (correctNode && correctNode !== button) {
-          correctNode.classList.add("correct");
-        }
+        studyState[cardId] = {
+          status: choice === correct ? "correct" : "incorrect",
+          selectedChoice: choice,
+        };
+        saveStudyState(studyState);
+        applyStudyState(studyState);
       });
     });
   </script>
