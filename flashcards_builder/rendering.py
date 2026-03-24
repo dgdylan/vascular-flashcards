@@ -19,53 +19,49 @@ FLASHCARDS_TEMPLATE = """
   <title>{{ title }}</title>
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #32435c;
-      --bg-strong: #29384d;
-      --card: rgba(44, 58, 81, 0.94);
-      --card-strong: rgba(48, 63, 88, 0.98);
-      --ink: #fff7e8;
-      --muted: #d8d9e6;
-      --accent: #45e3ff;
-      --accent-strong: #6f88fc;
-      --heading: #fffaf0;
-      --subheading: #f5efe0;
-      --success: #45e3ff;
-      --danger: #a163f7;
-      --warning: #fff582;
-      --accent-soft: rgba(69, 227, 255, 0.16);
-      --border: rgba(255, 245, 130, 0.2);
-      --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
-      --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.28);
+      color-scheme: light;
+      --bg: #ffffff;
+      --bg-soft: #f7fcfd;
+      --card: #ffffff;
+      --card-soft: #fbfeff;
+      --ink: #26648e;
+      --muted: #6a879e;
+      --accent: #53d2dc;
+      --accent-strong: #4f8fc0;
+      --heading: #26648e;
+      --subheading: #4d7692;
+      --success: #53d2dc;
+      --danger: #4f8fc0;
+      --warning: #ffe3b3;
+      --border: rgba(38, 100, 142, 0.14);
+      --shadow: 0 18px 42px rgba(38, 100, 142, 0.10);
+      --shadow-soft: 0 8px 20px rgba(38, 100, 142, 0.06);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(161, 99, 247, 0.16), transparent 28%),
-        radial-gradient(circle at 90% 10%, rgba(69, 227, 255, 0.12), transparent 24%),
-        linear-gradient(180deg, #31415a 0%, var(--bg) 54%, #29384d 100%);
+        radial-gradient(circle at top left, rgba(83, 210, 220, 0.10), transparent 24%),
+        radial-gradient(circle at 100% 0%, rgba(255, 227, 179, 0.45), transparent 18%),
+        linear-gradient(180deg, #ffffff 0%, #f9fdfe 100%);
       color: var(--ink);
       min-height: 100vh;
     }
     .wrap {
-      width: min(1080px, calc(100% - 2rem));
+      width: min(1120px, calc(100% - 2.5rem));
       margin: 0 auto;
-      padding: 1.5rem 0 4rem;
+      padding: 1.25rem 0 4rem;
     }
     .hero {
       position: relative;
       overflow: hidden;
       margin-bottom: 1.5rem;
-      padding: clamp(1.4rem, 2.5vw, 2rem);
+      padding: clamp(1.5rem, 2.5vw, 2.2rem);
       border: 1px solid var(--border);
-      border-radius: 28px;
-      background:
-        linear-gradient(135deg, rgba(61, 78, 108, 0.98), rgba(44, 58, 81, 0.94)),
-        linear-gradient(120deg, rgba(161, 99, 247, 0.1), rgba(69, 227, 255, 0.08));
+      border-radius: 24px;
+      background: linear-gradient(135deg, #26648e, #4f8fc0);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
       animation: rise-in 560ms ease-out both;
     }
     .hero::after {
@@ -75,13 +71,12 @@ FLASHCARDS_TEMPLATE = """
       width: 240px;
       aspect-ratio: 1;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 70%);
-      background: radial-gradient(circle, rgba(111, 136, 252, 0.34), transparent 70%);
+      background: radial-gradient(circle, rgba(255, 227, 179, 0.26), transparent 70%);
       pointer-events: none;
     }
     .eyebrow {
       margin: 0 0 0.75rem;
-      color: var(--warning);
+      color: #d5fbff;
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.18em;
@@ -94,11 +89,11 @@ FLASHCARDS_TEMPLATE = """
       letter-spacing: -0.04em;
       max-width: 14ch;
       text-wrap: balance;
-      color: var(--heading);
+      color: #ffffff;
     }
     .subhead {
       margin: 1rem 0 0;
-      color: var(--subheading);
+      color: rgba(255,255,255,0.88);
       font-size: clamp(0.98rem, 1.4vw, 1.08rem);
       line-height: 1.6;
       max-width: 60ch;
@@ -112,21 +107,21 @@ FLASHCARDS_TEMPLATE = """
     .hero-stat {
       padding: 0.72rem 0.95rem;
       border-radius: 16px;
-      background: rgba(39, 52, 73, 0.52);
-      border: 1px solid var(--border);
-      color: var(--ink);
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #ffffff;
       min-width: 120px;
     }
     .hero-stat strong {
       display: block;
       font-size: 1rem;
-      color: var(--heading);
+      color: #ffffff;
     }
     .hero-stat span {
       display: block;
       margin-top: 0.18rem;
       font-size: 0.82rem;
-      color: var(--muted);
+      color: rgba(255,255,255,0.76);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
@@ -138,7 +133,7 @@ FLASHCARDS_TEMPLATE = """
     }
     .toolbar a, .toolbar button {
       border: 1px solid var(--border);
-      background: var(--card-strong);
+      background: rgba(255,255,255,0.98);
       color: var(--ink);
       border-radius: 999px;
       padding: 0.78rem 1.05rem;
@@ -151,27 +146,26 @@ FLASHCARDS_TEMPLATE = """
     }
     .toolbar a:hover, .toolbar button:hover {
       transform: translateY(-1px);
-      border-color: rgba(69, 227, 255, 0.38);
-      background: rgba(62, 81, 113, 1);
+      border-color: rgba(83, 210, 220, 0.40);
+      background: #f2fbfc;
     }
     .cards {
       display: grid;
-      gap: 1rem;
+      gap: 1.1rem;
     }
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 24px;
+      border-radius: 20px;
       box-shadow: var(--shadow);
       overflow: hidden;
-      backdrop-filter: blur(16px);
       animation: rise-in 520ms ease-out both;
       transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
     }
     .card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
-      border-color: rgba(69, 227, 255, 0.26);
+      box-shadow: 0 22px 52px rgba(38, 100, 142, 0.12);
+      border-color: rgba(83, 210, 220, 0.28);
     }
     .card-header {
       display: flex;
@@ -181,21 +175,21 @@ FLASHCARDS_TEMPLATE = """
       padding: 1rem 1.2rem;
       border-bottom: 1px solid var(--border);
       background:
-        linear-gradient(135deg, rgba(161, 99, 247, 0.12), rgba(69, 227, 255, 0.08)),
-        rgba(51, 67, 92, 0.88);
+        linear-gradient(135deg, rgba(83, 210, 220, 0.12), rgba(79, 143, 192, 0.08)),
+        #f8fdfe;
     }
     .card-number {
       font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--warning);
+      color: var(--accent);
       font-weight: 700;
     }
     .pill {
       padding: 0.3rem 0.65rem;
       border-radius: 999px;
-      background: rgba(161, 99, 247, 0.16);
-      color: #f3ddff;
+      background: rgba(79, 143, 192, 0.12);
+      color: var(--accent-strong);
       font-size: 0.85rem;
       font-weight: 700;
     }
@@ -212,7 +206,7 @@ FLASHCARDS_TEMPLATE = """
       font-size: 0.78rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #d9dcf5;
+      color: var(--accent-strong);
       font-weight: 700;
     }
     .content {
@@ -229,10 +223,10 @@ FLASHCARDS_TEMPLATE = """
     .choices {
       display: grid;
       gap: 0.65rem;
-      padding: 0.95rem 1rem;
+      padding: 0.75rem;
       border: 1px solid var(--border);
-      border-radius: 14px;
-      background: linear-gradient(180deg, rgba(53, 70, 98, 0.98), rgba(43, 57, 79, 0.92));
+      border-radius: 16px;
+      background: var(--bg-soft);
     }
     .choice {
       appearance: none;
@@ -241,39 +235,40 @@ FLASHCARDS_TEMPLATE = """
       font: inherit;
       color: var(--ink);
       line-height: 1.55;
-      padding: 0.75rem 0.9rem;
+      padding: 0.95rem 1rem;
       border-radius: 12px;
-      border: 1px solid rgba(255, 245, 130, 0.08);
-      background: rgba(39, 52, 73, 0.6);
+      border: 1px solid rgba(38, 100, 142, 0.10);
+      background: #ffffff;
       cursor: pointer;
       transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
     }
     .choice:hover {
       transform: translateY(-1px);
-      border-color: rgba(69, 227, 255, 0.34);
-      background: rgba(57, 75, 104, 0.82);
+      border-color: rgba(83, 210, 220, 0.32);
+      background: #f4fcfd;
     }
     .choice-label {
       font-weight: 700;
-      color: var(--warning);
+      color: var(--accent);
       margin-right: 0.3rem;
     }
     .choice.correct {
-      border-color: rgba(69, 227, 255, 0.55);
-      background: rgba(69, 227, 255, 0.16);
+      border-color: rgba(83, 210, 220, 0.55);
+      background: rgba(83, 210, 220, 0.12);
     }
     .choice.incorrect {
-      border-color: rgba(161, 99, 247, 0.55);
-      background: rgba(161, 99, 247, 0.16);
+      border-color: rgba(79, 143, 192, 0.46);
+      background: rgba(79, 143, 192, 0.12);
     }
     .choice.revealed-correct {
-      border-color: rgba(255, 245, 130, 0.38);
-      box-shadow: inset 0 0 0 1px rgba(255, 245, 130, 0.12);
+      border-color: rgba(255, 227, 179, 0.84);
+      box-shadow: inset 0 0 0 1px rgba(255, 227, 179, 0.34);
     }
     .study-note {
       min-height: 1.2rem;
       color: var(--muted);
       font-size: 0.92rem;
+      padding: 0 0.2rem;
     }
     .study-note.correct {
       color: var(--success);
@@ -286,12 +281,12 @@ FLASHCARDS_TEMPLATE = """
       height: auto;
       border-radius: 18px;
       border: 1px solid var(--border);
-      background: rgba(35, 47, 66, 0.96);
+      background: #ffffff;
       display: block;
       box-shadow: var(--shadow-soft);
     }
     .answer-shell {
-      border-top: 1px dashed rgba(149, 180, 221, 0.34);
+      border-top: 1px dashed rgba(38, 100, 142, 0.18);
       padding-top: 1rem;
     }
     .answer-toggle {
@@ -299,7 +294,7 @@ FLASHCARDS_TEMPLATE = """
       appearance: none;
       border: 1px solid var(--border);
       border-radius: 16px;
-      background: linear-gradient(180deg, rgba(89, 110, 151, 0.98), rgba(65, 84, 117, 0.94));
+      background: linear-gradient(180deg, #ffffff, #f5fbfd);
       color: var(--heading);
       font: inherit;
       font-weight: 750;
@@ -316,14 +311,14 @@ FLASHCARDS_TEMPLATE = """
     }
     .answer-toggle:hover {
       transform: translateY(-1px);
-      border-color: rgba(69, 227, 255, 0.4);
-      background: linear-gradient(180deg, rgba(111, 136, 252, 1), rgba(77, 98, 136, 0.98));
+      border-color: rgba(83, 210, 220, 0.38);
+      background: linear-gradient(180deg, #fbfeff, #eef9fc);
     }
     .answer-toggle:focus-visible,
     .choice:focus-visible,
     .toolbar a:focus-visible,
     .toolbar button:focus-visible {
-      outline: 2px solid rgba(69, 227, 255, 0.7);
+      outline: 2px solid rgba(83, 210, 220, 0.72);
       outline-offset: 2px;
     }
     .answer-chevron {
@@ -353,7 +348,7 @@ FLASHCARDS_TEMPLATE = """
       padding: 1rem;
       border: 1px solid var(--border);
       border-radius: 16px;
-      background: linear-gradient(180deg, rgba(55, 72, 100, 0.98), rgba(41, 54, 76, 0.96));
+      background: var(--card-soft);
     }
     .answer-title {
       font-weight: 700;
@@ -377,7 +372,7 @@ FLASHCARDS_TEMPLATE = """
       }
     }
     @media (max-width: 640px) {
-      .wrap { width: min(100% - 1rem, 1080px); padding-top: 1rem; }
+      .wrap { width: min(100% - 1rem, 1120px); padding-top: 1rem; }
       .hero {
         border-radius: 22px;
         padding: 1.15rem;
@@ -558,7 +553,7 @@ FLASHCARDS_TEMPLATE = """
           } else if (current.selectedChoice && current.status === "incorrect") {
             note.textContent = "Incorrect. The correct option is highlighted.";
           } else {
-            note.textContent = "Choose an answer to track your progress.";
+            note.textContent = "";
           }
           note.className = "study-note" + (current.status ? " " + current.status : "");
         }
@@ -601,44 +596,42 @@ INDEX_TEMPLATE = """
   <title>Flashcard Index</title>
   <style>
     :root {
-      --bg: #06101d;
-      --ink: #f4f8ff;
-      --muted: #b0bfd6;
-      --accent: #82ddd7;
-      --border: rgba(149, 180, 221, 0.34);
-      --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
-      --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.28);
+      --bg: #ffffff;
+      --ink: #26648e;
+      --muted: #6a879e;
+      --accent: #53d2dc;
+      --accent-strong: #4f8fc0;
+      --border: rgba(38, 100, 142, 0.14);
+      --shadow: 0 18px 42px rgba(38, 100, 142, 0.10);
+      --shadow-soft: 0 8px 20px rgba(38, 100, 142, 0.06);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(130, 221, 215, 0.14), transparent 28%),
-        radial-gradient(circle at 90% 10%, rgba(97, 130, 194, 0.18), transparent 24%),
-        linear-gradient(180deg, #071221 0%, var(--bg) 54%, #040b15 100%);
+        radial-gradient(circle at top left, rgba(83, 210, 220, 0.10), transparent 24%),
+        radial-gradient(circle at 100% 0%, rgba(255, 227, 179, 0.45), transparent 18%),
+        linear-gradient(180deg, #ffffff 0%, #f9fdfe 100%);
       color: var(--ink);
     }
     .wrap {
-      width: min(1080px, calc(100% - 2rem));
+      width: min(1120px, calc(100% - 2.5rem));
       margin: 0 auto;
-      padding: 1.5rem 0 4rem;
+      padding: 1.25rem 0 4rem;
     }
     .hero {
       margin-bottom: 1.75rem;
-      padding: clamp(1.4rem, 2.5vw, 2rem);
+      padding: clamp(1.5rem, 2.5vw, 2.2rem);
       border: 1px solid var(--border);
-      border-radius: 28px;
-      background:
-        linear-gradient(135deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94)),
-        linear-gradient(120deg, rgba(130, 221, 215, 0.08), rgba(97, 130, 194, 0.08));
+      border-radius: 24px;
+      background: linear-gradient(135deg, #26648e, #4f8fc0);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
       animation: rise-in 560ms ease-out both;
     }
     .eyebrow {
       margin: 0 0 0.75rem;
-      color: var(--accent);
+      color: #d5fbff;
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.18em;
@@ -654,19 +647,19 @@ INDEX_TEMPLATE = """
       color: #ffffff;
     }
     p {
-      color: var(--muted);
+      color: rgba(255,255,255,0.86);
       max-width: 48rem;
       line-height: 1.65;
     }
     .group {
       margin-top: 2rem;
-      padding-inline: 0.5rem;
+      padding-inline: 0.75rem;
     }
     .group h2 {
       margin-bottom: 0.7rem;
       font-size: 1.3rem;
       letter-spacing: -0.02em;
-      color: #d9e6fb;
+      color: var(--ink);
     }
     .grid {
       display: grid;
@@ -674,19 +667,18 @@ INDEX_TEMPLATE = """
       gap: 1rem;
     }
     .item {
-      background: rgba(12, 24, 42, 0.82);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 22px;
       padding: 1.1rem;
       box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(14px);
       animation: rise-in 520ms ease-out both;
       transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
     }
     .item:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow);
-      border-color: rgba(130, 221, 215, 0.28);
+      border-color: rgba(83, 210, 220, 0.28);
     }
     .item a {
       color: var(--accent);
@@ -695,7 +687,7 @@ INDEX_TEMPLATE = """
       font-size: 1.05rem;
     }
     .item a:hover {
-      color: #b4f0eb;
+      color: var(--accent-strong);
     }
     .meta {
       margin-top: 0.45rem;
@@ -722,7 +714,7 @@ INDEX_TEMPLATE = """
     }
     @media (max-width: 640px) {
       .wrap {
-        width: min(100% - 1rem, 1080px);
+        width: min(100% - 1rem, 1120px);
         padding-top: 1rem;
       }
       .hero {
