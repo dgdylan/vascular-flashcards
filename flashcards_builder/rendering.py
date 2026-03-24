@@ -28,6 +28,11 @@ FLASHCARDS_TEMPLATE = """
       --muted: #b0bfd6;
       --accent: #82ddd7;
       --accent-strong: #b4f0eb;
+      --heading: #ffffff;
+      --subheading: #d7e4f8;
+      --success: #78e6a7;
+      --danger: #ff8f97;
+      --warning: #f8cf7a;
       --accent-soft: rgba(130, 221, 215, 0.16);
       --border: rgba(149, 180, 221, 0.34);
       --shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
@@ -89,13 +94,41 @@ FLASHCARDS_TEMPLATE = """
       letter-spacing: -0.04em;
       max-width: 14ch;
       text-wrap: balance;
+      color: var(--heading);
     }
     .subhead {
       margin: 1rem 0 0;
-      color: var(--muted);
+      color: var(--subheading);
       font-size: clamp(0.98rem, 1.4vw, 1.08rem);
       line-height: 1.6;
       max-width: 60ch;
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    .hero-stat {
+      padding: 0.72rem 0.95rem;
+      border-radius: 16px;
+      background: rgba(7, 16, 28, 0.34);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      min-width: 120px;
+    }
+    .hero-stat strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--heading);
+    }
+    .hero-stat span {
+      display: block;
+      margin-top: 0.18rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
     .toolbar {
       display: flex;
@@ -155,7 +188,7 @@ FLASHCARDS_TEMPLATE = """
       font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--accent);
+      color: var(--accent-strong);
       font-weight: 700;
     }
     .pill {
@@ -184,24 +217,126 @@ FLASHCARDS_TEMPLATE = """
     }
     .content {
       font-size: 1rem;
-      line-height: 1.6;
+      line-height: 1.7;
       white-space: pre-wrap;
+    }
+    .question-text {
+      font-size: clamp(1.02rem, 1.45vw, 1.16rem);
+      color: var(--heading);
+      font-weight: 650;
+      letter-spacing: -0.01em;
     }
     .choices {
       display: grid;
-      gap: 0.45rem;
-      padding: 0.9rem 1rem;
+      gap: 0.65rem;
+      padding: 0.95rem 1rem;
       border: 1px solid var(--border);
       border-radius: 14px;
       background: linear-gradient(180deg, rgba(24, 41, 67, 0.98), rgba(17, 31, 52, 0.92));
     }
     .choice {
-      line-height: 1.5;
+      line-height: 1.55;
+      padding: 0.75rem 0.9rem;
+      border-radius: 12px;
+      border: 1px solid rgba(149, 180, 221, 0.18);
+      background: rgba(8, 15, 27, 0.34);
+      cursor: pointer;
+      transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
+    }
+    .choice:hover {
+      transform: translateY(-1px);
+      border-color: rgba(130, 221, 215, 0.34);
+      background: rgba(11, 21, 37, 0.62);
     }
     .choice-label {
       font-weight: 700;
       color: var(--accent);
       margin-right: 0.3rem;
+    }
+    .choice.correct {
+      border-color: rgba(120, 230, 167, 0.45);
+      background: rgba(26, 70, 48, 0.35);
+    }
+    .choice.incorrect {
+      border-color: rgba(255, 143, 151, 0.45);
+      background: rgba(95, 34, 47, 0.35);
+    }
+    .study-panel {
+      display: grid;
+      gap: 0.8rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(14, 28, 47, 0.96), rgba(10, 22, 39, 0.9));
+    }
+    .study-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .study-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--subheading);
+    }
+    .study-status {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .study-actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 0.7rem;
+    }
+    .study-button {
+      appearance: none;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(7, 16, 28, 0.44);
+      color: var(--ink);
+      padding: 0.95rem 1rem;
+      text-align: left;
+      font: inherit;
+      cursor: pointer;
+      min-height: 64px;
+      transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
+    }
+    .study-button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(130, 221, 215, 0.38);
+      background: rgba(12, 24, 42, 0.82);
+    }
+    .study-button strong {
+      display: block;
+      color: var(--heading);
+      font-size: 0.98rem;
+    }
+    .study-button span {
+      display: block;
+      margin-top: 0.18rem;
+      color: var(--muted);
+      font-size: 0.83rem;
+    }
+    .study-button[data-result="correct"] {
+      border-color: rgba(120, 230, 167, 0.45);
+    }
+    .study-button[data-result="incorrect"] {
+      border-color: rgba(255, 143, 151, 0.45);
+    }
+    .study-note {
+      min-height: 1.2rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .study-note.correct {
+      color: var(--success);
+    }
+    .study-note.incorrect {
+      color: var(--danger);
     }
     img {
       max-width: 100%;
@@ -212,21 +347,65 @@ FLASHCARDS_TEMPLATE = """
       display: block;
       box-shadow: var(--shadow-soft);
     }
-    details {
+    .answer-shell {
       border-top: 1px dashed rgba(149, 180, 221, 0.34);
       padding-top: 1rem;
     }
-    summary {
+    .answer-toggle {
+      width: 100%;
+      appearance: none;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(23, 40, 66, 0.98), rgba(14, 27, 47, 0.94));
+      color: var(--heading);
+      font: inherit;
+      font-weight: 750;
+      font-size: 1rem;
+      text-align: left;
+      padding: 1rem 1.1rem;
       cursor: pointer;
-      color: var(--accent);
-      font-weight: 700;
-      list-style: none;
-      transition: color 180ms ease;
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
     }
-    summary:hover { color: var(--accent-strong); }
-    summary::-webkit-details-marker { display: none; }
-    .answer-block {
+    .answer-toggle:hover {
+      transform: translateY(-1px);
+      border-color: rgba(130, 221, 215, 0.4);
+      background: linear-gradient(180deg, rgba(28, 48, 78, 1), rgba(17, 31, 52, 0.98));
+    }
+    .answer-toggle:focus-visible,
+    .study-button:focus-visible,
+    .choice:focus-visible,
+    .toolbar a:focus-visible,
+    .toolbar button:focus-visible {
+      outline: 2px solid rgba(130, 221, 215, 0.7);
+      outline-offset: 2px;
+    }
+    .answer-chevron {
+      flex: 0 0 auto;
+      font-size: 1.15rem;
+      color: var(--accent-strong);
+      transition: transform 240ms ease;
+    }
+    .answer-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 320ms ease, opacity 220ms ease, margin-top 220ms ease;
+      opacity: 0;
+      margin-top: 0;
+    }
+    .answer-panel.open {
+      grid-template-rows: 1fr;
+      opacity: 1;
       margin-top: 0.9rem;
+    }
+    .answer-panel-inner {
+      overflow: hidden;
+    }
+    .answer-block {
       display: grid;
       gap: 0.75rem;
       padding: 1rem;
@@ -251,7 +430,7 @@ FLASHCARDS_TEMPLATE = """
       .hero, .card {
         animation: none;
       }
-      .toolbar a, .toolbar button, .card, summary {
+      .toolbar a, .toolbar button, .card, .answer-toggle, .answer-panel, .answer-chevron, .study-button, .choice {
         transition: none;
       }
     }
@@ -270,6 +449,9 @@ FLASHCARDS_TEMPLATE = """
         width: 100%;
         text-align: center;
       }
+      .study-actions {
+        grid-template-columns: 1fr;
+      }
       h1 {
         max-width: none;
       }
@@ -282,6 +464,11 @@ FLASHCARDS_TEMPLATE = """
       <p class="eyebrow">Review Deck</p>
       <h1>{{ title }}</h1>
       <p class="subhead">{{ flashcards|length }} flashcards extracted from this PDF. Open each back panel to review the correct answer and full feedback.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>{{ flashcards|length }}</strong><span>Total Cards</span></div>
+        <div class="hero-stat"><strong id="mastered-count">0</strong><span>Mastered</span></div>
+        <div class="hero-stat"><strong id="needs-review-count">0</strong><span>Needs Review</span></div>
+      </div>
       <div class="toolbar">
         <a href="../index.html">Back to index</a>
         <button type="button" id="open-all">Open all backs</button>
@@ -298,11 +485,34 @@ FLASHCARDS_TEMPLATE = """
         <div class="card-body">
           <section class="card-side">
             <div class="label">Front</div>
-            <div class="content">{{ flashcard.question }}</div>
+            <div class="content question-text">{{ flashcard.question }}</div>
             {% if flashcard.choices %}
-            <div class="choices">
+            <div class="study-panel">
+              <div class="study-head">
+                <div class="study-title">Study Mode</div>
+                <div class="study-status" data-study-status="q{{ flashcard.number }}">Not answered yet</div>
+              </div>
+              <div class="study-actions">
+                <button class="study-button" type="button" data-card-id="q{{ flashcard.number }}" data-result="correct">
+                  <strong>I got it right</strong>
+                  <span>Mark this as understood</span>
+                </button>
+                <button class="study-button" type="button" data-card-id="q{{ flashcard.number }}" data-result="incorrect">
+                  <strong>I missed it</strong>
+                  <span>Keep this in review</span>
+                </button>
+                <button class="study-button" type="button" data-card-id="q{{ flashcard.number }}" data-result="reset">
+                  <strong>Clear status</strong>
+                  <span>Remove your saved result</span>
+                </button>
+              </div>
+              <div class="study-note" data-study-note="q{{ flashcard.number }}"></div>
+            </div>
+            <div class="choices" role="list" aria-label="Answer choices for question {{ flashcard.number }}">
               {% for label, text in flashcard.choices.items() %}
-              <div class="choice"><span class="choice-label">{{ label }}:</span>{{ text }}</div>
+              <button class="choice" type="button" role="listitem" data-card-id="q{{ flashcard.number }}" data-choice="{{ label }}" data-correct="{{ flashcard.correct_answer_label or '' }}">
+                <span class="choice-label">{{ label }}:</span>{{ text }}
+              </button>
               {% endfor %}
             </div>
             {% endif %}
@@ -310,22 +520,124 @@ FLASHCARDS_TEMPLATE = """
             <img src="media/{{ image_name }}" alt="Question {{ flashcard.number }} image">
             {% endfor %}
           </section>
-          <details>
-            <summary>Show answer and feedback</summary>
-            <div class="answer-block">
-              <div><span class="answer-title">Answer:</span> {{ flashcard.answer or "Unavailable" }}</div>
-              <div class="content"><span class="answer-title">Feedback:</span><br>{{ flashcard.feedback }}</div>
+          <section class="answer-shell">
+            <button class="answer-toggle" type="button" aria-expanded="false" aria-controls="answer-panel-q{{ flashcard.number }}">
+              <span>Show answer and feedback</span>
+              <span class="answer-chevron">+</span>
+            </button>
+            <div class="answer-panel" id="answer-panel-q{{ flashcard.number }}">
+              <div class="answer-panel-inner">
+                <div class="answer-block">
+                  <div><span class="answer-title">Answer:</span> {{ flashcard.answer or "Unavailable" }}</div>
+                  <div class="content"><span class="answer-title">Feedback:</span><br>{{ flashcard.feedback }}</div>
+                </div>
+              </div>
             </div>
-          </details>
+          </section>
         </div>
       </article>
       {% endfor %}
     </section>
   </main>
   <script>
-    const detailsElements = Array.from(document.querySelectorAll("details"));
-    document.getElementById("open-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = true));
-    document.getElementById("close-all").addEventListener("click", () => detailsElements.forEach((item) => item.open = false));
+    const answerToggles = Array.from(document.querySelectorAll(".answer-toggle"));
+    const answerPanels = Array.from(document.querySelectorAll(".answer-panel"));
+    const storageKey = "flashcard-study-state:" + window.location.pathname;
+    const masteredCount = document.getElementById("mastered-count");
+    const needsReviewCount = document.getElementById("needs-review-count");
+
+    function setPanelState(toggle, open) {
+      const panel = toggle.nextElementSibling;
+      const chevron = toggle.querySelector(".answer-chevron");
+      toggle.setAttribute("aria-expanded", String(open));
+      panel.classList.toggle("open", open);
+      chevron.textContent = open ? "−" : "+";
+      chevron.style.transform = open ? "rotate(180deg)" : "rotate(0deg)";
+    }
+
+    answerToggles.forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const isOpen = toggle.getAttribute("aria-expanded") === "true";
+        setPanelState(toggle, !isOpen);
+      });
+    });
+
+    document.getElementById("open-all").addEventListener("click", () => {
+      answerToggles.forEach((toggle) => setPanelState(toggle, true));
+    });
+
+    document.getElementById("close-all").addEventListener("click", () => {
+      answerToggles.forEach((toggle) => setPanelState(toggle, false));
+    });
+
+    function loadStudyState() {
+      try {
+        return JSON.parse(localStorage.getItem(storageKey) || "{}");
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function saveStudyState(state) {
+      localStorage.setItem(storageKey, JSON.stringify(state));
+    }
+
+    function updateCounts(state) {
+      const values = Object.values(state);
+      const mastered = values.filter((value) => value === "correct").length;
+      const review = values.filter((value) => value === "incorrect").length;
+      masteredCount.textContent = String(mastered);
+      needsReviewCount.textContent = String(review);
+    }
+
+    function applyStudyState(state) {
+      document.querySelectorAll("[data-study-status]").forEach((node) => {
+        const cardId = node.getAttribute("data-study-status");
+        const note = document.querySelector('[data-study-note="' + cardId + '"]');
+        const current = state[cardId];
+        node.textContent = current === "correct" ? "Marked understood" : current === "incorrect" ? "Marked for review" : "Not answered yet";
+        if (note) {
+          note.textContent = current === "correct" ? "Saved as understood on this device." : current === "incorrect" ? "Saved as needs review on this device." : "";
+          note.className = "study-note" + (current ? " " + current : "");
+        }
+      });
+      updateCounts(state);
+    }
+
+    const studyState = loadStudyState();
+    applyStudyState(studyState);
+
+    document.querySelectorAll(".study-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const cardId = button.getAttribute("data-card-id");
+        const result = button.getAttribute("data-result");
+        if (result === "reset") {
+          delete studyState[cardId];
+        } else {
+          studyState[cardId] = result;
+        }
+        saveStudyState(studyState);
+        applyStudyState(studyState);
+      });
+    });
+
+    document.querySelectorAll(".choice").forEach((button) => {
+      button.addEventListener("click", () => {
+        const cardId = button.getAttribute("data-card-id");
+        const correct = button.getAttribute("data-correct");
+        const choice = button.getAttribute("data-choice");
+        const group = document.querySelectorAll('.choice[data-card-id="' + cardId + '"]');
+        group.forEach((item) => item.classList.remove("correct", "incorrect"));
+        if (!correct) {
+          return;
+        }
+        button.classList.add(choice === correct ? "correct" : "incorrect");
+        const correctNode = document.querySelector('.choice[data-card-id="' + cardId + '"][data-choice="' + correct + '"]');
+        if (correctNode && correctNode !== button) {
+          correctNode.classList.add("correct");
+        }
+      });
+    });
   </script>
 </body>
 </html>
@@ -391,6 +703,7 @@ INDEX_TEMPLATE = """
       letter-spacing: -0.04em;
       max-width: 12ch;
       text-wrap: balance;
+      color: #ffffff;
     }
     p {
       color: var(--muted);
@@ -405,6 +718,7 @@ INDEX_TEMPLATE = """
       margin-bottom: 0.7rem;
       font-size: 1.3rem;
       letter-spacing: -0.02em;
+      color: #d9e6fb;
     }
     .grid {
       display: grid;
@@ -431,6 +745,9 @@ INDEX_TEMPLATE = """
       text-decoration: none;
       font-weight: 700;
       font-size: 1.05rem;
+    }
+    .item a:hover {
+      color: #b4f0eb;
     }
     .meta {
       margin-top: 0.45rem;
