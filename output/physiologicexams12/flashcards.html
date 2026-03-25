@@ -216,6 +216,31 @@
     .study-note.incorrect {
       color: var(--danger);
     }
+    .choice-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .clear-answer {
+      appearance: none;
+      border: 1px solid rgba(46, 110, 163, 0.12);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.55rem 0.8rem;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+    .clear-answer:hover {
+      transform: translateY(-1px);
+      border-color: rgba(239, 131, 84, 0.22);
+      color: var(--accent-dark);
+    }
     .choices {
       display: grid;
       gap: 0.9rem;
@@ -375,6 +400,12 @@
         justify-content: center;
         text-align: center;
       }
+      .choice-row {
+        align-items: stretch;
+      }
+      .clear-answer {
+        width: 100%;
+      }
       h1 {
         max-width: none;
       }
@@ -400,6 +431,7 @@
           <a href="../index.html">Back to index</a>
           <button type="button" id="open-all">Open all backs</button>
           <button type="button" id="close-all">Close all backs</button>
+          <button type="button" id="clear-all-answers">Clear saved answers</button>
         </div>
       </div>
     </section>
@@ -416,6 +448,10 @@
             <div class="content question-text">Why should a segmental pressure exam be performed with the patient supine?</div>
             
             <div class="study-note" data-study-note="q1"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q1">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 1">
               
               <button class="choice" type="button" role="listitem" data-card-id="q1" data-choice="A" data-correct="D">
@@ -467,6 +503,10 @@ performed with the patient supine.</div>
             <div class="content question-text">The following pressures were obtained in a patient with left claudication. What are the ABI values for both legs? Right: PTA 128mmHg, DPA, 124mmHg, Calf 130mmHg, Thigh 140mmHg, Brachial 130mmHg Left: PTA 98mmHg, DPA 122mmHg, Calf 126mmHg, Thigh 138mmHg, Brachial 126mmHg</div>
             
             <div class="study-note" data-study-note="q2"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q2">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 2">
               
               <button class="choice" type="button" role="listitem" data-card-id="q2" data-choice="A" data-correct="D">
@@ -519,6 +559,10 @@ how to set up the calculation. The highest calf artery pressure is divided by th
             <div class="content question-text">The pre and post exercise pressure information displayed from the right leg demonstrates which of the following?</div>
             
             <div class="study-note" data-study-note="q3"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q3">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 3">
               
               <button class="choice" type="button" role="listitem" data-card-id="q3" data-choice="A" data-correct="A">
@@ -570,6 +614,10 @@ Multi Level Obstruction-pressures return to normal 6-12 minutes post exercise</d
             <div class="content question-text">Which of the following describes the expected change in the PVR tracing on an immediate post procedure evaluation of a patient after successful revascularization of the common femoral artery?</div>
             
             <div class="study-note" data-study-note="q4"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q4">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 4">
               
               <button class="choice" type="button" role="listitem" data-card-id="q4" data-choice="A" data-correct="C">
@@ -621,6 +669,10 @@ the amplitude of the waveform should have increased at least 50% compared to the
             <div class="content question-text">A diabetic patient presents for a segmental pressure exam. The patient complains of an injury to his big toe that won&#39;t seem to heal and has been open for over 3 weeks. The digital pressure in the affected toe will most likely be _________.</div>
             
             <div class="study-note" data-study-note="q5"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q5">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 5">
               
               <button class="choice" type="button" role="listitem" data-card-id="q5" data-choice="A" data-correct="C">
@@ -671,6 +723,10 @@ the amplitude of the waveform should have increased at least 50% compared to the
             <div class="content question-text">Which of the following correctly describes cuff placement for a segmental pressure exam?</div>
             
             <div class="study-note" data-study-note="q6"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q6">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 6">
               
               <button class="choice" type="button" role="listitem" data-card-id="q6" data-choice="A" data-correct="D">
@@ -726,6 +782,10 @@ angled to the curve of the limb.</div>
             <div class="content question-text">A patient complains of left arm numbness and pain that increases in severity when it is cold outside. An upper extremity arterial duplex exam demonstrates a&gt;50% stenosis in the distal subclavian artery. The PPG exam demonstrates additional decrease in digital flow with cold exposure. What explains these findings?</div>
             
             <div class="study-note" data-study-note="q7"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q7">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 7">
               
               <button class="choice" type="button" role="listitem" data-card-id="q7" data-choice="A" data-correct="D">
@@ -779,6 +839,10 @@ system in the upper extremity.</div>
             <div class="content question-text">When performing a PVR exam of the lower extremity arteries, how are the waveforms obtained?</div>
             
             <div class="study-note" data-study-note="q8"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q8">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 8">
               
               <button class="choice" type="button" role="listitem" data-card-id="q8" data-choice="A" data-correct="C">
@@ -831,6 +895,10 @@ the ankle.</div>
             <div class="content question-text">If the blood pressure in the ankle is obtained with the patient&#39;s legs in the dependent position:</div>
             
             <div class="study-note" data-study-note="q9"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q9">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 9">
               
               <button class="choice" type="button" role="listitem" data-card-id="q9" data-choice="A" data-correct="C">
@@ -883,6 +951,10 @@ eliminate the effects of hydrostatic pressure.</div>
             <div class="content question-text">An asymptomatic patient demonstrates a normal left ABI, but the left tibial arteries demonstrate a monophasic waveform with sharp upstroke and rapid deceleration. What is the most likely cause for this finding?</div>
             
             <div class="study-note" data-study-note="q10"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q10">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 10">
               
               <button class="choice" type="button" role="listitem" data-card-id="q10" data-choice="A" data-correct="A">
@@ -937,6 +1009,10 @@ filter settings will aid in visualization of this component of the waveform.</di
             <div class="content question-text">An arterial duplex exam demonstrates monophasic flow in the popliteal and calf arteries. The bilateral ABI calculations are over 1.0. What type of testing can be used to better evaluate the pressures in the lower extremities in this patient?</div>
             
             <div class="study-note" data-study-note="q11"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q11">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 11">
               
               <button class="choice" type="button" role="listitem" data-card-id="q11" data-choice="A" data-correct="D">
@@ -990,6 +1066,10 @@ typically affected by medial calcification.</div>
             <div class="content question-text">Which of the following is NOT normally performed after the injection of papaverine into the tissues proximal to the shaft of the penis:</div>
             
             <div class="study-note" data-study-note="q12"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q12">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 12">
               
               <button class="choice" type="button" role="listitem" data-card-id="q12" data-choice="A" data-correct="B">
@@ -1047,6 +1127,10 @@ The ABI is performed before the injection to assess any PAD that may be present.
             <div class="content question-text">Abnormal results for a penile Doppler evaluation that suggest impotence include _______________ peak systolic flow velocity and a peak pressure ____________.</div>
             
             <div class="study-note" data-study-note="q13"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q13">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 13">
               
               <button class="choice" type="button" role="listitem" data-card-id="q13" data-choice="A" data-correct="A">
@@ -1098,6 +1182,10 @@ pressure &lt;60mmHg.</div>
             <div class="content question-text">When a patient performs exercise on a treadmill what will be the normal change in arterial flow in the legs?</div>
             
             <div class="study-note" data-study-note="q14"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q14">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 14">
               
               <button class="choice" type="button" role="listitem" data-card-id="q14" data-choice="A" data-correct="C">
@@ -1149,6 +1237,10 @@ to allow the increased flow in diastole.</div>
             <div class="content question-text">The difference in systolic pressure between two adjacent levels in the same leg should be no more than ___________mmHg.</div>
             
             <div class="study-note" data-study-note="q15"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q15">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 15">
               
               <button class="choice" type="button" role="listitem" data-card-id="q15" data-choice="A" data-correct="D">
@@ -1199,6 +1291,10 @@ to allow the increased flow in diastole.</div>
             <div class="content question-text">When performing a treadmill test for PAD, exercise is normally performed ________________. When performing a reactive hyperemia exam for PAD, the cuffs are inflated ________________.</div>
             
             <div class="study-note" data-study-note="q16"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q16">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 16">
               
               <button class="choice" type="button" role="listitem" data-card-id="q16" data-choice="A" data-correct="B">
@@ -1251,6 +1347,10 @@ that cannot perform exercise. If the patient experiences symptoms, the exam can 
             <div class="content question-text">Which of the following screening techniques for peripheral arterial disease can distinguish between a stenosis and an occlusion in a vessel?</div>
             
             <div class="study-note" data-study-note="q17"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q17">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 17">
               
               <button class="choice" type="button" role="listitem" data-card-id="q17" data-choice="A" data-correct="B">
@@ -1302,6 +1402,10 @@ results do not provide information on specific vessels, nor can they distinguish
             <div class="content question-text">Which of the following correctly describes normal results for an air plethysmography (APG) exam?</div>
             
             <div class="study-note" data-study-note="q18"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q18">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 18">
               
               <button class="choice" type="button" role="listitem" data-card-id="q18" data-choice="A" data-correct="B">
@@ -1356,6 +1460,10 @@ leg with calf contraction. Higher RVF% values indicate reflux occurred during ex
             <div class="content question-text">A patient presents for a bilateral segmental pressure exam and complains of mild leg pain since their heart attack last year. A duplex exam showed medium velocity, triphasic flow with minimal atherosclerosis in the bilateral arteries. The recorded pressures are as follows: Right Arm 110mmHg, Right PTA 88mmHg, Right DPA 92mmHg Left Arm 105mmHg, Left PTA 90mmHg, Left DPA 94mmHg Which of the following could explain the findings?</div>
             
             <div class="study-note" data-study-note="q19"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q19">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 19">
               
               <button class="choice" type="button" role="listitem" data-card-id="q19" data-choice="A" data-correct="C">
@@ -1407,6 +1515,10 @@ leg with calf contraction. Higher RVF% values indicate reflux occurred during ex
             <div class="content question-text">A segmental pressure exam is performed with the following results. Lt arm 140mmHg Lt ankle 155mmHg Rt arm 110mmHg Rt ankle 145mmHg Which of the following correctly describes the findings?</div>
             
             <div class="study-note" data-study-note="q20"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q20">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 20">
               
               <button class="choice" type="button" role="listitem" data-card-id="q20" data-choice="A" data-correct="D">
@@ -1458,6 +1570,10 @@ the brachial pressures is usually indicative of a subclavian steal.</div>
             <div class="content question-text">A double peaked waveform obtained during PPG evaluation of the digits of the left hand is indicative of:</div>
             
             <div class="study-note" data-study-note="q21"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q21">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 21">
               
               <button class="choice" type="button" role="listitem" data-card-id="q21" data-choice="A" data-correct="A">
@@ -1508,6 +1624,10 @@ the brachial pressures is usually indicative of a subclavian steal.</div>
             <div class="content question-text">A normal lower extremity arterial response to reactive hyperemia is:</div>
             
             <div class="study-note" data-study-note="q22"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q22">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 22">
               
               <button class="choice" type="button" role="listitem" data-card-id="q22" data-choice="A" data-correct="C">
@@ -1560,6 +1680,10 @@ released the inflow should return to baseline levels quickly if there is no dise
             <div class="content question-text">Which of the following statements is true regarding a PPG exam for venous insufficiency?</div>
             
             <div class="study-note" data-study-note="q23"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q23">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 23">
               
               <button class="choice" type="button" role="listitem" data-card-id="q23" data-choice="A" data-correct="A">
@@ -1613,6 +1737,10 @@ venous insufficiency. Longer VRT values are desired, short refill times indicate
             <div class="content question-text">An upper extremity segmental pressure exam produces the following pressures: Brachial RT 140mmHg AND LT 132mmHg Radial RT 144mmHg AND LT 136mmHg Ulnar RT 138mmHg AND LT 138mmHg 2nd Digit RT 130mmHg AND LT 104mmHg What should you do next for this patient?</div>
             
             <div class="study-note" data-study-note="q24"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q24">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 24">
               
               <button class="choice" type="button" role="listitem" data-card-id="q24" data-choice="A" data-correct="B">
@@ -1667,6 +1795,10 @@ single digit and disease of that digital artery should be suspected.</div>
             <div class="content question-text">Most commonly the posterior tibial and dorsalis pedis arteries are used to obtain the pressure at the ankle. Which of the following describes the correct calculation of the ankle brachial index?</div>
             
             <div class="study-note" data-study-note="q25"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q25">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 25">
               
               <button class="choice" type="button" role="listitem" data-card-id="q25" data-choice="A" data-correct="D">
@@ -1717,6 +1849,10 @@ single digit and disease of that digital artery should be suspected.</div>
             <div class="content question-text">A 25yr old presents with recent onset of left calf pain when riding his bike. He has been training for a race for the last six months without problem until 2 weeks ago. Exercise testing demonstrates a 50mmHg drop in pressure compared to the right leg with no drop in pressure. These findings are most suggestive of:</div>
             
             <div class="study-note" data-study-note="q26"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q26">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 26">
               
               <button class="choice" type="button" role="listitem" data-card-id="q26" data-choice="A" data-correct="A">
@@ -1768,6 +1904,10 @@ is the most likely cause for the symptoms.</div>
             <div class="content question-text">When performing a photoplethysmography exam for arterial insufficiency, where should you place the sensor?</div>
             
             <div class="study-note" data-study-note="q27"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q27">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 27">
               
               <button class="choice" type="button" role="listitem" data-card-id="q27" data-choice="A" data-correct="D">
@@ -1819,6 +1959,10 @@ pads of the toes.</div>
             <div class="content question-text">Which of the following exam techniques would be recommended to provide additional information related to the findings on the image?</div>
             
             <div class="study-note" data-study-note="q28"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q28">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 28">
               
               <button class="choice" type="button" role="listitem" data-card-id="q28" data-choice="A" data-correct="D">
@@ -1873,6 +2017,10 @@ tracings can be used to assess and quantify venous reflux.</div>
             <div class="content question-text">When using the rapid cuff inflator to evaluate the great saphenous vein in the distal thigh, where should you place the pneumatic cuff?</div>
             
             <div class="study-note" data-study-note="q29"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q29">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 29">
               
               <button class="choice" type="button" role="listitem" data-card-id="q29" data-choice="A" data-correct="D">
@@ -1929,6 +2077,10 @@ Which drawing demonstrates an abnormal result for a venous</div>
             <div class="content question-text">Which drawing demonstrates an abnormal result for a venous photoplethysmography exam?</div>
             
             <div class="study-note" data-study-note="q30"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q30">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 30">
               
               <button class="choice" type="button" role="listitem" data-card-id="q30" data-choice="A" data-correct="B">
@@ -1983,6 +2135,10 @@ VRT &lt;20sec.</div>
             <div class="content question-text">A patient presents with a history of HTN, diabetes and claudication. The arterial Doppler evaluation demonstrates monophasic flow in all calf vessels but the ABI values are LT 1.36 and RT 1.32. Which of the following correctly describes the findings?</div>
             
             <div class="study-note" data-study-note="q31"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q31">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 31">
               
               <button class="choice" type="button" role="listitem" data-card-id="q31" data-choice="A" data-correct="D">
@@ -2034,6 +2190,10 @@ of the arterial walls which will falsely elevate the ankle pressures.</div>
             <div class="content question-text">You obtain the PPG tracing from the second digit of the left hand. Which of the following is NOT an expected cause for the findings?</div>
             
             <div class="study-note" data-study-note="q32"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q32">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 32">
               
               <button class="choice" type="button" role="listitem" data-card-id="q32" data-choice="A" data-correct="D">
@@ -2087,6 +2247,10 @@ extremity digits.</div>
             <div class="content question-text">It is important to wait at least one minute before repeating what measurement?</div>
             
             <div class="study-note" data-study-note="q33"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q33">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 33">
               
               <button class="choice" type="button" role="listitem" data-card-id="q33" data-choice="A" data-correct="D">
@@ -2139,6 +2303,10 @@ NEVER perform a blood pressure assessment on am arm with a hemodialysis graft.</
             <div class="content question-text">When evaluating arterial pressures in the toes, the patient should be:</div>
             
             <div class="study-note" data-study-note="q34"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q34">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 34">
               
               <button class="choice" type="button" role="listitem" data-card-id="q34" data-choice="A" data-correct="C">
@@ -2190,6 +2358,10 @@ resting extremity arterial testing should be performed with the patient supine.<
             <div class="content question-text">Which of the following is a reason to perform exercise with a segmental pressure exam?</div>
             
             <div class="study-note" data-study-note="q35"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q35">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 35">
               
               <button class="choice" type="button" role="listitem" data-card-id="q35" data-choice="A" data-correct="C">
@@ -2241,6 +2413,10 @@ in the ABI with exercise.</div>
             <div class="content question-text">The Adson maneuver is helpful in the diagnosis of what vascular disorder?</div>
             
             <div class="study-note" data-study-note="q36"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q36">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 36">
               
               <button class="choice" type="button" role="listitem" data-card-id="q36" data-choice="A" data-correct="A">
@@ -2294,6 +2470,10 @@ Assess the pulse response. A positive test is a decrease in pulse vigor from the
             <div class="content question-text">A segmental pressure exam demonstrates the following pressures; distal thigh 144, calf 166, ankle 132. Which of the following could explain these results?</div>
             
             <div class="study-note" data-study-note="q37"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q37">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 37">
               
               <button class="choice" type="button" role="listitem" data-card-id="q37" data-choice="A" data-correct="D">
@@ -2345,6 +2525,10 @@ overestimated pressure measurement.</div>
             <div class="content question-text">If the systolic brachial pressure is 116mmHg, what is the minimum toe pressure that would be considered normal?</div>
             
             <div class="study-note" data-study-note="q38"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q38">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 38">
               
               <button class="choice" type="button" role="listitem" data-card-id="q38" data-choice="A" data-correct="D">
@@ -2396,6 +2580,10 @@ toe pressure is considered normal if it is 70mmHg or higher.</div>
             <div class="content question-text">An upper extremity segmental pressure exam produces the following pressures: Brachial RT 140mmHg AND LT 132mmHg Radial RT 144mmHg AND LT 136mmHg Ulnar RT 138mmHg AND LT 138mmHg 2nd Digit RT 130mmHg AND LT 104mmHg Which of the following correctly describes how to report the findings?</div>
             
             <div class="study-note" data-study-note="q39"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q39">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 39">
               
               <button class="choice" type="button" role="listitem" data-card-id="q39" data-choice="A" data-correct="D">
@@ -2450,6 +2638,10 @@ single digit and disease of that digital artery should be suspected.</div>
             <div class="content question-text">Which method is preferred to evaluate suspected popliteal entrapment?</div>
             
             <div class="study-note" data-study-note="q40"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q40">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 40">
               
               <button class="choice" type="button" role="listitem" data-card-id="q40" data-choice="A" data-correct="A">
@@ -2501,6 +2693,10 @@ during calf contraction. Active plantar or dorsiflexion of the foot can be perfo
             <div class="content question-text">When performing post-occlusive reactive hyperemia, pressure measurements in the lower extremities are obtained:</div>
             
             <div class="study-note" data-study-note="q41"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q41">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 41">
               
               <button class="choice" type="button" role="listitem" data-card-id="q41" data-choice="A" data-correct="D">
@@ -2553,6 +2749,10 @@ reactive hyperemia than treadmill testing.</div>
             <div class="content question-text">When evaluating suspected thoracic outlet syndrome, a PPG exam can be performed with the sensor placed on the _________________ or a Doppler exam can be performed with the transducer placed _______________________.</div>
             
             <div class="study-note" data-study-note="q42"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q42">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 42">
               
               <button class="choice" type="button" role="listitem" data-card-id="q42" data-choice="A" data-correct="A">
@@ -2604,6 +2804,10 @@ a Doppler exam can be performed with the transducer placed on the radial artery.
             <div class="content question-text">Which of the following patients would benefit from an exercise segmental pressure exam?</div>
             
             <div class="study-note" data-study-note="q43"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q43">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 43">
               
               <button class="choice" type="button" role="listitem" data-card-id="q43" data-choice="A" data-correct="C">
@@ -2656,6 +2860,10 @@ exam will not provide any additional information to assist on the diagnosis of t
             <div class="content question-text">When performing a segmental pressure exam on a patient with claudication, which of the following describes the response to exercise in a patient with pseudoclaudication?</div>
             
             <div class="study-note" data-study-note="q44"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q44">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 44">
               
               <button class="choice" type="button" role="listitem" data-card-id="q44" data-choice="A" data-correct="A">
@@ -2707,6 +2915,10 @@ be no drop in ankle pressure with exercise.</div>
             <div class="content question-text">Which blood vessel is most commonly evaluated with Doppler to obtain the thigh pressure when performing a segmental pressure exam?</div>
             
             <div class="study-note" data-study-note="q45"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q45">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 45">
               
               <button class="choice" type="button" role="listitem" data-card-id="q45" data-choice="A" data-correct="C">
@@ -2758,6 +2970,10 @@ segments. The Doppler signal from the calf arteries are used for ALL pressure me
             <div class="content question-text">Lower extremity arterial segmental pressure exam results in a post exercise basal pressure recovery time of 2 to 6 minutes which suggests:</div>
             
             <div class="study-note" data-study-note="q46"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q46">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 46">
               
               <button class="choice" type="button" role="listitem" data-card-id="q46" data-choice="A" data-correct="C">
@@ -2810,6 +3026,10 @@ greater than 6 minutes suggests multi-level disease.</div>
             <div class="content question-text">When performing a lower extremity venous Doppler for insufficiency,</div>
             
             <div class="study-note" data-study-note="q47"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q47">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 47">
               
               <button class="choice" type="button" role="listitem" data-card-id="q47" data-choice="A" data-correct="C">
@@ -2861,6 +3081,10 @@ maneuvers is recommended. The veins need sufficient time to refill before augmen
             <div class="content question-text">A patient presents for penile Doppler and segmental pressure exam due to impotence. The ABI is &gt;1.0 bilaterally. The PBI is 0.8. What should be done next to evaluate this patient?</div>
             
             <div class="study-note" data-study-note="q48"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q48">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 48">
               
               <button class="choice" type="button" role="listitem" data-card-id="q48" data-choice="A" data-correct="A">
@@ -2913,6 +3137,10 @@ with normal arterial inflow.</div>
             <div class="content question-text">Rest pain is associated with ankle pressures less than ______________ and toe pressures less than _____________ will be associated with a non- healing wound.</div>
             
             <div class="study-note" data-study-note="q49"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q49">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 49">
               
               <button class="choice" type="button" role="listitem" data-card-id="q49" data-choice="A" data-correct="D">
@@ -2964,6 +3192,10 @@ non-healing wound.</div>
             <div class="content question-text">An ABI of 0.77 indicates ________________ disease.</div>
             
             <div class="study-note" data-study-note="q50"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q50">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 50">
               
               <button class="choice" type="button" role="listitem" data-card-id="q50" data-choice="A" data-correct="B">
@@ -3017,6 +3249,10 @@ Severe disease &lt;0.5</div>
             <div class="content question-text">Pulse volume recording:</div>
             
             <div class="study-note" data-study-note="q51"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q51">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 51">
               
               <button class="choice" type="button" role="listitem" data-card-id="q51" data-choice="A" data-correct="B">
@@ -3070,6 +3306,10 @@ Doppler tracings would be triphasic.</div>
             <div class="content question-text">While performing an arterial Duplex exam, you obtain a triphasic waveform in the proximal femoral artery but the rest of the leg arteries demonstrate a monophasic waveform. The brachial pressure is 140mmHg. Which of the following lists the correct expected pressures from the four cuff segmental exam on the same patient?</div>
             
             <div class="study-note" data-study-note="q52"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q52">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 52">
               
               <button class="choice" type="button" role="listitem" data-card-id="q52" data-choice="A" data-correct="C">
@@ -3121,6 +3361,10 @@ If there is a suspected mid SFA stenosis or occlusion, there will be a significa
             <div class="content question-text">An abnormal Penile/Brachial Index will be:</div>
             
             <div class="study-note" data-study-note="q53"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q53">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 53">
               
               <button class="choice" type="button" role="listitem" data-card-id="q53" data-choice="A" data-correct="C">
@@ -3173,6 +3417,10 @@ cause for erectile dysfunction cannot be diagnosed..</div>
             <div class="content question-text">A segmental pressure exam is performed for a patient who is experiencing rest pain in the right leg. An ABI of 0.42 was found on the right leg. Which of the following statements is true regarding the findings?</div>
             
             <div class="study-note" data-study-note="q54"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q54">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 54">
               
               <button class="choice" type="button" role="listitem" data-card-id="q54" data-choice="A" data-correct="A">
@@ -3224,6 +3472,10 @@ that will aid the physician in diagnosis and treatment. The patient is already a
             <div class="content question-text">A patient presents for an exercise arterial exam after an abnormal resting exam. The report from the resting exam describes: elevated velocities that indicate a stenosis of &gt;50% in the distal femoral artery on the left leg, biphasic waveforms in the PTA and DPA and an ABI of 0.96. There is no change in the waveforms or decrease in ankle pressures in the left leg with exercise. What could explain these findings?</div>
             
             <div class="study-note" data-study-note="q55"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q55">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 55">
               
               <button class="choice" type="button" role="listitem" data-card-id="q55" data-choice="A" data-correct="D">
@@ -3275,6 +3527,10 @@ pressure from a diseased vessel.</div>
             <div class="content question-text">Flow velocity in a lower extremity arterial bypass graft is considered abnormal once it falls below __________.</div>
             
             <div class="study-note" data-study-note="q56"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q56">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 56">
               
               <button class="choice" type="button" role="listitem" data-card-id="q56" data-choice="A" data-correct="A">
@@ -3325,6 +3581,10 @@ pressure from a diseased vessel.</div>
             <div class="content question-text">How should you prepare the patient to start the examination used to assess the venous refill time using photoplethysmography?</div>
             
             <div class="study-note" data-study-note="q57"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q57">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 57">
               
               <button class="choice" type="button" role="listitem" data-card-id="q57" data-choice="A" data-correct="B">
@@ -3381,6 +3641,10 @@ levels under the cuff.</div>
             <div class="content question-text">Which of the following is not proper procedure for a venous PPG evaluation of the legs?</div>
             
             <div class="study-note" data-study-note="q58"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q58">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 58">
               
               <button class="choice" type="button" role="listitem" data-card-id="q58" data-choice="A" data-correct="D">
@@ -3433,6 +3697,10 @@ for the strip chart recorder is 5mm/sec. A tourniquet is applied to the leg afte
             <div class="content question-text">When a patient performs exercise on a treadmill what will be the normal change in the ankle brachial indices?</div>
             
             <div class="study-note" data-study-note="q59"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q59">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 59">
               
               <button class="choice" type="button" role="listitem" data-card-id="q59" data-choice="A" data-correct="B">
@@ -3485,6 +3753,10 @@ also be normal. A decrease in ankle pressure indicates an abnormal response.</di
             <div class="content question-text">A 9 year old presents with chronic fatigue and decreased palpable femoral pulses. The ankle brachial index is performed with the following results. Lt arm 168mmHg Lt ankle 95mmHg Rt arm 174mmHg Rt ankle 86mmHg; Which of the following is the most likely explanation of the findings?</div>
             
             <div class="study-note" data-study-note="q60"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q60">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 60">
               
               <button class="choice" type="button" role="listitem" data-card-id="q60" data-choice="A" data-correct="A">
@@ -3540,6 +3812,10 @@ coarctation/obstruction = lower ankle pressures bilaterally.</div>
             <div class="content question-text">What is the most accurate method of thigh pressure assessment?</div>
             
             <div class="study-note" data-study-note="q61"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q61">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 61">
               
               <button class="choice" type="button" role="listitem" data-card-id="q61" data-choice="A" data-correct="C">
@@ -3592,6 +3868,10 @@ provides a more accurate pressure.</div>
             <div class="content question-text">What is the primary purpose of using a tourniquet during a venous PPG exam of the leg?</div>
             
             <div class="study-note" data-study-note="q62"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q62">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 62">
               
               <button class="choice" type="button" role="listitem" data-card-id="q62" data-choice="A" data-correct="D">
@@ -3644,6 +3924,10 @@ the VRT does not return to normal, the insufficiency is in the deep system (and 
             <div class="content question-text">Which of the following is a characteristic of a normal lower extremity arterial PVR waveform?</div>
             
             <div class="study-note" data-study-note="q63"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q63">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 63">
               
               <button class="choice" type="button" role="listitem" data-card-id="q63" data-choice="A" data-correct="D">
@@ -3697,6 +3981,10 @@ between systolic and diastolic blood volumes.</div>
             <div class="content question-text">A segmental pressure exam demonstrates the following pressures; right arm: 136mmHg right leg: thigh 110mmHg, calf 100mmHg, ankle 92mmHg. Which of the following could explain these results?</div>
             
             <div class="study-note" data-study-note="q64"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q64">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 64">
               
               <button class="choice" type="button" role="listitem" data-card-id="q64" data-choice="A" data-correct="D">
@@ -3749,6 +4037,10 @@ diagnosis. If only the right leg is affected, then the cause is related to commo
             <div class="content question-text">What can be done to inhibit light from the exam room from causing artifact on an upper extremity PPG tracing?</div>
             
             <div class="study-note" data-study-note="q65"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q65">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 65">
               
               <button class="choice" type="button" role="listitem" data-card-id="q65" data-choice="A" data-correct="D">
@@ -3799,6 +4091,10 @@ diagnosis. If only the right leg is affected, then the cause is related to commo
             <div class="content question-text">A 65yr old male presents with mild left calf pain after walking 10 blocks. The pain is relieved by sitting and resting. On a resting arterial exam with ABI, the left ABI is 1.04. These findings are most suggestive of:</div>
             
             <div class="study-note" data-study-note="q66"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q66">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 66">
               
               <button class="choice" type="button" role="listitem" data-card-id="q66" data-choice="A" data-correct="C">
@@ -3850,6 +4146,10 @@ vascular diagnosis.</div>
             <div class="content question-text">A patient is short of breath after walking to the facility for the arterial duplex evaluation. What is the first thing you should do when starting his exam?</div>
             
             <div class="study-note" data-study-note="q67"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q67">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 67">
               
               <button class="choice" type="button" role="listitem" data-card-id="q67" data-choice="A" data-correct="A">
@@ -3901,6 +4201,10 @@ lead to overestimation of the severity of the disease identified on the resting 
             <div class="content question-text">What is the most likely cause of the findings on the image?</div>
             
             <div class="study-note" data-study-note="q68"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q68">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 68">
               
               <button class="choice" type="button" role="listitem" data-card-id="q68" data-choice="A" data-correct="D">
@@ -3955,6 +4259,10 @@ and digital arteries would be affected. Bilateral iliac stenosis would cause abn
             <div class="content question-text">A patient presents with left leg claudication. The right ABI is 1.32 and the left ABI is 1.37. What should you do next for this patient?</div>
             
             <div class="study-note" data-study-note="q69"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q69">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 69">
               
               <button class="choice" type="button" role="listitem" data-card-id="q69" data-choice="A" data-correct="A">
@@ -4007,6 +4315,10 @@ TBI is abnormal.</div>
             <div class="content question-text">Lower extremity arterial segmental pressure exam results in a post exercise basal pressure recovery time of &gt; 6 minutes which suggests:</div>
             
             <div class="study-note" data-study-note="q70"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q70">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 70">
               
               <button class="choice" type="button" role="listitem" data-card-id="q70" data-choice="A" data-correct="C">
@@ -4059,6 +4371,10 @@ greater than 6 minutes suggests multi-level disease.</div>
             <div class="content question-text">When performing a photoplethysmography exam for venous insufficiency, where should you place the sensor?</div>
             
             <div class="study-note" data-study-note="q71"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q71">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 71">
               
               <button class="choice" type="button" role="listitem" data-card-id="q71" data-choice="A" data-correct="B">
@@ -4112,6 +4428,10 @@ pads of the toes.</div>
             <div class="content question-text">The following pressures were obtained in a patient during a segmental pressure exam. Where is the disease, if any? Right: PTA 136mmHg, DPA, 130mmHg, Calf 136mmHg, Low Thigh 144mmHg, High Thigh 160mmHg, Brachial 130mmHg Left: PTA 98mmHg, DPA 85mmHg, Calf 100mmHg, Low Thigh 114mmHg, High Thigh 128mmHg, Brachial 126mmHg</div>
             
             <div class="study-note" data-study-note="q72"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q72">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 72">
               
               <button class="choice" type="button" role="listitem" data-card-id="q72" data-choice="A" data-correct="C">
@@ -4165,6 +4485,10 @@ affected.</div>
             <div class="content question-text">A patient presents for a bilateral segmental pressure exam of the lower extremities. The chart lists a history of a bilateral mastectomy in 1980. How will this affect your exam?</div>
             
             <div class="study-note" data-study-note="q73"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q73">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 73">
               
               <button class="choice" type="button" role="listitem" data-card-id="q73" data-choice="A" data-correct="B">
@@ -4218,6 +4542,10 @@ analysis only.</div>
             <div class="content question-text">A diabetic patient presents for a segmental pressure exam. The calf and ankle vessels are non-compressible with up to 220mmHg. What alternative exam can be performed to evaluate lower extremity pressures?</div>
             
             <div class="study-note" data-study-note="q74"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q74">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 74">
               
               <button class="choice" type="button" role="listitem" data-card-id="q74" data-choice="A" data-correct="B">
@@ -4269,6 +4597,10 @@ taken on the toes when the ankle pressures are falsely elevated.</div>
             <div class="content question-text">When performing an upper extremity segmental pressure exam, you obtain the following readings on the right arm. Right upper arm 140mmHg Right radial artery 110mmHg Right ulnar artery 130mmHg. Which of the following correctly explains the findings?</div>
             
             <div class="study-note" data-study-note="q75"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q75">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 75">
               
               <button class="choice" type="button" role="listitem" data-card-id="q75" data-choice="A" data-correct="A">
@@ -4321,6 +4653,10 @@ the pressure in both of the forearm arteries.</div>
             <div class="content question-text">A patient presents with left lower extremity pain that awakens him at night. The pain is relieved by sitting at the side of the bed for a few minutes. What would the predicted ABI value be for the left leg?</div>
             
             <div class="study-note" data-study-note="q76"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q76">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 76">
               
               <button class="choice" type="button" role="listitem" data-card-id="q76" data-choice="A" data-correct="C">
@@ -4371,6 +4707,10 @@ the pressure in both of the forearm arteries.</div>
             <div class="content question-text">A diabetic patient presents for extremity arterial evaluation with a rest pain bilaterally and blackened tips of the 4th and 5th toe on the left foot Right Ankle 148mmHg Left Ankle 144mmHg Highest brachial pressure 140mmHg. Which statement is true regarding these findings?</div>
             
             <div class="study-note" data-study-note="q77"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q77">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 77">
               
               <button class="choice" type="button" role="listitem" data-card-id="q77" data-choice="A" data-correct="A">
@@ -4423,6 +4763,10 @@ pressures and/or PPG or PVR evaluation will provide better information on this p
             <div class="content question-text">Which of the following would cause the systolic pressure reading obtained from the below knee cuff to be falsely elevated?</div>
             
             <div class="study-note" data-study-note="q78"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q78">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 78">
               
               <button class="choice" type="button" role="listitem" data-card-id="q78" data-choice="A" data-correct="C">
@@ -4476,6 +4820,10 @@ Other causes of falsely elevated pressure readings include medial calcification,
             <div class="content question-text">Which of the following is a major limitation of a lower extremity segmental pressure exam when compared to a Doppler evaluation?</div>
             
             <div class="study-note" data-study-note="q79"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q79">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 79">
               
               <button class="choice" type="button" role="listitem" data-card-id="q79" data-choice="A" data-correct="C">
@@ -4533,6 +4881,10 @@ the disease.</div>
             <div class="content question-text">Which of the following disorders would demonstrate normal digital pressures in the upper extremity?</div>
             
             <div class="study-note" data-study-note="q80"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q80">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 80">
               
               <button class="choice" type="button" role="listitem" data-card-id="q80" data-choice="A" data-correct="C">
@@ -4585,6 +4937,10 @@ formation.</div>
             <div class="content question-text">Which of the following non-stimulated PPG tracings is expected in a patient with Raynaud syndrome?</div>
             
             <div class="study-note" data-study-note="q81"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q81">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 81">
               
               <button class="choice" type="button" role="listitem" data-card-id="q81" data-choice="A" data-correct="C">
@@ -4638,6 +4994,10 @@ there will be an early peak of the waveform.</div>
             <div class="content question-text">The following pressure readings from a segmental pressure evaluation were obtained in a patient suffering from low back and thigh pain. What is the ABI for each leg? Lt Ankle 136 Rt Ankle 128 Lt Arm 124 Rt Arm 120</div>
             
             <div class="study-note" data-study-note="q82"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q82">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 82">
               
               <button class="choice" type="button" role="listitem" data-card-id="q82" data-choice="A" data-correct="A">
@@ -4691,6 +5051,10 @@ how to set up the calculation. The highest calf artery pressure is divided by th
             <div class="content question-text">Which of the following is considered a limitation of the three cuff lower extremity segmental pressure exam?</div>
             
             <div class="study-note" data-study-note="q83"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q83">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 83">
               
               <button class="choice" type="button" role="listitem" data-card-id="q83" data-choice="A" data-correct="B">
@@ -4743,6 +5107,10 @@ pressure is decreased.</div>
             <div class="content question-text">The ankle brachial index is commonly performed as a part of which of the following exams?</div>
             
             <div class="study-note" data-study-note="q84"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q84">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 84">
               
               <button class="choice" type="button" role="listitem" data-card-id="q84" data-choice="A" data-correct="A">
@@ -4793,6 +5161,10 @@ pressure is decreased.</div>
             <div class="content question-text">You are performing an upper extremity segmental pressure evaluation and obtain the following information: Brachial 140mmHg Upper forearm 132mmHg Wrist - Radial 108mmHg Wrist - Ulnar 130mmHg Which of the following correctly describes the findings?</div>
             
             <div class="study-note" data-study-note="q85"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q85">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 85">
               
               <button class="choice" type="button" role="listitem" data-card-id="q85" data-choice="A" data-correct="C">
@@ -4844,6 +5216,10 @@ The vessel with the lower pressure has an obstruction proximal to the wrist.</di
             <div class="content question-text">Which of the following is a contraindication for a lower extremity segmental pressure exam?</div>
             
             <div class="study-note" data-study-note="q86"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q86">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 86">
               
               <button class="choice" type="button" role="listitem" data-card-id="q86" data-choice="A" data-correct="A">
@@ -4901,6 +5277,10 @@ which could inhibit the exam, not every patient with DM has medial calcification
             <div class="content question-text">Which of the following is a normal response from the capillary beds of the feet and ankles after 5 minutes of vigorous exercise?</div>
             
             <div class="study-note" data-study-note="q87"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q87">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 87">
               
               <button class="choice" type="button" role="listitem" data-card-id="q87" data-choice="A" data-correct="B">
@@ -4952,6 +5332,10 @@ demonstrate any change in pressure with exercise.</div>
             <div class="content question-text">Which of the following will increase the amplitude of a digital PPG tracing?</div>
             
             <div class="study-note" data-study-note="q88"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q88">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 88">
               
               <button class="choice" type="button" role="listitem" data-card-id="q88" data-choice="A" data-correct="A">
@@ -5006,6 +5390,10 @@ negative direction of flow. Changes in baseline are used to highlight flow patte
             <div class="content question-text">Which extremity arterial evaluation technique can be described as the placement of multiple cuffs around the extremity that measure the volume changes beneath them?</div>
             
             <div class="study-note" data-study-note="q89"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q89">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 89">
               
               <button class="choice" type="button" role="listitem" data-card-id="q89" data-choice="A" data-correct="B">
@@ -5059,6 +5447,10 @@ Segmental pressure exams measure the pressure in the artery under the cuff.</div
             <div class="content question-text">A diabetic patient with a history of chronic renal failure and dialysis treatment presents with leg pain with walking. Which of the following is a potential complication for performing a segmental pressure exam on this patient?</div>
             
             <div class="study-note" data-study-note="q90"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q90">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 90">
               
               <button class="choice" type="button" role="listitem" data-card-id="q90" data-choice="A" data-correct="D">
@@ -5112,6 +5504,10 @@ segmental pressure exam should be evaluated in the supine position.</div>
             <div class="content question-text">In photoplethysmography, the sensor uses _________________ to detect ____________________ changes.</div>
             
             <div class="study-note" data-study-note="q91"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q91">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 91">
               
               <button class="choice" type="button" role="listitem" data-card-id="q91" data-choice="A" data-correct="B">
@@ -5162,6 +5558,10 @@ segmental pressure exam should be evaluated in the supine position.</div>
             <div class="content question-text">A __________ cuff is usually used to assess wrist pressure and a ____________ cuff is usually used to assess digit pressure.</div>
             
             <div class="study-note" data-study-note="q92"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q92">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 92">
               
               <button class="choice" type="button" role="listitem" data-card-id="q92" data-choice="A" data-correct="A">
@@ -5213,6 +5613,10 @@ segmental pressure exam should be evaluated in the supine position.</div>
             <div class="content question-text">A patient presents with HTN, DM and left lower extremity pain that worsens as he walks. He usually begins to have pain after he walks to his mailbox with increasing pain as he returns to the house. The pain is relieved by resting his leg for a few minutes. A bilateral resting ABI is performed with the right leg, 1.12 and the left leg 1.34. Which of the following statements is true regarding the findings?</div>
             
             <div class="study-note" data-study-note="q93"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q93">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 93">
               
               <button class="choice" type="button" role="listitem" data-card-id="q93" data-choice="A" data-correct="A">
@@ -5265,6 +5669,10 @@ pressures for an accurate pressure index (Toe-Brachial Index) and PPG evaluation
             <div class="content question-text">What setting on the photoplethysmography system should remain constant during an extremity arterial evaluation and if it is adjusted it must be documented on the tracing?</div>
             
             <div class="study-note" data-study-note="q94"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q94">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 94">
               
               <button class="choice" type="button" role="listitem" data-card-id="q94" data-choice="A" data-correct="C">
@@ -5318,6 +5726,10 @@ be documented on the affected tracings.</div>
             <div class="content question-text">You are evaluating a patient with suspected Raynaud disease using PPG. After obtaining a baseline tracing, you place the hand in cold water for 2 minutes. Once the hand is removed, PPG sensors are reapplied to the fingertips. Which of the following correctly describes normal results for this exam?</div>
             
             <div class="study-note" data-study-note="q95"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q95">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 95">
               
               <button class="choice" type="button" role="listitem" data-card-id="q95" data-choice="A" data-correct="B">
@@ -5370,6 +5782,10 @@ An abnormal exam would have a delayed return to baseline readings.</div>
             <div class="content question-text">The lower extremity segmental pressure exam is most commonly performed with a/an ___________________ to obtain the Doppler signal for the pressure measurements at the ankle.</div>
             
             <div class="study-note" data-study-note="q96"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q96">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 96">
               
               <button class="choice" type="button" role="listitem" data-card-id="q96" data-choice="A" data-correct="C">
@@ -5420,6 +5836,10 @@ An abnormal exam would have a delayed return to baseline readings.</div>
             <div class="content question-text">Which of the following is a contraindication for exercise testing?</div>
             
             <div class="study-note" data-study-note="q97"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q97">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 97">
               
               <button class="choice" type="button" role="listitem" data-card-id="q97" data-choice="A" data-correct="D">
@@ -5479,6 +5899,10 @@ History of cardiac procedure or myocardial infarction - must be cleared for exer
             <div class="content question-text">The image demonstrates what type of vascular evaluation technique?</div>
             
             <div class="study-note" data-study-note="q98"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q98">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 98">
               
               <button class="choice" type="button" role="listitem" data-card-id="q98" data-choice="A" data-correct="A">
@@ -5537,6 +5961,10 @@ cuff.</div>
             <div class="content question-text">Which of the following could cause a false reduction in ankle pressure on an average sized patient?</div>
             
             <div class="study-note" data-study-note="q99"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q99">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 99">
               
               <button class="choice" type="button" role="listitem" data-card-id="q99" data-choice="A" data-correct="A">
@@ -5589,6 +6017,10 @@ False reduction in the ankle pressure = cuff too large, congestive heart failure
             <div class="content question-text">Increased peripheral resistance will lead to______________ amplitude in PVR tracings.</div>
             
             <div class="study-note" data-study-note="q100"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q100">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 100">
               
               <button class="choice" type="button" role="listitem" data-card-id="q100" data-choice="A" data-correct="A">
@@ -5640,6 +6072,10 @@ amplitude and loss of the dicrotic notch.</div>
             <div class="content question-text">The PVR tracings from a lower extremity arterial exam. Which of the following explains these findings?</div>
             
             <div class="study-note" data-study-note="q101"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q101">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 101">
               
               <button class="choice" type="button" role="listitem" data-card-id="q101" data-choice="A" data-correct="C">
@@ -5693,6 +6129,10 @@ to the cuff is suspected.</div>
             <div class="content question-text">Venous PPG tracings are obtained. The right side demonstrates a venous refill time of 30 seconds. The left side demonstrates a refill time of 23 seconds. Which of the following describes the next step in evaluation?</div>
             
             <div class="study-note" data-study-note="q102"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q102">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 102">
               
               <button class="choice" type="button" role="listitem" data-card-id="q102" data-choice="A" data-correct="D">
@@ -5743,6 +6183,10 @@ to the cuff is suspected.</div>
             <div class="content question-text">Upon cessation of exercise, the ankle pressures in a normal patient will:</div>
             
             <div class="study-note" data-study-note="q103"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q103">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 103">
               
               <button class="choice" type="button" role="listitem" data-card-id="q103" data-choice="A" data-correct="D">
@@ -5795,6 +6239,10 @@ stays the same or increases slightly.</div>
             <div class="content question-text">Which of the following is NOT an appropriate reason to terminate the treadmill exercise for a lower extremity arterial exam?</div>
             
             <div class="study-note" data-study-note="q104"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q104">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 104">
               
               <button class="choice" type="button" role="listitem" data-card-id="q104" data-choice="A" data-correct="C">
@@ -5847,6 +6295,10 @@ pressures.</div>
             <div class="content question-text">The following pressure readings from a segmental pressure evaluation were obtained in a patient suffering from low back and thigh pain when walking. Which of the following describes a possible reason for the patient&#39;s symptoms? Lt Ankle 136 Rt Ankle 128 Lt Arm 124 Rt Arm 120</div>
             
             <div class="study-note" data-study-note="q105"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q105">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 105">
               
               <button class="choice" type="button" role="listitem" data-card-id="q105" data-choice="A" data-correct="A">
@@ -5899,6 +6351,10 @@ condition that occurs when the spaces narrow between the vertebrae in your lower
             <div class="content question-text">Which of the following exams does not use PW or CW Doppler?</div>
             
             <div class="study-note" data-study-note="q106"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q106">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 106">
               
               <button class="choice" type="button" role="listitem" data-card-id="q106" data-choice="A" data-correct="D">
@@ -5949,6 +6405,10 @@ condition that occurs when the spaces narrow between the vertebrae in your lower
             <div class="content question-text">A diabetic patient presents with an injury to his big toe that won&#39;t seem to heal and has been open for over 3 weeks. Which of the following exam techniques should be used to evaluate this patient?</div>
             
             <div class="study-note" data-study-note="q107"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q107">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 107">
               
               <button class="choice" type="button" role="listitem" data-card-id="q107" data-choice="A" data-correct="D">
@@ -6000,6 +6460,10 @@ vessels.</div>
             <div class="content question-text">When the Allen test is performed with significant abnormal findings, what happens to the digit PPG tracings with radial artery compression?</div>
             
             <div class="study-note" data-study-note="q108"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q108">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 108">
               
               <button class="choice" type="button" role="listitem" data-card-id="q108" data-choice="A" data-correct="A">
@@ -6059,6 +6523,10 @@ waveform should increase in amplitude. If it remains low and flat, the radial ar
             <div class="content question-text">A patient presents with a script for an upper extremity PPG exam to rule out Raynaud syndrome. How will you perform the exam?</div>
             
             <div class="study-note" data-study-note="q109"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q109">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 109">
               
               <button class="choice" type="button" role="listitem" data-card-id="q109" data-choice="A" data-correct="B">
@@ -6109,6 +6577,10 @@ waveform should increase in amplitude. If it remains low and flat, the radial ar
             <div class="content question-text">Which of the following indicates single level arterial obstruction in the leg?</div>
             
             <div class="study-note" data-study-note="q110"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q110">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 110">
               
               <button class="choice" type="button" role="listitem" data-card-id="q110" data-choice="A" data-correct="A">
@@ -6159,6 +6631,10 @@ waveform should increase in amplitude. If it remains low and flat, the radial ar
             <div class="content question-text">Which of the following is not a characteristic of a normal PVR tracing of the lower extremity?</div>
             
             <div class="study-note" data-study-note="q111"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q111">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 111">
               
               <button class="choice" type="button" role="listitem" data-card-id="q111" data-choice="A" data-correct="B">
@@ -6209,6 +6685,10 @@ waveform should increase in amplitude. If it remains low and flat, the radial ar
             <div class="content question-text">Venous PPG tracings are obtained. The right side demonstrates a venous refill time of 14 seconds. The left side demonstrates a refill time of 23 seconds. Which of the following describes the next step in evaluation?</div>
             
             <div class="study-note" data-study-note="q112"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q112">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 112">
               
               <button class="choice" type="button" role="listitem" data-card-id="q112" data-choice="A" data-correct="B">
@@ -6261,6 +6741,10 @@ superficial system &#34;cut off&#34; by the tourniquet, this indicates deep veno
             <div class="content question-text">What are the average treadmill settings utilized in exercise testing?</div>
             
             <div class="study-note" data-study-note="q113"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q113">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 113">
               
               <button class="choice" type="button" role="listitem" data-card-id="q113" data-choice="A" data-correct="B">
@@ -6311,6 +6795,10 @@ superficial system &#34;cut off&#34; by the tourniquet, this indicates deep veno
             <div class="content question-text">Which of the following techniques can be used to assess the presence and timing of reflux in multiple vessels simultaneously?</div>
             
             <div class="study-note" data-study-note="q114"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q114">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 114">
               
               <button class="choice" type="button" role="listitem" data-card-id="q114" data-choice="A" data-correct="B">
@@ -6362,6 +6850,10 @@ presence and timing of reflux in both veins. This is very helpful in identifying
             <div class="content question-text">Which of the following patients would require reactive hyperemia testing instead of exercise testing for a lower extremity exam to evaluate new onset of left leg claudication?</div>
             
             <div class="study-note" data-study-note="q115"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q115">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 115">
               
               <button class="choice" type="button" role="listitem" data-card-id="q115" data-choice="A" data-correct="D">
@@ -6417,6 +6909,10 @@ hyperemia testing will better evaluate the new symptoms in the left leg.</div>
             <div class="content question-text">You are preparing for a lower extremity segmental pressure exam on a patient with leg pain. She was admitted to the hospital 2 days ago due to extensive lower extremity DVT. How will you proceed?</div>
             
             <div class="study-note" data-study-note="q116"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q116">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 116">
               
               <button class="choice" type="button" role="listitem" data-card-id="q116" data-choice="A" data-correct="B">
@@ -6470,6 +6966,10 @@ recanalized in such a short period of time. A Sonographer should never cancel an
             <div class="content question-text">When using the 4 cuff method to obtain segmental pressures in the legs, the blood pressure in the proximal thigh normally exceeds the brachial systolic pressure by __________mmHg.</div>
             
             <div class="study-note" data-study-note="q117"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q117">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 117">
               
               <button class="choice" type="button" role="listitem" data-card-id="q117" data-choice="A" data-correct="C">
@@ -6522,6 +7022,10 @@ to the brachial pressure in a normal pressure.</div>
             <div class="content question-text">Which letter on the diagram represents the catacrotic limb of the tracing?</div>
             
             <div class="study-note" data-study-note="q118"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q118">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 118">
               
               <button class="choice" type="button" role="listitem" data-card-id="q118" data-choice="A" data-correct="B">
@@ -6571,6 +7075,10 @@ tracing demonstrates the dicrotic notch which is related to normal peripheral re
             <div class="content question-text">What is the normal change in flow velocity in response to releasing the cuff during reactive hyperemia?</div>
             
             <div class="study-note" data-study-note="q119"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q119">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 119">
               
               <button class="choice" type="button" role="listitem" data-card-id="q119" data-choice="A" data-correct="A">
@@ -6624,6 +7132,10 @@ In a normal patient, the ankle pressures should drop by less than 35% and return
             <div class="content question-text">Which of the following is performed with the patient sitting upright?</div>
             
             <div class="study-note" data-study-note="q120"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q120">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 120">
               
               <button class="choice" type="button" role="listitem" data-card-id="q120" data-choice="A" data-correct="D">
@@ -6674,6 +7186,10 @@ In a normal patient, the ankle pressures should drop by less than 35% and return
             <div class="content question-text">The 12cm blood pressure cuffs are missing from the lab. You perform the 3 cuff method lower extremity segmental pressure exam with the 10cm cuffs on a patient that is 5&#39;5&#34; 150lbs. What information that you will report will be invalid?</div>
             
             <div class="study-note" data-study-note="q121"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q121">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 121">
               
               <button class="choice" type="button" role="listitem" data-card-id="q121" data-choice="A" data-correct="D">
@@ -6724,6 +7240,10 @@ In a normal patient, the ankle pressures should drop by less than 35% and return
             <div class="content question-text">The following pressure readings from a segmental pressure evaluation were obtained in a patient suffering from low back and thigh pain. What is the ABI for each leg? Lt Ankle 106 Rt Ankle 98 Lt Arm 124 Rt Arm 134</div>
             
             <div class="study-note" data-study-note="q122"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q122">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 122">
               
               <button class="choice" type="button" role="listitem" data-card-id="q122" data-choice="A" data-correct="C">
@@ -6778,6 +7298,10 @@ how to set up the calculation. The highest calf artery pressure is divided by th
             <div class="content question-text">Subcutaneous blood supply to the digits can be evaluated using which non-invasive plethysmography technique?</div>
             
             <div class="study-note" data-study-note="q123"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q123">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 123">
               
               <button class="choice" type="button" role="listitem" data-card-id="q123" data-choice="A" data-correct="A">
@@ -6829,6 +7353,10 @@ cycle.</div>
             <div class="content question-text">A patient presents with HTN, DM and left lower extremity pain that occurs only as he walks. He usually begins to have pain after he walks to his mailbox with increasing pain as he returns to the house. The pain is relieved by resting his legs for a few minutes. What would the predicted ABI value be for the left leg?</div>
             
             <div class="study-note" data-study-note="q124"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q124">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 124">
               
               <button class="choice" type="button" role="listitem" data-card-id="q124" data-choice="A" data-correct="B">
@@ -6881,6 +7409,10 @@ best choice with the given symptoms.</div>
             <div class="content question-text">Which of the following describes the appearance of a significantly abnormal arterial PPG waveform?</div>
             
             <div class="study-note" data-study-note="q125"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q125">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 125">
               
               <button class="choice" type="button" role="listitem" data-card-id="q125" data-choice="A" data-correct="C">
@@ -6934,6 +7466,10 @@ amplitude indicate significantly abnormal flow.</div>
             <div class="content question-text">Which of the following correctly describes a PVR waveform?</div>
             
             <div class="study-note" data-study-note="q126"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q126">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 126">
               
               <button class="choice" type="button" role="listitem" data-card-id="q126" data-choice="A" data-correct="C">
@@ -6985,6 +7521,10 @@ patients. There are greater volume changes in the calf than the thigh in a norma
             <div class="content question-text">A segmental pressure exam demonstrates the following pressures: right arm: 142mmHg right leg: proximal thigh 140mmHg distal thigh 126mmHg calf 116mmHg ankle 112mmHg. Which of the following could explain these results?</div>
             
             <div class="study-note" data-study-note="q127"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q127">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 127">
               
               <button class="choice" type="button" role="listitem" data-card-id="q127" data-choice="A" data-correct="B">
@@ -7037,6 +7577,10 @@ intrinsic compression of the iliac artery by a pelvic mass.</div>
             <div class="content question-text">A patient presents with a history of recurrent upper extremity DVT due to Paget Schroetter syndrome. The referring physician ordered a PVR exam of the upper extremities instead of a venous Doppler exam of the upper extremities. Why?</div>
             
             <div class="study-note" data-study-note="q128"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q128">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 128">
               
               <button class="choice" type="button" role="listitem" data-card-id="q128" data-choice="A" data-correct="A">
@@ -7088,6 +7632,10 @@ muscle band can be involved with the DVT formation with Paget Schroetter syndrom
             <div class="content question-text">Photoplethysmography (PPG) is useful to assess all of the following, except:</div>
             
             <div class="study-note" data-study-note="q129"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q129">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 129">
               
               <button class="choice" type="button" role="listitem" data-card-id="q129" data-choice="A" data-correct="D">
@@ -7140,6 +7688,10 @@ flow, which could be demonstrated by using the PPG technique to assess digital p
             <div class="content question-text">How many cuffs are recommended when performing a bilateral lower extremity segmental pressure evaluation?</div>
             
             <div class="study-note" data-study-note="q130"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q130">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 130">
               
               <button class="choice" type="button" role="listitem" data-card-id="q130" data-choice="A" data-correct="D">
@@ -7190,6 +7742,10 @@ flow, which could be demonstrated by using the PPG technique to assess digital p
             <div class="content question-text">Treadmill exercise is normally performed:</div>
             
             <div class="study-note" data-study-note="q131"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q131">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 131">
               
               <button class="choice" type="button" role="listitem" data-card-id="q131" data-choice="A" data-correct="D">
@@ -7240,6 +7796,10 @@ flow, which could be demonstrated by using the PPG technique to assess digital p
             <div class="content question-text">The 10cm blood pressure cuffs are missing from the lab. You perform the 3 cuff method lower extremity segmental pressure exam with the 12cm and 14cm cuffs on a patient that is 5&#39;5&#34; 150lbs. What information that you will report will be invalid?</div>
             
             <div class="study-note" data-study-note="q132"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q132">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 132">
               
               <button class="choice" type="button" role="listitem" data-card-id="q132" data-choice="A" data-correct="A">
@@ -7291,6 +7851,10 @@ ankle and arm.</div>
             <div class="content question-text">Which of the following is a contraindication for a lower extremity segmental pressure exam?</div>
             
             <div class="study-note" data-study-note="q133"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q133">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 133">
               
               <button class="choice" type="button" role="listitem" data-card-id="q133" data-choice="A" data-correct="D">
@@ -7369,6 +7933,12 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     document.getElementById("close-all").addEventListener("click", () => {
       answerToggles.forEach((toggle) => setPanelState(toggle, false));
+    });
+
+    document.getElementById("clear-all-answers").addEventListener("click", () => {
+      Object.keys(studyState).forEach((key) => delete studyState[key]);
+      saveStudyState(studyState);
+      applyStudyState(studyState);
     });
 
     function normalizeState(rawState) {
@@ -7455,6 +8025,15 @@ Powered by ExamBuilder. Copyright ©2026</div>
           status: choice === correct ? "correct" : "incorrect",
           selectedChoice: choice,
         };
+        saveStudyState(studyState);
+        applyStudyState(studyState);
+      });
+    });
+
+    document.querySelectorAll("[data-clear-card]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const cardId = button.getAttribute("data-clear-card");
+        delete studyState[cardId];
         saveStudyState(studyState);
         applyStudyState(studyState);
       });

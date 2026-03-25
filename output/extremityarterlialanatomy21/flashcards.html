@@ -216,6 +216,31 @@
     .study-note.incorrect {
       color: var(--danger);
     }
+    .choice-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .clear-answer {
+      appearance: none;
+      border: 1px solid rgba(46, 110, 163, 0.12);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.55rem 0.8rem;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+    .clear-answer:hover {
+      transform: translateY(-1px);
+      border-color: rgba(239, 131, 84, 0.22);
+      color: var(--accent-dark);
+    }
     .choices {
       display: grid;
       gap: 0.9rem;
@@ -375,6 +400,12 @@
         justify-content: center;
         text-align: center;
       }
+      .choice-row {
+        align-items: stretch;
+      }
+      .clear-answer {
+        width: 100%;
+      }
       h1 {
         max-width: none;
       }
@@ -400,6 +431,7 @@
           <a href="../index.html">Back to index</a>
           <button type="button" id="open-all">Open all backs</button>
           <button type="button" id="close-all">Close all backs</button>
+          <button type="button" id="clear-all-answers">Clear saved answers</button>
         </div>
       </div>
     </section>
@@ -416,6 +448,10 @@
             <div class="content question-text">According to the attached color map, what color will laminar flow be demonstrated that is moving at 40cm/s away from the probe?</div>
             
             <div class="study-note" data-study-note="q1"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q1">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 1">
               
               <button class="choice" type="button" role="listitem" data-card-id="q1" data-choice="A" data-correct="A">
@@ -468,6 +504,10 @@ greater than 0.45 m/s will alias causing display of yellow (turbulent) or red.</
             <div class="content question-text">The profunda artery:</div>
             
             <div class="study-note" data-study-note="q2"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q2">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 2">
               
               <button class="choice" type="button" role="listitem" data-card-id="q2" data-choice="A" data-correct="C">
@@ -520,6 +560,10 @@ greater than 0.45 m/s will alias causing display of yellow (turbulent) or red.</
             <div class="content question-text">The Doppler tracing most likely came from which normal lower extremity artery?</div>
             
             <div class="study-note" data-study-note="q3"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q3">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 3">
               
               <button class="choice" type="button" role="listitem" data-card-id="q3" data-choice="A" data-correct="D">
@@ -573,6 +617,10 @@ normally demonstrates a high resistance, triphasic waveform.</div>
             <div class="content question-text">The external iliac artery:</div>
             
             <div class="study-note" data-study-note="q4"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q4">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 4">
               
               <button class="choice" type="button" role="listitem" data-card-id="q4" data-choice="A" data-correct="C">
@@ -626,6 +674,10 @@ the ligament. It also courses along the medial side of the psoas muscle to suppl
             <div class="content question-text">The posterior tibial artery courses along:</div>
             
             <div class="study-note" data-study-note="q5"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q5">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 5">
               
               <button class="choice" type="button" role="listitem" data-card-id="q5" data-choice="A" data-correct="B">
@@ -678,6 +730,10 @@ the ligament. It also courses along the medial side of the psoas muscle to suppl
             <div class="content question-text">Vasoconstriction will cause ________________ , while vasodilation will cause ______________.</div>
             
             <div class="study-note" data-study-note="q6"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q6">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 6">
               
               <button class="choice" type="button" role="listitem" data-card-id="q6" data-choice="A" data-correct="C">
@@ -731,6 +787,10 @@ reduced resistance.</div>
             <div class="content question-text">Which of the following arteries is not commonly evaluated in an arterial assessment of the lower extremity?</div>
             
             <div class="study-note" data-study-note="q7"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q7">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 7">
               
               <button class="choice" type="button" role="listitem" data-card-id="q7" data-choice="A" data-correct="A">
@@ -782,6 +842,10 @@ leg.</div>
             <div class="content question-text">Exercise causes ________________ which leads to _________________ in the lower extremities.</div>
             
             <div class="study-note" data-study-note="q8"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q8">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 8">
               
               <button class="choice" type="button" role="listitem" data-card-id="q8" data-choice="A" data-correct="C">
@@ -834,6 +898,10 @@ functioning muscles. If enough blood does not reach the muscles, symptoms like c
             <div class="content question-text">Which of the following arteries does not usually have a pair of veins of the same name?</div>
             
             <div class="study-note" data-study-note="q9"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q9">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 9">
               
               <button class="choice" type="button" role="listitem" data-card-id="q9" data-choice="A" data-correct="D">
@@ -885,6 +953,10 @@ paired veins of the same name.</div>
             <div class="content question-text">What blood vessels are located at letter A?</div>
             
             <div class="study-note" data-study-note="q10"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q10">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 10">
               
               <button class="choice" type="button" role="listitem" data-card-id="q10" data-choice="A" data-correct="B">
@@ -937,6 +1009,10 @@ paired veins of the same name.</div>
             <div class="content question-text">Which of the following describes the recommended protocol for an accurate evaluation of the lower extremity arteries?</div>
             
             <div class="study-note" data-study-note="q11"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q11">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 11">
               
               <button class="choice" type="button" role="listitem" data-card-id="q11" data-choice="A" data-correct="C">
@@ -990,6 +1066,10 @@ the popliteal artery</div>
             <div class="content question-text">Which arteries supply the forearm and hand with blood?</div>
             
             <div class="study-note" data-study-note="q12"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q12">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 12">
               
               <button class="choice" type="button" role="listitem" data-card-id="q12" data-choice="A" data-correct="B">
@@ -1042,6 +1122,10 @@ the popliteal artery</div>
             <div class="content question-text">What are the direct branches of the popliteal artery?</div>
             
             <div class="study-note" data-study-note="q13"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q13">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 13">
               
               <button class="choice" type="button" role="listitem" data-card-id="q13" data-choice="A" data-correct="B">
@@ -1095,6 +1179,10 @@ more distally in the calf.</div>
             <div class="content question-text">The profunda femoral artery supplies blood to which of the following structures?</div>
             
             <div class="study-note" data-study-note="q14"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q14">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 14">
               
               <button class="choice" type="button" role="listitem" data-card-id="q14" data-choice="A" data-correct="A">
@@ -1146,6 +1234,10 @@ thigh and hip.</div>
             <div class="content question-text">A normal penile brachial index is:</div>
             
             <div class="study-note" data-study-note="q15"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q15">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 15">
               
               <button class="choice" type="button" role="listitem" data-card-id="q15" data-choice="A" data-correct="C">
@@ -1197,6 +1289,10 @@ between 0.65 and 0.75 is considered suspicious for vasculogenic impotence but fu
             <div class="content question-text">Which vessel wall layer is thicker in arteries than in veins?</div>
             
             <div class="study-note" data-study-note="q16"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q16">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 16">
               
               <button class="choice" type="button" role="listitem" data-card-id="q16" data-choice="A" data-correct="C">
@@ -1249,6 +1345,10 @@ between 0.65 and 0.75 is considered suspicious for vasculogenic impotence but fu
             <div class="content question-text">The normal brachial artery waveform should resemble the flow in the normal ______________artery</div>
             
             <div class="study-note" data-study-note="q17"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q17">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 17">
               
               <button class="choice" type="button" role="listitem" data-card-id="q17" data-choice="A" data-correct="B">
@@ -1300,6 +1400,10 @@ demonstrate a high resistance, triphasic waveform.</div>
             <div class="content question-text">Which artery courses anteriorly along the calf and laterally through the interosseous membrane of the leg?</div>
             
             <div class="study-note" data-study-note="q18"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q18">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 18">
               
               <button class="choice" type="button" role="listitem" data-card-id="q18" data-choice="A" data-correct="A">
@@ -1353,6 +1457,10 @@ ATV course just anterior to the membrane.</div>
             <div class="content question-text">What causes the 3rd phase of flow in a normal extremity arterial waveform?</div>
             
             <div class="study-note" data-study-note="q19"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q19">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 19">
               
               <button class="choice" type="button" role="listitem" data-card-id="q19" data-choice="A" data-correct="B">
@@ -1407,6 +1515,10 @@ ATV course just anterior to the membrane.</div>
             <div class="content question-text">The lateral plantar arch artery originates at the _____________________.</div>
             
             <div class="study-note" data-study-note="q20"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q20">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 20">
               
               <button class="choice" type="button" role="listitem" data-card-id="q20" data-choice="A" data-correct="B">
@@ -1457,6 +1569,10 @@ ATV course just anterior to the membrane.</div>
             <div class="content question-text">What is the name of the tiny network of vessels that supply/drain blood to/from the vessel wall?</div>
             
             <div class="study-note" data-study-note="q21"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q21">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 21">
               
               <button class="choice" type="button" role="listitem" data-card-id="q21" data-choice="A" data-correct="D">
@@ -1511,6 +1627,10 @@ from the wall.</div>
             <div class="content question-text">Where will you place the transducer to evaluate flow in the posterior tibial artery?</div>
             
             <div class="study-note" data-study-note="q22"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q22">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 22">
               
               <button class="choice" type="button" role="listitem" data-card-id="q22" data-choice="A" data-correct="B">
@@ -1562,6 +1682,10 @@ malleolus and the Achilles tendon.</div>
             <div class="content question-text">The popliteal artery ___________ the popliteal vein.</div>
             
             <div class="study-note" data-study-note="q23"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q23">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 23">
               
               <button class="choice" type="button" role="listitem" data-card-id="q23" data-choice="A" data-correct="A">
@@ -1617,6 +1741,10 @@ anterior aspect of this image is the posterior aspect of the patient.</div>
             <div class="content question-text">What blood vessels are located at letter B?</div>
             
             <div class="study-note" data-study-note="q24"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q24">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 24">
               
               <button class="choice" type="button" role="listitem" data-card-id="q24" data-choice="A" data-correct="C">
@@ -1669,6 +1797,10 @@ anterior aspect of this image is the posterior aspect of the patient.</div>
             <div class="content question-text">Letter A indicates which of the following structures?</div>
             
             <div class="study-note" data-study-note="q25"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q25">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 25">
               
               <button class="choice" type="button" role="listitem" data-card-id="q25" data-choice="A" data-correct="D">
@@ -1726,6 +1858,10 @@ D. Right CCA</div>
             <div class="content question-text">What two vessels are palpated to assess the pulse when peripheral arterial disease is suspected?</div>
             
             <div class="study-note" data-study-note="q26"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q26">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 26">
               
               <button class="choice" type="button" role="listitem" data-card-id="q26" data-choice="A" data-correct="A">
@@ -1778,6 +1914,10 @@ most prominence of the navicular bone. The peroneal artery is not usually able t
             <div class="content question-text">Which of the following describes how to correctly measure the width of the iliac artery?</div>
             
             <div class="study-note" data-study-note="q27"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q27">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 27">
               
               <button class="choice" type="button" role="listitem" data-card-id="q27" data-choice="A" data-correct="D">
@@ -1833,6 +1973,10 @@ dimension.</div>
             <div class="content question-text">What effect will increased hematocrit levels have on an arterial duplex exam?</div>
             
             <div class="study-note" data-study-note="q28"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q28">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 28">
               
               <button class="choice" type="button" role="listitem" data-card-id="q28" data-choice="A" data-correct="A">
@@ -1888,6 +2032,10 @@ flow</div>
             <div class="content question-text">The inguinal ligament:</div>
             
             <div class="study-note" data-study-note="q29"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q29">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 29">
               
               <button class="choice" type="button" role="listitem" data-card-id="q29" data-choice="A" data-correct="D">
@@ -1940,6 +2088,10 @@ flow</div>
             <div class="content question-text">Which of the following principles produces an equation that relates pressure gradient to flow and resistance within the circulatory system?</div>
             
             <div class="study-note" data-study-note="q30"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q30">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 30">
               
               <button class="choice" type="button" role="listitem" data-card-id="q30" data-choice="A" data-correct="A">
@@ -1993,6 +2145,10 @@ equation uses flow velocity to determine the pressure gradient at a specific loc
             <div class="content question-text">A weak pulse on the posterior tibial artery will be described as ___________, while a bounding pulse in the anterior tibial artery will be described as _____________.</div>
             
             <div class="study-note" data-study-note="q31"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q31">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 31">
               
               <button class="choice" type="button" role="listitem" data-card-id="q31" data-choice="A" data-correct="C">
@@ -2043,6 +2199,10 @@ equation uses flow velocity to determine the pressure gradient at a specific loc
             <div class="content question-text">Which waveform demonstrates the lowest resistance?</div>
             
             <div class="study-note" data-study-note="q32"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q32">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 32">
               
               <button class="choice" type="button" role="listitem" data-card-id="q32" data-choice="A" data-correct="A">
@@ -2100,6 +2260,10 @@ D. monophasic, lower resistance</div>
             <div class="content question-text">The _______________ artery terminates at the external calcaneal artery.</div>
             
             <div class="study-note" data-study-note="q33"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q33">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 33">
               
               <button class="choice" type="button" role="listitem" data-card-id="q33" data-choice="A" data-correct="A">
@@ -2150,6 +2314,10 @@ D. monophasic, lower resistance</div>
             <div class="content question-text">What blood vessels are demonstrated on the cross section of the penis?</div>
             
             <div class="study-note" data-study-note="q34"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q34">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 34">
               
               <button class="choice" type="button" role="listitem" data-card-id="q34" data-choice="A" data-correct="A">
@@ -2207,6 +2375,10 @@ dorsal vein provide the primary venous outflow routes</div>
             <div class="content question-text">You are evaluating the subclavian artery and its branches. How can you differentiate the vertebral artery from the thyrocervical and costocervical trunks?</div>
             
             <div class="study-note" data-study-note="q35"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q35">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 35">
               
               <button class="choice" type="button" role="listitem" data-card-id="q35" data-choice="A" data-correct="C">
@@ -2261,6 +2433,10 @@ evaluation technique and potential flow abnormalities (like a subclavian steal).
             <div class="content question-text">The inner most layer of an arterial wall is called ____________________, while the outermost layer of an arterial wall is called _______________________.</div>
             
             <div class="study-note" data-study-note="q36"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q36">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 36">
               
               <button class="choice" type="button" role="listitem" data-card-id="q36" data-choice="A" data-correct="B">
@@ -2314,6 +2490,10 @@ adventitia.</div>
             <div class="content question-text">Which of the waveforms demonstrates antegrade flow in diastole?</div>
             
             <div class="study-note" data-study-note="q37"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q37">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 37">
               
               <button class="choice" type="button" role="listitem" data-card-id="q37" data-choice="A" data-correct="A">
@@ -2374,6 +2554,10 @@ systole, retrograde flow in diastole, and a small segment of antegrade flow at t
             <div class="content question-text">A normal peak velocity in the cavernosa arteries after a papaverine injection would be _____________</div>
             
             <div class="study-note" data-study-note="q38"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q38">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 38">
               
               <button class="choice" type="button" role="listitem" data-card-id="q38" data-choice="A" data-correct="B">
@@ -2425,6 +2609,10 @@ vasculogenic impotence.</div>
             <div class="content question-text">How do you test the capillary blush response on the upper extremity?</div>
             
             <div class="study-note" data-study-note="q39"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q39">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 39">
               
               <button class="choice" type="button" role="listitem" data-card-id="q39" data-choice="A" data-correct="D">
@@ -2476,6 +2664,10 @@ times indicate the presence of arterial disease or obstruction.</div>
             <div class="content question-text">Vasodilation:</div>
             
             <div class="study-note" data-study-note="q40"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q40">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 40">
               
               <button class="choice" type="button" role="listitem" data-card-id="q40" data-choice="A" data-correct="C">
@@ -2529,6 +2721,10 @@ the muscles, symptoms like claudication can occur.</div>
             <div class="content question-text">The distal femoral artery becomes the popliteal artery:</div>
             
             <div class="study-note" data-study-note="q41"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q41">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 41">
               
               <button class="choice" type="button" role="listitem" data-card-id="q41" data-choice="A" data-correct="C">
@@ -2579,6 +2775,10 @@ the muscles, symptoms like claudication can occur.</div>
             <div class="content question-text">Which of the following statements is true regarding the tunica intima?</div>
             
             <div class="study-note" data-study-note="q42"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q42">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 42">
               
               <button class="choice" type="button" role="listitem" data-card-id="q42" data-choice="A" data-correct="A">
@@ -2632,6 +2832,10 @@ and more easily visualized sonographically.</div>
             <div class="content question-text">If the systemic blood pressure rises but flow remains constant, what happens to the resistance in the vascular beds?</div>
             
             <div class="study-note" data-study-note="q43"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q43">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 43">
               
               <button class="choice" type="button" role="listitem" data-card-id="q43" data-choice="A" data-correct="A">
@@ -2686,6 +2890,10 @@ Pressure goes up to 24, Resistance must increase to 4 to calculate the same flow
             <div class="content question-text">What is the primary factor that determines the resistance characteristics of the arterial signal displayed by PW Doppler?</div>
             
             <div class="study-note" data-study-note="q44"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q44">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 44">
               
               <button class="choice" type="button" role="listitem" data-card-id="q44" data-choice="A" data-correct="A">
@@ -2739,6 +2947,10 @@ artery is high resistance for a normal leg. Extremities do not need constant flo
             <div class="content question-text">Which of the following is NOT normally a part of a test for vasculogenic impotence?</div>
             
             <div class="study-note" data-study-note="q45"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q45">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 45">
               
               <button class="choice" type="button" role="listitem" data-card-id="q45" data-choice="A" data-correct="B">
@@ -2791,6 +3003,10 @@ PAD can be causing the erectile dysfunction. The diameter of the cavernous arter
             <div class="content question-text">Which vessel(s) supplies the majority of the blood to the hand?</div>
             
             <div class="study-note" data-study-note="q46"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q46">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 46">
               
               <button class="choice" type="button" role="listitem" data-card-id="q46" data-choice="A" data-correct="A">
@@ -2841,6 +3057,10 @@ PAD can be causing the erectile dysfunction. The diameter of the cavernous arter
             <div class="content question-text">What Sonographic landmark is used to identify the distal end of the common iliac artery?</div>
             
             <div class="study-note" data-study-note="q47"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q47">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 47">
               
               <button class="choice" type="button" role="listitem" data-card-id="q47" data-choice="A" data-correct="C">
@@ -2895,6 +3115,10 @@ external iliac artery, but it cannot normally be visualized when evaluating the 
             <div class="content question-text">Which statement is true regarding the internal thoracic artery?</div>
             
             <div class="study-note" data-study-note="q48"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q48">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 48">
               
               <button class="choice" type="button" role="listitem" data-card-id="q48" data-choice="A" data-correct="C">
@@ -2950,6 +3174,10 @@ https://creativecommons.org/licenses/by/3.0/deed.en</div>
             <div class="content question-text">Which calf vessel can be identified between the medial malleolus and the distal portion of the Achilles tendon?</div>
             
             <div class="study-note" data-study-note="q49"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q49">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 49">
               
               <button class="choice" type="button" role="listitem" data-card-id="q49" data-choice="A" data-correct="D">
@@ -3000,6 +3228,10 @@ https://creativecommons.org/licenses/by/3.0/deed.en</div>
             <div class="content question-text">You receive an order for a pre-op arterial mapping to evaluate the internal mammary artery. What vessel should you evaluate to locate the origin of the internal mammary artery?</div>
             
             <div class="study-note" data-study-note="q50"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q50">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 50">
               
               <button class="choice" type="button" role="listitem" data-card-id="q50" data-choice="A" data-correct="D">
@@ -3052,6 +3284,10 @@ https://creativecommons.org/licenses/by/3.0/deed.en</div>
             <div class="content question-text">Diastolic flow reversal is normal in which of the following vessels?</div>
             
             <div class="study-note" data-study-note="q51"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q51">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 51">
               
               <button class="choice" type="button" role="listitem" data-card-id="q51" data-choice="A" data-correct="D">
@@ -3105,6 +3341,10 @@ biphasic waveform. Any low resistance vessel with a monophasic waveform has no f
             <div class="content question-text">The internal iliac artery:</div>
             
             <div class="study-note" data-study-note="q52"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q52">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 52">
               
               <button class="choice" type="button" role="listitem" data-card-id="q52" data-choice="A" data-correct="A">
@@ -3157,6 +3397,10 @@ not the internal iliac artery. The common femoral artery bifurcates into the dee
             <div class="content question-text">Which of the following statements refers to the internal pudendal artery?</div>
             
             <div class="study-note" data-study-note="q53"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q53">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 53">
               
               <button class="choice" type="button" role="listitem" data-card-id="q53" data-choice="A" data-correct="D">
@@ -3208,6 +3452,10 @@ and its branches. Papaverine is injected into the tissues at the lateral side of
             <div class="content question-text">Ohm&#39;s Law of electrical current is also used to describe:</div>
             
             <div class="study-note" data-study-note="q54"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q54">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 54">
               
               <button class="choice" type="button" role="listitem" data-card-id="q54" data-choice="A" data-correct="D">
@@ -3259,6 +3507,10 @@ to flow volume = pressure / resistance. Ohm&#39;s Law equates to Poiseuille&#39;
             <div class="content question-text">Normal extremity arterial flow should demonstrate a _________________acceleration time.</div>
             
             <div class="study-note" data-study-note="q55"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q55">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 55">
               
               <button class="choice" type="button" role="listitem" data-card-id="q55" data-choice="A" data-correct="C">
@@ -3311,6 +3563,10 @@ to flow volume = pressure / resistance. Ohm&#39;s Law equates to Poiseuille&#39;
             <div class="content question-text">Which of the following correctly describes a normal Doppler waveform of an artery from the lower extremity?</div>
             
             <div class="study-note" data-study-note="q56"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q56">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 56">
               
               <button class="choice" type="button" role="listitem" data-card-id="q56" data-choice="A" data-correct="B">
@@ -3367,6 +3623,10 @@ considered normal in the extremities.</div>
             <div class="content question-text">What blood vessels are located at letter C?</div>
             
             <div class="study-note" data-study-note="q57"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q57">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 57">
               
               <button class="choice" type="button" role="listitem" data-card-id="q57" data-choice="A" data-correct="D">
@@ -3419,6 +3679,10 @@ considered normal in the extremities.</div>
             <div class="content question-text">Which of the following lists the most common anatomic variation in aortic arch anatomy?</div>
             
             <div class="study-note" data-study-note="q58"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q58">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 58">
               
               <button class="choice" type="button" role="listitem" data-card-id="q58" data-choice="A" data-correct="A">
@@ -3473,6 +3737,10 @@ considered normal in the extremities.</div>
             <div class="content question-text">Which of the following describes the normal response to a Doppler evaluation for erectile dysfunction?</div>
             
             <div class="study-note" data-study-note="q59"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q59">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 59">
               
               <button class="choice" type="button" role="listitem" data-card-id="q59" data-choice="A" data-correct="B">
@@ -3525,6 +3793,10 @@ responsible for impotence.</div>
             <div class="content question-text">The vessel wall layer that is composed of fibrous connective tissue is called:</div>
             
             <div class="study-note" data-study-note="q60"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q60">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 60">
               
               <button class="choice" type="button" role="listitem" data-card-id="q60" data-choice="A" data-correct="D">
@@ -3579,6 +3851,10 @@ basement membrane.</div>
             <div class="content question-text">Which of the following describes how to correctly measure the AP diameter of iliac artery ?</div>
             
             <div class="study-note" data-study-note="q61"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q61">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 61">
               
               <button class="choice" type="button" role="listitem" data-card-id="q61" data-choice="A" data-correct="D">
@@ -3632,6 +3908,10 @@ to outer wall of the vessel. Width Dimensions are obtained in the transverse pla
             <div class="content question-text">The pulsatility index (PI) in a normal aorta should be ______________ the PI in the normal popliteal artery.</div>
             
             <div class="study-note" data-study-note="q62"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q62">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 62">
               
               <button class="choice" type="button" role="listitem" data-card-id="q62" data-choice="A" data-correct="A">
@@ -3685,6 +3965,10 @@ obstruction.</div>
             <div class="content question-text">A branch of which artery joins the terminal ulnar artery to form the superficial palmar arch?</div>
             
             <div class="study-note" data-study-note="q63"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q63">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 63">
               
               <button class="choice" type="button" role="listitem" data-card-id="q63" data-choice="A" data-correct="B">
@@ -3738,6 +4022,10 @@ joins the terminal radial artery to form the deep palmar arch.</div>
             <div class="content question-text">The dorsalis pedis artery is a branch of:</div>
             
             <div class="study-note" data-study-note="q64"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q64">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 64">
               
               <button class="choice" type="button" role="listitem" data-card-id="q64" data-choice="A" data-correct="A">
@@ -3788,6 +4076,10 @@ joins the terminal radial artery to form the deep palmar arch.</div>
             <div class="content question-text">Which waveform can be described as biphasic?</div>
             
             <div class="study-note" data-study-note="q65"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q65">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 65">
               
               <button class="choice" type="button" role="listitem" data-card-id="q65" data-choice="A" data-correct="C">
@@ -3845,6 +4137,10 @@ D. monophasic, low resistance</div>
             <div class="content question-text">The term for the most common anatomic variant of the aortic arch anatomy is the:</div>
             
             <div class="study-note" data-study-note="q66"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q66">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 66">
               
               <button class="choice" type="button" role="listitem" data-card-id="q66" data-choice="A" data-correct="C">
@@ -3897,6 +4193,10 @@ formation is NOT related to the arch formation in cattle.</div>
             <div class="content question-text">While performing an arterial Duplex exam, the patient complains that she is cold. What effect could this have on your exam?</div>
             
             <div class="study-note" data-study-note="q67"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q67">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 67">
               
               <button class="choice" type="button" role="listitem" data-card-id="q67" data-choice="A" data-correct="C">
@@ -3948,6 +4248,10 @@ resistance and pulsatility of the flow.</div>
             <div class="content question-text">Which vessels allow for the exchange of nutrients and waste products between blood and tissue?</div>
             
             <div class="study-note" data-study-note="q68"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q68">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 68">
               
               <button class="choice" type="button" role="listitem" data-card-id="q68" data-choice="A" data-correct="D">
@@ -3999,6 +4303,10 @@ between blood and tissue.</div>
             <div class="content question-text">Which of the following normal arteries is not palpable on physical exam?</div>
             
             <div class="study-note" data-study-note="q69"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q69">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 69">
               
               <button class="choice" type="button" role="listitem" data-card-id="q69" data-choice="A" data-correct="B">
@@ -4049,6 +4357,10 @@ between blood and tissue.</div>
             <div class="content question-text">What is the preferred patient position for performing an upper extremity arterial duplex exam?</div>
             
             <div class="study-note" data-study-note="q70"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q70">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 70">
               
               <button class="choice" type="button" role="listitem" data-card-id="q70" data-choice="A" data-correct="A">
@@ -4100,6 +4412,10 @@ external rotation.</div>
             <div class="content question-text">The subclavian artery becomes the axillary artery:</div>
             
             <div class="study-note" data-study-note="q71"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q71">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 71">
               
               <button class="choice" type="button" role="listitem" data-card-id="q71" data-choice="A" data-correct="A">
@@ -4153,6 +4469,10 @@ muscle and clavicle. It becomes the axillary artery at the level of the first ri
             <div class="content question-text">Where do the plantar arteries originate?</div>
             
             <div class="study-note" data-study-note="q72"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q72">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 72">
               
               <button class="choice" type="button" role="listitem" data-card-id="q72" data-choice="A" data-correct="A">
@@ -4203,6 +4523,10 @@ muscle and clavicle. It becomes the axillary artery at the level of the first ri
             <div class="content question-text">Which vessel courses posterior to the anterior scalene muscle?</div>
             
             <div class="study-note" data-study-note="q73"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q73">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 73">
               
               <button class="choice" type="button" role="listitem" data-card-id="q73" data-choice="A" data-correct="B">
@@ -4255,6 +4579,10 @@ muscle and clavicle. It becomes the axillary artery at the level of the first ri
             <div class="content question-text">Which of the following can be used to describe a normal waveform obtained from a CW Doppler evaluation of the femoral artery?</div>
             
             <div class="study-note" data-study-note="q74"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q74">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 74">
               
               <button class="choice" type="button" role="listitem" data-card-id="q74" data-choice="A" data-correct="C">
@@ -4308,6 +4636,10 @@ diastolic flow reversal, followed by a small peak of flow above the baseline</di
             <div class="content question-text">Which of the following is an expected change in flow in the brachial artery that occurs when the patient clenches their fist during the Doppler exam?</div>
             
             <div class="study-note" data-study-note="q75"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q75">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 75">
               
               <button class="choice" type="button" role="listitem" data-card-id="q75" data-choice="A" data-correct="C">
@@ -4363,6 +4695,10 @@ exhibit greater pulsatility index.</div>
             <div class="content question-text">Put the following terms in order from largest to smallest in size. capillary, aorta, femoral artery, arteriole, tibial artery</div>
             
             <div class="study-note" data-study-note="q76"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q76">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 76">
               
               <button class="choice" type="button" role="listitem" data-card-id="q76" data-choice="A" data-correct="D">
@@ -4414,6 +4750,10 @@ body.</div>
             <div class="content question-text">A pulsatility index of &gt; 5.0 in the extremities indicates:</div>
             
             <div class="study-note" data-study-note="q77"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q77">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 77">
               
               <button class="choice" type="button" role="listitem" data-card-id="q77" data-choice="A" data-correct="A">
@@ -4465,6 +4805,10 @@ extremities is &gt;5.0 and in most organs normal values are &lt;1.5</div>
             <div class="content question-text">Which of the following is not a branch of the subclavian artery?</div>
             
             <div class="study-note" data-study-note="q78"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q78">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 78">
               
               <button class="choice" type="button" role="listitem" data-card-id="q78" data-choice="A" data-correct="B">
@@ -4518,6 +4862,10 @@ Costocervical trunk</div>
             <div class="content question-text">What term refers to the capability of the vascular beds to alter the resistance to flow to maintain the levels of flow needed for normal function?</div>
             
             <div class="study-note" data-study-note="q79"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q79">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 79">
               
               <button class="choice" type="button" role="listitem" data-card-id="q79" data-choice="A" data-correct="C">
@@ -4569,6 +4917,10 @@ for normal function. Vasoconstriction and vasodilation are ways the vascular bed
             <div class="content question-text">If the acceleration time in the common femoral artery is 110ms:</div>
             
             <div class="study-note" data-study-note="q80"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q80">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 80">
               
               <button class="choice" type="button" role="listitem" data-card-id="q80" data-choice="A" data-correct="B">
@@ -4642,6 +4994,12 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     document.getElementById("close-all").addEventListener("click", () => {
       answerToggles.forEach((toggle) => setPanelState(toggle, false));
+    });
+
+    document.getElementById("clear-all-answers").addEventListener("click", () => {
+      Object.keys(studyState).forEach((key) => delete studyState[key]);
+      saveStudyState(studyState);
+      applyStudyState(studyState);
     });
 
     function normalizeState(rawState) {
@@ -4728,6 +5086,15 @@ Powered by ExamBuilder. Copyright ©2026</div>
           status: choice === correct ? "correct" : "incorrect",
           selectedChoice: choice,
         };
+        saveStudyState(studyState);
+        applyStudyState(studyState);
+      });
+    });
+
+    document.querySelectorAll("[data-clear-card]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const cardId = button.getAttribute("data-clear-card");
+        delete studyState[cardId];
         saveStudyState(studyState);
         applyStudyState(studyState);
       });

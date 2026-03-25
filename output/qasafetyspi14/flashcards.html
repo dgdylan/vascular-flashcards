@@ -216,6 +216,31 @@
     .study-note.incorrect {
       color: var(--danger);
     }
+    .choice-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .clear-answer {
+      appearance: none;
+      border: 1px solid rgba(46, 110, 163, 0.12);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.55rem 0.8rem;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+    .clear-answer:hover {
+      transform: translateY(-1px);
+      border-color: rgba(239, 131, 84, 0.22);
+      color: var(--accent-dark);
+    }
     .choices {
       display: grid;
       gap: 0.9rem;
@@ -375,6 +400,12 @@
         justify-content: center;
         text-align: center;
       }
+      .choice-row {
+        align-items: stretch;
+      }
+      .clear-answer {
+        width: 100%;
+      }
       h1 {
         max-width: none;
       }
@@ -400,6 +431,7 @@
           <a href="../index.html">Back to index</a>
           <button type="button" id="open-all">Open all backs</button>
           <button type="button" id="close-all">Close all backs</button>
+          <button type="button" id="clear-all-answers">Clear saved answers</button>
         </div>
       </div>
     </section>
@@ -416,6 +448,10 @@
             <div class="content question-text">What 2D artifact is demonstrated on the image?</div>
             
             <div class="study-note" data-study-note="q1"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q1">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 1">
               
               <button class="choice" type="button" role="listitem" data-card-id="q1" data-choice="A" data-correct="A">
@@ -469,6 +505,10 @@ Commonly seen in transverse views of blood vessels.</div>
             <div class="content question-text">What is the Framingham risk score?</div>
             
             <div class="study-note" data-study-note="q2"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q2">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 2">
               
               <button class="choice" type="button" role="listitem" data-card-id="q2" data-choice="A" data-correct="B">
@@ -520,6 +560,10 @@ screening exams are unnecessary . High scores may be appropriate for screening i
             <div class="content question-text">Which of the following is the most likely explanation for findings displayed on the image?</div>
             
             <div class="study-note" data-study-note="q3"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q3">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 3">
               
               <button class="choice" type="button" role="listitem" data-card-id="q3" data-choice="A" data-correct="C">
@@ -575,6 +619,10 @@ duplicated but it is very rare.</div>
             <div class="content question-text">Which of the following statements best describes the reason why there is an absence of color flow in the vessel on the image?</div>
             
             <div class="study-note" data-study-note="q4"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q4">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 4">
               
               <button class="choice" type="button" role="listitem" data-card-id="q4" data-choice="A" data-correct="C">
@@ -628,6 +676,10 @@ to the axis of the beam. If flow is moving perpendicular to the beam (90 degrees
             <div class="content question-text">The brightness of the reflection on the Doppler tracing represents __________________.</div>
             
             <div class="study-note" data-study-note="q5"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q5">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 5">
               
               <button class="choice" type="button" role="listitem" data-card-id="q5" data-choice="A" data-correct="A">
@@ -679,6 +731,10 @@ displayed. It is directly related to the signal strength.</div>
             <div class="content question-text">Which of the following is a disadvantage of magnetic resonance angiography compared to Doppler evaluation of the carotid arteries?</div>
             
             <div class="study-note" data-study-note="q6"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q6">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 6">
               
               <button class="choice" type="button" role="listitem" data-card-id="q6" data-choice="A" data-correct="D">
@@ -730,6 +786,10 @@ the exam but is not always required. Certain patients are at a higher risk of re
             <div class="content question-text">If a renal artery Doppler exam demonstrates normal flow and normal flow is identified on angiography evaluation, the US results are described as:</div>
             
             <div class="study-note" data-study-note="q7"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q7">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 7">
               
               <button class="choice" type="button" role="listitem" data-card-id="q7" data-choice="A" data-correct="B">
@@ -783,6 +843,10 @@ If the current exam is positive and the gold standard is positive = true positiv
             <div class="content question-text">Abdominal Doppler exams are usually best performed with a frequency of _________MHz and Lower Extremity Arterial Duplex exams are usually best performed with a frequency of _____MHz.</div>
             
             <div class="study-note" data-study-note="q8"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q8">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 8">
               
               <button class="choice" type="button" role="listitem" data-card-id="q8" data-choice="A" data-correct="A">
@@ -834,6 +898,10 @@ are usually best performed with a frequency of 5-7MHz.</div>
             <div class="content question-text">According to the Appropriate Use Criteria, which of the following is an inappropriate indication for an aortic duplex exam?</div>
             
             <div class="study-note" data-study-note="q9"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q9">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 9">
               
               <button class="choice" type="button" role="listitem" data-card-id="q9" data-choice="A" data-correct="D">
@@ -890,6 +958,10 @@ procedure.</div>
             <div class="content question-text">If new research shows that the minimum velocity criteria used to diagnose &gt;60% renal artery stenosis is actually 225cm/s, not 180cm/s, how will this affect the negative predictive value of the exam?</div>
             
             <div class="study-note" data-study-note="q10"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q10">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 10">
               
               <button class="choice" type="button" role="listitem" data-card-id="q10" data-choice="A" data-correct="D">
@@ -944,6 +1016,10 @@ stenosis when their exam produces velocities above 225cm/s.</div>
             <div class="content question-text">Which of the following explains why a patient can receive an US diagnosis of 70% ICA stenosis, but an angiography diagnosis of 50% ICA stenosis?</div>
             
             <div class="study-note" data-study-note="q11"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q11">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 11">
               
               <button class="choice" type="button" role="listitem" data-card-id="q11" data-choice="A" data-correct="C">
@@ -996,6 +1072,10 @@ difficult on a longitudinal 2-dimensional angio image.</div>
             <div class="content question-text">Which of the following indicates the proper order for putting on personal protective equipment?</div>
             
             <div class="study-note" data-study-note="q12"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q12">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 12">
               
               <button class="choice" type="button" role="listitem" data-card-id="q12" data-choice="A" data-correct="C">
@@ -1049,6 +1129,10 @@ then the mask, followed by goggles and finish with the gloves.</div>
             <div class="content question-text">What is indicated by the red arrows on this subcostal image?</div>
             
             <div class="study-note" data-study-note="q13"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q13">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 13">
               
               <button class="choice" type="button" role="listitem" data-card-id="q13" data-choice="A" data-correct="D">
@@ -1101,6 +1185,10 @@ then the mask, followed by goggles and finish with the gloves.</div>
             <div class="content question-text">Hyperostosis is a limitation of which exam?</div>
             
             <div class="study-note" data-study-note="q14"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q14">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 14">
               
               <button class="choice" type="button" role="listitem" data-card-id="q14" data-choice="A" data-correct="A">
@@ -1152,6 +1240,10 @@ limit sound penetration during a transcranial duplex exam.</div>
             <div class="content question-text">If new research shows that the minimum velocity criteria used to diagnose &gt;60% renal artery stenosis is actually 225cm/s, not 180cm/s, how will this affect the accuracy of the renal Doppler exam?</div>
             
             <div class="study-note" data-study-note="q15"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q15">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 15">
               
               <button class="choice" type="button" role="listitem" data-card-id="q15" data-choice="A" data-correct="B">
@@ -1208,6 +1300,10 @@ correctly diagnosed as positive, the greater the accuracy of an exam.</div>
             <div class="content question-text">When considering the effectiveness of the carotid Doppler exam at your lab, the negative predictive value is 88%, the positive predictive value is 95%, the sensitivity is 85% and the specificity is 90%. Using those parameters, which of the following could be the value for the accuracy of the testing technique?</div>
             
             <div class="study-note" data-study-note="q16"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q16">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 16">
               
               <button class="choice" type="button" role="listitem" data-card-id="q16" data-choice="A" data-correct="A">
@@ -1259,6 +1355,10 @@ correctly diagnosed as positive, the greater the accuracy of an exam.</div>
             <div class="content question-text">How do you adjust your technique to reduce or eliminate cross talk on a Doppler tracing?</div>
             
             <div class="study-note" data-study-note="q17"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q17">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 17">
               
               <button class="choice" type="button" role="listitem" data-card-id="q17" data-choice="A" data-correct="C">
@@ -1312,6 +1412,10 @@ window where the vessel course is less perpendicular to the probe.</div>
             <div class="content question-text">Which of the following correctly describes the specificity of a testing technique?</div>
             
             <div class="study-note" data-study-note="q18"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q18">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 18">
               
               <button class="choice" type="button" role="listitem" data-card-id="q18" data-choice="A" data-correct="C">
@@ -1363,6 +1467,10 @@ current modality is compared to the negative tests diagnosed by the gold standar
             <div class="content question-text">Which type of image resolution makes it possible to differentiate the intimal media thickness from the outer arterial wall?</div>
             
             <div class="study-note" data-study-note="q19"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q19">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 19">
               
               <button class="choice" type="button" role="listitem" data-card-id="q19" data-choice="A" data-correct="C">
@@ -1417,6 +1525,10 @@ on the axial resolution of the system.</div>
             <div class="content question-text">______________________________ is defined as the time from onset of systole to the time peak systole occurs.</div>
             
             <div class="study-note" data-study-note="q20"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q20">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 20">
               
               <button class="choice" type="button" role="listitem" data-card-id="q20" data-choice="A" data-correct="A">
@@ -1470,6 +1582,10 @@ increases. Increased resistance causes a short time between the onset of systole
             <div class="content question-text">When removing a protective gown:</div>
             
             <div class="study-note" data-study-note="q21"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q21">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 21">
               
               <button class="choice" type="button" role="listitem" data-card-id="q21" data-choice="A" data-correct="C">
@@ -1523,6 +1639,10 @@ neck strings, grab the inside shoulder seams pull it off the arms and turn it in
             <div class="content question-text">Which statement is true about the image?</div>
             
             <div class="study-note" data-study-note="q22"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q22">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 22">
               
               <button class="choice" type="button" role="listitem" data-card-id="q22" data-choice="A" data-correct="A">
@@ -1579,6 +1699,10 @@ posterior enhancement.</div>
             <div class="content question-text">What adjustments can be made to improve the attached image of the Doppler tracing to make it of diagnostic quality?</div>
             
             <div class="study-note" data-study-note="q23"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q23">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 23">
               
               <button class="choice" type="button" role="listitem" data-card-id="q23" data-choice="A" data-correct="C">
@@ -1631,6 +1755,10 @@ posterior enhancement.</div>
             <div class="content question-text">A thrill is a normal clinical finding with _______________________, but an abnormal clinical finding with___________________________.</div>
             
             <div class="study-note" data-study-note="q24"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q24">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 24">
               
               <button class="choice" type="button" role="listitem" data-card-id="q24" data-choice="A" data-correct="B">
@@ -1682,6 +1810,10 @@ lower extremity.</div>
             <div class="content question-text">Which setting should be lowered to the minimum level when beginning to evaluate the patient using the orbital window?</div>
             
             <div class="study-note" data-study-note="q25"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q25">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 25">
               
               <button class="choice" type="button" role="listitem" data-card-id="q25" data-choice="A" data-correct="A">
@@ -1732,6 +1864,10 @@ lower extremity.</div>
             <div class="content question-text">Which of the following correctly describes a surveillance exam?</div>
             
             <div class="study-note" data-study-note="q26"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q26">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 26">
               
               <button class="choice" type="button" role="listitem" data-card-id="q26" data-choice="A" data-correct="A">
@@ -1786,6 +1922,10 @@ initial diagnosis or revascularization</div>
             <div class="content question-text">If the Doppler cursor angle is underestimated, the velocity of the flow will be ____________________.</div>
             
             <div class="study-note" data-study-note="q27"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q27">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 27">
               
               <button class="choice" type="button" role="listitem" data-card-id="q27" data-choice="A" data-correct="C">
@@ -1838,6 +1978,10 @@ overestimated, the velocity of flow will be overestimated.</div>
             <div class="content question-text">If a renal artery Doppler exam demonstrates stenosis but normal flow is identified on angiography evaluation, the US results are described as:</div>
             
             <div class="study-note" data-study-note="q28"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q28">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 28">
               
               <button class="choice" type="button" role="listitem" data-card-id="q28" data-choice="A" data-correct="B">
@@ -1891,6 +2035,10 @@ If the current exam is positive and the gold standard is positive = true positiv
             <div class="content question-text">How can a Sonographer correct for blooming/blossoming on a spectral Doppler display?</div>
             
             <div class="study-note" data-study-note="q29"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q29">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 29">
               
               <button class="choice" type="button" role="listitem" data-card-id="q29" data-choice="A" data-correct="B">
@@ -1945,6 +2093,10 @@ clear spectral window(if present).</div>
             <div class="content question-text">The best obtainable angle of insonation for vascular evaluation that is most commonly used to provide Doppler shift information is_________degrees.</div>
             
             <div class="study-note" data-study-note="q30"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q30">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 30">
               
               <button class="choice" type="button" role="listitem" data-card-id="q30" data-choice="A" data-correct="C">
@@ -1996,6 +2148,10 @@ of insonation of a blood vessel that is most commonly used to provide Doppler sh
             <div class="content question-text">Which of the following correctly describes the color displayed on the image?</div>
             
             <div class="study-note" data-study-note="q31"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q31">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 31">
               
               <button class="choice" type="button" role="listitem" data-card-id="q31" data-choice="A" data-correct="A">
@@ -2052,6 +2208,10 @@ the vessel to be displayed as moving in the same direction.</div>
             <div class="content question-text">The recommended sample size for PW Doppler evaluation of an artery is?</div>
             
             <div class="study-note" data-study-note="q32"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q32">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 32">
               
               <button class="choice" type="button" role="listitem" data-card-id="q32" data-choice="A" data-correct="D">
@@ -2102,6 +2262,10 @@ the vessel to be displayed as moving in the same direction.</div>
             <div class="content question-text">What system setting would result in false-positive findings for reflux in the great saphenous vein?</div>
             
             <div class="study-note" data-study-note="q33"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q33">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 33">
               
               <button class="choice" type="button" role="listitem" data-card-id="q33" data-choice="A" data-correct="A">
@@ -2156,6 +2320,10 @@ rate and no extension of display of the color.</div>
             <div class="content question-text">When wearing a protective gown and gloves:</div>
             
             <div class="study-note" data-study-note="q34"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q34">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 34">
               
               <button class="choice" type="button" role="listitem" data-card-id="q34" data-choice="A" data-correct="B">
@@ -2209,6 +2377,10 @@ hands and arms are then fully protected.</div>
             <div class="content question-text">Which of the following Doppler information is necessary to calculate the resistive index?</div>
             
             <div class="study-note" data-study-note="q35"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q35">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 35">
               
               <button class="choice" type="button" role="listitem" data-card-id="q35" data-choice="A" data-correct="C">
@@ -2259,6 +2431,10 @@ hands and arms are then fully protected.</div>
             <div class="content question-text">Which of the following will maintain compliance with the ALARA principle?</div>
             
             <div class="study-note" data-study-note="q36"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q36">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 36">
               
               <button class="choice" type="button" role="listitem" data-card-id="q36" data-choice="A" data-correct="B">
@@ -2310,6 +2486,10 @@ patient will reduce the exam time and exposure. Reducing frequency and gain do n
             <div class="content question-text">What should be done to adjust and improve the color displayed on the attached image?</div>
             
             <div class="study-note" data-study-note="q37"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q37">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 37">
               
               <button class="choice" type="button" role="listitem" data-card-id="q37" data-choice="A" data-correct="B">
@@ -2364,6 +2544,10 @@ to be more parallel to the beam. Color Doppler display improves when the flow is
             <div class="content question-text">What is the gold standard method of diagnosing temporal arteritis?</div>
             
             <div class="study-note" data-study-note="q38"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q38">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 38">
               
               <button class="choice" type="button" role="listitem" data-card-id="q38" data-choice="A" data-correct="B">
@@ -2414,6 +2598,10 @@ to be more parallel to the beam. Color Doppler display improves when the flow is
             <div class="content question-text">What can be done to improve the visualization of the anterior aortic wall?</div>
             
             <div class="study-note" data-study-note="q39"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q39">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 39">
               
               <button class="choice" type="button" role="listitem" data-card-id="q39" data-choice="A" data-correct="B">
@@ -2466,6 +2654,10 @@ structure while Doppler imaging relies on parallel incidence of the beam to the 
             <div class="content question-text">According to the Appropriate Use Criteria, which of the following is NOT a valid exam indication for a duplex exam on a hemodialysis fistula?</div>
             
             <div class="study-note" data-study-note="q40"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q40">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 40">
               
               <button class="choice" type="button" role="listitem" data-card-id="q40" data-choice="A" data-correct="B">
@@ -2519,6 +2711,10 @@ indicate an occlusion of the fistula/graft.</div>
             <div class="content question-text">When a clot is present on a venogram, how does it appear on the image?</div>
             
             <div class="study-note" data-study-note="q41"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q41">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 41">
               
               <button class="choice" type="button" role="listitem" data-card-id="q41" data-choice="A" data-correct="A">
@@ -2572,6 +2768,10 @@ prevent the vein from filling with contrast.</div>
             <div class="content question-text">Which of the following requires a Doppler cursor angle of 60 degrees or less for accurate reporting of numerical values?</div>
             
             <div class="study-note" data-study-note="q42"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q42">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 42">
               
               <button class="choice" type="button" role="listitem" data-card-id="q42" data-choice="A" data-correct="A">
@@ -2625,6 +2825,10 @@ accurate values.</div>
             <div class="content question-text">What can be done to reduce the spectral broadening on the image?</div>
             
             <div class="study-note" data-study-note="q43"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q43">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 43">
               
               <button class="choice" type="button" role="listitem" data-card-id="q43" data-choice="A" data-correct="B">
@@ -2677,6 +2881,10 @@ accurate values.</div>
             <div class="content question-text">According to the Appropriate Use Criteria, which of the following is an appropriate indication for an renal artery duplex exam?</div>
             
             <div class="study-note" data-study-note="q44"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q44">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 44">
               
               <button class="choice" type="button" role="listitem" data-card-id="q44" data-choice="A" data-correct="C">
@@ -2734,6 +2942,10 @@ the effectiveness of the exam in providing a diagnosis. We do not recommend that
             <div class="content question-text">Which of the following exams is typically performed without angle correction on Doppler evaluation?</div>
             
             <div class="study-note" data-study-note="q45"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q45">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 45">
               
               <button class="choice" type="button" role="listitem" data-card-id="q45" data-choice="A" data-correct="C">
@@ -2788,6 +3000,10 @@ respiration and cardiac pulsatility. No velocity information is used in the IVC 
             <div class="content question-text">What system control can reduce the appearance of clutter on a color Doppler image?</div>
             
             <div class="study-note" data-study-note="q46"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q46">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 46">
               
               <button class="choice" type="button" role="listitem" data-card-id="q46" data-choice="A" data-correct="D">
@@ -2842,6 +3058,10 @@ priority); Necessary to minimize color flash(clutter) and improper placement of 
             <div class="content question-text">What console control should be adjusted to improve the quality of the Doppler tracing?</div>
             
             <div class="study-note" data-study-note="q47"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q47">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 47">
               
               <button class="choice" type="button" role="listitem" data-card-id="q47" data-choice="A" data-correct="B">
@@ -2900,6 +3120,10 @@ baseline.</div>
             <div class="content question-text">Pulsatility Index can be used to describe?</div>
             
             <div class="study-note" data-study-note="q48"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q48">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 48">
               
               <button class="choice" type="button" role="listitem" data-card-id="q48" data-choice="A" data-correct="C">
@@ -2951,6 +3175,10 @@ flow demonstrates higher PI values than low resistance flow.</div>
             <div class="content question-text">What is the cause of the vertical acoustic shadow seen on the images?</div>
             
             <div class="study-note" data-study-note="q49"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q49">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 49">
               
               <button class="choice" type="button" role="listitem" data-card-id="q49" data-choice="A" data-correct="B">
@@ -3004,6 +3232,10 @@ scan different anatomy.</div>
             <div class="content question-text">Which of the following describes the correct way to measure the acceleration time for a renal artery waveform?</div>
             
             <div class="study-note" data-study-note="q50"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q50">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 50">
               
               <button class="choice" type="button" role="listitem" data-card-id="q50" data-choice="A" data-correct="A">
@@ -3057,6 +3289,10 @@ onset of the systolic upstroke and at the early systolic peak</div>
             <div class="content question-text">Resistive Index is a ratio utilized to quantify which of the following?</div>
             
             <div class="study-note" data-study-note="q51"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q51">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 51">
               
               <button class="choice" type="button" role="listitem" data-card-id="q51" data-choice="A" data-correct="B">
@@ -3140,6 +3376,10 @@ measurement of waveform characteristics.</div>
             <div class="content question-text">When you change the angle on the Doppler cursor, the ________________ also changes.</div>
             
             <div class="study-note" data-study-note="q53"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q53">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 53">
               
               <button class="choice" type="button" role="listitem" data-card-id="q53" data-choice="A" data-correct="A">
@@ -3191,6 +3431,10 @@ Underestimating the angle between the beam and the blood flow = underestimated f
             <div class="content question-text">The image represents what Doppler artifact?</div>
             
             <div class="study-note" data-study-note="q54"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q54">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 54">
               
               <button class="choice" type="button" role="listitem" data-card-id="q54" data-choice="A" data-correct="C">
@@ -3245,6 +3489,10 @@ vessel, switch to CW.</div>
             <div class="content question-text">When you reduce angle correction to make the incident beam more parallel to the blood flow, how does the peak velocity displayed change?</div>
             
             <div class="study-note" data-study-note="q55"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q55">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 55">
               
               <button class="choice" type="button" role="listitem" data-card-id="q55" data-choice="A" data-correct="B">
@@ -3297,6 +3545,10 @@ to the flow direction, the higher the Doppler shift).</div>
             <div class="content question-text">The Doppler tracing demonstrates electrical noise. How can you reduce or eliminate the artifact?</div>
             
             <div class="study-note" data-study-note="q56"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q56">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 56">
               
               <button class="choice" type="button" role="listitem" data-card-id="q56" data-choice="A" data-correct="A">
@@ -3347,6 +3599,10 @@ to the flow direction, the higher the Doppler shift).</div>
             <div class="content question-text">Which of the following parameters is displayed as the x-axis on a Doppler tracing?</div>
             
             <div class="study-note" data-study-note="q57"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q57">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 57">
               
               <button class="choice" type="button" role="listitem" data-card-id="q57" data-choice="A" data-correct="D">
@@ -3397,6 +3653,10 @@ to the flow direction, the higher the Doppler shift).</div>
             <div class="content question-text">In order to assess low velocity flow, which of the following operator adjustments should be made?</div>
             
             <div class="study-note" data-study-note="q58"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q58">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 58">
               
               <button class="choice" type="button" role="listitem" data-card-id="q58" data-choice="A" data-correct="D">
@@ -3448,6 +3708,10 @@ Venous flow is low velocity and demonstrates low level Doppler shifts.</div>
             <div class="content question-text">The patient being evaluated has a known cardiac arrhythmia. How would you adjust the Doppler controls to best display the arrhythmia?</div>
             
             <div class="study-note" data-study-note="q59"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q59">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 59">
               
               <button class="choice" type="button" role="listitem" data-card-id="q59" data-choice="A" data-correct="B">
@@ -3503,6 +3767,10 @@ This will allow you to show a few normal cycles before and after the cycle affec
             <div class="content question-text">Which of the following is a reason for lack of color fill in a transverse view of the distal femoral vein?</div>
             
             <div class="study-note" data-study-note="q60"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q60">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 60">
               
               <button class="choice" type="button" role="listitem" data-card-id="q60" data-choice="A" data-correct="B">
@@ -3557,6 +3825,10 @@ requires a low velocity scale. If a patient has reflux, the vein should be enlar
             <div class="content question-text">If a renal artery Doppler exam demonstrates stenosis and stenosis is identified on angiography evaluation, the US results are described as:</div>
             
             <div class="study-note" data-study-note="q61"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q61">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 61">
               
               <button class="choice" type="button" role="listitem" data-card-id="q61" data-choice="A" data-correct="D">
@@ -3610,6 +3882,10 @@ If the current exam is positive and the gold standard is positive = true positiv
             <div class="content question-text">When evaluating heavily calcified arteries, what system settings should be increased to improve the demonstration of flow in the vessels?</div>
             
             <div class="study-note" data-study-note="q62"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q62">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 62">
               
               <button class="choice" type="button" role="listitem" data-card-id="q62" data-choice="A" data-correct="C">
@@ -3662,6 +3938,10 @@ increase the amount of color displayed.</div>
             <div class="content question-text">Which of the following is an appropriate indication for an extracranial arterial duplex exam?</div>
             
             <div class="study-note" data-study-note="q63"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q63">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 63">
               
               <button class="choice" type="button" role="listitem" data-card-id="q63" data-choice="A" data-correct="D">
@@ -3722,6 +4002,10 @@ is appropriate. Review both lists below.</div>
             <div class="content question-text">When a patient has multiple indications for an ultrasound exam, which one is used to determine appropriate use of vascular ultrasound testing?</div>
             
             <div class="study-note" data-study-note="q64"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q64">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 64">
               
               <button class="choice" type="button" role="listitem" data-card-id="q64" data-choice="A" data-correct="D">
@@ -3775,6 +4059,10 @@ use.</div>
             <div class="content question-text">What is the gold standard evaluation technique for renal artery stenosis?</div>
             
             <div class="study-note" data-study-note="q65"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q65">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 65">
               
               <button class="choice" type="button" role="listitem" data-card-id="q65" data-choice="A" data-correct="B">
@@ -3825,6 +4113,10 @@ use.</div>
             <div class="content question-text">If the stenosis/blockage reduces the vessel lumen to 1/2 of the normal vessel area, the velocity of flow at the stenosis must _________________to maintain the flow rate</div>
             
             <div class="study-note" data-study-note="q66"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q66">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 66">
               
               <button class="choice" type="button" role="listitem" data-card-id="q66" data-choice="A" data-correct="B">
@@ -3876,6 +4168,10 @@ maintain the flow rate.</div>
             <div class="content question-text">_____________________ is the gold standard in testing for arterial disease.</div>
             
             <div class="study-note" data-study-note="q67"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q67">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 67">
               
               <button class="choice" type="button" role="listitem" data-card-id="q67" data-choice="A" data-correct="B">
@@ -3928,6 +4224,10 @@ pseudoaneurysm formation. The iodine based contrast is also not tolerated by all
             <div class="content question-text">The Appropriate Use Criteria were developed:</div>
             
             <div class="study-note" data-study-note="q68"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q68">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 68">
               
               <button class="choice" type="button" role="listitem" data-card-id="q68" data-choice="A" data-correct="D">
@@ -3988,6 +4288,10 @@ use</div>
             <div class="content question-text">Which of the following has the greatest effect on resistance to blood flow?</div>
             
             <div class="study-note" data-study-note="q69"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q69">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 69">
               
               <button class="choice" type="button" role="listitem" data-card-id="q69" data-choice="A" data-correct="A">
@@ -4041,6 +4345,10 @@ flow than series stenoses</div>
             <div class="content question-text">Which of the following describes the correct way to measure the resistive index for a renal artery waveform?</div>
             
             <div class="study-note" data-study-note="q70"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q70">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 70">
               
               <button class="choice" type="button" role="listitem" data-card-id="q70" data-choice="A" data-correct="C">
@@ -4094,6 +4402,10 @@ onset of the systolic upstroke and at the early systolic peak</div>
             <div class="content question-text">Which of the following correctly describes the sensitivity of a testing technique?</div>
             
             <div class="study-note" data-study-note="q71"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q71">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 71">
               
               <button class="choice" type="button" role="listitem" data-card-id="q71" data-choice="A" data-correct="C">
@@ -4145,6 +4457,10 @@ modality is compared to the positive tests diagnosed by the gold standard test.<
             <div class="content question-text">When venous flow is slow, echogenic particles can be seen near the walls and in the valvular sinus. This phenomenon is called:</div>
             
             <div class="study-note" data-study-note="q72"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q72">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 72">
               
               <button class="choice" type="button" role="listitem" data-card-id="q72" data-choice="A" data-correct="C">
@@ -4198,6 +4514,10 @@ spontaneous contrast.</div>
             <div class="content question-text">Which of the following is a system adjustment that is made when changing from a lower extremity arterial exam to a lower extremity venous exam on the same patient?</div>
             
             <div class="study-note" data-study-note="q73"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q73">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 73">
               
               <button class="choice" type="button" role="listitem" data-card-id="q73" data-choice="A" data-correct="D">
@@ -4249,6 +4569,10 @@ be used/adjusted for venous flow evaluation because flow velocity is not being r
             <div class="content question-text">What change in system controls can reduce the appearance of color displayed over vessel walls?</div>
             
             <div class="study-note" data-study-note="q74"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q74">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 74">
               
               <button class="choice" type="button" role="listitem" data-card-id="q74" data-choice="A" data-correct="A">
@@ -4301,6 +4625,10 @@ color priority); Necessary to minimize color flash/clutter and improper placemen
             <div class="content question-text">If there is no diastolic flow demonstrated on a Doppler tracing, what will the resistive index be?</div>
             
             <div class="study-note" data-study-note="q75"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q75">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 75">
               
               <button class="choice" type="button" role="listitem" data-card-id="q75" data-choice="A" data-correct="C">
@@ -4353,6 +4681,10 @@ Example: PSV 50cm/s, EDV 0cm/s; 50 - 0 / 50 = 1.0</div>
             <div class="content question-text">Which of the following Doppler angles would lead to the most significant error in estimation of flow velocity?</div>
             
             <div class="study-note" data-study-note="q76"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q76">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 76">
               
               <button class="choice" type="button" role="listitem" data-card-id="q76" data-choice="A" data-correct="D">
@@ -4403,6 +4735,10 @@ Example: PSV 50cm/s, EDV 0cm/s; 50 - 0 / 50 = 1.0</div>
             <div class="content question-text">The parenchymal resistance ratio is calculated to assess perfusion of which of the following organs?</div>
             
             <div class="study-note" data-study-note="q77"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q77">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 77">
               
               <button class="choice" type="button" role="listitem" data-card-id="q77" data-choice="A" data-correct="B">
@@ -4453,6 +4789,10 @@ Example: PSV 50cm/s, EDV 0cm/s; 50 - 0 / 50 = 1.0</div>
             <div class="content question-text">Which of the following system control adjustments will increase the amount of color Doppler that is superimposed over the 2D image?</div>
             
             <div class="study-note" data-study-note="q78"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q78">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 78">
               
               <button class="choice" type="button" role="listitem" data-card-id="q78" data-choice="A" data-correct="C">
@@ -4505,6 +4845,10 @@ Persistence: increasing color persistence will increase the amount of time a col
             <div class="content question-text">Which of the following Doppler measurements require(s) the waveform to be traced from start of systole to the end of diastole?</div>
             
             <div class="study-note" data-study-note="q79"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q79">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 79">
               
               <button class="choice" type="button" role="listitem" data-card-id="q79" data-choice="A" data-correct="B">
@@ -4564,6 +4908,10 @@ velocity.</div>
             <div class="content question-text">Vessel wall and plaque morphology are best evaluated in 2D when the beam is at what incident angle to the vessel?</div>
             
             <div class="study-note" data-study-note="q80"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q80">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 80">
               
               <button class="choice" type="button" role="listitem" data-card-id="q80" data-choice="A" data-correct="D">
@@ -4616,6 +4964,10 @@ movement. The best obtainable Doppler angle is 60 degrees.</div>
             <div class="content question-text">Priapism is an indication for what type of exam?</div>
             
             <div class="study-note" data-study-note="q81"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q81">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 81">
               
               <button class="choice" type="button" role="listitem" data-card-id="q81" data-choice="A" data-correct="D">
@@ -4667,6 +5019,10 @@ pelvic veins or an AV fistula in the pelvic region</div>
             <div class="content question-text">If the stenosis/blockage reduces the vessel lumen to 1/4 of the normal vessel area, the velocity of flow at the stenosis must _________________to maintain the flow rate</div>
             
             <div class="study-note" data-study-note="q82"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q82">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 82">
               
               <button class="choice" type="button" role="listitem" data-card-id="q82" data-choice="A" data-correct="D">
@@ -4718,6 +5074,10 @@ to maintain the flow rate.</div>
             <div class="content question-text">Which of the following correctly describes a screening exam?</div>
             
             <div class="study-note" data-study-note="q83"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q83">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 83">
               
               <button class="choice" type="button" role="listitem" data-card-id="q83" data-choice="A" data-correct="C">
@@ -4772,6 +5132,10 @@ initial diagnosis or revascularization</div>
             <div class="content question-text">A ventilation quotient scan is used to evaluate a patient with suspected:</div>
             
             <div class="study-note" data-study-note="q84"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q84">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 84">
               
               <button class="choice" type="button" role="listitem" data-card-id="q84" data-choice="A" data-correct="A">
@@ -4825,6 +5189,10 @@ echo will be ordered to identify the source of the thrombus.</div>
             <div class="content question-text">What causes the artifact demonstrated on the image?</div>
             
             <div class="study-note" data-study-note="q85"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q85">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 85">
               
               <button class="choice" type="button" role="listitem" data-card-id="q85" data-choice="A" data-correct="B">
@@ -4878,6 +5246,10 @@ or incident Doppler angle near 90°.</div>
             <div class="content question-text">Which of the following causes an increase in the resistive index(RI) of the distal common carotid artery?</div>
             
             <div class="study-note" data-study-note="q86"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q86">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 86">
               
               <button class="choice" type="button" role="listitem" data-card-id="q86" data-choice="A" data-correct="D">
@@ -4928,6 +5300,10 @@ or incident Doppler angle near 90°.</div>
             <div class="content question-text">Which of the following is a correct statement describing the guidelines for wearing a mask?</div>
             
             <div class="study-note" data-study-note="q87"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q87">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 87">
               
               <button class="choice" type="button" role="listitem" data-card-id="q87" data-choice="A" data-correct="C">
@@ -4981,6 +5357,10 @@ Discard the mask properly and wash your hands.</div>
             <div class="content question-text">According to the Appropriate Use Criteria, which of the following is an appropriate indication for an lower extremity venous duplex exam for venous insufficiency?</div>
             
             <div class="study-note" data-study-note="q88"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q88">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 88">
               
               <button class="choice" type="button" role="listitem" data-card-id="q88" data-choice="A" data-correct="D">
@@ -5036,6 +5416,10 @@ appearance has not been associated with insufficiency in the larger superficial 
             <div class="content question-text">Anticoagulant therapy is a contraindication for:</div>
             
             <div class="study-note" data-study-note="q89"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q89">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 89">
               
               <button class="choice" type="button" role="listitem" data-card-id="q89" data-choice="A" data-correct="D">
@@ -5087,6 +5471,10 @@ injection is to promote thrombus formation. Anticoagulant therapy works to reduc
             <div class="content question-text">According to the Appropriate Use Criteria, which of the following is an inappropriate indication for an upper extremity arterial duplex exam?</div>
             
             <div class="study-note" data-study-note="q90"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q90">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 90">
               
               <button class="choice" type="button" role="listitem" data-card-id="q90" data-choice="A" data-correct="B">
@@ -5137,6 +5525,10 @@ injection is to promote thrombus formation. Anticoagulant therapy works to reduc
             <div class="content question-text">Which artifact is demonstrated on the image?</div>
             
             <div class="study-note" data-study-note="q91"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q91">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 91">
               
               <button class="choice" type="button" role="listitem" data-card-id="q91" data-choice="A" data-correct="C">
@@ -5190,6 +5582,10 @@ sampling vessels adjacent to a highly reflective structure like a bone.</div>
             <div class="content question-text">Which of the following system adjustments would increase the size of the spectral window?</div>
             
             <div class="study-note" data-study-note="q92"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q92">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 92">
               
               <button class="choice" type="button" role="listitem" data-card-id="q92" data-choice="A" data-correct="D">
@@ -5243,6 +5639,10 @@ sample size will display a larger spectral window beneath a narrow range of freq
             <div class="content question-text">Which of the following should be increased when evaluating venous flow with color Doppler?</div>
             
             <div class="study-note" data-study-note="q93"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q93">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 93">
               
               <button class="choice" type="button" role="listitem" data-card-id="q93" data-choice="A" data-correct="C">
@@ -5295,6 +5695,10 @@ system will increase the beam intensity and penetration.</div>
             <div class="content question-text">According to the Appropriate Use Criteria, which of the following is an appropriate indication for an lower extremity venous duplex exam?</div>
             
             <div class="study-note" data-study-note="q94"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q94">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 94">
               
               <button class="choice" type="button" role="listitem" data-card-id="q94" data-choice="A" data-correct="A">
@@ -5352,6 +5756,10 @@ screening exam for all post-surgical patients.</div>
             <div class="content question-text">Which two cursors would be used to measure the velocities used to calculate the resistive index for the flow in this renal artery tracing?</div>
             
             <div class="study-note" data-study-note="q95"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q95">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 95">
               
               <button class="choice" type="button" role="listitem" data-card-id="q95" data-choice="A" data-correct="D">
@@ -5406,6 +5814,10 @@ velocity.</div>
             <div class="content question-text">Which of the following describes how to properly set the color Doppler gain levels for an image?</div>
             
             <div class="study-note" data-study-note="q96"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q96">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 96">
               
               <button class="choice" type="button" role="listitem" data-card-id="q96" data-choice="A" data-correct="B">
@@ -5458,6 +5870,10 @@ Aliasing is best resolved by increasing the color scale, not gain.</div>
             <div class="content question-text">Which of the following would be the probe frequency of choice for a TCD exam?</div>
             
             <div class="study-note" data-study-note="q97"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q97">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 97">
               
               <button class="choice" type="button" role="listitem" data-card-id="q97" data-choice="A" data-correct="A">
@@ -5508,6 +5924,10 @@ Aliasing is best resolved by increasing the color scale, not gain.</div>
             <div class="content question-text">Which of the following parameters is displayed as the y-axis on a Doppler tracing?</div>
             
             <div class="study-note" data-study-note="q98"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q98">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 98">
               
               <button class="choice" type="button" role="listitem" data-card-id="q98" data-choice="A" data-correct="B">
@@ -5560,6 +5980,10 @@ the speed and direction of the flow = velocity.</div>
             <div class="content question-text">What console controls should be adjusted to improve the image?</div>
             
             <div class="study-note" data-study-note="q99"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q99">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 99">
               
               <button class="choice" type="button" role="listitem" data-card-id="q99" data-choice="A" data-correct="D">
@@ -5616,6 +6040,10 @@ waveforms in the display area.</div>
             <div class="content question-text">Which of the following can be used to eliminate aliasing seen on a CW Doppler tracing?</div>
             
             <div class="study-note" data-study-note="q100"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q100">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 100">
               
               <button class="choice" type="button" role="listitem" data-card-id="q100" data-choice="A" data-correct="D">
@@ -5667,6 +6095,10 @@ limit.</div>
             <div class="content question-text">Which of the following correctly describes the positive predictive value (PPV) of a testing technique?</div>
             
             <div class="study-note" data-study-note="q101"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q101">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 101">
               
               <button class="choice" type="button" role="listitem" data-card-id="q101" data-choice="A" data-correct="D">
@@ -5718,6 +6150,10 @@ probability that the patient actually has the disease</div>
             <div class="content question-text">What is the proper procedure for removing soiled gloves?</div>
             
             <div class="study-note" data-study-note="q102"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q102">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 102">
               
               <button class="choice" type="button" role="listitem" data-card-id="q102" data-choice="A" data-correct="B">
@@ -5774,6 +6210,10 @@ them.</div>
             <div class="content question-text">The arrow indicates what ultrasound phenomenon?</div>
             
             <div class="study-note" data-study-note="q103"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q103">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 103">
               
               <button class="choice" type="button" role="listitem" data-card-id="q103" data-choice="A" data-correct="A">
@@ -5826,6 +6266,10 @@ filter and even the velocity scale, this issue can be corrected.</div>
             <div class="content question-text">What should be done to adjust and improve the color Doppler displayed on the image?</div>
             
             <div class="study-note" data-study-note="q104"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q104">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 104">
               
               <button class="choice" type="button" role="listitem" data-card-id="q104" data-choice="A" data-correct="D">
@@ -5879,6 +6323,10 @@ frame rates and blood flow display. Increasing color velocity and PRF would decr
             <div class="content question-text">Which of the following will lead to more color displayed in real time in the abdominal aorta?</div>
             
             <div class="study-note" data-study-note="q105"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q105">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 105">
               
               <button class="choice" type="button" role="listitem" data-card-id="q105" data-choice="A" data-correct="B">
@@ -5930,6 +6378,10 @@ this setting makes the live image appear smoother and with improved color displa
             <div class="content question-text">According to the Appropriate Use Criteria, which of the following is an appropriate indication for a screening ankle-brachial index exam?</div>
             
             <div class="study-note" data-study-note="q106"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q106">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 106">
               
               <button class="choice" type="button" role="listitem" data-card-id="q106" data-choice="A" data-correct="D">
@@ -5983,6 +6435,10 @@ this setting makes the live image appear smoother and with improved color displa
             <div class="content question-text">By dividing the pulsatility index proximal to a stenosis by the pulsatility index from distal to a stenosis, you can evaluate the:</div>
             
             <div class="study-note" data-study-note="q107"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q107">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 107">
               
               <button class="choice" type="button" role="listitem" data-card-id="q107" data-choice="A" data-correct="D">
@@ -6036,6 +6492,10 @@ to the stenosis. The greater the stenosis, the lower the distal PI and greater t
             <div class="content question-text">Overgaining on an US exam can cause ________________________.</div>
             
             <div class="study-note" data-study-note="q108"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q108">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 108">
               
               <button class="choice" type="button" role="listitem" data-card-id="q108" data-choice="A" data-correct="A">
@@ -6088,6 +6548,10 @@ to the stenosis. The greater the stenosis, the lower the distal PI and greater t
             <div class="content question-text">What Doppler artifact is demonstrated on the tracing?</div>
             
             <div class="study-note" data-study-note="q109"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q109">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 109">
               
               <button class="choice" type="button" role="listitem" data-card-id="q109" data-choice="A" data-correct="D">
@@ -6141,6 +6605,10 @@ Doppler angle near 90°.</div>
             <div class="content question-text">What is the best way to adjust the console controls to eliminate the Doppler artifact?</div>
             
             <div class="study-note" data-study-note="q110"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q110">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 110">
               
               <button class="choice" type="button" role="listitem" data-card-id="q110" data-choice="A" data-correct="C">
@@ -6194,6 +6662,10 @@ antegrade and retrograde flow. The baseline should be raised to demonstrate the 
             <div class="content question-text">Which of the following correctly describes the negative predictive value (NPV) of a testing technique?</div>
             
             <div class="study-note" data-study-note="q111"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q111">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 111">
               
               <button class="choice" type="button" role="listitem" data-card-id="q111" data-choice="A" data-correct="D">
@@ -6245,6 +6717,10 @@ probability that the patient does not have disease.</div>
             <div class="content question-text">Which of the following imaging parameters is responsible for the ability to resolve two atheromas that are side by side in an artery?</div>
             
             <div class="study-note" data-study-note="q112"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q112">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 112">
               
               <button class="choice" type="button" role="listitem" data-card-id="q112" data-choice="A" data-correct="A">
@@ -6298,6 +6774,10 @@ differentiation of objects that are side by side.</div>
             <div class="content question-text">If a renal artery Doppler exam demonstrates normal flow, but stenosis is identified on angiography evaluation, the US results are described as:</div>
             
             <div class="study-note" data-study-note="q113"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q113">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 113">
               
               <button class="choice" type="button" role="listitem" data-card-id="q113" data-choice="A" data-correct="C">
@@ -6351,6 +6831,10 @@ If the current exam is positive and the gold standard is positive = true positiv
             <div class="content question-text">Which of the following describes why there is no aliasing on CW Doppler?</div>
             
             <div class="study-note" data-study-note="q114"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q114">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 114">
               
               <button class="choice" type="button" role="listitem" data-card-id="q114" data-choice="A" data-correct="B">
@@ -6402,6 +6886,10 @@ depth limitations.</div>
             <div class="content question-text">Which modality is preferred to diagnose fibromuscular dysplasia in the circle of Willis?</div>
             
             <div class="study-note" data-study-note="q115"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q115">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 115">
               
               <button class="choice" type="button" role="listitem" data-card-id="q115" data-choice="A" data-correct="D">
@@ -6452,6 +6940,10 @@ depth limitations.</div>
             <div class="content question-text">A proximal femoral artery stenosis will cause the __________________ in the mid femoral artery.</div>
             
             <div class="study-note" data-study-note="q116"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q116">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 116">
               
               <button class="choice" type="button" role="listitem" data-card-id="q116" data-choice="A" data-correct="D">
@@ -6503,6 +6995,10 @@ times. Low resistance vessels and areas distal to a stenosis will demonstrate lo
             <div class="content question-text">Which modality is preferred to diagnose an aortic dissection?</div>
             
             <div class="study-note" data-study-note="q117"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q117">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 117">
               
               <button class="choice" type="button" role="listitem" data-card-id="q117" data-choice="A" data-correct="B">
@@ -6554,6 +7050,10 @@ lumen characteristics. All portions of the aorta can be seen with CT. Ultrasound
             <div class="content question-text">What blood flow characteristic is being measured on the Doppler tracings provided?</div>
             
             <div class="study-note" data-study-note="q118"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q118">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 118">
               
               <button class="choice" type="button" role="listitem" data-card-id="q118" data-choice="A" data-correct="C">
@@ -6607,6 +7107,10 @@ the AT.</div>
             <div class="content question-text">Which of the following correctly describes a gold standard test?</div>
             
             <div class="study-note" data-study-note="q119"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q119">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 119">
               
               <button class="choice" type="button" role="listitem" data-card-id="q119" data-choice="A" data-correct="D">
@@ -6661,6 +7165,10 @@ because it has the highest sensitivity and specificity levels.</div>
             <div class="content question-text">The ability of PW Doppler to determine the _____________________________ is the primary advantage over CW Doppler techniques.</div>
             
             <div class="study-note" data-study-note="q120"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q120">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 120">
               
               <button class="choice" type="button" role="listitem" data-card-id="q120" data-choice="A" data-correct="A">
@@ -6712,6 +7220,10 @@ flow evaluations. PW Doppler is able to provide velocity, pulsatility and locati
             <div class="content question-text">________________________ aids in measurement of the acceleration time of the renal arteries.</div>
             
             <div class="study-note" data-study-note="q121"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q121">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 121">
               
               <button class="choice" type="button" role="listitem" data-card-id="q121" data-choice="A" data-correct="D">
@@ -6764,6 +7276,10 @@ flow evaluations. PW Doppler is able to provide velocity, pulsatility and locati
             <div class="content question-text">What information from an angiography report can be correlated with the ultrasound results?</div>
             
             <div class="study-note" data-study-note="q122"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q122">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 122">
               
               <button class="choice" type="button" role="listitem" data-card-id="q122" data-choice="A" data-correct="C">
@@ -6817,6 +7333,10 @@ flow</div>
             <div class="content question-text">The image displayed is from the PTA from an arterial Duplex exam with normal ABIs and minimal atherosclerosis. Which of the following explains the findings?</div>
             
             <div class="study-note" data-study-note="q123"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q123">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 123">
               
               <button class="choice" type="button" role="listitem" data-card-id="q123" data-choice="A" data-correct="C">
@@ -6871,6 +7391,10 @@ readjust probe.</div>
             <div class="content question-text">Increasing the spectral Doppler sample size will increase the ___________________.</div>
             
             <div class="study-note" data-study-note="q124"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q124">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 124">
               
               <button class="choice" type="button" role="listitem" data-card-id="q124" data-choice="A" data-correct="C">
@@ -6923,6 +7447,10 @@ window because the larger volume of cells sampled are moving at varied speeds.</
             <div class="content question-text">When the velocity of flow is calculated for vessels evaluated on a TCD exam, a ____________ degree angle of incidence is assumed.</div>
             
             <div class="study-note" data-study-note="q125"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q125">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 125">
               
               <button class="choice" type="button" role="listitem" data-card-id="q125" data-choice="A" data-correct="B">
@@ -6973,6 +7501,10 @@ window because the larger volume of cells sampled are moving at varied speeds.</
             <div class="content question-text">Which of the following is a complication of series stenosis in an artery?</div>
             
             <div class="study-note" data-study-note="q126"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q126">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 126">
               
               <button class="choice" type="button" role="listitem" data-card-id="q126" data-choice="A" data-correct="A">
@@ -7047,6 +7579,12 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     document.getElementById("close-all").addEventListener("click", () => {
       answerToggles.forEach((toggle) => setPanelState(toggle, false));
+    });
+
+    document.getElementById("clear-all-answers").addEventListener("click", () => {
+      Object.keys(studyState).forEach((key) => delete studyState[key]);
+      saveStudyState(studyState);
+      applyStudyState(studyState);
     });
 
     function normalizeState(rawState) {
@@ -7133,6 +7671,15 @@ Powered by ExamBuilder. Copyright ©2026</div>
           status: choice === correct ? "correct" : "incorrect",
           selectedChoice: choice,
         };
+        saveStudyState(studyState);
+        applyStudyState(studyState);
+      });
+    });
+
+    document.querySelectorAll("[data-clear-card]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const cardId = button.getAttribute("data-clear-card");
+        delete studyState[cardId];
         saveStudyState(studyState);
         applyStudyState(studyState);
       });

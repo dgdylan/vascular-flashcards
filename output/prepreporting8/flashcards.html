@@ -216,6 +216,31 @@
     .study-note.incorrect {
       color: var(--danger);
     }
+    .choice-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .clear-answer {
+      appearance: none;
+      border: 1px solid rgba(46, 110, 163, 0.12);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.55rem 0.8rem;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+    .clear-answer:hover {
+      transform: translateY(-1px);
+      border-color: rgba(239, 131, 84, 0.22);
+      color: var(--accent-dark);
+    }
     .choices {
       display: grid;
       gap: 0.9rem;
@@ -375,6 +400,12 @@
         justify-content: center;
         text-align: center;
       }
+      .choice-row {
+        align-items: stretch;
+      }
+      .clear-answer {
+        width: 100%;
+      }
       h1 {
         max-width: none;
       }
@@ -400,6 +431,7 @@
           <a href="../index.html">Back to index</a>
           <button type="button" id="open-all">Open all backs</button>
           <button type="button" id="close-all">Close all backs</button>
+          <button type="button" id="clear-all-answers">Clear saved answers</button>
         </div>
       </div>
     </section>
@@ -416,6 +448,10 @@
             <div class="content question-text">You are about to perform a lower extremity arterial duplex on a patient that recently had an MRA run-off exam. According to the attached image, what vessel will demonstrate reduced or absent flow in the right leg? view image</div>
             
             <div class="study-note" data-study-note="q1"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q1">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 1">
               
               <button class="choice" type="button" role="listitem" data-card-id="q1" data-choice="A" data-correct="D">
@@ -467,6 +503,10 @@ You should expect that Doppler evaluation of these vessels will demonstrate litt
             <div class="content question-text">You are performing a left upper extremity venous duplex exam. DVT is identified in the axillary and subclavian veins. Which of the following must also be included in the exam protocol for this patient?</div>
             
             <div class="study-note" data-study-note="q2"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q2">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 2">
               
               <button class="choice" type="button" role="listitem" data-card-id="q2" data-choice="A" data-correct="C">
@@ -518,6 +558,10 @@ Common femoral vein for the lower extremities and subclavian or internal jugular
             <div class="content question-text">You are performing a mesenteric duplex examination for suspected mesenteric ischemia. The findings are: SMA PSV 408cm/s, EDV 78cm/s, monophasic flow with turbulence Celiac PSV 300cm/s, EDV 55cm/s, monophasic flow with spectral window IMA PSV 180cm/s, EDV 25cm/s, monophasic flow with spectral window How will you report these findings?</div>
             
             <div class="study-note" data-study-note="q3"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q3">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 3">
               
               <button class="choice" type="button" role="listitem" data-card-id="q3" data-choice="A" data-correct="B">
@@ -575,6 +619,10 @@ Stenosis = increased velocity + post-stenotic turbulence</div>
             <div class="content question-text">All of the following should be included in the report from an exercise segmental pressure exam, except:</div>
             
             <div class="study-note" data-study-note="q4"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q4">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 4">
               
               <button class="choice" type="button" role="listitem" data-card-id="q4" data-choice="A" data-correct="D">
@@ -629,6 +677,10 @@ disease.</div>
             <div class="content question-text">You are about to perform a lower extremity arterial duplex on a patient that recently had an MRA run-off exam. According to the attached image, what vessel will demonstrate reduced or absent flow in the left leg? view image</div>
             
             <div class="study-note" data-study-note="q5"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q5">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 5">
               
               <button class="choice" type="button" role="listitem" data-card-id="q5" data-choice="A" data-correct="D">
@@ -680,6 +732,10 @@ You should expect that Doppler evaluation of these vessels will demonstrate litt
             <div class="content question-text">What will be included in your preliminary report for this patient?</div>
             
             <div class="study-note" data-study-note="q6"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q6">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 6">
               
               <button class="choice" type="button" role="listitem" data-card-id="q6" data-choice="A" data-correct="B">
@@ -735,6 +791,10 @@ the right arm is 70/156mmHg = 0.45. Although there is a drop in pressure between
             <div class="content question-text">If the velocities in both carotid arteries are increased since last year&#39;s exam with no visible change in plaque formation, what should you review in the patient chart as a possible explanation?</div>
             
             <div class="study-note" data-study-note="q7"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q7">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 7">
               
               <button class="choice" type="button" role="listitem" data-card-id="q7" data-choice="A" data-correct="B">
@@ -787,6 +847,10 @@ bilateral carotid velocities.</div>
             <div class="content question-text">A patient presents for a segmental pressure exam. She states she has had DVT in her right leg three times over the last 2 years. Today she complains of right leg pain and mild swelling, but no color change. She states that the doctor could not find the pedal pulses on the right side. What should you review in the patient chart prior to starting the exam?</div>
             
             <div class="study-note" data-study-note="q8"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q8">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 8">
               
               <button class="choice" type="button" role="listitem" data-card-id="q8" data-choice="A" data-correct="C">
@@ -839,6 +903,10 @@ but this does not assist you when considering the risk for embolism.</div>
             <div class="content question-text">A curvilinear transducer can be used to better evaluate:</div>
             
             <div class="study-note" data-study-note="q9"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q9">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 9">
               
               <button class="choice" type="button" role="listitem" data-card-id="q9" data-choice="A" data-correct="B">
@@ -891,6 +959,10 @@ Superficial structures are best evaluated with a high frequency linear transduce
             <div class="content question-text">You identify acute thrombosis of the left popliteal and femoral vein, and the proximal end of the clot has a free-floating tail. What should you do next?</div>
             
             <div class="study-note" data-study-note="q10"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q10">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 10">
               
               <button class="choice" type="button" role="listitem" data-card-id="q10" data-choice="A" data-correct="A">
@@ -944,6 +1016,10 @@ medical advice to a patient. Code blue is reserved for patients that are not bre
             <div class="content question-text">What is the arrow pointing to on the abdominal angiography exam?</div>
             
             <div class="study-note" data-study-note="q11"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q11">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 11">
               
               <button class="choice" type="button" role="listitem" data-card-id="q11" data-choice="A" data-correct="A">
@@ -996,6 +1072,10 @@ medical advice to a patient. Code blue is reserved for patients that are not bre
             <div class="content question-text">What technique is recommended for evaluation of the main portal vein in an obese patient with ascites and significant bowel gas?</div>
             
             <div class="study-note" data-study-note="q12"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q12">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 12">
               
               <button class="choice" type="button" role="listitem" data-card-id="q12" data-choice="A" data-correct="C">
@@ -1050,6 +1130,10 @@ important when evaluating the velocity of flow in the MPV.</div>
             <div class="content question-text">You perform a carotid Doppler exam that demonstrates minimal atheroma formation bilaterally. You record waveforms that demonstrate laminar flow with the following velocities: Right Proximal CCA PSV 145cm/s, EDV 35cm/s Right Proximal ICA PSV 185cm/s, EDV 50cm/s Left Proximal CCA PSV 140cm/s, EDV 38cm/s Left Proximal ICA PSV 190cm/s, EDV 40cm/s What will you report on your worksheet?</div>
             
             <div class="study-note" data-study-note="q13"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q13">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 13">
               
               <button class="choice" type="button" role="listitem" data-card-id="q13" data-choice="A" data-correct="A">
@@ -1103,6 +1187,10 @@ Bilateral CCA velocities can be increased with aortic stenosis also, but the flo
             <div class="content question-text">Which of the following is an important part of Sonographer - Patient communication?</div>
             
             <div class="study-note" data-study-note="q14"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q14">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 14">
               
               <button class="choice" type="button" role="listitem" data-card-id="q14" data-choice="A" data-correct="B">
@@ -1158,6 +1246,10 @@ exam will assess their history.</div>
             <div class="content question-text">Why is an acute arterial occlusion in the lower extremity considered a critical finding?</div>
             
             <div class="study-note" data-study-note="q15"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q15">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 15">
               
               <button class="choice" type="button" role="listitem" data-card-id="q15" data-choice="A" data-correct="D">
@@ -1208,6 +1300,10 @@ exam will assess their history.</div>
             <div class="content question-text">When preparing for a patient with suspected thoracic outlet syndrome, what other information should you review for pertinent information?</div>
             
             <div class="study-note" data-study-note="q16"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q16">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 16">
               
               <button class="choice" type="button" role="listitem" data-card-id="q16" data-choice="A" data-correct="A">
@@ -1258,6 +1354,10 @@ exam will assess their history.</div>
             <div class="content question-text">You are performing an upper extremity venous Doppler exam due to arm swelling and pain. The image displayed is from the left shoulder. Which of the following should be included on your preliminary report?</div>
             
             <div class="study-note" data-study-note="q17"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q17">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 17">
               
               <button class="choice" type="button" role="listitem" data-card-id="q17" data-choice="A" data-correct="A">
@@ -1310,6 +1410,10 @@ exam will assess their history.</div>
             <div class="content question-text">A patient presents with an order for a lower extremity venous Doppler exam to rule out DVT. This patient should be evaluated in the _____________ position in order to _______________.</div>
             
             <div class="study-note" data-study-note="q18"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q18">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 18">
               
               <button class="choice" type="button" role="listitem" data-card-id="q18" data-choice="A" data-correct="B">
@@ -1361,6 +1465,10 @@ veins of the legs with blood making the US and Doppler evaluation much easier.</
             <div class="content question-text">Why are serial exams necessary on patients prescribed Streptokinase?</div>
             
             <div class="study-note" data-study-note="q19"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q19">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 19">
               
               <button class="choice" type="button" role="listitem" data-card-id="q19" data-choice="A" data-correct="D">
@@ -1412,6 +1520,10 @@ necessary to evaluate recanalization and tailor the treatment accordingly.</div>
             <div class="content question-text">Patients are examined in the ______________ position for a lower extremity arterial Doppler exam in order to _______________.</div>
             
             <div class="study-note" data-study-note="q20"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q20">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 20">
               
               <button class="choice" type="button" role="listitem" data-card-id="q20" data-choice="A" data-correct="D">
@@ -1463,6 +1575,10 @@ pressure.</div>
             <div class="content question-text">Which of the following is important information to record on the final report for a carotid Doppler exam on a patient with 50-69% ICA stenosis?</div>
             
             <div class="study-note" data-study-note="q21"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q21">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 21">
               
               <button class="choice" type="button" role="listitem" data-card-id="q21" data-choice="A" data-correct="C">
@@ -1515,6 +1631,10 @@ stenosis.</div>
             <div class="content question-text">A patient presents with dysphagia and hoarseness. The referring physician suspects Ortner syndrome. What type of exam will you be performing?</div>
             
             <div class="study-note" data-study-note="q22"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q22">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 22">
               
               <button class="choice" type="button" role="listitem" data-card-id="q22" data-choice="A" data-correct="B">
@@ -1569,6 +1689,10 @@ changes in the voice, including hoarseness.</div>
             <div class="content question-text">What vessel(s) should be closely evaluated for a related cause for a new cerebellar infarct seen on a CT of the brain?</div>
             
             <div class="study-note" data-study-note="q23"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q23">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 23">
               
               <button class="choice" type="button" role="listitem" data-card-id="q23" data-choice="A" data-correct="A">
@@ -1620,6 +1744,10 @@ abnormalities of the vertebrobasilar circulation.</div>
             <div class="content question-text">Which of the following is a critical finding that requires immediate attention?</div>
             
             <div class="study-note" data-study-note="q24"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q24">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 24">
               
               <button class="choice" type="button" role="listitem" data-card-id="q24" data-choice="A" data-correct="D">
@@ -1673,6 +1801,10 @@ allograft as well.</div>
             <div class="content question-text">When evaluating a suspected stenosis in the lower extremity arterial system, the peak systolic velocity is documented on the waveforms obtained. What other two factors should be reported to determine the severity of the stenosis?</div>
             
             <div class="study-note" data-study-note="q25"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q25">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 25">
               
               <button class="choice" type="button" role="listitem" data-card-id="q25" data-choice="A" data-correct="B">
@@ -1728,6 +1860,10 @@ perfusion in an organ like the kidney or liver.</div>
             <div class="content question-text">When reporting spectral Doppler information the Sonographer must:</div>
             
             <div class="study-note" data-study-note="q26"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q26">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 26">
               
               <button class="choice" type="button" role="listitem" data-card-id="q26" data-choice="A" data-correct="C">
@@ -1780,6 +1916,10 @@ information from waveforms with poor definition or of marginal quality.</div>
             <div class="content question-text">Which exam would be improved by the administration of Simethicone prior to the ultrasound evaluation?</div>
             
             <div class="study-note" data-study-note="q27"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q27">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 27">
               
               <button class="choice" type="button" role="listitem" data-card-id="q27" data-choice="A" data-correct="C">
@@ -1830,6 +1970,10 @@ information from waveforms with poor definition or of marginal quality.</div>
             <div class="content question-text">Which of the following describes an important reason to verify the US examination that is ordered is the exam that should really be performed?</div>
             
             <div class="study-note" data-study-note="q28"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q28">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 28">
               
               <button class="choice" type="button" role="listitem" data-card-id="q28" data-choice="A" data-correct="C">
@@ -1881,6 +2025,10 @@ US examination that is ordered is the exam that should really be performed.</div
             <div class="content question-text">A patient presents for a dedicated transcranial Doppler exam to rule out an AV fistula . What should you do first?</div>
             
             <div class="study-note" data-study-note="q29"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q29">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 29">
               
               <button class="choice" type="button" role="listitem" data-card-id="q29" data-choice="A" data-correct="D">
@@ -1934,6 +2082,10 @@ physician before proceeding.</div>
             <div class="content question-text">Which transducer should be selected for a renal artery Doppler examination for a patient that is 5&#39;5&#34; and 150lbs?</div>
             
             <div class="study-note" data-study-note="q30"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q30">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 30">
               
               <button class="choice" type="button" role="listitem" data-card-id="q30" data-choice="A" data-correct="C">
@@ -1984,6 +2136,10 @@ physician before proceeding.</div>
             <div class="content question-text">A patient is referred for a Doppler ultrasound of the IVC and hepatic veins due to an abnormal echocardiogram. The report states that the hepatic veins appear to empty directly into the right atrium with limited visualization of the upper IVC. What are you looking for in the abdomen?</div>
             
             <div class="study-note" data-study-note="q31"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q31">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 31">
               
               <button class="choice" type="button" role="listitem" data-card-id="q31" data-choice="A" data-correct="B">
@@ -2037,6 +2193,10 @@ from the distal IVC segment; hepatic veins drain directly into the right atrium<
             <div class="content question-text">Which of the following is not a patient demographic that would be used to track vascular disease occurrence?</div>
             
             <div class="study-note" data-study-note="q32"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q32">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 32">
               
               <button class="choice" type="button" role="listitem" data-card-id="q32" data-choice="A" data-correct="A">
@@ -2087,6 +2247,10 @@ from the distal IVC segment; hepatic veins drain directly into the right atrium<
             <div class="content question-text">A patient presents with localized swelling and redness of the left calf that started two days ago. The referring physician requested a segmental pressure exam. What should you do first?</div>
             
             <div class="study-note" data-study-note="q33"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q33">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 33">
               
               <button class="choice" type="button" role="listitem" data-card-id="q33" data-choice="A" data-correct="D">
@@ -2139,6 +2303,10 @@ thrombus in it could cause emboli propagation.</div>
             <div class="content question-text">If a patient complains of a single 12hr episode of right arm paresthesia and paralysis, what will you report on your technologist worksheet?</div>
             
             <div class="study-note" data-study-note="q34"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q34">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 34">
               
               <button class="choice" type="button" role="listitem" data-card-id="q34" data-choice="A" data-correct="A">
@@ -2189,6 +2357,10 @@ thrombus in it could cause emboli propagation.</div>
             <div class="content question-text">A patient presents with a 2-year history of a brachiocephalic hemodialysis fistula. She currently complains that her hand goes numb and turns white when she exercises. You are performing an upper extremity arterial exam and the attached images are from her exam. What will you include in your report?</div>
             
             <div class="study-note" data-study-note="q35"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q35">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 35">
               
               <button class="choice" type="button" role="listitem" data-card-id="q35" data-choice="A" data-correct="A">
@@ -2244,6 +2416,10 @@ demand for blood increases in the hand but the ulnar artery cannot supply enough
             <div class="content question-text">If a patient has a history of 80% stenosis of the left internal carotid artery identified on a MRA exam. Which of the following Doppler velocities from the ICA will correlate well with the predicted level of stenosis?</div>
             
             <div class="study-note" data-study-note="q36"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q36">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 36">
               
               <button class="choice" type="button" role="listitem" data-card-id="q36" data-choice="A" data-correct="C">
@@ -2296,6 +2472,10 @@ ICAVL Criteria &gt;70% stenosis = PSV &gt;230cm/s, EDV &gt;100cm/s</div>
             <div class="content question-text">Which of the following is not a patient demographic that is collected to evaluate patient population statistics for those with vascular disease?</div>
             
             <div class="study-note" data-study-note="q37"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q37">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 37">
               
               <button class="choice" type="button" role="listitem" data-card-id="q37" data-choice="A" data-correct="C">
@@ -2346,6 +2526,10 @@ ICAVL Criteria &gt;70% stenosis = PSV &gt;230cm/s, EDV &gt;100cm/s</div>
             <div class="content question-text">According to the findings on this arteriogram, which vessel will demonstrate absent or abnormal flow pattern on a carotid Duplex exam?</div>
             
             <div class="study-note" data-study-note="q38"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q38">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 38">
               
               <button class="choice" type="button" role="listitem" data-card-id="q38" data-choice="A" data-correct="A">
@@ -2402,6 +2586,10 @@ Dias L, Kulatunga A - BMC Res Notes (2012)</div>
             <div class="content question-text">Which of the following is the best patient position for performing a transcranial Doppler exam to obtain a waveform from both of the middle cerebral arteries?</div>
             
             <div class="study-note" data-study-note="q39"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q39">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 39">
               
               <button class="choice" type="button" role="listitem" data-card-id="q39" data-choice="A" data-correct="B">
@@ -2453,6 +2641,10 @@ at the temple. Placing the patient in the supine position allows for evaluation 
             <div class="content question-text">If an arteriogram of the carotid arteries indicates a 60% stenosis of the left internal carotid artery, which of the following Doppler velocities from the ICA will correlate well with the predicted level of stenosis?</div>
             
             <div class="study-note" data-study-note="q40"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q40">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 40">
               
               <button class="choice" type="button" role="listitem" data-card-id="q40" data-choice="A" data-correct="D">
@@ -2505,6 +2697,10 @@ ICAVL Criteria 50-69% stenosis = PSV 180 - 230cm/s, EDV 40 - 100cm/s</div>
             <div class="content question-text">A 76yr old female with diabetes, HTN, and COPD is sent to the vascular lab for a six month follow up on a carotid stenosis. What is the best patient position to use for the exam?</div>
             
             <div class="study-note" data-study-note="q41"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q41">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 41">
               
               <button class="choice" type="button" role="listitem" data-card-id="q41" data-choice="A" data-correct="D">
@@ -2557,6 +2753,10 @@ for the exam and the Sonographer position would be improper ergonomically.</div>
             <div class="content question-text">When providing a preliminary report for a significant ICA stenosis, what should be included?</div>
             
             <div class="study-note" data-study-note="q42"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q42">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 42">
               
               <button class="choice" type="button" role="listitem" data-card-id="q42" data-choice="A" data-correct="D">
@@ -2610,6 +2810,10 @@ with in chart form at the end of the exam.</div>
             <div class="content question-text">The images displayed are from an aortic Doppler evaluation on an ER trauma patient. What should you do upon completion of the exam?</div>
             
             <div class="study-note" data-study-note="q43"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q43">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 43">
               
               <button class="choice" type="button" role="listitem" data-card-id="q43" data-choice="A" data-correct="B">
@@ -2663,6 +2867,10 @@ interpretation by the radiologist. A dissection is a critical finding that requi
             <div class="content question-text">You perform a bilateral venous Doppler due to unilateral swelling and pain in the right leg. Which of the following should be reported on your technologist worksheet?</div>
             
             <div class="study-note" data-study-note="q44"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q44">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 44">
               
               <button class="choice" type="button" role="listitem" data-card-id="q44" data-choice="A" data-correct="B">
@@ -2716,6 +2924,10 @@ continuous. This indicates a right common iliac obstruction. IVC obstruction wou
             <div class="content question-text">Which of the following is a critical finding?</div>
             
             <div class="study-note" data-study-note="q45"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q45">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 45">
               
               <button class="choice" type="button" role="listitem" data-card-id="q45" data-choice="A" data-correct="D">
@@ -2768,6 +2980,10 @@ occlusion is typically accompanied by an increase in collateral flow. A 5.5cm AA
             <div class="content question-text">Which of the following is a required part of the Sonographer&#39;s preliminary report for a lower extremity segmental pressure exam?</div>
             
             <div class="study-note" data-study-note="q46"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q46">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 46">
               
               <button class="choice" type="button" role="listitem" data-card-id="q46" data-choice="A" data-correct="A">
@@ -2821,6 +3037,10 @@ pressure exam. It is an important part of an arterial duplex exam.</div>
             <div class="content question-text">According to the findings on this arteriogram, which vessel will demonstrate a post-stenotic flow pattern on a carotid Duplex exam?</div>
             
             <div class="study-note" data-study-note="q47"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q47">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 47">
               
               <button class="choice" type="button" role="listitem" data-card-id="q47" data-choice="A" data-correct="C">
@@ -2876,6 +3096,10 @@ D Dias L, Kulatunga A - BMC Res Notes (2012)</div>
             <div class="content question-text">What lab values may be elevated with renal artery stenosis?</div>
             
             <div class="study-note" data-study-note="q48"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q48">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 48">
               
               <button class="choice" type="button" role="listitem" data-card-id="q48" data-choice="A" data-correct="D">
@@ -2927,6 +3151,10 @@ in lab testing by increased serum levels of BUN and creatinine. Systemic BP will
             <div class="content question-text">Which of the following acronyms refers to the standard image file storage format used in medical facilities in the United States?</div>
             
             <div class="study-note" data-study-note="q49"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q49">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 49">
               
               <button class="choice" type="button" role="listitem" data-card-id="q49" data-choice="A" data-correct="B">
@@ -2978,6 +3206,10 @@ in medical imaging.</div>
             <div class="content question-text">The attached image is taken from a lower extremity venous Doppler exam. Which of the following should be included in your preliminary report?</div>
             
             <div class="study-note" data-study-note="q50"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q50">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 50">
               
               <button class="choice" type="button" role="listitem" data-card-id="q50" data-choice="A" data-correct="A">
@@ -3031,6 +3263,10 @@ to demonstrate patency of these veins.</div>
             <div class="content question-text">A patient presents for a mesenteric Doppler to rule out stenosis. They have a history of diabetes, HTN, pain and nausea post-prandially. Which of the following appointment times would be best for this exam to be scheduled?</div>
             
             <div class="study-note" data-study-note="q51"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q51">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 51">
               
               <button class="choice" type="button" role="listitem" data-card-id="q51" data-choice="A" data-correct="B">
@@ -3081,6 +3317,10 @@ to demonstrate patency of these veins.</div>
             <div class="content question-text">According to the findings on this arteriogram, which of the following symptoms would be explained by the findings?</div>
             
             <div class="study-note" data-study-note="q52"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q52">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 52">
               
               <button class="choice" type="button" role="listitem" data-card-id="q52" data-choice="A" data-correct="D">
@@ -3136,6 +3376,10 @@ these findings would be related to the left arm.</div>
             <div class="content question-text">A patient presents with an order for a lower extremity venous Doppler exam to rule out venous insufficiency. This patient should be evaluated in the _____________ position in order to _______________.</div>
             
             <div class="study-note" data-study-note="q53"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q53">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 53">
               
               <button class="choice" type="button" role="listitem" data-card-id="q53" data-choice="A" data-correct="A">
@@ -3188,6 +3432,10 @@ engorge with blood for better visualization.</div>
             <div class="content question-text">A patient presents for a carotid ultrasound. The exam demonstrates significant calcification in the proximal ICA on the left side and the Doppler signal is not obtained. Antegrade flow in the mid ICA has a peak velocity of 30cm/s and end diastolic velocity of 10 cm/s. How will you report these findings?</div>
             
             <div class="study-note" data-study-note="q54"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q54">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 54">
               
               <button class="choice" type="button" role="listitem" data-card-id="q54" data-choice="A" data-correct="B">
@@ -3238,6 +3486,10 @@ engorge with blood for better visualization.</div>
             <div class="content question-text">A patient presents for a carotid ultrasound due to the presence of bilateral bruits in the proximal neck. What should be the next step in evaluating this patient?</div>
             
             <div class="study-note" data-study-note="q55"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q55">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 55">
               
               <button class="choice" type="button" role="listitem" data-card-id="q55" data-choice="A" data-correct="A">
@@ -3293,6 +3545,10 @@ involves the rerouting of blood and would not be associated with a bilateral bru
             <div class="content question-text">Why should a venous insufficiency exam be performed with the patient in the standing position?</div>
             
             <div class="study-note" data-study-note="q56"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q56">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 56">
               
               <button class="choice" type="button" role="listitem" data-card-id="q56" data-choice="A" data-correct="C">
@@ -3344,6 +3600,10 @@ effect of hydrostatic pressure. This will allow reflux to more easily be identif
             <div class="content question-text">What will you include in your preliminary report for this patient?</div>
             
             <div class="study-note" data-study-note="q57"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q57">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 57">
               
               <button class="choice" type="button" role="listitem" data-card-id="q57" data-choice="A" data-correct="B">
@@ -3396,6 +3656,10 @@ than 20mmHg. The arm with the lower pressure is the arm with the problem.</div>
             <div class="content question-text">Venography is usually performed with the patient in what position?</div>
             
             <div class="study-note" data-study-note="q58"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q58">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 58">
               
               <button class="choice" type="button" role="listitem" data-card-id="q58" data-choice="A" data-correct="D">
@@ -3449,6 +3713,10 @@ the veins and increase hydrostatic pressure.</div>
             <div class="content question-text">The 2D images displayed are from a normal renal Doppler evaluation in a patient with a history of 4.5cm distal AAA and acute onset of moderate HTN. What should you do to further evaluate or communicate the findings?</div>
             
             <div class="study-note" data-study-note="q59"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q59">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 59">
               
               <button class="choice" type="button" role="listitem" data-card-id="q59" data-choice="A" data-correct="D">
@@ -3503,6 +3771,10 @@ raising the BP due to ischemia. The kidney demonstrates normal size and echotext
             <div class="content question-text">A patient presents for a venous insufficiency exam. The exam demonstrates normal bilateral saphenous veins that extend up to the distal thigh, but do not appear to connect to the deep system. What should you review in the patient chart to explain these findings?</div>
             
             <div class="study-note" data-study-note="q60"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q60">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 60">
               
               <button class="choice" type="button" role="listitem" data-card-id="q60" data-choice="A" data-correct="C">
@@ -3556,6 +3828,10 @@ Schroetter syndrome refers to thrombosis of the subclavian vein due to excessive
             <div class="content question-text">A patient presents for a TCD exam with a recent diagnosis of subdural hematoma. What is the physician looking for on the TCD exam?</div>
             
             <div class="study-note" data-study-note="q61"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q61">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 61">
               
               <button class="choice" type="button" role="listitem" data-card-id="q61" data-choice="A" data-correct="D">
@@ -3612,6 +3888,10 @@ intracerebral flow. Hemispheric Index - divide MCA velocity by the distal/termin
             <div class="content question-text">You are performing a left lower extremity venous duplex exam. DVT is identified in the popliteal and femoral veins. Which of the following must also be included in the exam protocol for this patient?</div>
             
             <div class="study-note" data-study-note="q62"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q62">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 62">
               
               <button class="choice" type="button" role="listitem" data-card-id="q62" data-choice="A" data-correct="A">
@@ -3663,6 +3943,10 @@ Common femoral vein for the lower extremities and subclavian or internal jugular
             <div class="content question-text">Air in a patch used during a carotid endarterectomy can degrade the evaluation of the treated area in the immediate post-op setting. What is the recommended approach for evaluating these patients?</div>
             
             <div class="study-note" data-study-note="q63"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q63">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 63">
               
               <button class="choice" type="button" role="listitem" data-card-id="q63" data-choice="A" data-correct="B">
@@ -3714,6 +3998,10 @@ minimize artifact from air in the patch, use the most posterior approach possibl
             <div class="content question-text">A patient presents for a carotid ultrasound. The exam demonstrates significant atheroma formation and string flow in the proximal right ICA. Which of the following signs or symptoms listed in the patient chart would be related to the findings?</div>
             
             <div class="study-note" data-study-note="q64"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q64">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 64">
               
               <button class="choice" type="button" role="listitem" data-card-id="q64" data-choice="A" data-correct="B">
@@ -3766,6 +4054,10 @@ occur on the same side as the obstruction. Left eye symptoms will be associated 
             <div class="content question-text">A patient presents for an ABI exam due to bilateral calf pain. He is a dialysis patient with an occluded graft in the right arm and a patent graft in the left arm. What should you do first?</div>
             
             <div class="study-note" data-study-note="q65"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q65">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 65">
               
               <button class="choice" type="button" role="listitem" data-card-id="q65" data-choice="A" data-correct="B">
@@ -3819,6 +4111,10 @@ change a physician&#39;s order. They must submit a new order if something change
             <div class="content question-text">You are performing a carotid Doppler exam due to the recent onset of right arm and face paresthesia. There is little plaque present in either carotid system. The right side has normal Doppler flow velocities and waveforms. The attached Doppler images are taken from the proximal left ICA and ECA. Which of the following should be included on your preliminary report?</div>
             
             <div class="study-note" data-study-note="q66"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q66">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 66">
               
               <button class="choice" type="button" role="listitem" data-card-id="q66" data-choice="A" data-correct="A">
@@ -3872,6 +4168,10 @@ Bilaterally reduced resistance and velocity is associated with CHF.</div>
             <div class="content question-text">An upper extremity venous Doppler that is performed for suspected DVT should be performed with the patient in the ____________________ position.</div>
             
             <div class="study-note" data-study-note="q67"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q67">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 67">
               
               <button class="choice" type="button" role="listitem" data-card-id="q67" data-choice="A" data-correct="C">
@@ -3923,6 +4223,10 @@ should be in the dependent position and externally rotated.</div>
             <div class="content question-text">When evaluating flow in the superior mesenteric artery, what is the most important history question to ask the patient?</div>
             
             <div class="study-note" data-study-note="q68"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q68">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 68">
               
               <button class="choice" type="button" role="listitem" data-card-id="q68" data-choice="A" data-correct="C">
@@ -3977,6 +4281,10 @@ compression.</div>
             <div class="content question-text">Which of the following transducers would be preferred for a lower extremity saphenous mapping on an average sized patient?</div>
             
             <div class="study-note" data-study-note="q69"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q69">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 69">
               
               <button class="choice" type="button" role="listitem" data-card-id="q69" data-choice="A" data-correct="C">
@@ -4028,6 +4336,10 @@ compression.</div>
             <div class="content question-text">An 80yr old female patient asks you to explain the purpose of a segmental pressure exam of the lower extremities. Which of the following is the best response?</div>
             
             <div class="study-note" data-study-note="q70"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q70">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 70">
               
               <button class="choice" type="button" role="listitem" data-card-id="q70" data-choice="A" data-correct="D">
@@ -4080,6 +4392,10 @@ the exam and never be condescending or dismissive of a patient&#39;s request.</d
             <div class="content question-text">A 65yr old female presents chronic leg pain and swelling, but no brown discoloration is present in the distal calf and ankle area. Which of the following patient history questions would provide an explanation of the symptoms?</div>
             
             <div class="study-note" data-study-note="q71"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q71">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 71">
               
               <button class="choice" type="button" role="listitem" data-card-id="q71" data-choice="A" data-correct="D">
@@ -4133,6 +4449,10 @@ leg elevation or at night would indicate arterial disease, which does not correl
             <div class="content question-text">A lower extremity venous Doppler that is performed for suspected DVT should be performed with the patient in the ____________________ position.</div>
             
             <div class="study-note" data-study-note="q72"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q72">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 72">
               
               <button class="choice" type="button" role="listitem" data-card-id="q72" data-choice="A" data-correct="C">
@@ -4185,6 +4505,10 @@ easier visualization.</div>
             <div class="content question-text">A recent CT scan demonstrates an acute infarct in the parietal lobe and a new blockage in the proximal left middle cerebral artery. Which of the following is the most likely source for the embolism?</div>
             
             <div class="study-note" data-study-note="q73"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q73">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 73">
               
               <button class="choice" type="button" role="listitem" data-card-id="q73" data-choice="A" data-correct="D">
@@ -4241,6 +4565,10 @@ the brain and eye.</div>
             <div class="content question-text">According to the findings on this arteriogram, which abnormal findings will be identified on a carotid Duplex exam?</div>
             
             <div class="study-note" data-study-note="q74"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q74">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 74">
               
               <button class="choice" type="button" role="listitem" data-card-id="q74" data-choice="A" data-correct="A">
@@ -4295,6 +4623,10 @@ absence of flow on a Duplex exam.</div>
             <div class="content question-text">If a patient forgets to take their hypertension medication before a renal duplex exam, what effect can this have on the findings?</div>
             
             <div class="study-note" data-study-note="q75"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q75">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 75">
               
               <button class="choice" type="button" role="listitem" data-card-id="q75" data-choice="A" data-correct="A">
@@ -4347,6 +4679,10 @@ whenever possible.</div>
             <div class="content question-text">When evaluating a pregnant patient for DVT, the patient should be placed in the ______________ position.</div>
             
             <div class="study-note" data-study-note="q76"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q76">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 76">
               
               <button class="choice" type="button" role="listitem" data-card-id="q76" data-choice="A" data-correct="D">
@@ -4398,6 +4734,10 @@ oblique or decubitus position will reduce uterine pressure on the IVC.</div>
             <div class="content question-text">A patient presents for a venous Doppler evaluation of the lower extremities. The patient is contracted at the knees and hips and unable to extend the legs for the exam. All compression views are normal. Doppler evaluation demonstrates mildly reduced response to distal augmentation in the thigh and continuous flow in the popliteal veins. How will you report these findings?</div>
             
             <div class="study-note" data-study-note="q77"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q77">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 77">
               
               <button class="choice" type="button" role="listitem" data-card-id="q77" data-choice="A" data-correct="B">
@@ -4450,6 +4790,10 @@ augmentation response.</div>
             <div class="content question-text">A significant stenosis in which of the following arteries would be the most likely cause for an acute infarct of the right frontal lobe seen on a recent CT of the brain?</div>
             
             <div class="study-note" data-study-note="q78"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q78">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 78">
               
               <button class="choice" type="button" role="listitem" data-card-id="q78" data-choice="A" data-correct="D">
@@ -4501,6 +4845,10 @@ ischemia in the frontal lobe.</div>
             <div class="content question-text">Which of the following transducers would be preferred for a lower extremity DVT evaluation on an average sized patient?</div>
             
             <div class="study-note" data-study-note="q79"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q79">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 79">
               
               <button class="choice" type="button" role="listitem" data-card-id="q79" data-choice="A" data-correct="C">
@@ -4552,6 +4900,10 @@ Higher frequencies can be used for evaluation of the superficial system.</div>
             <div class="content question-text">You are performing a renal Doppler exam. What is the best patient position to visualize the full length of the left renal artery?</div>
             
             <div class="study-note" data-study-note="q80"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q80">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 80">
               
               <button class="choice" type="button" role="listitem" data-card-id="q80" data-choice="A" data-correct="A">
@@ -4603,6 +4955,10 @@ obtained when the patient is in the right lateral decubitus position when evalua
             <div class="content question-text">According to the findings on this arteriogram, which of the following would NOT be an expected symptom related to the findings?</div>
             
             <div class="study-note" data-study-note="q81"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q81">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 81">
               
               <button class="choice" type="button" role="listitem" data-card-id="q81" data-choice="A" data-correct="B">
@@ -4663,6 +5019,10 @@ D Dias L, Kulatunga A - BMC Res Notes (2012)</div>
             <div class="content question-text">D-dimer levels are most accurate for predicting:</div>
             
             <div class="study-note" data-study-note="q82"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q82">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 82">
               
               <button class="choice" type="button" role="listitem" data-card-id="q82" data-choice="A" data-correct="A">
@@ -4714,6 +5074,10 @@ DVT, cancer and other diseases. If DVT is suspected but the D-dimer levels are l
             <div class="content question-text">What will be included in your preliminary report for this patient?</div>
             
             <div class="study-note" data-study-note="q83"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q83">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 83">
               
               <button class="choice" type="button" role="listitem" data-card-id="q83" data-choice="A" data-correct="C">
@@ -4769,6 +5133,10 @@ right arm is 70/156mmHg = 0.45. Although there is a drop in pressure between the
             <div class="content question-text">Which of the questions listed below would provide pertinent history information for a lower extremity venous Doppler exam?</div>
             
             <div class="study-note" data-study-note="q84"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q84">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 84">
               
               <button class="choice" type="button" role="listitem" data-card-id="q84" data-choice="A" data-correct="C">
@@ -4823,6 +5191,10 @@ heel of the foot. Venous ulcers are found on the distal calves.</div>
             <div class="content question-text">Which of the following describes the table placement for performing an ultrasound exam?</div>
             
             <div class="study-note" data-study-note="q85"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q85">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 85">
               
               <button class="choice" type="button" role="listitem" data-card-id="q85" data-choice="A" data-correct="C">
@@ -4873,6 +5245,10 @@ heel of the foot. Venous ulcers are found on the distal calves.</div>
             <div class="content question-text">A patient presents for a venous Doppler evaluation of the left lower extremity. Thrombus is identified in the left leg. What should you include in the preliminary report?</div>
             
             <div class="study-note" data-study-note="q86"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q86">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 86">
               
               <button class="choice" type="button" role="listitem" data-card-id="q86" data-choice="A" data-correct="A">
@@ -4924,6 +5300,10 @@ augmentation will not be performed with patients with suspected DVT.</div>
             <div class="content question-text">A 75yr old female presents for a transcranial doppler evaluation for suspected basilar artery stenosis. She suffers from emphysema and cannot lie down for the exam. Which of the following describes how you can evaluate the basilar artery in this patient?</div>
             
             <div class="study-note" data-study-note="q87"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q87">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 87">
               
               <button class="choice" type="button" role="listitem" data-card-id="q87" data-choice="A" data-correct="A">
@@ -4977,6 +5357,10 @@ side of the foramen magnum</div>
             <div class="content question-text">A patient presents for a venous insufficiency exam. The exam demonstrates normal bilateral great and small saphenous veins. The deep system is not identified well in either leg. Both calves have multiple areas of small, clustered veins superficially. What should you review in the patient chart to explain these findings?</div>
             
             <div class="study-note" data-study-note="q88"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q88">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 88">
               
               <button class="choice" type="button" role="listitem" data-card-id="q88" data-choice="A" data-correct="B">
@@ -5029,6 +5413,10 @@ motion, usually related to TOS.</div>
             <div class="content question-text">If a patient has a history of 40% stenosis of the left internal carotid artery identified on a MRA exam. Which of the following Doppler velocities from the ICA will correlate well with the predicted level of stenosis?</div>
             
             <div class="study-note" data-study-note="q89"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q89">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 89">
               
               <button class="choice" type="button" role="listitem" data-card-id="q89" data-choice="A" data-correct="A">
@@ -5081,6 +5469,10 @@ ICAVL Criteria &lt;50% stenosis = PSV &lt;180cm/s, EDV &lt;40cm/s</div>
             <div class="content question-text">You complete a segmental pressure evaluation of an aorta-bifemoral arterial bypass graft and are reviewing the prior report. The prior exam demonstrates: Left ABI of 0.95 and the Right ABI of 0.90. The current exam demonstrates: Left ABI of 0.88 and Right ABI of 0.95. How would you report these findings?</div>
             
             <div class="study-note" data-study-note="q90"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q90">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 90">
               
               <button class="choice" type="button" role="listitem" data-card-id="q90" data-choice="A" data-correct="B">
@@ -5151,6 +5543,12 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     document.getElementById("close-all").addEventListener("click", () => {
       answerToggles.forEach((toggle) => setPanelState(toggle, false));
+    });
+
+    document.getElementById("clear-all-answers").addEventListener("click", () => {
+      Object.keys(studyState).forEach((key) => delete studyState[key]);
+      saveStudyState(studyState);
+      applyStudyState(studyState);
     });
 
     function normalizeState(rawState) {
@@ -5237,6 +5635,15 @@ Powered by ExamBuilder. Copyright ©2026</div>
           status: choice === correct ? "correct" : "incorrect",
           selectedChoice: choice,
         };
+        saveStudyState(studyState);
+        applyStudyState(studyState);
+      });
+    });
+
+    document.querySelectorAll("[data-clear-card]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const cardId = button.getAttribute("data-clear-card");
+        delete studyState[cardId];
         saveStudyState(studyState);
         applyStudyState(studyState);
       });

@@ -216,6 +216,31 @@
     .study-note.incorrect {
       color: var(--danger);
     }
+    .choice-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .clear-answer {
+      appearance: none;
+      border: 1px solid rgba(46, 110, 163, 0.12);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.55rem 0.8rem;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+    .clear-answer:hover {
+      transform: translateY(-1px);
+      border-color: rgba(239, 131, 84, 0.22);
+      color: var(--accent-dark);
+    }
     .choices {
       display: grid;
       gap: 0.9rem;
@@ -375,6 +400,12 @@
         justify-content: center;
         text-align: center;
       }
+      .choice-row {
+        align-items: stretch;
+      }
+      .clear-answer {
+        width: 100%;
+      }
       h1 {
         max-width: none;
       }
@@ -400,6 +431,7 @@
           <a href="../index.html">Back to index</a>
           <button type="button" id="open-all">Open all backs</button>
           <button type="button" id="close-all">Close all backs</button>
+          <button type="button" id="clear-all-answers">Clear saved answers</button>
         </div>
       </div>
     </section>
@@ -416,6 +448,10 @@
             <div class="content question-text">Which of the following is an abnormal flow change caused by congestive heart failure?</div>
             
             <div class="study-note" data-study-note="q1"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q1">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 1">
               
               <button class="choice" type="button" role="listitem" data-card-id="q1" data-choice="A" data-correct="D">
@@ -468,6 +504,10 @@ cardiac motion. This pulsatility increases with CHF.</div>
             <div class="content question-text">When evaluating a focal stenosis of the femoral artery, where should you place the cursor to obtain the highest velocity related to the stenosis?</div>
             
             <div class="study-note" data-study-note="q2"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q2">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 2">
               
               <button class="choice" type="button" role="listitem" data-card-id="q2" data-choice="A" data-correct="C">
@@ -520,6 +560,10 @@ cursor through the stenotic area and out the other side to locate the peak veloc
             <div class="content question-text">A patient complains of right leg pain and color changes in the leg. When he lies down, the right calf and foot become pale. When he stands up, the right calf and foot become reddened. The left leg is asymptomatic. These findings are most suggestive of:</div>
             
             <div class="study-note" data-study-note="q3"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q3">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 3">
               
               <button class="choice" type="button" role="listitem" data-card-id="q3" data-choice="A" data-correct="A">
@@ -572,6 +616,10 @@ knee = right popliteal stenosis is the most likely cause</div>
             <div class="content question-text">Why does blood move into smaller collateral vessels when a larger vessel is occluded?</div>
             
             <div class="study-note" data-study-note="q4"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q4">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 4">
               
               <button class="choice" type="button" role="listitem" data-card-id="q4" data-choice="A" data-correct="A">
@@ -625,6 +673,10 @@ resistance.</div>
             <div class="content question-text">You are performing a lower extremity arterial Doppler exam due to the increasing bilateral calf pain over the last few months. The images are taken from the proximal left and right external iliac arteries. These findings are most suggestive of:</div>
             
             <div class="study-note" data-study-note="q5"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q5">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 5">
               
               <button class="choice" type="button" role="listitem" data-card-id="q5" data-choice="A" data-correct="B">
@@ -678,6 +730,10 @@ an obstruction proximally in the aorta.</div>
             <div class="content question-text">Which of the following describes the abnormal response to papaverine injection during a penile impotence exam?</div>
             
             <div class="study-note" data-study-note="q6"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q6">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 6">
               
               <button class="choice" type="button" role="listitem" data-card-id="q6" data-choice="A" data-correct="C">
@@ -729,6 +785,10 @@ most common); normally the PSV and EDV will increase post injection but dorsal v
             <div class="content question-text">This patient would benefit the most from what type of exam?</div>
             
             <div class="study-note" data-study-note="q7"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q7">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 7">
               
               <button class="choice" type="button" role="listitem" data-card-id="q7" data-choice="A" data-correct="A">
@@ -783,6 +843,10 @@ occlusion and allow the surgeon to consider the best type of treatment (bypass o
             <div class="content question-text">What critical finding is associated with calf paresthesia, localized muscle weakness, pain when stretching calf muscles, and drop foot?</div>
             
             <div class="study-note" data-study-note="q8"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q8">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 8">
               
               <button class="choice" type="button" role="listitem" data-card-id="q8" data-choice="A" data-correct="C">
@@ -835,6 +899,10 @@ when stretching calf muscles, drop foot.</div>
             <div class="content question-text">A patient presents for a lower extremity arterial exam with mild bilateral leg pain. The 2D evaluation demonstrates minimal diffuse atherosclerosis bilaterally. The Doppler waveforms from the arteries of both legs demonstrate biphasic waveforms with increased acceleration time. Which of the following could explain these findings?</div>
             
             <div class="study-note" data-study-note="q9"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q9">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 9">
               
               <button class="choice" type="button" role="listitem" data-card-id="q9" data-choice="A" data-correct="B">
@@ -892,6 +960,10 @@ velocities.</div>
             <div class="content question-text">The common femoral artery velocity is 0.8 m/s and the proximal femoral artery demonstrates atherosclerosis formation causing an increase in the velocity to 3.2 m/s. This indicates what level of stenosis?</div>
             
             <div class="study-note" data-study-note="q10"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q10">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 10">
               
               <button class="choice" type="button" role="listitem" data-card-id="q10" data-choice="A" data-correct="C">
@@ -943,6 +1015,10 @@ between two extremity arterial segments quadruples, this indicates at least a 75
             <div class="content question-text">You receive an order for an upper extremity arterial exam to rule out Buerger disease. What is the preferred method of evaluation?</div>
             
             <div class="study-note" data-study-note="q11"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q11">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 11">
               
               <button class="choice" type="button" role="listitem" data-card-id="q11" data-choice="A" data-correct="A">
@@ -1001,6 +1077,10 @@ Original Video - https://youtu.be/UvkQ9zwmUBo?si=hieYZrJgdV6g9yg4</div>
             <div class="content question-text">What is the most common cardiac disorder associated with arterial embolism?</div>
             
             <div class="study-note" data-study-note="q12"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q12">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 12">
               
               <button class="choice" type="button" role="listitem" data-card-id="q12" data-choice="A" data-correct="D">
@@ -1053,6 +1133,10 @@ the right heart and the pulmonary arteries.</div>
             <div class="content question-text">Which of the following correctly describes thoracic outlet syndrome?</div>
             
             <div class="study-note" data-study-note="q13"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q13">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 13">
               
               <button class="choice" type="button" role="listitem" data-card-id="q13" data-choice="A" data-correct="A">
@@ -1106,6 +1190,10 @@ associated with hypothenar hammer syndrome.</div>
             <div class="content question-text">An abnormality in which of the following vessels could be the cause of vasculogenic impotence?</div>
             
             <div class="study-note" data-study-note="q14"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q14">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 14">
               
               <button class="choice" type="button" role="listitem" data-card-id="q14" data-choice="A" data-correct="B">
@@ -1160,6 +1248,10 @@ The gonadal arteries originate from the aorta and supply blood to the scrotum an
             <div class="content question-text">Which of the following has no effect on the severity of an arterial stenosis?</div>
             
             <div class="study-note" data-study-note="q15"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q15">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 15">
               
               <button class="choice" type="button" role="listitem" data-card-id="q15" data-choice="A" data-correct="D">
@@ -1210,6 +1302,10 @@ The gonadal arteries originate from the aorta and supply blood to the scrotum an
             <div class="content question-text">An AV malformation is most commonly caused by:</div>
             
             <div class="study-note" data-study-note="q16"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q16">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 16">
               
               <button class="choice" type="button" role="listitem" data-card-id="q16" data-choice="A" data-correct="C">
@@ -1260,6 +1356,10 @@ The gonadal arteries originate from the aorta and supply blood to the scrotum an
             <div class="content question-text">Paresthesia is defined as:</div>
             
             <div class="study-note" data-study-note="q17"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q17">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 17">
               
               <button class="choice" type="button" role="listitem" data-card-id="q17" data-choice="A" data-correct="A">
@@ -1311,6 +1411,10 @@ such as numbness or tingling.</div>
             <div class="content question-text">A 70% stenosis in the proximal femoral artery will cause the __________________ in the mid femoral artery.</div>
             
             <div class="study-note" data-study-note="q18"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q18">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 18">
               
               <button class="choice" type="button" role="listitem" data-card-id="q18" data-choice="A" data-correct="D">
@@ -1362,6 +1466,10 @@ times. Low resistance vessels and areas distal to a stenosis will demonstrate lo
             <div class="content question-text">The Scimitar sign is associated with:</div>
             
             <div class="study-note" data-study-note="q19"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q19">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 19">
               
               <button class="choice" type="button" role="listitem" data-card-id="q19" data-choice="A" data-correct="B">
@@ -1415,6 +1523,10 @@ like a scimitar (type of curved sword).</div>
             <div class="content question-text">Adventitial cysts:</div>
             
             <div class="study-note" data-study-note="q20"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q20">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 20">
               
               <button class="choice" type="button" role="listitem" data-card-id="q20" data-choice="A" data-correct="A">
@@ -1467,6 +1579,10 @@ are most common in young to middle-aged men. The can be treated by ultrasound gu
             <div class="content question-text">Patients with this risk factor have a greater incidence of atherosclerotic disease in walls of the vessels in the calf.</div>
             
             <div class="study-note" data-study-note="q21"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q21">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 21">
               
               <button class="choice" type="button" role="listitem" data-card-id="q21" data-choice="A" data-correct="A">
@@ -1518,6 +1634,10 @@ decreased flow.</div>
             <div class="content question-text">If there is a 75% stenosis of the distal axillary artery, which of the following arteries will demonstrate a triphasic waveform?</div>
             
             <div class="study-note" data-study-note="q22"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q22">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 22">
               
               <button class="choice" type="button" role="listitem" data-card-id="q22" data-choice="A" data-correct="A">
@@ -1569,6 +1689,10 @@ the waveforms will become monophasic. The subclavian artery is proximal to the s
             <div class="content question-text">Which of the following is used to determine the capability of healing a wound or identify a site for amputation?</div>
             
             <div class="study-note" data-study-note="q23"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q23">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 23">
               
               <button class="choice" type="button" role="listitem" data-card-id="q23" data-choice="A" data-correct="B">
@@ -1621,6 +1745,10 @@ hypoxia. The information is used to determine the healing ability of the wound.<
             <div class="content question-text">The profunda artery demonstrates a 75% stenosis. Which of the following arteries will demonstrate monophasic flow due to the stenosis?</div>
             
             <div class="study-note" data-study-note="q24"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q24">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 24">
               
               <button class="choice" type="button" role="listitem" data-card-id="q24" data-choice="A" data-correct="D">
@@ -1674,6 +1802,10 @@ resistance in the vessels of the lower leg.</div>
             <div class="content question-text">A velocity is recorded in the distal femoral artery of 2.75m/s, what hemodynamic changes will be seen in popliteal artery?</div>
             
             <div class="study-note" data-study-note="q25"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q25">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 25">
               
               <button class="choice" type="button" role="listitem" data-card-id="q25" data-choice="A" data-correct="D">
@@ -1725,6 +1857,10 @@ lower resistance flow.</div>
             <div class="content question-text">If a patient suffers from ischemic rest pain in the feet, what maneuver can relieve the pain?</div>
             
             <div class="study-note" data-study-note="q26"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q26">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 26">
               
               <button class="choice" type="button" role="listitem" data-card-id="q26" data-choice="A" data-correct="A">
@@ -1778,6 +1914,10 @@ symptoms.</div>
             <div class="content question-text">Which of the following measurements is used to differentiate inflow from outflow disease in the lower extremity arteries?</div>
             
             <div class="study-note" data-study-note="q27"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q27">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 27">
               
               <button class="choice" type="button" role="listitem" data-card-id="q27" data-choice="A" data-correct="B">
@@ -1833,6 +1973,10 @@ time from onset to peak.</div>
             <div class="content question-text">Jaw claudication, headaches and neck pain, and asymmetric brachial blood pressures are all symptoms related to:</div>
             
             <div class="study-note" data-study-note="q28"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q28">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 28">
               
               <button class="choice" type="button" role="listitem" data-card-id="q28" data-choice="A" data-correct="D">
@@ -1887,6 +2031,10 @@ syndrome is a connective tissue disorder associated with aortic dissection,</div
             <div class="content question-text">A patient presents with a history of right hip and thigh pain with numbness when he walks. The exercise time varies before the pain starts and it is relieved by sitting down. There are no symptoms in his lower leg. These findings are most suggestive of?</div>
             
             <div class="study-note" data-study-note="q29"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q29">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 29">
               
               <button class="choice" type="button" role="listitem" data-card-id="q29" data-choice="A" data-correct="D">
@@ -1940,6 +2088,10 @@ arterial disease are in the distal leg, while symptoms confined to the upper leg
             <div class="content question-text">Which of the following is considered a risk factor for peripheral arterial disease?</div>
             
             <div class="study-note" data-study-note="q30"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q30">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 30">
               
               <button class="choice" type="button" role="listitem" data-card-id="q30" data-choice="A" data-correct="A">
@@ -1992,6 +2144,10 @@ effect on the formation of arterial disease. A history of DVT does not affect th
             <div class="content question-text">A patient presents with leg pain 2 days after a coronary artery catheterization. All of the following are an important part of the physical evaluation of the patient, except:</div>
             
             <div class="study-note" data-study-note="q31"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q31">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 31">
               
               <button class="choice" type="button" role="listitem" data-card-id="q31" data-choice="A" data-correct="A">
@@ -2044,6 +2200,10 @@ of the new symptoms. Angiography procedures have a risk of related pseudoaneurys
             <div class="content question-text">Thromboangiitis obliterans involves inflammation of:</div>
             
             <div class="study-note" data-study-note="q32"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q32">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 32">
               
               <button class="choice" type="button" role="listitem" data-card-id="q32" data-choice="A" data-correct="C">
@@ -2095,6 +2255,10 @@ vessel walls and surrounding connective tissue. Buerger disease is a type of thr
             <div class="content question-text">If the acceleration time is &gt;140ms in both common femoral arteries:</div>
             
             <div class="study-note" data-study-note="q33"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q33">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 33">
               
               <button class="choice" type="button" role="listitem" data-card-id="q33" data-choice="A" data-correct="C">
@@ -2148,6 +2312,10 @@ indicates a distal obstruction.</div>
             <div class="content question-text">Patients with lower extremity arterial disease may describe pain</div>
             
             <div class="study-note" data-study-note="q34"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q34">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 34">
               
               <button class="choice" type="button" role="listitem" data-card-id="q34" data-choice="A" data-correct="C">
@@ -2199,6 +2367,10 @@ pain. Lying down would provide minimal relief due to the loss of gravity&#39;s a
             <div class="content question-text">The most common color change demonstrated in a lower extremity with an acute arterial occlusion is:</div>
             
             <div class="study-note" data-study-note="q35"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q35">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 35">
               
               <button class="choice" type="button" role="listitem" data-card-id="q35" data-choice="A" data-correct="B">
@@ -2256,6 +2428,10 @@ pain. Lying down would provide minimal relief due to the loss of gravity&#39;s a
             <div class="content question-text">A patient presents with groin pain 3 days after undergoing right femoral artery angioplasty. The image displayed is from the right groin in the area of pain. What should you report on your technologist worksheet?</div>
             
             <div class="study-note" data-study-note="q36"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q36">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 36">
               
               <button class="choice" type="button" role="listitem" data-card-id="q36" data-choice="A" data-correct="A">
@@ -2309,6 +2485,10 @@ visible. Posterior enhancement can also be noted due to the edema in the cortex.
             <div class="content question-text">If there is a left subclavian steal, which brachial artery evaluation will be abnormal?</div>
             
             <div class="study-note" data-study-note="q37"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q37">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 37">
               
               <button class="choice" type="button" role="listitem" data-card-id="q37" data-choice="A" data-correct="B">
@@ -2367,6 +2547,10 @@ which are abnormal for an extremity.</div>
             <div class="content question-text">Which of the following is the most likely cause for the waveform displayed?</div>
             
             <div class="study-note" data-study-note="q38"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q38">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 38">
               
               <button class="choice" type="button" role="listitem" data-card-id="q38" data-choice="A" data-correct="A">
@@ -2422,6 +2606,10 @@ extremity.</div>
             <div class="content question-text">Arterial claudication occurs:</div>
             
             <div class="study-note" data-study-note="q39"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q39">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 39">
               
               <button class="choice" type="button" role="listitem" data-card-id="q39" data-choice="A" data-correct="A">
@@ -2473,6 +2661,10 @@ receiving the necessary oxygen which causes cramping and pain.</div>
             <div class="content question-text">Which of the following patients would benefit from a Percutaneous Transluminal Angioplasty?</div>
             
             <div class="study-note" data-study-note="q40"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q40">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 40">
               
               <button class="choice" type="button" role="listitem" data-card-id="q40" data-choice="A" data-correct="C">
@@ -2526,6 +2718,10 @@ a fully occluded vessel.</div>
             <div class="content question-text">An AV fistula is present connecting the femoral artery and vein at the right groin. The Doppler evaluation of the common femoral artery will demonstrate what flow pattern?</div>
             
             <div class="study-note" data-study-note="q41"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q41">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 41">
               
               <button class="choice" type="button" role="listitem" data-card-id="q41" data-choice="A" data-correct="D">
@@ -2580,6 +2776,10 @@ artery proximal to the fistula.</div>
             <div class="content question-text">__________________ uses a balloon tipped catheter to compress the atheroma and expand the vessel lumen.</div>
             
             <div class="study-note" data-study-note="q42"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q42">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 42">
               
               <button class="choice" type="button" role="listitem" data-card-id="q42" data-choice="A" data-correct="C">
@@ -2635,6 +2835,10 @@ remove valves from inside a vein.</div>
             <div class="content question-text">If the tibioperoneal trunk is occluded, flow in which calf vessel(s) will demonstrate increased flow?</div>
             
             <div class="study-note" data-study-note="q43"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q43">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 43">
               
               <button class="choice" type="button" role="listitem" data-card-id="q43" data-choice="A" data-correct="A">
@@ -2689,6 +2893,10 @@ be redirected into the ATA. Compensatory flow will be directed to the ATA.</div>
             <div class="content question-text">What structure compresses the artery in popliteal entrapment?</div>
             
             <div class="study-note" data-study-note="q44"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q44">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 44">
               
               <button class="choice" type="button" role="listitem" data-card-id="q44" data-choice="A" data-correct="B">
@@ -2740,6 +2948,10 @@ runners and athletes and is the most common cause of unilateral claudication in 
             <div class="content question-text">Which of the following is the most common site for atherosclerosis formation in the lower extremity?</div>
             
             <div class="study-note" data-study-note="q45"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q45">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 45">
               
               <button class="choice" type="button" role="listitem" data-card-id="q45" data-choice="A" data-correct="B">
@@ -2790,6 +3002,10 @@ runners and athletes and is the most common cause of unilateral claudication in 
             <div class="content question-text">An acute occlusion occurs in the common iliac artery on the left side. Which of the following vessels will also have absent flow?</div>
             
             <div class="study-note" data-study-note="q46"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q46">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 46">
               
               <button class="choice" type="button" role="listitem" data-card-id="q46" data-choice="A" data-correct="D">
@@ -2843,6 +3059,10 @@ common femoral artery once it crosses beneath the inguinal artery.</div>
             <div class="content question-text">The images below are from a lower extremity arterial duplex examination. Review the information on the images and choose the waveform below that is most consistent with the expected waveform for the left popliteal artery. Image A Image B Image C Image D</div>
             
             <div class="study-note" data-study-note="q47"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q47">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 47">
               
               <button class="choice" type="button" role="listitem" data-card-id="q47" data-choice="A" data-correct="B">
@@ -2906,6 +3126,10 @@ normal, high resistance flow pattern because it is proximal to the area of steno
             <div class="content question-text">Which of the following waveforms is most consistent with flow related to a pseudoaneurysm in the groin area?</div>
             
             <div class="study-note" data-study-note="q48"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q48">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 48">
               
               <button class="choice" type="button" role="listitem" data-card-id="q48" data-choice="A" data-correct="A">
@@ -2961,6 +3185,10 @@ demonstrates early systolic deceleration. It is associated with proximal stenosi
             <div class="content question-text">Which of the following describes an AV malformation?</div>
             
             <div class="study-note" data-study-note="q49"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q49">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 49">
               
               <button class="choice" type="button" role="listitem" data-card-id="q49" data-choice="A" data-correct="D">
@@ -3016,6 +3244,10 @@ turbulent venous outflow. Thrombin cannot be used to treat an AVM or AVF because
             <div class="content question-text">A patient is referred for an arterial duplex exam for leg pain. The chart describes brown discoloration of the calves and prominent pedal pulses. Which of the following is an expected finding on today&#39;s exam?</div>
             
             <div class="study-note" data-study-note="q50"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q50">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 50">
               
               <button class="choice" type="button" role="listitem" data-card-id="q50" data-choice="A" data-correct="B">
@@ -3067,6 +3299,10 @@ tibial arteries. The patient will most likely demonstrate normal arterial flow.<
             <div class="content question-text">If significant disease is identified on the arterial duplex evaluation, but 4 minutes of exercise has little effect on the ankle pressures:</div>
             
             <div class="study-note" data-study-note="q51"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q51">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 51">
               
               <button class="choice" type="button" role="listitem" data-card-id="q51" data-choice="A" data-correct="A">
@@ -3117,6 +3353,10 @@ tibial arteries. The patient will most likely demonstrate normal arterial flow.<
             <div class="content question-text">A bilateral decrease in the femoral pulses can be related to:</div>
             
             <div class="study-note" data-study-note="q52"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q52">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 52">
               
               <button class="choice" type="button" role="listitem" data-card-id="q52" data-choice="A" data-correct="A">
@@ -3171,6 +3411,10 @@ legs will demonstrate significantly lower pressures and abnormal Doppler wavefor
             <div class="content question-text">Which of the following is the second most common site for atherosclerosis formation in the lower extremity?</div>
             
             <div class="study-note" data-study-note="q53"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q53">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 53">
               
               <button class="choice" type="button" role="listitem" data-card-id="q53" data-choice="A" data-correct="D">
@@ -3222,6 +3466,10 @@ second most common site of atherosclerosis formation in the legs.</div>
             <div class="content question-text">Which of the following are collagen disorders that have increased risk for arterial dissection?</div>
             
             <div class="study-note" data-study-note="q54"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q54">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 54">
               
               <button class="choice" type="button" role="listitem" data-card-id="q54" data-choice="A" data-correct="C">
@@ -3275,6 +3523,10 @@ is a collagen disorder that reduces flow to the hands/feet. Polycythemia vera is
             <div class="content question-text">Which of the following describes the correct protocol for evaluating suspected popliteal entrapment?</div>
             
             <div class="study-note" data-study-note="q55"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q55">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 55">
               
               <button class="choice" type="button" role="listitem" data-card-id="q55" data-choice="A" data-correct="B">
@@ -3328,6 +3580,10 @@ can also be used.</div>
             <div class="content question-text">If the distal femoral artery demonstrates a peak velocity of 3.2m/s, the waveform in the posterior tibial artery will most likely be _____________.</div>
             
             <div class="study-note" data-study-note="q56"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q56">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 56">
               
               <button class="choice" type="button" role="listitem" data-card-id="q56" data-choice="A" data-correct="A">
@@ -3379,6 +3635,10 @@ which would cause decreased resistance distally. The popliteal and calf arterial
             <div class="content question-text">Thrombolytic therapy is used to treat:</div>
             
             <div class="study-note" data-study-note="q57"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q57">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 57">
               
               <button class="choice" type="button" role="listitem" data-card-id="q57" data-choice="A" data-correct="C">
@@ -3430,6 +3690,10 @@ acute arterial obstruction by thrombus.</div>
             <div class="content question-text">Which of the following can lead to an increase in the frequency shift detected in the common femoral artery?</div>
             
             <div class="study-note" data-study-note="q58"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q58">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 58">
               
               <button class="choice" type="button" role="listitem" data-card-id="q58" data-choice="A" data-correct="D">
@@ -3482,6 +3746,10 @@ increase the detected frequency shift. Significant stenosis or occlusion of the 
             <div class="content question-text">Which of the following provides the greatest risk for peripheral arterial disease?</div>
             
             <div class="study-note" data-study-note="q59"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q59">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 59">
               
               <button class="choice" type="button" role="listitem" data-card-id="q59" data-choice="A" data-correct="C">
@@ -3534,6 +3802,10 @@ thrombus formation.</div>
             <div class="content question-text">A patient presents complaining of pain and discoloration in their hands when they are cold, as seen in the image. The expected characteristics of the digital PPG waveform in this patient after their hands have been submerged in 40 degree water for 1 minute would include:</div>
             
             <div class="study-note" data-study-note="q60"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q60">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 60">
               
               <button class="choice" type="button" role="listitem" data-card-id="q60" data-choice="A" data-correct="C">
@@ -3588,6 +3860,10 @@ becomes lower and lower in amplitude.</div>
             <div class="content question-text">A patient presents for a follow up exam on a lower extremity femoral- popliteal in-situ vein graft that was placed in the right leg 2 weeks ago. He is experiencing pain, pallor and paresthesia in the right foot. Which of the following is not an expected finding on the exam?</div>
             
             <div class="study-note" data-study-note="q61"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q61">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 61">
               
               <button class="choice" type="button" role="listitem" data-card-id="q61" data-choice="A" data-correct="C">
@@ -3639,6 +3915,10 @@ choices listed are all potential acute complications following graft placement.<
             <div class="content question-text">Secondary Raynaud phenomenon:</div>
             
             <div class="study-note" data-study-note="q62"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q62">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 62">
               
               <button class="choice" type="button" role="listitem" data-card-id="q62" data-choice="A" data-correct="C">
@@ -3690,6 +3970,10 @@ Secondary - ABNL obstructed system with vasoconstriction causes constant ischemi
             <div class="content question-text">While scanning a patient following a recent car accident you identify an arteriovenous connection in the left groin. How can you determine if this finding is related to the recent trauma or it is a congenital abnormality?</div>
             
             <div class="study-note" data-study-note="q63"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q63">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 63">
               
               <button class="choice" type="button" role="listitem" data-card-id="q63" data-choice="A" data-correct="B">
@@ -3744,6 +4028,10 @@ techniques used to evaluate the patient, but they will not differentiate a conge
             <div class="content question-text">When Thrombin is injected into a pseudoaneurysm, the needle puncture site should be:</div>
             
             <div class="study-note" data-study-note="q64"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q64">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 64">
               
               <button class="choice" type="button" role="listitem" data-card-id="q64" data-choice="A" data-correct="D">
@@ -3801,6 +4089,10 @@ confirm the absence of flow.</div>
             <div class="content question-text">Congestive heart failure is more commonly seen with ____________________, while distal ischemia is more commonly seen with _________________.</div>
             
             <div class="study-note" data-study-note="q65"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q65">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 65">
               
               <button class="choice" type="button" role="listitem" data-card-id="q65" data-choice="A" data-correct="C">
@@ -3852,6 +4144,10 @@ AVF.</div>
             <div class="content question-text">Which of the following treatments would not be recommended for chronic peripheral arterial disease?</div>
             
             <div class="study-note" data-study-note="q66"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q66">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 66">
               
               <button class="choice" type="button" role="listitem" data-card-id="q66" data-choice="A" data-correct="D">
@@ -3902,6 +4198,10 @@ AVF.</div>
             <div class="content question-text">A 30yr old male smoker is referred for an arterial evaluation for pain and pallor of both forearms and hands. The bilateral radial and ulnar arteries demonstrate diffuse, homogeneous intimal thickening and monophasic flow. The arterial lumen characteristics and flow in the upper arms and shoulders are normal. These findings are most consistent with:</div>
             
             <div class="study-note" data-study-note="q67"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q67">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 67">
               
               <button class="choice" type="button" role="listitem" data-card-id="q67" data-choice="A" data-correct="A">
@@ -3953,6 +4253,10 @@ who are heavy smokers. Takayasu Arteritis normally affects the aorta, subclavian
             <div class="content question-text">The groin images displayed are from a lower extremity vascular ultrasound. What is demonstrated on the images?</div>
             
             <div class="study-note" data-study-note="q68"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q68">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 68">
               
               <button class="choice" type="button" role="listitem" data-card-id="q68" data-choice="A" data-correct="A">
@@ -4008,6 +4312,10 @@ the leg.</div>
             <div class="content question-text">A patient complains of right leg pain and color changes in the leg. When he lies down, the entire right leg become pale. When he stands up, the entire right leg becomes reddened. The left leg is asymptomatic. These findings are most suggestive of:</div>
             
             <div class="study-note" data-study-note="q69"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q69">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 69">
               
               <button class="choice" type="button" role="listitem" data-card-id="q69" data-choice="A" data-correct="D">
@@ -4060,6 +4368,10 @@ iliac.</div>
             <div class="content question-text">Thoracic outlet syndrome occurs when the ________________ is compressed by the _______________.</div>
             
             <div class="study-note" data-study-note="q70"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q70">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 70">
               
               <button class="choice" type="button" role="listitem" data-card-id="q70" data-choice="A" data-correct="A">
@@ -4113,6 +4425,10 @@ nerves are also compressed with the lymph and blood vessels, numbness and tingli
             <div class="content question-text">A patient with aortic coarctation distal to the left subclavian artery origin will demonstrate:</div>
             
             <div class="study-note" data-study-note="q71"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q71">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 71">
               
               <button class="choice" type="button" role="listitem" data-card-id="q71" data-choice="A" data-correct="B">
@@ -4168,6 +4484,10 @@ pressure.</div>
             <div class="content question-text">Which of the following statements is true regarding the signs and symptoms of lower extremity arterial disease?</div>
             
             <div class="study-note" data-study-note="q72"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q72">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 72">
               
               <button class="choice" type="button" role="listitem" data-card-id="q72" data-choice="A" data-correct="D">
@@ -4222,6 +4542,10 @@ with peripheral arterial disease, the color will change if the legs are raised a
             <div class="content question-text">Which of the following abnormalities would be best evaluated by asking the patient to hyperextend the leg and point the toes?</div>
             
             <div class="study-note" data-study-note="q73"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q73">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 73">
               
               <button class="choice" type="button" role="listitem" data-card-id="q73" data-choice="A" data-correct="A">
@@ -4274,6 +4598,10 @@ maneuver.</div>
             <div class="content question-text">Which of the following describes a positive result from the Adson maneuver?</div>
             
             <div class="study-note" data-study-note="q74"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q74">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 74">
               
               <button class="choice" type="button" role="listitem" data-card-id="q74" data-choice="A" data-correct="A">
@@ -4325,6 +4653,10 @@ disappears completely during the maneuver, TOS is diagnosed.</div>
             <div class="content question-text">If chronic occlusion is suspected and the artery is not easily identifiable because of atrophy, what is the best way to locate the artery of interest?</div>
             
             <div class="study-note" data-study-note="q75"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q75">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 75">
               
               <button class="choice" type="button" role="listitem" data-card-id="q75" data-choice="A" data-correct="A">
@@ -4377,6 +4709,10 @@ its paired vein.</div>
             <div class="content question-text">A patient presents with a diminished pulse in the right radial artery and a normal pulse in the ulnar artery. These findings are most suggestive of:</div>
             
             <div class="study-note" data-study-note="q76"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q76">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 76">
               
               <button class="choice" type="button" role="listitem" data-card-id="q76" data-choice="A" data-correct="B">
@@ -4428,6 +4764,10 @@ choices would reduce flow to both forearm arteries.</div>
             <div class="content question-text">Which of the following arteries are evaluated during a penile duplex exam for erectile dysfunction?</div>
             
             <div class="study-note" data-study-note="q77"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q77">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 77">
               
               <button class="choice" type="button" role="listitem" data-card-id="q77" data-choice="A" data-correct="D">
@@ -4479,6 +4819,10 @@ and velocities are evaluated before and after an injection of vasoactive substan
             <div class="content question-text">What arteries are most commonly affected by Takayasu arteritis?</div>
             
             <div class="study-note" data-study-note="q78"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q78">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 78">
               
               <button class="choice" type="button" role="listitem" data-card-id="q78" data-choice="A" data-correct="C">
@@ -4533,6 +4877,10 @@ amaurosis fugax, hemiparesis, diplopia, vertigo and upper extremity claudication
             <div class="content question-text">What causes thoracic outlet syndrome?</div>
             
             <div class="study-note" data-study-note="q79"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q79">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 79">
               
               <button class="choice" type="button" role="listitem" data-card-id="q79" data-choice="A" data-correct="C">
@@ -4584,6 +4932,10 @@ ischemia and symptoms in the affected arm/hand. Changes in flow will be detected
             <div class="content question-text">Which of the following symptoms is the most commonly seen with peripheral arterial disease?</div>
             
             <div class="study-note" data-study-note="q80"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q80">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 80">
               
               <button class="choice" type="button" role="listitem" data-card-id="q80" data-choice="A" data-correct="C">
@@ -4637,6 +4989,10 @@ of exercise. EX: Calf cramping occur every time the patient walks for 5 minutes<
             <div class="content question-text">Which of the following describe a transcutaneous oximetry exam of the lower extremity?</div>
             
             <div class="study-note" data-study-note="q81"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q81">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 81">
               
               <button class="choice" type="button" role="listitem" data-card-id="q81" data-choice="A" data-correct="A">
@@ -4691,6 +5047,10 @@ thigh. Normal TcPO2 levels 70-80mmHg; &lt;40mmHg indicates tissue hypoxia</div>
             <div class="content question-text">Elevated erythrocyte sedimentation rate and C-reactive protein (CRP) levels are associated with which of the following?</div>
             
             <div class="study-note" data-study-note="q82"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q82">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 82">
               
               <button class="choice" type="button" role="listitem" data-card-id="q82" data-choice="A" data-correct="B">
@@ -4742,6 +5102,10 @@ inflammatory markers found on serum analysis.</div>
             <div class="content question-text">A patient presents with diminished pulses in the right radial and ulnar arteries. Which of the following could cause this symptom?</div>
             
             <div class="study-note" data-study-note="q83"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q83">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 83">
               
               <button class="choice" type="button" role="listitem" data-card-id="q83" data-choice="A" data-correct="B">
@@ -4794,6 +5158,10 @@ forearm arteries. This includes the brachial, axillary and subclavian arteries.<
             <div class="content question-text">Why would exposure to cold increase symptoms of lower extremity arterial stenosis?</div>
             
             <div class="study-note" data-study-note="q84"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q84">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 84">
               
               <button class="choice" type="button" role="listitem" data-card-id="q84" data-choice="A" data-correct="B">
@@ -4845,6 +5213,10 @@ further exacerbate symptoms of ischemia in the extremity.</div>
             <div class="content question-text">What complication of Angiography is identified on the image?</div>
             
             <div class="study-note" data-study-note="q85"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q85">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 85">
               
               <button class="choice" type="button" role="listitem" data-card-id="q85" data-choice="A" data-correct="C">
@@ -4898,6 +5270,10 @@ femoral artery and vein. The femoral vein demonstrates partial intraluminal thro
             <div class="content question-text">The common femoral artery velocity is 0.8 m/s and the proximal femoral artery demonstrates atherosclerosis formation causing an increase in the velocity to 2.2 m/s. This indicates what level of stenosis?</div>
             
             <div class="study-note" data-study-note="q86"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q86">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 86">
               
               <button class="choice" type="button" role="listitem" data-card-id="q86" data-choice="A" data-correct="B">
@@ -4949,6 +5325,10 @@ between two extremity arterial segments quadruples, this indicates at least a 75
             <div class="content question-text">A patient presents with groin pain three days after percutaneous balloon angioplasty of the distal right femoral artery. The image on the left is from the common femoral artery and the image on the right is from the proximal femoral artery. Which of the following explains the findings on the exam?</div>
             
             <div class="study-note" data-study-note="q87"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q87">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 87">
               
               <button class="choice" type="button" role="listitem" data-card-id="q87" data-choice="A" data-correct="B">
@@ -5005,6 +5385,10 @@ at the site of the fistula and flow returns to normal more distally.</div>
             <div class="content question-text">__________________ uses a catheter with a rotating head to break up the plaque and suction capabilities to remove it from the artery.</div>
             
             <div class="study-note" data-study-note="q88"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q88">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 88">
               
               <button class="choice" type="button" role="listitem" data-card-id="q88" data-choice="A" data-correct="B">
@@ -5060,6 +5444,10 @@ remove valves from inside a vein.</div>
             <div class="content question-text">If there is an acute occlusion of the proximal femoral artery, what will the Doppler waveform look like in the mid femoral artery?</div>
             
             <div class="study-note" data-study-note="q89"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q89">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 89">
               
               <button class="choice" type="button" role="listitem" data-card-id="q89" data-choice="A" data-correct="D">
@@ -5111,6 +5499,10 @@ form.</div>
             <div class="content question-text">Which of the following conditions would be treated with streptokinase?</div>
             
             <div class="study-note" data-study-note="q90"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q90">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 90">
               
               <button class="choice" type="button" role="listitem" data-card-id="q90" data-choice="A" data-correct="C">
@@ -5162,6 +5554,10 @@ drug outweigh the risk of embolism in phlegmasia because it is a critical findin
             <div class="content question-text">Which of the following correctly describes compartment syndrome?</div>
             
             <div class="study-note" data-study-note="q91"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q91">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 91">
               
               <button class="choice" type="button" role="listitem" data-card-id="q91" data-choice="A" data-correct="B">
@@ -5215,6 +5611,10 @@ nerve damage.</div>
             <div class="content question-text">Which of the following is associated with CREST syndrome?</div>
             
             <div class="study-note" data-study-note="q92"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q92">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 92">
               
               <button class="choice" type="button" role="listitem" data-card-id="q92" data-choice="A" data-correct="B">
@@ -5267,6 +5667,10 @@ phenomenon, esophageal dysfunction, scleroderma, and telangiectasia.</div>
             <div class="content question-text">Which of the following is an expected finding with a positive evaluation for thoracic outlet syndrome?</div>
             
             <div class="study-note" data-study-note="q93"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q93">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 93">
               
               <button class="choice" type="button" role="listitem" data-card-id="q93" data-choice="A" data-correct="D">
@@ -5319,6 +5723,10 @@ the digits will be low amplitude with arm adduction. The systemic BP will also d
             <div class="content question-text">__________________________________ refers to a collection of mucinous material within the adventitial wall layer of the affected vessel</div>
             
             <div class="study-note" data-study-note="q94"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q94">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 94">
               
               <button class="choice" type="button" role="listitem" data-card-id="q94" data-choice="A" data-correct="A">
@@ -5375,6 +5783,10 @@ compression of the artery is described as creating the appearance of a Scimitar 
             <div class="content question-text">A 30yr old male patient presents with persistent right calf pain with exercise. The image displayed is from the right popliteal artery with the foot in the neutral and flexed position. These findings are most suggestive of:</div>
             
             <div class="study-note" data-study-note="q95"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q95">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 95">
               
               <button class="choice" type="button" role="listitem" data-card-id="q95" data-choice="A" data-correct="A">
@@ -5428,6 +5840,10 @@ disappears completely with flexion of the foot/calf muscle contraction.</div>
             <div class="content question-text">What is the normal value for a transcutaneous oximetry exam?</div>
             
             <div class="study-note" data-study-note="q96"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q96">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 96">
               
               <button class="choice" type="button" role="listitem" data-card-id="q96" data-choice="A" data-correct="B">
@@ -5480,6 +5896,10 @@ evaluate the wound itself, only the surrounding tissues; Normal TcPO2 levels 70-
             <div class="content question-text">If an abnormal transcutaneous oximetry reading is obtained, what should you do next?</div>
             
             <div class="study-note" data-study-note="q97"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q97">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 97">
               
               <button class="choice" type="button" role="listitem" data-card-id="q97" data-choice="A" data-correct="B">
@@ -5532,6 +5952,10 @@ be moved proximally. Keep moving the sensor proximally until a normal reading is
             <div class="content question-text">Which of the following correctly describes Buerger disease?</div>
             
             <div class="study-note" data-study-note="q98"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q98">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 98">
               
               <button class="choice" type="button" role="listitem" data-card-id="q98" data-choice="A" data-correct="B">
@@ -5589,6 +6013,10 @@ Evaluation can be performed by Duplex and PPG techniques.</div>
             <div class="content question-text">At the start of an arterial Duplex exam you identify monophasic flow in the left common femoral artery. What should you evaluate next to explain these findings?</div>
             
             <div class="study-note" data-study-note="q99"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q99">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 99">
               
               <button class="choice" type="button" role="listitem" data-card-id="q99" data-choice="A" data-correct="D">
@@ -5640,6 +6068,10 @@ evaluate the vessels proximal to the CFA for stenosis.</div>
             <div class="content question-text">What is the most common indication for an upper extremity arterial Duplex exam?</div>
             
             <div class="study-note" data-study-note="q100"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q100">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 100">
               
               <button class="choice" type="button" role="listitem" data-card-id="q100" data-choice="A" data-correct="B">
@@ -5692,6 +6124,10 @@ Atherosclerosis formation is uncommon in the upper extremities.</div>
             <div class="content question-text">Which of the following is an expected finding with Hypothenar Hammer Syndrome?</div>
             
             <div class="study-note" data-study-note="q101"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q101">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 101">
               
               <button class="choice" type="button" role="listitem" data-card-id="q101" data-choice="A" data-correct="D">
@@ -5747,6 +6183,10 @@ Ultrasound may also demonstrate irregular contour or aneurysm of the ulnar arter
             <div class="content question-text">This patient has the greatest risk of what complication?</div>
             
             <div class="study-note" data-study-note="q102"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q102">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 102">
               
               <button class="choice" type="button" role="listitem" data-card-id="q102" data-choice="A" data-correct="D">
@@ -5800,6 +6240,10 @@ the vessel diameter exceeds 1cm.</div>
             <div class="content question-text">Hypothenar hammer syndrome and thoracic outlet syndrome are what type of vascular disorder?</div>
             
             <div class="study-note" data-study-note="q103"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q103">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 103">
               
               <button class="choice" type="button" role="listitem" data-card-id="q103" data-choice="A" data-correct="A">
@@ -5885,6 +6329,10 @@ stenosis proximal to the location where the waveform was obtained.</div>
             <div class="content question-text">A 72yr old female presents for an upper extremity arterial Doppler exam due to asymmetric brachial pressures. The right axillary artery demonstrates a circumferential halo of thickened vessel wall tissue and increased wall vascularity. These findings are most consistent with:</div>
             
             <div class="study-note" data-study-note="q105"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q105">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 105">
               
               <button class="choice" type="button" role="listitem" data-card-id="q105" data-choice="A" data-correct="C">
@@ -5943,6 +6391,10 @@ smokers.</div>
             <div class="content question-text">If the external iliac artery is occluded, what vessels provide the potential for collateral flow to the extremity?</div>
             
             <div class="study-note" data-study-note="q106"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q106">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 106">
               
               <button class="choice" type="button" role="listitem" data-card-id="q106" data-choice="A" data-correct="C">
@@ -5994,6 +6446,10 @@ muscles/skin. They also provide potential for collateralization with obstruction
             <div class="content question-text">Which of the following vessels are evaluated in a Doppler evaluation for erectile dysfunction?</div>
             
             <div class="study-note" data-study-note="q107"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q107">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 107">
               
               <button class="choice" type="button" role="listitem" data-card-id="q107" data-choice="A" data-correct="B">
@@ -6046,6 +6502,10 @@ but dorsal venous flow will remain unchanged; PSV &gt;30cm/s considered normal</
             <div class="content question-text">The displayed abnormality is most consistent with:</div>
             
             <div class="study-note" data-study-note="q108"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q108">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 108">
               
               <button class="choice" type="button" role="listitem" data-card-id="q108" data-choice="A" data-correct="B">
@@ -6119,6 +6579,12 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     document.getElementById("close-all").addEventListener("click", () => {
       answerToggles.forEach((toggle) => setPanelState(toggle, false));
+    });
+
+    document.getElementById("clear-all-answers").addEventListener("click", () => {
+      Object.keys(studyState).forEach((key) => delete studyState[key]);
+      saveStudyState(studyState);
+      applyStudyState(studyState);
     });
 
     function normalizeState(rawState) {
@@ -6205,6 +6671,15 @@ Powered by ExamBuilder. Copyright ©2026</div>
           status: choice === correct ? "correct" : "incorrect",
           selectedChoice: choice,
         };
+        saveStudyState(studyState);
+        applyStudyState(studyState);
+      });
+    });
+
+    document.querySelectorAll("[data-clear-card]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const cardId = button.getAttribute("data-clear-card");
+        delete studyState[cardId];
         saveStudyState(studyState);
         applyStudyState(studyState);
       });

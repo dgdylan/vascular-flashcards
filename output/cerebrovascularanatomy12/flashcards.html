@@ -216,6 +216,31 @@
     .study-note.incorrect {
       color: var(--danger);
     }
+    .choice-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .clear-answer {
+      appearance: none;
+      border: 1px solid rgba(46, 110, 163, 0.12);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.55rem 0.8rem;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+    .clear-answer:hover {
+      transform: translateY(-1px);
+      border-color: rgba(239, 131, 84, 0.22);
+      color: var(--accent-dark);
+    }
     .choices {
       display: grid;
       gap: 0.9rem;
@@ -375,6 +400,12 @@
         justify-content: center;
         text-align: center;
       }
+      .choice-row {
+        align-items: stretch;
+      }
+      .clear-answer {
+        width: 100%;
+      }
       h1 {
         max-width: none;
       }
@@ -400,6 +431,7 @@
           <a href="../index.html">Back to index</a>
           <button type="button" id="open-all">Open all backs</button>
           <button type="button" id="close-all">Close all backs</button>
+          <button type="button" id="clear-all-answers">Clear saved answers</button>
         </div>
       </div>
     </section>
@@ -416,6 +448,10 @@
             <div class="content question-text">Which of the following anatomic variants of ICA anatomy is most often associated with symptoms of cerebral ischemia?</div>
             
             <div class="study-note" data-study-note="q1"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q1">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 1">
               
               <button class="choice" type="button" role="listitem" data-card-id="q1" data-choice="A" data-correct="C">
@@ -469,6 +505,10 @@ Tortuosity - vessel forms an S-shaped curve</div>
             <div class="content question-text">Which of the following is not normally a branch of the ophthalmic artery?</div>
             
             <div class="study-note" data-study-note="q2"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q2">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 2">
               
               <button class="choice" type="button" role="listitem" data-card-id="q2" data-choice="A" data-correct="D">
@@ -519,6 +559,10 @@ Tortuosity - vessel forms an S-shaped curve</div>
             <div class="content question-text">What are the standard windows used for a complete transcranial Doppler exam?</div>
             
             <div class="study-note" data-study-note="q3"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q3">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 3">
               
               <button class="choice" type="button" role="listitem" data-card-id="q3" data-choice="A" data-correct="A">
@@ -571,6 +615,10 @@ ophthalmic artery).</div>
             <div class="content question-text">The highest velocity in the normal common carotid artery is usually identified:</div>
             
             <div class="study-note" data-study-note="q4"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q4">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 4">
               
               <button class="choice" type="button" role="listitem" data-card-id="q4" data-choice="A" data-correct="C">
@@ -622,6 +670,10 @@ proximal artery.</div>
             <div class="content question-text">The image provided was taken during a routine carotid examination. Which of the following statements is true regarding the images?</div>
             
             <div class="study-note" data-study-note="q5"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q5">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 5">
               
               <button class="choice" type="button" role="listitem" data-card-id="q5" data-choice="A" data-correct="D">
@@ -675,6 +727,10 @@ course through the pedicles of the vertebra and this vessel is demonstrated ante
             <div class="content question-text">Using the transtemporal window, the normal middle cerebral artery ______________________.</div>
             
             <div class="study-note" data-study-note="q6"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q6">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 6">
               
               <button class="choice" type="button" role="listitem" data-card-id="q6" data-choice="A" data-correct="A">
@@ -726,6 +782,10 @@ intracranial vessels are so small, no spectral window is demonstrated on the wav
             <div class="content question-text">Which of the following structures is supplied by branches of the internal carotid artery?</div>
             
             <div class="study-note" data-study-note="q7"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q7">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 7">
               
               <button class="choice" type="button" role="listitem" data-card-id="q7" data-choice="A" data-correct="D">
@@ -776,6 +836,10 @@ intracranial vessels are so small, no spectral window is demonstrated on the wav
             <div class="content question-text">When scanning the internal carotid, which way would you angle your probe to locate the external carotid artery in most patients?</div>
             
             <div class="study-note" data-study-note="q8"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q8">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 8">
               
               <button class="choice" type="button" role="listitem" data-card-id="q8" data-choice="A" data-correct="C">
@@ -827,6 +891,10 @@ most patients</div>
             <div class="content question-text">What is demonstrated on the image?</div>
             
             <div class="study-note" data-study-note="q9"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q9">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 9">
               
               <button class="choice" type="button" role="listitem" data-card-id="q9" data-choice="A" data-correct="C">
@@ -882,6 +950,10 @@ transducer. Red color is most commonly used to demonstrate antegrade flow and bl
             <div class="content question-text">Which artery supplies the brainstem with arterial blood?</div>
             
             <div class="study-note" data-study-note="q10"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q10">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 10">
               
               <button class="choice" type="button" role="listitem" data-card-id="q10" data-choice="A" data-correct="B">
@@ -932,6 +1004,10 @@ transducer. Red color is most commonly used to demonstrate antegrade flow and bl
             <div class="content question-text">In the Circle of Willis there is/are:</div>
             
             <div class="study-note" data-study-note="q11"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q11">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 11">
               
               <button class="choice" type="button" role="listitem" data-card-id="q11" data-choice="A" data-correct="C">
@@ -984,6 +1060,10 @@ transducer. Red color is most commonly used to demonstrate antegrade flow and bl
             <div class="content question-text">Which of the following describes the probe placement for a Doppler evaluation of the frontal artery?</div>
             
             <div class="study-note" data-study-note="q12"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q12">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 12">
               
               <button class="choice" type="button" role="listitem" data-card-id="q12" data-choice="A" data-correct="A">
@@ -1035,6 +1115,10 @@ is placed near the inner canthus of the eye. Normal flow direction will be towar
             <div class="content question-text">Letter B indicates which of the following structures?</div>
             
             <div class="study-note" data-study-note="q13"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q13">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 13">
               
               <button class="choice" type="button" role="listitem" data-card-id="q13" data-choice="A" data-correct="C">
@@ -1090,6 +1174,10 @@ D. Right CCA</div>
             <div class="content question-text">Which of the following statements is true regarding the vertebral arteries?</div>
             
             <div class="study-note" data-study-note="q14"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q14">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 14">
               
               <button class="choice" type="button" role="listitem" data-card-id="q14" data-choice="A" data-correct="A">
@@ -1142,6 +1230,10 @@ resistance, monophasic waveform.</div>
             <div class="content question-text">Letter C indicates which of the following structures?</div>
             
             <div class="study-note" data-study-note="q15"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q15">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 15">
               
               <button class="choice" type="button" role="listitem" data-card-id="q15" data-choice="A" data-correct="A">
@@ -1197,6 +1289,10 @@ D. Right CCA</div>
             <div class="content question-text">Which of the following Doppler imaging characteristics will not assist when trying to identify a vessel on a TCD exam?</div>
             
             <div class="study-note" data-study-note="q16"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q16">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 16">
               
               <button class="choice" type="button" role="listitem" data-card-id="q16" data-choice="A" data-correct="B">
@@ -1249,6 +1345,10 @@ affect the amount of flow sampled and is not useful for determining the vessel b
             <div class="content question-text">Which of the following arteries will be compressed when evaluating frontal artery flow for a periorbital Doppler exam?</div>
             
             <div class="study-note" data-study-note="q17"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q17">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 17">
               
               <button class="choice" type="button" role="listitem" data-card-id="q17" data-choice="A" data-correct="C">
@@ -1303,6 +1403,10 @@ artery, the compressed vessel is being used as a collateral to fill the frontal 
             <div class="content question-text">Which of the following arteries is supplied with blood from the ECA?</div>
             
             <div class="study-note" data-study-note="q18"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q18">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 18">
               
               <button class="choice" type="button" role="listitem" data-card-id="q18" data-choice="A" data-correct="A">
@@ -1353,6 +1457,10 @@ artery, the compressed vessel is being used as a collateral to fill the frontal 
             <div class="content question-text">When evaluating the carotid siphon from the submandibular window, the sample depth should be set to value between:</div>
             
             <div class="study-note" data-study-note="q19"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q19">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 19">
               
               <button class="choice" type="button" role="listitem" data-card-id="q19" data-choice="A" data-correct="C">
@@ -1405,6 +1513,10 @@ artery, the compressed vessel is being used as a collateral to fill the frontal 
             <div class="content question-text">Branches of the ___________________ connect to branches of the vertebral arteries to allow collateral flow from the anterior circulation to the posterior circulation.</div>
             
             <div class="study-note" data-study-note="q20"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q20">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 20">
               
               <button class="choice" type="button" role="listitem" data-card-id="q20" data-choice="A" data-correct="D">
@@ -1461,6 +1573,10 @@ The subclavian artery is in the upper chest.</div>
             <div class="content question-text">Which of the following describes a cardiovascular application of the Bernoulli Principle?</div>
             
             <div class="study-note" data-study-note="q21"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q21">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 21">
               
               <button class="choice" type="button" role="listitem" data-card-id="q21" data-choice="A" data-correct="C">
@@ -1511,6 +1627,10 @@ The subclavian artery is in the upper chest.</div>
             <div class="content question-text">The blue arrow indicates which of the following structures?</div>
             
             <div class="study-note" data-study-note="q22"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q22">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 22">
               
               <button class="choice" type="button" role="listitem" data-card-id="q22" data-choice="A" data-correct="D">
@@ -1564,6 +1684,10 @@ location. The smaller, more medial vessel demonstrates the branch coursing infer
             <div class="content question-text">Which of the following is a potential collateral pathway for extracranial to intracranial blood flow?</div>
             
             <div class="study-note" data-study-note="q23"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q23">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 23">
               
               <button class="choice" type="button" role="listitem" data-card-id="q23" data-choice="A" data-correct="D">
@@ -1621,6 +1745,10 @@ of Willis that is obstructed in an area.</div>
             <div class="content question-text">Which of the following describes the proper technique for evaluating the MCA through the temporal window using TCD?</div>
             
             <div class="study-note" data-study-note="q24"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q24">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 24">
               
               <button class="choice" type="button" role="listitem" data-card-id="q24" data-choice="A" data-correct="C">
@@ -1674,6 +1802,10 @@ should be identified at an average depth of 50mm. Slight anterior angulation may
             <div class="content question-text">During a TCD exam the depth is set to 100mm while using the suboccipital window. What vessel will be interrogated and what direction will the flow be moving?</div>
             
             <div class="study-note" data-study-note="q25"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q25">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 25">
               
               <button class="choice" type="button" role="listitem" data-card-id="q25" data-choice="A" data-correct="D">
@@ -1726,6 +1858,10 @@ Both vessels will normally exhibit flow moving away from the transducer and towa
             <div class="content question-text">Which statement below is true regarding the normal CCA Doppler tracing?</div>
             
             <div class="study-note" data-study-note="q26"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q26">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 26">
               
               <button class="choice" type="button" role="listitem" data-card-id="q26" data-choice="A" data-correct="A">
@@ -1781,6 +1917,10 @@ above the baseline.</div>
             <div class="content question-text">The most common normal variant in the external/internal carotid artery anatomy is:</div>
             
             <div class="study-note" data-study-note="q27"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q27">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 27">
               
               <button class="choice" type="button" role="listitem" data-card-id="q27" data-choice="A" data-correct="D">
@@ -1832,6 +1972,10 @@ most common being the ECA lies posterior and lateral to the ICA</div>
             <div class="content question-text">The Doppler tracing is most consistent with a tracing obtained from which normal extracranial vessel?</div>
             
             <div class="study-note" data-study-note="q28"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q28">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 28">
               
               <button class="choice" type="button" role="listitem" data-card-id="q28" data-choice="A" data-correct="A">
@@ -1884,6 +2028,10 @@ of the vessel. The ECA and CCA waveforms are higher resistance with a sharper up
             <div class="content question-text">Which of the following vessels is evaluated using the submandibular TCD window?</div>
             
             <div class="study-note" data-study-note="q29"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q29">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 29">
               
               <button class="choice" type="button" role="listitem" data-card-id="q29" data-choice="A" data-correct="A">
@@ -1934,6 +2082,10 @@ of the vessel. The ECA and CCA waveforms are higher resistance with a sharper up
             <div class="content question-text">Which of the following normally demonstrates a higher resistance Doppler flow profile?</div>
             
             <div class="study-note" data-study-note="q30"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q30">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 30">
               
               <button class="choice" type="button" role="listitem" data-card-id="q30" data-choice="A" data-correct="A">
@@ -1988,6 +2140,10 @@ muscles and tissue, therefore the flow demonstrates a higher resistance waveform
             <div class="content question-text">The most common congenital anomaly of the Circle of Willis is:</div>
             
             <div class="study-note" data-study-note="q31"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q31">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 31">
               
               <button class="choice" type="button" role="listitem" data-card-id="q31" data-choice="A" data-correct="A">
@@ -2038,6 +2194,10 @@ muscles and tissue, therefore the flow demonstrates a higher resistance waveform
             <div class="content question-text">Which of the following vessels is most commonly assessed for the presence of a bruit?</div>
             
             <div class="study-note" data-study-note="q32"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q32">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 32">
               
               <button class="choice" type="button" role="listitem" data-card-id="q32" data-choice="A" data-correct="A">
@@ -2089,6 +2249,10 @@ stenosis. Tortuosity, vessel kinking and elevated blood pressure can be normal c
             <div class="content question-text">The posterior communicating artery connects the:</div>
             
             <div class="study-note" data-study-note="q33"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q33">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 33">
               
               <button class="choice" type="button" role="listitem" data-card-id="q33" data-choice="A" data-correct="D">
@@ -2142,6 +2306,10 @@ The ACA and MCA are part of the anterior circulation. The PCA and basilar/verteb
             <div class="content question-text">The supraorbital artery originates from the ophthalmic artery and joins what branch of the ECA?</div>
             
             <div class="study-note" data-study-note="q34"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q34">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 34">
               
               <button class="choice" type="button" role="listitem" data-card-id="q34" data-choice="A" data-correct="A">
@@ -2195,6 +2363,10 @@ arrangement allows for collateral flow to occur on the same side of the body if 
             <div class="content question-text">Which of the following originates first from the ascending aorta?</div>
             
             <div class="study-note" data-study-note="q35"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q35">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 35">
               
               <button class="choice" type="button" role="listitem" data-card-id="q35" data-choice="A" data-correct="C">
@@ -2248,6 +2420,10 @@ above the aortic valve in the heart.</div>
             <div class="content question-text">What artery courses cephalad on the anterior right side of the trachea to bifurcate at the level of the sternoclavicular joint?</div>
             
             <div class="study-note" data-study-note="q36"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q36">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 36">
               
               <button class="choice" type="button" role="listitem" data-card-id="q36" data-choice="A" data-correct="C">
@@ -2300,6 +2476,10 @@ arteries.</div>
             <div class="content question-text">The ECA is normally ______________ to the ICA.</div>
             
             <div class="study-note" data-study-note="q37"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q37">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 37">
               
               <button class="choice" type="button" role="listitem" data-card-id="q37" data-choice="A" data-correct="C">
@@ -2351,6 +2531,10 @@ usually courses posteriorly and laterally to enter the skull and feed the cerebr
             <div class="content question-text">Which of the following is the best patient position for performing a transcranial Doppler exam to obtain a waveform from the basilar artery?</div>
             
             <div class="study-note" data-study-note="q38"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q38">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 38">
               
               <button class="choice" type="button" role="listitem" data-card-id="q38" data-choice="A" data-correct="C">
@@ -2402,6 +2586,10 @@ position for the exam. Placing the hand under the head will also help to raise i
             <div class="content question-text">Which transcranial window is most commonly used to evaluate the carotid siphon and the ophthalmic artery?</div>
             
             <div class="study-note" data-study-note="q39"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q39">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 39">
               
               <button class="choice" type="button" role="listitem" data-card-id="q39" data-choice="A" data-correct="D">
@@ -2455,6 +2643,10 @@ evaluated on this view, the supplemental submandibular approach may be used.</di
             <div class="content question-text">The _______________________ is described as the segment of the vessel located between the distal ICA and the origin of the anterior communicating artery.</div>
             
             <div class="study-note" data-study-note="q40"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q40">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 40">
               
               <button class="choice" type="button" role="listitem" data-card-id="q40" data-choice="A" data-correct="C">
@@ -2508,6 +2700,10 @@ distal to the origin of the anterior communicator artery.</div>
             <div class="content question-text">Which of the following is an expected characteristic of a normal ICA?</div>
             
             <div class="study-note" data-study-note="q41"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q41">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 41">
               
               <button class="choice" type="button" role="listitem" data-card-id="q41" data-choice="A" data-correct="B">
@@ -2561,6 +2757,10 @@ normally demonstrate a low resistance waveform, while the ECA demonstrates a hig
             <div class="content question-text">Which of the following describes the proper technique for evaluating the ACA through the temporal window?</div>
             
             <div class="study-note" data-study-note="q42"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q42">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 42">
               
               <button class="choice" type="button" role="listitem" data-card-id="q42" data-choice="A" data-correct="B">
@@ -2613,6 +2813,10 @@ normally demonstrate a low resistance waveform, while the ECA demonstrates a hig
             <div class="content question-text">What is occurring on the Doppler tracing where the arrows are pointing?</div>
             
             <div class="study-note" data-study-note="q43"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q43">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 43">
               
               <button class="choice" type="button" role="listitem" data-card-id="q43" data-choice="A" data-correct="C">
@@ -2668,6 +2872,10 @@ maneuver. This technique is used to differentiate the ECA from the ICA.</div>
             <div class="content question-text">The carotid siphon:</div>
             
             <div class="study-note" data-study-note="q44"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q44">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 44">
               
               <button class="choice" type="button" role="listitem" data-card-id="q44" data-choice="A" data-correct="C">
@@ -2721,6 +2929,10 @@ artery branches from the carotid siphon.</div>
             <div class="content question-text">At what level in the neck does the common carotid artery normally bifurcate?</div>
             
             <div class="study-note" data-study-note="q45"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q45">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 45">
               
               <button class="choice" type="button" role="listitem" data-card-id="q45" data-choice="A" data-correct="A">
@@ -2771,6 +2983,10 @@ artery branches from the carotid siphon.</div>
             <div class="content question-text">The internal carotid artery terminates into which two branches of the Circle of Willis?</div>
             
             <div class="study-note" data-study-note="q46"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q46">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 46">
               
               <button class="choice" type="button" role="listitem" data-card-id="q46" data-choice="A" data-correct="A">
@@ -2824,6 +3040,10 @@ terminate at the origination of the MCA and ACA. The PCA is a branch of the basi
             <div class="content question-text">Which of the following is supplied with arterial blood through branches of the ECA?</div>
             
             <div class="study-note" data-study-note="q47"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q47">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 47">
               
               <button class="choice" type="button" role="listitem" data-card-id="q47" data-choice="A" data-correct="A">
@@ -2875,6 +3095,10 @@ the ICA. The cerebellum and brain stem are supplied by the posterior circulation
             <div class="content question-text">Which of the following is a direct branch of the aortic arch?</div>
             
             <div class="study-note" data-study-note="q48"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q48">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 48">
               
               <button class="choice" type="button" role="listitem" data-card-id="q48" data-choice="A" data-correct="D">
@@ -2927,6 +3151,10 @@ the ICA. The cerebellum and brain stem are supplied by the posterior circulation
             <div class="content question-text">Which branch of the Circle of Willis supplies the corpus callosum and the cavum septum pellucidum with arterial blood?</div>
             
             <div class="study-note" data-study-note="q49"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q49">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 49">
               
               <button class="choice" type="button" role="listitem" data-card-id="q49" data-choice="A" data-correct="A">
@@ -2978,6 +3206,10 @@ fed by the anterior cerebral artery.</div>
             <div class="content question-text">Which of the following are branches of the distal ICA?</div>
             
             <div class="study-note" data-study-note="q50"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q50">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 50">
               
               <button class="choice" type="button" role="listitem" data-card-id="q50" data-choice="A" data-correct="C">
@@ -3030,6 +3262,10 @@ distal ICA before it terminates at the bifurcation into the ACA and MCA once it 
             <div class="content question-text">The _______________________ is described as the segment of the vessel located between the distal basilar artery and the origin of the posterior communicator artery.</div>
             
             <div class="study-note" data-study-note="q51"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q51">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 51">
               
               <button class="choice" type="button" role="listitem" data-card-id="q51" data-choice="A" data-correct="D">
@@ -3081,6 +3317,10 @@ segment is located distal to the origin of the posterior communicator artery.</d
             <div class="content question-text">Which of the following is considered an abnormality that causes turbulence in a vessel?</div>
             
             <div class="study-note" data-study-note="q52"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q52">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 52">
               
               <button class="choice" type="button" role="listitem" data-card-id="q52" data-choice="A" data-correct="D">
@@ -3133,6 +3373,10 @@ normal anatomic variants that can cause turbulence.</div>
             <div class="content question-text">The angular artery is the terminal branch of the</div>
             
             <div class="study-note" data-study-note="q53"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q53">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 53">
               
               <button class="choice" type="button" role="listitem" data-card-id="q53" data-choice="A" data-correct="B">
@@ -3183,6 +3427,10 @@ normal anatomic variants that can cause turbulence.</div>
             <div class="content question-text">In most patients, the first branch of the ECA is:</div>
             
             <div class="study-note" data-study-note="q54"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q54">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 54">
               
               <button class="choice" type="button" role="listitem" data-card-id="q54" data-choice="A" data-correct="B">
@@ -3235,6 +3483,10 @@ the ICA.</div>
             <div class="content question-text">Which of the following vessels supply the majority of blood to the cerebellum?</div>
             
             <div class="study-note" data-study-note="q55"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q55">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 55">
               
               <button class="choice" type="button" role="listitem" data-card-id="q55" data-choice="A" data-correct="D">
@@ -3287,6 +3539,10 @@ stem.</div>
             <div class="content question-text">The supraorbital artery is a branch of the ___________________________. Branches of the supraorbital artery connect with branches of the _________________________, which is a branch of the ECA. This is a common collateral pathway from the ECA to the ICA.</div>
             
             <div class="study-note" data-study-note="q56"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q56">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 56">
               
               <button class="choice" type="button" role="listitem" data-card-id="q56" data-choice="A" data-correct="B">
@@ -3338,6 +3594,10 @@ superficial temporal artery, which is a branch of the ECA. This is a common coll
             <div class="content question-text">Which of the following describes the normal appearance of a waveform obtained in the middle cerebral artery?</div>
             
             <div class="study-note" data-study-note="q57"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q57">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 57">
               
               <button class="choice" type="button" role="listitem" data-card-id="q57" data-choice="A" data-correct="C">
@@ -3392,6 +3652,10 @@ Diastolic flow reversal would indicate an abnormality causing increased resistan
             <div class="content question-text">The suboccipital window is used in TCD exams to evaluate which of the following arteries?</div>
             
             <div class="study-note" data-study-note="q58"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q58">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 58">
               
               <button class="choice" type="button" role="listitem" data-card-id="q58" data-choice="A" data-correct="B">
@@ -3444,6 +3708,10 @@ Diastolic flow reversal would indicate an abnormality causing increased resistan
             <div class="content question-text">What blood vessel is used to cause the variations in diastolic flow on the ECA tracing?</div>
             
             <div class="study-note" data-study-note="q59"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q59">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 59">
               
               <button class="choice" type="button" role="listitem" data-card-id="q59" data-choice="A" data-correct="C">
@@ -3501,6 +3769,10 @@ maneuver. This technique is used to differentiate the ECA from the ICA.</div>
             <div class="content question-text">Which of the following arteries is normally only an intracranial vessel?</div>
             
             <div class="study-note" data-study-note="q60"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q60">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 60">
               
               <button class="choice" type="button" role="listitem" data-card-id="q60" data-choice="A" data-correct="D">
@@ -3552,6 +3824,10 @@ the skull.</div>
             <div class="content question-text">Using the suboccipital window, the normal basilar and vertebral arteries ______________________.</div>
             
             <div class="study-note" data-study-note="q61"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q61">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 61">
               
               <button class="choice" type="button" role="listitem" data-card-id="q61" data-choice="A" data-correct="B">
@@ -3603,6 +3879,10 @@ The normal basilar and vertebral arteries will demonstrate flow away from the pr
             <div class="content question-text">The anterior cerebral artery and its branches feed which of the following lobes of the brain?</div>
             
             <div class="study-note" data-study-note="q62"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q62">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 62">
               
               <button class="choice" type="button" role="listitem" data-card-id="q62" data-choice="A" data-correct="D">
@@ -3656,6 +3936,10 @@ lobes.</div>
             <div class="content question-text">Which intracranial artery courses within the sylvian fissure?</div>
             
             <div class="study-note" data-study-note="q63"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q63">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 63">
               
               <button class="choice" type="button" role="listitem" data-card-id="q63" data-choice="A" data-correct="D">
@@ -3706,6 +3990,10 @@ lobes.</div>
             <div class="content question-text">In most patients the right common carotid artery:</div>
             
             <div class="study-note" data-study-note="q64"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q64">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 64">
               
               <button class="choice" type="button" role="listitem" data-card-id="q64" data-choice="A" data-correct="B">
@@ -3757,6 +4045,10 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
             <div class="content question-text">Normal brachial pressures should not differ more than ____________ mmHg between arms.</div>
             
             <div class="study-note" data-study-note="q65"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q65">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 65">
               
               <button class="choice" type="button" role="listitem" data-card-id="q65" data-choice="A" data-correct="D">
@@ -3807,6 +4099,10 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
             <div class="content question-text">The posterior communicating arteries connect the:</div>
             
             <div class="study-note" data-study-note="q66"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q66">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 66">
               
               <button class="choice" type="button" role="listitem" data-card-id="q66" data-choice="A" data-correct="A">
@@ -3859,6 +4155,10 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
             <div class="content question-text">During a TCD exam the depth is set to 55mm with a slight anterior angulation while using the temporal window. What vessel will be interrogated and what direction will the flow be moving?</div>
             
             <div class="study-note" data-study-note="q67"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q67">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 67">
               
               <button class="choice" type="button" role="listitem" data-card-id="q67" data-choice="A" data-correct="A">
@@ -3911,6 +4211,10 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
             <div class="content question-text">Transcranial Doppler most commonly uses which Doppler measurement to evaluate flow in the cerebral vessels?</div>
             
             <div class="study-note" data-study-note="q68"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q68">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 68">
               
               <button class="choice" type="button" role="listitem" data-card-id="q68" data-choice="A" data-correct="B">
@@ -3961,6 +4265,10 @@ patients the right CCA bifurcates at a lower level than the left CCA.</div>
             <div class="content question-text">Which of the following is a branch of the ICA?</div>
             
             <div class="study-note" data-study-note="q69"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q69">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 69">
               
               <button class="choice" type="button" role="listitem" data-card-id="q69" data-choice="A" data-correct="A">
@@ -4033,6 +4341,12 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     document.getElementById("close-all").addEventListener("click", () => {
       answerToggles.forEach((toggle) => setPanelState(toggle, false));
+    });
+
+    document.getElementById("clear-all-answers").addEventListener("click", () => {
+      Object.keys(studyState).forEach((key) => delete studyState[key]);
+      saveStudyState(studyState);
+      applyStudyState(studyState);
     });
 
     function normalizeState(rawState) {
@@ -4119,6 +4433,15 @@ Powered by ExamBuilder. Copyright ©2026</div>
           status: choice === correct ? "correct" : "incorrect",
           selectedChoice: choice,
         };
+        saveStudyState(studyState);
+        applyStudyState(studyState);
+      });
+    });
+
+    document.querySelectorAll("[data-clear-card]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const cardId = button.getAttribute("data-clear-card");
+        delete studyState[cardId];
         saveStudyState(studyState);
         applyStudyState(studyState);
       });
