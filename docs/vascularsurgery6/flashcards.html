@@ -216,6 +216,31 @@
     .study-note.incorrect {
       color: var(--danger);
     }
+    .choice-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .clear-answer {
+      appearance: none;
+      border: 1px solid rgba(46, 110, 163, 0.12);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.55rem 0.8rem;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+    .clear-answer:hover {
+      transform: translateY(-1px);
+      border-color: rgba(239, 131, 84, 0.22);
+      color: var(--accent-dark);
+    }
     .choices {
       display: grid;
       gap: 0.9rem;
@@ -375,6 +400,12 @@
         justify-content: center;
         text-align: center;
       }
+      .choice-row {
+        align-items: stretch;
+      }
+      .clear-answer {
+        width: 100%;
+      }
       h1 {
         max-width: none;
       }
@@ -400,6 +431,7 @@
           <a href="../index.html">Back to index</a>
           <button type="button" id="open-all">Open all backs</button>
           <button type="button" id="close-all">Close all backs</button>
+          <button type="button" id="clear-all-answers">Clear saved answers</button>
         </div>
       </div>
     </section>
@@ -416,6 +448,10 @@
             <div class="content question-text">Before performing a liver transplant evaluation, the Sonographer must review the surgical history to determine:</div>
             
             <div class="study-note" data-study-note="q1"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q1">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 1">
               
               <button class="choice" type="button" role="listitem" data-card-id="q1" data-choice="A" data-correct="D">
@@ -467,6 +503,10 @@ piggyback or interposition anastomosis and note the anastomosis sites for all va
             <div class="content question-text">The most common cause of hemodialysis graft failure is ________________.</div>
             
             <div class="study-note" data-study-note="q2"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q2">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 2">
               
               <button class="choice" type="button" role="listitem" data-card-id="q2" data-choice="A" data-correct="D">
@@ -517,6 +557,10 @@ piggyback or interposition anastomosis and note the anastomosis sites for all va
             <div class="content question-text">Velocities in a reversed vein graft are usually _________ at the ________ anastomosis because it is the smaller end of the vein.</div>
             
             <div class="study-note" data-study-note="q3"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q3">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 3">
               
               <button class="choice" type="button" role="listitem" data-card-id="q3" data-choice="A" data-correct="C">
@@ -569,6 +613,10 @@ piggyback or interposition anastomosis and note the anastomosis sites for all va
             <div class="content question-text">Which of the following symptoms would be associated with steal syndrome of a hemodialysis graft?</div>
             
             <div class="study-note" data-study-note="q4"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q4">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 4">
               
               <button class="choice" type="button" role="listitem" data-card-id="q4" data-choice="A" data-correct="C">
@@ -622,6 +670,10 @@ diminished radial pulse on palpation. Symptoms can increase with use of the arm 
             <div class="content question-text">The most common site for hepatic artery stenosis in a transplant is _______________________________________.</div>
             
             <div class="study-note" data-study-note="q5"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q5">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 5">
               
               <button class="choice" type="button" role="listitem" data-card-id="q5" data-choice="A" data-correct="D">
@@ -674,6 +726,10 @@ site for arterial stenosis is at the anastomosis site. Myointimal hyperplasia ca
             <div class="content question-text">Which statement is true regarding the image?</div>
             
             <div class="study-note" data-study-note="q6"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q6">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 6">
               
               <button class="choice" type="button" role="listitem" data-card-id="q6" data-choice="A" data-correct="D">
@@ -728,6 +784,10 @@ substance called nitinol which is a highly reflective metal alloy. The dense str
             <div class="content question-text">Patient presents 9 months after endarterectomy with an approximate 40% recurrent stenosis. What is the most likely cause?</div>
             
             <div class="study-note" data-study-note="q7"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q7">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 7">
               
               <button class="choice" type="button" role="listitem" data-card-id="q7" data-choice="A" data-correct="D">
@@ -780,6 +840,10 @@ cause re-stenosis but takes a much longer time to reoccur in the vessel.</div>
             <div class="content question-text">If both common iliac arteries demonstrate significant stenosis, what type of treatment will most likely be used?</div>
             
             <div class="study-note" data-study-note="q8"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q8">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 8">
               
               <button class="choice" type="button" role="listitem" data-card-id="q8" data-choice="A" data-correct="C">
@@ -834,6 +898,10 @@ artery. Both stents are inflated with the catheter balloon. The proximal end of 
             <div class="content question-text">A &#34;snuffbox&#34; fistula connects what two vessels?</div>
             
             <div class="study-note" data-study-note="q9"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q9">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 9">
               
               <button class="choice" type="button" role="listitem" data-card-id="q9" data-choice="A" data-correct="A">
@@ -889,6 +957,10 @@ required during surgery.</div>
             <div class="content question-text">Which of the following will decrease with acute renal allograft rejection?</div>
             
             <div class="study-note" data-study-note="q10"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q10">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 10">
               
               <button class="choice" type="button" role="listitem" data-card-id="q10" data-choice="A" data-correct="B">
@@ -943,6 +1015,10 @@ diastolic flow in the cortical arteries.</div>
             <div class="content question-text">Velocity ratio, volume flow, and peak systolic velocity are measurements that must be reported when evaluating a/an:</div>
             
             <div class="study-note" data-study-note="q11"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q11">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 11">
               
               <button class="choice" type="button" role="listitem" data-card-id="q11" data-choice="A" data-correct="A">
@@ -1029,6 +1105,10 @@ syndrome.</div>
             <div class="content question-text">A patient presents with a radiocephalic hemodialysis fistula in the left arm. Doppler evaluation of which of the following vessels will be used to rule out steal syndrome?</div>
             
             <div class="study-note" data-study-note="q13"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q13">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 13">
               
               <button class="choice" type="button" role="listitem" data-card-id="q13" data-choice="A" data-correct="A">
@@ -1082,6 +1162,10 @@ and into the palmar arch.</div>
             <div class="content question-text">If a patient had surgery to correct an occlusion of the right external iliac artery, what type of graft could be used?</div>
             
             <div class="study-note" data-study-note="q14"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q14">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 14">
               
               <button class="choice" type="button" role="listitem" data-card-id="q14" data-choice="A" data-correct="C">
@@ -1134,6 +1218,10 @@ and into the palmar arch.</div>
             <div class="content question-text">An in-situ vein graft exam must include the evaluation of any patent branches because:</div>
             
             <div class="study-note" data-study-note="q15"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q15">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 15">
               
               <button class="choice" type="button" role="listitem" data-card-id="q15" data-choice="A" data-correct="B">
@@ -1190,6 +1278,10 @@ vein.</div>
             <div class="content question-text">Which of the following is a sonographic characteristic of a normal renal transplant?</div>
             
             <div class="study-note" data-study-note="q16"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q16">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 16">
               
               <button class="choice" type="button" role="listitem" data-card-id="q16" data-choice="A" data-correct="A">
@@ -1244,6 +1336,10 @@ prominent renal pyramids and decreased differentiation between renal parenchyma 
             <div class="content question-text">If a patient had surgery to correct an occlusion of the right external iliac vein, which of the following pathways could be used?</div>
             
             <div class="study-note" data-study-note="q17"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q17">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 17">
               
               <button class="choice" type="button" role="listitem" data-card-id="q17" data-choice="A" data-correct="A">
@@ -1297,6 +1393,10 @@ the left femoral vein.</div>
             <div class="content question-text">You are performing an annual carotid duplex on a patient that had a carotid endarterectomy 6 years ago. There is a new layer of homogeneous material lining the ICA and bulb. The Doppler evaluation demonstrates turbulence and elevated velocities. Which of the following is the most likely cause for these findings?</div>
             
             <div class="study-note" data-study-note="q18"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q18">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 18">
               
               <button class="choice" type="button" role="listitem" data-card-id="q18" data-choice="A" data-correct="B">
@@ -1348,6 +1448,10 @@ after CEA is attributed to neointimal hyperplasia. After 2 years, stenosis occur
             <div class="content question-text">Color Doppler evaluation of an aortic endograft:</div>
             
             <div class="study-note" data-study-note="q19"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q19">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 19">
               
               <button class="choice" type="button" role="listitem" data-card-id="q19" data-choice="A" data-correct="D">
@@ -1404,6 +1508,10 @@ assessment after the first year.</div>
             <div class="content question-text">Which of the following statements describes the findings on the image of the cephalic vein in a patient with a brachiocephalic graft?</div>
             
             <div class="study-note" data-study-note="q20"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q20">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 20">
               
               <button class="choice" type="button" role="listitem" data-card-id="q20" data-choice="A" data-correct="B">
@@ -1457,6 +1565,10 @@ system.</div>
             <div class="content question-text">Which of the following would be considered abnormal in the Doppler evaluation of a renal transplant?</div>
             
             <div class="study-note" data-study-note="q21"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q21">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 21">
               
               <button class="choice" type="button" role="listitem" data-card-id="q21" data-choice="A" data-correct="A">
@@ -1511,6 +1623,10 @@ the resistance of the renal vascular beds which is consistent with rejection.</d
             <div class="content question-text">A patient presents for pre-operative arterial mapping for the TRAM flap breast reconstruction procedure. What vessel(s) should be evaluated?</div>
             
             <div class="study-note" data-study-note="q22"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q22">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 22">
               
               <button class="choice" type="button" role="listitem" data-card-id="q22" data-choice="A" data-correct="C">
@@ -1565,6 +1681,10 @@ breast reconstruction; Evaluated to locate the section of muscle with the best p
             <div class="content question-text">When evaluating a patient for placement of an AV fistula for dialysis, what is the minimum acceptable diameter for the native vein where the graft will be connected?</div>
             
             <div class="study-note" data-study-note="q23"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q23">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 23">
               
               <button class="choice" type="button" role="listitem" data-card-id="q23" data-choice="A" data-correct="B">
@@ -1615,6 +1735,10 @@ breast reconstruction; Evaluated to locate the section of muscle with the best p
             <div class="content question-text">You are performing a carotid duplex on a patient that had a carotid endarterectomy 2 weeks ago. There is homogeneous material lining the ICA and bulb and Doppler demonstrates turbulence and elevated velocities. Which of the following is the most likely cause for these findings?</div>
             
             <div class="study-note" data-study-note="q24"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q24">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 24">
               
               <button class="choice" type="button" role="listitem" data-card-id="q24" data-choice="A" data-correct="B">
@@ -1666,6 +1790,10 @@ after CEA is attributed to neointimal hyperplasia. After 2 years, stenosis occur
             <div class="content question-text">A patient presents for a follow up of stent placement in the SMA due to stenosis. How will you determine if the procedure was a success?</div>
             
             <div class="study-note" data-study-note="q25"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q25">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 25">
               
               <button class="choice" type="button" role="listitem" data-card-id="q25" data-choice="A" data-correct="A">
@@ -1718,6 +1846,10 @@ compared to pre-stented levels, but normal velocities should not be expected.</d
             <div class="content question-text">Which of the following is not an expected complication in a 3-week post-op liver transplant patient?</div>
             
             <div class="study-note" data-study-note="q26"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q26">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 26">
               
               <button class="choice" type="button" role="listitem" data-card-id="q26" data-choice="A" data-correct="D">
@@ -1769,6 +1901,10 @@ a recent liver transplant.</div>
             <div class="content question-text">Which of the following correctly describes steal syndrome in a patient with a Brescia-Cimino graft?</div>
             
             <div class="study-note" data-study-note="q27"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q27">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 27">
               
               <button class="choice" type="button" role="listitem" data-card-id="q27" data-choice="A" data-correct="C">
@@ -1825,6 +1961,10 @@ fingertips and diminished radial pulse on palpation. Arm exercise can exacerbate
             <div class="content question-text">A patient presents for Doppler evaluation after revascularization of the SMA 1 week ago. The study prior to treatment demonstrated a peak systolic velocity of 4.2m/s in the SMA. On today&#39;s exam, the velocity in the proximal SMA has reduced to 3.3m/s. How will you report these findings?</div>
             
             <div class="study-note" data-study-note="q28"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q28">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 28">
               
               <button class="choice" type="button" role="listitem" data-card-id="q28" data-choice="A" data-correct="D">
@@ -1875,6 +2015,10 @@ fingertips and diminished radial pulse on palpation. Arm exercise can exacerbate
             <div class="content question-text">Which of the following correctly explains why a surgeon would perform an intravascular ultrasound immediately after stent placement in small artery?</div>
             
             <div class="study-note" data-study-note="q29"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q29">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 29">
               
               <button class="choice" type="button" role="listitem" data-card-id="q29" data-choice="A" data-correct="B">
@@ -1928,6 +2072,10 @@ NO Doppler capabilities</div>
             <div class="content question-text">Where is the most common location for the surgeon to place a renal allograft?</div>
             
             <div class="study-note" data-study-note="q30"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q30">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 30">
               
               <button class="choice" type="button" role="listitem" data-card-id="q30" data-choice="A" data-correct="A">
@@ -1978,6 +2126,10 @@ NO Doppler capabilities</div>
             <div class="content question-text">What is the most common complication of an in-situ vein graft?</div>
             
             <div class="study-note" data-study-note="q31"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q31">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 31">
               
               <button class="choice" type="button" role="listitem" data-card-id="q31" data-choice="A" data-correct="C">
@@ -2030,6 +2182,10 @@ connected to the arterial system, flow moves through the vein and can enter the 
             <div class="content question-text">When continuous TCD monitoring is used to assist with a carotid endarterectomy, when is the TCD device first activated to begin monitoring the patient?</div>
             
             <div class="study-note" data-study-note="q32"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q32">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 32">
               
               <button class="choice" type="button" role="listitem" data-card-id="q32" data-choice="A" data-correct="B">
@@ -2083,6 +2239,10 @@ endarterectomy, and closing phase of the surgery, as well as in the recovery roo
             <div class="content question-text">A patient presents for evaluation of their hemodialysis graft. The proximal anastomosis demonstrates a velocity of 130cm/s. The mid graft velocity is 275cm/s and the distal anastomosis velocity is 50cm/s. What is your conclusion about the findings on the exam?</div>
             
             <div class="study-note" data-study-note="q33"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q33">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 33">
               
               <button class="choice" type="button" role="listitem" data-card-id="q33" data-choice="A" data-correct="D">
@@ -2135,6 +2295,10 @@ velocity drops significantly distal to the stenosis. This also indicates a signi
             <div class="content question-text">Which of the following statements regarding the radial artery is true?</div>
             
             <div class="study-note" data-study-note="q34"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q34">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 34">
               
               <button class="choice" type="button" role="listitem" data-card-id="q34" data-choice="A" data-correct="C">
@@ -2186,6 +2350,10 @@ evaluates suspected carpal tunnel syndrome.</div>
             <div class="content question-text">Auscultation and palpation should be performed by the Sonographer as part of what type of vascular ultrasound exam?</div>
             
             <div class="study-note" data-study-note="q35"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q35">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 35">
               
               <button class="choice" type="button" role="listitem" data-card-id="q35" data-choice="A" data-correct="D">
@@ -2241,6 +2409,10 @@ vessel for the other exams listed, but the US system is typically better at loca
             <div class="content question-text">The distal anastomosis of a fem- fem graft is demonstrated. Which of the following statements correctly describe the findings?</div>
             
             <div class="study-note" data-study-note="q36"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q36">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 36">
               
               <button class="choice" type="button" role="listitem" data-card-id="q36" data-choice="A" data-correct="D">
@@ -2299,6 +2471,10 @@ at the femoral artery stenosis,</div>
             <div class="content question-text">Which of the following correctly describes myointimal hyperplasia in an arterial bypass graft?</div>
             
             <div class="study-note" data-study-note="q37"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q37">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 37">
               
               <button class="choice" type="button" role="listitem" data-card-id="q37" data-choice="A" data-correct="B">
@@ -2351,6 +2527,10 @@ from soft atheroma formation.</div>
             <div class="content question-text">Which of the following correctly describes the Doppler tracing obtained from a hemodialysis graft?</div>
             
             <div class="study-note" data-study-note="q38"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q38">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 38">
               
               <button class="choice" type="button" role="listitem" data-card-id="q38" data-choice="A" data-correct="D">
@@ -2404,6 +2584,10 @@ normally low resistance and very turbulent. The outflow vein will demonstrate in
             <div class="content question-text">A patient presents for an evaluation of a lower extremity synthetic bypass graft for suspected stenosis. What area of the graft should be evaluated first because it is the most common location of graft stenosis?</div>
             
             <div class="study-note" data-study-note="q39"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q39">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 39">
               
               <button class="choice" type="button" role="listitem" data-card-id="q39" data-choice="A" data-correct="B">
@@ -2457,6 +2641,10 @@ These factors cause an increased incidence of stenosis/thrombosis.</div>
             <div class="content question-text">Which of the following patients would benefit from intraoperative TCD monitoring of the left MCA?</div>
             
             <div class="study-note" data-study-note="q40"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q40">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 40">
               
               <button class="choice" type="button" role="listitem" data-card-id="q40" data-choice="A" data-correct="D">
@@ -2508,6 +2696,10 @@ can cause stroke symptoms. Monitoring is used to detect emboli.</div>
             <div class="content question-text">Which of the following is a common occurrence after an endarterectomy?</div>
             
             <div class="study-note" data-study-note="q41"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q41">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 41">
               
               <button class="choice" type="button" role="listitem" data-card-id="q41" data-choice="A" data-correct="A">
@@ -2561,6 +2753,10 @@ re-stenosis of a vessel that previously underwent endarterectomy.</div>
             <div class="content question-text">A fem - fem graft is used to treat:</div>
             
             <div class="study-note" data-study-note="q42"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q42">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 42">
               
               <button class="choice" type="button" role="listitem" data-card-id="q42" data-choice="A" data-correct="C">
@@ -2614,6 +2810,10 @@ graft to the contralateral femoral artery at a point distal to the stenosis.</di
             <div class="content question-text">Which of the following is an abnormal finding for a hemodialysis graft?</div>
             
             <div class="study-note" data-study-note="q43"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q43">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 43">
               
               <button class="choice" type="button" role="listitem" data-card-id="q43" data-choice="A" data-correct="D">
@@ -2669,6 +2869,10 @@ anastomosis site and the venous outflow will also be turbulent and pulsatile.</d
             <div class="content question-text">A fem - tib graft is used to treat:</div>
             
             <div class="study-note" data-study-note="q44"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q44">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 44">
               
               <button class="choice" type="button" role="listitem" data-card-id="q44" data-choice="A" data-correct="C">
@@ -2720,6 +2924,10 @@ to the anterior tibial artery or tibioperoneal trunk distal to the obstruction.<
             <div class="content question-text">Which of the following requires a 2D and Doppler evaluation for a complete exam?</div>
             
             <div class="study-note" data-study-note="q45"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q45">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 45">
               
               <button class="choice" type="button" role="listitem" data-card-id="q45" data-choice="A" data-correct="A">
@@ -2773,6 +2981,10 @@ necessarily be required.</div>
             <div class="content question-text">You are performing an ultrasound on a fem-pop PTFE graft in a lower extremity and you suspect a stenosis at the distal anastomosis. How will you calculate the velocity ratio in this patient?</div>
             
             <div class="study-note" data-study-note="q46"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q46">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 46">
               
               <button class="choice" type="button" role="listitem" data-card-id="q46" data-choice="A" data-correct="D">
@@ -2824,6 +3036,10 @@ is the distal graft that is just proximal to the stenosis).</div>
             <div class="content question-text">An aorto-bifemoral graft is used to treat:</div>
             
             <div class="study-note" data-study-note="q47"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q47">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 47">
               
               <button class="choice" type="button" role="listitem" data-card-id="q47" data-choice="A" data-correct="C">
@@ -2874,6 +3090,10 @@ is the distal graft that is just proximal to the stenosis).</div>
             <div class="content question-text">Which of the following is part of the standard protocol for evaluating a patient with an aortic endograft?</div>
             
             <div class="study-note" data-study-note="q48"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q48">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 48">
               
               <button class="choice" type="button" role="listitem" data-card-id="q48" data-choice="A" data-correct="A">
@@ -2926,6 +3146,10 @@ or luminal narrowing of the graft.</div>
             <div class="content question-text">After an endarterectomy or carotid stent placement, the first follow up exam should be performed:</div>
             
             <div class="study-note" data-study-note="q49"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q49">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 49">
               
               <button class="choice" type="button" role="listitem" data-card-id="q49" data-choice="A" data-correct="B">
@@ -2978,6 +3202,10 @@ patch or graft may inhibit the exam.</div>
             <div class="content question-text">You are evaluating a cephalic vein for bypass graft potential. The vessel diameter is &lt;2mm for its entire length. What should you do next?</div>
             
             <div class="study-note" data-study-note="q50"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q50">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 50">
               
               <button class="choice" type="button" role="listitem" data-card-id="q50" data-choice="A" data-correct="B">
@@ -3031,6 +3259,10 @@ should dilate to provide an accurate maximum diameter.</div>
             <div class="content question-text">Which of the following describes the expected changes in the extremity flow patterns if balloon angioplasty of a 75% stenosis in the common femoral artery was a success?</div>
             
             <div class="study-note" data-study-note="q51"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q51">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 51">
               
               <button class="choice" type="button" role="listitem" data-card-id="q51" data-choice="A" data-correct="A">
@@ -3082,6 +3314,10 @@ treatment, the flow pattern in the distal arteries should increase in resistance
             <div class="content question-text">________________ is the most common endoleak and usually does not require intervention, while _____________ is most dangerous and requires surgical intervention.</div>
             
             <div class="study-note" data-study-note="q52"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q52">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 52">
               
               <button class="choice" type="button" role="listitem" data-card-id="q52" data-choice="A" data-correct="C">
@@ -3133,6 +3369,10 @@ surgical intervention.</div>
             <div class="content question-text">Which statement best describes the Doppler tracing from a bypass graft in the lower extremity?</div>
             
             <div class="study-note" data-study-note="q53"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q53">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 53">
               
               <button class="choice" type="button" role="listitem" data-card-id="q53" data-choice="A" data-correct="D">
@@ -3186,6 +3426,10 @@ broadening.</div>
             <div class="content question-text">What native artery is commonly used for the arterial anastomosis in a renal transplant when the external iliac artery is not available?</div>
             
             <div class="study-note" data-study-note="q54"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q54">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 54">
               
               <button class="choice" type="button" role="listitem" data-card-id="q54" data-choice="A" data-correct="B">
@@ -3237,6 +3481,10 @@ commonly used for the arterial anastomosis when the external iliac artery is not
             <div class="content question-text">How does the imaging protocol differ when evaluating a hemodialysis graft versus a hemodialysis fistula?</div>
             
             <div class="study-note" data-study-note="q55"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q55">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 55">
               
               <button class="choice" type="button" role="listitem" data-card-id="q55" data-choice="A" data-correct="C">
@@ -3290,6 +3538,10 @@ outflow vein just distal to the anastomosis.</div>
             <div class="content question-text">If a liver transplant patient has a piggyback anastomosis, how does this affect your evaluation?</div>
             
             <div class="study-note" data-study-note="q56"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q56">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 56">
               
               <button class="choice" type="button" role="listitem" data-card-id="q56" data-choice="A" data-correct="A">
@@ -3343,6 +3595,10 @@ Interposition - donor IVC segment replaces a segment of the native IVC; two anas
             <div class="content question-text">A patient presents for a 3-month follow-up on his aortic endograft. The aortic sac has increased in size by 0.8cm since the last ultrasound evaluation performed 2 months ago. No endoleak was detected on ultrasound or CT evaluation. What is the most likely cause for the diameter change?</div>
             
             <div class="study-note" data-study-note="q57"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q57">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 57">
               
               <button class="choice" type="button" role="listitem" data-card-id="q57" data-choice="A" data-correct="B">
@@ -3394,6 +3650,10 @@ as Type V Endoleak</div>
             <div class="content question-text">You are evaluating a liver transplant in a patient that received the organ yesterday. The resistive index (RI) for the hepatic artery is 0.9. Which of the following best describes the findings?</div>
             
             <div class="study-note" data-study-note="q58"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q58">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 58">
               
               <button class="choice" type="button" role="listitem" data-card-id="q58" data-choice="A" data-correct="B">
@@ -3446,6 +3706,10 @@ values. Resistive Index (RI) 0.5-0.8 Normal</div>
             <div class="content question-text">Venous flow proximal to an AV fistula becomes ________________ due to the inflow of arterial flow distally</div>
             
             <div class="study-note" data-study-note="q59"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q59">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 59">
               
               <button class="choice" type="button" role="listitem" data-card-id="q59" data-choice="A" data-correct="D">
@@ -3499,6 +3763,10 @@ demonstrates the venous outflow of a fistula (proximal to the fistula). The flow
             <div class="content question-text">A patient presents for a stat lower extremity arterial Doppler evaluation following the recent placement of a fem-tib graft in the right leg. The patient complains of significant pain and weakness in the calf muscle with areas of numbness on the anterior aspect of the lower leg. What is the most likely finding on the exam?</div>
             
             <div class="study-note" data-study-note="q60"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q60">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 60">
               
               <button class="choice" type="button" role="listitem" data-card-id="q60" data-choice="A" data-correct="A">
@@ -3584,6 +3852,10 @@ syndrome.</div>
             <div class="content question-text">Which of the following vessels are a common source for a Type II endoleak?</div>
             
             <div class="study-note" data-study-note="q62"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q62">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 62">
               
               <button class="choice" type="button" role="listitem" data-card-id="q62" data-choice="A" data-correct="A">
@@ -3635,6 +3907,10 @@ inferior mesenteric artery, internal iliac, lumbar arteries and accessory renal 
             <div class="content question-text">When performing serial exams on an in situ venous bypass graft, _________________ indicates significant graft failure.</div>
             
             <div class="study-note" data-study-note="q63"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q63">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 63">
               
               <button class="choice" type="button" role="listitem" data-card-id="q63" data-choice="A" data-correct="B">
@@ -3686,6 +3962,10 @@ poor performance of the graft on the current exam.</div>
             <div class="content question-text">Retained valve cusps are a complication of:</div>
             
             <div class="study-note" data-study-note="q64"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q64">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 64">
               
               <button class="choice" type="button" role="listitem" data-card-id="q64" data-choice="A" data-correct="B">
@@ -3739,6 +4019,10 @@ arterial blood flow from moving down the leg. Retained cusps can lead to stenosi
             <div class="content question-text">In a patient with a patent brachiobasilic AV graft, the axillary vein will:</div>
             
             <div class="study-note" data-study-note="q65"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q65">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 65">
               
               <button class="choice" type="button" role="listitem" data-card-id="q65" data-choice="A" data-correct="A">
@@ -3792,6 +4076,10 @@ transmit a pulsatile waveform with high velocities into the axillary vein.</div>
             <div class="content question-text">A patient is undergoing AAA repair in the distal aorta. The physician places an endovascular graft within the aorta. If the graft placement was successful, how should the ankle pressures change post- procedure?</div>
             
             <div class="study-note" data-study-note="q66"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q66">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 66">
               
               <button class="choice" type="button" role="listitem" data-card-id="q66" data-choice="A" data-correct="C">
@@ -3844,6 +4132,10 @@ flow to the legs increases and pressure and resistance would both increase at th
             <div class="content question-text">The saphenous vein has already been harvested from both legs for CABG surgery. What other vein could be harvested for an additional bypass graft?</div>
             
             <div class="study-note" data-study-note="q67"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q67">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 67">
               
               <button class="choice" type="button" role="listitem" data-card-id="q67" data-choice="A" data-correct="D">
@@ -3895,6 +4187,10 @@ also be used as a bypass graft but the question asks for veins.</div>
             <div class="content question-text">Which of the following describes the 2D appearance of acute renal allograft rejection on ultrasound?</div>
             
             <div class="study-note" data-study-note="q68"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q68">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 68">
               
               <button class="choice" type="button" role="listitem" data-card-id="q68" data-choice="A" data-correct="D">
@@ -3948,6 +4244,10 @@ definition. The RI value will be over 0.8 but this is a Doppler value not a 2D c
             <div class="content question-text">Which intracerebral vessel is evaluated on a TCD evaluation performed during a left carotid endarterectomy?</div>
             
             <div class="study-note" data-study-note="q69"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q69">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 69">
               
               <button class="choice" type="button" role="listitem" data-card-id="q69" data-choice="A" data-correct="B">
@@ -3999,6 +4299,10 @@ help determine if a shunt is necessary during the procedure.</div>
             <div class="content question-text">Which of the following correctly describes hemodialysis?</div>
             
             <div class="study-note" data-study-note="q70"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q70">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 70">
               
               <button class="choice" type="button" role="listitem" data-card-id="q70" data-choice="A" data-correct="C">
@@ -4051,6 +4355,10 @@ machine, and returned to the body through the AVF. The treatment requires regula
             <div class="content question-text">What is the primary reason why dialysis grafts are commonly placed at the antecubital fossa or wrist, and not the shoulder?</div>
             
             <div class="study-note" data-study-note="q71"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q71">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 71">
               
               <button class="choice" type="button" role="listitem" data-card-id="q71" data-choice="A" data-correct="D">
@@ -4103,6 +4411,10 @@ arterial blood that is emptied directly into the venous system.</div>
             <div class="content question-text">When evaluating a patient for placement of a hemodialysis graft, what is the minimum acceptable diameter for the native artery where the graft will be connected?</div>
             
             <div class="study-note" data-study-note="q72"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q72">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 72">
               
               <button class="choice" type="button" role="listitem" data-card-id="q72" data-choice="A" data-correct="A">
@@ -4153,6 +4465,10 @@ arterial blood that is emptied directly into the venous system.</div>
             <div class="content question-text">Which of the following describes the importance of TCD monitoring during a carotid endarterectomy?</div>
             
             <div class="study-note" data-study-note="q73"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q73">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 73">
               
               <button class="choice" type="button" role="listitem" data-card-id="q73" data-choice="A" data-correct="B">
@@ -4204,6 +4520,10 @@ surgery is scheduled. TCD monitoring provides monitoring for emboli and can be u
             <div class="content question-text">The type of dialysis graft where the cephalic vein is anastomosed to the radial artery is called?</div>
             
             <div class="study-note" data-study-note="q74"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q74">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 74">
               
               <button class="choice" type="button" role="listitem" data-card-id="q74" data-choice="A" data-correct="A">
@@ -4258,6 +4578,10 @@ TIPS is a type of shunt used to bypass the liver.</div>
             <div class="content question-text">You are performing a follow up exam on a synthetic fem-pop graft that is 2 weeks post-op. The native arteries and graft appear normal on the 2D and color Doppler evaluation. These same segments are evaluated using PW Doppler and monophasic waveforms with mild diastolic flow throughout the cardiac cycle are demonstrated. Which of the following is the most likely reason for the discrepancy in findings?</div>
             
             <div class="study-note" data-study-note="q75"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q75">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 75">
               
               <button class="choice" type="button" role="listitem" data-card-id="q75" data-choice="A" data-correct="C">
@@ -4312,6 +4636,10 @@ triphasic pattern after 2 months post-op.</div>
             <div class="content question-text">Which of the following is a sign of a functioning hemodialysis graft?</div>
             
             <div class="study-note" data-study-note="q76"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q76">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 76">
               
               <button class="choice" type="button" role="listitem" data-card-id="q76" data-choice="A" data-correct="C">
@@ -4363,6 +4691,10 @@ indicative of an occluded graft. If the graft becomes stenosed or occluded, the 
             <div class="content question-text">Where is the most common location of stenosis in a hemodialysis graft?</div>
             
             <div class="study-note" data-study-note="q77"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q77">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 77">
               
               <button class="choice" type="button" role="listitem" data-card-id="q77" data-choice="A" data-correct="A">
@@ -4415,6 +4747,10 @@ blockage at the anastomosis.</div>
             <div class="content question-text">If a liver transplant patient has an interposition anastomosis, how does this affect your evaluation?</div>
             
             <div class="study-note" data-study-note="q78"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q78">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 78">
               
               <button class="choice" type="button" role="listitem" data-card-id="q78" data-choice="A" data-correct="D">
@@ -4468,6 +4804,10 @@ Interposition - donor IVC segment replaces a segment of the native IVC; two anas
             <div class="content question-text">__________________ refers to when the carotid artery is lacerated and the atheroma formation is scraped for removal.</div>
             
             <div class="study-note" data-study-note="q79"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q79">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 79">
               
               <button class="choice" type="button" role="listitem" data-card-id="q79" data-choice="A" data-correct="C">
@@ -4521,6 +4861,10 @@ remove valves from inside a vein.</div>
             <div class="content question-text">A venous thrombectomy procedure is usually reserved for which type of patient?</div>
             
             <div class="study-note" data-study-note="q80"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q80">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 80">
               
               <button class="choice" type="button" role="listitem" data-card-id="q80" data-choice="A" data-correct="A">
@@ -4572,6 +4916,10 @@ dolens.</div>
             <div class="content question-text">What is the name of the vascular device that is placed into the IVC using a catheter?</div>
             
             <div class="study-note" data-study-note="q81"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q81">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 81">
               
               <button class="choice" type="button" role="listitem" data-card-id="q81" data-choice="A" data-correct="B">
@@ -4622,6 +4970,10 @@ dolens.</div>
             <div class="content question-text">What type of venous graft is demonstrated in the diagram?</div>
             
             <div class="study-note" data-study-note="q82"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q82">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 82">
               
               <button class="choice" type="button" role="listitem" data-card-id="q82" data-choice="A" data-correct="C">
@@ -4675,6 +5027,10 @@ addition to the long scar on the medial thigh indicates a reversed saphenous gra
             <div class="content question-text">Volume flow calculations are used to assess hemodialysis graft performance. How is volume flow measured?</div>
             
             <div class="study-note" data-study-note="q83"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q83">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 83">
               
               <button class="choice" type="button" role="listitem" data-card-id="q83" data-choice="A" data-correct="D">
@@ -4728,6 +5084,10 @@ normal segment of the graft and trace the waveform.</div>
             <div class="content question-text">Which of the following lists the correct cuff placement for a segmental pressure exam performed due to suspected Dialysis Access Steal Syndrome?</div>
             
             <div class="study-note" data-study-note="q84"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q84">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 84">
               
               <button class="choice" type="button" role="listitem" data-card-id="q84" data-choice="A" data-correct="D">
@@ -4782,6 +5142,10 @@ The image below demonstrates cuff positioning for an exam eligible patient.</div
             <div class="content question-text">Which of the following conditions would benefit from intravascular ultrasound with repair?</div>
             
             <div class="study-note" data-study-note="q85"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q85">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 85">
               
               <button class="choice" type="button" role="listitem" data-card-id="q85" data-choice="A" data-correct="C">
@@ -4834,6 +5198,10 @@ The image below demonstrates cuff positioning for an exam eligible patient.</div
             <div class="content question-text">Which of the following is considered a normal finding in a patient with a brachiobasilic hemodialysis graft?</div>
             
             <div class="study-note" data-study-note="q86"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q86">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 86">
               
               <button class="choice" type="button" role="listitem" data-card-id="q86" data-choice="A" data-correct="B">
@@ -4887,6 +5255,10 @@ monophasic. The basilic vein will exhibit pulsatile, high velocity venous flow i
             <div class="content question-text">Which of the following is a normal finding when evaluating a hemodialysis graft?</div>
             
             <div class="study-note" data-study-note="q87"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q87">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 87">
               
               <button class="choice" type="button" role="listitem" data-card-id="q87" data-choice="A" data-correct="B">
@@ -4941,6 +5313,10 @@ for dialysis, CHF due to increased flow in venous return to heart, and distal is
             <div class="content question-text">Which of the following correctly describes a reversed vein graft?</div>
             
             <div class="study-note" data-study-note="q88"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q88">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 88">
               
               <button class="choice" type="button" role="listitem" data-card-id="q88" data-choice="A" data-correct="C">
@@ -4997,6 +5373,10 @@ reversed vein graft is turned upside down, so the valves stay open due to gravit
             <div class="content question-text">A patient presents for a renal transplant evaluation. Which of the following native vessels will be evaluated during the exam?</div>
             
             <div class="study-note" data-study-note="q89"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q89">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 89">
               
               <button class="choice" type="button" role="listitem" data-card-id="q89" data-choice="A" data-correct="B">
@@ -5048,6 +5428,10 @@ exam. The other vessels listed are allograft vessels.</div>
             <div class="content question-text">Image A is_____________________________. Image B is ____________________________.</div>
             
             <div class="study-note" data-study-note="q90"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q90">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 90">
               
               <button class="choice" type="button" role="listitem" data-card-id="q90" data-choice="A" data-correct="B">
@@ -5102,6 +5486,10 @@ structure of the graft. Uniform graft diameter is also a sign of a normal PTFE.<
             <div class="content question-text">Arterial flow proximal to an AV fistula will be ________________.</div>
             
             <div class="study-note" data-study-note="q91"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q91">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 91">
               
               <button class="choice" type="button" role="listitem" data-card-id="q91" data-choice="A" data-correct="B">
@@ -5154,6 +5542,10 @@ structure of the graft. Uniform graft diameter is also a sign of a normal PTFE.<
             <div class="content question-text">Saphenous vein mapping is used to assess the vein for a potential bypass conduit. Which of the following characteristics would still allow the surgeon to use the vein?</div>
             
             <div class="study-note" data-study-note="q92"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q92">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 92">
               
               <button class="choice" type="button" role="listitem" data-card-id="q92" data-choice="A" data-correct="C">
@@ -5206,6 +5598,10 @@ venous drainage system of the leg and cannot be removed for bypass.</div>
             <div class="content question-text">The TIPS procedure is performed to correct what condition?</div>
             
             <div class="study-note" data-study-note="q93"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q93">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 93">
               
               <button class="choice" type="button" role="listitem" data-card-id="q93" data-choice="A" data-correct="B">
@@ -5259,6 +5655,10 @@ connected to the IJV or Hepatic veins.</div>
             <div class="content question-text">A patient presents for evaluation of a hemodialysis graft that was inserted 1 week ago. Which of the following is an expected finding on the exam if the graft has failed?</div>
             
             <div class="study-note" data-study-note="q94"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q94">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 94">
               
               <button class="choice" type="button" role="listitem" data-card-id="q94" data-choice="A" data-correct="A">
@@ -5310,6 +5710,10 @@ are chronic causes of graft failure.</div>
             <div class="content question-text">Which of the following techniques is used to monitor flow during a fem-pop bypass procedure?</div>
             
             <div class="study-note" data-study-note="q95"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q95">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 95">
               
               <button class="choice" type="button" role="listitem" data-card-id="q95" data-choice="A" data-correct="C">
@@ -5361,6 +5765,10 @@ surgery would be fine. Intraoperative duplex ultrasound can be used during the p
             <div class="content question-text">Which of the following vascular complications is treated with a fasciotomy?</div>
             
             <div class="study-note" data-study-note="q96"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q96">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 96">
               
               <button class="choice" type="button" role="listitem" data-card-id="q96" data-choice="A" data-correct="D">
@@ -5412,6 +5820,10 @@ the pressure, damage to the nerves and tissues can occur.</div>
             <div class="content question-text">Which statement is true regarding the image?</div>
             
             <div class="study-note" data-study-note="q97"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q97">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 97">
               
               <button class="choice" type="button" role="listitem" data-card-id="q97" data-choice="A" data-correct="D">
@@ -5466,6 +5878,10 @@ interventional treatment.</div>
             <div class="content question-text">Which of the following statements is true regarding Doppler flow evaluation of a rejected renal allograft?</div>
             
             <div class="study-note" data-study-note="q98"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q98">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 98">
               
               <button class="choice" type="button" role="listitem" data-card-id="q98" data-choice="A" data-correct="A">
@@ -5517,6 +5933,10 @@ parenchymal vessels will be elevated above 0.70.</div>
             <div class="content question-text">When evaluating a patient with an aortic endograft, what is the minimum increase in aortic sac size that indicates a possible endoleak?</div>
             
             <div class="study-note" data-study-note="q99"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q99">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 99">
               
               <button class="choice" type="button" role="listitem" data-card-id="q99" data-choice="A" data-correct="D">
@@ -5567,6 +5987,10 @@ parenchymal vessels will be elevated above 0.70.</div>
             <div class="content question-text">Which of the following is not a common type of lower extremity graft placement?</div>
             
             <div class="study-note" data-study-note="q100"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q100">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 100">
               
               <button class="choice" type="button" role="listitem" data-card-id="q100" data-choice="A" data-correct="B">
@@ -5640,6 +6064,12 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     document.getElementById("close-all").addEventListener("click", () => {
       answerToggles.forEach((toggle) => setPanelState(toggle, false));
+    });
+
+    document.getElementById("clear-all-answers").addEventListener("click", () => {
+      Object.keys(studyState).forEach((key) => delete studyState[key]);
+      saveStudyState(studyState);
+      applyStudyState(studyState);
     });
 
     function normalizeState(rawState) {
@@ -5726,6 +6156,15 @@ Powered by ExamBuilder. Copyright ©2026</div>
           status: choice === correct ? "correct" : "incorrect",
           selectedChoice: choice,
         };
+        saveStudyState(studyState);
+        applyStudyState(studyState);
+      });
+    });
+
+    document.querySelectorAll("[data-clear-card]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const cardId = button.getAttribute("data-clear-card");
+        delete studyState[cardId];
         saveStudyState(studyState);
         applyStudyState(studyState);
       });

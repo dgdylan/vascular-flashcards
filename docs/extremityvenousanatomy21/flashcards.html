@@ -216,6 +216,31 @@
     .study-note.incorrect {
       color: var(--danger);
     }
+    .choice-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .clear-answer {
+      appearance: none;
+      border: 1px solid rgba(46, 110, 163, 0.12);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.55rem 0.8rem;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+    .clear-answer:hover {
+      transform: translateY(-1px);
+      border-color: rgba(239, 131, 84, 0.22);
+      color: var(--accent-dark);
+    }
     .choices {
       display: grid;
       gap: 0.9rem;
@@ -375,6 +400,12 @@
         justify-content: center;
         text-align: center;
       }
+      .choice-row {
+        align-items: stretch;
+      }
+      .clear-answer {
+        width: 100%;
+      }
       h1 {
         max-width: none;
       }
@@ -400,6 +431,7 @@
           <a href="../index.html">Back to index</a>
           <button type="button" id="open-all">Open all backs</button>
           <button type="button" id="close-all">Close all backs</button>
+          <button type="button" id="clear-all-answers">Clear saved answers</button>
         </div>
       </div>
     </section>
@@ -416,6 +448,10 @@
             <div class="content question-text">Which of the following veins has a direct connection to both superficial and deep veins?</div>
             
             <div class="study-note" data-study-note="q1"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q1">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 1">
               
               <button class="choice" type="button" role="listitem" data-card-id="q1" data-choice="A" data-correct="D">
@@ -467,6 +503,10 @@ saphenous and deep calf veins.</div>
             <div class="content question-text">The weight of the column of blood within the veins when standing is called?</div>
             
             <div class="study-note" data-study-note="q2"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q2">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 2">
               
               <button class="choice" type="button" role="listitem" data-card-id="q2" data-choice="A" data-correct="B">
@@ -518,6 +558,10 @@ pressure within the pulmonary arteries.</div>
             <div class="content question-text">An effective calf pump causes ________________________ in the pressure in the deep veins of the calf.</div>
             
             <div class="study-note" data-study-note="q3"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q3">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 3">
               
               <button class="choice" type="button" role="listitem" data-card-id="q3" data-choice="A" data-correct="C">
@@ -569,6 +613,10 @@ leads to increased stasis, venous volume and pressure in the calf veins; reflux 
             <div class="content question-text">If the image displayed is a transverse view of the posterior right lower leg, Letter B correspond to:</div>
             
             <div class="study-note" data-study-note="q4"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q4">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 4">
               
               <button class="choice" type="button" role="listitem" data-card-id="q4" data-choice="A" data-correct="A">
@@ -626,6 +674,10 @@ D. popliteal vein</div>
             <div class="content question-text">Normal perforator valves allow blood flow in the perforator to move:</div>
             
             <div class="study-note" data-study-note="q5"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q5">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 5">
               
               <button class="choice" type="button" role="listitem" data-card-id="q5" data-choice="A" data-correct="C">
@@ -677,6 +729,10 @@ perforators will allow bidirectional blood blow.</div>
             <div class="content question-text">The innominate veins course ____________ to the innominate artery.</div>
             
             <div class="study-note" data-study-note="q6"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q6">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 6">
               
               <button class="choice" type="button" role="listitem" data-card-id="q6" data-choice="A" data-correct="A">
@@ -730,6 +786,10 @@ innominate artery (aortic arch origin). The innominate vessels are also referred
             <div class="content question-text">The left and right innominate veins merge to form the ____________________.</div>
             
             <div class="study-note" data-study-note="q7"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q7">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 7">
               
               <button class="choice" type="button" role="listitem" data-card-id="q7" data-choice="A" data-correct="C">
@@ -782,6 +842,10 @@ innominate artery (aortic arch origin). The innominate vessels are also referred
             <div class="content question-text">Which calf vessel&#39;s anatomic course has been referred to as a &#34;stocking seam&#34;?</div>
             
             <div class="study-note" data-study-note="q8"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q8">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 8">
               
               <button class="choice" type="button" role="listitem" data-card-id="q8" data-choice="A" data-correct="B">
@@ -833,6 +897,10 @@ popliteal vein at or near the popliteal fossa. Its course has been said to resem
             <div class="content question-text">How can you differentiate the anterior accessory saphenous vein (AASV) from the great saphenous vein (GSV)?</div>
             
             <div class="study-note" data-study-note="q9"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q9">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 9">
               
               <button class="choice" type="button" role="listitem" data-card-id="q9" data-choice="A" data-correct="D">
@@ -887,6 +955,10 @@ saphenous compartment.</div>
             <div class="content question-text">During inspiration the flow in the veins of the upper extremities _____________.</div>
             
             <div class="study-note" data-study-note="q10"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q10">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 10">
               
               <button class="choice" type="button" role="listitem" data-card-id="q10" data-choice="A" data-correct="A">
@@ -942,6 +1014,10 @@ extremities to increase.</div>
             <div class="content question-text">Which of the following describes a normal lower extremity response to the Valsalva maneuver?</div>
             
             <div class="study-note" data-study-note="q11"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q11">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 11">
               
               <button class="choice" type="button" role="listitem" data-card-id="q11" data-choice="A" data-correct="D">
@@ -993,6 +1069,10 @@ the maneuver, flow will be briefly augmented toward the heart and then normalize
             <div class="content question-text">When transmural pressure in a vein is high:</div>
             
             <div class="study-note" data-study-note="q12"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q12">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 12">
               
               <button class="choice" type="button" role="listitem" data-card-id="q12" data-choice="A" data-correct="C">
@@ -1046,6 +1126,10 @@ dumbbell shape.</div>
             <div class="content question-text">The great saphenous vein is attached to the _______ aspect of the common femoral vein.</div>
             
             <div class="study-note" data-study-note="q13"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q13">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 13">
               
               <button class="choice" type="button" role="listitem" data-card-id="q13" data-choice="A" data-correct="B">
@@ -1098,6 +1182,10 @@ dumbbell shape.</div>
             <div class="content question-text">The transducer is placed in the longitudinal position slightly anterior to midline of the medial upper left calf. The beam is angled posterior until the image displayed appears. What vessel is indicated by letter B?</div>
             
             <div class="study-note" data-study-note="q14"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q14">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 14">
               
               <button class="choice" type="button" role="listitem" data-card-id="q14" data-choice="A" data-correct="A">
@@ -1150,6 +1238,10 @@ dumbbell shape.</div>
             <div class="content question-text">The image is a transverse view of the right antecubital fossa. What vessel is indicated by letter B?</div>
             
             <div class="study-note" data-study-note="q15"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q15">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 15">
               
               <button class="choice" type="button" role="listitem" data-card-id="q15" data-choice="A" data-correct="A">
@@ -1203,6 +1295,10 @@ lateral to medial: cephalic, brachial, basilic</div>
             <div class="content question-text">The small saphenous vein:</div>
             
             <div class="study-note" data-study-note="q16"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q16">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 16">
               
               <button class="choice" type="button" role="listitem" data-card-id="q16" data-choice="A" data-correct="D">
@@ -1253,6 +1349,10 @@ lateral to medial: cephalic, brachial, basilic</div>
             <div class="content question-text">Which of the following veins originates at the medial wrist and courses up the medial arm to join the axillary vein?</div>
             
             <div class="study-note" data-study-note="q17"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q17">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 17">
               
               <button class="choice" type="button" role="listitem" data-card-id="q17" data-choice="A" data-correct="A">
@@ -1308,6 +1408,10 @@ axillary vein,</div>
             <div class="content question-text">Which vein is best evaluated for compressibility by asking the patient to perform a quick, deep sniff?</div>
             
             <div class="study-note" data-study-note="q18"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q18">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 18">
               
               <button class="choice" type="button" role="listitem" data-card-id="q18" data-choice="A" data-correct="B">
@@ -1359,6 +1463,10 @@ deep sniff, the normal subclavian vein should demonstrate compression.</div>
             <div class="content question-text">While performing a lower extremity venous exam, you identify a small pair of veins with an accompanying artery deep in the calf muscle, that connect to the popliteal vein. What veins are these?</div>
             
             <div class="study-note" data-study-note="q19"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q19">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 19">
               
               <button class="choice" type="button" role="listitem" data-card-id="q19" data-choice="A" data-correct="B">
@@ -1410,6 +1518,10 @@ accompanying artery. The sural veins empty their blood into the popliteal vein.<
             <div class="content question-text">If the image displayed is a transverse view of the posterior right lower leg, Letter A correspond to:</div>
             
             <div class="study-note" data-study-note="q20"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q20">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 20">
               
               <button class="choice" type="button" role="listitem" data-card-id="q20" data-choice="A" data-correct="D">
@@ -1467,6 +1579,10 @@ D. popliteal vein</div>
             <div class="content question-text">Which of the following can be found immediately posterior to the inguinal ligament?</div>
             
             <div class="study-note" data-study-note="q21"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q21">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 21">
               
               <button class="choice" type="button" role="listitem" data-card-id="q21" data-choice="A" data-correct="A">
@@ -1519,6 +1635,10 @@ saphenopopliteal junction is located in the upper calf or popliteal fossa in mos
             <div class="content question-text">Respiration and ____________________ are responsible for venous blood flow.</div>
             
             <div class="study-note" data-study-note="q22"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q22">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 22">
               
               <button class="choice" type="button" role="listitem" data-card-id="q22" data-choice="A" data-correct="C">
@@ -1569,6 +1689,10 @@ saphenopopliteal junction is located in the upper calf or popliteal fossa in mos
             <div class="content question-text">Which of the following correctly describes the venous system of the upper extremity?</div>
             
             <div class="study-note" data-study-note="q23"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q23">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 23">
               
               <button class="choice" type="button" role="listitem" data-card-id="q23" data-choice="A" data-correct="D">
@@ -1623,6 +1747,10 @@ that compresses the vein in the thoracic outlet.</div>
             <div class="content question-text">Which of the following veins is located deep to the muscular fascia in the proximal arm and superficial to the fascia in the forearm?</div>
             
             <div class="study-note" data-study-note="q24"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q24">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 24">
               
               <button class="choice" type="button" role="listitem" data-card-id="q24" data-choice="A" data-correct="A">
@@ -1676,6 +1804,10 @@ elbow and courses cephalad, beneath the fascia, to join the axillary vein.</div>
             <div class="content question-text">The attached image is taken from a lower extremity venous Doppler exam. This flow pattern would be abnormal for which of the following veins?</div>
             
             <div class="study-note" data-study-note="q25"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q25">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 25">
               
               <button class="choice" type="button" role="listitem" data-card-id="q25" data-choice="A" data-correct="C">
@@ -1727,6 +1859,10 @@ to demonstrate patency of these veins. Lack of spontaneous flow in the popliteal
             <div class="content question-text">When performing a lower extremity venous exam for insufficiency, you locate an incompetent vein that extends from the ankle to connect to the GSV near the popliteal fossa. Incompetent perforators are also identified in the mid-calf that allow flow between this vein and the GSV. Identify the incompetent vein.</div>
             
             <div class="study-note" data-study-note="q26"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q26">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 26">
               
               <button class="choice" type="button" role="listitem" data-card-id="q26" data-choice="A" data-correct="B">
@@ -1781,6 +1917,10 @@ perforators). This vein usually plays a major role in disease caused by venous s
             <div class="content question-text">Venous perforators connect the deep and superficial systems of the leg at many locations including:</div>
             
             <div class="study-note" data-study-note="q27"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q27">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 27">
               
               <button class="choice" type="button" role="listitem" data-card-id="q27" data-choice="A" data-correct="D">
@@ -1832,6 +1972,10 @@ and ankle.</div>
             <div class="content question-text">Venous valve leaflets:</div>
             
             <div class="study-note" data-study-note="q28"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q28">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 28">
               
               <button class="choice" type="button" role="listitem" data-card-id="q28" data-choice="A" data-correct="B">
@@ -1882,6 +2026,10 @@ and ankle.</div>
             <div class="content question-text">_______________ reflux will be normally seen in the lower extremity superficial system.</div>
             
             <div class="study-note" data-study-note="q29"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q29">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 29">
               
               <button class="choice" type="button" role="listitem" data-card-id="q29" data-choice="A" data-correct="B">
@@ -1932,6 +2080,10 @@ and ankle.</div>
             <div class="content question-text">Paired veins that accompany an artery of the same name are called:</div>
             
             <div class="study-note" data-study-note="q30"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q30">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 30">
               
               <button class="choice" type="button" role="listitem" data-card-id="q30" data-choice="A" data-correct="C">
@@ -1983,6 +2135,10 @@ the same name. Radial, ulnar, PTV, ATV, peroneal and gastrocnemius veins are exa
             <div class="content question-text">The image demonstrates a venous perforator connected to the greater saphenous vein. Which of the following is true regarding the image and venous perforators?</div>
             
             <div class="study-note" data-study-note="q31"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q31">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 31">
               
               <button class="choice" type="button" role="listitem" data-card-id="q31" data-choice="A" data-correct="D">
@@ -2036,6 +2192,10 @@ the superficial to the deep system.</div>
             <div class="content question-text">There are normally _______________ perforator veins in each leg.</div>
             
             <div class="study-note" data-study-note="q32"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q32">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 32">
               
               <button class="choice" type="button" role="listitem" data-card-id="q32" data-choice="A" data-correct="B">
@@ -2086,6 +2246,10 @@ the superficial to the deep system.</div>
             <div class="content question-text">The paratibial perforators connect:</div>
             
             <div class="study-note" data-study-note="q33"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q33">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 33">
               
               <button class="choice" type="button" role="listitem" data-card-id="q33" data-choice="A" data-correct="C">
@@ -2138,6 +2302,10 @@ the superficial to the deep system.</div>
             <div class="content question-text">Which of the following occurs during calf muscle relaxation?</div>
             
             <div class="study-note" data-study-note="q34"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q34">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 34">
               
               <button class="choice" type="button" role="listitem" data-card-id="q34" data-choice="A" data-correct="B">
@@ -2190,6 +2358,10 @@ the deep vessels.</div>
             <div class="content question-text">_________________________ carry(s) the blood from the GSV in the distal thigh into the distal femoral vein.</div>
             
             <div class="study-note" data-study-note="q35"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q35">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 35">
               
               <button class="choice" type="button" role="listitem" data-card-id="q35" data-choice="A" data-correct="C">
@@ -2243,6 +2415,10 @@ femoral vein.</div>
             <div class="content question-text">The image is a transverse view of right shoulder. What vessel is indicated by letter A?</div>
             
             <div class="study-note" data-study-note="q36"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q36">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 36">
               
               <button class="choice" type="button" role="listitem" data-card-id="q36" data-choice="A" data-correct="B">
@@ -2295,6 +2471,10 @@ femoral vein.</div>
             <div class="content question-text">Which vein below is usually the longest vein in the body?</div>
             
             <div class="study-note" data-study-note="q37"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q37">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 37">
               
               <button class="choice" type="button" role="listitem" data-card-id="q37" data-choice="A" data-correct="B">
@@ -2345,6 +2525,10 @@ femoral vein.</div>
             <div class="content question-text">Which of the following veins courses anterior to the tibial bone in the calf?</div>
             
             <div class="study-note" data-study-note="q38"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q38">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 38">
               
               <button class="choice" type="button" role="listitem" data-card-id="q38" data-choice="A" data-correct="D">
@@ -2395,6 +2579,10 @@ femoral vein.</div>
             <div class="content question-text">When evaluating the GSV for use as a bypass graft, what is the preferred diameter for the vein?</div>
             
             <div class="study-note" data-study-note="q39"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q39">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 39">
               
               <button class="choice" type="button" role="listitem" data-card-id="q39" data-choice="A" data-correct="A">
@@ -2445,6 +2633,10 @@ femoral vein.</div>
             <div class="content question-text">Which of the following statements regarding venous perforators is correct?</div>
             
             <div class="study-note" data-study-note="q40"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q40">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 40">
               
               <button class="choice" type="button" role="listitem" data-card-id="q40" data-choice="A" data-correct="C">
@@ -2497,6 +2689,10 @@ contain a single valve. Thrombosis can occur within the perforators, which can l
             <div class="content question-text">Flow through venous perforators is:</div>
             
             <div class="study-note" data-study-note="q41"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q41">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 41">
               
               <button class="choice" type="button" role="listitem" data-card-id="q41" data-choice="A" data-correct="A">
@@ -2547,6 +2743,10 @@ contain a single valve. Thrombosis can occur within the perforators, which can l
             <div class="content question-text">Which of the following veins does not normally contain any functioning valves?</div>
             
             <div class="study-note" data-study-note="q42"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q42">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 42">
               
               <button class="choice" type="button" role="listitem" data-card-id="q42" data-choice="A" data-correct="C">
@@ -2601,6 +2801,10 @@ junction with the right atrium. It is a remnant of fetal circulation and does no
             <div class="content question-text">What venous valves are closed in the lower extremity during calf muscle relaxation?</div>
             
             <div class="study-note" data-study-note="q43"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q43">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 43">
               
               <button class="choice" type="button" role="listitem" data-card-id="q43" data-choice="A" data-correct="B">
@@ -2655,6 +2859,10 @@ valves open, and blood flows into the calf deep veins.</div>
             <div class="content question-text">Which of the following locations has a direct connection between the deep and superficial veins of the leg?</div>
             
             <div class="study-note" data-study-note="q44"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q44">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 44">
               
               <button class="choice" type="button" role="listitem" data-card-id="q44" data-choice="A" data-correct="B">
@@ -2708,6 +2916,10 @@ The superficial system connects to the deep system through perforator veins loca
             <div class="content question-text">If the image displayed is a transverse view of the posterior right lower leg, Letter C correspond to:</div>
             
             <div class="study-note" data-study-note="q45"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q45">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 45">
               
               <button class="choice" type="button" role="listitem" data-card-id="q45" data-choice="A" data-correct="C">
@@ -2765,6 +2977,10 @@ D. popliteal vein</div>
             <div class="content question-text">Which of the following statements regarding a Duplex exam of the upper extremity veins is correct?</div>
             
             <div class="study-note" data-study-note="q46"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q46">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 46">
               
               <button class="choice" type="button" role="listitem" data-card-id="q46" data-choice="A" data-correct="A">
@@ -2820,6 +3036,10 @@ a decrease in flow within the larger upper extremity veins.</div>
             <div class="content question-text">When a patient performs the Valsalva strain, the intra-abdominal pressure ___________________ and the intrathoracic pressure _____________.</div>
             
             <div class="study-note" data-study-note="q47"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q47">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 47">
               
               <button class="choice" type="button" role="listitem" data-card-id="q47" data-choice="A" data-correct="A">
@@ -2870,6 +3090,10 @@ a decrease in flow within the larger upper extremity veins.</div>
             <div class="content question-text">Increased pressure in the venous system results in:</div>
             
             <div class="study-note" data-study-note="q48"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q48">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 48">
               
               <button class="choice" type="button" role="listitem" data-card-id="q48" data-choice="A" data-correct="D">
@@ -2920,6 +3144,10 @@ a decrease in flow within the larger upper extremity veins.</div>
             <div class="content question-text">Where are the venous sinusoids in the lower extremity?</div>
             
             <div class="study-note" data-study-note="q49"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q49">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 49">
               
               <button class="choice" type="button" role="listitem" data-card-id="q49" data-choice="A" data-correct="D">
@@ -2971,6 +3199,10 @@ located between the soleal and gastrocnemius muscle.</div>
             <div class="content question-text">_________________________ receives the blood from the posterior tibial perforators and plays a major role in venous stasis of the lower extremity.</div>
             
             <div class="study-note" data-study-note="q50"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q50">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 50">
               
               <button class="choice" type="button" role="listitem" data-card-id="q50" data-choice="A" data-correct="D">
@@ -3024,6 +3256,10 @@ major role in venous stasis; connected to 3 ankle perforators called posterior t
             <div class="content question-text">What vein contains blood with a very high oxygen content?</div>
             
             <div class="study-note" data-study-note="q51"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q51">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 51">
               
               <button class="choice" type="button" role="listitem" data-card-id="q51" data-choice="A" data-correct="C">
@@ -3076,6 +3312,10 @@ depleted levels of oxygen because the organs that they are draining require the 
             <div class="content question-text">The transducer is placed over the mid femoral vein while calf compression is performed. The Doppler waveform demonstrates spontaneous flow with an increase in forward flow with the calf compression. Which of the following describes the findings?</div>
             
             <div class="study-note" data-study-note="q52"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q52">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 52">
               
               <button class="choice" type="button" role="listitem" data-card-id="q52" data-choice="A" data-correct="D">
@@ -3127,6 +3367,10 @@ the increase in flow.</div>
             <div class="content question-text">The femoral vein ______________________ the femoral artery.</div>
             
             <div class="study-note" data-study-note="q53"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q53">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 53">
               
               <button class="choice" type="button" role="listitem" data-card-id="q53" data-choice="A" data-correct="D">
@@ -3177,6 +3421,10 @@ the increase in flow.</div>
             <div class="content question-text">Which superficial vein listed forms a connection at the elbow between the two main upper extremity superficial veins?</div>
             
             <div class="study-note" data-study-note="q54"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q54">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 54">
               
               <button class="choice" type="button" role="listitem" data-card-id="q54" data-choice="A" data-correct="D">
@@ -3229,6 +3477,10 @@ the increase in flow.</div>
             <div class="content question-text">Which of the following veins are part of the superficial venous system in the lower extremity?</div>
             
             <div class="study-note" data-study-note="q55"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q55">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 55">
               
               <button class="choice" type="button" role="listitem" data-card-id="q55" data-choice="A" data-correct="D">
@@ -3279,6 +3531,10 @@ the increase in flow.</div>
             <div class="content question-text">The Achilles tendon is a landmark for which deep calf vein?</div>
             
             <div class="study-note" data-study-note="q56"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q56">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 56">
               
               <button class="choice" type="button" role="listitem" data-card-id="q56" data-choice="A" data-correct="B">
@@ -3331,6 +3587,10 @@ SSV is located posterior to the tendon, but it is a superficial vein.</div>
             <div class="content question-text">The gastrocnemius plexus is usually connected to the:</div>
             
             <div class="study-note" data-study-note="q57"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q57">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 57">
               
               <button class="choice" type="button" role="listitem" data-card-id="q57" data-choice="A" data-correct="D">
@@ -3384,6 +3644,10 @@ sitting and standing etc.</div>
             <div class="content question-text">Assuming proper transducer orientation, which of the following normal vessels could be displayed on the image?</div>
             
             <div class="study-note" data-study-note="q58"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q58">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 58">
               
               <button class="choice" type="button" role="listitem" data-card-id="q58" data-choice="A" data-correct="B">
@@ -3439,6 +3703,10 @@ groin it would demonstrate the greater saphenous vein extending upward on the le
             <div class="content question-text">If the image displayed is a transverse view of the posterior right lower leg, Letter D correspond to:</div>
             
             <div class="study-note" data-study-note="q59"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q59">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 59">
               
               <button class="choice" type="button" role="listitem" data-card-id="q59" data-choice="A" data-correct="D">
@@ -3528,6 +3796,10 @@ as a linear echogenic reflection separating the layers of tissue. Tributary vein
             <div class="content question-text">Which of the following is unaffected by vasoconstriction and vasodilation in the arterioles?</div>
             
             <div class="study-note" data-study-note="q61"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q61">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 61">
               
               <button class="choice" type="button" role="listitem" data-card-id="q61" data-choice="A" data-correct="C">
@@ -3581,6 +3853,10 @@ will have more antegrade flow in diastole. A biphasic waveform can become monoph
             <div class="content question-text">Which of the following is true regarding the superficial veins of the lower extremity?</div>
             
             <div class="study-note" data-study-note="q62"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q62">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 62">
               
               <button class="choice" type="button" role="listitem" data-card-id="q62" data-choice="A" data-correct="A">
@@ -3632,6 +3908,10 @@ will have more antegrade flow in diastole. A biphasic waveform can become monoph
             <div class="content question-text">If letter A is the basilic vein, what extremity is being evaluated?</div>
             
             <div class="study-note" data-study-note="q63"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q63">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 63">
               
               <button class="choice" type="button" role="listitem" data-card-id="q63" data-choice="A" data-correct="C">
@@ -3686,6 +3966,10 @@ vessels. The image is of the upper arm.</div>
             <div class="content question-text">2D transverse views of the lower extremity veins are preferred for:</div>
             
             <div class="study-note" data-study-note="q64"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q64">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 64">
               
               <button class="choice" type="button" role="listitem" data-card-id="q64" data-choice="A" data-correct="A">
@@ -3737,6 +4021,10 @@ Transverse views are used to obtain 2D images or clips of vein compression.</div
             <div class="content question-text">Which vein(s) originates at the ankle and courses along the medial border of the fibula to join the posterior tibial veins just distal to the popliteal fossa?</div>
             
             <div class="study-note" data-study-note="q65"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q65">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 65">
               
               <button class="choice" type="button" role="listitem" data-card-id="q65" data-choice="A" data-correct="C">
@@ -3790,6 +4078,10 @@ popliteal fossa.</div>
             <div class="content question-text">Increased transducer pressure during a venous evaluation can have what negative effect on the exam?</div>
             
             <div class="study-note" data-study-note="q66"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q66">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 66">
               
               <button class="choice" type="button" role="listitem" data-card-id="q66" data-choice="A" data-correct="B">
@@ -3844,6 +4136,10 @@ effect).</div>
             <div class="content question-text">The image attached demonstrates which of the following?</div>
             
             <div class="study-note" data-study-note="q67"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q67">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 67">
               
               <button class="choice" type="button" role="listitem" data-card-id="q67" data-choice="A" data-correct="C">
@@ -3896,6 +4192,10 @@ effect).</div>
             <div class="content question-text">The innominate vein is formed by the junction of:</div>
             
             <div class="study-note" data-study-note="q68"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q68">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 68">
               
               <button class="choice" type="button" role="listitem" data-card-id="q68" data-choice="A" data-correct="A">
@@ -3948,6 +4248,10 @@ effect).</div>
             <div class="content question-text">During a color evaluation of the common femoral vein, the patient is asked to perform the Valsalva maneuver. The cephalic flow indicated by the blue color in the CFV immediately disappears until the patient releases their muscles. The blue color returns and completely fills the vessel. What do these color Doppler findings indicate?</div>
             
             <div class="study-note" data-study-note="q69"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q69">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 69">
               
               <button class="choice" type="button" role="listitem" data-card-id="q69" data-choice="A" data-correct="A">
@@ -3999,6 +4303,10 @@ The loss of color flow during the Valsalva maneuver is a normal response of cess
             <div class="content question-text">What patient position should be used when mapping the great saphenous vein for harvest?</div>
             
             <div class="study-note" data-study-note="q70"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q70">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 70">
               
               <button class="choice" type="button" role="listitem" data-card-id="q70" data-choice="A" data-correct="B">
@@ -4052,6 +4360,10 @@ applied in cases where the veins are very small</div>
             <div class="content question-text">What is the arrow pointing to on the image of the right groin?</div>
             
             <div class="study-note" data-study-note="q71"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q71">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 71">
               
               <button class="choice" type="button" role="listitem" data-card-id="q71" data-choice="A" data-correct="C">
@@ -4139,6 +4451,10 @@ superficial varicosities in the lower abdomen if the valves are incompetent.</di
             <div class="content question-text">Which of the following is a limitation of the 2D evaluation of the extremity veins?</div>
             
             <div class="study-note" data-study-note="q73"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q73">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 73">
               
               <button class="choice" type="button" role="listitem" data-card-id="q73" data-choice="A" data-correct="A">
@@ -4203,6 +4519,10 @@ of reflux. A supine patient could cause false negative results for reflux.</div>
             <div class="content question-text">Which of the following are typically characterized as concomitant veins?</div>
             
             <div class="study-note" data-study-note="q74"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q74">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 74">
               
               <button class="choice" type="button" role="listitem" data-card-id="q74" data-choice="A" data-correct="A">
@@ -4287,6 +4607,10 @@ should be evaluated with color and PW Doppler for signs of reflux.</div>
             <div class="content question-text">Which vein courses from the lateral aspect of the wrist extending up the lateral arm to the shoulder to join the axillary vein?</div>
             
             <div class="study-note" data-study-note="q76"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q76">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 76">
               
               <button class="choice" type="button" role="listitem" data-card-id="q76" data-choice="A" data-correct="A">
@@ -4340,6 +4664,10 @@ vein to form the subclavian vein.</div>
             <div class="content question-text">Which of the following normal vessels will collapse when you ask the patient to sniff quickly with moderate exertion?</div>
             
             <div class="study-note" data-study-note="q77"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q77">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 77">
               
               <button class="choice" type="button" role="listitem" data-card-id="q77" data-choice="A" data-correct="C">
@@ -4394,6 +4722,10 @@ a vessel in the extremity.</div>
             <div class="content question-text">An ineffective calf muscle pump causes:</div>
             
             <div class="study-note" data-study-note="q78"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q78">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 78">
               
               <button class="choice" type="button" role="listitem" data-card-id="q78" data-choice="A" data-correct="B">
@@ -4445,6 +4777,10 @@ venous volume and pressure; reflux is a contributing factor</div>
             <div class="content question-text">Pressure in the venules does not normally exceed ________________.</div>
             
             <div class="study-note" data-study-note="q79"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q79">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 79">
               
               <button class="choice" type="button" role="listitem" data-card-id="q79" data-choice="A" data-correct="B">
@@ -4495,6 +4831,10 @@ venous volume and pressure; reflux is a contributing factor</div>
             <div class="content question-text">The radial and ulnar veins merge to form the _______________________ at the ________________________ fossa.</div>
             
             <div class="study-note" data-study-note="q80"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q80">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 80">
               
               <button class="choice" type="button" role="listitem" data-card-id="q80" data-choice="A" data-correct="D">
@@ -4547,6 +4887,10 @@ venous volume and pressure; reflux is a contributing factor</div>
             <div class="content question-text">Which of the following is part of the superficial venous system of the lower extremity?</div>
             
             <div class="study-note" data-study-note="q81"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q81">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 81">
               
               <button class="choice" type="button" role="listitem" data-card-id="q81" data-choice="A" data-correct="B">
@@ -4600,6 +4944,10 @@ are located deep in the calf muscle. The peroneal veins are deep veins of the ca
             <div class="content question-text">Which of the following is correct regarding the brachiocephalic veins?</div>
             
             <div class="study-note" data-study-note="q82"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q82">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 82">
               
               <button class="choice" type="button" role="listitem" data-card-id="q82" data-choice="A" data-correct="D">
@@ -4685,6 +5033,10 @@ reflux.</div>
             <div class="content question-text">Which of the following is part of the deep venous system of the forearm?</div>
             
             <div class="study-note" data-study-note="q84"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q84">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 84">
               
               <button class="choice" type="button" role="listitem" data-card-id="q84" data-choice="A" data-correct="A">
@@ -4738,6 +5090,10 @@ deep veins of the arm.</div>
             <div class="content question-text">Once the pressure in the deep venous system consistently exceeds the pressure in the superficial system,</div>
             
             <div class="study-note" data-study-note="q85"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q85">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 85">
               
               <button class="choice" type="button" role="listitem" data-card-id="q85" data-choice="A" data-correct="D">
@@ -4789,6 +5145,10 @@ leading to bi-directional flow.</div>
             <div class="content question-text">The transducer is placed in the longitudinal position slightly anterior to midline of the medial upper left calf. The beam is angled posterior until the image displayed appears. What vessel is indicated by letter A?</div>
             
             <div class="study-note" data-study-note="q86"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q86">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 86">
               
               <button class="choice" type="button" role="listitem" data-card-id="q86" data-choice="A" data-correct="A">
@@ -4841,6 +5201,10 @@ leading to bi-directional flow.</div>
             <div class="content question-text">Hydrostatic venous pressure ___________ when a patient goes from standing to the supine position.</div>
             
             <div class="study-note" data-study-note="q87"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q87">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 87">
               
               <button class="choice" type="button" role="listitem" data-card-id="q87" data-choice="A" data-correct="D">
@@ -4893,6 +5257,10 @@ pressure in the &#34;column&#34; is dispersed.</div>
             <div class="content question-text">Which of the following explains the increased incidence of DVT in the left leg when compared to the right leg?</div>
             
             <div class="study-note" data-study-note="q88"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q88">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 88">
               
               <button class="choice" type="button" role="listitem" data-card-id="q88" data-choice="A" data-correct="A">
@@ -4946,6 +5314,10 @@ incidence of left leg DVT. This condition is called May Thurner syndrome.</div>
             <div class="content question-text">The image is a transverse view of the right antecubital fossa. What vessel is indicated by letter A?</div>
             
             <div class="study-note" data-study-note="q89"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q89">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 89">
               
               <button class="choice" type="button" role="listitem" data-card-id="q89" data-choice="A" data-correct="A">
@@ -4999,6 +5371,10 @@ lateral to medial: cephalic, brachial, basilic</div>
             <div class="content question-text">The ______________ course(s) between the tibial and fibular head to empty blood into the popliteal vein.</div>
             
             <div class="study-note" data-study-note="q90"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q90">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 90">
               
               <button class="choice" type="button" role="listitem" data-card-id="q90" data-choice="A" data-correct="D">
@@ -5050,6 +5426,10 @@ tibial and fibular head to empty into the popliteal vein.</div>
             <div class="content question-text">The great saphenous vein originates _____________________</div>
             
             <div class="study-note" data-study-note="q91"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q91">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 91">
               
               <button class="choice" type="button" role="listitem" data-card-id="q91" data-choice="A" data-correct="A">
@@ -5132,6 +5512,10 @@ found superficial to the superficial fascia.</div>
             <div class="content question-text">During inspiration the flow in the veins of the lower extremities _____________.</div>
             
             <div class="study-note" data-study-note="q93"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q93">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 93">
               
               <button class="choice" type="button" role="listitem" data-card-id="q93" data-choice="A" data-correct="B">
@@ -5187,6 +5571,10 @@ extremities to increase.</div>
             <div class="content question-text">_________________________ drain(s) blood from the GSV in the proximal thigh into the proximal and mid femoral vein.</div>
             
             <div class="study-note" data-study-note="q94"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q94">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 94">
               
               <button class="choice" type="button" role="listitem" data-card-id="q94" data-choice="A" data-correct="C">
@@ -5238,6 +5626,10 @@ as proximal thigh perforators.</div>
             <div class="content question-text">The superficial venous system of the lower extremities contains vessels that are located</div>
             
             <div class="study-note" data-study-note="q95"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q95">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 95">
               
               <button class="choice" type="button" role="listitem" data-card-id="q95" data-choice="A" data-correct="C">
@@ -5290,6 +5682,10 @@ as proximal thigh perforators.</div>
             <div class="content question-text">The image is a transverse view of the right antecubital fossa. What vessel is indicated by letter C?</div>
             
             <div class="study-note" data-study-note="q96"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q96">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 96">
               
               <button class="choice" type="button" role="listitem" data-card-id="q96" data-choice="A" data-correct="D">
@@ -5344,6 +5740,10 @@ other vessels on the screen. Letter C is the brachial artery.</div>
             <div class="content question-text">The image is a transverse view of right shoulder. What vessel is indicated by letter B?</div>
             
             <div class="study-note" data-study-note="q97"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q97">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 97">
               
               <button class="choice" type="button" role="listitem" data-card-id="q97" data-choice="A" data-correct="B">
@@ -5396,6 +5796,10 @@ other vessels on the screen. Letter C is the brachial artery.</div>
             <div class="content question-text">Blood within the pulmonary veins:</div>
             
             <div class="study-note" data-study-note="q98"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q98">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 98">
               
               <button class="choice" type="button" role="listitem" data-card-id="q98" data-choice="A" data-correct="C">
@@ -5446,6 +5850,10 @@ other vessels on the screen. Letter C is the brachial artery.</div>
             <div class="content question-text">The transducer is placed in the longitudinal position slightly anterior to midline of the medial upper left calf. The beam is angled posterior until the image displayed appears. What vessel is indicated by letter C?</div>
             
             <div class="study-note" data-study-note="q99"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q99">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 99">
               
               <button class="choice" type="button" role="listitem" data-card-id="q99" data-choice="A" data-correct="B">
@@ -5498,6 +5906,10 @@ other vessels on the screen. Letter C is the brachial artery.</div>
             <div class="content question-text">Which of the following veins normally do not demonstrate spontaneous flow on Doppler evaluation?</div>
             
             <div class="study-note" data-study-note="q100"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q100">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 100">
               
               <button class="choice" type="button" role="listitem" data-card-id="q100" data-choice="A" data-correct="C">
@@ -5549,6 +5961,10 @@ very low velocity and not easily detected without augmentation.</div>
             <div class="content question-text">Which of the following veins does not normally contain any functioning valves?</div>
             
             <div class="study-note" data-study-note="q101"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q101">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 101">
               
               <button class="choice" type="button" role="listitem" data-card-id="q101" data-choice="A" data-correct="A">
@@ -5602,6 +6018,10 @@ contain valves = SVC and innominate veins.</div>
             <div class="content question-text">Which of the following is a limitation of a CW Doppler evaluation of the lower extremity veins?</div>
             
             <div class="study-note" data-study-note="q102"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q102">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 102">
               
               <button class="choice" type="button" role="listitem" data-card-id="q102" data-choice="A" data-correct="B">
@@ -5687,6 +6107,10 @@ differentiation of the hilum.</div>
             <div class="content question-text">Bank tellers, teachers, cashiers and assembly line workers have an increased risk of all of the following, except:</div>
             
             <div class="study-note" data-study-note="q104"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q104">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 104">
               
               <button class="choice" type="button" role="listitem" data-card-id="q104" data-choice="A" data-correct="D">
@@ -5740,6 +6164,10 @@ thrombus formation.</div>
             <div class="content question-text">Which of the following terms would be used to describe abnormal venous flow in the deep veins of the thigh?</div>
             
             <div class="study-note" data-study-note="q105"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q105">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 105">
               
               <button class="choice" type="button" role="listitem" data-card-id="q105" data-choice="A" data-correct="C">
@@ -5798,6 +6226,10 @@ the body (without any augmentation maneuvers applied).</div>
             <div class="content question-text">The soleal plexus is located:</div>
             
             <div class="study-note" data-study-note="q106"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q106">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 106">
               
               <button class="choice" type="button" role="listitem" data-card-id="q106" data-choice="A" data-correct="A">
@@ -5848,6 +6280,10 @@ the body (without any augmentation maneuvers applied).</div>
             <div class="content question-text">Where is the eustachian valve found?</div>
             
             <div class="study-note" data-study-note="q107"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q107">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 107">
               
               <button class="choice" type="button" role="listitem" data-card-id="q107" data-choice="A" data-correct="B">
@@ -5900,6 +6336,10 @@ the IVC is described as having no valves.</div>
             <div class="content question-text">How can the gastrocnemius veins and the posterior tibial veins be differentiated on an ultrasound exam?</div>
             
             <div class="study-note" data-study-note="q108"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q108">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 108">
               
               <button class="choice" type="button" role="listitem" data-card-id="q108" data-choice="A" data-correct="A">
@@ -5955,6 +6395,10 @@ them from each other.</div>
             <div class="content question-text">Proximal augmentation during an extremity Doppler evaluation is used to assess:</div>
             
             <div class="study-note" data-study-note="q109"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q109">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 109">
               
               <button class="choice" type="button" role="listitem" data-card-id="q109" data-choice="A" data-correct="C">
@@ -6026,6 +6470,12 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     document.getElementById("close-all").addEventListener("click", () => {
       answerToggles.forEach((toggle) => setPanelState(toggle, false));
+    });
+
+    document.getElementById("clear-all-answers").addEventListener("click", () => {
+      Object.keys(studyState).forEach((key) => delete studyState[key]);
+      saveStudyState(studyState);
+      applyStudyState(studyState);
     });
 
     function normalizeState(rawState) {
@@ -6112,6 +6562,15 @@ Powered by ExamBuilder. Copyright ©2026</div>
           status: choice === correct ? "correct" : "incorrect",
           selectedChoice: choice,
         };
+        saveStudyState(studyState);
+        applyStudyState(studyState);
+      });
+    });
+
+    document.querySelectorAll("[data-clear-card]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const cardId = button.getAttribute("data-clear-card");
+        delete studyState[cardId];
         saveStudyState(studyState);
         applyStudyState(studyState);
       });

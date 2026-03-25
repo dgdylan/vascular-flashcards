@@ -216,6 +216,31 @@
     .study-note.incorrect {
       color: var(--danger);
     }
+    .choice-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .clear-answer {
+      appearance: none;
+      border: 1px solid rgba(46, 110, 163, 0.12);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.55rem 0.8rem;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+    .clear-answer:hover {
+      transform: translateY(-1px);
+      border-color: rgba(239, 131, 84, 0.22);
+      color: var(--accent-dark);
+    }
     .choices {
       display: grid;
       gap: 0.9rem;
@@ -375,6 +400,12 @@
         justify-content: center;
         text-align: center;
       }
+      .choice-row {
+        align-items: stretch;
+      }
+      .clear-answer {
+        width: 100%;
+      }
       h1 {
         max-width: none;
       }
@@ -400,6 +431,7 @@
           <a href="../index.html">Back to index</a>
           <button type="button" id="open-all">Open all backs</button>
           <button type="button" id="close-all">Close all backs</button>
+          <button type="button" id="clear-all-answers">Clear saved answers</button>
         </div>
       </div>
     </section>
@@ -416,6 +448,10 @@
             <div class="content question-text">The image attached demonstrates which of the following?</div>
             
             <div class="study-note" data-study-note="q1"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q1">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 1">
               
               <button class="choice" type="button" role="listitem" data-card-id="q1" data-choice="A" data-correct="B">
@@ -469,6 +505,10 @@ thrombus free areas which allow some flow through the vessel.</div>
             <div class="content question-text">____________________ cause primary varicose veins, while ___________________ cause secondary varicose veins.</div>
             
             <div class="study-note" data-study-note="q2"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q2">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 2">
               
               <button class="choice" type="button" role="listitem" data-card-id="q2" data-choice="A" data-correct="B">
@@ -520,6 +560,10 @@ or abnormal valves) cause secondary varicose veins. Primary varicose veins are m
             <div class="content question-text">The most common complication of lower extremity DVT is:</div>
             
             <div class="study-note" data-study-note="q3"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q3">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 3">
               
               <button class="choice" type="button" role="listitem" data-card-id="q3" data-choice="A" data-correct="C">
@@ -576,6 +620,10 @@ of an extremity. It presents as painful &#34;blue&#34; swollen leg. Milk leg bec
             <div class="content question-text">What is demonstrated by the images from a lower extremity venous Doppler exam?</div>
             
             <div class="study-note" data-study-note="q4"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q4">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 4">
               
               <button class="choice" type="button" role="listitem" data-card-id="q4" data-choice="A" data-correct="B">
@@ -629,6 +677,10 @@ mosaic color pattern indicates turbulence at the connection with the artery.</di
             <div class="content question-text">The image is a transverse view of the distal popliteal fossa. Which of the following would not be a recommended treatment?</div>
             
             <div class="study-note" data-study-note="q5"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q5">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 5">
               
               <button class="choice" type="button" role="listitem" data-card-id="q5" data-choice="A" data-correct="C">
@@ -683,6 +735,10 @@ compress and an aspirin would usually be sufficient treatment.</div>
             <div class="content question-text">A patient presents for an upper extremity venous Doppler evaluation due to bilateral arm and face swelling. There are also varicosities visible on the upper chest wall. These symptoms are most consistent with:</div>
             
             <div class="study-note" data-study-note="q6"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q6">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 6">
               
               <button class="choice" type="button" role="listitem" data-card-id="q6" data-choice="A" data-correct="B">
@@ -734,6 +790,10 @@ swelling but the arm would not be affected. CHF usually causes swelling in the l
             <div class="content question-text">A patient presents with a swollen left leg from hip to ankle and the right leg is normal. An lower extremity venous duplex exam shows compressible vessels bilaterally. Doppler demonstrates normal flow in the right leg, but there is loss of phasicity of flow and decreased augmentation of the left common femoral vein and proximal femoral vein. These findings are most suggestive of:</div>
             
             <div class="study-note" data-study-note="q7"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q7">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 7">
               
               <button class="choice" type="button" role="listitem" data-card-id="q7" data-choice="A" data-correct="A">
@@ -786,6 +846,10 @@ extremities. Internal iliac thrombosis will not affect the venous outflow of the
             <div class="content question-text">A patient presents with a wet ulcer located on the medial calf just above the ankle. What vessel should be evaluated first as the most likely primary cause of the ulcer?</div>
             
             <div class="study-note" data-study-note="q8"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q8">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 8">
               
               <button class="choice" type="button" role="listitem" data-card-id="q8" data-choice="A" data-correct="B">
@@ -838,6 +902,10 @@ up the back of the calf, not near the ankle. A wet, oozing ulcer near the medial
             <div class="content question-text">Which of the following risk factors has the highest incidence of lower extremity thrombus formation?</div>
             
             <div class="study-note" data-study-note="q9"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q9">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 9">
               
               <button class="choice" type="button" role="listitem" data-card-id="q9" data-choice="A" data-correct="A">
@@ -891,6 +959,10 @@ of the surgery and could lead to hemorrhage.</div>
             <div class="content question-text">Which of the following would be contraindicated in this patient?</div>
             
             <div class="study-note" data-study-note="q10"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q10">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 10">
               
               <button class="choice" type="button" role="listitem" data-card-id="q10" data-choice="A" data-correct="B">
@@ -945,6 +1017,10 @@ causing further dilatation of the damaged veins.</div>
             <div class="content question-text">Which of the following patients has the lowest risk of upper extremity venous thrombosis?</div>
             
             <div class="study-note" data-study-note="q11"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q11">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 11">
               
               <button class="choice" type="button" role="listitem" data-card-id="q11" data-choice="A" data-correct="B">
@@ -997,6 +1073,10 @@ Hemophilia refers to a condition causing abnormally thin blood and would be a co
             <div class="content question-text">The most common location of a Baker cyst is:</div>
             
             <div class="study-note" data-study-note="q12"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q12">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 12">
               
               <button class="choice" type="button" role="listitem" data-card-id="q12" data-choice="A" data-correct="C">
@@ -1048,6 +1128,10 @@ exam.</div>
             <div class="content question-text">Which of the following is an expected complication caused by a Baker cyst?</div>
             
             <div class="study-note" data-study-note="q13"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q13">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 13">
               
               <button class="choice" type="button" role="listitem" data-card-id="q13" data-choice="A" data-correct="B">
@@ -1100,6 +1184,10 @@ extrinsic compression on the popliteal artery.</div>
             <div class="content question-text">Which of the following is a common infection that causes skin discoloration in patients with venous insufficiency?</div>
             
             <div class="study-note" data-study-note="q14"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q14">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 14">
               
               <button class="choice" type="button" role="listitem" data-card-id="q14" data-choice="A" data-correct="B">
@@ -1151,6 +1239,10 @@ insufficiency with venous hypertension and causes discoloration of the ankle and
             <div class="content question-text">If a patient is diagnosed with a pulmonary embolism, what should be the next step in their patient care?</div>
             
             <div class="study-note" data-study-note="q15"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q15">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 15">
               
               <button class="choice" type="button" role="listitem" data-card-id="q15" data-choice="A" data-correct="B">
@@ -1202,6 +1294,10 @@ Immediate IV Heparin therapy should be administered.</div>
             <div class="content question-text">Unilateral swelling of the lower extremity would be an expected clinical finding with:</div>
             
             <div class="study-note" data-study-note="q16"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q16">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 16">
               
               <button class="choice" type="button" role="listitem" data-card-id="q16" data-choice="A" data-correct="D">
@@ -1253,6 +1349,10 @@ the left leg.</div>
             <div class="content question-text">A patient presents for an exam due to a history of Lemierre Syndrome. What vessels should be evaluated for associated findings?</div>
             
             <div class="study-note" data-study-note="q17"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q17">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 17">
               
               <button class="choice" type="button" role="listitem" data-card-id="q17" data-choice="A" data-correct="D">
@@ -1304,6 +1404,10 @@ Duplex evaluation can demonstrate thrombus within the jugular vein or other neck
             <div class="content question-text">Which of the following describes abnormal lower extremity venous flow response to distal augmentation in a superficial vein?</div>
             
             <div class="study-note" data-study-note="q18"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q18">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 18">
               
               <button class="choice" type="button" role="listitem" data-card-id="q18" data-choice="A" data-correct="A">
@@ -1358,6 +1462,10 @@ toward heart followed by flow reversal &gt;0.5sec toward the feet.</div>
             <div class="content question-text">A 56yr old female presents with mild calf pain that is caused by dorsiflexion of the foot. The symptoms began after she returned from vacation in France. Yesterday she noticed a sudden red color change and edema, localized to the lower leg. These clinical findings are most suggestive of:</div>
             
             <div class="study-note" data-study-note="q19"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q19">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 19">
               
               <button class="choice" type="button" role="listitem" data-card-id="q19" data-choice="A" data-correct="D">
@@ -1409,6 +1517,10 @@ symptoms indicates propagation of a clot in the calf.</div>
             <div class="content question-text">Bilateral leg and foot edema are present. What is the most common cause for this?</div>
             
             <div class="study-note" data-study-note="q20"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q20">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 20">
               
               <button class="choice" type="button" role="listitem" data-card-id="q20" data-choice="A" data-correct="A">
@@ -1461,6 +1573,10 @@ cause swelling of the feet and is most commonly unilateral.</div>
             <div class="content question-text">What is the most common cause of upper extremity DVT in the normal ambulatory patient population?</div>
             
             <div class="study-note" data-study-note="q21"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q21">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 21">
               
               <button class="choice" type="button" role="listitem" data-card-id="q21" data-choice="A" data-correct="A">
@@ -1516,6 +1632,10 @@ medication/treatment.</div>
             <div class="content question-text">Which of the following conditions is usually related to cardiac pulsatility in the leg veins?</div>
             
             <div class="study-note" data-study-note="q22"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q22">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 22">
               
               <button class="choice" type="button" role="listitem" data-card-id="q22" data-choice="A" data-correct="D">
@@ -1571,6 +1691,10 @@ cardiac pulsatility will extend further into the lower extremities due to the in
             <div class="content question-text">_______________ is the &#34;gold standard&#34; exam technique for diagnosis of venous disease in the lower extremities.</div>
             
             <div class="study-note" data-study-note="q23"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q23">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 23">
               
               <button class="choice" type="button" role="listitem" data-card-id="q23" data-choice="A" data-correct="C">
@@ -1621,6 +1745,10 @@ cardiac pulsatility will extend further into the lower extremities due to the in
             <div class="content question-text">What is demonstrated on the longitudinal image taken from the mid- thigh?</div>
             
             <div class="study-note" data-study-note="q24"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q24">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 24">
               
               <button class="choice" type="button" role="listitem" data-card-id="q24" data-choice="A" data-correct="A">
@@ -1675,6 +1803,10 @@ on the image.</div>
             <div class="content question-text">Patients with lower extremity venous insufficiency may describe pain</div>
             
             <div class="study-note" data-study-note="q25"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q25">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 25">
               
               <button class="choice" type="button" role="listitem" data-card-id="q25" data-choice="A" data-correct="D">
@@ -1727,6 +1859,10 @@ into an already inefficient venous system. This can lead to increased pooling in
             <div class="content question-text">Which of the following Doppler findings would indicate significant venous hypertension?</div>
             
             <div class="study-note" data-study-note="q26"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q26">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 26">
               
               <button class="choice" type="button" role="listitem" data-card-id="q26" data-choice="A" data-correct="D">
@@ -1782,6 +1918,10 @@ chronic obstruction proximally.</div>
             <div class="content question-text">A patient has a prior history of popliteal DVT and currently complains of the increasing appearance of small varicosities on the calf. Which statement below best describes his condition?</div>
             
             <div class="study-note" data-study-note="q27"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q27">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 27">
               
               <button class="choice" type="button" role="listitem" data-card-id="q27" data-choice="A" data-correct="A">
@@ -1833,6 +1973,10 @@ Secondary varicosities form if there is an associated problem in the deep system
             <div class="content question-text">The images of the neck demonstrate which of the following?</div>
             
             <div class="study-note" data-study-note="q28"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q28">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 28">
               
               <button class="choice" type="button" role="listitem" data-card-id="q28" data-choice="A" data-correct="C">
@@ -1890,6 +2034,10 @@ NORMAL IJV - FLATTENED, FLEXIBLE</div>
             <div class="content question-text">A patient presents for a lower extremity venous Doppler due to leg pain in the groin and upper thigh after a recent car accident. After viewing these findings in the common femoral vein, what should you do next on this patient&#39;s exam?</div>
             
             <div class="study-note" data-study-note="q29"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q29">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 29">
               
               <button class="choice" type="button" role="listitem" data-card-id="q29" data-choice="A" data-correct="B">
@@ -1943,6 +2091,10 @@ mosaic color pattern indicates turbulence at the connection with the artery.</di
             <div class="content question-text">What vessel is demonstrated as thrombosed on the image?</div>
             
             <div class="study-note" data-study-note="q30"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q30">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 30">
               
               <button class="choice" type="button" role="listitem" data-card-id="q30" data-choice="A" data-correct="D">
@@ -1996,6 +2148,10 @@ to the muscular fascia. The lack of a corresponding artery also indicates a supe
             <div class="content question-text">Sclerotherapy:</div>
             
             <div class="study-note" data-study-note="q31"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q31">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 31">
               
               <button class="choice" type="button" role="listitem" data-card-id="q31" data-choice="A" data-correct="D">
@@ -2048,6 +2204,10 @@ vessels leading to overall atrophy of the vessels.</div>
             <div class="content question-text">Virchow&#39;s triad of symptoms includes blood stasis, recent trauma and:</div>
             
             <div class="study-note" data-study-note="q32"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q32">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 32">
               
               <button class="choice" type="button" role="listitem" data-card-id="q32" data-choice="A" data-correct="D">
@@ -2103,6 +2263,10 @@ of thrombus formation.</div>
             <div class="content question-text">A patient presents for a venous insufficiency exam, but is unable to stand for the exam. How will this affect your exam?</div>
             
             <div class="study-note" data-study-note="q33"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q33">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 33">
               
               <button class="choice" type="button" role="listitem" data-card-id="q33" data-choice="A" data-correct="A">
@@ -2155,6 +2319,10 @@ bent knees and hip joints which can inhibit/reduce the flow response to augmenta
             <div class="content question-text">Which of the following are common risk factors for varicose vein formation?</div>
             
             <div class="study-note" data-study-note="q34"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q34">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 34">
               
               <button class="choice" type="button" role="listitem" data-card-id="q34" data-choice="A" data-correct="D">
@@ -2206,6 +2374,10 @@ standing for long periods of time.</div>
             <div class="content question-text">This image demonstrates which of the following?</div>
             
             <div class="study-note" data-study-note="q35"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q35">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 35">
               
               <button class="choice" type="button" role="listitem" data-card-id="q35" data-choice="A" data-correct="C">
@@ -2259,6 +2431,10 @@ thrombus.</div>
             <div class="content question-text">Which of the following causes of thrombosis is associated with anatomic variations of the thoracic outlet?</div>
             
             <div class="study-note" data-study-note="q36"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q36">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 36">
               
               <button class="choice" type="button" role="listitem" data-card-id="q36" data-choice="A" data-correct="D">
@@ -2314,6 +2490,10 @@ medication/treatment</div>
             <div class="content question-text">A patient presents for a lower extremity venous Doppler to rule out venous insufficiency. Which vessels should be completely evaluated for the exam?</div>
             
             <div class="study-note" data-study-note="q37"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q37">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 37">
               
               <button class="choice" type="button" role="listitem" data-card-id="q37" data-choice="A" data-correct="D">
@@ -2365,6 +2545,10 @@ evaluated for reflux along with the superficial veins.</div>
             <div class="content question-text">A patient presents with a script for a &#34;vascular ultrasound&#34; due to a history of Paget Schroetter syndrome. What type of exam should be performed for this patient?</div>
             
             <div class="study-note" data-study-note="q38"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q38">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 38">
               
               <button class="choice" type="button" role="listitem" data-card-id="q38" data-choice="A" data-correct="D">
@@ -2416,6 +2600,10 @@ thoracic outlet syndrome.</div>
             <div class="content question-text">A Greenfield filter is used to prevent which of the following?</div>
             
             <div class="study-note" data-study-note="q39"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q39">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 39">
               
               <button class="choice" type="button" role="listitem" data-card-id="q39" data-choice="A" data-correct="D">
@@ -2470,6 +2658,10 @@ complications related to embolism from a DVT.</div>
             <div class="content question-text">You perform a bilateral venous Doppler due to bilateral swelling and pain in the legs. If both external iliac veins look like the tracing on the image, which of the following should be reported on your technologist worksheet?</div>
             
             <div class="study-note" data-study-note="q40"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q40">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 40">
               
               <button class="choice" type="button" role="listitem" data-card-id="q40" data-choice="A" data-correct="D">
@@ -2524,6 +2716,10 @@ thrombosis of the left common iliac vein. Only the left leg would demonstrate co
             <div class="content question-text">The complication demonstrated on the image are most suggestive of what vascular abnormality?</div>
             
             <div class="study-note" data-study-note="q41"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q41">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 41">
               
               <button class="choice" type="button" role="listitem" data-card-id="q41" data-choice="A" data-correct="C">
@@ -2579,6 +2775,10 @@ occluded, mild edema may develop. Peripheral arterial disease causes dry skin an
             <div class="content question-text">Significant valvular disease in the right heart usually leads to:</div>
             
             <div class="study-note" data-study-note="q42"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q42">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 42">
               
               <button class="choice" type="button" role="listitem" data-card-id="q42" data-choice="A" data-correct="B">
@@ -2634,6 +2834,10 @@ Aortic Regurgitation - pulsus bisferiens</div>
             <div class="content question-text">Which of the following will be administered to a patient with extensive DVT to cause lysis of the clot?</div>
             
             <div class="study-note" data-study-note="q43"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q43">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 43">
               
               <button class="choice" type="button" role="listitem" data-card-id="q43" data-choice="A" data-correct="D">
@@ -2686,6 +2890,10 @@ thrombosis of the venous system.</div>
             <div class="content question-text">While scanning the popliteal artery, you notice a thrombus in the popliteal vein. Which vein(s) should be evaluated next for ascending propagation of the clot?</div>
             
             <div class="study-note" data-study-note="q44"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q44">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 44">
               
               <button class="choice" type="button" role="listitem" data-card-id="q44" data-choice="A" data-correct="B">
@@ -2736,6 +2944,10 @@ thrombosis of the venous system.</div>
             <div class="content question-text">A patient presents with gangrene of the foot and toes. The most likely cause of these symptoms is:</div>
             
             <div class="study-note" data-study-note="q45"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q45">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 45">
               
               <button class="choice" type="button" role="listitem" data-card-id="q45" data-choice="A" data-correct="A">
@@ -2786,6 +2998,10 @@ thrombosis of the venous system.</div>
             <div class="content question-text">Which of the following is related to the appearance of Rouleaux formation on the image?</div>
             
             <div class="study-note" data-study-note="q46"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q46">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 46">
               
               <button class="choice" type="button" role="listitem" data-card-id="q46" data-choice="A" data-correct="D">
@@ -2837,6 +3053,10 @@ coin rolls from your bank which is called the Rouleaux Formation</div>
             <div class="content question-text">Which of the following describes symptoms of a patient with lymphedema?</div>
             
             <div class="study-note" data-study-note="q47"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q47">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 47">
               
               <button class="choice" type="button" role="listitem" data-card-id="q47" data-choice="A" data-correct="B">
@@ -2891,6 +3111,10 @@ reduce swelling associated with DVT. Lymphedema is typically unilateral. DVT for
             <div class="content question-text">Lower extremity ulcers are most commonly caused by __________________.</div>
             
             <div class="study-note" data-study-note="q48"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q48">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 48">
               
               <button class="choice" type="button" role="listitem" data-card-id="q48" data-choice="A" data-correct="A">
@@ -2941,6 +3165,10 @@ reduce swelling associated with DVT. Lymphedema is typically unilateral. DVT for
             <div class="content question-text">Which of the following is a sonographic finding of acute DVT?</div>
             
             <div class="study-note" data-study-note="q49"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q49">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 49">
               
               <button class="choice" type="button" role="listitem" data-card-id="q49" data-choice="A" data-correct="C">
@@ -2998,6 +3226,10 @@ THROMBOSED IJV - Engorged, non-compressible</div>
             <div class="content question-text">Which of the following correctly describes the effects of walking on the deep venous pressure in the lower extremity in a patient with post phlebitic syndrome? Walking causes a gradual decrease in pressure during the first 1-2 minutes of exercise that quickly returns to pre-exercise</div>
             
             <div class="study-note" data-study-note="q50"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q50">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 50">
               
               <button class="choice" type="button" role="listitem" data-card-id="q50" data-choice="A" data-correct="D">
@@ -3054,6 +3286,10 @@ retrograde flow in the veins.</div>
             <div class="content question-text">Most lower extremity thrombosis begins in the ___________________________.</div>
             
             <div class="study-note" data-study-note="q51"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q51">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 51">
               
               <button class="choice" type="button" role="listitem" data-card-id="q51" data-choice="A" data-correct="C">
@@ -3104,6 +3340,10 @@ retrograde flow in the veins.</div>
             <div class="content question-text">A patient presents for a lower extremity venous Doppler exam due to a history of May-Thurner Syndrome. What vessel should you closely evaluate for related findings?</div>
             
             <div class="study-note" data-study-note="q52"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q52">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 52">
               
               <button class="choice" type="button" role="listitem" data-card-id="q52" data-choice="A" data-correct="D">
@@ -3154,6 +3394,10 @@ retrograde flow in the veins.</div>
             <div class="content question-text">When performing an upper extremity venous Doppler evaluation for thrombosis, which of the following veins should be evaluated on the exam?</div>
             
             <div class="study-note" data-study-note="q53"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q53">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 53">
               
               <button class="choice" type="button" role="listitem" data-card-id="q53" data-choice="A" data-correct="B">
@@ -3206,6 +3450,10 @@ calf veins on a lower extremity exam.</div>
             <div class="content question-text">The most common location of valvular insufficiency is:</div>
             
             <div class="study-note" data-study-note="q54"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q54">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 54">
               
               <button class="choice" type="button" role="listitem" data-card-id="q54" data-choice="A" data-correct="A">
@@ -3257,6 +3505,10 @@ junction).</div>
             <div class="content question-text">Which of the following is an expected clinical finding in a patient with a venous stasis ulcer?</div>
             
             <div class="study-note" data-study-note="q55"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q55">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 55">
               
               <button class="choice" type="button" role="listitem" data-card-id="q55" data-choice="A" data-correct="B">
@@ -3310,6 +3562,10 @@ Arterial ulcers are usually severely painful, dry and crusty, deep ulcers locate
             <div class="content question-text">Which of the following is a sign or symptom of chronic DVT?</div>
             
             <div class="study-note" data-study-note="q56"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q56">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 56">
               
               <button class="choice" type="button" role="listitem" data-card-id="q56" data-choice="A" data-correct="D">
@@ -3365,6 +3621,10 @@ redness are all related to venous stasis in the vessels below the area of DVT.</
             <div class="content question-text">A patient presents for a lower extremity venous Doppler exam due to a history of Klippel - Trenaunay - Weber Syndrome. What are the expected findings on the exam?</div>
             
             <div class="study-note" data-study-note="q57"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q57">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 57">
               
               <button class="choice" type="button" role="listitem" data-card-id="q57" data-choice="A" data-correct="B">
@@ -3416,6 +3676,10 @@ superficial varicosities.</div>
             <div class="content question-text">The most significant complication seen with DVT is _______________________.</div>
             
             <div class="study-note" data-study-note="q58"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q58">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 58">
               
               <button class="choice" type="button" role="listitem" data-card-id="q58" data-choice="A" data-correct="D">
@@ -3470,6 +3734,10 @@ artery and leads to the inability of the lungs to replace the oxygen in the bloo
             <div class="content question-text">You perform a bilateral venous Doppler due to bilateral swelling and pain in the legs. Both common femoral vein waveforms look like the tracing on the image. These findings are most consistent with:</div>
             
             <div class="study-note" data-study-note="q59"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q59">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 59">
               
               <button class="choice" type="button" role="listitem" data-card-id="q59" data-choice="A" data-correct="B">
@@ -3524,6 +3792,10 @@ obstruction would cause continuous flow in the lower extremities.</div>
             <div class="content question-text">During a color evaluation of the common femoral vein, the patient is asked to perform the Valsalva maneuver. The blue color in the CFV changes to red for approximately 3 seconds before returning to blue. What do these color Doppler findings indicate?</div>
             
             <div class="study-note" data-study-note="q60"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q60">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 60">
               
               <button class="choice" type="button" role="listitem" data-card-id="q60" data-choice="A" data-correct="D">
@@ -3575,6 +3847,10 @@ normal in the deep veins. 3 seconds or greater of flow reversal indicates signif
             <div class="content question-text">Which of the following are common symptoms of chronic venous disease?</div>
             
             <div class="study-note" data-study-note="q61"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q61">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 61">
               
               <button class="choice" type="button" role="listitem" data-card-id="q61" data-choice="A" data-correct="D">
@@ -3626,6 +3902,10 @@ signs of chronic venous disease.</div>
             <div class="content question-text">The image attached demonstrates which of the following?</div>
             
             <div class="study-note" data-study-note="q62"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q62">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 62">
               
               <button class="choice" type="button" role="listitem" data-card-id="q62" data-choice="A" data-correct="A">
@@ -3679,6 +3959,10 @@ system with &gt;3 sec of reflux indicates severe insufficiency.</div>
             <div class="content question-text">A 65yr old female presents with left leg swelling for over one year. Mild hyperpigmentation is present in the distal calf and ankle area. These clinical findings are most suggestive of:</div>
             
             <div class="study-note" data-study-note="q63"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q63">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 63">
               
               <button class="choice" type="button" role="listitem" data-card-id="q63" data-choice="A" data-correct="A">
@@ -3730,6 +4014,10 @@ insufficiency. Acute DVT would result in acute swelling with a red discoloration
             <div class="content question-text">Venous perforators with a diameter of _______________ or greater will usually demonstrate reflux.</div>
             
             <div class="study-note" data-study-note="q64"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q64">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 64">
               
               <button class="choice" type="button" role="listitem" data-card-id="q64" data-choice="A" data-correct="D">
@@ -3780,6 +4068,10 @@ insufficiency. Acute DVT would result in acute swelling with a red discoloration
             <div class="content question-text">Venous gangrene usually involves ____________________________, while arterial gangrene usually involves________________________.</div>
             
             <div class="study-note" data-study-note="q65"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q65">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 65">
               
               <button class="choice" type="button" role="listitem" data-card-id="q65" data-choice="A" data-correct="B">
@@ -3832,6 +4124,10 @@ insufficiency. Acute DVT would result in acute swelling with a red discoloration
             <div class="content question-text">Warfarin is administered to a patient:</div>
             
             <div class="study-note" data-study-note="q66"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q66">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 66">
               
               <button class="choice" type="button" role="listitem" data-card-id="q66" data-choice="A" data-correct="B">
@@ -3883,6 +4179,10 @@ for clot lysis in phlegmasia patients. Increased platelet aggregation would caus
             <div class="content question-text">How is Heparin administered to a patient with DVT?</div>
             
             <div class="study-note" data-study-note="q67"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q67">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 67">
               
               <button class="choice" type="button" role="listitem" data-card-id="q67" data-choice="A" data-correct="C">
@@ -3934,6 +4234,10 @@ thrombus.</div>
             <div class="content question-text">Which of the following causes flow reversal in venous perforators?</div>
             
             <div class="study-note" data-study-note="q68"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q68">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 68">
               
               <button class="choice" type="button" role="listitem" data-card-id="q68" data-choice="A" data-correct="B">
@@ -3985,6 +4289,10 @@ through the perforators to try to &#34;escape&#34; into the patent superficial s
             <div class="content question-text">________________________ is a nonspecific sign of DVT. It is defined as pain experienced upon quick dorsiflexion of the foot.</div>
             
             <div class="study-note" data-study-note="q69"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q69">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 69">
               
               <button class="choice" type="button" role="listitem" data-card-id="q69" data-choice="A" data-correct="B">
@@ -4037,6 +4345,10 @@ determine ulnar artery patency related to graft availability for removing the ra
             <div class="content question-text">An acute, occlusive thrombus is identified in the femoral vein in the adductor canal. Which of the following veins will demonstrate related blood stasis?</div>
             
             <div class="study-note" data-study-note="q70"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q70">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 70">
               
               <button class="choice" type="button" role="listitem" data-card-id="q70" data-choice="A" data-correct="B">
@@ -4091,6 +4403,10 @@ perforators in the thigh filling the vein with blood from the superficial system
             <div class="content question-text">A varicose vein is usually:</div>
             
             <div class="study-note" data-study-note="q71"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q71">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 71">
               
               <button class="choice" type="button" role="listitem" data-card-id="q71" data-choice="A" data-correct="D">
@@ -4141,6 +4457,10 @@ perforators in the thigh filling the vein with blood from the superficial system
             <div class="content question-text">A patient in the ER has just been diagnosed with acute DVT of the popliteal vein. What would be the physician&#39;s preferred treatment plan?</div>
             
             <div class="study-note" data-study-note="q72"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q72">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 72">
               
               <button class="choice" type="button" role="listitem" data-card-id="q72" data-choice="A" data-correct="D">
@@ -4192,6 +4512,10 @@ is out of the hospital.</div>
             <div class="content question-text">Which of the following lower extremity vessels would most likely be occluded in a patient with Phlegmasia Alba Dolens?</div>
             
             <div class="study-note" data-study-note="q73"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q73">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 73">
               
               <button class="choice" type="button" role="listitem" data-card-id="q73" data-choice="A" data-correct="D">
@@ -4244,6 +4568,10 @@ and markedly reducing arterial inflow. Leads to ischemia in entire extremity wit
             <div class="content question-text">The attached picture is most suggestive of what acute vascular disorder?</div>
             
             <div class="study-note" data-study-note="q74"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q74">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 74">
               
               <button class="choice" type="button" role="listitem" data-card-id="q74" data-choice="A" data-correct="B">
@@ -4297,6 +4625,10 @@ disease is a chronic disorder. CHF or bilateral DVT would cause bilateral swelli
             <div class="content question-text">A patient presents 3 days after left hip surgery for a DVT evaluation. There is severe edema from the hip to the ankle and the leg has a mild cyanotic appearance. You identify acute thrombus from the common femoral vein through the calf veins. The great saphenous vein is also occluded by thrombus. What is the diagnosis for this condition?</div>
             
             <div class="study-note" data-study-note="q75"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q75">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 75">
               
               <button class="choice" type="button" role="listitem" data-card-id="q75" data-choice="A" data-correct="A">
@@ -4350,6 +4682,10 @@ results in pallor.</div>
             <div class="content question-text">Which of the following describes chronic lower extremity DVT?</div>
             
             <div class="study-note" data-study-note="q76"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q76">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 76">
               
               <button class="choice" type="button" role="listitem" data-card-id="q76" data-choice="A" data-correct="A">
@@ -4402,6 +4738,10 @@ respiratory phasicity).</div>
             <div class="content question-text">If greater saphenous venous flow velocity is approximately 20cm/s and appears continuous, which other vessel should be evaluated for a cause for the flow abnormality?</div>
             
             <div class="study-note" data-study-note="q77"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q77">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 77">
               
               <button class="choice" type="button" role="listitem" data-card-id="q77" data-choice="A" data-correct="D">
@@ -4456,6 +4796,10 @@ femoral vein. The increased flow will increase the velocity in the GSV and cause
             <div class="content question-text">Which of the following is a cause for deep venous HTN?</div>
             
             <div class="study-note" data-study-note="q78"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q78">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 78">
               
               <button class="choice" type="button" role="listitem" data-card-id="q78" data-choice="A" data-correct="B">
@@ -4507,6 +4851,10 @@ to thrombus formation, venous insufficiency, CHF, pregnancy</div>
             <div class="content question-text">What is the most common lower extremity venous disorder?</div>
             
             <div class="study-note" data-study-note="q79"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q79">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 79">
               
               <button class="choice" type="button" role="listitem" data-card-id="q79" data-choice="A" data-correct="B">
@@ -4557,6 +4905,10 @@ to thrombus formation, venous insufficiency, CHF, pregnancy</div>
             <div class="content question-text">Proximal to a DVT in the femoral vein, the flow appears very slow and visible on 2D imaging. The red blood cells appear lined up or stacked in rolls. What is this phenomenon called?</div>
             
             <div class="study-note" data-study-note="q80"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q80">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 80">
               
               <button class="choice" type="button" role="listitem" data-card-id="q80" data-choice="A" data-correct="D">
@@ -4610,6 +4962,10 @@ appear lined up or stacked in rolls. This phenomenon is called Rouleaux formatio
             <div class="content question-text">Which of the following is the most common cause of venous stasis ulcer formation on the distal medial calf?</div>
             
             <div class="study-note" data-study-note="q81"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q81">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 81">
               
               <button class="choice" type="button" role="listitem" data-card-id="q81" data-choice="A" data-correct="A">
@@ -4661,6 +5017,10 @@ formation on the distal medial calf.</div>
             <div class="content question-text">A thrombus is identified in the soleal veins of the calf. The thrombus will propagate into what calf veins first?</div>
             
             <div class="study-note" data-study-note="q82"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q82">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 82">
               
               <button class="choice" type="button" role="listitem" data-card-id="q82" data-choice="A" data-correct="A">
@@ -4714,6 +5074,10 @@ posterior tibial and peroneal veins.</div>
             <div class="content question-text">It is not possible to evaluate and document valvular insufficiency with only:</div>
             
             <div class="study-note" data-study-note="q83"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q83">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 83">
               
               <button class="choice" type="button" role="listitem" data-card-id="q83" data-choice="A" data-correct="D">
@@ -4765,6 +5129,10 @@ assessed in 2D but this does not help quantify valvular incompetence.</div>
             <div class="content question-text">Which of the following changes in flow can be seen with a Baker cyst?</div>
             
             <div class="study-note" data-study-note="q84"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q84">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 84">
               
               <button class="choice" type="button" role="listitem" data-card-id="q84" data-choice="A" data-correct="A">
@@ -4817,6 +5185,10 @@ extrinsic compression on the popliteal artery.</div>
             <div class="content question-text">Lymphedema is commonly related to:</div>
             
             <div class="study-note" data-study-note="q85"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q85">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 85">
               
               <button class="choice" type="button" role="listitem" data-card-id="q85" data-choice="A" data-correct="B">
@@ -4869,6 +5241,10 @@ cancer can also cause lymphedema.</div>
             <div class="content question-text">Which of the following cardiac abnormalities will have no effect on venous flow characteristics in the lower extremities?</div>
             
             <div class="study-note" data-study-note="q86"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q86">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 86">
               
               <button class="choice" type="button" role="listitem" data-card-id="q86" data-choice="A" data-correct="C">
@@ -4922,6 +5298,10 @@ is transmitted further away from the heart due to the ripple effect.</div>
             <div class="content question-text">A venous insufficiency exam is performed for a patient with multiple varicosities. The deep system is found to be competent, but there is insufficiency present in the great saphenous vein. Which of the following statements regarding the findings is true?</div>
             
             <div class="study-note" data-study-note="q87"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q87">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 87">
               
               <button class="choice" type="button" role="listitem" data-card-id="q87" data-choice="A" data-correct="B">
@@ -4973,6 +5353,10 @@ Varicosities with incompetent valves causing superficial venous insufficiency an
             <div class="content question-text">What is the most accurate sonographic indicator for the presence of DVT?</div>
             
             <div class="study-note" data-study-note="q88"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q88">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 88">
               
               <button class="choice" type="button" role="listitem" data-card-id="q88" data-choice="A" data-correct="B">
@@ -5023,6 +5407,10 @@ Varicosities with incompetent valves causing superficial venous insufficiency an
             <div class="content question-text">Which of the following is related to chronic DVT?</div>
             
             <div class="study-note" data-study-note="q89"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q89">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 89">
               
               <button class="choice" type="button" role="listitem" data-card-id="q89" data-choice="A" data-correct="C">
@@ -5074,6 +5462,10 @@ more painful and dry.</div>
             <div class="content question-text">Which of the following carries an increased risk of pulmonary embolism?</div>
             
             <div class="study-note" data-study-note="q90"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q90">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 90">
               
               <button class="choice" type="button" role="listitem" data-card-id="q90" data-choice="A" data-correct="C">
@@ -5126,6 +5518,10 @@ An embolus in the arterial system will only travel until it becomes lodged in a 
             <div class="content question-text">Which of the following statements is true regarding a partial venous obstruction?</div>
             
             <div class="study-note" data-study-note="q91"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q91">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 91">
               
               <button class="choice" type="button" role="listitem" data-card-id="q91" data-choice="A" data-correct="A">
@@ -5180,6 +5576,10 @@ partial DVT.</div>
             <div class="content question-text">A patient presents with intermittent left lower leg swelling for several months. The popliteal vein demonstrates a collapsed appearance with echogenic, thickened walls. These findings are most consistent with:</div>
             
             <div class="study-note" data-study-note="q92"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q92">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 92">
               
               <button class="choice" type="button" role="listitem" data-card-id="q92" data-choice="A" data-correct="B">
@@ -5231,6 +5631,10 @@ pliability of the walls leading to a semi-collapsed appearance. Acute femoral DV
             <div class="content question-text">A patient presents with bilateral distention of the internal jugular veins and arm swelling. The lower extremities are normal on physical examination. These findings are most suggestive of:</div>
             
             <div class="study-note" data-study-note="q93"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q93">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 93">
               
               <button class="choice" type="button" role="listitem" data-card-id="q93" data-choice="A" data-correct="B">
@@ -5283,6 +5687,10 @@ and cardiac pulsatility will be lost in the bilateral IJVs due to the SVC obstru
             <div class="content question-text">The red arrows on the image indicate which of the following:</div>
             
             <div class="study-note" data-study-note="q94"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q94">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 94">
               
               <button class="choice" type="button" role="listitem" data-card-id="q94" data-choice="A" data-correct="B">
@@ -5336,6 +5744,10 @@ venous insufficiency.</div>
             <div class="content question-text">Which of the following portions of the leg would be swollen with chronic insufficiency?</div>
             
             <div class="study-note" data-study-note="q95"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q95">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 95">
               
               <button class="choice" type="button" role="listitem" data-card-id="q95" data-choice="A" data-correct="B">
@@ -5386,6 +5798,10 @@ venous insufficiency.</div>
             <div class="content question-text">Which of the following carries an increased risk of developing varicose veins?</div>
             
             <div class="study-note" data-study-note="q96"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q96">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 96">
               
               <button class="choice" type="button" role="listitem" data-card-id="q96" data-choice="A" data-correct="A">
@@ -5437,6 +5853,10 @@ the risk. The other three choices would reduce the risk of developing varicose v
             <div class="content question-text">A clot in the gastrocnemius veins will first propagate into what vessel(s)?</div>
             
             <div class="study-note" data-study-note="q97"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q97">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 97">
               
               <button class="choice" type="button" role="listitem" data-card-id="q97" data-choice="A" data-correct="A">
@@ -5490,6 +5910,10 @@ into popliteal vein.</div>
             <div class="content question-text">Which of the following is not an expected finding related to the abnormality displayed on the image?</div>
             
             <div class="study-note" data-study-note="q98"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q98">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 98">
               
               <button class="choice" type="button" role="listitem" data-card-id="q98" data-choice="A" data-correct="B">
@@ -5546,6 +5970,10 @@ augmentation.</div>
             <div class="content question-text">The mid left femoral vein appears to be occluded by hypoechoic, non- compressible thrombus. The popliteal vein is completely compressible. Which of the following Doppler waveform characteristics is expected from the popliteal vein?</div>
             
             <div class="study-note" data-study-note="q99"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q99">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 99">
               
               <button class="choice" type="button" role="listitem" data-card-id="q99" data-choice="A" data-correct="D">
@@ -5598,6 +6026,10 @@ obstruction.</div>
             <div class="content question-text">Which of the following describes an abnormal response to proximal augmentation?</div>
             
             <div class="study-note" data-study-note="q100"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q100">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 100">
               
               <button class="choice" type="button" role="listitem" data-card-id="q100" data-choice="A" data-correct="D">
@@ -5651,6 +6083,10 @@ Valsalva maneuver can also be used for proximal augmentation. Flow reversal begi
             <div class="content question-text">Localized redness and warmth of the distal calf is most commonly associated with:</div>
             
             <div class="study-note" data-study-note="q101"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q101">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 101">
               
               <button class="choice" type="button" role="listitem" data-card-id="q101" data-choice="A" data-correct="C">
@@ -5701,6 +6137,10 @@ Valsalva maneuver can also be used for proximal augmentation. Flow reversal begi
             <div class="content question-text">Post-phlebitic Syndrome:</div>
             
             <div class="study-note" data-study-note="q102"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q102">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 102">
               
               <button class="choice" type="button" role="listitem" data-card-id="q102" data-choice="A" data-correct="B">
@@ -5752,6 +6192,10 @@ present.</div>
             <div class="content question-text">A patient presents with persistent calf pain after a recent biking accident and spending a few days on bed rest. After visual inspection of the right leg, what type of vascular exam should be performed?</div>
             
             <div class="study-note" data-study-note="q103"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q103">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 103">
               
               <button class="choice" type="button" role="listitem" data-card-id="q103" data-choice="A" data-correct="D">
@@ -5805,6 +6249,10 @@ while on bed rest most likely caused a DVT to form in the leg.</div>
             <div class="content question-text">Which of the following is a long term treatment for DVT?</div>
             
             <div class="study-note" data-study-note="q104"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q104">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 104">
               
               <button class="choice" type="button" role="listitem" data-card-id="q104" data-choice="A" data-correct="D">
@@ -5861,6 +6309,10 @@ Recurrent DVT – Warfarin prescribed for 6+ months</div>
             <div class="content question-text">Which of the following correctly describes DVT in the lower extremity?</div>
             
             <div class="study-note" data-study-note="q105"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q105">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 105">
               
               <button class="choice" type="button" role="listitem" data-card-id="q105" data-choice="A" data-correct="A">
@@ -5913,6 +6365,10 @@ somewhat pliable upon compression. Chronic thrombus will be non-pliable upon com
             <div class="content question-text">The Valsalva maneuver is most useful when trying to assess which of the following?</div>
             
             <div class="study-note" data-study-note="q106"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q106">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 106">
               
               <button class="choice" type="button" role="listitem" data-card-id="q106" data-choice="A" data-correct="D">
@@ -5964,6 +6420,10 @@ heart. If the venous valves are incompetent, flow reversal will be seen while th
             <div class="content question-text">Venous ulcers are normally located on the _______________, while arterial ulcers are normally found on the ____________.</div>
             
             <div class="study-note" data-study-note="q107"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q107">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 107">
               
               <button class="choice" type="button" role="listitem" data-card-id="q107" data-choice="A" data-correct="C">
@@ -6037,6 +6497,12 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     document.getElementById("close-all").addEventListener("click", () => {
       answerToggles.forEach((toggle) => setPanelState(toggle, false));
+    });
+
+    document.getElementById("clear-all-answers").addEventListener("click", () => {
+      Object.keys(studyState).forEach((key) => delete studyState[key]);
+      saveStudyState(studyState);
+      applyStudyState(studyState);
     });
 
     function normalizeState(rawState) {
@@ -6123,6 +6589,15 @@ Powered by ExamBuilder. Copyright ©2026</div>
           status: choice === correct ? "correct" : "incorrect",
           selectedChoice: choice,
         };
+        saveStudyState(studyState);
+        applyStudyState(studyState);
+      });
+    });
+
+    document.querySelectorAll("[data-clear-card]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const cardId = button.getAttribute("data-clear-card");
+        delete studyState[cardId];
         saveStudyState(studyState);
         applyStudyState(studyState);
       });

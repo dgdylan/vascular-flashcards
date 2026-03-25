@@ -216,6 +216,31 @@
     .study-note.incorrect {
       color: var(--danger);
     }
+    .choice-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .clear-answer {
+      appearance: none;
+      border: 1px solid rgba(46, 110, 163, 0.12);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.55rem 0.8rem;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+    .clear-answer:hover {
+      transform: translateY(-1px);
+      border-color: rgba(239, 131, 84, 0.22);
+      color: var(--accent-dark);
+    }
     .choices {
       display: grid;
       gap: 0.9rem;
@@ -375,6 +400,12 @@
         justify-content: center;
         text-align: center;
       }
+      .choice-row {
+        align-items: stretch;
+      }
+      .clear-answer {
+        width: 100%;
+      }
       h1 {
         max-width: none;
       }
@@ -400,6 +431,7 @@
           <a href="../index.html">Back to index</a>
           <button type="button" id="open-all">Open all backs</button>
           <button type="button" id="close-all">Close all backs</button>
+          <button type="button" id="clear-all-answers">Clear saved answers</button>
         </div>
       </div>
     </section>
@@ -416,6 +448,10 @@
             <div class="content question-text">At the start of an endovenous ablation procedure for the great saphenous vein, the catheter is inserted _____________________ and advanced to a position_____________________ before activating the device.</div>
             
             <div class="study-note" data-study-note="q1"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q1">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 1">
               
               <button class="choice" type="button" role="listitem" data-card-id="q1" data-choice="A" data-correct="C">
@@ -469,6 +505,10 @@ from the SFJ to prevent damage to the common femoral vein.</div>
             <div class="content question-text">If the peak velocity in a transjugular intrahepatic portosystemic shunt at the portal vein anastomosis is 50cm/s and the mid graft velocity is 25cm/s, what is indicated?</div>
             
             <div class="study-note" data-study-note="q2"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q2">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 2">
               
               <button class="choice" type="button" role="listitem" data-card-id="q2" data-choice="A" data-correct="A">
@@ -519,6 +559,10 @@ from the SFJ to prevent damage to the common femoral vein.</div>
             <div class="content question-text">Which of the following techniques cannot be used to monitor distal flow in the leg while compression therapy for a pseudoaneurysm is performed?</div>
             
             <div class="study-note" data-study-note="q3"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q3">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 3">
               
               <button class="choice" type="button" role="listitem" data-card-id="q3" data-choice="A" data-correct="D">
@@ -572,6 +616,10 @@ femoral artery.</div>
             <div class="content question-text">What is the best Sonographic technique to use to evaluate the status of a pseudoaneurysm after 10 minutes of compression therapy is applied?</div>
             
             <div class="study-note" data-study-note="q4"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q4">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 4">
               
               <button class="choice" type="button" role="listitem" data-card-id="q4" data-choice="A" data-correct="D">
@@ -623,6 +671,10 @@ evaluate the stalk once it has been located with color but cannot reliably locat
             <div class="content question-text">Which of the following is a treatment for a pseudoaneurysm?</div>
             
             <div class="study-note" data-study-note="q5"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q5">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 5">
               
               <button class="choice" type="button" role="listitem" data-card-id="q5" data-choice="A" data-correct="B">
@@ -675,6 +727,10 @@ ability of clot formation in the pseudoaneurysm. IV Heparin is used to treat DVT
             <div class="content question-text">A patient is referred to the vascular lab to evaluate the placement of a Greenfield filter. Where will you look for this?</div>
             
             <div class="study-note" data-study-note="q6"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q6">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 6">
               
               <button class="choice" type="button" role="listitem" data-card-id="q6" data-choice="A" data-correct="C">
@@ -728,6 +784,10 @@ the renal veins.</div>
             <div class="content question-text">Which of the following is an advantage of intraoperative vascular ultrasound compared to intraoperative angiography?</div>
             
             <div class="study-note" data-study-note="q7"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q7">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 7">
               
               <button class="choice" type="button" role="listitem" data-card-id="q7" data-choice="A" data-correct="A">
@@ -782,6 +842,10 @@ FOV. Both techniques can be performed during the surgery.</div>
             <div class="content question-text">Which of the following statements best describes the Doppler tracing found in the stalk of a pseudoaneurysm?</div>
             
             <div class="study-note" data-study-note="q8"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q8">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 8">
               
               <button class="choice" type="button" role="listitem" data-card-id="q8" data-choice="A" data-correct="A">
@@ -835,6 +899,10 @@ the pseudo aneurysm is normally very narrow and will demonstrate a high resistan
             <div class="content question-text">What is the preferred patient position during catheter retraction in an endovenous laser ablation treatment?</div>
             
             <div class="study-note" data-study-note="q9"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q9">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 9">
               
               <button class="choice" type="button" role="listitem" data-card-id="q9" data-choice="A" data-correct="C">
@@ -889,6 +957,10 @@ The less blood that&#39;s in the vein, the easier it will be to successfully tre
             <div class="content question-text">Which of the following is a contraindication for endovenous laser ablation of the great saphenous vein?</div>
             
             <div class="study-note" data-study-note="q10"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q10">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 10">
               
               <button class="choice" type="button" role="listitem" data-card-id="q10" data-choice="A" data-correct="C">
@@ -941,6 +1013,10 @@ removed/closed.</div>
             <div class="content question-text">Which of the following requires the use of sterile technique?</div>
             
             <div class="study-note" data-study-note="q11"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q11">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 11">
               
               <button class="choice" type="button" role="listitem" data-card-id="q11" data-choice="A" data-correct="C">
@@ -995,6 +1071,10 @@ with ultrasound.</div>
             <div class="content question-text">What is an absolute contraindication for sclerotherapy?</div>
             
             <div class="study-note" data-study-note="q12"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q12">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 12">
               
               <button class="choice" type="button" role="listitem" data-card-id="q12" data-choice="A" data-correct="D">
@@ -1047,6 +1127,10 @@ patient will be treated using other methods.</div>
             <div class="content question-text">Which of the following is true regarding the initial post-op examination of a transjugular intrahepatic portosystemic shunt placement?</div>
             
             <div class="study-note" data-study-note="q13"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q13">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 13">
               
               <button class="choice" type="button" role="listitem" data-card-id="q13" data-choice="A" data-correct="D">
@@ -1099,6 +1183,10 @@ the patient very soon after the shunt placement. The initial evaluation should b
             <div class="content question-text">A patient presents for ultrasound evaluation of a PICC line. The findings on the image are most suggestive of:</div>
             
             <div class="study-note" data-study-note="q14"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q14">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 14">
               
               <button class="choice" type="button" role="listitem" data-card-id="q14" data-choice="A" data-correct="C">
@@ -1152,6 +1240,10 @@ demonstrates a hypoechoic mass surrounding the catheter. The CCA is medial to th
             <div class="content question-text">Which of the following indicates a balloon angioplasty of an 80% stenosis of the superficial femoral artery was a success?</div>
             
             <div class="study-note" data-study-note="q15"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q15">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 15">
               
               <button class="choice" type="button" role="listitem" data-card-id="q15" data-choice="A" data-correct="A">
@@ -1203,6 +1295,10 @@ PTLA. Angioplasty failure = damped, low-velocity waveforms in the distal arteria
             <div class="content question-text">Which of the following is NOT a part of the information required on an informed consent form for an interventional vascular procedure?</div>
             
             <div class="study-note" data-study-note="q16"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q16">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 16">
               
               <button class="choice" type="button" role="listitem" data-card-id="q16" data-choice="A" data-correct="C">
@@ -1254,6 +1350,10 @@ experience. The patient must be of sound mind when giving consent by signature.<
             <div class="content question-text">When Thrombin is injected in a pseudoaneurysm, the clotting should be begin:</div>
             
             <div class="study-note" data-study-note="q17"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q17">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 17">
               
               <button class="choice" type="button" role="listitem" data-card-id="q17" data-choice="A" data-correct="C">
@@ -1306,6 +1406,10 @@ a follow up exam should be performed to document the pseudoaneurysm is fully thr
             <div class="content question-text">A patient is undergoing balloon angioplasty of the left common femoral artery. The physician just completed the first expansion of the balloon and asks you to check the flow with Doppler. Where is the preferred location to evaluate flow?</div>
             
             <div class="study-note" data-study-note="q18"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q18">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 18">
               
               <button class="choice" type="button" role="listitem" data-card-id="q18" data-choice="A" data-correct="B">
@@ -1357,6 +1461,10 @@ evaluate improvement in overall perfusion of the leg.</div>
             <div class="content question-text">Which of the following is true regarding compression techniques used to treat a pseudoaneurysm of the femoral artery in the groin?</div>
             
             <div class="study-note" data-study-note="q19"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q19">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 19">
               
               <button class="choice" type="button" role="listitem" data-card-id="q19" data-choice="A" data-correct="D">
@@ -1409,6 +1517,10 @@ Compression should be performed in 10 one-minute intervals with color Doppler ev
             <div class="content question-text">In most cases, a peripherally inserted central catheter (PICC) line is inserted in the basilic vein exam and advanced until the tip reaches:</div>
             
             <div class="study-note" data-study-note="q20"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q20">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 20">
               
               <button class="choice" type="button" role="listitem" data-card-id="q20" data-choice="A" data-correct="B">
@@ -1460,6 +1572,10 @@ junction). High blood flow volume in this location allows infusates to be rapidl
             <div class="content question-text">Where is the most common site of stenosis in a transjugular intrahepatic portosystemic shunt?</div>
             
             <div class="study-note" data-study-note="q21"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q21">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 21">
               
               <button class="choice" type="button" role="listitem" data-card-id="q21" data-choice="A" data-correct="C">
@@ -1510,6 +1626,10 @@ junction). High blood flow volume in this location allows infusates to be rapidl
             <div class="content question-text">When evaluating the left arm for potential placement of a central venous catheter, you identify multiple small venous collaterals surrounding the subclavian vein, What should you do next?</div>
             
             <div class="study-note" data-study-note="q22"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q22">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 22">
               
               <button class="choice" type="button" role="listitem" data-card-id="q22" data-choice="A" data-correct="A">
@@ -1566,6 +1686,10 @@ purpose as veins for catheter delivery of medications.</div>
             <div class="content question-text">You are evaluating a patient that had a balloon angioplasty on the proximal superficial femoral artery 3 years ago. The acceleration time in the common femoral artery is 230ms. This finding is most suggestive of:</div>
             
             <div class="study-note" data-study-note="q23"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q23">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 23">
               
               <button class="choice" type="button" role="listitem" data-card-id="q23" data-choice="A" data-correct="D">
@@ -1621,6 +1745,10 @@ restenosis or the distal SFA could have stenosis.</div>
             <div class="content question-text">Which of the following is a responsibility of a Sonographer when assisting with a radiofrequency ablation of the great saphenous vein?</div>
             
             <div class="study-note" data-study-note="q24"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q24">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 24">
               
               <button class="choice" type="button" role="listitem" data-card-id="q24" data-choice="A" data-correct="D">
@@ -1672,6 +1800,10 @@ Sonographer assists with the ultrasound machine.</div>
             <div class="content question-text">A patient presents for a follow up exam after radiofrequency ablation of the GSV. What is the purpose of the exam?</div>
             
             <div class="study-note" data-study-note="q25"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q25">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 25">
               
               <button class="choice" type="button" role="listitem" data-card-id="q25" data-choice="A" data-correct="D">
@@ -1727,6 +1859,10 @@ Compression views of the treated veins and Doppler demonstration of the absence 
             <div class="content question-text">When preparing the sterile tray for an invasive procedure, the cover on the tray should be opened:</div>
             
             <div class="study-note" data-study-note="q26"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q26">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 26">
               
               <button class="choice" type="button" role="listitem" data-card-id="q26" data-choice="A" data-correct="C">
@@ -1783,6 +1919,10 @@ and syringe).</div>
             <div class="content question-text">In most patients with a central venous catheter the tip of the catheter is positioned in the:</div>
             
             <div class="study-note" data-study-note="q27"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q27">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 27">
               
               <button class="choice" type="button" role="listitem" data-card-id="q27" data-choice="A" data-correct="C">
@@ -1834,6 +1974,10 @@ junction). High blood flow volume in this location allows infusates to be rapidl
             <div class="content question-text">At ____________________ post-injection, _______________________should be performed to determine the success of a Thrombin injection for pseudoaneurysm treatment.</div>
             
             <div class="study-note" data-study-note="q28"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q28">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 28">
               
               <button class="choice" type="button" role="listitem" data-card-id="q28" data-choice="A" data-correct="B">
@@ -1887,6 +2031,10 @@ unaffected. There should be no change in the ABI from the baseline assessment.</
             <div class="content question-text">If the physician is having trouble visualizing the needle on the ultrasound screen during a thrombin injection, how can you help to improve the visualization of the needle?</div>
             
             <div class="study-note" data-study-note="q29"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q29">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 29">
               
               <button class="choice" type="button" role="listitem" data-card-id="q29" data-choice="A" data-correct="C">
@@ -1937,6 +2085,10 @@ unaffected. There should be no change in the ABI from the baseline assessment.</
             <div class="content question-text">Which of the following describes a difference between endovenous ablation of the great saphenous vein and of the small saphenous vein?</div>
             
             <div class="study-note" data-study-note="q30"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q30">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 30">
               
               <button class="choice" type="button" role="listitem" data-card-id="q30" data-choice="A" data-correct="D">
@@ -1991,6 +2143,10 @@ site.</div>
             <div class="content question-text">Which of the following is a contraindication for harvesting of the great saphenous vein?</div>
             
             <div class="study-note" data-study-note="q31"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q31">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 31">
               
               <button class="choice" type="button" role="listitem" data-card-id="q31" data-choice="A" data-correct="A">
@@ -2043,6 +2199,10 @@ removed/closed.</div>
             <div class="content question-text">Which of the following is part of the Sonographer&#39;s responsibilities when assisting with an endovenous ablation?</div>
             
             <div class="study-note" data-study-note="q32"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q32">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 32">
               
               <button class="choice" type="button" role="listitem" data-card-id="q32" data-choice="A" data-correct="B">
@@ -2110,6 +2270,10 @@ discard all used needles and catheters into the biohazard container</div>
             <div class="content question-text">Which of the following procedures allows patients to continue their normal course of anticoagulant therapy before and after the procedure?</div>
             
             <div class="study-note" data-study-note="q33"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q33">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 33">
               
               <button class="choice" type="button" role="listitem" data-card-id="q33" data-choice="A" data-correct="C">
@@ -2163,6 +2327,10 @@ pseudoaneurysm.</div>
             <div class="content question-text">Endovenous heat-induced thrombosis is a complication of:</div>
             
             <div class="study-note" data-study-note="q34"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q34">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 34">
               
               <button class="choice" type="button" role="listitem" data-card-id="q34" data-choice="A" data-correct="D">
@@ -2217,6 +2385,10 @@ to be evaluated for procedural success and complications like DVT or EHIT.</div>
             <div class="content question-text">A patient presents for a pre-procedure scan for placement of a central venous catheter in the internal jugular vein. In order to avoid potential hematoma or AV fistula formation, the relationship of the vein to the _________________________ must be documented on today&#39;s exam.</div>
             
             <div class="study-note" data-study-note="q35"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q35">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 35">
               
               <button class="choice" type="button" role="listitem" data-card-id="q35" data-choice="A" data-correct="B">
@@ -2271,6 +2443,10 @@ documented on today&#39;s exam. If the CCA is punctured, serious complications c
             <div class="content question-text">A common complication of cardiac catheterization is the formation of:</div>
             
             <div class="study-note" data-study-note="q36"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q36">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 36">
               
               <button class="choice" type="button" role="listitem" data-card-id="q36" data-choice="A" data-correct="A">
@@ -2322,6 +2498,10 @@ catheter is removed, there is a risk that blood will escape the artery into the 
             <div class="content question-text">Which of the following correctly describes a pre-procedure vein mapping?</div>
             
             <div class="study-note" data-study-note="q37"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q37">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 37">
               
               <button class="choice" type="button" role="listitem" data-card-id="q37" data-choice="A" data-correct="A">
@@ -2383,6 +2563,10 @@ marker after the gel is removed. The diameter of the vein is usually written on 
             <div class="content question-text">Which of the following correctly describes sclerotherapy procedures?</div>
             
             <div class="study-note" data-study-note="q38"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q38">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 38">
               
               <button class="choice" type="button" role="listitem" data-card-id="q38" data-choice="A" data-correct="D">
@@ -2434,6 +2618,10 @@ which in turn reduces varicosity size.</div>
             <div class="content question-text">Which of the following statements is correct regarding intraoperative duplex evaluation during a carotid endarterectomy?</div>
             
             <div class="study-note" data-study-note="q39"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q39">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 39">
               
               <button class="choice" type="button" role="listitem" data-card-id="q39" data-choice="A" data-correct="D">
@@ -2487,6 +2675,10 @@ The vessel should not contain air because it would become a cerebral embolism.</
             <div class="content question-text">A patient presents for follow up after a mesenteric stent placement procedure for a 75% SMA stenosis. Which of the following describes the findings in the SMA that indicate a successful procedure?</div>
             
             <div class="study-note" data-study-note="q40"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q40">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 40">
               
               <button class="choice" type="button" role="listitem" data-card-id="q40" data-choice="A" data-correct="D">
@@ -2540,6 +2732,10 @@ mesentery is now receiving enough blood during systole. Peak systolic and end di
             <div class="content question-text">Which of the following measurements should be obtained to evaluate the success of a percutaneous angioplasty performed on the left proximal superficial femoral artery?</div>
             
             <div class="study-note" data-study-note="q41"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q41">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 41">
               
               <button class="choice" type="button" role="listitem" data-card-id="q41" data-choice="A" data-correct="D">
@@ -2595,6 +2791,10 @@ Calculate the velocity ratio - less than 2 is normal</div>
             <div class="content question-text">What effect does a warm exam room have on a vein mapping procedure performed for coronary bypass surgery?</div>
             
             <div class="study-note" data-study-note="q42"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q42">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 42">
               
               <button class="choice" type="button" role="listitem" data-card-id="q42" data-choice="A" data-correct="A">
@@ -2647,6 +2847,10 @@ warm the leg or evaluate a different vein.</div>
             <div class="content question-text">Which of the following correctly describes proper behavior related to a sterile field?</div>
             
             <div class="study-note" data-study-note="q43"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q43">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 43">
               
               <button class="choice" type="button" role="listitem" data-card-id="q43" data-choice="A" data-correct="A">
@@ -2701,6 +2905,10 @@ individuals should pass back to back with other sterile individuals to prevent c
             <div class="content question-text">Which of the following is a contraindication for US guided compression therapy for a pseudoaneurysm at the groin?</div>
             
             <div class="study-note" data-study-note="q44"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q44">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 44">
               
               <button class="choice" type="button" role="listitem" data-card-id="q44" data-choice="A" data-correct="D">
@@ -2757,6 +2965,10 @@ Patients on anticoagulant therapy (must be stopped before compression)</div>
             <div class="content question-text">Why is the distance from the most proximal point of the contracted GSV to the saphenofemoral junction measured in a post-ablation exam?</div>
             
             <div class="study-note" data-study-note="q45"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q45">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 45">
               
               <button class="choice" type="button" role="listitem" data-card-id="q45" data-choice="A" data-correct="A">
@@ -2810,6 +3022,10 @@ extends into the deep system, the GSV must be ligated because of the increased r
             <div class="content question-text">A patient is scheduled for a stab phlebectomy. What is being treated for this patient?</div>
             
             <div class="study-note" data-study-note="q46"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q46">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 46">
               
               <button class="choice" type="button" role="listitem" data-card-id="q46" data-choice="A" data-correct="A">
@@ -2864,6 +3080,10 @@ well tolerated by patients and produces excellent cosmetic results.</div>
             <div class="content question-text">A patient presents for a follow up exam after a recent endarterectomy that was performed 3 days ago. The intraoperative report indicates a possible shelf lesion in the ICA. How will this be demonstrated on today&#39;s exam?</div>
             
             <div class="study-note" data-study-note="q47"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q47">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 47">
               
               <button class="choice" type="button" role="listitem" data-card-id="q47" data-choice="A" data-correct="C">
@@ -2919,6 +3139,10 @@ platelet aggregate - Hypoechoic/anechoic material adjacent to vessel wall that c
             <div class="content question-text">Which of the following correctly describes how to prepare for an intraoperative vascular ultrasound?</div>
             
             <div class="study-note" data-study-note="q48"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q48">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 48">
               
               <button class="choice" type="button" role="listitem" data-card-id="q48" data-choice="A" data-correct="D">
@@ -2972,6 +3196,10 @@ sterile gloves.</div>
             <div class="content question-text">Which of the following statements correctly describes an endovenous laser ablation of the GSV?</div>
             
             <div class="study-note" data-study-note="q49"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q49">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 49">
               
               <button class="choice" type="button" role="listitem" data-card-id="q49" data-choice="A" data-correct="B">
@@ -3028,6 +3256,10 @@ measured. If thrombus extends into the deep system, the GSV must be ligated. DVT
             <div class="content question-text">If the great saphenous vein is being used to create an in situ vein graft,</div>
             
             <div class="study-note" data-study-note="q50"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q50">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 50">
               
               <button class="choice" type="button" role="listitem" data-card-id="q50" data-choice="A" data-correct="B">
@@ -3079,6 +3311,10 @@ arterialized. The valves must be removed with a valvulotome. The graft diameter 
             <div class="content question-text">Prior to any invasive procedure, the patient should be educated about the procedure, expected outcomes and any possible complications. The patient will be required to sign a document stating their understanding of these topics in order to proceed with the procedure. This form is called:</div>
             
             <div class="study-note" data-study-note="q51"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q51">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 51">
               
               <button class="choice" type="button" role="listitem" data-card-id="q51" data-choice="A" data-correct="D">
@@ -3131,6 +3367,10 @@ with the procedure. This form is called an informed consent.</div>
             <div class="content question-text">Why did the technologist steer the 2D image while scanning during the thrombin injection?</div>
             
             <div class="study-note" data-study-note="q52"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q52">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 52">
               
               <button class="choice" type="button" role="listitem" data-card-id="q52" data-choice="A" data-correct="A">
@@ -3183,6 +3423,10 @@ with the procedure. This form is called an informed consent.</div>
             <div class="content question-text">Which of the following describes the sonographic appearance of a transjugular intrahepatic portosystemic shunt?</div>
             
             <div class="study-note" data-study-note="q53"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q53">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 53">
               
               <button class="choice" type="button" role="listitem" data-card-id="q53" data-choice="A" data-correct="B">
@@ -3237,6 +3481,10 @@ connecting the right portal vein and right hepatic vein.</div>
             <div class="content question-text">Which of the following is an expected finding with an AV fistula caused by an interventional procedure?</div>
             
             <div class="study-note" data-study-note="q54"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q54">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 54">
               
               <button class="choice" type="button" role="listitem" data-card-id="q54" data-choice="A" data-correct="D">
@@ -3292,6 +3540,10 @@ turbulent venous outflow.</div>
             <div class="content question-text">Which of the following is an absolute contraindication to an endovenous ablation?</div>
             
             <div class="study-note" data-study-note="q55"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q55">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 55">
               
               <button class="choice" type="button" role="listitem" data-card-id="q55" data-choice="A" data-correct="C">
@@ -3353,6 +3605,10 @@ Local infection, rash, or skin breakdown</div>
             <div class="content question-text">Which upper extremity vein is most commonly evaluated for use as an arterial bypass graft?</div>
             
             <div class="study-note" data-study-note="q56"></div>
+            <div class="choice-row">
+              <div class="label">Choices</div>
+              <button class="clear-answer" type="button" data-clear-card="q56">Clear answer</button>
+            </div>
             <div class="choices" role="list" aria-label="Answer choices for question 56">
               
               <button class="choice" type="button" role="listitem" data-card-id="q56" data-choice="A" data-correct="A">
@@ -3423,6 +3679,12 @@ Powered by ExamBuilder. Copyright ©2026</div>
 
     document.getElementById("close-all").addEventListener("click", () => {
       answerToggles.forEach((toggle) => setPanelState(toggle, false));
+    });
+
+    document.getElementById("clear-all-answers").addEventListener("click", () => {
+      Object.keys(studyState).forEach((key) => delete studyState[key]);
+      saveStudyState(studyState);
+      applyStudyState(studyState);
     });
 
     function normalizeState(rawState) {
@@ -3509,6 +3771,15 @@ Powered by ExamBuilder. Copyright ©2026</div>
           status: choice === correct ? "correct" : "incorrect",
           selectedChoice: choice,
         };
+        saveStudyState(studyState);
+        applyStudyState(studyState);
+      });
+    });
+
+    document.querySelectorAll("[data-clear-card]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const cardId = button.getAttribute("data-clear-card");
+        delete studyState[cardId];
         saveStudyState(studyState);
         applyStudyState(studyState);
       });
