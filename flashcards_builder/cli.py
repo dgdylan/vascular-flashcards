@@ -6,11 +6,13 @@ import sys
 from pathlib import Path
 
 from flashcards_builder.exporters import prepare_output_bundle, write_index_html
+from flashcards_builder.html_parser import parse_html_review
 from flashcards_builder.pdf_parser import ParseOptions, parse_pdf
 from flashcards_builder.utils import ensure_directory, humanize_pdf_title, slugify
 
 
 LOGGER = logging.getLogger(__name__)
+EXCLUDED_INPUT_DIRS = {".git", ".venv", "__pycache__", "docs", "html_input_test"}
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -59,9 +61,13 @@ def main(argv: list[str] | None = None) -> int:
     if not input_dir.exists() or not input_dir.is_dir():
         parser.error(f"Input directory does not exist: {input_dir}")
 
-    pdf_files = sorted(path for path in input_dir.rglob("*.pdf") if path.is_file())
-    if not pdf_files:
-        LOGGER.error("No PDFs found under %s", input_dir)
+    input_files = sorted(
+        path
+        for path in input_dir.rglob("*")
+        if is_input_file(path, input_dir)
+    )
+    if not input_files:
+        LOGGER.error("No PDFs or HTML files found under %s", input_dir)
         return 1
 
     options = ParseOptions(
@@ -73,11 +79,14 @@ def main(argv: list[str] | None = None) -> int:
     index_entries: list[dict] = []
     had_warnings = False
 
-    for pdf_path in pdf_files:
-        title = humanize_pdf_title(pdf_path.stem)
-        slug = slugify(pdf_path.stem)
+    for input_path in input_files:
+        title = humanize_pdf_title(input_path.stem)
+        slug = slugify(input_path.stem)
         destination_dir = ensure_directory(output_dir / slug)
-        flashcards, warnings = parse_pdf(pdf_path, options=options)
+        if input_path.suffix.lower() == ".pdf":
+            flashcards, warnings = parse_pdf(input_path, options=options)
+        else:
+            flashcards, warnings = parse_html_review(input_path, options=options)
 
         for warning in warnings:
             had_warnings = True
@@ -95,7 +104,7 @@ def main(argv: list[str] | None = None) -> int:
         if bundle["json_path"] is not None:
             bundle["json_path"] = bundle["json_path"].relative_to(output_dir)
         index_entries.append(bundle)
-        LOGGER.info("Processed %s -> %s cards", pdf_path.name, len(flashcards))
+        LOGGER.info("Processed %s -> %s cards", input_path.name, len(flashcards))
 
     write_index_html(
         index_entries,
@@ -109,3 +118,19 @@ def main(argv: list[str] | None = None) -> int:
 def configure_logging(debug: bool) -> None:
     level = logging.DEBUG if debug else logging.INFO
     logging.basicConfig(level=level, format="%(levelname)s: %(message)s", stream=sys.stdout)
+
+
+def is_input_file(path: Path, input_dir: Path) -> bool:
+    if not path.is_file() or path.suffix.lower() not in {".pdf", ".html", ".htm"}:
+        return False
+    try:
+        relative_parts = path.relative_to(input_dir).parts
+    except ValueError:
+        relative_parts = path.parts
+
+    for part in relative_parts[:-1]:
+        if part in EXCLUDED_INPUT_DIRS or part.startswith("output"):
+            return False
+        if part.endswith("_files"):
+            return False
+    return True

@@ -7,6 +7,7 @@ from pathlib import Path
 from jinja2 import DictLoader, Environment, select_autoescape
 
 from flashcards_builder.models import Flashcard
+from flashcards_builder.research import build_research_brief
 from flashcards_builder.utils import slugify
 
 
@@ -372,6 +373,57 @@ FLASHCARDS_TEMPLATE = """
       border-radius: 16px;
       background: var(--card-soft);
     }
+    .research-block {
+      display: grid;
+      gap: 0.85rem;
+      padding: 1rem;
+      border: 1px solid rgba(46, 110, 163, 0.12);
+      border-radius: 16px;
+      background: #ffffff;
+    }
+    .research-grid {
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .research-card {
+      padding: 0.9rem;
+      border: 1px solid rgba(46, 110, 163, 0.10);
+      border-radius: 14px;
+      background: #fbfeff;
+    }
+    .research-title {
+      margin: 0 0 0.45rem;
+      color: var(--accent-dark);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .research-text {
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .research-tag {
+      padding: 0.42rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(86, 214, 227, 0.12);
+      color: var(--accent-dark);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .research-checks {
+      display: grid;
+      gap: 0.55rem;
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--ink);
+    }
     .answer-title {
       font-weight: 700;
     }
@@ -487,6 +539,42 @@ FLASHCARDS_TEMPLATE = """
                 <div class="answer-block">
                   <div><span class="answer-title">Answer:</span> {{ flashcard.answer or "Unavailable" }}</div>
                   <div class="content"><span class="answer-title">Feedback:</span><br>{{ flashcard.feedback }}</div>
+                </div>
+                {% set research = research_for(flashcard) %}
+                <div class="research-block">
+                  <div class="label">Research & Study Guide</div>
+                  <div class="research-grid">
+                    <section class="research-card">
+                      <h3 class="research-title">Question Type</h3>
+                      <div class="research-text">{{ research.question_type }}</div>
+                    </section>
+                    <section class="research-card">
+                      <h3 class="research-title">Core Idea</h3>
+                      <div class="research-text">{{ research.overview }}</div>
+                    </section>
+                    <section class="research-card">
+                      <h3 class="research-title">What To Remember</h3>
+                      <div class="research-text">{{ research.takeaway }}</div>
+                    </section>
+                  </div>
+                  {% if research.focus_terms %}
+                  <section>
+                    <h3 class="research-title">Focus Terms</h3>
+                    <div class="research-tags">
+                      {% for term in research.focus_terms %}
+                      <span class="research-tag">{{ term }}</span>
+                      {% endfor %}
+                    </div>
+                  </section>
+                  {% endif %}
+                  <section>
+                    <h3 class="research-title">Self-Check</h3>
+                    <ul class="research-checks">
+                      {% for prompt in research.self_checks %}
+                      <li>{{ prompt }}</li>
+                      {% endfor %}
+                    </ul>
+                  </section>
                 </div>
               </div>
             </div>
@@ -815,7 +903,12 @@ ENVIRONMENT.filters["image_names"] = lambda flashcard: [image.saved_name for ima
 
 def render_flashcards_page(*, title: str, flashcards: list[Flashcard]) -> str:
     template = ENVIRONMENT.get_template("flashcards.html")
-    return template.render(title=title, flashcards=flashcards, image_names=image_names)
+    return template.render(
+        title=title,
+        flashcards=flashcards,
+        image_names=image_names,
+        research_for=build_research_brief,
+    )
 
 
 def render_index_page(*, entries: list[dict], group_by_title: bool) -> str:
