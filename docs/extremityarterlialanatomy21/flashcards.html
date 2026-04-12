@@ -12,10 +12,10 @@
       --hero-b: #5b9ace;
       --card: #ffffff;
       --card-soft: #f7fbfe;
-      --ink: #234f7f;
-      --muted: #6f88a4;
-      --accent: #56d6e3;
-      --accent-dark: #2e6ea3;
+      --ink: #153f66;
+      --muted: #3f607e;
+      --accent: #1aaebe;
+      --accent-dark: #174f7f;
       --border: rgba(46, 110, 163, 0.14);
       --success: #2f9e61;
       --danger: #d94841;
@@ -135,6 +135,53 @@
       transform: translateY(-1px);
       box-shadow: var(--shadow-soft);
     }
+    .exam-timer {
+      display: grid;
+      gap: 0.55rem;
+      min-width: min(100%, 320px);
+      padding: 0.85rem 0.95rem;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+    }
+    .timer-label {
+      color: rgba(255,255,255,0.74);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .timer-time {
+      font-size: clamp(1.35rem, 2vw, 1.7rem);
+      font-weight: 850;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+    .timer-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .timer-actions button {
+      border: 1px solid rgba(255,255,255,0.16);
+      background: #ffffff;
+      color: var(--accent-dark);
+      border-radius: 999px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 800;
+      padding: 0.58rem 0.78rem;
+    }
+    .timer-status {
+      min-height: 1.1rem;
+      color: rgba(255,255,255,0.76);
+      font-size: 0.88rem;
+    }
+    .timer-expired .timer-time {
+      color: #ffe4e4;
+    }
     .cards {
       display: grid;
       gap: 1rem;
@@ -163,7 +210,7 @@
       background: linear-gradient(180deg, #eef9fd, #f7fcfe);
     }
     .card-number {
-      color: var(--accent);
+      color: var(--accent-dark);
       font-size: 0.9rem;
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -187,7 +234,7 @@
       gap: 0.8rem;
     }
     .label {
-      color: var(--accent-dark);
+      color: #174f7f;
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.1em;
@@ -199,7 +246,7 @@
       white-space: pre-wrap;
     }
     .question-text {
-      color: var(--accent-dark);
+      color: #153f66;
       font-size: clamp(1.05rem, 1.35vw, 1.2rem);
       font-weight: 750;
       letter-spacing: -0.01em;
@@ -255,7 +302,7 @@
       border: 1px solid rgba(46, 110, 163, 0.10);
       border-radius: 14px;
       background: #ffffff;
-      color: var(--accent-dark);
+      color: #153f66;
       cursor: pointer;
       font: inherit;
       line-height: 1.55;
@@ -269,7 +316,7 @@
       background: #fcfeff;
     }
     .choice-label {
-      color: var(--accent);
+      color: #128fa0;
       font-weight: 800;
       margin-right: 0.3rem;
     }
@@ -451,6 +498,12 @@
         justify-content: center;
         text-align: center;
       }
+      .exam-timer {
+        width: 100%;
+      }
+      .timer-actions button {
+        flex: 1 1 120px;
+      }
       .choice-row {
         align-items: stretch;
       }
@@ -484,6 +537,7 @@
           <button type="button" id="close-all">Close all backs</button>
           <button type="button" id="clear-all-answers">Clear saved answers</button>
         </div>
+        
       </div>
     </section>
     <section class="cards">
@@ -8830,6 +8884,122 @@ Powered by ExamBuilder. Copyright ©2026</div>
         applyStudyState(studyState);
       });
     });
+
+    const timerRoot = document.getElementById("exam-timer");
+    if (timerRoot) {
+      const timerKey = "flashcard-exam-timer:" + window.location.pathname;
+      const durationSeconds = Number(timerRoot.getAttribute("data-duration-seconds") || "10800");
+      const display = document.getElementById("timer-display");
+      const status = document.getElementById("timer-status");
+      const startButton = document.getElementById("timer-start");
+      const pauseButton = document.getElementById("timer-pause");
+      const resetButton = document.getElementById("timer-reset");
+      let intervalId = null;
+
+      function loadTimerState() {
+        try {
+          return JSON.parse(localStorage.getItem(timerKey) || "{}");
+        } catch (error) {
+          return {};
+        }
+      }
+
+      function saveTimerState(state) {
+        localStorage.setItem(timerKey, JSON.stringify(state));
+      }
+
+      function formatTime(totalSeconds) {
+        const safeSeconds = Math.max(0, Math.floor(totalSeconds));
+        const hours = String(Math.floor(safeSeconds / 3600)).padStart(2, "0");
+        const minutes = String(Math.floor((safeSeconds % 3600) / 60)).padStart(2, "0");
+        const seconds = String(safeSeconds % 60).padStart(2, "0");
+        return hours + ":" + minutes + ":" + seconds;
+      }
+
+      function remainingSeconds(state) {
+        if (!state.startedAt) {
+          return durationSeconds;
+        }
+        if (state.pausedAt) {
+          return Math.max(0, state.remainingAtPause ?? durationSeconds);
+        }
+        const elapsed = Math.floor((Date.now() - state.startedAt) / 1000);
+        return Math.max(0, durationSeconds - elapsed);
+      }
+
+      function renderTimer() {
+        const state = loadTimerState();
+        const remaining = remainingSeconds(state);
+        display.textContent = formatTime(remaining);
+        timerRoot.classList.toggle("timer-expired", remaining === 0);
+        if (remaining === 0 && state.startedAt) {
+          status.textContent = "Time is up.";
+          stopTicking();
+        } else if (state.startedAt && state.pausedAt) {
+          status.textContent = "Timer paused.";
+        } else if (state.startedAt) {
+          status.textContent = "Timer running.";
+        } else {
+          status.textContent = "Timer is optional and saved on this device.";
+        }
+      }
+
+      function startTicking() {
+        stopTicking();
+        intervalId = window.setInterval(renderTimer, 1000);
+      }
+
+      function stopTicking() {
+        if (intervalId !== null) {
+          window.clearInterval(intervalId);
+          intervalId = null;
+        }
+      }
+
+      startButton.addEventListener("click", () => {
+        const state = loadTimerState();
+        const remaining = remainingSeconds(state);
+        if (remaining <= 0) {
+          return;
+        }
+        if (state.pausedAt) {
+          saveTimerState({
+            startedAt: Date.now() - ((durationSeconds - remaining) * 1000),
+            pausedAt: null,
+            remainingAtPause: null,
+          });
+        } else if (!state.startedAt) {
+          saveTimerState({ startedAt: Date.now(), pausedAt: null, remainingAtPause: null });
+        }
+        renderTimer();
+        startTicking();
+      });
+
+      pauseButton.addEventListener("click", () => {
+        const state = loadTimerState();
+        if (!state.startedAt || state.pausedAt) {
+          return;
+        }
+        saveTimerState({
+          startedAt: state.startedAt,
+          pausedAt: Date.now(),
+          remainingAtPause: remainingSeconds(state),
+        });
+        renderTimer();
+        stopTicking();
+      });
+
+      resetButton.addEventListener("click", () => {
+        localStorage.removeItem(timerKey);
+        renderTimer();
+        stopTicking();
+      });
+
+      renderTimer();
+      if (loadTimerState().startedAt && !loadTimerState().pausedAt) {
+        startTicking();
+      }
+    }
   </script>
 </body>
 </html>

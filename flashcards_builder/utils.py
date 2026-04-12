@@ -40,6 +40,9 @@ def ensure_directory(path: Path) -> Path:
 
 def humanize_pdf_title(value: str) -> str:
     text = value.strip()
+    if re.fullmatch(r"[A-Z]\d{2}", text):
+        return f"ARDMS Vascular Mock Registry Exam {text}"
+
     text = re.sub(r"(?<=[A-Z])(?=[A-Z][a-z])", " ", text)
     text = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", text)
     text = re.sub(r"(?<=[A-Za-z])(?=[0-9]+$)", " ", text)

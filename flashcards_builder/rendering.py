@@ -26,10 +26,10 @@ FLASHCARDS_TEMPLATE = """
       --hero-b: #5b9ace;
       --card: #ffffff;
       --card-soft: #f7fbfe;
-      --ink: #234f7f;
-      --muted: #6f88a4;
-      --accent: #56d6e3;
-      --accent-dark: #2e6ea3;
+      --ink: #153f66;
+      --muted: #3f607e;
+      --accent: #1aaebe;
+      --accent-dark: #174f7f;
       --border: rgba(46, 110, 163, 0.14);
       --success: #2f9e61;
       --danger: #d94841;
@@ -149,6 +149,53 @@ FLASHCARDS_TEMPLATE = """
       transform: translateY(-1px);
       box-shadow: var(--shadow-soft);
     }
+    .exam-timer {
+      display: grid;
+      gap: 0.55rem;
+      min-width: min(100%, 320px);
+      padding: 0.85rem 0.95rem;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+    }
+    .timer-label {
+      color: rgba(255,255,255,0.74);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .timer-time {
+      font-size: clamp(1.35rem, 2vw, 1.7rem);
+      font-weight: 850;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+    .timer-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .timer-actions button {
+      border: 1px solid rgba(255,255,255,0.16);
+      background: #ffffff;
+      color: var(--accent-dark);
+      border-radius: 999px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 800;
+      padding: 0.58rem 0.78rem;
+    }
+    .timer-status {
+      min-height: 1.1rem;
+      color: rgba(255,255,255,0.76);
+      font-size: 0.88rem;
+    }
+    .timer-expired .timer-time {
+      color: #ffe4e4;
+    }
     .cards {
       display: grid;
       gap: 1rem;
@@ -177,7 +224,7 @@ FLASHCARDS_TEMPLATE = """
       background: linear-gradient(180deg, #eef9fd, #f7fcfe);
     }
     .card-number {
-      color: var(--accent);
+      color: var(--accent-dark);
       font-size: 0.9rem;
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -201,7 +248,7 @@ FLASHCARDS_TEMPLATE = """
       gap: 0.8rem;
     }
     .label {
-      color: var(--accent-dark);
+      color: #174f7f;
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.1em;
@@ -213,7 +260,7 @@ FLASHCARDS_TEMPLATE = """
       white-space: pre-wrap;
     }
     .question-text {
-      color: var(--accent-dark);
+      color: #153f66;
       font-size: clamp(1.05rem, 1.35vw, 1.2rem);
       font-weight: 750;
       letter-spacing: -0.01em;
@@ -269,7 +316,7 @@ FLASHCARDS_TEMPLATE = """
       border: 1px solid rgba(46, 110, 163, 0.10);
       border-radius: 14px;
       background: #ffffff;
-      color: var(--accent-dark);
+      color: #153f66;
       cursor: pointer;
       font: inherit;
       line-height: 1.55;
@@ -283,7 +330,7 @@ FLASHCARDS_TEMPLATE = """
       background: #fcfeff;
     }
     .choice-label {
-      color: var(--accent);
+      color: #128fa0;
       font-weight: 800;
       margin-right: 0.3rem;
     }
@@ -465,6 +512,12 @@ FLASHCARDS_TEMPLATE = """
         justify-content: center;
         text-align: center;
       }
+      .exam-timer {
+        width: 100%;
+      }
+      .timer-actions button {
+        flex: 1 1 120px;
+      }
       .choice-row {
         align-items: stretch;
       }
@@ -498,6 +551,18 @@ FLASHCARDS_TEMPLATE = """
           <button type="button" id="close-all">Close all backs</button>
           <button type="button" id="clear-all-answers">Clear saved answers</button>
         </div>
+        {% if is_mock_exam %}
+        <div class="exam-timer" id="exam-timer" data-duration-seconds="10800">
+          <div class="timer-label">Optional Exam Timer</div>
+          <div class="timer-time" id="timer-display">03:00:00</div>
+          <div class="timer-actions">
+            <button type="button" id="timer-start">Start</button>
+            <button type="button" id="timer-pause">Pause</button>
+            <button type="button" id="timer-reset">Reset</button>
+          </div>
+          <div class="timer-status" id="timer-status">Timer is optional and saved on this device.</div>
+        </div>
+        {% endif %}
       </div>
     </section>
     <section class="cards">
@@ -717,6 +782,122 @@ FLASHCARDS_TEMPLATE = """
         applyStudyState(studyState);
       });
     });
+
+    const timerRoot = document.getElementById("exam-timer");
+    if (timerRoot) {
+      const timerKey = "flashcard-exam-timer:" + window.location.pathname;
+      const durationSeconds = Number(timerRoot.getAttribute("data-duration-seconds") || "10800");
+      const display = document.getElementById("timer-display");
+      const status = document.getElementById("timer-status");
+      const startButton = document.getElementById("timer-start");
+      const pauseButton = document.getElementById("timer-pause");
+      const resetButton = document.getElementById("timer-reset");
+      let intervalId = null;
+
+      function loadTimerState() {
+        try {
+          return JSON.parse(localStorage.getItem(timerKey) || "{}");
+        } catch (error) {
+          return {};
+        }
+      }
+
+      function saveTimerState(state) {
+        localStorage.setItem(timerKey, JSON.stringify(state));
+      }
+
+      function formatTime(totalSeconds) {
+        const safeSeconds = Math.max(0, Math.floor(totalSeconds));
+        const hours = String(Math.floor(safeSeconds / 3600)).padStart(2, "0");
+        const minutes = String(Math.floor((safeSeconds % 3600) / 60)).padStart(2, "0");
+        const seconds = String(safeSeconds % 60).padStart(2, "0");
+        return hours + ":" + minutes + ":" + seconds;
+      }
+
+      function remainingSeconds(state) {
+        if (!state.startedAt) {
+          return durationSeconds;
+        }
+        if (state.pausedAt) {
+          return Math.max(0, state.remainingAtPause ?? durationSeconds);
+        }
+        const elapsed = Math.floor((Date.now() - state.startedAt) / 1000);
+        return Math.max(0, durationSeconds - elapsed);
+      }
+
+      function renderTimer() {
+        const state = loadTimerState();
+        const remaining = remainingSeconds(state);
+        display.textContent = formatTime(remaining);
+        timerRoot.classList.toggle("timer-expired", remaining === 0);
+        if (remaining === 0 && state.startedAt) {
+          status.textContent = "Time is up.";
+          stopTicking();
+        } else if (state.startedAt && state.pausedAt) {
+          status.textContent = "Timer paused.";
+        } else if (state.startedAt) {
+          status.textContent = "Timer running.";
+        } else {
+          status.textContent = "Timer is optional and saved on this device.";
+        }
+      }
+
+      function startTicking() {
+        stopTicking();
+        intervalId = window.setInterval(renderTimer, 1000);
+      }
+
+      function stopTicking() {
+        if (intervalId !== null) {
+          window.clearInterval(intervalId);
+          intervalId = null;
+        }
+      }
+
+      startButton.addEventListener("click", () => {
+        const state = loadTimerState();
+        const remaining = remainingSeconds(state);
+        if (remaining <= 0) {
+          return;
+        }
+        if (state.pausedAt) {
+          saveTimerState({
+            startedAt: Date.now() - ((durationSeconds - remaining) * 1000),
+            pausedAt: null,
+            remainingAtPause: null,
+          });
+        } else if (!state.startedAt) {
+          saveTimerState({ startedAt: Date.now(), pausedAt: null, remainingAtPause: null });
+        }
+        renderTimer();
+        startTicking();
+      });
+
+      pauseButton.addEventListener("click", () => {
+        const state = loadTimerState();
+        if (!state.startedAt || state.pausedAt) {
+          return;
+        }
+        saveTimerState({
+          startedAt: state.startedAt,
+          pausedAt: Date.now(),
+          remainingAtPause: remainingSeconds(state),
+        });
+        renderTimer();
+        stopTicking();
+      });
+
+      resetButton.addEventListener("click", () => {
+        localStorage.removeItem(timerKey);
+        renderTimer();
+        stopTicking();
+      });
+
+      renderTimer();
+      if (loadTimerState().startedAt && !loadTimerState().pausedAt) {
+        startTicking();
+      }
+    }
   </script>
 </body>
 </html>
@@ -736,9 +917,9 @@ INDEX_TEMPLATE = """
       --hero-a: #2f72a6;
       --hero-b: #5b9ace;
       --ink: #234f7f;
-      --muted: #6f88a4;
-      --accent: #56d6e3;
-      --accent-dark: #2e6ea3;
+      --muted: #3f607e;
+      --accent: #1aaebe;
+      --accent-dark: #174f7f;
       --border: rgba(46, 110, 163, 0.14);
       --shadow: 0 18px 40px rgba(35, 79, 127, 0.10);
       --shadow-soft: 0 8px 20px rgba(35, 79, 127, 0.06);
@@ -792,7 +973,7 @@ INDEX_TEMPLATE = """
     }
     .group h2 {
       margin-bottom: 0.75rem;
-      color: var(--accent-dark);
+      color: #174f7f;
       font-size: 1.3rem;
       letter-spacing: -0.02em;
     }
@@ -816,10 +997,14 @@ INDEX_TEMPLATE = """
       box-shadow: 0 20px 44px rgba(239, 227, 179, 0.32);
     }
     .item a {
-      color: var(--accent);
+      color: #128fa0;
       text-decoration: none;
       font-size: 1.05rem;
       font-weight: 800;
+    }
+    .item a:first-child {
+      color: #174f7f;
+      font-size: 1.08rem;
     }
     .meta {
       margin-top: 0.45rem;
@@ -908,6 +1093,7 @@ def render_flashcards_page(*, title: str, flashcards: list[Flashcard]) -> str:
         flashcards=flashcards,
         image_names=image_names,
         research_for=build_research_brief,
+        is_mock_exam=title.startswith("ARDMS Vascular Mock Registry Exam "),
     )
 
 
