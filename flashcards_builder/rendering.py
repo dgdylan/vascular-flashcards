@@ -1150,14 +1150,17 @@ def render_flashcards_page(*, title: str, flashcards: list[Flashcard]) -> str:
         flashcards=flashcards,
         image_names=image_names,
         research_for=build_research_brief,
-        is_mock_exam=title.startswith("ARDMS Vascular Mock Registry Exam "),
+        is_mock_exam=is_mock_exam_title(title),
     )
 
 
 def render_index_page(*, entries: list[dict], group_by_title: bool) -> str:
     groups: dict[str, list[dict]] = defaultdict(list)
     for entry in entries:
-        group_name = grouped_title(entry["title"]) if group_by_title else "All PDFs"
+        if is_mock_exam_title(entry["title"]):
+            group_name = "Mock Exams"
+        else:
+            group_name = grouped_title(entry["title"]) if group_by_title else "All PDFs"
         groups[group_name].append(
             {
                 "title": entry["title"],
@@ -1168,9 +1171,18 @@ def render_index_page(*, entries: list[dict], group_by_title: bool) -> str:
             }
         )
 
-    ordered_groups = sorted(groups.items(), key=lambda item: item[0].lower())
+    ordered_groups = sorted(groups.items(), key=index_group_sort_key)
     template = ENVIRONMENT.get_template("index.html")
     return template.render(groups=ordered_groups)
+
+
+def is_mock_exam_title(title: str) -> bool:
+    return title.startswith("ARDMS Vascular Mock Registry Exam ")
+
+
+def index_group_sort_key(item: tuple[str, list[dict]]) -> tuple[int, str]:
+    group_name, _ = item
+    return (1 if group_name == "Mock Exams" else 0, group_name.lower())
 
 
 def relative_href(path: Path | None) -> str | None:
