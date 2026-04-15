@@ -223,6 +223,74 @@
     .timer-expired .timer-time {
       color: var(--danger);
     }
+    .score-summary {
+      display: grid;
+      gap: 0.9rem;
+      margin: 1.1rem 0 0;
+      padding: 1.1rem;
+      border: 1px solid rgba(46, 110, 163, 0.12);
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,251,254,0.98)),
+        radial-gradient(circle at top right, rgba(86,214,227,0.14), transparent 34%);
+      box-shadow: var(--shadow-soft);
+    }
+    .score-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .score-heading h2 {
+      margin: 0;
+      color: var(--accent-dark);
+      font-size: clamp(1.25rem, 2vw, 1.7rem);
+      font-weight: 720;
+      letter-spacing: -0.03em;
+    }
+    .score-percent {
+      color: var(--accent-dark);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 720;
+      line-height: 1;
+    }
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+    .score-stat {
+      padding: 0.85rem;
+      border: 1px solid rgba(46, 110, 163, 0.10);
+      border-radius: 16px;
+      background: #ffffff;
+    }
+    .score-stat strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .score-stat span {
+      display: block;
+      margin-top: 0.22rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .score-stat.correct strong {
+      color: var(--success);
+    }
+    .score-stat.incorrect strong {
+      color: var(--danger);
+    }
+    .score-note {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
     .cards {
       display: grid;
       gap: 1rem;
@@ -555,6 +623,9 @@
       .timer-actions button {
         flex: 1 1 120px;
       }
+      .score-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
       .choice-row {
         align-items: stretch;
       }
@@ -566,6 +637,11 @@
       }
       .card-header, .card-body {
         padding: 1rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .score-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -14180,12 +14256,20 @@ Powered by ExamBuilder. Copyright ©2026</div>
       </article>
       
     </section>
+    
   </main>
   <script>
     const answerToggles = Array.from(document.querySelectorAll(".answer-toggle"));
     const storageKey = "flashcard-study-state:" + window.location.pathname;
     const masteredCount = document.getElementById("mastered-count");
     const needsReviewCount = document.getElementById("needs-review-count");
+    const scoreRoot = document.getElementById("exam-score");
+    const scorePercent = document.getElementById("score-percent");
+    const scoreCorrect = document.getElementById("score-correct");
+    const scoreIncorrect = document.getElementById("score-incorrect");
+    const scoreAnswered = document.getElementById("score-answered");
+    const scoreUnanswered = document.getElementById("score-unanswered");
+    const scoreNote = document.getElementById("score-note");
 
     function setPanelState(toggle, open) {
       const panel = toggle.nextElementSibling;
@@ -14251,6 +14335,23 @@ Powered by ExamBuilder. Copyright ©2026</div>
       const review = values.filter((value) => value && value.status === "incorrect").length;
       masteredCount.textContent = String(mastered);
       needsReviewCount.textContent = String(review);
+      updateScoreSummary(mastered, review);
+    }
+
+    function updateScoreSummary(correct, incorrect) {
+      if (!scoreRoot) return;
+      const total = Number(scoreRoot.getAttribute("data-total-cards") || "0");
+      const answered = correct + incorrect;
+      const unanswered = Math.max(0, total - answered);
+      const percent = total > 0 ? Math.round((correct / total) * 100) : 0;
+      scorePercent.textContent = percent + "%";
+      scoreCorrect.textContent = String(correct);
+      scoreIncorrect.textContent = String(incorrect);
+      scoreAnswered.textContent = answered + " / " + total;
+      scoreUnanswered.textContent = String(unanswered);
+      scoreNote.textContent = unanswered === 0
+        ? "Exam complete. Score is correct answers divided by total exam questions."
+        : "Score is calculated as correct answers divided by total exam questions. Unanswered questions count as not correct.";
     }
 
     function renderChoiceState(cardId, state) {
